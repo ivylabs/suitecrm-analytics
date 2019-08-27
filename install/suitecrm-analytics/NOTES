@@ -1,0 +1,21 @@
+copy pentaho-solutions/system/pentaho.xml - This sets the default theme to use which is set to suitecrm
+copy pentaho-solutions/system/server.properties - This sets the fully qualified server URL - fully-qualified-server-url=http://localhost:8080/suitecrmanalytics/
+copy pentaho-solutions/system/common-ui - This is the SuiteCRM PUC Theme 
+copy pentaho-solutions/system/cte - Community Text Editor
+copy pentaho-solutions/system/sparkl - Plugin App
+copy pentaho-solutions/system/SuiteCRMAnalytics - SuiteCRM Plugin
+
+copy tomcat/lib - This is the latest MySQL Driver
+remove old tomcat/lib/mysql-connector-java-5.1.17.jar driver
+copy tomcate/webapps/ROOT - This is the login Redirect
+Rename tomcat/webapps/pentaho to tomcat/webapps/suitecrmanalytics
+copy tomcat/webapps/suitecrmanalytics - This is the suitecrm patches for the webapp
+
+copy startup / shutdown scripts
+remove old startup / shutdown scripts
+
+- DEV!! - Set the context.xml JNDI connection details so we can create the SuiteCRMAnalytics and SuiteCRM JNDI connections in the BI Server
+
+Start
+
+Create Database JS fails when logging in - This is because the ETL that creates these connections does not exists in the BI repository

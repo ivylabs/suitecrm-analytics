@@ -1,0 +1,220 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Table</Name>
+		<IName>BSTableComponent</IName>
+		<Description>Bootstrap Table</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>parameter</Property>
+			<Property>executeAtStart</Property>
+			<Property>htmlObject</Property>
+			<Property>listeners</Property>
+            <Property name="parameters">xActionArrayParameter</Property>
+            <Definition name="chartDefinition">
+				<Property>dataSource</Property>
+				<Property name="headerEnabled">headerEnabled</Property>
+				<Property name="clickAction">cccClickAction</Property>
+				<Property>colHeaders</Property>
+				<Property>colFormats</Property>
+				<Property>colTypes</Property>
+				<Property>colWidths</Property>
+			</Definition>
+			<Property>postFetch</Property>
+			<Property>refreshPeriod</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>tableResponsive</Property>
+			<Property>tableStriped</Property>
+			<Property>tableBordered</Property>
+			<Property>tableHover</Property>
+			<Property>tableCondensed</Property>
+			<Property>tablePaginate</Property>
+			<Property>tablePaginateShowPrevNext</Property>
+			<Property>tablePaginateHidePageNumbers</Property>
+			<Property>tablePaginateRowPerPage</Property>
+			<Property>tableNumbersPerPage</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="bsTable.js" />
+			<Dependencies />
+			<Styles />
+			
+			<CustomProperties>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableResponsive</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Table Responsive</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Responsive</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>52</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableStriped</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Striped</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Striped</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>53</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableBordered</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Bordered</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Bordered</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>54</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableHover</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Hover</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Hover</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>55</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableCondensed</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Condensed</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Condensed</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>56</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tablePaginate</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Paginate</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Paginate</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>57</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tablePaginateShowPrevNext</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Show Prev Next</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Show Prev Next Buttons</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>58</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tablePaginateHidePageNumbers</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Hide Page Numbers</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Hide Page Numbers Buttons</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>59</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tablePaginateRowPerPage</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>25</DefaultValue>
+						<Description>Rows Per Page</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Number Rows Per Page</Tooltip>
+						<InputType>Integer</InputType>
+						<OutputType>Number</OutputType>
+						<Order>60</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableNumbersPerPage</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>5</DefaultValue>
+						<Description>Numbers Per Page</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Numbers Per Page</Tooltip>
+						<InputType>Integer</InputType>
+						<OutputType>Number</OutputType>
+						<Order>60</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>headerEnabled</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Header Enabled</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Header Enabled</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>61</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+			
+			</CustomProperties>
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

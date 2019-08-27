@@ -1,0 +1,930 @@
+{
+ "layout": {
+  "title": "components",
+  "rows": [
+   {
+    "id": "13afc3e9-9106-7dc5-4b1a-1103a9a15fe7",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "DOCS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "tr.odd {\nbackground-color: #FFF;\n} ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
+    "id": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "properties": [
+     {
+      "name": "name",
+      "value": "MAIN_CONTENT",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "1e57285d-e92a-14a2-cadd-271ece2f8bbe",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"bootstrap_panel\">Bootstrap Panel</h2>\n<p>Panels can be useful for helping the layout of your dashboard. Its possible to attach either HTML, images, charts or other components to Panels</p>\n<h4>Common Options</h4>\n<table class=\"table\">\n    <thead>\n        <tr>\n            <th>Option</th>\n            <th>Example</th>\n            <th>Description</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>Header Text</td>\n            <td>Sample Header</td>\n            <td>Text to render within the panel header</td>\n        </tr>\n        <tr>\n            <td>Show Header</td>\n            <td>True, False</td>\n            <td>Show or hide the panel header</td>\n        </tr>\n        <tr>\n            <td>Inner HTML</td>\n            <td>HTML</td>\n            <td>HTML to render within the inner content panel</td>\n        </tr>\n        <tr>\n            <td>Footer Text</td>\n            <td>Sample Footer</td>\n            <td>Text to render within the panel footer</td>\n        </tr>\n        <tr>\n            <td>Show Footer</td>\n            <td>True, False</td>\n            <td>Show or hide the panel footer</td>\n        </tr>\n        <tr>\n            <td>Inner Panel Height</td>\n            <td>200</td>\n            <td>Height of the inner content panel in pixels</td>\n        </tr>\n        <tr>\n            <td>Panel Type</td>\n            <td>Primary, Warning, Success, Danger</td>\n            <td>HThe type of Panel to render. This is the same as button and select types</td>\n        </tr>\n    </tbody>\n</table>\n<h4>Default Panel</h4>\n<div class=\"bs-example\" id=\"panel_sample_1\"></div>\n<h4>Panel with Header</h4>\n<div id=\"panel_sample_2\"></div>\n<h4>Panel with Header & Footer</h4>\n<div id=\"panel_sample_3\"></div>\n<h4>Panel Types & Inner Height</h4>\n<div class=\"row\">\n  <div id=\"panel_sample_type_1\" class=\"col-md-3\"></div>\n  <div id=\"panel_sample_type_2\" class=\"col-md-3\"></div>\n  <div id=\"panel_sample_type_3\" class=\"col-md-3\"></div>\n  <div id=\"panel_sample_type_4\" class=\"col-md-3\"></div>\n</div>\n<h4>Additional Notes</h4>\n<p>Its possible to attach charts and other CDE components to panels also. To do this you will need to follow at least two steps. First you must make sure the priority of the panel is before the priority of the component you are attaching to it. This is because we want the panel to load before the component so that component has something to attach to. Next you will want to set the component that you are attaching to the panels HTML Object to the Panels HTML Object name appended with \"INNER_ID\".</p>\n<p>For example: If we have a Panel with a HTML Object property of \"ROW1\" then we will want to set the HTML Object of the component you want to attach to the panel to \"ROW1_INNER_ID\"</p>\n<hr /> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   }
+  ]
+ },
+ "components": {
+  "rows": [
+   {
+    "id": "IVYISBOOTSTRAP",
+    "name": "Ivy IS Bootstrap",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Ivy IS Bootstrap",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "e524d6b8-0d78-8c7f-8dcf-a7ed2d3697d6",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_DEFAULT",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-default",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_1",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "c122ea20-c499-1507-fbca-ef1cae4a3534",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_HEADER",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "Header Text",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-default",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_2",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "1fcfe131-2197-80c9-a977-288f604b386a",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_HEADER_FOOTER",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "Header Text",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "Footer Text",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-default",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_3",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "0f6aa8d6-ef68-5ce3-1e1a-e19d1a5a6cb8",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_TYPE",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "150",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "Header Text",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-info",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_type",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "826fe427-a826-4d91-544d-39d33e14a4ca",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_TYPE_1",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "150",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "Primary Panel Type",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-primary",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_type_1",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "480ce0d5-97cc-5a13-0928-af7388e9483b",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_TYPE_2",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "150",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "Info Panel Type",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-info",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_type_2",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "f0a80756-af29-6971-3baa-e5002da983e9",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_TYPE_3",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "150",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "Danger Panel Type",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-danger",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_type_3",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "cd005a3b-572a-8c40-dbf5-dbd035f0c051",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_SAMPLE_TYPE_4",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "Panel Content ",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "150",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "Success Panel Type",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-success",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "panel_sample_type_4",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   }
+  ]
+ },
+ "datasources": {
+  "rows": []
+ },
+ "filename": "/system/IvyBC/dashboards/admin/panel.cdfde"
+}

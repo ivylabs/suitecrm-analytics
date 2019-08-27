@@ -1,0 +1,101 @@
+<project name="Community Startup Tabs" basedir="." default="dist"
+         xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <description>
+    This build file is used to create the Startup Rule Engine project.
+  </description>
+
+  <import file="build-res/subfloor-pkg.xml" id="subfloor"/>
+
+  <echo>project = ${project.id}</echo>
+  <echo>stage = ${project.stage}</echo>
+  <echo>version = ${project.version}</echo>
+  <echo>revision = ${project.revision}</echo>
+
+  <!--=======================================================================
+      dist (override)
+
+      Creates the distribution
+      ====================================================================-->
+  <target name="dist" depends="clean-all, resolve, dist-plugin"/>
+
+  <!--=======================================================================
+      dist-plugin
+
+      Creates the plugin distribution zip package (which includes version.xml file)
+      and a marketplace.xml file
+      ====================================================================-->
+  <target name="dist-plugin" depends="" description="Creates a distribution">
+    <!-- create stage/dist folder tree -->
+    <!--<property name="stage.dir" value="${bin.dir}/stage"/>-->
+    <mkdir dir="${stage.dir}"/>
+    <mkdir dir="${stage.dir}/${project.id}"/>
+    <mkdir dir="${dist.dir}"/>
+    <!-- copy dist files to stage -->
+    <copy todir="${stage.dir}/${project.id}" overwrite="true">
+      <fileset dir="${basedir}">
+        <exclude name="dist/"/>
+        <exclude name="bin/"/>
+        <exclude name="dev-lib/"/>
+        <exclude name=".git/"/>
+        <exclude name=".gitignore"/>
+        <exclude name="market_entry.xml"/>
+        <exclude name="**/.DS_Store"/>
+        <exclude name="**/Thumbs.db"/>
+      </fileset>
+    </copy>
+    <!-- create sequential build id -->
+    <tstamp/>
+    <property name="sequential.build.id" value="manual-${DSTAMP}"/>
+    <!-- create version.xml file -->
+    <echoxml file="${stage.dir}/${project.id}/version.xml">
+      <version branch='${project.stage}' buildId='${sequential.build.id}'>${project.revision}</version>
+    </echoxml>
+    <!-- create zip file -->
+    <zip zipfile="${dist.dir}/${project.id}-${project.revision}.zip"
+         basedir="${stage.dir}"
+         includes="${project.id}/**/*"/>
+
+    <!-- create a marketplace.xml file -->
+    <echoxml file="${dist.dir}/marketplace.xml">
+      <version>
+        <branch>${project.stage}</branch>
+        <version>${project.revision}</version>
+        <name>${marketplace.metadata.version.name}</name>
+        <package_url>
+          ${marketplace.metadata.package_url}
+        </package_url>
+        <samples_url>
+          ${marketplace.metadata.samples_url}
+        </samples_url>
+        <description>
+          ${marketplace.metadata.version.description}
+        </description>
+        <build_id>${sequential.build.id}</build_id>
+        <min_parent_version>${marketplace.metadata.min_parent_version}</min_parent_version>
+        <max_parent_version>${marketplace.metadata.max_parent_version}</max_parent_version>
+        <development_stage>
+          <lane>${marketplace.metadata.development_stage.lane}</lane>
+          <phase>${marketplace.metadata.development_stage.phase}</phase>
+        </development_stage>
+      </version>
+    </echoxml>
+  </target>
+  <!--=======================================================================
+      install-plugin
+
+      Installs the plugin in a local BA server installation (use an 'override.properties'
+      file to define 'baserver.system.dir' = full path to system dir on local BA server)
+      ====================================================================-->
+  <target name="install-plugin" depends="clean, dist-plugin" description="Installs the plugin locally">
+    <fail message="baserver.system.dir not set - cannot install plugin"
+          unless="baserver.system.dir"/>
+    <delete dir="${baserver.system.dir}/${project.id}"/>
+    <copy todir="${baserver.system.dir}/${project.id}">
+      <fileset dir="${stage.dir}/${project.id}">
+        <include name="**/*"/>
+      </fileset>
+    </copy>
+  </target>
+
+</project>

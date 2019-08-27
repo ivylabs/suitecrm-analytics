@@ -1,0 +1,1460 @@
+{
+ "layout": {
+  "title": "components",
+  "rows": [
+   {
+    "id": "13afc3e9-9106-7dc5-4b1a-1103a9a15fe7",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "DOCS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "tr.odd {\nbackground-color: #FFF;\n} ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
+    "id": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "properties": [
+     {
+      "name": "name",
+      "value": "MAIN_CONTENT",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "3e15ebf2-a078-a1ba-fb79-4b1d3fbc7733",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"bootstrap_switch\">Bootstrap Switch Button</h2>\n<h4>Common Options</h4>\n<table class=\"table\">\n    <thead>\n        <tr>\n            <th>Option</th>\n            <th>Example</th>\n            <th>Description</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>Size</td>\n            <td>Large, Normal, Small, Mini</td>\n            <td>The size of the switch to be rendered</td>\n        </tr>\n        <tr>\n            <td>On Color</td>\n            <td>Default, Primary, Info, Success, Warning, Danger</td>\n            <td>The ON color of the switch</td>\n        </tr>\n        <tr>\n            <td>Off Color</td>\n            <td>Default, Primary, Info, Success, Warning, Danger</td>\n            <td>The OFF color of the switch</td>\n        </tr>\n        <tr>\n            <td>On Text</td>\n            <td>On</td>\n            <td>The ON text of the switch</td>\n        </tr>\n        <tr>\n            <td>Off Text</td>\n            <td>Off</td>\n            <td>The OFF text of the switch</td>\n        </tr>\n        <tr>\n            <td>Label Text</td>\n            <td>Switch Me</td>\n            <td>The Label of the switch</td>\n        </tr>\n        <tr>\n            <td>Animate</td>\n            <td>True, False</td>\n            <td>Should the switch be animated between transitions</td>\n        </tr>\n    </tbody>\n</table>\n<h4>Default Switch Button</h4>\n<span id=\"switch_sample_1\"></span>\n<h4>Switch Label</h4>\n<span id=\"switch_sample_label\"></span>\n<h4>Switch Button Colours</h4>\n<span id=\"switch_colours_1\"></span>\n<span id=\"switch_colours_2\"></span>\n<span id=\"switch_colours_3\"></span>\n<h4>Switch Button Sizes</h4>\n<span id=\"switch_size_large\"></span>\n<span id=\"switch_size_normal\"></span>\n<span id=\"switch_size_small\"></span>\n<span id=\"switch_size_mini\"></span>\n<h4>Switch Button Animate</h4>\n<span id=\"switch_animate_false\"></span>\n<hr /> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   }
+  ]
+ },
+ "components": {
+  "rows": [
+   {
+    "id": "IVYISBOOTSTRAP",
+    "name": "Ivy IS Bootstrap",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Ivy IS Bootstrap",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "c0ec196c-9630-e925-7526-ad3530734d30",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_1",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "normal",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "default",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp;",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_sample_1",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "8f0aa784-9936-6ecc-c794-33d5b8d18ca8",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_LABEL",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "normal",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "default",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "Label",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_sample_label",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "318c065d-a172-8180-2caf-8fc0eafcfc57",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_COLOURS_1",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "primary",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "danger",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_colours_1",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "bd79f171-835e-6c93-a9a3-d2aaa36d4172",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_COLOURS_2",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "info",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "success",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_colours_2",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "57a892be-0e4e-722e-7032-e7907e17ab5d",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_COLOURS_3",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "warning",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_colours_3",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "ba051727-e2ad-1958-35df-499057374b38",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_LARGE",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "large",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "default",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp;",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_size_large",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "3223ae5b-823c-9b81-21aa-722e0a871116",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_NORMAL",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "normal",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "default",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp;",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_size_normal",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "2a9f51e8-afe3-6c8f-512a-6f0e08a6bd6d",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_SMALL",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "small",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "default",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp;",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_size_small",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "5c07d590-949f-dd6a-5b62-4ef76ff0530d",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_MINI",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "mini",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "default",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp;",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_size_mini",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "d1594d30-b36f-739c-e6a2-b7c910a02d6f",
+    "type": "ComponentsBSSwitchComponent",
+    "typeDesc": "Bootstrap Switch",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SWITCH_SAMPLE_ANIMATE",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM_BOOLEAN}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "switchSize",
+      "value": "normal",
+      "type": "switchSizeCustom"
+     },
+     {
+      "name": "switchOnColor",
+      "value": "default",
+      "type": "switchOnColorCustom"
+     },
+     {
+      "name": "switchOffColor",
+      "value": "default",
+      "type": "switchOffColorCustom"
+     },
+     {
+      "name": "switchOnText",
+      "value": "ON",
+      "type": "String"
+     },
+     {
+      "name": "switchOffText",
+      "value": "OFF",
+      "type": "String"
+     },
+     {
+      "name": "switchLableText",
+      "value": "&nbsp;",
+      "type": "String"
+     },
+     {
+      "name": "switchAnimate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "htmlObject",
+      "value": "switch_animate_false",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "dc1f0c7f-fcf8-56b4-f699-254e7a8d8a5d",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "INPUT_PARAM_BOOLEAN",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "true",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   }
+  ]
+ },
+ "datasources": {
+  "rows": [
+   {
+    "id": "MDX",
+    "name": "MDX Queries",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "MDX Queries",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "6c7401f6-5229-d602-1f5c-00f0413bf84e",
+    "type": "Componentsmdx_mondrianJndi",
+    "typeDesc": "mdx over mondrianJndi",
+    "parent": "MDX",
+    "properties": [
+     {
+      "name": "name",
+      "value": "TABLE_5",
+      "type": "Id"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "jndi",
+      "value": "SampleData",
+      "type": "Jndi"
+     },
+     {
+      "name": "catalog",
+      "value": "mondrian:/SteelWheels",
+      "type": "MondrianCatalog"
+     },
+     {
+      "name": "query",
+      "value": "SELECT\nNON EMPTY [Measures].[Quantity] ON COLUMNS,\nNON EMPTY topcount([Product].[Vendor].Members,5,[Measures].[Quantity]) ON ROWS\nFROM [SteelWheelsSales]",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "bandedMode",
+      "value": "compact",
+      "type": "BandedMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ],
+    "meta": "CDA",
+    "meta_conntype": "mondrian.jndi",
+    "meta_datype": "mdx"
+   },
+   {
+    "id": "8d972b22-9422-2cc4-6fe6-eac8bb23175b",
+    "type": "Componentsmdx_mondrianJndi",
+    "typeDesc": "mdx over mondrianJndi",
+    "parent": "MDX",
+    "properties": [
+     {
+      "name": "name",
+      "value": "TABLE",
+      "type": "Id"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "jndi",
+      "value": "SampleData",
+      "type": "Jndi"
+     },
+     {
+      "name": "catalog",
+      "value": "mondrian:/SteelWheels",
+      "type": "MondrianCatalog"
+     },
+     {
+      "name": "query",
+      "value": "SELECT\nNON EMPTY [Measures].[Quantity] ON COLUMNS,\nNON EMPTY topcount([Product].[Vendor].Members,25,[Measures].[Quantity]) ON ROWS\nFROM [SteelWheelsSales]",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "bandedMode",
+      "value": "compact",
+      "type": "BandedMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ],
+    "meta": "CDA",
+    "meta_conntype": "mondrian.jndi",
+    "meta_datype": "mdx"
+   },
+   {
+    "id": "SCRIPTING",
+    "name": "SCRIPTING Queries",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "SCRIPTING Queries",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "f3cf8254-e30e-ae0b-4193-70b7dd905b04",
+    "type": "Componentsscriptable_scripting",
+    "typeDesc": "scriptable over scripting",
+    "parent": "SCRIPTING",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SLIDER1",
+      "type": "Id"
+     },
+     {
+      "name": "initscript",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "language",
+      "value": "beanshell",
+      "type": "String"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "query",
+      "value": "\nimport org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\n\nString[] columnNames = new String[1];\ncolumnNames[0] = &quot;Region&quot;;\nClass[] columnTypes = new Class[5];\ncolumnTypes[0] = String.class;\ncolumnTypes[1] = Integer.class;\ncolumnTypes[2] = Integer.class;\ncolumnTypes[3] = Integer.class;\ncolumnTypes[4] = Integer.class;\n\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\nmodel.addRow(new Object[]{ new String(&quot;East&quot;), new Integer(10), new Integer(10), new Integer(14), new Integer(21)});\nmodel.addRow(new Object[]{ new String(&quot;West&quot;), new Integer(14), new Integer(34), new Integer(10), new Integer(12)});\nmodel.addRow(new Object[]{ new String(&quot;South&quot;), new Integer(10), new Integer(11), new Integer(14), new Integer(15)});\nmodel.addRow(new Object[]{ dataRow.get(&quot;status&quot;), new Integer(10), new Integer(11), new Integer(14), new Integer(15)});\nreturn model;",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ],
+    "meta": "CDA",
+    "meta_conntype": "scripting.scripting",
+    "meta_datype": "scriptable"
+   }
+  ]
+ },
+ "filename": "/system/IvyBC/dashboards/admin/switch.cdfde"
+}

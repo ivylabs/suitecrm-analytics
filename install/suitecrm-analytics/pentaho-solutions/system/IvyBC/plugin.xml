@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="IvyBC" loader="DEFAULT">
+<overlays>
+		<overlay id="startup.IvyBC" resourcebundle="content/IvyBC/resources/lang/messages" priority="2">
+			<menubar id="toolsmenu">
+				<!--<menuitem id="IvyBC" label="${Launcher.IvyBC}" command="mantleXulHandler.openUrl('${Launcher.IvyBC}','${Launcher.IvyBC_TOOLTIP}','plugin/IvyBC/api/default')"/>-->
+	      	</menubar>
+	    </overlay>
+	</overlays>
+	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+	<static-paths>
+		<static-path url="/IvyBC/static" localFolder="static"/>
+		<static-path url="/IvyBC/resources" localFolder="resources"/>
+	</static-paths>
+	<content-types>
+		<content-type>
+			<title>IvyBC</title>
+			<description></description>
+			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
+		</content-type>
+	</content-types>
+	<content-generator
+		id="IvyBC"
+		title="IvyBC"
+		type="IvyBC"
+		class="com.ivyis.pentaho.ivylicense.resources.IvyContentGenerator"/>
+	<!-- Menu entry -->
+	<menu-items>
+		<!--<menu-item id="IvyBC_main" anchor="tools-submenu" label="IvyBC" command="content/IvyBC/" type="MENU_ITEM" how="LAST_CHILD"/>-->
+	</menu-items>
+</plugin>

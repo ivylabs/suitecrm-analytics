@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="SuiteCRMAnalytics" loader="DEFAULT">
+<overlays>
+		<overlay id="startup.SuiteCRMAnalytics" resourcebundle="content/SuiteCRMAnalytics/resources/lang/messages">
+			<menubar id="toolsmenu">
+				<!--<menuitem id="SuiteCRMAnalytics" label="${Launcher.SuiteCRMAnalytics}" command="mantleXulHandler.openUrl('${Launcher.SuiteCRMAnalytics}','${Launcher.SuiteCRMAnalytics_TOOLTIP}','plugin/SuiteCRMAnalytics/api/default')"/>-->
+	      	</menubar>
+	    </overlay>
+	</overlays>
+	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+	<static-paths>
+		<static-path url="/SuiteCRMAnalytics/static" localFolder="static"/>
+		<static-path url="/SuiteCRMAnalytics/resources" localFolder="resources"/>
+	</static-paths>
+	<content-types>
+		<content-type>
+			<title>SuiteCRMAnalytics</title>
+			<description></description>
+			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
+		</content-type>
+	</content-types>
+	<content-generator
+		id="SuiteCRMAnalytics"
+		title="SuiteCRMAnalytics"
+		type="SuiteCRMAnalytics"
+		class="pt.webdetails.cpk.CpkContentGenerator"/>
+	<!-- Menu entry -->
+	<menu-items>
+		<!--<menu-item id="SuiteCRMAnalytics_main" anchor="tools-submenu" label="SuiteCRMAnalytics" command="content/SuiteCRMAnalytics/" type="MENU_ITEM" how="LAST_CHILD"/>-->
+	</menu-items>
+</plugin>

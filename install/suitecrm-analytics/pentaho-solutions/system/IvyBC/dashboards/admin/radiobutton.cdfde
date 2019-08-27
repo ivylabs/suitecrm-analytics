@@ -1,0 +1,434 @@
+{
+ "layout": {
+  "title": "components",
+  "rows": [
+   {
+    "id": "13afc3e9-9106-7dc5-4b1a-1103a9a15fe7",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "DOCS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "tr.odd {\nbackground-color: #FFF;\n} ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
+    "id": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "properties": [
+     {
+      "name": "name",
+      "value": "MAIN_CONTENT",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "9",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "789eb2f9-6f24-3468-aeb6-9af91ed8fec6",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"bootstrap_radio_button\">Bootstrap Radio Button</h2>\n<h4>Common Options</h4>\n<table class=\"table\">\n    <thead>\n        <tr>\n            <th>Option</th>\n            <th>Example</th>\n            <th>Description</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>Label</td>\n            <td>Radio Title</td>\n            <td>The Label of the Radio Button that is displayed above the Radio Button options</td>\n        </tr>\n        <tr>\n            <td>Value As ID</td>\n            <td>True, False</td>\n            <td>Use the Data Value as the ID for the Radio Button also?</td>\n        </tr>\n        <tr>\n            <td>Values Array</td>\n            <td>[\"ID\",\"Value\"]</td>\n            <td>A list of IDs and Values used to populate the Radio Button Manually</td>\n        </tr>\n        <tr>\n            <td>Orientation</td>\n            <td>Vertical, Horizontal</td>\n            <td>The layout of the Radio Button Options</td>\n        </tr>\n    </tbody>\n</table>\n<h4>Default Vertical Radio Button</h4>\n<span id=\"radio_sample_1\"></span>\n<h4>Horizontal Radio Button</h4>\n<span id=\"radio_sample_2\"></span>\n<hr /> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   }
+  ]
+ },
+ "components": {
+  "rows": [
+   {
+    "id": "IVYISBOOTSTRAP",
+    "name": "Ivy IS Bootstrap",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Ivy IS Bootstrap",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "700fd81d-2fb9-dc11-d7fe-37daf3d778ba",
+    "type": "ComponentsBSRadioButtonComponent",
+    "typeDesc": "Bootstrap Radio Button",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "RADIO_SAMPLE_1",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Radio Title",
+      "type": "String"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Option 1\",\"Option 1\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "alignment",
+      "value": "vertical",
+      "type": "alignmentCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "radio_sample_1",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "function d(){\n    alert(INPUT_PARAM);    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "0575e7ca-c1d6-f37f-3fb8-3b15b8fa2711",
+    "type": "ComponentsBSRadioButtonComponent",
+    "typeDesc": "Bootstrap Radio Button",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "RADIO_SAMPLE_2",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Radio Title",
+      "type": "String"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Option 1\",\"Option 1\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "alignment",
+      "value": "horizontal",
+      "type": "alignmentCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "radio_sample_2",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "function d(){\n    alert(INPUT_PARAM);    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "e4242e47-5c01-4fae-f35d-c8b5b7c46dd8",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "INPUT_PARAM",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "Hello World",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   }
+  ]
+ },
+ "datasources": {
+  "rows": []
+ },
+ "filename": "/system/IvyBC/dashboards/admin/radiobutton.cdfde"
+}

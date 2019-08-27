@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-definition xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:layout="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" xmlns:page="http://jfreereport.sourceforge.net/namespaces/reports/legacy/ext">
+  <rule>
+    <selector>.masterFont</selector>
+    <styles>
+      <content-styles color="#666666"/>
+      <text-styles font-face="SansSerif"/>
+    </styles>
+  </rule>
+  <rule>
+    <selector>.reportHeader</selector>
+    <styles>
+      <border-styles padding-left="0"/>
+      <common-styles vertical-alignment="middle"/>
+      <content-styles color="#eb6657"/>
+      <text-styles bold="true" font-size="14"/>
+    </styles>
+  </rule>
+  <rule>
+    <selector>.reportSubHeader</selector>
+    <styles>
+      <content-styles color="#eb6657"/>
+      <text-styles font-size="12"/>
+    </styles>
+  </rule>
+  <rule>
+    <selector>.reportTextHeader</selector>
+    <styles>
+      <content-styles color="#666666"/>
+      <text-styles bold="true"/>
+    </styles>
+  </rule>
+</style-definition>

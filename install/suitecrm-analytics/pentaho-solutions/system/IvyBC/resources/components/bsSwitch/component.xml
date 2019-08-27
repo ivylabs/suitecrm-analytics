@@ -1,0 +1,189 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Switch</Name>
+		<IName>BSSwitchComponent</IName>
+		<Description>Bootstrap Switch</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>listeners</Property>
+			<Property>parameter</Property>
+			<Property>htmlObject</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>refreshPeriod</Property>
+			<Property>executeAtStart</Property>
+			<Property>switchSize</Property>
+			<Property>switchOnColor</Property>
+			<Property>switchOffColor</Property>
+			<Property>switchOnText</Property>
+			<Property>switchOffText</Property>
+			<Property>switchLableText</Property>
+			<Property>switchAnimate</Property>
+			<Property>switchDisable</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="bsSwitch.js" />
+			<Dependencies>
+				<Dependency src="bootstrap-switch.js" version="1.0">bootstrap-switch.js</Dependency>
+			</Dependencies>
+            <Styles>
+                <Style version="1.0" src="bootstrap-switch.css">bootstrap-switch.css</Style>
+            </Styles>
+			
+			<CustomProperties>
+			
+				<DesignerProperty>
+					<Header>
+						<Name>switchSize</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>normal</DefaultValue>
+						<Description>Size</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>53</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Mini'>mini</Value>
+						<Value display='Small'>small</Value>
+						<Value display='Normal'>normal</Value>
+						<Value display='Large'>large</Value>
+					</Values>
+				</DesignerProperty>
+			
+				<DesignerProperty>
+					<Header>
+						<Name>switchOnColor</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>default</DefaultValue>
+						<Description>On Color</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>54</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Default'>default</Value>
+						<Value display='Primary'>primary</Value>
+						<Value display='Info'>info</Value>
+						<Value display='Success'>success</Value>
+						<Value display='Warning'>warning</Value>
+						<Value display='Danger'>danger</Value>
+					</Values>
+				</DesignerProperty>
+			
+				<DesignerProperty>
+					<Header>
+						<Name>switchOffColor</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>default</DefaultValue>
+						<Description>Off Color</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>55</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Default'>default</Value>
+						<Value display='Primary'>primary</Value>
+						<Value display='Info'>info</Value>
+						<Value display='Success'>success</Value>
+						<Value display='Warning'>warning</Value>
+						<Value display='Danger'>danger</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>switchOnText</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>ON</DefaultValue>
+						<Description>On Text</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>On Text</Tooltip>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>56</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>switchOffText</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>OFF</DefaultValue>
+						<Description>Off Text</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>On Text</Tooltip>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>57</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>switchLableText</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>&amp;nbsp;</DefaultValue>
+						<Description>Label Text</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Label Text</Tooltip>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>58</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>switchAnimate</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>true</DefaultValue>
+						<Description>Animate</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Animate</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>59</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>switchDisable</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>false</DefaultValue>
+						<Description>Disable</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Animate</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>60</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+			</CustomProperties>
+	
+	
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

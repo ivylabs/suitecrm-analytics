@@ -1,0 +1,1827 @@
+{
+ "layout": {
+  "title": "components",
+  "rows": [
+   {
+    "id": "13afc3e9-9106-7dc5-4b1a-1103a9a15fe7",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "DOCS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "tr.odd {\nbackground-color: #FFF;\n} ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
+    "id": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "properties": [
+     {
+      "name": "name",
+      "value": "MAIN_CONTENT",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ef8ed194-9ea5-7646-6278-1f3877aee6b9",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"bootstrap_select\">Bootstrap Select</h2>\n<p>The Select component allows a user to set the value of a single parameter in the dashboard.</p>\n<h4>Common Options</h4>\n<table class=\"table\">\n    <thead>\n        <tr>\n            <th>Option</th>\n            <th>Example</th>\n            <th>Description</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>Value As ID</td>\n            <td>True, False</td>\n            <td>Use the Data Value as the ID for the Select also?</td>\n        </tr>\n        <tr>\n            <td>Values Array</td>\n            <td>[\"ID\",\"Value\"]</td>\n            <td>A list of IDs and Values used to populate the Select Manually</td>\n        </tr>\n        <tr>\n            <td>Button Type</td>\n            <td>Primary, Warning, Danger, Info</td>\n            <td>The type of Select to render. This defines its colour</td>\n        </tr>\n        <tr>\n            <td>Button Block</td>\n            <td>True, False</td>\n            <td>Defines if the Select should be rendered using the full width of the parent div</td>\n        </tr>\n        <tr>\n            <td>Button Size</td>\n            <td>Default, Large, Small, Mini</td>\n            <td>The Size of the Select to be rendered</td>\n        </tr>\n        <tr>\n            <td>Button Icon</td>\n            <td>Star, Cog, Info</td>\n            <td>The Icon to attatch to the Select. By default there is no icon</td>\n        </tr>\n        <tr>\n            <td>Prepend Icon</td>\n            <td>True, False</td>\n            <td>Prepend the chosen icon to the Select or not. Defaults to False</td>\n        </tr>\n        <tr>\n            <td>Items Size</td>\n            <td>5, 10, 20</td>\n            <td>The number of items displayed in a list. This will enable a scrollbar in the select if there are more items populating the select than the list limit</td>\n        </tr>\n        <tr>\n            <td>Live Search</td>\n            <td>True, False</td>\n            <td>Enables a Live Filter on the Search dropdown</td>\n        </tr>\n    </tbody>\n</table>\n<h4>Select Types</h4>\n<span id=\"select_sample_1\"></span>\n<span id=\"select_sample_2\"></span>\n<span id=\"select_sample_3\"></span>\n<span id=\"select_sample_4\"></span>\n<span id=\"select_sample_5\"></span>\n<h4>Select Sizes</h4>\n<span id=\"select_sample_large\"></span>\n<span id=\"select_sample_default\"></span>\n<span id=\"select_sample_small\"></span>\n<span id=\"select_sample_mini\"></span>\n<h4>Select Display Block</h4>\n<span id=\"select_sample_display_block\"></span>\n<h4>Select Icons</h4>\n<span id=\"select_sample_icon\"></span> \n<span id=\"select_sample_icon_prepend\"></span>\n<h4>Select Live</h4>\n<span id=\"select_sample_live\"></span> \n<h4>Additional Notes</h4>\n<p>None</p>\n<hr /> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   }
+  ]
+ },
+ "components": {
+  "rows": [
+   {
+    "id": "IVYISBOOTSTRAP",
+    "name": "Ivy IS Bootstrap",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Ivy IS Bootstrap",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "286c22cf-39a4-f1ca-f9cb-7c82c3ffd095",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_1",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Default Select\",\"Default Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_1",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "13a150d3-49d3-fb43-d699-80c0a714967e",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_2",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Primary Select\",\"Primary Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-primary",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_2",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "19fcc3a6-e464-2db0-bec4-0d514cd08e87",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_3",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Success Select\",\"Success Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-success",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_3",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "a6e7290f-33c5-4c17-0429-31a06a7de40c",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_4",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Warning Select\",\"Warning Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-warning",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_4",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "dcd82ff9-c77c-8311-e287-6351f42b5014",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_5",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Danger Select\",\"Danger Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-danger",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_5",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "680885f1-700b-6cb2-968e-47d2f37a6b43",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_LARGE",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Large Select\",\"Large Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "btn-lg",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_large",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "65c4b242-e6a1-feca-feff-baf978ea636b",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_DEFAULT",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Default Select\",\"Default Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_default",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "bacbd9a6-c073-acab-95a3-8c3d173e1beb",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_SMALL",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Small Select\",\"Small Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "btn-sm",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_small",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "8889a4f4-31ed-0f7f-5b96-2a2d7dc0db60",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_MINI",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Mini Select\",\"Mini Select\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "btn-xs",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_mini",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "5542c981-66d1-c6dc-a82f-eb7fd12c7a6b",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_DISPLAY_BLOCK",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Select Display Block True\",\"Select Display Block True\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_display_block",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "57fe7ab9-bfa8-4a20-dfe5-54379983bde6",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_ICON",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Select Icon\",\"Select Icon\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "glyphicon-star",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_icon",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "717ebac8-dd6d-5fda-24c0-4da82e4da29d",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_ICON_PREPEND",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Select Icon\",\"Select Icon\"],[\"Option 2\",\"Option 2\"],[\"Option 3\",\"Option 3\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "glyphicon-star",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_icon_prepend",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "832ed091-259c-1daa-02d7-0a4b492551d2",
+    "type": "ComponentsBSSelectBaseComponent",
+    "typeDesc": "Bootstrap Select",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SELECT_SAMPLE_LIVE",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "valueAsId",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "dataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "valuesArray",
+      "value": "[[\"Live Select\",\"Live Select\"],[\"Hot Dogs\",\"Hot Dogs\"],[\"Cat Food\",\"Cat Food\"],[\"Biscuits\",\"Biscuits\"],[\"Cheese\",\"Cheese\"]]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonLiveSearch",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonBlock",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "itemsSize",
+      "value": "false",
+      "type": "String"
+     },
+     {
+      "name": "buttonType",
+      "value": "btn-default",
+      "type": "buttonTypeCustom"
+     },
+     {
+      "name": "buttonSize",
+      "value": "",
+      "type": "buttonSizeCustom"
+     },
+     {
+      "name": "prependIcon",
+      "value": "False",
+      "type": "Boolean"
+     },
+     {
+      "name": "buttonIcon",
+      "value": "none",
+      "type": "buttonIconCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "select_sample_live",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postFetch",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "e4242e47-5c01-4fae-f35d-c8b5b7c46dd8",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "INPUT_PARAM",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "Hello World",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   }
+  ]
+ },
+ "datasources": {
+  "rows": []
+ },
+ "filename": "/system/IvyBC/dashboards/admin/select.cdfde"
+}

@@ -1,0 +1,92 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Input</Name>
+		<IName>BSInputComponent</IName>
+		<Description>Bootstrap Input</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>listeners</Property>
+			<Property>parameter</Property>
+			<Property>executeAtStart</Property>
+			<Property>htmlObject</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>inputType</Property>
+			<Property>inputSize</Property>
+			<Property>textInputPlaceholder</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="bsInput.js" />
+			<Dependencies />
+			<Styles />
+			
+			<CustomProperties>
+			
+			<DesignerProperty>
+				<Header>
+					<Name>inputType</Name>
+					<Parent>BaseProperty</Parent>
+					<DefaultValue>text</DefaultValue>
+					<Description>Input Type</Description>
+					<InputType type='valuelist' />
+					<OutputType>String</OutputType>
+					<Order>52</Order>
+					<Advanced>false</Advanced>
+					<Version>1.0</Version>
+				</Header>
+				<Values>
+					<Value display='Text'>text</Value>
+					<Value display='Password'>password</Value>
+				</Values>
+			</DesignerProperty>
+
+			<DesignerProperty>
+				<Header>
+					<Name>inputSize</Name>
+					<Parent>BaseProperty</Parent>
+					<DefaultValue></DefaultValue>
+					<Description>Size</Description>
+					<Advanced>true</Advanced>
+					<InputType type='valuelist' />
+					<OutputType>String</OutputType>
+					<Order>53</Order>
+					<Version>1.0</Version>
+				</Header>
+				<Values>
+					<Value display='Default'></Value>
+					<Value display='Small'>input-sm</Value>
+					<Value display='Large'>input-lg</Value>
+				</Values>
+			</DesignerProperty>
+
+			<DesignerProperty>
+			    <Header>
+			        <Name>textInputPlaceholder</Name>
+			        <Parent>BaseProperty</Parent>
+			        <DefaultValue></DefaultValue>
+			        <Description>Placeholder</Description>
+			        <Tooltip>Text input placeholder</Tooltip>
+			        <InputType>String</InputType>
+			        <OutputType>String</OutputType>
+			        <Order>54</Order>
+					<Advanced>true</Advanced>
+			        <Version>1.0</Version>
+			    </Header>
+			</DesignerProperty>
+
+		</CustomProperties>
+	
+	
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

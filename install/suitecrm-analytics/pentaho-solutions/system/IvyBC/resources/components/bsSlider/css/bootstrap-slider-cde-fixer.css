@@ -1,0 +1,5 @@
+div.slider .top, div.slider .bottom {
+    background-color: transparent;
+    border: 0px solid transparent;
+    padding: 5px;
+}

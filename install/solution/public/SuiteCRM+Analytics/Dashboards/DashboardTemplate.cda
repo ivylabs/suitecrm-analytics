@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="Q1" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="Q2" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="Q3" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="performanceMetricDotQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="seriesQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="performanceTableQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="getLeadTitles" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="getLeadSources" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="getLeads" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="doubleSeriesFull" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="singleSeriesFull1" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="singleSeriesPie" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="singleSeriesFull" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="multipleSeriesFull" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="multipleSeries" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="JSONQuery" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="Q1" id="Q1" type="mdx">
+      <Name>Q1</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select NON EMPTY {[Measures].[Quantity]} ON COLUMNS,
+  NON EMPTY Descendants([Time].[2004], 2) ON ROWS
+from [SteelWheelsSales]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Q2" id="Q2" type="mdx">
+      <Name>Q2</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select NON EMPTY {[Measures].[Quantity]} ON COLUMNS,
+  NON EMPTY TopCount(Descendants([Time].[2004], 2),5) ON ROWS
+from [SteelWheelsSales]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Q3" id="Q3" type="mdx">
+      <Name>Q3</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select NON EMPTY {[Measures].[Quantity]} ON COLUMNS,
+  NON EMPTY {[Markets].[EMEA], [Markets].[Japan]} ON ROWS
+from [SteelWheelsSales]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="performanceMetricDotQuery"
+               id="performanceMetricDotQuery"
+               type="sql">
+      <Name>performanceMetricDotQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    CONCAT(DU.USER_FIRST_NAME , ' ' , DU.USER_LAST_NAME) USER_FULL_NAME
+    ,COUNT(FO.OPPORTUNITY_TK) AS OPPORTUNITY_COUNT
+    ,SUM(FO.OPPORTUNITY_AMOUNT) AS OPEN_OPPORTUNITY_AMOUNT
+FROM F_OPPORTUNITY_MANAGEMENT AS FO
+INNER JOIN D_USERS AS DU 
+    ON FO.ASSIGNED_USER_TK = DU.USER_TK
+GROUP BY
+     FO.ASSIGNED_USER_TK
+ORDER BY
+     2,3]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="seriesQuery" id="seriesQuery" type="sql">
+      <Name>seriesQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    DC.CASE_STATUS
+	,DD.MONTH_LONG_DESC
+	,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_ACCOUNTS DA
+	ON FCM.ACCOUNT_TK = DA.ACCOUNT_TK
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK
+GROUP BY 1,2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="performanceTableQuery" id="performanceTableQuery"
+               type="sql">
+      <Name>performanceTableQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 
+    CONCAT(DE.EMPLOYEE_FIRST_NAME , ' ' , DE.EMPLOYEE_LAST_NAME) EMPLOYEE_FULL_NAME
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE <> 'Closed Lost' AND DO.OPPORTUNITY_SALES_STAGE <> 'Closed Won', 1, 0)) AS OPEN_OPPORTUNITY_COUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE <> 'Closed Lost' AND DO.OPPORTUNITY_SALES_STAGE <> 'Closed Won', FO.OPPORTUNITY_AMOUNT, 0)) AS OPEN_OPPORTUNITY_AMOUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = 'Closed Won', 1, 0)) AS CLOSED_WON_OPPORTUNITY_COUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = 'Closed Won', FO.OPPORTUNITY_AMOUNT, 0)) AS CLOSED_WON_OPPORTUNITY_AMOUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = 'Closed Lost', 1, 0)) AS CLOSED_LOST_OPPORTUNITY_COUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = 'Closed Lost', FO.OPPORTUNITY_AMOUNT, 0)) AS CLOSED_LOST_OPPORTUNITY_AMOUNT
+	,SUM(FO.OPPORTUNITY_AMOUNT) AS TOTAL_OPPORTUNITY_AMOUNT
+	,COUNT(FO.OPPORTUNITY_TK) TOTAL_OPPORTUNITIES
+FROM F_OPPORTUNITIES AS FO
+	INNER JOIN D_EMPLOYEES AS DE ON FO.EMPLOYEE_TK = DE.EMPLOYEE_TK
+	INNER JOIN D_OPPORTUNITIES AS DO ON FO.OPPORTUNITY_TK = DO.OPPORTUNITY_TK
+GROUP BY DE.EMPLOYEE_TK 
+ORDER BY 1 DESC]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="getLeadTitles" id="getLeadTitles" type="sql">
+      <Name>getLeadTitles</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Titles' as LEAD_TITLE
+UNION
+SELECT
+     DISTINCT(`D_LEADS`.`LEAD_TITLE`)
+FROM
+     `D_LEADS`
+WHERE `D_LEADS`.`LEAD_TK` <> 0]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="getLeadSources" id="getLeadSources" type="sql">
+      <Name>getLeadSources</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Sources' as LEAD_SOURCE
+UNION
+SELECT
+     DISTINCT(`D_LEADS`.`LEAD_SOURCE`)
+FROM
+     `D_LEADS`
+WHERE `D_LEADS`.`LEAD_TK` <> 0]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="getLeads" id="getLeads" type="sql">
+      <Name>getLeads</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="pLeadTitle" name="pLeadTitle" type="String"/>
+         <Parameter default="pLeadSource" name="pLeadSource" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+     `D_LEADS`.`LEAD_ID`,
+     `D_LEADS`.`LEAD_DESCRIPTION`,
+     `D_LEADS`.`LEAD_SALUTATION`,
+     `D_LEADS`.`LEAD_TITLE`,
+     `D_LEADS`.`LEAD_SOURCE`
+FROM
+     `D_LEADS`
+WHERE (`D_LEADS`.`LEAD_SOURCE` IN (${pLeadSource}) OR 'All Sources' IN (${pLeadSource}))
+AND (`D_LEADS`.`LEAD_TITLE` IN (${pLeadTitle}) OR 'All Titles' IN (${pLeadTitle}))
+ORDER BY `D_LEADS`.`LEAD_SOURCE`,`D_LEADS`.`LEAD_TITLE`]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="doubleSeriesFull" id="doubleSeriesFull"
+               type="jsonScriptable">
+      <Name>doubleSeriesFull</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{  
+   "metadata":[  
+      {  
+         "colName":"Time",
+         "colType":"String",
+         "colIndex":0
+      },
+      {  
+         "colName":"Status",
+         "colType":"String",
+         "colIndex":1
+      },
+      {  
+         "colName":"Quantity",
+         "colType":"Numeric",
+         "colIndex":2
+      }
+   ],
+   "resultset":[  
+   ["Jan","Closed",14  ],
+  ["Jan","Opened",15  ],
+  ["Feb","Closed",16  ],
+  ["Feb","Opened",16  ],
+  ["Mar","Closed",13  ],
+  ["Mar","Opened",14  ],
+  ["Apr","Closed",13  ],
+  ["Apr","Opened",17  ],
+  ["May","Closed",15  ],
+  ["May","Opened",17  ],
+  ["Jun","Closed",12  ],
+  ["Jun","Opened",15  ],
+  ["Jul","Closed",14  ],
+  ["Jul","Opened",15  ],
+  ["Aug","Closed",16  ],
+  ["Aug","Opened",16  ],
+  ["Sep","Closed",15  ],
+  ["Sep","Opened",14  ],
+  ["Oct","Closed",14  ],
+  ["Oct","Opened",13  ],
+  ["Nov","Closed",18  ],
+  ["Nov","Opened",13  ],
+  ["Dec","Closed",13  ],
+  ["Dec","Opened",16  ]
+   ]
+   }
+}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="singleSeriesFull1" id="singleSeriesFull1"
+               type="jsonScriptable">
+      <Name>singleSeriesFull1</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{  
+   "metadata":[  
+      {  
+         "colName":"Time",
+         "colType":"String",
+         "colIndex":0
+      },
+      {  
+         "colName":"Quantity",
+         "colType":"Numeric",
+         "colIndex":1
+      }
+   ],
+   "resultset":[  
+  ["Jan",27  ],
+  ["Feb",1  ],
+  ["Mar",32  ],
+  ["Apr",37  ],
+  ["May",43  ],
+  ["Jun",37  ],
+  ["Jul",47  ],
+  ["Aug",42  ],
+  ["Sep",40  ],
+  ["Oct",4  ],
+  ["Nov",40  ],
+  ["Dec",39  ]
+   ]
+   }
+}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="singleSeriesPie" id="singleSeriesPie"
+               type="jsonScriptable">
+      <Name>singleSeriesPie</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{  
+   "metadata":[  
+      {  
+         "colName":"Status",
+         "colType":"String",
+         "colIndex":0
+      },
+      {  
+         "colName":"Quantity",
+         "colType":"Numeric",
+         "colIndex":1
+      }
+   ],
+   "resultset":[  
+     ["Open",14  ],
+  ["Closed",2  ],
+  ["Waiting",22  ]
+   ]
+   }
+}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="singleSeriesFull" id="singleSeriesFull"
+               type="jsonScriptable">
+      <Name>singleSeriesFull</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{  
+   "metadata":[  
+      {  
+         "colName":"Time",
+         "colType":"String",
+         "colIndex":0
+      },
+      {  
+         "colName":"Quantity",
+         "colType":"Numeric",
+         "colIndex":1
+      }
+   ],
+   "resultset":[  
+     ["Jan",14  ],
+  ["Feb",2  ],
+  ["Mar",22  ],
+  ["Apr",33  ],
+  ["May",35  ],
+  ["Jun",30  ],
+  ["Jul",25  ],
+  ["Aug",37  ],
+  ["Sep",19  ],
+  ["Oct",28  ],
+  ["Nov",36  ],
+  ["Dec",29  ]
+   ]
+   }
+}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="multipleSeriesFull" id="multipleSeriesFull"
+               type="jsonScriptable">
+      <Name>multipleSeriesFull</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{  
+   "metadata":[  
+      {  
+         "colName":"Time",
+         "colType":"String",
+         "colIndex":0
+      },
+      {  
+         "colName":"Status",
+         "colType":"String",
+         "colIndex":1
+      },
+      {  
+         "colName":"Quantity",
+         "colType":"Numeric",
+         "colIndex":2
+      }
+   ],
+   "resultset":[  
+      ["Jan","Closed",17  ],
+  ["Jan","Opened",13  ],
+  ["Jan","Waiting",17  ],
+  ["Feb","Closed",14  ],
+  ["Feb","Opened",13  ],
+  ["Feb","Waiting",15  ],
+  ["Mar","Closed",14  ],
+  ["Mar","Opened",16  ],
+  ["Mar","Waiting",14  ],
+  ["Apr","Closed",13  ],
+  ["Apr","Opened",12  ],
+  ["Apr","Waiting",14  ],
+  ["May","Closed",17  ],
+  ["May","Opened",16  ],
+  ["May","Waiting",16  ],
+  ["Jun","Closed",13  ],
+  ["Jun","Opened",16  ],
+  ["Jun","Waiting",13  ],
+  ["Jul","Closed",12  ],
+  ["Jul","Opened",16  ],
+  ["Jul","Waiting",17  ],
+  ["Aug","Closed",17  ],
+  ["Aug","Opened",14  ],
+  ["Aug","Waiting",17  ],
+  ["Sep","Closed",16  ],
+  ["Sep","Opened",13  ],
+  ["Sep","Waiting",13  ],
+  ["Oct","Closed",16  ],
+  ["Oct","Opened",13  ],
+  ["Oct","Waiting",16  ],
+  ["Nov","Closed",15  ],
+  ["Nov","Opened",14  ],
+  ["Nov","Waiting",14  ],
+  ["Dec","Closed",16  ],
+  ["Dec","Opened",16  ],
+  ["Dec","Waiting",16  ]
+   ]
+   }
+}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="multipleSeries" id="multipleSeries"
+               type="jsonScriptable">
+      <Name>multipleSeries</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{  
+   "metadata":[  
+      {  
+         "colName":"Time",
+         "colType":"String",
+         "colIndex":0
+      },
+      {  
+         "colName":"Status",
+         "colType":"String",
+         "colIndex":1
+      },
+      {  
+         "colName":"Quantity",
+         "colType":"Numeric",
+         "colIndex":2
+      }
+   ],
+   "resultset":[  
+      [  
+         "Jan",
+         "Opened",
+         3245
+      ],
+      [  
+         "Jan",
+         "Closed",
+         2345
+      ],
+      [  
+         "Jan",
+         "Waiting",
+         324
+      ],
+      [  
+         "Feb",
+         "Opened",
+         3245
+      ],
+      [  
+         "Feb",
+         "Closed",
+         2345
+      ],
+      [  
+         "Feb",
+         "Waiting",
+         324
+      ],
+      [  
+         "Mar",
+         "Opened",
+         3245
+      ],
+      [  
+         "Mar",
+         "Closed",
+         2345
+      ],
+      [  
+         "Mar",
+         "Waiting",
+         324
+      ],
+      [  
+         "Apr",
+         "Opened",
+         3245
+      ],
+      [  
+         "Apr",
+         "Closed",
+         2345
+      ],
+      [  
+         "Apr",
+         "Waiting",
+         324
+      ]
+   ]
+   }
+}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="JSONQuery" id="JSONQuery" type="jsonScriptable">
+      <Name>JSONQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{  
+   "metadata":[  
+      {  
+         "colName":"Time",
+         "colType":"String",
+         "colIndex":0
+      },
+      {  
+         "colName":"Quantity",
+         "colType":"Numeric",
+         "colIndex":1
+      }
+   ],
+   "resultset":[  
+      [  
+         "Jan",
+         3245
+      ],
+      [  
+         "Feb",
+         3117
+      ],
+      [  
+         "Mar",
+         2332
+      ],
+      [  
+         "Apr",
+         2077
+      ],
+      [  
+         "May",
+         2618
+      ],
+      [  
+         "Jun",
+         3748
+      ],
+      [  
+         "Jul",
+         3576
+      ],
+      [  
+         "Aug",
+         4564
+      ],
+      [  
+         "Sep",
+         3171
+      ],
+      [  
+         "Oct",
+         5483
+      ],
+      [  
+         "Nov",
+         10678
+      ],
+      [  
+         "Dec",
+         3000
+      ]
+   ]
+   }
+}]]></Query>
+   </DataAccess>
+</CDADescriptor>

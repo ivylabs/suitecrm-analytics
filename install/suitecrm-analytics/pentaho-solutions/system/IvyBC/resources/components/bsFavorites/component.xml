@@ -1,0 +1,205 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Favorites</Name>
+		<IName>BSFavoritesComponent</IName>
+		<Description>Bootstrap Favorites</Description>
+		<Category>IVYISBOOTSTRAPPENTAHO</Category>
+		<CatDescription>Ivy IS Bootstrap Pentaho</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>executeAtStart</Property>
+			<Property>listeners</Property>
+			<Property>htmlObject</Property>
+			<Property>refreshPeriod</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>postFetch</Property>
+			<Property>displayType</Property>
+            <Definition name="valueProperties">
+				<Property name="showFullPath">showFullPath</Property>
+				<Property name="showTitle">showTitle</Property>
+				<Property name="showLastExec">showLastExec</Property>
+				<Property name="dateLastExecFormat">dateformat</Property>
+			</Definition>
+			<Definition name="chartDefinition">
+				<Property name="clickAction">cccClickAction</Property>
+				<Property name="colHeaders">colHeaders</Property>
+				<Property name="colTypes">colTypes</Property>
+				<Property name="colFormatls">colFormats</Property>
+				<Property name="colWidths">colWidths</Property>
+				<Property name="colSortable">colSortable</Property>
+				<Property name="colSearchable">colSearchable</Property>
+				<Property name="paginationType">paginationType</Property>
+		        <Property name="displayLength">displayLength</Property>
+		        <Property name="lengthChange">lengthChange</Property>
+		        <Property name="paginate">paginate</Property>
+				<Property name="filter">filter</Property>
+				<Property name="info">info</Property>
+				<Property name="sort">sort</Property>
+				<Property name="sortBy">sortBy</Property>
+				<Property name="oLanguage">oLanguage</Property>
+				<Property name="language">dtLanguage</Property>
+			</Definition>
+			<Property>tableResponsive</Property>
+			<Property>tableStriped</Property>
+			<Property>tableBordered</Property>
+			<Property>tableHover</Property>
+			<Property>tableCondensed</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="bsFavorites.js" />
+			<Dependencies></Dependencies>
+            <Styles>
+                <Style version="1.0" src="bsFavorites.css">bsFavorites.css</Style>
+            </Styles>
+			
+			<CustomProperties>
+
+				<DesignerProperty>
+					<Header>
+						<Name>displayType</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>table</DefaultValue>
+						<Description>Display type</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>50</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Table'>table</Value>
+						<Value display='List'>list</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>showFullPath</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Show Full Path value</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Show Full Path value</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>51</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>showTitle</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Show Title</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Show Title</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>52</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>showLastExec</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Show Last Execution</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Show Last Execution</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>53</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableResponsive</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Table Responsive</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Responsive</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>62</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableStriped</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Striped</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Striped</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>63</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableBordered</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Bordered</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Bordered</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>64</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableHover</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Hover</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Hover</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>65</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>tableCondensed</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Table Condensed</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Table Condensed</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>66</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+			
+			</CustomProperties>
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ws="http://jax-ws.dev.java.net/spring/core" xmlns:wss="http://jax-ws.dev.java.net/spring/servlet" xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+                           http://jax-ws.dev.java.net/spring/core http://jax-ws.dev.java.net/spring/core.xsd
+                           http://jax-ws.dev.java.net/spring/servlet http://jax-ws.dev.java.net/spring/servlet.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+  <context:annotation-config />
+  
+  <!-- JAX-RS beans -->
+  <bean id="api" class="org.pentaho.platform.web.servlet.JAXRSPluginServlet"/>
+  <bean id="cteApi" class="pt.webdetails.cte.web.CteApi">
+    <!--  default/fallback provider to use whenever CTE's editor is called for, and no provider is explicitly passed along -->
+    <property name="defaultProviderId" value="repo" />
+  </bean>
+  
+  <bean id="ICteEnvironment" class="pt.webdetails.cte.PentahoCteEnvironment" />
+  
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="cte.edit" />
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="properties" />
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="cdfde" />
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="html" />
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="css" />
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="xml" />
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="txt" />
+  <bean class="pt.webdetails.cte.CteContentGenerator" id="js" />
+  
+  <!-- chosen editor -->
+  <bean id="ICteEditor" class="pt.webdetails.cte.editor.ace.AceEditor" />  
+
+  <!-- content provider list --> 
+  <bean id="ICteProviderManager" class="pt.webdetails.cte.provider.CteDefaultProviderManager">
+    <constructor-arg>
+      <util:list id="providers" value-type="pt.webdetails.cte.api.ICteProvider">
+        
+        <!-- Provider list. Must implement pt.webdetails.cte.api.ICteProvider -->
+        <ref bean="contentRepoProvider" />
+        <ref bean="mondrianSchemaProvider" />
+        <!-- <ref bean="cteFileSystemProvider" /> -->
+        <ref bean="sparklAppsAutoDiscoverMetaProvider" />
+
+      </util:list>
+    </constructor-arg>
+
+  </bean>
+
+
+  <!-- <bean id="basicCdaProvider" class="pt.webdetails.cte.provider.cda.BasicCdaProvider" /> -->
+
+  <bean id="contentRepoProvider" class="pt.webdetails.cte.provider.repo.ContentRepoProvider">
+    <property name="id" value="repo" />
+    <property name="name" value="Content Repository" />
+  </bean>
+
+  <bean id="mondrianSchemaProvider" class="pt.webdetails.cte.provider.repo.MondrianSchemaProvider">
+    <property name="id" value="mondrian" />
+  </bean>
+
+  <!-- file system provider for CTE plugin -->
+  <!--
+    <bean id="cteFileSystemProvider" class="pt.webdetails.cte.provider.fs.GenericPluginFileSystemProvider">
+      <constructor-arg value="cte" />
+    </bean>
+  -->
+
+  <bean id="sparklAppsAutoDiscoverMetaProvider" class="pt.webdetails.cte.provider.fs.SparklAppsAutoDiscoverMetaProvider" />
+  
+</beans>

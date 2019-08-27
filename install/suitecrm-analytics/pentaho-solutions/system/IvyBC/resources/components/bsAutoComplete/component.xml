@@ -1,0 +1,99 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap AutoComplete</Name>
+		<IName>BSAutoCompleteComponent</IName>
+		<Description>Bootstrap AutoComplete</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>htmlObject</Property>
+			<Property>parameter</Property>
+			<Property>listeners</Property>
+			<Property name="parameters">xActionArrayParameter</Property>
+			<Definition name="queryDefinition">
+				<Property>dataSource</Property>
+			</Definition>
+			<Property>searchParam</Property>
+			<Property>maxResults</Property>
+			<Property>matchType</Property>
+			<Property>minTextLenght</Property>
+			<Property>executeAtStart</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>placeHolderValue</Property>
+			<Property>highlight</Property>
+			<Property>inputTextSize</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="BSAutoCompleteComponent.js" />
+			<Dependencies>
+				<Dependency src="bootstrap3-typeahead.js" version="3.0.3">bootstrap3-typeahead.js</Dependency>
+			</Dependencies>
+            
+            <Styles/>
+			
+			<CustomProperties>
+			
+				<DesignerProperty>
+					<Header>
+						<Name>placeHolderValue</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue></DefaultValue>
+						<Description>PlaceHolder Value</Description>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>53</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>highlight</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>true</DefaultValue>
+						<Description>Highlight</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Highlight</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>56</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>inputTextSize</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue></DefaultValue>
+						<Description>Text Input Size</Description>
+						<Advanced>true</Advanced>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>57</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Default'></Value>
+						<Value display='Small'>input-sm</Value>
+						<Value display='Large'>input-lg</Value>
+					</Values>
+				</DesignerProperty>
+
+			</CustomProperties>
+	
+	
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

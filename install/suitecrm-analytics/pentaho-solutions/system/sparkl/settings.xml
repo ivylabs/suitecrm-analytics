@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<cde-styles>
+		<path>system/sparkl/resources/styles</path>
+	</cde-styles>
+  	<cde-datasources/>
+	<cde-components>
+	  <!-- paths from solution with cde component definitions to be loaded-->
+	  <path>system/sparkl/resources/components</path>
+	  <path>sparkl/components</path>
+	</cde-components>
+
+	<!-- CDE RenderApi bean id, used by CPK to do a InterPluginCall -->
+	<cde-render-api-bean-id>renderApi</cde-render-api-bean-id>
+
+	<!-- CDE RenderApi render method name, used by CPK to do a InterPluginCall -->
+	<cde-render-api-render-method>render</cde-render-api-render-method>
+</settings>

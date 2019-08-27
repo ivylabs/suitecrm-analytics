@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title id="pageTitleProperty"></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+@HEADER@
+
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="/pentaho/api/repos/IvyUI/static/custom/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/pentaho/api/repos/suitecrm/static/custom/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <!--<link rel="stylesheet" href="/pentaho/api/repos/suitecrm/static/custom/css/skins/_all-skins.min.css">-->	
+	<link rel="stylesheet" href="/pentaho/api/repos/suitecrm/static/custom/css/skin-black-light.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+</head>
+<body class="hold-transition skin-black-light sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="/pentaho/plugin/suitecrm/api/main" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b style="color:#3c8dbc">C</b>RM</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b style="color:#3c8dbc">Suite</b>CRM</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell fa-1x"></i>
+              <span class="label label-success" id="pageNotificationsCount"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header" id="pageNotificationsCountMessage"></li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu" id="pageNotifications">
+
+                </ul>
+              </li>
+              <li class="footer"><a href="#">Dismiss All Messages</a></li>
+            </ul>
+          </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/pentaho/api/repos/suitecrm/static/custom/img/blankprofile.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs usernameSection pageUsername"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/pentaho/api/repos/suitecrm/static/custom/img/blankprofile.jpg" class="img-circle" alt="User Image">
+
+                <p class='usernameSection' class="pageUsername">
+                <!--  <small>Member since Nov. 2012</small>-->
+                </p>
+              </li>
+              <!-- Menu Body -->
+		<!--
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+            <!--  </li>
+		-->
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="/pentaho/Logout" id="signout" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="/pentaho/api/repos/suitecrm/static/custom/img/blankprofile.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p class='usernameSection pageUsername'></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+	<!--
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+	-->
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+
+
+	<li><a href="/pentaho/plugin/suitecrm/api/main"><i class="fa fa-home"></i> <span>Home</span></a></li>
+
+        <li class="treeview cde-dashboards-menu">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i> <span>Dashboards</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu cde-dashboards">
+            <li><a href="/pentaho/plugin/suitecrm/api/dashboards"><i class="fa fa-table"></i> Dashboard Browser</a></li>
+          </ul>
+        </li>
+
+	<li class="treeview prpt-reports-menu">
+          <a href="#">
+            <i class="fa fa-file-text"></i> <span>Reports</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu prpt-reports">
+            <li><a href="/pentaho/plugin/suitecrm/api/reports"><i class="fa fa-table"></i> Report Browser</a></li>
+          </ul>
+        </li>
+
+		  
+		  <li><a href="/pentaho/plugin/suitecrm/api/settings"><i class="fa fa-cogs"></i> <span>Settings</span></a></li>
+
+
+
+	<li><a href="/pentaho/plugin/suitecrm/api/help"><i class="fa fa-question"></i> <span>Help</span></a></li>
+
+	<li><a href="/pentaho/Logout"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+		  
+		  <li class="refreshCDE"><a href="#"><i class="fa fa-refresh"></i> <span>Refresh</span></a></li>
+      
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1 id="pageTitle"></h1>
+      <ol class="breadcrumb" id="pageBreadcrumb"></ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+
+
+
+	@CONTENT@
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      Powered by IvyIS - <b>Version</b> 1.0.0
+    </div>
+    <strong>Copyright &copy; 2014-2017 <a href="http://ivy-is.co.uk">Ivy Information Systems Scotland Ltd</a>.</strong> All rights
+    reserved.
+  </footer>
+
+ 
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+
+
+@FOOTER@
+
+<!-- ./wrapper -->
+	
+	<script src="/pentaho/api/repos/suitecrm/static/custom/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
+<!-- SlimScroll -->
+<!--<script src="/pentaho/api/repos/IvyUI/static/custom/plugins/slimScroll/jquery.slimscroll.min.js"></script>-->
+<!-- FastClick -->
+<!--<script src="/pentaho/api/repos/IvyUI/static/custom/plugins/fastclick/fastclick.js"></script>-->
+
+
+<script>
+  var AdminLTEOptions = {
+    //Enable sidebar expand on hover effect for sidebar mini
+    //This option is forced to true if both the fixed layout and sidebar mini
+    //are used together
+	  
+	  
+	  
+    
+  };
+	
+	$(function(){
+	
+		//$('.content').addClass('content-fluid');
+	  $('.content > .container').removeClass('container');
+		
+		
+		$('.refreshCDE').click(function(){
+		
+			 $.get("/pentaho/plugin/pentaho-cdf-dd/api/renderer/refresh");
+    
+    window.location = "/pentaho/api/repos/%3Apublic%3Asuitecrm%3Adashboards%3Aoverview.wcdf/generatedContent";
+		
+		});	
+	});
+	
+</script>
+
+
+<!-- AdminLTE App -->
+<script src="/pentaho/api/repos/suitecrm/static/custom/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/pentaho/api/repos/suitecrm/static/custom/js/demo.js"></script>
+
+<script src="/pentaho/api/repos/suitecrm/static/custom/js/chartProperties.js"></script>
+
+<!--<script src="/pentaho/api/repos/IvyUI/static/custom/js/branding.js"></script>-->
+
+<script src="/pentaho/api/repos/suitecrm/static/custom/js/ivyis.js"></script>
+
+</body>
+</html>

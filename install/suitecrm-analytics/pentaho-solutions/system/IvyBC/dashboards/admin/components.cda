@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><CDADescriptor>
+  <DataSources>
+    <Connection id="TABLE_5" type="mondrian.jndi">
+      <Catalog>mondrian:/SteelWheels</Catalog>
+      <Jndi>SampleData</Jndi>
+    </Connection>
+    <Connection id="TABLE" type="mondrian.jndi">
+      <Catalog>mondrian:/SteelWheels</Catalog>
+      <Jndi>SampleData</Jndi>
+    </Connection>
+    <Connection id="SLIDER1" type="scripting.scripting">
+      <Initscript/>
+      <Language>beanshell</Language>
+    </Connection>
+  </DataSources>
+  <DataAccess access="public" connection="TABLE_5" id="TABLE_5" type="mdx">
+    <Name>TABLE_5</Name>
+    <BandedMode>compact</BandedMode>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[SELECT
+NON EMPTY [Measures].[Quantity] ON COLUMNS,
+NON EMPTY topcount([Product].[Vendor].Members,5,[Measures].[Quantity]) ON ROWS
+FROM [SteelWheelsSales]]]></Query>
+  </DataAccess>
+  <DataAccess access="public" connection="TABLE" id="TABLE" type="mdx">
+    <Name>TABLE</Name>
+    <BandedMode>compact</BandedMode>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[SELECT
+NON EMPTY [Measures].[Quantity] ON COLUMNS,
+NON EMPTY topcount([Product].[Vendor].Members,25,[Measures].[Quantity]) ON ROWS
+FROM [SteelWheelsSales]]]></Query>
+  </DataAccess>
+  <DataAccess access="public" connection="SLIDER1" id="SLIDER1" type="scriptable">
+    <Name>SLIDER1</Name>
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters/>
+    <Query><![CDATA[import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[1];
+columnNames[0] = &quot;Region&quot;;
+Class[] columnTypes = new Class[5];
+columnTypes[0] = String.class;
+columnTypes[1] = Integer.class;
+columnTypes[2] = Integer.class;
+columnTypes[3] = Integer.class;
+columnTypes[4] = Integer.class;
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+model.addRow(new Object[]{ new String(&quot;East&quot;), new Integer(10), new Integer(10), new Integer(14), new Integer(21)});
+model.addRow(new Object[]{ new String(&quot;West&quot;), new Integer(14), new Integer(34), new Integer(10), new Integer(12)});
+model.addRow(new Object[]{ new String(&quot;South&quot;), new Integer(10), new Integer(11), new Integer(14), new Integer(15)});
+model.addRow(new Object[]{ dataRow.get(&quot;status&quot;), new Integer(10), new Integer(11), new Integer(14), new Integer(15)});
+return model;]]></Query>
+  </DataAccess>
+</CDADescriptor>

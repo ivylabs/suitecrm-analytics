@@ -1,0 +1,122 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Checkbox Button</Name>
+		<IName>BSCheckboxButtonComponent</IName>
+		<Description>Bootstrap Checkbox Button</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+
+		<Model>
+			<Property>parameter</Property>
+			<Property>htmlObject</Property>
+			<Property>label</Property>
+			<Property>listeners</Property>
+			<Property name="parameters">xActionArrayParameter</Property>
+			<Definition name="queryDefinition">
+				<Property>dataSource</Property>
+			</Definition>
+			<Property>postFetch</Property>
+			<Property>valuesArray</Property>
+			<Property>valueAsId</Property>
+			<Property>alignment</Property>
+			<Property>executeAtStart</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>refreshPeriod</Property>
+			<Property>tooltip</Property>
+			<Property>checkboxButtonType</Property>
+			<Property>checkboxCircle</Property>
+			<Property>checkboxButtonDisabled</Property>
+		</Model>
+
+		<Implementation>
+			<Code src="bsCheckboxButton.js" />
+			<Dependencies />
+      <Styles>
+          <Style version="1.0" src="../common/css/awesome-bootstrap-checkbox.css">awesome-bootstrap-checkbox.css</Style>
+      </Styles>
+
+			<CustomProperties>
+
+				<DesignerProperty>
+					<Header>
+						<Name>alignment</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>vertical</DefaultValue>
+						<Description>Alignment</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>52</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Vertical'>vertical</Value>
+						<Value display='Horizontal'>horizontal</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>checkboxButtonType</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>checkbox-default</DefaultValue>
+						<Description>Checkbox Button Type</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>53</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Default'>checkbox-default</Value>
+						<Value display='Primary'>checkbox-primary</Value>
+						<Value display='Info'>checkbox-info</Value>
+						<Value display='Success'>checkbox-success</Value>
+						<Value display='Warning'>checkbox-warning</Value>
+						<Value display='Danger'>checkbox-danger</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>checkboxCircle</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Checkbox Circle</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Checkbox Circle</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>54</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>checkboxButtonDisabled</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Checkbox Disabled</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Checkbox Disabled</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>55</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+			</CustomProperties>
+
+		</Implementation>
+
+	</Contents>
+</DesignerComponent>

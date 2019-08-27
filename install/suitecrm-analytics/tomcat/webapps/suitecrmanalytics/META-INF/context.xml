@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/suitecrmanalytics" docbase="webapps/suitecrmanalytics/">
+	<Resource name="jdbc/Hibernate" auth="Container" type="javax.sql.DataSource"
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" maxActive="20" minIdle="0" maxIdle="5" initialSize="0"
+		maxWait="10000" username="hibuser" password="password"
+		driverClassName="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:hsql://localhost/hibernate"
+		validationQuery="select count(*) from INFORMATION_SCHEMA.SYSTEM_SEQUENCES" />
+		
+	<Resource name="jdbc/Quartz" auth="Container" type="javax.sql.DataSource"
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" maxActive="20" minIdle="0" maxIdle="5" initialSize="0"
+		maxWait="10000" username="pentaho_user" password="password"
+		driverClassName="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:hsql://localhost/quartz"
+		validationQuery="select count(*) from INFORMATION_SCHEMA.SYSTEM_SEQUENCES"/>
+
+	<Resource name="jdbc/SuiteCRMAnalytics" 
+    		auth="Container" type="javax.sql.DataSource"
+    		factory="org.apache.commons.dbcp.BasicDataSourceFactory" 
+    		maxActive="20" 
+    		maxIdle="5"
+    		maxWait="10000" 
+    		username="@@SUITECRM_ANALYTICS_USERNAME@@" 
+    		password="@@SUITECRM_ANALYTICS_PASSWORD@@" 
+    		driverClassName="com.mysql.jdbc.Driver"
+    		url="jdbc:mysql://@@SUITECRM_ANALYTICS_HOST@@:@@SUITECRM_ANALYTICS_PORT@@/@@SUITECRM_ANALYTICS_DATABASE@@"
+	/> 
+
+	<!--
+	<Resource name="jdbc/SuiteCRMAnalytics" 
+                auth="Container" type="javax.sql.DataSource"
+                factory="org.apache.commons.dbcp.BasicDataSourceFactory" 
+                maxActive="20" 
+                maxIdle="5"
+                maxWait="10000" 
+                username="root" 
+                password="" 
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://127.0.0.1:3306/suitecrm_dwh"
+	/>
+	-->
+
+
+
+
+</Context>

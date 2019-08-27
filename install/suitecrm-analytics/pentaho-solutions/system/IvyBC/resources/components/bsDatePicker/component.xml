@@ -1,0 +1,340 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Date Picker</Name>
+		<IName>BSDatePickerComponent</IName>
+		<Description>Bootstrap Date Picker</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>htmlObject</Property>
+			<Property>parameter</Property>
+			<Property>listeners</Property>
+			<Property>startDate</Property>
+			<Property>dateFormat</Property>
+			<Property>endDate</Property>
+			<Property>executeAtStart</Property>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>datePickerViewMode</Property>
+			<Property>dateRangeSeparator</Property>
+			<Property>datePickerLanguage</Property>
+			<Property>dateStartViewMode</Property>
+			<Property>dateMinViewMode</Property>
+			<Property>todayHighlight</Property>
+			<Property>keyboardNavigation</Property>
+			<Property>weekStart</Property>
+			<Property>autoclose</Property>
+			<Property>orientation</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="bsDatePicker.js" />
+			<Dependencies>
+				<!--<Dependency src="../common/moment.min.js" version="1.0">moment.min.js</Dependency>-->
+				<Dependency src="bootstrap-datepicker.js" version="1.0">bootstrap-datepicker.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ar.js" version="1.0">bootstrap-datepicker.ar.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.az.js" version="1.0">bootstrap-datepicker.az.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.bg.js" version="1.0">bootstrap-datepicker.bg.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ca.js" version="1.0">bootstrap-datepicker.ca.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.cs.js" version="1.0">bootstrap-datepicker.cs.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.cy.js" version="1.0">bootstrap-datepicker.cy.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.da.js" version="1.0">bootstrap-datepicker.da.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.de.js" version="1.0">bootstrap-datepicker.de.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.el.js" version="1.0">bootstrap-datepicker.el.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.es.js" version="1.0">bootstrap-datepicker.es.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.et.js" version="1.0">bootstrap-datepicker.et.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.fa.js" version="1.0">bootstrap-datepicker.fa.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.fi.js" version="1.0">bootstrap-datepicker.fi.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.fr.js" version="1.0">bootstrap-datepicker.fr.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.gl.js" version="1.0">bootstrap-datepicker.gl.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.he.js" version="1.0">bootstrap-datepicker.he.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.hr.js" version="1.0">bootstrap-datepicker.hr.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.hu.js" version="1.0">bootstrap-datepicker.hu.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.id.js" version="1.0">bootstrap-datepicker.id.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.is.js" version="1.0">bootstrap-datepicker.is.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.it.js" version="1.0">bootstrap-datepicker.it.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ja.js" version="1.0">bootstrap-datepicker.ja.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ka.js" version="1.0">bootstrap-datepicker.ka.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.kk.js" version="1.0">bootstrap-datepicker.kk.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.lt.js" version="1.0">bootstrap-datepicker.lt.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.lv.js" version="1.0">bootstrap-datepicker.lv.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.mk.js" version="1.0">bootstrap-datepicker.mk.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ms.js" version="1.0">bootstrap-datepicker.ms.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.nb.js" version="1.0">bootstrap-datepicker.nb.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.nl.js" version="1.0">bootstrap-datepicker.nl.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.nl-BE.js" version="1.0">bootstrap-datepicker.nl-BE.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.no.js" version="1.0">bootstrap-datepicker.no.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.pl.js" version="1.0">bootstrap-datepicker.pl.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.pt.js" version="1.0">bootstrap-datepicker.pt.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.pt-BR.js" version="1.0">bootstrap-datepicker.pt-BR.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ro.js" version="1.0">bootstrap-datepicker.ro.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.rs.js" version="1.0">bootstrap-datepicker.rs.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.rs-latin.js" version="1.0">bootstrap-datepicker.rs-latin.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ru.js" version="1.0">bootstrap-datepicker.ru.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.sk.js" version="1.0">bootstrap-datepicker.sk.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.sl.js" version="1.0">bootstrap-datepicker.sl.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.sq.js" version="1.0">bootstrap-datepicker.sq.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.sv.js" version="1.0">bootstrap-datepicker.sv.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.sw.js" version="1.0">bootstrap-datepicker.sw.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.th.js" version="1.0">bootstrap-datepicker.th.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.tr.js" version="1.0">bootstrap-datepicker.tr.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.ua.js" version="1.0">bootstrap-datepicker.ua.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.vi.js" version="1.0">bootstrap-datepicker.vi.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.zh-CN.js" version="1.0">bootstrap-datepicker.zh-CN.js</Dependency>
+				<Dependency src="locales/bootstrap-datepicker.zh-TW.js" version="1.0">bootstrap-datepicker.zh-TW.js</Dependency>
+			</Dependencies>
+            <Styles>
+                <Style version="1.0" src="datepicker3.css">datepicker3.css</Style>
+            </Styles>
+			
+			<CustomProperties>
+				<DesignerProperty>
+					<Header>
+						<Name>datePickerViewMode</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>textinput</DefaultValue>
+						<Description>View Mode</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>View Mode</Tooltip>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>52</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Text input'>textinput</Value>
+						<Value display='Range'>range</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>dateRangeSeparator</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue></DefaultValue>
+						<Description>Date Range Separator</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Date Range Separator</Tooltip>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>53</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>datePickerLanguage</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>en</DefaultValue>
+						<Description>Language</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Date Picker Language</Tooltip>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>54</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='AR'>ar</Value>
+						<Value display='AZ'>az</Value>
+						<Value display='BG'>bg</Value>
+						<Value display='CA'>ca</Value>
+						<Value display='CS'>cs</Value>
+						<Value display='CY'>cy</Value>
+						<Value display='DA'>da</Value>
+						<Value display='DE'>de</Value>
+						<Value display='EN'>EN</Value>
+						<Value display='EL'>el</Value>
+						<Value display='ES'>es</Value>
+						<Value display='ET'>et</Value>
+						<Value display='FA'>fa</Value>
+						<Value display='FI'>fi</Value>
+						<Value display='FR'>fr</Value>
+						<Value display='GL'>gl</Value>
+						<Value display='HE'>he</Value>
+						<Value display='HR'>hr</Value>
+						<Value display='HU'>hu</Value>
+						<Value display='ID'>id</Value>
+						<Value display='IS'>is</Value>
+						<Value display='IT'>it</Value>
+						<Value display='JA'>ja</Value>
+						<Value display='KA'>ka</Value>
+						<Value display='KK'>kk</Value>
+						<Value display='KR'>kr</Value>
+						<Value display='LT'>lt</Value>
+						<Value display='LV'>lv</Value>
+						<Value display='MK'>mk</Value>
+						<Value display='MS'>ms</Value>
+						<Value display='NB'>nb</Value>
+						<Value display='NL'>nl</Value>
+						<Value display='NL-BE'>nl-BE</Value>
+						<Value display='NO'>no</Value>
+						<Value display='PL'>pl</Value>
+						<Value display='PT'>pt</Value>
+						<Value display='PT-BR'>pt-BR</Value>
+						<Value display='RO'>ro</Value>
+						<Value display='RS'>rs</Value>
+						<Value display='RS-LATIN'>rs-latin</Value>
+						<Value display='RU'>ru</Value>
+						<Value display='SK'>sk</Value>
+						<Value display='SL'>sl</Value>
+						<Value display='SQ'>sq</Value>
+						<Value display='SV'>sv</Value>
+						<Value display='SW'>sw</Value>
+						<Value display='TH'>th</Value>
+						<Value display='TR'>tr</Value>
+						<Value display='UA'>ua</Value>
+						<Value display='VI'>vi</Value>
+						<Value display='ZH-CN'>zh-CN</Value>
+						<Value display='ZH-TW'>zh-TW</Value>
+					</Values>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>dateStartViewMode</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>0</DefaultValue>
+						<Description>Date start view mode</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Date start view mode</Tooltip>
+						<InputType type='valuelist' />
+						<OutputType>Number</OutputType>
+						<Order>55</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Months'>0</Value>
+						<Value display='Years'>1</Value>
+						<Value display='Decades'>2</Value>
+					</Values>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>dateMinViewMode</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>0</DefaultValue>
+						<Description>Date min view mode</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Date min view mode</Tooltip>
+						<InputType type='valuelist' />
+						<OutputType>Number</OutputType>
+						<Order>56</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Days'>0</Value>
+						<Value display='Months'>1</Value>
+						<Value display='Years'>2</Value>
+					</Values>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>todayHighlight</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Today Highlight</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Today Highlight</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>57</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>keyboardNavigation</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Keyboard Navigation</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Keyboard Navigation</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>58</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>weekStart</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>1</DefaultValue>
+						<Description>Week Start</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Week Start</Tooltip>
+						<InputType type='valuelist' />
+						<OutputType>Number</OutputType>
+						<Order>59</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Sunday'>0</Value>
+						<Value display='Monday'>1</Value>
+						<Value display='Tuesday'>2</Value>
+						<Value display='Wednesday'>3</Value>
+						<Value display='Thursday'>4</Value>
+						<Value display='Friday'>5</Value>
+						<Value display='Saturday'>6</Value>
+					</Values>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>autoclose</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Auto Close</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Auto close</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>60</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>orientation</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>auto</DefaultValue>
+						<Description>Orientation</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Orientation</Tooltip>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>61</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Auto'>auto</Value>
+						<Value display='Top auto'>top auto</Value>
+						<Value display='Bottom auto'>bottom auto</Value>
+						<Value display='Auto left'>auto left</Value>
+						<Value display='Top left'>top left</Value>
+						<Value display='Bottom left'>bottom left</Value>
+						<Value display='Auto right'>auto right</Value>
+						<Value display='Top right'>top right</Value>
+						<Value display='Auto right'>auto right</Value>
+					</Values>
+				</DesignerProperty>
+
+			</CustomProperties>
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

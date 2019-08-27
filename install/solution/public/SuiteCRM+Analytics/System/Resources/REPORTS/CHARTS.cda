@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="QUERY_AGENT_PERFORMANCE" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="COUNT_OPPORTUNITY_BY_SALES_STAGE" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="COUNT_CASE_BY_DATE" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="COUNT_CASE_BY_STATUS" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="COUNT_LEAD_BY_STATUS" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="Q1" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="QUERY_AGENT_PERFORMANCE"
+               id="QUERY_AGENT_PERFORMANCE"
+               type="sql">
+      <Name>QUERY_AGENT_PERFORMANCE</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    CONCAT(DU.USER_FIRST_NAME , ' ' , DU.USER_LAST_NAME) USER_FULL_NAME
+    ,COUNT(FCM.CASE_TK) AS CASE_COUNT
+    ,AVG(FCM.CASE_DURATION) AS AVG_CASE_DURATION
+FROM F_CASE_MANAGEMENT AS FCM
+INNER JOIN D_USERS AS DU 
+    ON FCM.ASSIGNED_USER_TK = DU.USER_TK
+GROUP BY
+     FCM.ASSIGNED_USER_TK
+ORDER BY
+     2,3;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="COUNT_OPPORTUNITY_BY_SALES_STAGE"
+               id="COUNT_OPPORTUNITY_BY_SALES_STAGE"
+               type="sql">
+      <Name>COUNT_OPPORTUNITY_BY_SALES_STAGE</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="${pOpportunityTypeFilter}" name="pOpportunityTypeFilter" type="String"/>
+         <Parameter default="${pOpportunityLeadSourceFilter}" name="pOpportunityLeadSourceFilter"
+                    type="String"/>
+         <Parameter default="${pDateFilter}" name="pDateFilter" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DC.CASE_STATUS
+	,COUNT(FCM.CASE_TK) TOTAL_CASES
+FROM F_CASE_MANAGEMENT AS FCM
+INNER JOIN D_CASES AS DC 
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK
+WHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR '9999-99' IN (${pDateFilter}))
+AND (DC.CASE_TYPE IN (${pCaseTypeFilter}) OR 'All Case Types' IN (${pCaseTypeFilter}))
+AND (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+GROUP BY DC.CASE_STATUS
+ORDER BY 1 DESC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="COUNT_CASE_BY_DATE" id="COUNT_CASE_BY_DATE"
+               type="sql">
+      <Name>COUNT_CASE_BY_DATE</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="${pCaseTypeFilter}" name="pCaseTypeFilter" type="String"/>
+         <Parameter default="${pCasePriorityFilter}" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="${pDateFilter}" name="pDateFilter" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DD.`YYYY-MM`
+    ,COUNT(FCM.CASE_TK) TOTAL_CASES
+FROM F_CASE_MANAGEMENT AS FCM
+INNER JOIN D_CASES AS DC 
+    ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK
+WHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR '9999-99' IN (${pDateFilter}))
+AND (DC.CASE_TYPE IN (${pCaseTypeFilter}) OR 'All Case Types' IN (${pCaseTypeFilter}))
+AND (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+GROUP BY DD.`YYYY-MM`
+ORDER BY 1 ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="COUNT_CASE_BY_STATUS" id="COUNT_CASE_BY_STATUS"
+               type="sql">
+      <Name>COUNT_CASE_BY_STATUS</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="${pCaseTypeFilter}" name="pCaseTypeFilter" type="String"/>
+         <Parameter default="${pCasePriorityFilter}" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="${pDateFilter}" name="pDateFilter" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DC.CASE_STATUS
+	,COUNT(FCM.CASE_TK) TOTAL_CASES
+FROM F_CASE_MANAGEMENT AS FCM
+INNER JOIN D_CASES AS DC 
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK
+WHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR '9999-99' IN (${pDateFilter}))
+AND (DC.CASE_TYPE IN (${pCaseTypeFilter}) OR 'All Case Types' IN (${pCaseTypeFilter}))
+AND (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+GROUP BY DC.CASE_STATUS
+ORDER BY 1 DESC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="COUNT_LEAD_BY_STATUS" id="COUNT_LEAD_BY_STATUS"
+               type="sql">
+      <Name>COUNT_LEAD_BY_STATUS</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="${pCampaignTypeFilter}" name="pCampaignTypeFilter" type="String"/>
+         <Parameter default="${pCampaignFilter}" name="pCampaignFilter" type="String"/>
+         <Parameter default="${pDateFilter}" name="pDateFilter" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DL.LEAD_STATUS
+    ,COUNT(FLM.LEAD_TK) AS TOTAL_LEADS
+FROM F_LEAD_MANAGEMENT AS FLM
+INNER JOIN D_LEADS AS DL 
+	ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_CAMPAIGNS DC
+    ON FLM.CAMPAIGN_TK = DC.CAMPAIGN_TK
+INNER JOIN D_DATE DD
+	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
+WHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR '9999-99' IN (${pDateFilter}))
+AND (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR 'All Campaign Types' IN (${pCampaignTypeFilter}))
+AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR 'All Campaigns' IN (${pCampaignFilter}))
+GROUP BY DL.LEAD_STATUS
+ORDER BY 1 DESC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Q1" id="Q1" type="sql">
+      <Name>Q1</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    CONCAT(DU.USER_FIRST_NAME , ' ' , DU.USER_LAST_NAME) USER_FULL_NAME
+    ,COUNT(FO.OPPORTUNITY_TK) AS OPPORTUNITY_COUNT
+    ,SUM(FO.OPPORTUNITY_AMOUNT) AS OPEN_OPPORTUNITY_AMOUNT
+FROM F_OPPORTUNITY_MANAGEMENT AS FO
+INNER JOIN D_USERS AS DU 
+    ON FO.ASSIGNED_USER_TK = DU.USER_TK
+GROUP BY
+     FO.ASSIGNED_USER_TK
+ORDER BY
+     2,3]]></Query>
+   </DataAccess>
+</CDADescriptor>

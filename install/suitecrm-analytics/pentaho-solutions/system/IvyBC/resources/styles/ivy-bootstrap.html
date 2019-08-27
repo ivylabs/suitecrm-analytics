@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>IvyBC - Ivy Bootstrap Components</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<!--link href="/pentaho-style/dashboard.css" rel="stylesheet" type="text/css" media="screen" /-->  
+
+		@HEADER@     
+		
+		<script>
+		
+			var overrideProps = [];
+		
+		</script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-47483249-11', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</head>
+	
+	<body>
+	
+		<div class="container-fluid">
+			<header class="navbar navbar-default navbar-static-top" role="banner">
+				<div class="container">
+					<div class="navbar-header">
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a href="main" class="navbar-brand">IvyBC - Ivy Bootstrap Components</a>
+					</div>
+					<nav class="collapse navbar-collapse" role="navigation">
+						<ul class="nav navbar-nav">
+							<li><a href="main">Overview</a></li>
+							<li><a href="layouts">Layouts</a></li>
+							<li><a href="components">Components</a></li>
+							<li><a href="samples">Samples</a></li>
+							<li><a href="license">License</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header> 
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					@CONTENT@
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					@FOOTER@
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+
+	            $.get( webAppPath + "/plugin/IvyBC/api/checkLicense", function( data ) {
+
+	              if(data != undefined && data.status==="ok" && data.result==="false"){
+	                $("body").append('<div class="modal fade" id="licenseCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">' +
+	                  '<div class="modal-dialog modal-lg">' +
+	                    '<div class="modal-content">' +
+	                      '<div class="modal-header">' +
+	                        '<h1 class="modal-title" id="myModalLabel">IvyBC - Ivy Bootstrap Components License</h1>' +
+	                      '</div>' +
+	                      '<div class="modal-body">' +
+	                        '<div id="alertLicense" class="alert alert-danger fade in">' +
+	                          '<strong>Error</strong> Invalid license.' +
+	                        '</div>' +
+	                        '<div class="row">' +
+	                          '<div class="col-md-12">' +
+	                            '<h2 class="page-header">Submit Ivy Bootstrap Components License</h2>' +
+	                            '<div class="form-group">' +
+	                              '<label for="licenseKeyField">License Key</label>' +
+	                              '<textarea class="form-control" id="licenseKeyField" rows="3" placeholder="Paste your license key here"></textarea>' +
+	                            '</div>' +
+	                          '</div>' +
+	                        '</div>' +
+	                      '</div>' +
+	                      '<div class="modal-footer">' +
+	                        '<button type="button" class="btn btn-default" id="apply-license-btn">Apply License</button>' +
+	                      '</div>' +
+	                    '</div>' +
+	                  '</div>' +
+	                '</div>');
+	                $("body #licenseCheckModal #apply-license-btn").on("click", function() {
+	                  var licenseKey = $("body #licenseCheckModal .modal-body #licenseKeyField").val();
+	                  if(licenseKey == ""){
+	                    $("body #licenseCheckModal .modal-body #alertLicense").remove();
+	                    $("body #licenseCheckModal .modal-body").prepend('<div id="alertLicense" class="alert alert-danger fade in">' +
+	                          '<strong>Error</strong> You don\'t paste any license.</div>');
+	                  }else{
+	                    $("body #licenseCheckModal .modal-body").empty();
+	                    $("body #licenseCheckModal .modal-body").prepend("<center><img src='../../../api/repos/IvyBC/static/custom/img/loading.gif'/></center>");
+
+	                    $.post( webAppPath + "/plugin/IvyBC/api/submitLicense?licenseKey="+encodeURIComponent(licenseKey)).done(function( data ) {
+	                      $("body #licenseCheckModal .modal-body").empty();
+	                      if(data != undefined && data.status==="ok"){
+	                        $("body #licenseCheckModal .modal-body").append('<div id="alertLicense" class="alert alert-success fade in">' +
+	                              '<strong>Success</strong> License accepted.</div>');
+	                        $("body #licenseCheckModal .modal-body").append('<div class="row">' +
+	                          '<div class="col-md-3"><strong>Customer Name:</strong></div>' +
+	                            '<div class="col-md-9">'+JSON.parse(data.result).customerName+'</div>' +
+	                          '</div>' + 
+	                          '<div class="row">' +
+	                            '<div class="col-md-3"><strong>Customer Email:</strong></div>' +
+	                            '<div class="col-md-9">'+JSON.parse(data.result).customerEmail+'</div>' +
+	                          '</div>' + 
+	                          '<div class="row">' +
+	                            '<div class="col-md-3"><strong>Plugin Name:</strong></div>' +
+	                            '<div class="col-md-9">'+JSON.parse(data.result).pluginName+'</div>' +
+	                          '</div>' + 
+	                          '<div class="row">' +
+	                            '<div class="col-md-3"><strong>Plugin Type:</strong></div>' +
+	                            '<div class="col-md-9">'+JSON.parse(data.result).pluginType+'</div>' +
+	                          '</div>' + 
+	                          '<div class="row">' +
+	                            '<div class="col-md-3"><strong>Reseller Name:</strong></div>' +
+	                            '<div class="col-md-9">'+JSON.parse(data.result).resellerName+'</div>' +
+	                          '</div>' +
+	                          '<div class="row">' +
+	                            '<div class="col-md-3"><strong>Reseller Email:</strong></div>' +
+	                            '<div class="col-md-9">'+JSON.parse(data.result).resellerEmail+'</div>' +
+	                          '</div>' +
+	                          '<div class="row">' +
+	                            '<div class="col-md-3"><strong>Date:</strong></div>' +
+	                            '<div class="col-md-9">'+JSON.parse(data.result).currentDate+'</div>' +
+	                          '</div>'
+	                        );
+	                        setTimeout(function(){
+	                           window.location.reload(1);
+	                        }, 3000);
+	                      }else{
+	                        $("body #licenseCheckModal .modal-body").prepend('<div id="alertLicense" class="alert alert-danger fade in">' +
+	                              '<strong>Error</strong> License invalid, please try again.</div>');
+	                        setTimeout(function(){
+	                           window.location.reload(1);
+	                        }, 2000);
+	                      }
+	                    });
+
+	                  }
+	                });
+	                $('body #licenseCheckModal').modal({keyboard: false, backdrop: "static"}).modal('show');
+	              }else{
+			        $.get( webAppPath + "/plugin/IvyBC/api/licenseDetails", function( data ) {
+			            $("#pluginNameWell").html(JSON.parse(data.result).pluginName).removeClass("label label-danger");
+			            $("#pluginTypeWell").html(JSON.parse(data.result).pluginType).removeClass("label label-danger");
+			            $("#customerNameWell").html(JSON.parse(data.result).customerName).removeClass("label label-danger");
+			            $("#licenseClientName").html(JSON.parse(data.result).customerName);
+			            $("#customerEmailWell").html(JSON.parse(data.result).customerEmail).removeClass("label label-danger");
+			            $("#resellerNameWell").html(JSON.parse(data.result).resellerName).removeClass("label label-danger");
+			            $("#resellerEmailWell").html(JSON.parse(data.result).resellerEmail).removeClass("label label-danger");
+			            $("#validSupportFromWell").html(JSON.parse(data.result).validSupportDateFrom).removeClass("label label-danger");
+			            $("#licenseEffectiveDate").html(JSON.parse(data.result).validSupportDateFrom);
+			            $("#validSupportToWell").html(JSON.parse(data.result).validSupportDateTo).removeClass("label label-danger");
+			        });
+	              }
+	            });
+
+				function reRenderCCC(){ 
+					for(var z = 0; z < Dashboards.components.length; z++){
+						if(Dashboards.components[z].type.indexOf("ccc")!=-1 && Dashboards.components[z].chart != null){
+							Dashboards.components[z].chart.options.width=$("#"+Dashboards.components[z].htmlObject).width();
+							Dashboards.components[z].chartDefinition.width=$("#"+Dashboards.components[z].htmlObject).width();
+							Dashboards.components[z].chart.render(true,true,false);
+						}
+					}
+				}
+				var timer;
+				$(window).bind('resize', function(){
+					timer && clearTimeout(timer);
+					timer = setTimeout(reRenderCCC, 100);
+				});
+
+				
+				for(var i = 0; i < overrideProps.length; i++){
+					for(var z = 0; z < Dashboards.components.length; z++){
+						var check = false;
+						if(overrideProps[i].genericType!=undefined){
+							check=Dashboards.components[z].type.indexOf(overrideProps[i].genericType)!=-1;
+						}else{
+							check=Dashboards.components[z].type==overrideProps[i].nameType;
+						}
+						if(check){
+							for (var key in overrideProps[i]) {
+								if(key=="genericType"||key=="nameType"){
+									continue;
+								}
+								var prop = Dashboards.components[z].chartDefinition[key];
+								if( prop != undefined && prop.length != undefined && overrideProps[i][key] != undefined && overrideProps[i][key].length > 0 && typeof overrideProps[i][key][0] == "object"){
+									prop = Dashboards.propertiesArrayToObject( prop );
+									Dashboards.components[z].chartDefinition[key] = Dashboards.objectToPropertiesArray( $.extend( {}, Dashboards.propertiesArrayToObject(overrideProps[i][key]), prop) );
+								}else{
+									if( prop != undefined && typeof prop == "object" && typeof overrideProps[i][key] == "object" && typeof overrideProps[i][key][0] == "object"){
+										Dashboards.components[z].chartDefinition[key] = $.extend( {}, overrideProps[i][key], prop);
+									}else{
+										Dashboards.components[z].chartDefinition[key] = overrideProps[i][key];
+									}
+								}
+							}
+						}
+					}
+				}
+
+			});
+		
+		</script>
+		
+	</body>
+</html>
+
+

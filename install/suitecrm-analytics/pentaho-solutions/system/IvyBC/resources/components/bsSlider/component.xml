@@ -1,0 +1,207 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Slider</Name>
+		<IName>BSSliderComponent</IName>
+		<Description>Bootstrap Slider</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>parameter</Property>
+			<Property>listeners</Property>
+			<Property>htmlObject</Property>
+			<Property name="parameters">xActionArrayParameter</Property>
+            <Definition name="queryDefinition">
+				<Property>dataSource</Property>
+			</Definition>
+			<Property>postFetch</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>refreshPeriod</Property>
+			<Property>executeAtStart</Property>
+			<Property>sliderType</Property>
+			<Property>minValueSlider</Property>
+			<Property>maxValueSlider</Property>
+			<Property>stepValueSlider</Property>
+			<Property>orientationSlider</Property>
+			<Property>selectionSlider</Property>
+			<Property>tooltipSlider</Property>
+			<Property>handleSlider</Property>
+			<Property>formaterFunction</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="BSSliderComponent.js" />
+			<Dependencies>
+				<Dependency src="js/bootstrap-slider.js" version="3.0.1">bootstrap-slider.js</Dependency>
+			</Dependencies>
+            
+            <Styles>
+				<Dependency src="css/bootstrap-slider.css" version="3.0.1">bootstrap-slider.css</Dependency>
+				<Dependency src="css/bootstrap-slider-cde-fixer.css" version="0.0.1">bootstrap-slider-cde-fixer.css</Dependency>
+            </Styles>
+			
+			<CustomProperties>
+
+				<DesignerProperty>
+					<Header>
+						<Name>sliderType</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>single</DefaultValue>
+						<Description>Slider Type</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>53</Order>
+						<Advanced>false</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Single'>single</Value>
+						<Value display='Double'>double</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>minValueSlider</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue></DefaultValue>
+						<Description>Min Value</Description>
+						<InputType>Integer</InputType>
+						<OutputType>Numeric</OutputType>
+						<Order>54</Order>
+						<Advanced>false</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>maxValueSlider</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue></DefaultValue>
+						<Description>Max Value</Description>
+						<InputType>Integer</InputType>
+						<OutputType>Numeric</OutputType>
+						<Order>55</Order>
+						<Advanced>false</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>stepValueSlider</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>1</DefaultValue>
+						<Description>Step Value</Description>
+						<InputType>Integer</InputType>
+						<OutputType>Numeric</OutputType>
+						<Order>56</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>orientationSlider</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>horizontal</DefaultValue>
+						<Description>Orientation</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>57</Order>
+						<Advanced>false</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Horizontal'>horizontal</Value>
+						<Value display='Vertical'>vertical</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>selectionSlider</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>none</DefaultValue>
+						<Description>Selection</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>58</Order>
+						<Advanced>false</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='None'>none</Value>
+						<Value display='After'>after</Value>
+						<Value display='Before'>before</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>tooltipSlider</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>always</DefaultValue>
+						<Description>Tooltip</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>59</Order>
+						<Advanced>false</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Always'>always</Value>
+						<Value display='Show'>show</Value>
+						<Value display='Hide'>hide</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>handleSlider</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>round</DefaultValue>
+						<Description>Handle</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>60</Order>
+						<Advanced>false</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Round'>round</Value>
+						<Value display='Square'>square</Value>
+						<Value display='Triangle'>triangle</Value>
+					</Values>
+				</DesignerProperty>
+				<DesignerProperty>
+				    <Header>
+				        <Name>formaterFunction</Name>
+				        <Parent>BaseProperty</Parent>
+				        <DefaultValue></DefaultValue>
+				        <Description>Formater Script</Description>
+				        <Tooltip>Formater Script</Tooltip>
+				        <InputType>JavaScript</InputType>
+				        <OutputType>Function</OutputType>
+				        <Order>61</Order>
+						<Advanced>true</Advanced>
+				        <Version>1.0</Version>
+				    </Header>
+				</DesignerProperty>
+
+			</CustomProperties>
+	
+	
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

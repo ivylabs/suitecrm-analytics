@@ -1,0 +1,802 @@
+{
+ "layout": {
+  "title": "main",
+  "rows": [
+   {
+    "id": "fab1ce97-d7fb-4c1b-e461-d6d1b83011cb",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5a16ce48-8b12-51d0-b1dc-f3950bf31f9f",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "fab1ce97-d7fb-4c1b-e461-d6d1b83011cb",
+    "properties": [
+     {
+      "name": "name",
+      "value": "SIDEBAR",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "3",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "1160ca94-9394-8163-01fb-458ca2495041",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "5a16ce48-8b12-51d0-b1dc-f3950bf31f9f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div style=\"position:fixed;\">\n<!--<div data-spy=\"affix\" data-offset-top=\"50\">-->\n    <h4>Overview</h4>\n    <ul class=\"nav nav-stacked\" id=\"sidebar\">\n        <li><a href=\"#introduction\">Introduction</a></li>\n        <li><a href=\"#plugin_overview\">Plugin Overview</a></li>\n        <li><a href=\"#get_in_touch\">Get in Touch</a></li>\n    </ul>  \n</div>\n ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "20ddc9bd-5590-8c8b-d79e-b691206df815",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "fab1ce97-d7fb-4c1b-e461-d6d1b83011cb",
+    "properties": [
+     {
+      "name": "name",
+      "value": "MAIN_CONTENT",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "9",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "27aac0f5-17f9-1383-37b4-00cb7f1a295f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "20ddc9bd-5590-8c8b-d79e-b691206df815",
+    "properties": [
+     {
+      "name": "name",
+      "value": "INTRODUCTION",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "572597a6-5fcd-9fee-f463-47ba92cc1438",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "27aac0f5-17f9-1383-37b4-00cb7f1a295f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5d17bc69-8bb7-aa9f-b1e4-be683675ac92",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "572597a6-5fcd-9fee-f463-47ba92cc1438",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"introduction\" style=\"margin-top:5px\">Thank You!</h2>\n<p>Thank you for purchasing the Ivy Information Systems Bootstrap Components plugin for the Community Dashboard Editor!</p>\n<img src=\"/pentaho/api/repos/IvyBC/static/custom/img/welcome.jpg\" class=\"img-responsive img-rounded\" alt=\"Responsive image\"> \n<br />\n<p>This plugin will provide you with all the tools and knowledge needed to successfully create respoonsive and mobile compatible dashboards with Pentaho. In fact, this plugin has been developed in the CDE and thr IvyBC!</p>\n<p>The plugin contains:</p>\n<ul>\n    <li>Documetation</li>\n    <li>Samples</li>\n    <li>Guides</li>\n    <li>Support</li>\n</ul>\n<p>We recommend that before you dive in that you go through the Getting Started section on this page to understand how developing dahboard using the plugin differs from ordinary dashboard development using the CDE.</p> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "9715b2fd-cef2-d3b8-3c5d-4d1337931b55",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "20ddc9bd-5590-8c8b-d79e-b691206df815",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PLUGIN_OVERVIEW",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "eb11f496-5dde-211e-e6ef-99ab0683bf12",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "9715b2fd-cef2-d3b8-3c5d-4d1337931b55",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "1bf442f9-d36c-883e-a375-7b5447c15616",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "eb11f496-5dde-211e-e6ef-99ab0683bf12",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"plugin_overview\">Plugin Overview</h2>\n<p>So before we begin let's cover how the IvyBC differs from the CDE default installation. The IvyBC plugin comes packaged with a range of predefined and configured Bootatrap Components. These allow you to create Bootstrap Dashboard with very little work (Not as much HTML as you might have to write with the vanilla CDE). Since we are using Bootstrap the rules of the layout engine also change in comparison to the Blueprint Layout Engine</p> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "acb4fbd9-c958-cbd2-5361-f8ce11ea110e",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "20ddc9bd-5590-8c8b-d79e-b691206df815",
+    "properties": [
+     {
+      "name": "name",
+      "value": "GET_IN_TOUCH",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2a25dc8c-25f8-61e3-8283-8c4cc4994d00",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "acb4fbd9-c958-cbd2-5361-f8ce11ea110e",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d09025a7-f1bb-e970-612b-925d09a79327",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "2a25dc8c-25f8-61e3-8283-8c4cc4994d00",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"get_in_touch\">Get in Touch</h2>\n<p>We aim to make this document as accurate as possible but if you happen to find any mistakes then please feel free to contact us and we will do our best to fix the mistake as soon as possible. Send us an email at <a href=\"mailto:support@ivy-is.com?subject=IvyBS - Ivy Bootstrap Components Support\">support@ivy-is.com</a></p> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   }
+  ]
+ },
+ "components": {
+  "rows": [
+   {
+    "id": "IVYISBOOTSTRAP",
+    "name": "Ivy IS Bootstrap",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Ivy IS Bootstrap",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "222a9d2d-9293-fa88-5bf4-41ef7d9b90f9",
+    "type": "ComponentsbootstrapPanelComponent",
+    "typeDesc": "Bootstrap Panel",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "PANEL_INTRO",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "innerHTML",
+      "value": "",
+      "type": "Html"
+     },
+     {
+      "name": "innerHeight",
+      "value": "200",
+      "type": "String"
+     },
+     {
+      "name": "headerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showHeader",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "footerText",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "showFooter",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "panelType",
+      "value": "panel-default",
+      "type": "panelTypeCustom"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:DIV_INTRO_PANEL}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   }
+  ]
+ },
+ "datasources": {
+  "rows": [
+   {
+    "id": "SQL",
+    "name": "SQL Queries",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "SQL Queries",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "0a56c773-c21a-33cb-c9aa-716d1c31731a",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dummy",
+      "type": "Id"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "jndi",
+      "value": "",
+      "type": "Jndi"
+     },
+     {
+      "name": "query",
+      "value": "",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   }
+  ]
+ },
+ "filename": "/system/IvyBC/dashboards/admin/main.cdfde"
+}

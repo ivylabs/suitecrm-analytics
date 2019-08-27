@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="SALES_BY_PRODUCTLINE" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="SALES_BY_MARKET" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="SALES_BY_CUSTOMER" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="SALES_BY_MONTH" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="SALES_BY_MONTH_ALL_FILTERS" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="SALES_BY_PRODUCTLINE"
+               id="SALES_BY_PRODUCTLINE"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters>
+         <Parameter default="PARAM_MEASURE" name="PARAM_MEASURE" type="String"/>
+         <Parameter default="PARAM_YEAR" name="PARAM_YEAR" type="String"/>
+      </Parameters>
+      <Query>SELECT
+NON EMPTY [Measures].[${PARAM_MEASURE}] ON COLUMNS,
+NON EMPTY order([Product].Children,[Measures].[${PARAM_MEASURE}],desc) ON ROWS
+FROM [SteelWheelsSales]
+WHERE [Time].[${PARAM_YEAR}]</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="SALES_BY_MARKET"
+               id="SALES_BY_MARKET"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters>
+         <Parameter default="PARAM_MEASURE" name="PARAM_MEASURE" type="String"/>
+         <Parameter default="PARAM_YEAR" name="PARAM_YEAR" type="String"/>
+      </Parameters>
+      <Query>SELECT
+NON EMPTY [Measures].[${PARAM_MEASURE}] ON COLUMNS,
+NON EMPTY Order([Markets].Children,[Measures].[${PARAM_MEASURE}],desc) ON ROWS
+FROM [SteelWheelsSales]
+WHERE [Time].[${PARAM_YEAR}]</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="SALES_BY_CUSTOMER"
+               id="SALES_BY_CUSTOMER"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters>
+         <Parameter default="Sales" name="PARAM_MEASURE" type="String"/>
+         <Parameter default="2004" name="PARAM_YEAR" type="String"/>
+         <Parameter default="All Products" name="PARAM_PRODUCTLINE" type="String"/>
+         <Parameter default="All Markets" name="PARAM_MARKET" type="String"/>
+         <Parameter default="10" name="PARAM_LIMIT" type="String"/>
+      </Parameters>
+      <Query>SELECT
+NON EMPTY [Measures].[${PARAM_MEASURE}] ON COLUMNS,
+NON EMPTY topcount(order([Customers].children,[Measures].[${PARAM_MEASURE}],desc),${PARAM_LIMIT}) ON ROWS
+FROM [SteelWheelsSales]
+WHERE Crossjoin(Crossjoin([Time].[${PARAM_YEAR}],[Markets].[${PARAM_MARKET}]),[Product].[${PARAM_PRODUCTLINE}])</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="SALES_BY_MONTH"
+               id="SALES_BY_MONTH"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters>
+         <Parameter default="PARAM_MEASURE" name="PARAM_MEASURE" type="String"/>
+         <Parameter default="PARAM_YEAR" name="PARAM_YEAR" type="String"/>
+         <Parameter default="PARAM_PRODUCTLINE" name="PARAM_PRODUCTLINE" type="String"/>
+         <Parameter default="PARAM_MARKET" name="PARAM_MARKET" type="String"/>
+         <Parameter default="PARAM_CUSTOMER" name="PARAM_CUSTOMER" type="String"/>
+      </Parameters>
+      <Query>SELECT
+NON EMPTY [Measures].[${PARAM_MEASURE}] ON COLUMNS,
+NON EMPTY descendants([Time].[${PARAM_YEAR}],2) ON ROWS
+FROM [SteelWheelsSales]
+WHERE Crossjoin(Crossjoin([Customers].[${PARAM_CUSTOMER}],[Markets].[${PARAM_MARKET}]),[Product].[${PARAM_PRODUCTLINE}])</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600"
+               connection="SALES_BY_MONTH_ALL_FILTERS"
+               id="SALES_BY_MONTH_ALL_FILTERS"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters>
+         <Parameter default="PARAM_MEASURE" name="PARAM_MEASURE" type="String"/>
+         <Parameter default="PARAM_CUSTOMER" name="PARAM_CUSTOMER" type="String"/>
+         <Parameter default="PARAM_YEAR" name="PARAM_YEAR" type="String"/>
+      </Parameters>
+      <Query>SELECT
+NON EMPTY [Measures].[${PARAM_MEASURE}] ON COLUMNS,
+NON EMPTY descendants([Time].[${PARAM_YEAR}],2) ON ROWS
+FROM [SteelWheelsSales]
+WHERE [Customers].[${PARAM_CUSTOMER}]</Query>
+   </DataAccess>
+</CDADescriptor>

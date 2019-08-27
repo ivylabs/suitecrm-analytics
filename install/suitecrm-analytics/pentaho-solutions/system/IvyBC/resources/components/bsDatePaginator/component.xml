@@ -1,0 +1,192 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Date Paginator</Name>
+		<IName>BSDatePaginatorComponent</IName>
+		<Description>Bootstrap Date Paginator</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		
+		<Model>
+			<Property>htmlObject</Property>
+			<Property>parameter</Property>
+			<Property>listeners</Property>
+			<Property>startDate</Property>
+			<Property>endDate</Property>
+			<Property>dateFormat</Property>
+			<Property>executeAtStart</Property>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>highlightSelectedDate</Property>
+			<Property>showOffDays</Property>
+			<Property>offDays</Property>
+			<Property>showCalendar</Property>
+			<Property>datePaginatorSize</Property>
+			<Property>datePaginatorShowStartOfWeek</Property>
+			<Property>datePaginatorStartOfWeek</Property>
+			<Property>squareEdges</Property>
+			<Property>datePaginatorText</Property>
+			<Property>datePaginatorTextSelected</Property>
+		</Model>
+		
+		<Implementation>
+			<Code src="bsDatePaginator.js" />
+			<Dependencies>
+				<!--<Dependency src="../common/moment.min.js" version="1.0">moment.min.js</Dependency>-->
+				<Dependency src="bootstrap-datepaginator.min.js" version="1.0">bootstrap-datepaginator.min.js</Dependency>
+			</Dependencies>
+            <Styles>
+                <Style version="1.0" src="bootstrap-datepaginator.min.css">bootstrap-datepaginator.min.css</Style>
+            </Styles>
+			
+			<CustomProperties>
+				<DesignerProperty>
+					<Header>
+						<Name>highlightSelectedDate</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Highlight Selected Date</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Highlight Selected Date</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>52</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>showOffDays</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Show Off Days</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Show Off Days</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>53</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>offDays</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>Sat,Sun</DefaultValue>
+						<Description>Off Days</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Off Days (like CSV format)</Tooltip>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>54</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>showCalendar</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Show Calendar</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Show Calendar icon</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>55</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>datePaginatorSize</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>normal</DefaultValue>
+						<Description>Size</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Date Paginator Size</Tooltip>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>56</Order>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Small'>small</Value>
+						<Value display='Normal'>normal</Value>
+						<Value display='Large'>large</Value>
+					</Values>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>datePaginatorShowStartOfWeek</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"true"</DefaultValue>
+						<Description>Show Start of Week</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Show Start of Week</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>57</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>datePaginatorStartOfWeek</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>Mon</DefaultValue>
+						<Description>Start of Week</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Start of Week</Tooltip>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>58</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>datePaginatorText</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>ddd&lt;br/&gt;Do</DefaultValue>
+						<Description>Text</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Date Paginator default text</Tooltip>
+						<InputType>Html</InputType>
+						<OutputType>String</OutputType>
+						<Order>59</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+				
+				<DesignerProperty>
+					<Header>
+						<Name>datePaginatorTextSelected</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>dddd&lt;br/&gt;Do, MMMM YYYY</DefaultValue>
+						<Description>Text Selected</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Date Paginator default text selected</Tooltip>
+						<InputType>Html</InputType>
+						<OutputType>String</OutputType>
+						<Order>60</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+			</CustomProperties>
+		</Implementation>
+		
+	</Contents>
+</DesignerComponent> 

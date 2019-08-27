@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="IvyUI" loader="DEFAULT">
+<overlays>
+		<overlay id="startup.IvyUI" resourcebundle="content/IvyUI/resources/lang/messages">
+			<menubar id="toolsmenu">
+				<!--<menuitem id="IvyUI" label="${Launcher.IvyUI}" command="mantleXulHandler.openUrl('${Launcher.IvyUI}','${Launcher.IvyUI_TOOLTIP}','plugin/IvyUI/api/default')"/>-->
+	      	</menubar>
+	    </overlay>
+	</overlays>
+	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+	<static-paths>
+		<static-path url="/IvyUI/static" localFolder="static"/>
+		<static-path url="/IvyUI/resources" localFolder="resources"/>
+	</static-paths>
+	<content-types>
+		<content-type>
+			<title>IvyUI</title>
+			<description></description>
+			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
+		</content-type>
+	</content-types>
+	<content-generator
+		id="IvyUI"
+		title="IvyUI"
+		type="IvyUI"
+		class="pt.webdetails.cpk.CpkContentGenerator"/>
+	<!-- Menu entry -->
+	<menu-items>
+		<!--<menu-item id="IvyUI_main" anchor="tools-submenu" label="IvyUI" command="content/IvyUI/" type="MENU_ITEM" how="LAST_CHILD"/>-->
+	</menu-items>
+</plugin>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="TABLE_5" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="TABLE" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="SLIDER1" type="scripting.scripting">
+         <Initscript></Initscript>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="TABLE_5"
+               id="TABLE_5"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters/>
+      <Query>SELECT
+NON EMPTY [Measures].[Quantity] ON COLUMNS,
+NON EMPTY topcount([Product].[Vendor].Members,5,[Measures].[Quantity]) ON ROWS
+FROM [SteelWheelsSales]</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="TABLE" id="TABLE"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters/>
+      <Query>SELECT
+NON EMPTY [Measures].[Quantity] ON COLUMNS,
+NON EMPTY topcount([Product].[Vendor].Members,25,[Measures].[Quantity]) ON ROWS
+FROM [SteelWheelsSales]</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="SLIDER1"
+               id="SLIDER1"
+               type="scriptable">
+      <Columns/>
+      <Parameters/>
+      <Query>import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[1];
+columnNames[0] = &amp;quot;Region&amp;quot;;
+Class[] columnTypes = new Class[5];
+columnTypes[0] = String.class;
+columnTypes[1] = Integer.class;
+columnTypes[2] = Integer.class;
+columnTypes[3] = Integer.class;
+columnTypes[4] = Integer.class;
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+model.addRow(new Object[]{ new String(&amp;quot;East&amp;quot;), new Integer(10), new Integer(10), new Integer(14), new Integer(21)});
+model.addRow(new Object[]{ new String(&amp;quot;West&amp;quot;), new Integer(14), new Integer(34), new Integer(10), new Integer(12)});
+model.addRow(new Object[]{ new String(&amp;quot;South&amp;quot;), new Integer(10), new Integer(11), new Integer(14), new Integer(15)});
+model.addRow(new Object[]{ dataRow.get(&amp;quot;status&amp;quot;), new Integer(10), new Integer(11), new Integer(14), new Integer(15)});
+return model;</Query>
+   </DataAccess>
+</CDADescriptor>

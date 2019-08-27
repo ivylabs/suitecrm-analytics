@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<cstConfig>
+	
+  <!--<rule match="ROLE" pattern="false" value="Administrator">
+    <tab title="System Setup" fullScreen="false" tooltip="System Setup"><![CDATA[api/repos/%3Apublic%3ASuiteCRM%20Analytics%3ASystem%3AApplication%3ASystemSetup.wcdf/generatedContent]]></tab>
+  </rule>
+-->
+</cstConfig>

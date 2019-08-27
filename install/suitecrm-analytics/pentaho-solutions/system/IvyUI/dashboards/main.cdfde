@@ -1,0 +1,818 @@
+{
+ "components": {
+  "rows": []
+ },
+ "datasources": {
+  "rows": [
+   {
+    "id": "SQL",
+    "name": "SQL Queries",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "type": "Label",
+      "value": "SQL Queries"
+     }
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "0a56c773-c21a-33cb-c9aa-716d1c31731a",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "dummy"
+     },
+     {
+      "name": "access",
+      "type": "Access",
+      "value": "public"
+     },
+     {
+      "name": "jndi",
+      "type": "Jndi",
+      "value": ""
+     },
+     {
+      "name": "query",
+      "type": "SqlQuery",
+      "value": ""
+     },
+     {
+      "name": "parameters",
+      "type": "CdaParameters",
+      "value": "[]"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "type": "CdaCalculatedColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "cdacolumns",
+      "type": "CdaColumnsArray",
+      "value": "[]"
+     },
+     {
+      "name": "output",
+      "type": "IndexArray",
+      "value": "[]"
+     },
+     {
+      "name": "outputMode",
+      "type": "OutputMode",
+      "value": "include"
+     },
+     {
+      "name": "cacheKeys",
+      "type": "CacheKeysValues",
+      "value": "[]"
+     },
+     {
+      "name": "cacheDuration",
+      "type": "Integer",
+      "value": 3600
+     },
+     {
+      "name": "cache",
+      "type": "Boolean",
+      "value": "true"
+     }
+    ],
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi"
+   }
+  ]
+ },
+ "filename": "/system/IvyUI/dashboards/main.cdfde",
+ "layout": {
+  "rows": [
+   {
+    "id": "3e167016-075d-542c-fea4-a39f382f16b6",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "OPTS"
+     },
+     {
+      "name": "resourceCode",
+      "type": "Resource",
+      "value": "var dashboardOpts = {\n    dashboardTitle: \"Home\",\n    dashboardSubtitle: \"Lets get started\",\n    dashboardSection: \"dummy\",\n    dashboardBreadcrumb:[\" \"]\n} "
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "22c7ce85-2cef-a3c2-b482-9769441f8f7d",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "51087908-599c-51ae-17fa-e099051c28d7",
+    "parent": "22c7ce85-2cef-a3c2-b482-9769441f8f7d",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": "8"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": "col-lg-offset-2"
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "378dfede-319c-176d-0dd1-3117d917c7a7",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "51087908-599c-51ae-17fa-e099051c28d7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0caa64ad-1445-f9a5-89fb-14710f43a84a",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "378dfede-319c-176d-0dd1-3117d917c7a7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "54760816-3bf1-48c1-80eb-7319fce3efde",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "0caa64ad-1445-f9a5-89fb-14710f43a84a",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div class=\"box box-solid\">\n    <div class=\"box-header with-border\">\n        <h3 class=\"box-title\">Header</h3>\n    </div>\n    <div class=\"box-body text-center\">\n        sdfdsfsdfdsf\n    </div>\n</div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "80c6cdd2-7788-c3d4-306c-72767a75747f",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "51087908-599c-51ae-17fa-e099051c28d7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "7a7648ee-520c-33f5-236f-3e9ffa446fd9",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "80c6cdd2-7788-c3d4-306c-72767a75747f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5abfd4d4-91fb-fbbc-403c-89133439f70e",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "7a7648ee-520c-33f5-236f-3e9ffa446fd9",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div class=\"box box-solid\">\n    <div class=\"box-header with-border\">\n        <h3 class=\"box-title\">Browse Dashboards</h3>\n    </div>\n    <div class=\"box-body\">\n        <p>Get started with your dashboard by checking out the dashboard browser or simply select a dashboard from the Dashboards drop down menu on the left</p> \n        <div class=\"row\">\n            <div class=\"col-md-4 col-md-offset-8\">\n                <a href=\"\" class=\"btn btn-primary btn-block\">Dashboards</a>\n            </div>\n        </div>\n    </div>\n</div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "783e2552-5eb0-a7be-fcbc-c211c60ab660",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "80c6cdd2-7788-c3d4-306c-72767a75747f",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "32763b39-8850-fd34-35e4-ea174a643dc2",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "783e2552-5eb0-a7be-fcbc-c211c60ab660",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div class=\"box box-solid\">\n    <div class=\"box-header with-border\">\n        <h3 class=\"box-title\">Browse Reports</h3>\n    </div>\n    <div class=\"box-body\">\n        <p>Get started with your dashboard by checking out the dashboard browser or simply select a dashboard from the Dashboards drop down menu on the left</p> \n        <div class=\"row\">\n            <div class=\"col-md-4 col-md-offset-8\">\n                <a href=\"\" class=\"btn btn-primary btn-block\">Reports</a>\n            </div>\n        </div>\n    </div>\n</div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b6cdc441-311f-39c0-48df-d465037b071e",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "51087908-599c-51ae-17fa-e099051c28d7",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "33e27440-a9de-f962-326e-b7bb5b170f38",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "b6cdc441-311f-39c0-48df-d465037b071e",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "36279084-09ce-3185-b6af-e90e1f701a59",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "33e27440-a9de-f962-326e-b7bb5b170f38",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div class=\"box box-solid\">\n    <div class=\"box-header with-border\">\n        <h3 class=\"box-title\">Documentation</h3>\n    </div>\n    <div class=\"box-body\">\n        <p>Get started with your dashboard by checking out the dashboard browser or simply select a dashboard from the Dashboards drop down menu on the left</p> \n        <div class=\"row\">\n            <div class=\"col-md-4 col-md-offset-8\">\n                <a href=\"\" class=\"btn btn-primary btn-block\">Documentation</a>\n            </div>\n        </div>\n    </div>\n</div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0d2ffe6e-3f55-3d14-6204-6f99915c9646",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "b6cdc441-311f-39c0-48df-d465037b071e",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "6",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "36d24280-e5e0-2785-b066-90bdb4626df8",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "0d2ffe6e-3f55-3d14-6204-6f99915c9646",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<div class=\"box box-solid\">\n    <div class=\"box-header with-border\">\n        <h3 class=\"box-title\">Support</h3>\n    </div>\n    <div class=\"box-body\">\n        <p>Get started with your dashboard by checking out the dashboard browser or simply select a dashboard from the Dashboards drop down menu on the left</p> \n        <div class=\"row\">\n            <div class=\"col-md-4 col-md-offset-8\">\n                <a href=\"\" class=\"btn btn-primary btn-block\">Support</a>\n            </div>\n        </div>\n    </div>\n</div> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   }
+  ],
+  "title": "main"
+ }
+}

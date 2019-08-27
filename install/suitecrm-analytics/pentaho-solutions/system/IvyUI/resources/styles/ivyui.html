@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+@HEADER@
+
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="/suitecrmanalytics/api/repos/IvyUI/static/custom/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/suitecrmanalytics/api/repos/IvyUI/static/custom/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="/suitecrmanalytics/api/repos/IvyUI/static/custom/css/skins/_all-skins.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+<style type="text/css">
+
+.content-wrapper{
+	margin-left: 0px;
+}
+
+.main-footer{
+	margin-left: 0px;
+}
+
+</style>
+
+</head>
+<body class="hold-transition skin-black-light sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Blank page
+        <small>it all starts here</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Blank page</li>
+      </ol>
+    </section>
+
+    <section class="content">
+
+	@CONTENT@
+
+    </section>
+
+  </div>
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      Powered by IvyIS & Hitachi Vantara - <b>Version</b> 1.0.0
+    </div>
+    <strong>Copyright &copy; 2014-2019 <a href="http://ivy-is.co.uk">Ivy Information Systems Scotland Ltd</a>.</strong> All rights
+    reserved.
+  </footer>
+
+</div>
+
+
+@FOOTER@
+
+<!-- ./wrapper -->
+
+<!-- SlimScroll -->
+<script src="/suitecrmanalytics/api/repos/IvyUI/static/custom/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="/suitecrmanalytics/api/repos/IvyUI/static/custom/plugins/fastclick/fastclick.js"></script>
+
+
+<script>
+  var AdminLTEOptions = {
+    //Enable sidebar expand on hover effect for sidebar mini
+    //This option is forced to true if both the fixed layout and sidebar mini
+    //are used together
+    
+  };
+</script>
+
+
+<!-- AdminLTE App -->
+<script src="/suitecrmanalytics/api/repos/IvyUI/static/custom/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/suitecrmanalytics/api/repos/IvyUI/static/custom/js/demo.js"></script>
+
+<script src="/suitecrmanalytics/api/repos/IvyUI/static/custom/js/chartProperties.js"></script>
+
+<script src="/suitecrmanalytics/api/repos/IvyUI/static/custom/js/branding.js"></script>
+
+<script src="/suitecrmanalytics/api/repos/IvyUI/static/custom/js/ivyis.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+
+	$('.content > .container').removeClass('container');
+
+
+
+	$('.content-header h1').html(dashboardOpts.dashboardTitle+" <small>"+dashboardOpts.dashboardSubtitle+"</small>");
+
+	$('title').html("IvyIS | "+dashboardOpts.dashboardTitle);
+	
+
+	var breadcrumbHTML = "<li><a href='#'><i class='fa fa-dashboard'></i> Home</a></li>";
+
+	$.each(dashboardOpts.dashboardBreadcrumb, function( index, value ) {
+		//alert( index + ": " + value );
+		breadcrumbHTML = breadcrumbHTML+"<li><a href='#'> "+value+"</a></li>"
+	});
+
+	$('.breadcrumb').html(breadcrumbHTML);
+
+
+});
+
+</script>
+
+</body>
+</html>

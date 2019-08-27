@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		@HEADER@
+	</head>
+	<body>
+		<style>
+			body.fouc-protected {
+			  display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			document.getElementsByTagName("body")[0].className = "fouc-protected";
+		</script>
+		@CONTENT@
+		
+		@FOOTER@
+	</body>
+</html>
+
+

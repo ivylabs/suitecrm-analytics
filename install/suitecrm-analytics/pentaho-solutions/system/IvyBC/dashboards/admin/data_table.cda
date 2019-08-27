@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="TABLE_5_ROWS" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+      <Connection id="TABLE_25_ROWS" type="mondrian.jndi">
+         <Catalog>mondrian:/SteelWheels</Catalog>
+         <Jndi>SampleData</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="TABLE_5_ROWS"
+               id="TABLE_5_ROWS"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters/>
+      <Query>SELECT
+NON EMPTY [Measures].[Quantity] ON COLUMNS,
+NON EMPTY topcount([Product].[Vendor].Members,5,[Measures].[Quantity]) ON ROWS
+FROM [SteelWheelsSales]</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="TABLE_25_ROWS"
+               id="TABLE_25_ROWS"
+               type="mdx">
+      <BandedMode>compact</BandedMode>
+      <Columns/>
+      <Parameters/>
+      <Query>SELECT
+NON EMPTY [Measures].[Quantity] ON COLUMNS,
+NON EMPTY topcount([Product].[Vendor].Members,25,[Measures].[Quantity]) ON ROWS
+FROM [SteelWheelsSales]</Query>
+   </DataAccess>
+</CDADescriptor>

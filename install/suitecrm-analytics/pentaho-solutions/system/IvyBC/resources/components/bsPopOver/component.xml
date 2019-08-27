@@ -1,0 +1,125 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap PopOver</Name>
+		<IName>BSPopOver</IName>
+		<Description>Bootstrap PopOver</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+		<Model>
+			<Property>executeAtStart</Property>
+			<Property>htmlObject</Property>
+      <Property>popOverTitle</Property>
+			<Property>popOverGravity</Property>
+			<Property>closeOnClickOutside</Property>
+      <Property>popOverTrigger</Property>
+      <Property>popOverContent</Property>
+			<!--<Property name="parameters">xActionArrayParameter</Property>-->
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>listeners</Property>
+		</Model>
+		<Implementation>
+
+			<Code src="bsPopOver.js" />
+
+			<Styles>
+        <Style version="1.0" src="bsPopOver.css">Popup</Style>
+      </Styles>
+      
+			<Dependencies/>
+
+      <CustomProperties>
+      
+        <DesignerProperty>
+          <Header>
+            <Name>popOverTitle</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue></DefaultValue>
+            <Description>Popover Title</Description>
+            <InputType>String</InputType>
+            <OutputType>String</OutputType>
+            <Order>81</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+        
+        <DesignerProperty>
+          <Header>
+            <Name>popOverContent</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue></DefaultValue>
+            <Description>Popover Content</Description>
+            <InputType>Html</InputType>
+            <OutputType>String</OutputType>
+            <Order>82</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+        
+        <DesignerProperty>
+          <Header>
+            <Name>popOverGravity</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue>auto</DefaultValue>
+            <Description>Popover position</Description>
+            <InputType type='valuelist' />
+            <OutputType>String</OutputType>
+            <Order>83</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+          <Values>
+            <Value display='Auto'>auto</Value>
+            <Value display='Top'>top</Value>
+            <Value display='Bottom'>bottom</Value>
+            <Value display='Left'>left</Value>
+            <Value display='Right'>right</Value>
+          </Values>
+        </DesignerProperty>
+        
+        <DesignerProperty>
+          <Header>
+            <Name>closeOnClickOutside</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue>"false"</DefaultValue>
+            <Description>Close on click outside</Description>
+            <Tooltip>Close on click outside?</Tooltip>
+            <InputType>Boolean</InputType>
+            <OutputType>Boolean</OutputType>
+            <Order>84</Order>
+            <Advanced>true</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+        
+        <DesignerProperty>
+          <Header>
+            <Name>popOverTrigger</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue>click</DefaultValue>
+            <Description>Popover Trigger</Description>
+            <InputType type='valuelist' />
+            <OutputType>String</OutputType>
+            <Order>85</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+          <Values>
+            <Value display='Click'>click</Value>
+            <Value display='Hover'>hover</Value>
+            <Value display='Focus'>focus</Value>
+            <Value display='Manual'>manual</Value>
+          </Values>
+        </DesignerProperty>
+
+      </CustomProperties>
+
+    </Implementation>
+	</Contents>
+</DesignerComponent>

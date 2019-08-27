@@ -1,0 +1,424 @@
+<DesignerComponent>
+	<Header>
+		<Name>Bootstrap Select</Name>
+		<IName>BSSelectBaseComponent</IName>
+		<Description>Bootstrap Select</Description>
+		<Category>IVYISBOOTSTRAP</Category>
+		<CatDescription>Ivy IS Bootstrap</CatDescription>
+		<Type>PalleteEntry</Type>
+		<Version>1.0</Version>
+	</Header>
+	<Contents>
+
+		<Model>
+			<Property>parameter</Property>
+			<Property>executeAtStart</Property>
+			<Property>htmlObject</Property>
+			<Property>listeners</Property>
+            <Property name="parameters">xActionArrayParameter</Property>
+            <Definition name="queryDefinition">
+				<Property>dataSource</Property>
+			</Definition>
+			<Property>postFetch</Property>
+			<Property>valuesArray</Property>
+			<Property>valueAsId</Property>
+			<Property>refreshPeriod</Property>
+			<Property>preExecution</Property>
+			<Property>postExecution</Property>
+			<Property>preChange</Property>
+			<Property>postChange</Property>
+			<Property>buttonBlock</Property>
+			<Property>buttonIcon</Property>
+			<Property>prependIcon</Property>
+			<Property name ="buttonType" type="string">buttonType</Property>
+			<Property name ="buttonSize" type="string">buttonSize</Property>
+			<Property>buttonLiveSearch</Property>
+			<Property>itemsSize</Property>
+			<Property>multipleSelectMode</Property>
+			<Property>maxMultiSelect</Property>
+			<Property>multipleSelectTextFormat</Property>
+			<Property>maxMultiSelectTextFormat</Property>
+			<Property>multiSelectTitle</Property>
+			<Property>showTickIcon</Property>
+			<Property>showMenuArrow</Property>
+		</Model>
+
+		<Implementation>
+			<Code src="bsSelect.js" />
+			<Dependencies>
+				<Dependency src="bootstrap-select.js" version="1.0">bootstrap-select.js</Dependency>
+			</Dependencies>
+            <Styles>
+                <Style version="1.0" src="bootstrap-select.css">bootstrap-select.css</Style>
+            </Styles>
+
+			<CustomProperties>
+
+				<DesignerProperty>
+					<Header>
+						<Name>itemsSize</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>false</DefaultValue>
+						<Description>Items Size</Description>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>53</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>buttonLiveSearch</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Live Search</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Live Seacrch</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>52</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>buttonBlock</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Button Block</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Button Block</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>53</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>buttonType</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>btn-default</DefaultValue>
+						<Description>Button Type</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>54</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Default'>btn-default</Value>
+						<Value display='Primary'>btn-primary</Value>
+						<Value display='Info'>btn-info</Value>
+						<Value display='Success'>btn-success</Value>
+						<Value display='Warning'>btn-warning</Value>
+						<Value display='Danger'>btn-danger</Value>
+						<Value display='Inverse'>btn-inverse</Value>
+						<Value display='Link'>btn-link</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>buttonSize</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue></DefaultValue>
+						<Description>Button Size</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>55</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display='Default'></Value>
+						<Value display='Large'>btn-lg</Value>
+						<Value display='Small'>btn-sm</Value>
+						<Value display='Mini'>btn-xs</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>prependIcon</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"False"</DefaultValue>
+						<Description>Prepend Icon</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Prepend Icon</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>56</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>buttonIcon</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>none</DefaultValue>
+						<Description>Button Icon</Description>
+						<InputType type='valuelist' />
+						<OutputType>String</OutputType>
+						<Order>57</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+					<Values>
+						<Value display="Adjust">glyphicon-adjust</Value>
+						<Value display="Align Center">glyphicon-align-center</Value>
+						<Value display="Align Justify">glyphicon-align-justify</Value>
+						<Value display="Align Left">glyphicon-align-left</Value>
+						<Value display="Align Right">glyphicon-align-right</Value>
+						<Value display="Arrow Down">glyphicon-arrow-down</Value>
+						<Value display="Arrow Left">glyphicon-arrow-left</Value>
+						<Value display="Arrow Right">glyphicon-arrow-right</Value>
+						<Value display="Arrow Up">glyphicon-arrow-up</Value>
+						<Value display="Asterisk">glyphicon-asterisk</Value>
+						<Value display="Backward">glyphicon-backward</Value>
+						<Value display="Ban Circle">glyphicon-ban-circle</Value>
+						<Value display="Barcode">glyphicon-barcode</Value>
+						<Value display="Bell">glyphicon-bell</Value>
+						<Value display="Bold">glyphicon-bold</Value>
+						<Value display="Book">glyphicon-book</Value>
+						<Value display="Bookmark">glyphicon-bookmark</Value>
+						<Value display="Briefcase">glyphicon-briefcase</Value>
+						<Value display="Bullhorn">glyphicon-bullhorn</Value>
+						<Value display="Calendar">glyphicon-calendar</Value>
+						<Value display="Camera">glyphicon-camera</Value>
+						<Value display="Certificate">glyphicon-certificate</Value>
+						<Value display="Check">glyphicon-check</Value>
+						<Value display="Chevron Down">glyphicon-chevron-down</Value>
+						<Value display="Chevron Left">glyphicon-chevron-left</Value>
+						<Value display="Chevron Right">glyphicon-chevron-right</Value>
+						<Value display="Chevron Up">glyphicon-chevron-up</Value>
+						<Value display="Circle Arrow Down">glyphicon-circle-arrow-down</Value>
+						<Value display="Circle Arrow Left">glyphicon-circle-arrow-left</Value>
+						<Value display="Circle Arrow Right">glyphicon-circle-arrow-right</Value>
+						<Value display="Circle Arrow Up">glyphicon-circle-arrow-up</Value>
+						<Value display="Cog">glyphicon-cog</Value>
+						<Value display="Comment">glyphicon-comment</Value>
+						<Value display="Download">glyphicon-download</Value>
+						<Value display="Download Alt">glyphicon-download-alt</Value>
+						<Value display="Edit">glyphicon-edit</Value>
+						<Value display="Eject">glyphicon-eject</Value>
+						<Value display="Envelope">glyphicon-envelope</Value>
+						<Value display="Exclamation Sign">glyphicon-exclamation-sign</Value>
+						<Value display="Eye Close">glyphicon-e</Value>
+						<Value display="Eye Open">glyphicon-eye-open</Value>
+						<Value display="Facetime Video">glyphicon-facetime-video</Value>
+						<Value display="Fast Backward">glyphicon-fast-backward</Value>
+						<Value display="Fast Forward">glyphicon-fast-forward</Value>
+						<Value display="File">glyphicon-file</Value>
+						<Value display="Film">glyphicon-film</Value>
+						<Value display="Filter">glyphicon-filter</Value>
+						<Value display="Fire">glyphicon-fire</Value>
+						<Value display="Flag">glyphicon-flag</Value>
+						<Value display="Folder Close">glyphicon-folder-close</Value>
+						<Value display="Folder Open">glyphicon-folder-open</Value>
+						<Value display="Font">glyphicon-font</Value>
+						<Value display="Forward">glyphicon-forward</Value>
+						<Value display="Fullscreen">glyphicon-fullscreen</Value>
+						<Value display="Gift">glyphicon-gift</Value>
+						<Value display="Globe">glyphicon-globe</Value>
+						<Value display="Hand Down">glyphicon-hand-down</Value>
+						<Value display="Hand Left">glyphicon-hand-left</Value>
+						<Value display="Hand Right">glyphicon-hand-right</Value>
+						<Value display="Hand Up">glyphicon-hand-up</Value>
+						<Value display="Hdd">glyphicon-hdd</Value>
+						<Value display="Headphones">glyphicon-headphones</Value>
+						<Value display="Heart">glyphicon-heart</Value>
+						<Value display="Home">glyphicon-home</Value>
+						<Value display="Inbox">glyphicon-inbox</Value>
+						<Value display="Indent Left">glyphicon-indent-left</Value>
+						<Value display="Indent Right">glyphicon-indent-right</Value>
+						<Value display="Info Sign">glyphicon-info-sign</Value>
+						<Value display="Italic">glyphicon-italic</Value>
+						<Value display="Leaf">glyphicon-leaf</Value>
+						<Value display="List">glyphicon-list</Value>
+						<Value display="List Alt">glyphicon-list-altList Alt</Value>
+						<Value display="Lock">glyphicon-lock</Value>
+						<Value display="Magnet">glyphicon-magnet</Value>
+						<Value display="Map Marker">glyphicon-map-marker</Value>
+						<Value display="Minus">glyphicon-minus</Value>
+						<Value display="Minus Sign">glyphicon-minus-sign</Value>
+						<Value display="Move">glyphicon-move</Value>
+						<Value display="Music">glyphicon-music</Value>
+						<Value display="None">none</Value>
+						<Value display="Off">glyphicon-off</Value>
+						<Value display="Ok">glyphicon-ok</Value>
+						<Value display="Ok Circle">glyphicon-ok-circle</Value>
+						<Value display="Ok Sign">glyphicon-ok-sign</Value>
+						<Value display="Pause">glyphicon-pause</Value>
+						<Value display="Pencil">glyphicon-pencil</Value>
+						<Value display="Picture">glyphicon-picture</Value>
+						<Value display="Plane">glyphicon-plane</Value>
+						<Value display="Play">glyphicon-play</Value>
+						<Value display="Play Circle">glyphicon-play-circle</Value>
+						<Value display="Plus">glyphicon-plus</Value>
+						<Value display="Plus Sign">glyphicon-plus-sign</Value>
+						<Value display="Print">glyphicon-print</Value>
+						<Value display="QR Code">glyphicon-qrcode</Value>
+						<Value display="Question Sign">glyphicon-question-sign</Value>
+						<Value display="Random">glyphicon-random</Value>
+						<Value display="Refresh">glyphicon-refresh</Value>
+						<Value display="Remove">glyphicon-remove</Value>
+						<Value display="Remove Circle">glyphicon-remove-circle</Value>
+						<Value display="Remove Sign">glyphicon-remove-sign</Value>
+						<Value display="Repeat">glyphicon-repeat</Value>
+						<Value display="Resize Full">glyphicon-resize-full</Value>
+						<Value display="Resize Horizontal">glyphicon-resize-horizontal</Value>
+						<Value display="Resize Small">glyphicon-resize-small</Value>
+						<Value display="Resize Vertical">glyphicon-resize-vertical</Value>
+						<Value display="Retweet">glyphicon-retweet</Value>
+						<Value display="Road">glyphicon-road</Value>
+						<Value display="Screenshot">glyphicon-screenshot</Value>
+						<Value display="Search">glyphicon-search</Value>
+						<Value display="Share">glyphicon-share</Value>
+						<Value display="Share Alt">glyphicon-share-alt</Value>
+						<Value display="Shopping Cart">glyphicon-shopping-cart</Value>
+						<Value display="Signal">glyphicon-signal</Value>
+						<Value display="Star">glyphicon-star</Value>
+						<Value display="Star Empty">glyphicon-star-empty</Value>
+						<Value display="Step Backward">glyphicon-step-backward</Value>
+						<Value display="Step Forward">glyphicon-step-forward</Value>
+						<Value display="Stop">glyphicon-stop</Value>
+						<Value display="Tag">glyphicon-tag</Value>
+						<Value display="Tags">glyphicon-tags</Value>
+						<Value display="Tasks">glyphicon-tasks</Value>
+						<Value display="Text Height">glyphicon-text-height</Value>
+						<Value display="Text Width">glyphicon-text-width</Value>
+						<Value display="Th">glyphicon-th</Value>
+						<Value display="Th Large">glyphicon-th-large</Value>
+						<Value display="Th List">glyphicon-th-list</Value>
+						<Value display="Thumbs Down">glyphicon-thumbs-down</Value>
+						<Value display="Thumbs Up">glyphicon-thumbs-up</Value>
+						<Value display="Time">glyphicon-time</Value>
+						<Value display="Tint">glyphicon-tint</Value>
+						<Value display="Trash">glyphicon-trash</Value>
+						<Value display="Upload">glyphicon-upload</Value>
+						<Value display="User">glyphicon-user</Value>
+						<Value display="Volume Down">glyphicon-volume-do</Value>
+						<Value display="Volume Off">glyphicon-volume-off</Value>
+						<Value display="Volume Up">glyphicon-volume-up</Value>
+						<Value display="Warning Sign">glyphicon-warning-sign</Value>
+						<Value display="Wrench">glyphicon-wrench</Value>
+						<Value display="Zoom In">glyphicon-zoom-in</Value>
+						<Value display="Zoom Out">glyphicon-zoom-out</Value>
+					</Values>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>multipleSelectMode</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Multiple select</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Multiple select mode</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>58</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>maxMultiSelect</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>0</DefaultValue>
+						<Description>Max itens for select</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Max itens for select</Tooltip>
+						<InputType>Integer</InputType>
+						<OutputType>Number</OutputType>
+						<Order>59</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>multipleSelectTextFormat</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Multiple select text count</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Multiple select text count format</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>60</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>maxMultiSelectTextFormat</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>0</DefaultValue>
+						<Description>Max itens for text format</Description>
+						<Advanced>true</Advanced>
+						<Tooltip>Max itens for multiple select text count format</Tooltip>
+						<InputType>Integer</InputType>
+						<OutputType>Number</OutputType>
+						<Order>61</Order>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>multiSelectTitle</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>Nothing selected</DefaultValue>
+						<Description>Multiselect title</Description>
+						<InputType>String</InputType>
+						<OutputType>String</OutputType>
+						<Order>62</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>showTickIcon</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Show Tick icon</Description>
+						<Tooltip>Show the tick icon on single select</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>63</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+				<DesignerProperty>
+					<Header>
+						<Name>showMenuArrow</Name>
+						<Parent>BaseProperty</Parent>
+						<DefaultValue>"false"</DefaultValue>
+						<Description>Show Menu Arrow</Description>
+						<Tooltip>Show the menu items in arrow mode</Tooltip>
+						<InputType>Boolean</InputType>
+						<OutputType>Boolean</OutputType>
+						<Order>64</Order>
+						<Advanced>true</Advanced>
+						<Version>1.0</Version>
+					</Header>
+				</DesignerProperty>
+
+			</CustomProperties>
+		</Implementation>
+
+	</Contents>
+</DesignerComponent>

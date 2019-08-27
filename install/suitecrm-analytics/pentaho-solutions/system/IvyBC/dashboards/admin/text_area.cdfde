@@ -1,0 +1,286 @@
+{
+ "layout": {
+  "title": "components",
+  "rows": [
+   {
+    "id": "13afc3e9-9106-7dc5-4b1a-1103a9a15fe7",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "DOCS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "tr.odd {\nbackground-color: #FFF;\n} ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
+    "id": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column",
+    "parent": "4a750172-d3e4-6c93-4330-a9a4b5453a12",
+    "properties": [
+     {
+      "name": "name",
+      "value": "MAIN_CONTENT",
+      "type": "Id"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapSmall",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapMedium",
+      "value": "12",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapLarge",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "bootstrapCssClass",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "4967ba02-798c-a68d-a2c9-69274ec952ca",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "2b4b14f3-dfc9-a254-1fae-81eefefc2c90",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h2 id=\"bootstrap_textarea\">Bootstrap Textarea</h2>\n<p>The Textarea component allows a user to set the value of a parameter in a dashboard.</p>\n<h4>Common Options</h4>\n<table class=\"table\">\n    <thead>\n        <tr>\n            <th>Option</th>\n            <th>Example</th>\n            <th>Description</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>Rows</td>\n            <td>5</td>\n            <td>The number of rows for the textarea by default. The user can expand the textarea if they require more rows.</td>\n        </tr>\n        <tr>\n            <td>Placeholder</td>\n            <td>Type Here</td>\n            <td>The text to display in the textarea when no text has been entered.</td>\n        </tr>\n    </tbody>\n</table>\n<h4>Sample Slider</h4>\n<div id=\"textarea_sample_1\"></div>\n<h4>Additional Notes</h4>\n<p>None</p>\n<hr /> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   }
+  ]
+ },
+ "components": {
+  "rows": [
+   {
+    "id": "IVYISBOOTSTRAP",
+    "name": "Ivy IS Bootstrap",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Ivy IS Bootstrap",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "d0c6d38b-6a97-b073-7650-ae249ed0a561",
+    "type": "ComponentsBSTextareaComponent",
+    "typeDesc": "Bootstrap Textarea",
+    "parent": "IVYISBOOTSTRAP",
+    "properties": [
+     {
+      "name": "name",
+      "value": "TEXTAREA_SAMPLE_1",
+      "type": "Id"
+     },
+     {
+      "name": "parameter",
+      "value": "${p:INPUT_PARAM}",
+      "type": "Parameter"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "textarea_sample_1",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "Generic",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "e4242e47-5c01-4fae-f35d-c8b5b7c46dd8",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "INPUT_PARAM",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "Hello World",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   }
+  ]
+ },
+ "datasources": {
+  "rows": []
+ },
+ "filename": "/system/IvyBC/dashboards/admin/text_area.cdfde"
+}

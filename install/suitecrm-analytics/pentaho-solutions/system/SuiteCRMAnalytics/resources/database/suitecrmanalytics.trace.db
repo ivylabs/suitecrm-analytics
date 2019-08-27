@@ -1,0 +1,39 @@
+12-17 17:41:24 jdbc[3]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT <[*]VALUES> FROM <TABLE NAME> WHERE <CONDITIONS> "; expected "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS"; SQL statement:
+SELECT <values> FROM <table name> WHERE <conditions> [42001-131]
+12-17 17:41:24 jdbc[4]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT <[*]VALUES> FROM <TABLE NAME> WHERE <CONDITIONS> "; expected "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS"; SQL statement:
+SELECT <values> FROM <table name> WHERE <conditions> [42001-131]
+12-17 17:41:24 jdbc[5]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT <[*]VALUES> FROM <TABLE NAME> WHERE <CONDITIONS> "; expected "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS"; SQL statement:
+SELECT <values> FROM <table name> WHERE <conditions> [42001-131]
+12-17 17:41:24 jdbc[6]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT <[*]VALUES> FROM <TABLE NAME> WHERE <CONDITIONS> "; expected "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS"; SQL statement:
+SELECT <values> FROM <table name> WHERE <conditions> [42001-131]
+12-17 17:42:44 jdbc[12]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "lookup table" not found; SQL statement:
+SELECT * FROM "lookup table" [42102-131]
+12-17 17:42:44 jdbc[13]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "lookup table" not found; SQL statement:
+SELECT * FROM "lookup table" [42102-131]
+12-17 17:42:44 jdbc[14]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "lookup table" not found; SQL statement:
+SELECT * FROM "lookup table" [42102-131]
+12-17 17:42:47 jdbc[15]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "S" not found; SQL statement:
+SELECT * FROM S [42102-131]
+12-17 17:42:47 jdbc[16]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "S" not found; SQL statement:
+SELECT * FROM S [42102-131]
+12-17 17:42:47 jdbc[17]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "SY" not found; SQL statement:
+SELECT * FROM SY [42102-131]
+12-17 17:42:47 jdbc[18]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "SYS" not found; SQL statement:
+SELECT * FROM SYS [42102-131]
+12-17 17:42:47 jdbc[19]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "SYST" not found; SQL statement:
+SELECT * FROM SYST [42102-131]
+12-17 17:42:47 jdbc[20]: SQLException
+org.h2.jdbc.JdbcSQLException: Table "SYSTE" not found; SQL statement:
+SELECT * FROM SYSTE [42102-131]
