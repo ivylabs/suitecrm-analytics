@@ -1,34 +1,39 @@
 # Requirements
 
 * Linux Environment
-* Java JRE 8
+* OpenJDK 8 JRE
 * wget
 * unzip
-* curl
+* zip
 
-Installation of Java JRE 8 on Ubuntu
+# Install Java
 
-You may have to install OpenJDK instead
-
-* sudo add-apt-repository ppa:webupd8team/java
 * sudo apt-get update
-* sudo apt-get install oracle-java8-installer
+* sudo apt-get install openjdk-8-jre
 
-# Installation Instructions
+# Install MySQL
+
+* https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+
+# Build Instructions
 
 
 * Clone the Repository
 * Run the build.sh
-* Navigate to the suitecrm-analytics-server directory
-* Configure the install.properties
-* Run the setup-suitecrm-analytics.sh script
-* Start the server
+
+# Server Setup Instructions
+
+* Unzip suitecrm-analytics-server.zip
+* Change Dirctory to suitecrm-analytics-server/
+* Edit the install.properties
+* Execute setup-suitecrm-analytics.sh
+
+# Start / Stop SuiteCRM Analytics
+
+* ./start-suitecrm-analytics.sh
+* ./stop-suitecrm-analytics.sh
 
 # Notes
-
-Upload the datasource manifest:
-
-./import-export.sh --restore --url=http://localhost:8080/suitecrmanalytics --username=admin --password=password --file-path=/root/suitecrm-analytics/datasources.zip --overwrite=true --logfile=/temp/logfile.log
 
 H2 Connection for BI Server:
 
@@ -36,10 +41,7 @@ jdbc:h2:../../pentaho-solutions/system/SuiteCRMAnalytics/resources/database/suit
 
 NO USERNAME OR PASSWORD!
 
-We need to install the PRS manually as the patches way is causing issues
-
-** SuiteCRM-Analytics Client Tools
 
 
 
-** JDBC Driver NOTE!!! Make sure to delete the old MySQL driver in tomcat/lib or we get a shitty error
+
