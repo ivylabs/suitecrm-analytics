@@ -55,14 +55,21 @@ rm -Rf suitecrm-analytics-server/stop-pentaho.bat
 rm -Rf suitecrm-analytics-server/start-pentaho-debug.sh
 rm -Rf suitecrm-analytics-server/start-pentaho-debug.bat
 
+echo ""
+read -r -p " Would you like to package the installation? This will create a zip file and remove the ready to use application server. [y/N] " response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+        zip -r suitecrm-analytics-server.zip suitecrm-analytics-server/
 
-zip -r suitecrm-analytics-server.zip suitecrm-analytics-server/
+	rm -Rf suitecrm-analytics-server/
 
-rm -Rf suitecrm-analytics-server/
+fi
+
+
 
 
 echo ""
-read -r -p " Would you like to remove the installation files? This will save disk space. [y/N] " response
+read -r -p " Would you like to remove the installation files? This will delete the downloaded files and save disk space. [y/N] " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
 	rm -Rf install/installation-files/
