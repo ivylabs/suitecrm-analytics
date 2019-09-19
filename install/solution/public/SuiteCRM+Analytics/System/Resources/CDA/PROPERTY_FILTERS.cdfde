@@ -1,0 +1,105 @@
+{
+  "components" : {
+    "rows" : [ ]
+  },
+  "datasources" : {
+    "rows" : [
+      {
+        "id" : "SCRIPTING",
+        "name" : "SCRIPTING Queries",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "SCRIPTING Queries",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "75a1bfec-0a8a-8554-5f1b-cb864662b849",
+        "type" : "ComponentsjsonScriptable_scripting",
+        "typeDesc" : "jsonScriptable over scripting",
+        "parent" : "SCRIPTING",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "pStyles",
+            "type" : "Id"
+          },
+          {
+            "name" : "initscript",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "language",
+            "value" : "beanshell",
+            "type" : "String"
+          },
+          {
+            "name" : "access",
+            "value" : "public",
+            "type" : "Access"
+          },
+          {
+            "name" : "query",
+            "value" : "{\n   \u0022resultset\u0022:[\n      [\u0022SuiteCRM Analytics\u0022, \u0022SuiteCRMAnalytics\u0022],\n      [\u0022Custom\u0022, \u0022Custom\u0022]\n   ],\n\n   \u0022metadata\u0022:[\n      {\u0022colIndex\u0022:0,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Name\u0022},\n      {\u0022colIndex\u0022:1,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Value\u0022}\n   ]\n}",
+            "type" : "JsonScriptableQuery"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "CdaParameters"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "value" : "[]",
+            "type" : "CdaCalculatedColumnsArray"
+          },
+          {
+            "name" : "cdacolumns",
+            "value" : "[]",
+            "type" : "CdaColumnsArray"
+          },
+          {
+            "name" : "output",
+            "value" : "[]",
+            "type" : "IndexArray"
+          },
+          {
+            "name" : "outputMode",
+            "value" : "include",
+            "type" : "OutputMode"
+          },
+          {
+            "name" : "cacheKeys",
+            "value" : "[]",
+            "type" : "CacheKeysValues"
+          },
+          {
+            "name" : "cacheDuration",
+            "value" : 3600,
+            "type" : "Integer"
+          },
+          {
+            "name" : "cache",
+            "value" : "true",
+            "type" : "Boolean"
+          }
+        ],
+        "meta" : "CDA",
+        "meta_conntype" : "scripting.scripting",
+        "meta_datype" : "jsonScriptable",
+        "rowName" : "jsonScriptable over scripting"
+      }
+    ]
+  },
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/CDA/PROPERTY_FILTERS.cdfde",
+  "layout" : {
+    "rows" : [ ],
+    "title" : "CDF - Sample structure"
+  }
+}

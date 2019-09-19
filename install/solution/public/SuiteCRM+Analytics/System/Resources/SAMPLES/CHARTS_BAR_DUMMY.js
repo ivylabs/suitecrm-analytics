@@ -1,46 +1,24 @@
 lib('cdf-env.js');
 
-var render_BAR_COUNT_LEAD_STATUS = {
+var render_BAR_DUMMY = {
   type: "cccBarChart",
-  name: "render_BAR_COUNT_LEAD_STATUS",
+  name: "render_BAR_DUMMY",
   priority: 5,
-  parameters: [["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignFilter","pCampaignFilter"]],
+  parameters: [],
   executeAtStart: true,
-  htmlObject: "${h:C4}",
-  preExecution: function d(){
-    
-    // Use this if we are requesting a CGG chart direct
-    if(typeof cgg != 'undefined'){
-        load('../JS/analytics-legacy.js');
-    }
-    
-    /*
-    if(typeof cgg != 'undefined'){
-        load('../System/Resources/JS/analytics-legacy.js');
-    }
-    */
-    
-    var dash = Dashboards,
-        cd = this.chartDefinition;
-    
-    $.extend(true,cd,analytics.opts.charts.defaultChartComp);
-    $.extend(true,cd,analytics.opts.charts.defaultPieChartComp);
-    
-    
-
-} ,
+  htmlObject: "${h:C1}",
   listeners: [],
   clearsBeforePreExecution: true,
   renderMode: "total",
   dataAdditiveMode: false,
   chartDefinition:  {
-    dataAccessId: "COUNT_LEAD_BY_STATUS",
-    path: "/public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cda",
+    dataAccessId: "DUMMY1",
+    path: "/public/SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.cda",
     pushEnabled: false,
     width: 1080,
     height: 450,
     extensionPoints: [],
-    colors: [],
+    colors: ["#eb6657"],
     animate: true,
     barOrthoSizeMin: 1.5,
     barStackedMargin: 0,
@@ -153,9 +131,6 @@ var render_BAR_COUNT_LEAD_STATUS = {
   }
 };
 
-cgg.initParameter
-("pCampaignTypeFilter", "${pCampaignTypeFilter}")
-("pCampaignFilter", "${pCampaignFilter}")
-;
 
-cgg.render(render_BAR_COUNT_LEAD_STATUS);
+
+cgg.render(render_BAR_DUMMY);

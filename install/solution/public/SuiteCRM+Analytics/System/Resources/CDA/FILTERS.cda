@@ -55,6 +55,12 @@
       <Connection id="pCaseClosedDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pOpportunityCreatedDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pOpportunityClosedDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pOpportunitySalesStageFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -273,7 +279,7 @@ SELECT DISTINCT(CASE_PRIORITY) FROM D_CASES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Case Statuses' as CASE_STATUS
+      <Query><![CDATA[SELECT 'All Case Status' as CASE_STATUS
 UNION
 SELECT DISTINCT(CASE_STATUS) FROM D_CASES]]></Query>
    </DataAccess>
@@ -323,6 +329,44 @@ INNER JOIN D_DATE DD
 	ON FCM.CASE_CLOSED_TK = DD.DATE_TK
 GROUP BY 1,2
 ORDER BY 1 DESC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pOpportunityCreatedDateFilterQuery"
+               id="pOpportunityCreatedDateFilterQuery"
+               type="sql">
+      <Name>pOpportunityCreatedDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL
+UNION
+SELECT
+    DD.`YYYY-MM`
+	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+	,2 AS ORDINAL
+FROM F_OPPORTUNITY_MANAGEMENT FOM
+INNER JOIN D_DATE DD
+	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
+GROUP BY 1,2
+ORDER BY 3 ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pOpportunityClosedDateFilterQuery"
+               id="pOpportunityClosedDateFilterQuery"
+               type="sql">
+      <Name>pOpportunityClosedDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL
+UNION
+SELECT
+    DD.`YYYY-MM`
+	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+	,2 AS ORDINAL
+FROM F_OPPORTUNITY_MANAGEMENT FOM
+INNER JOIN D_DATE DD
+	ON FOM.OPPORTUNITY_CLOSED_TK = DD.DATE_TK
+GROUP BY 1,2
+ORDER BY 3 ASC;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunitySalesStageFilterQuery"
                id="pOpportunitySalesStageFilterQuery"

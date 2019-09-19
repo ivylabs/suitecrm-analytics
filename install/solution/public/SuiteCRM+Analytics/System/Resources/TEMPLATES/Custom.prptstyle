@@ -12,7 +12,7 @@
     <styles>
       <border-styles padding-left="0"/>
       <common-styles vertical-alignment="middle"/>
-      <content-styles color="#eb6657"/>
+      <content-styles color="#8cc63f"/>
       <text-styles bold="true" font-size="14"/>
     </styles>
   </rule>

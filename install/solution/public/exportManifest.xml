@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="02-09-2019 05:46:57 BST" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="19-09-2019 04:13:53 BST" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
     <ExportManifestEntity path="SuiteCRM Analytics">
         <ExportManifestProperty>
-            <EntityMetaData name="SuiteCRM Analytics" createdDate="2019-09-02T17:43:17.211+01:00" isFolder="true" path="SuiteCRM Analytics" isHidden="false" isSchedulable="true" locale="en_GB" title="SuiteCRM Analytics"/>
+            <EntityMetaData name="SuiteCRM Analytics" createdDate="2019-04-10T14:02:50.750+01:00" isFolder="true" path="SuiteCRM Analytics" isHidden="false" isSchedulable="true" locale="en_GB" title="SuiteCRM Analytics"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -15,7 +15,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Dashboards">
         <ExportManifestProperty>
-            <EntityMetaData name="Dashboards" createdDate="2019-09-02T17:43:17.219+01:00" isFolder="true" path="SuiteCRM Analytics/Dashboards" isHidden="false" isSchedulable="true" locale="en_GB" title="Dashboards"/>
+            <EntityMetaData name="Dashboards" createdDate="2019-04-10T14:02:50.772+01:00" isFolder="true" path="SuiteCRM Analytics/Dashboards" isHidden="false" isSchedulable="true" locale="en_GB" title="Dashboards"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -27,7 +27,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cda">
         <ExportManifestProperty>
-            <EntityMetaData name="LeadPerformanceDashboard.cda" createdDate="2019-09-02T17:43:17.227+01:00" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="LeadPerformanceDashboard"/>
+            <EntityMetaData name="LeadPerformanceDashboard.cda" createdDate="2019-04-10T14:02:51.014+01:00" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="LeadPerformanceDashboard"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -39,7 +39,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cdfde">
         <ExportManifestProperty>
-            <EntityMetaData name="LeadPerformanceDashboard.cdfde" createdDate="2019-09-02T17:43:17.256+01:00" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="LeadPerformanceDashboard.cdfde"/>
+            <EntityMetaData name="LeadPerformanceDashboard.cdfde" createdDate="2019-04-10T14:02:51.080+01:00" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="LeadPerformanceDashboard.cdfde"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -51,7 +51,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf">
         <ExportManifestProperty>
-            <EntityMetaData name="LeadPerformanceDashboard.wcdf" createdDate="2019-09-02T17:43:17.242+01:00" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="LeadPerformanceDashboard.wcdf"/>
+            <EntityMetaData name="LeadPerformanceDashboard.wcdf" createdDate="2019-04-10T14:02:50.965+01:00" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="LeadPerformanceDashboard.wcdf"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -63,7 +63,19 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Reports">
         <ExportManifestProperty>
-            <EntityMetaData name="Reports" createdDate="2019-09-02T17:43:17.287+01:00" isFolder="true" path="SuiteCRM Analytics/Reports" isHidden="false" isSchedulable="true" locale="en_GB" title="Reports"/>
+            <EntityMetaData name="Reports" createdDate="2019-04-10T14:02:53.629+01:00" isFolder="true" path="SuiteCRM Analytics/Reports" isHidden="false" isSchedulable="true" locale="en_GB" title="Reports"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Reports/AccountOpportunityValue.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="AccountOpportunityValue.prpt" createdDate="2019-09-17T11:55:33.532+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/AccountOpportunityValue.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Account Opportunity Value"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -75,7 +87,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Reports/AgentCasePerformance.prpt">
         <ExportManifestProperty>
-            <EntityMetaData name="AgentCasePerformance.prpt" createdDate="2019-09-02T17:43:17.293+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/AgentCasePerformance.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Agent Case Performance"/>
+            <EntityMetaData name="AgentCasePerformance.prpt" createdDate="2019-09-16T16:05:29.244+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/AgentCasePerformance.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Agent Case Performance"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -87,7 +99,55 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Reports/AgentLeadPerformance.prpt">
         <ExportManifestProperty>
-            <EntityMetaData name="AgentLeadPerformance.prpt" createdDate="2019-09-02T17:43:17.330+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/AgentLeadPerformance.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Agent Lead Performance"/>
+            <EntityMetaData name="AgentLeadPerformance.prpt" createdDate="2019-09-16T16:06:11.863+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/AgentLeadPerformance.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Agent Lead Performance"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Reports/AgentOpportunityPerformance.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="AgentOpportunityPerformance.prpt" createdDate="2019-09-16T16:06:20.562+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/AgentOpportunityPerformance.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Agent Opportunity Performance"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Reports/Custom.png">
+        <ExportManifestProperty>
+            <EntityMetaData name="Custom.png" createdDate="2019-09-11T12:58:25.384+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/Custom.png" isHidden="true" isSchedulable="true" locale="en_GB" title="Custom"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Reports/Custom.prptstyle">
+        <ExportManifestProperty>
+            <EntityMetaData name="Custom.prptstyle" createdDate="2019-09-11T11:45:53.864+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/Custom.prptstyle" isHidden="true" isSchedulable="true" locale="en_GB" title="Custom.prptstyle"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Reports/SuiteCRMAnalytics.png">
+        <ExportManifestProperty>
+            <EntityMetaData name="SuiteCRMAnalytics.png" createdDate="2019-09-11T12:57:43.457+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/SuiteCRMAnalytics.png" isHidden="true" isSchedulable="true" locale="en_GB" title="SuiteCRMAnalytics"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -99,31 +159,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Reports/SuiteCRMAnalytics.prptstyle">
         <ExportManifestProperty>
-            <EntityMetaData name="SuiteCRMAnalytics.prptstyle" createdDate="2019-09-02T17:43:17.383+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/SuiteCRMAnalytics.prptstyle" isHidden="true" isSchedulable="true" locale="en_GB" title="SuiteCRMAnalytics.prptstyle"/>
-        </ExportManifestProperty>
-        <ExportManifestProperty>
-            <EntityAcl>
-                <entriesInheriting>true</entriesInheriting>
-                <owner>admin</owner>
-                <ownerType>USER</ownerType>
-            </EntityAcl>
-        </ExportManifestProperty>
-    </ExportManifestEntity>
-    <ExportManifestEntity path="SuiteCRM Analytics/Reports/accountOpportunityValue.prpt">
-        <ExportManifestProperty>
-            <EntityMetaData name="accountOpportunityValue.prpt" createdDate="2019-09-02T17:43:17.411+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/accountOpportunityValue.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Account Opportunity Value"/>
-        </ExportManifestProperty>
-        <ExportManifestProperty>
-            <EntityAcl>
-                <entriesInheriting>true</entriesInheriting>
-                <owner>admin</owner>
-                <ownerType>USER</ownerType>
-            </EntityAcl>
-        </ExportManifestProperty>
-    </ExportManifestEntity>
-    <ExportManifestEntity path="SuiteCRM Analytics/Reports/suitecrm_logo.png">
-        <ExportManifestProperty>
-            <EntityMetaData name="suitecrm_logo.png" createdDate="2019-09-02T17:43:17.369+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/suitecrm_logo.png" isHidden="true" isSchedulable="true" locale="en_GB" title="suitecrm_logo.png"/>
+            <EntityMetaData name="SuiteCRMAnalytics.prptstyle" createdDate="2019-04-10T14:02:53.865+01:00" isFolder="false" path="SuiteCRM Analytics/Reports/SuiteCRMAnalytics.prptstyle" isHidden="true" isSchedulable="true" locale="en_GB" title="SuiteCRMAnalytics.prptstyle"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -135,7 +171,127 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System">
         <ExportManifestProperty>
-            <EntityMetaData name="System" createdDate="2019-09-02T17:43:17.436+01:00" isFolder="true" path="SuiteCRM Analytics/System" isHidden="false" isSchedulable="true" locale="en_GB" title="System"/>
+            <EntityMetaData name="System" createdDate="2019-04-10T14:02:53.948+01:00" isFolder="true" path="SuiteCRM Analytics/System" isHidden="false" isSchedulable="true" locale="en_GB" title="System"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application">
+        <ExportManifestProperty>
+            <EntityMetaData name="Application" createdDate="2019-04-10T14:02:53.966+01:00" isFolder="true" path="SuiteCRM Analytics/System/Application" isHidden="false" isSchedulable="true" locale="en_GB" title="Application"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/SystemSetup.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="SystemSetup.cda" createdDate="2019-04-10T14:02:53.983+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/SystemSetup.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="SystemSetup"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/SystemSetup.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="SystemSetup.cdfde" createdDate="2019-04-10T14:02:54.020+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/SystemSetup.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="SystemSetup.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/SystemSetup.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="SystemSetup.wcdf" createdDate="2019-04-10T14:02:54.062+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/SystemSetup.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="SystemSetup.wcdf"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/addConnection.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="addConnection.ktr" createdDate="2019-04-10T14:02:54.433+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/addConnection.ktr" isHidden="true" isSchedulable="true" locale="en_GB" title="addConnection"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/createTextFile.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="createTextFile.ktr" createdDate="2019-04-10T14:02:55.076+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/createTextFile.ktr" isHidden="false" isSchedulable="true" locale="en_GB" title="createTextFile"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/getProperty.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="getProperty.ktr" createdDate="2019-04-10T14:02:55.668+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/getProperty.ktr" isHidden="false" isSchedulable="true" locale="en_GB" title="getProperty"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/getVersions.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="getVersions.ktr" createdDate="2019-04-10T14:02:56.192+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/getVersions.ktr" isHidden="false" isSchedulable="true" locale="en_GB" title="getVersions"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/keepAlive.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="keepAlive.ktr" createdDate="2019-04-10T14:02:56.558+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/keepAlive.ktr" isHidden="true" isSchedulable="true" locale="en_GB" title="keepAlive"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Application/setProperty.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="setProperty.ktr" createdDate="2019-04-10T14:02:57.048+01:00" isFolder="false" path="SuiteCRM Analytics/System/Application/setProperty.ktr" isHidden="false" isSchedulable="true" locale="en_GB" title="setProperty"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -147,7 +303,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources">
         <ExportManifestProperty>
-            <EntityMetaData name="Resources" createdDate="2019-09-02T17:43:17.443+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources" isHidden="false" isSchedulable="true" locale="en_GB" title="Resources"/>
+            <EntityMetaData name="Resources" createdDate="2019-04-10T14:02:57.250+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources" isHidden="false" isSchedulable="true" locale="en_GB" title="Resources"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -159,7 +315,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA">
         <ExportManifestProperty>
-            <EntityMetaData name="CDA" createdDate="2019-09-02T17:43:17.451+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/CDA" isHidden="false" isSchedulable="true" locale="en_GB" title="CDA"/>
+            <EntityMetaData name="CDA" createdDate="2019-04-10T14:02:57.273+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/CDA" isHidden="false" isSchedulable="true" locale="en_GB" title="CDA"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -171,7 +327,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.cda">
         <ExportManifestProperty>
-            <EntityMetaData name="FILTERS.cda" createdDate="2019-09-02T17:43:17.493+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="FILTERS"/>
+            <EntityMetaData name="FILTERS.cda" createdDate="2019-04-10T14:02:57.324+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="FILTERS"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -183,7 +339,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.cdfde">
         <ExportManifestProperty>
-            <EntityMetaData name="FILTERS.cdfde" createdDate="2019-09-02T17:43:17.474+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="FILTERS.cdfde"/>
+            <EntityMetaData name="FILTERS.cdfde" createdDate="2019-04-10T14:02:57.356+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="FILTERS.cdfde"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -195,7 +351,79 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.wcdf">
         <ExportManifestProperty>
-            <EntityMetaData name="FILTERS.wcdf" createdDate="2019-09-02T17:43:17.458+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="FILTERS.wcdf"/>
+            <EntityMetaData name="FILTERS.wcdf" createdDate="2019-04-10T14:02:57.292+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="FILTERS.wcdf"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/PROPERTY_FILTERS.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="PROPERTY_FILTERS.cda" createdDate="2019-09-11T13:04:44.209+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/PROPERTY_FILTERS.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="PROPERTY_FILTERS.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/PROPERTY_FILTERS.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="PROPERTY_FILTERS.cdfde" createdDate="2019-09-11T13:03:01.803+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/PROPERTY_FILTERS.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="PROPERTY_FILTERS.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/PROPERTY_FILTERS.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="PROPERTY_FILTERS.wcdf" createdDate="2019-09-11T13:03:01.782+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/PROPERTY_FILTERS.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" description="PROPERTY_FILTERS" title="PROPERTY_FILTERS"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/COMPONENTS">
+        <ExportManifestProperty>
+            <EntityMetaData name="COMPONENTS" createdDate="2019-04-10T14:02:57.471+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/COMPONENTS" isHidden="false" isSchedulable="true" locale="en_GB" title="COMPONENTS"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/COMPONENTS/UIComponent.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="UIComponent.cdfde" createdDate="2019-04-10T14:02:57.494+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/COMPONENTS/UIComponent.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="UIComponent.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/COMPONENTS/UIComponent.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="UIComponent.wcdf" createdDate="2019-04-10T14:02:57.521+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/COMPONENTS/UIComponent.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="UIComponent.wcdf"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -207,7 +435,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CSS">
         <ExportManifestProperty>
-            <EntityMetaData name="CSS" createdDate="2019-09-02T17:43:17.598+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/CSS" isHidden="false" isSchedulable="true" locale="en_GB" title="CSS"/>
+            <EntityMetaData name="CSS" createdDate="2019-04-10T14:02:57.548+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/CSS" isHidden="false" isSchedulable="true" locale="en_GB" title="CSS"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -219,7 +447,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CSS/AdminLTE.css">
         <ExportManifestProperty>
-            <EntityMetaData name="AdminLTE.css" createdDate="2019-09-02T17:43:17.605+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CSS/AdminLTE.css" isHidden="true" isSchedulable="true" locale="en_GB" title="AdminLTE.css"/>
+            <EntityMetaData name="AdminLTE.css" createdDate="2019-04-10T14:02:57.565+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CSS/AdminLTE.css" isHidden="true" isSchedulable="true" locale="en_GB" title="AdminLTE.css"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -231,7 +459,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CSS/style4.css">
         <ExportManifestProperty>
-            <EntityMetaData name="style4.css" createdDate="2019-09-02T17:43:17.621+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CSS/style4.css" isHidden="true" isSchedulable="true" locale="en_GB" title="style4.css"/>
+            <EntityMetaData name="style4.css" createdDate="2019-04-10T14:02:57.594+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/CSS/style4.css" isHidden="true" isSchedulable="true" locale="en_GB" title="style4.css"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -243,7 +471,19 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS">
         <ExportManifestProperty>
-            <EntityMetaData name="JS" createdDate="2019-09-02T17:43:17.852+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/JS" isHidden="false" isSchedulable="true" locale="en_GB" title="JS"/>
+            <EntityMetaData name="JS" createdDate="2019-04-10T14:02:57.635+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/JS" isHidden="false" isSchedulable="true" locale="en_GB" title="JS"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/UIComponent.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="UIComponent.js" createdDate="2019-04-10T14:02:57.646+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/UIComponent.js" isHidden="true" isSchedulable="true" locale="en_GB" title="UIComponent.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -255,7 +495,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/adminlte.js">
         <ExportManifestProperty>
-            <EntityMetaData name="adminlte.js" createdDate="2019-09-02T17:43:17.860+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/adminlte.js" isHidden="true" isSchedulable="true" locale="en_GB" title="adminlte.js"/>
+            <EntityMetaData name="adminlte.js" createdDate="2019-04-10T14:02:57.685+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/adminlte.js" isHidden="true" isSchedulable="true" locale="en_GB" title="adminlte.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -267,7 +507,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/analytics-legacy.js">
         <ExportManifestProperty>
-            <EntityMetaData name="analytics-legacy.js" createdDate="2019-09-02T17:43:17.889+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/analytics-legacy.js" isHidden="true" isSchedulable="true" locale="en_GB" title="analytics-legacy.js"/>
+            <EntityMetaData name="analytics-legacy.js" createdDate="2019-04-10T14:02:57.720+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/analytics-legacy.js" isHidden="true" isSchedulable="true" locale="en_GB" title="analytics-legacy.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -279,7 +519,55 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/analytics.js">
         <ExportManifestProperty>
-            <EntityMetaData name="analytics.js" createdDate="2019-09-02T17:43:17.875+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/analytics.js" isHidden="true" isSchedulable="true" locale="en_GB" title="analytics.js"/>
+            <EntityMetaData name="analytics.js" createdDate="2019-04-10T14:02:57.754+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/analytics.js" isHidden="true" isSchedulable="true" locale="en_GB" title="analytics.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/branding.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="branding.js" createdDate="2019-04-10T14:02:57.785+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/branding.js" isHidden="true" isSchedulable="true" locale="en_GB" title="branding.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/colours.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="colours.js" createdDate="2019-04-10T14:02:57.832+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/colours.js" isHidden="true" isSchedulable="true" locale="en_GB" title="colours.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/coloursRequire.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="coloursRequire.js" createdDate="2019-04-10T14:02:57.889+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/coloursRequire.js" isHidden="true" isSchedulable="true" locale="en_GB" title="coloursRequire.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/JS/overview.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="overview.js" createdDate="2019-04-10T14:02:57.912+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/JS/overview.js" isHidden="true" isSchedulable="true" locale="en_GB" title="overview.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -291,7 +579,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS">
         <ExportManifestProperty>
-            <EntityMetaData name="REPORTS" createdDate="2019-09-02T17:43:17.636+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/REPORTS" isHidden="false" isSchedulable="true" locale="en_GB" title="REPORTS"/>
+            <EntityMetaData name="REPORTS" createdDate="2019-04-10T14:02:57.948+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/REPORTS" isHidden="false" isSchedulable="true" locale="en_GB" title="REPORTS"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -303,7 +591,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_COUNT_CASE_STATUS.js">
         <ExportManifestProperty>
-            <EntityMetaData name="BAR_COUNT_CASE_STATUS.js" createdDate="2019-09-02T17:43:17.838+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_COUNT_CASE_STATUS.js" isHidden="true" isSchedulable="true" locale="en_GB" title="BAR_COUNT_CASE_STATUS.js"/>
+            <EntityMetaData name="BAR_COUNT_CASE_STATUS.js" createdDate="2019-04-10T14:02:57.966+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_COUNT_CASE_STATUS.js" isHidden="false" isSchedulable="true" locale="en_GB" title="BAR_COUNT_CASE_STATUS.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -315,7 +603,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_COUNT_LEAD_STATUS.js">
         <ExportManifestProperty>
-            <EntityMetaData name="BAR_COUNT_LEAD_STATUS.js" createdDate="2019-09-02T17:43:17.759+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_COUNT_LEAD_STATUS.js" isHidden="true" isSchedulable="true" locale="en_GB" title="BAR_COUNT_LEAD_STATUS.js"/>
+            <EntityMetaData name="BAR_COUNT_LEAD_STATUS.js" createdDate="2019-04-10T14:02:57.997+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_COUNT_LEAD_STATUS.js" isHidden="false" isSchedulable="true" locale="en_GB" title="BAR_COUNT_LEAD_STATUS.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -327,7 +615,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_DUMMY.js">
         <ExportManifestProperty>
-            <EntityMetaData name="BAR_DUMMY.js" createdDate="2019-09-02T17:43:17.701+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_DUMMY.js" isHidden="true" isSchedulable="true" locale="en_GB" title="BAR_DUMMY.js"/>
+            <EntityMetaData name="BAR_DUMMY.js" createdDate="2019-04-10T14:02:58.022+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/BAR_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="BAR_DUMMY.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -339,7 +627,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cda">
         <ExportManifestProperty>
-            <EntityMetaData name="CHARTS.cda" createdDate="2019-09-02T17:43:17.643+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS"/>
+            <EntityMetaData name="CHARTS.cda" createdDate="2019-04-10T14:02:58.046+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -351,7 +639,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cdfde">
         <ExportManifestProperty>
-            <EntityMetaData name="CHARTS.cdfde" createdDate="2019-09-02T17:43:17.775+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS.cdfde"/>
+            <EntityMetaData name="CHARTS.cdfde" createdDate="2019-04-10T14:02:58.079+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS.cdfde"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -363,7 +651,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.wcdf">
         <ExportManifestProperty>
-            <EntityMetaData name="CHARTS.wcdf" createdDate="2019-09-02T17:43:17.792+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS.wcdf"/>
+            <EntityMetaData name="CHARTS.wcdf" createdDate="2019-04-10T14:02:58.113+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS.wcdf"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -375,7 +663,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_BAR_COUNT_CASE_STATUS.js">
         <ExportManifestProperty>
-            <EntityMetaData name="CHARTS_BAR_COUNT_CASE_STATUS.js" createdDate="2019-09-02T17:43:17.730+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_BAR_COUNT_CASE_STATUS.js" isHidden="true" isSchedulable="true" locale="en_GB" title="CHARTS_BAR_COUNT_CASE_STATUS.js"/>
+            <EntityMetaData name="CHARTS_BAR_COUNT_CASE_STATUS.js" createdDate="2019-04-10T14:02:58.146+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_BAR_COUNT_CASE_STATUS.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_BAR_COUNT_CASE_STATUS.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -387,7 +675,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_BAR_COUNT_LEAD_STATUS.js">
         <ExportManifestProperty>
-            <EntityMetaData name="CHARTS_BAR_COUNT_LEAD_STATUS.js" createdDate="2019-09-02T17:43:17.823+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_BAR_COUNT_LEAD_STATUS.js" isHidden="true" isSchedulable="true" locale="en_GB" title="CHARTS_BAR_COUNT_LEAD_STATUS.js"/>
+            <EntityMetaData name="CHARTS_BAR_COUNT_LEAD_STATUS.js" createdDate="2019-04-10T14:02:58.181+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_BAR_COUNT_LEAD_STATUS.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_BAR_COUNT_LEAD_STATUS.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -399,7 +687,19 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_DOT_CHART_1.js">
         <ExportManifestProperty>
-            <EntityMetaData name="CHARTS_DOT_CHART_1.js" createdDate="2019-09-02T17:43:17.716+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_DOT_CHART_1.js" isHidden="true" isSchedulable="true" locale="en_GB" title="CHARTS_DOT_CHART_1.js"/>
+            <EntityMetaData name="CHARTS_DOT_CHART_1.js" createdDate="2019-04-10T14:02:58.217+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_DOT_CHART_1.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_DOT_CHART_1.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_DOT_COUNT_AND_VALUE_OPPORTUNITY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS_DOT_COUNT_AND_VALUE_OPPORTUNITY.js" createdDate="2019-09-14T11:51:21.833+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_DOT_COUNT_AND_VALUE_OPPORTUNITY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_DOT_COUNT_AND_VALUE_OPPORTUNITY.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -411,7 +711,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_PIE_COUNT_CASE_STATUS.js">
         <ExportManifestProperty>
-            <EntityMetaData name="CHARTS_PIE_COUNT_CASE_STATUS.js" createdDate="2019-09-02T17:43:17.687+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_PIE_COUNT_CASE_STATUS.js" isHidden="true" isSchedulable="true" locale="en_GB" title="CHARTS_PIE_COUNT_CASE_STATUS.js"/>
+            <EntityMetaData name="CHARTS_PIE_COUNT_CASE_STATUS.js" createdDate="2019-04-10T14:02:58.250+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_PIE_COUNT_CASE_STATUS.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_PIE_COUNT_CASE_STATUS.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -423,7 +723,19 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/DOT_CHART_1.js">
         <ExportManifestProperty>
-            <EntityMetaData name="DOT_CHART_1.js" createdDate="2019-09-02T17:43:17.673+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/DOT_CHART_1.js" isHidden="true" isSchedulable="true" locale="en_GB" title="DOT_CHART_1.js"/>
+            <EntityMetaData name="DOT_CHART_1.js" createdDate="2019-04-10T14:02:58.283+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/DOT_CHART_1.js" isHidden="false" isSchedulable="true" locale="en_GB" title="DOT_CHART_1.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/DOT_COUNT_AND_VALUE_OPPORTUNITY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="DOT_COUNT_AND_VALUE_OPPORTUNITY.js" createdDate="2019-09-14T11:51:21.856+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/DOT_COUNT_AND_VALUE_OPPORTUNITY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="DOT_COUNT_AND_VALUE_OPPORTUNITY.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -435,7 +747,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/LINE_DUMMY.js">
         <ExportManifestProperty>
-            <EntityMetaData name="LINE_DUMMY.js" createdDate="2019-09-02T17:43:17.807+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/LINE_DUMMY.js" isHidden="true" isSchedulable="true" locale="en_GB" title="LINE_DUMMY.js"/>
+            <EntityMetaData name="LINE_DUMMY.js" createdDate="2019-04-10T14:02:58.305+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/LINE_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="LINE_DUMMY.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -447,7 +759,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/PIE_COUNT_CASE_STATUS.js">
         <ExportManifestProperty>
-            <EntityMetaData name="PIE_COUNT_CASE_STATUS.js" createdDate="2019-09-02T17:43:17.745+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/PIE_COUNT_CASE_STATUS.js" isHidden="true" isSchedulable="true" locale="en_GB" title="PIE_COUNT_CASE_STATUS.js"/>
+            <EntityMetaData name="PIE_COUNT_CASE_STATUS.js" createdDate="2019-04-10T14:02:58.477+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/PIE_COUNT_CASE_STATUS.js" isHidden="false" isSchedulable="true" locale="en_GB" title="PIE_COUNT_CASE_STATUS.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -459,7 +771,163 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/REPORTS/PIE_DUMMY.js">
         <ExportManifestProperty>
-            <EntityMetaData name="PIE_DUMMY.js" createdDate="2019-09-02T17:43:17.658+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/PIE_DUMMY.js" isHidden="true" isSchedulable="true" locale="en_GB" title="PIE_DUMMY.js"/>
+            <EntityMetaData name="PIE_DUMMY.js" createdDate="2019-04-10T14:02:58.509+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/REPORTS/PIE_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="PIE_DUMMY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES">
+        <ExportManifestProperty>
+            <EntityMetaData name="SAMPLES" createdDate="2019-04-10T14:30:33.673+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/SAMPLES" isHidden="false" isSchedulable="true" locale="en_GB" title="SAMPLES"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/BAR_DUMMY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="BAR_DUMMY.js" createdDate="2019-09-17T11:44:16.024+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/BAR_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="BAR_DUMMY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS.cda" createdDate="2019-09-17T11:44:15.935+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.cda" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS.cdfde" createdDate="2019-09-17T11:44:15.859+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS.wcdf" createdDate="2019-09-17T11:44:15.843+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" description="reporting_charts" title="CHARTS"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS_BAR_DUMMY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS_BAR_DUMMY.js" createdDate="2019-09-17T11:44:16.013+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS_BAR_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_BAR_DUMMY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS_LINE_DUMMY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS_LINE_DUMMY.js" createdDate="2019-09-17T11:44:16.056+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS_LINE_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_LINE_DUMMY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS_PIE_DUMMY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS_PIE_DUMMY.js" createdDate="2019-09-17T11:44:16.035+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS_PIE_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="CHARTS_PIE_DUMMY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/LINE_DUMMY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="LINE_DUMMY.js" createdDate="2019-09-17T11:44:16.067+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/LINE_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="LINE_DUMMY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/PIE_DUMMY.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="PIE_DUMMY.js" createdDate="2019-09-17T11:44:16.045+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/PIE_DUMMY.js" isHidden="false" isSchedulable="true" locale="en_GB" title="PIE_DUMMY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/SampleCGGReport.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="SampleCGGReport.prpt" createdDate="2019-09-17T11:38:32.080+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/SampleCGGReport.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="SampleCGGReport"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/SelectAllSQLFilerReport.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="SelectAllSQLFilerReport.prpt" createdDate="2019-04-10T14:02:53.254+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/SelectAllSQLFilerReport.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="SelectAllSQLFilerReport"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/dynamicReportColumnsAndGroups.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="dynamicReportColumnsAndGroups.prpt" createdDate="2019-09-17T12:12:20.997+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/dynamicReportColumnsAndGroups.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="dynamicReportColumnsAndGroups"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -471,7 +939,103 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES">
         <ExportManifestProperty>
-            <EntityMetaData name="TEMPLATES" createdDate="2019-09-02T17:43:17.517+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/TEMPLATES" isHidden="false" isSchedulable="true" locale="en_GB" title="TEMPLATES"/>
+            <EntityMetaData name="TEMPLATES" createdDate="2019-04-10T14:30:33.733+01:00" isFolder="true" path="SuiteCRM Analytics/System/Resources/TEMPLATES" isHidden="false" isSchedulable="true" locale="en_GB" title="TEMPLATES"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/Custom.png">
+        <ExportManifestProperty>
+            <EntityMetaData name="Custom.png" createdDate="2019-09-17T12:47:50.309+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/Custom.png" isHidden="true" isSchedulable="true" locale="en_GB" title="Custom"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/Custom.prptstyle">
+        <ExportManifestProperty>
+            <EntityMetaData name="Custom.prptstyle" createdDate="2019-09-17T12:47:50.350+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/Custom.prptstyle" isHidden="true" isSchedulable="true" locale="en_GB" title="Custom.prptstyle"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/DashboardTemplate.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="DashboardTemplate.cdfde" createdDate="2019-09-19T16:09:24.113+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/DashboardTemplate.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="DashboardTemplate.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/DashboardTemplate.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="DashboardTemplate.wcdf" createdDate="2019-09-19T16:09:24.091+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/DashboardTemplate.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" description="DashboardTemplateV2" title="DashboardTemplate"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/MultiPageDashboardTemplate.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="MultiPageDashboardTemplate.cdfde" createdDate="2019-09-19T16:08:15.876+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/MultiPageDashboardTemplate.cdfde" isHidden="false" isSchedulable="true" locale="en_GB" title="MultiPageDashboardTemplate.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/MultiPageDashboardTemplate.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="MultiPageDashboardTemplate.wcdf" createdDate="2019-09-19T16:08:15.843+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/MultiPageDashboardTemplate.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" description="DashboardTemplateV2" title="MultiPageDashboardTemplate"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/SampleFiltersCDADatasourceNoPassword.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="SampleFiltersCDADatasourceNoPassword.prpt" createdDate="2019-09-16T14:48:03.545+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/SampleFiltersCDADatasourceNoPassword.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="SampleFiltersCDADatasourceNoPassword"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/SuiteCRMAnalytics.png">
+        <ExportManifestProperty>
+            <EntityMetaData name="SuiteCRMAnalytics.png" createdDate="2019-09-17T12:47:50.376+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/SuiteCRMAnalytics.png" isHidden="true" isSchedulable="true" locale="en_GB" title="SuiteCRMAnalytics"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -483,43 +1047,7 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/SuiteCRMAnalytics.prptstyle">
         <ExportManifestProperty>
-            <EntityMetaData name="SuiteCRMAnalytics.prptstyle" createdDate="2019-09-02T17:43:17.560+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/SuiteCRMAnalytics.prptstyle" isHidden="true" isSchedulable="true" locale="en_GB" title="SuiteCRMAnalytics.prptstyle"/>
-        </ExportManifestProperty>
-        <ExportManifestProperty>
-            <EntityAcl>
-                <entriesInheriting>true</entriesInheriting>
-                <owner>admin</owner>
-                <ownerType>USER</ownerType>
-            </EntityAcl>
-        </ExportManifestProperty>
-    </ExportManifestEntity>
-    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/landscapeTemplate.prpt">
-        <ExportManifestProperty>
-            <EntityMetaData name="landscapeTemplate.prpt" createdDate="2019-09-02T17:43:17.525+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/landscapeTemplate.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="landscapeTemplate"/>
-        </ExportManifestProperty>
-        <ExportManifestProperty>
-            <EntityAcl>
-                <entriesInheriting>true</entriesInheriting>
-                <owner>admin</owner>
-                <ownerType>USER</ownerType>
-            </EntityAcl>
-        </ExportManifestProperty>
-    </ExportManifestEntity>
-    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/portraitTemplate.prpt">
-        <ExportManifestProperty>
-            <EntityMetaData name="portraitTemplate.prpt" createdDate="2019-09-02T17:43:17.583+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/portraitTemplate.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="portraitTemplate"/>
-        </ExportManifestProperty>
-        <ExportManifestProperty>
-            <EntityAcl>
-                <entriesInheriting>true</entriesInheriting>
-                <owner>admin</owner>
-                <ownerType>USER</ownerType>
-            </EntityAcl>
-        </ExportManifestProperty>
-    </ExportManifestEntity>
-    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/TEMPLATES/suitecrm_logo.png">
-        <ExportManifestProperty>
-            <EntityMetaData name="suitecrm_logo.png" createdDate="2019-09-02T17:43:17.542+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/suitecrm_logo.png" isHidden="true" isSchedulable="true" locale="en_GB" title="suitecrm_logo.png"/>
+            <EntityMetaData name="SuiteCRMAnalytics.prptstyle" createdDate="2019-09-17T12:47:50.398+01:00" isFolder="false" path="SuiteCRM Analytics/System/Resources/TEMPLATES/SuiteCRMAnalytics.prptstyle" isHidden="true" isSchedulable="true" locale="en_GB" title="SuiteCRMAnalytics.prptstyle"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="pStyles" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="pStyles" id="pStyles" type="jsonScriptable">
+      <Name>pStyles</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{
+   "resultset":[
+      ["SuiteCRM Analytics", "SuiteCRMAnalytics"],
+      ["Custom", "Custom"]
+   ],
+
+   "metadata":[
+      {"colIndex":0,"colType":"String","colName":"Name"},
+      {"colIndex":1,"colType":"String","colName":"Value"}
+   ]
+}]]></Query>
+   </DataAccess>
+</CDADescriptor>

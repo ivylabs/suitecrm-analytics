@@ -1,56 +1,40 @@
 lib('cdf-env.js');
 
-var render_BAR_COUNT_LEAD_STATUS = {
-  type: "cccBarChart",
-  name: "render_BAR_COUNT_LEAD_STATUS",
+var render_LINE_DUMMY = {
+  type: "cccLineChart",
+  name: "render_LINE_DUMMY",
   priority: 5,
-  parameters: [["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignFilter","pCampaignFilter"]],
+  parameters: [],
   executeAtStart: true,
-  htmlObject: "${h:C4}",
-  preExecution: function d(){
-    
-    // Use this if we are requesting a CGG chart direct
-    if(typeof cgg != 'undefined'){
-        load('../JS/analytics-legacy.js');
-    }
-    
-    /*
-    if(typeof cgg != 'undefined'){
-        load('../System/Resources/JS/analytics-legacy.js');
-    }
-    */
-    
-    var dash = Dashboards,
-        cd = this.chartDefinition;
-    
-    $.extend(true,cd,analytics.opts.charts.defaultChartComp);
-    $.extend(true,cd,analytics.opts.charts.defaultPieChartComp);
-    
-    
-
-} ,
+  htmlObject: "${h:C3}",
   listeners: [],
   clearsBeforePreExecution: true,
   renderMode: "total",
   dataAdditiveMode: false,
   chartDefinition:  {
-    dataAccessId: "COUNT_LEAD_BY_STATUS",
-    path: "/public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cda",
+    dataAccessId: "DUMMY1",
+    path: "/public/SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.cda",
     pushEnabled: false,
     width: 1080,
     height: 450,
     extensionPoints: [],
     colors: [],
     animate: true,
-    barOrthoSizeMin: 1.5,
-    barStackedMargin: 0,
+    areasFillOpacity: 0.5,
+    baseAxisDomainAlign: "center",
+    baseAxisDomainRoundMode: "tick",
+    baseAxisDomainScope: "global",
     baseAxisLabelDesiredAngles: [],
+    baseAxisMinorTicks: true,
     baseAxisOffset: 0,
     baseAxisTicks: true,
+    baseAxisTickUnitMax: "Infinity",
+    baseAxisTickUnitMin: "0",
     baseAxisTitleMargins: "0",
     baseAxisTooltipAutoContent: "value",
     baseAxisTooltipEnabled: true,
     baseAxisVisible: true,
+    baseAxisZeroLine: true,
     clearSelectionMode: "emptySpaceClick",
     clickable: false,
     color2AxisColors: [],
@@ -99,7 +83,6 @@ var render_BAR_COUNT_LEAD_STATUS = {
     orthoAxisTitleMargins: "0",
     orthoAxisVisible: true,
     orthoAxisZeroLine: true,
-    overflowMarkersVisible: true,
     plot2: false,
     plot2AreasFillOpacity: 0.5,
     plot2AreasVisible: false,
@@ -126,7 +109,6 @@ var render_BAR_COUNT_LEAD_STATUS = {
     smallTitleMargins: "0",
     smallTitlePaddings: "0",
     smallTitlePosition: "top",
-    stacked: false,
     timeSeries: false,
     timeSeriesFormat: "%Y-%m-%d",
     titleMargins: "0",
@@ -144,18 +126,13 @@ var render_BAR_COUNT_LEAD_STATUS = {
     trendOrthoAxis: 1,
     trendStacked: false,
     trendValuesAnchor: "right",
-    trendValuesVisible: false,
-    valuesNormalized: false,
-    valuesOverflow: "hide"
+    trendValuesVisible: false
   },
   lifecycle:  {
     silent: false
   }
 };
 
-cgg.initParameter
-("pCampaignTypeFilter", "${pCampaignTypeFilter}")
-("pCampaignFilter", "${pCampaignFilter}")
-;
 
-cgg.render(render_BAR_COUNT_LEAD_STATUS);
+
+cgg.render(render_LINE_DUMMY);

@@ -1,0 +1,1295 @@
+{
+  "components" : {
+    "rows" : [
+      {
+        "id" : "STANDARDCOMPONENTS",
+        "name" : "Standard",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "Standard"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "13194b41-a7ea-6711-5d2c-3a538f07c579",
+        "parent" : "STANDARDCOMPONENTS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "managerComponent"
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[\u0022${p:candidateViewParam}\u0022,\u0022${p:homeParam}\u0022,\u0022${p:secondParam}\u0022,\u0022${p:thirdParam}\u0022]"
+          },
+          {
+            "name" : "customfunction",
+            "type" : "JavaScript",
+            "value" : "function d(){\n\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027),\n        candidate = dashboard.getParam(\u0027candidateViewParam\u0027);\n    \n    dashboard.log(\u0027Active: \u0027+active);\n    dashboard.log(\u0027Candidate: \u0027+candidate);\n    \n    // If the active view is the same as the candidate then we are refreshing the same page\n    if(active === candidate){\n        \n        if(active === \u0027home\u0027){\n            dashboard.fireChange(\u0027homeTrigger\u0027, $.now());\n        } else if(active === \u0027second\u0027){\n            dashboard.fireChange(\u0027secondTrigger\u0027, $.now());\n        } else if(active === \u0027third\u0027){\n            dashboard.fireChange(\u0027thirdTrigger\u0027, $.now());\n        }\n    \n    // if the avtive view is not the same as the candidate we are navigating to a new page\n    } else {\n        if(candidate === \u0027home\u0027){\n            \n            //$(\u0027body \u003E container-fluid\u0027).removeClass(\u0027second\u0027).removeClass(\u0027third\u0027).addClass(\u0027home\u0027);\n            $(\u0027#HOME\u0027).removeClass(\u0027home\u0027);\n            $(\u0027#SECOND\u0027).addClass(\u0027second\u0027);\n            $(\u0027#THIRD\u0027).addClass(\u0027third\u0027);\n            dashboard.setParam(\u0027activeViewParam\u0027, candidate);\n            dashboard.fireChange(\u0027homeTrigger\u0027,$.now());\n            \n        } else if(candidate === \u0027second\u0027){\n            \n            //$(\u0027body \u003E container-fluid\u0027).removeClass(\u0027home\u0027).removeClass(\u0027third\u0027).addClass(\u0027second\u0027);\n            $(\u0027#SECOND\u0027).removeClass(\u0027second\u0027);\n            $(\u0027#HOME\u0027).addClass(\u0027home\u0027);\n            $(\u0027#THIRD\u0027).addClass(\u0027third\u0027);\n            dashboard.setParam(\u0027activeViewParam\u0027, candidate);\n            dashboard.fireChange(\u0027secondTrigger\u0027,$.now());\n            \n        } else if(candidate === \u0027third\u0027){\n            \n            //$(\u0027body \u003E container-fluid\u0027).removeClass(\u0027home\u0027).removeClass(\u0027second\u0027).addClass(\u0027third\u0027);\n            $(\u0027#THIRD\u0027).removeClass(\u0027third\u0027);\n            $(\u0027#HOME\u0027).addClass(\u0027home\u0027);\n            $(\u0027#SECOND\u0027).addClass(\u0027second\u0027);\n            dashboard.setParam(\u0027activeViewParam\u0027, candidate);\n            dashboard.fireChange(\u0027thirdTrigger\u0027,$.now());\n            \n        }\n    }\n\n} "
+          },
+          {
+            "name" : "parameters",
+            "type" : "ValuesArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "manageCallee",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "dataSource",
+            "type" : "Datasource",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : 300
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : "1"
+          },
+          {
+            "name" : "width",
+            "type" : "Integer",
+            "value" : 300
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : ""
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postFetch",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "tooltip",
+            "type" : "Html",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Freeform Component",
+        "type" : "Componentsfreeform",
+        "typeDesc" : "Freeform Component"
+      },
+      {
+        "id" : "PARAMETERS",
+        "name" : "Parameters",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "Parameters"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "87c4d001-d863-06ab-325d-ca1dc6023e53",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "activeViewParam"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : "home"
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "1b65e436-acc5-9a1b-3770-cd424b15c517",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "candidateViewParam"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : "home"
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "3f412b5f-6f6a-eec5-a33f-ec5acab6b1da",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "homeTrigger"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "eee59d35-2141-7068-f3fc-6f7d87966f4a",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "secondTrigger"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "34b10997-de1a-c44d-bbef-726469e990ca",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "thirdTrigger"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "4292ac0f-a47d-68c5-1092-ab8fef412493",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "homeParam"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "456fdedd-df02-533e-84f3-04c2b6d287b3",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "secondParam"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "1aad18b2-2691-f30d-7edc-68685d05af2e",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "thirdParam"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "IVYISBOOTSTRAP",
+        "name" : "Ivy IS Bootstrap",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "Ivy IS Bootstrap",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "cf34d107-ef0d-8ef1-4122-1b5092f055c4",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "backButtonComponent",
+            "type" : "Id"
+          },
+          {
+            "name" : "label",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[\u0022${p:homeTrigger}\u0022,\u0022${p:secondTrigger}\u0022,\u0022${p:thirdTrigger}\u0022]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "expression",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    if(active === \u0027second\u0027){\n        dashboard.fireChange(\u0027candidateViewParam\u0027,\u0027home\u0027)\n    } else if(active === \u0027third\u0027){\n        dashboard.fireChange(\u0027candidateViewParam\u0027,\u0027second\u0027)\n    }\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "refreshPeriod",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "buttonType",
+            "value" : "btn-default",
+            "type" : "buttonTypeCustom"
+          },
+          {
+            "name" : "buttonBlock",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonSize",
+            "value" : "",
+            "type" : "buttonSizeCustom"
+          },
+          {
+            "name" : "prependIcon",
+            "value" : "False",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonIcon",
+            "value" : "glyphicon-arrow-left",
+            "type" : "buttonIconCustom"
+          },
+          {
+            "name" : "buttonDisabled",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:backButtonAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    // For some reason setting the htmlObject property is not working here\n    // Instead we add the hidden CSS class\n    \n    if(active === \u0027home\u0027){\n        //this.htmlObject = \u0027hidden\u0027;\n        $(\u0027#backButtonAnchor\u0027).addClass(\u0027hidden\u0027);\n        this.buttonDisabled = true;\n    } else {\n        //this.htmlObject = \u0027backButtonAnchor\u0027;\n        $(\u0027#backButtonAnchor\u0027).removeClass(\u0027hidden\u0027);\n        this.buttonDisabled = false;\n    }\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "Bootstrap Button"
+      },
+      {
+        "id" : "63e4991d-e48a-3c62-a2e4-38e2d637658a",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "secondButtonComponent",
+            "type" : "Id"
+          },
+          {
+            "name" : "label",
+            "value" : "Advance to Second",
+            "type" : "String"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "expression",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    dashboard.setParam(\u0027secondParam\u0027, $.now());\n    dashboard.fireChange(\u0027candidateViewParam\u0027, \u0027second\u0027);\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "refreshPeriod",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "buttonType",
+            "value" : "btn-default",
+            "type" : "buttonTypeCustom"
+          },
+          {
+            "name" : "buttonBlock",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonSize",
+            "value" : "",
+            "type" : "buttonSizeCustom"
+          },
+          {
+            "name" : "prependIcon",
+            "value" : "False",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonIcon",
+            "value" : "none",
+            "type" : "buttonIconCustom"
+          },
+          {
+            "name" : "buttonDisabled",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:secondButtonAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "Bootstrap Button"
+      },
+      {
+        "id" : "5b2d83a9-4c99-b0f0-0526-08cac409bda6",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "thirdButtonComponent",
+            "type" : "Id"
+          },
+          {
+            "name" : "label",
+            "value" : "Advance to Third",
+            "type" : "String"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "expression",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    dashboard.setParam(\u0027thirdParam\u0027, $.now());\n    dashboard.fireChange(\u0027candidateViewParam\u0027, \u0027third\u0027);\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "refreshPeriod",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "buttonType",
+            "value" : "btn-default",
+            "type" : "buttonTypeCustom"
+          },
+          {
+            "name" : "buttonBlock",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonSize",
+            "value" : "",
+            "type" : "buttonSizeCustom"
+          },
+          {
+            "name" : "prependIcon",
+            "value" : "False",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonIcon",
+            "value" : "none",
+            "type" : "buttonIconCustom"
+          },
+          {
+            "name" : "buttonDisabled",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:thirdButtonAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "Bootstrap Button"
+      }
+    ]
+  },
+  "datasources" : {
+    "rows" : [ ]
+  },
+  "filename" : "public/SuiteCRM Analytics/System/Resources/TEMPLATES/MultiPageDashboardTemplate.wcdf",
+  "layout" : {
+    "rows" : [
+      {
+        "id" : "b0bcf0c7-0b22-2593-064f-ea64e9aaf095",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "opts"
+          },
+          {
+            "name" : "resourceCode",
+            "type" : "Resource",
+            "value" : "var dashboardOpts = {\n    dashboardTitle: \u0022Multi Page Dashboard Template\u0022,\n    dashboardSubtitle: \u0022 \u0022,\n    dashboardSection: \u0022dummy\u0022,\n    dashboardBreadcrumb:[\u0022Dashboards\u0022,\u0022Multi Page Dashboard Template\u0022]\n} "
+          },
+          {
+            "name" : "resourceType",
+            "type" : "Label",
+            "value" : "Javascript"
+          }
+        ],
+        "type" : "LayoutResourceCode",
+        "typeDesc" : "Resource"
+      },
+      {
+        "id" : "f67e737e-d320-6a2d-14aa-035fe36f8e6c",
+        "type" : "LayoutResourceFile",
+        "typeDesc" : "Resource",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "analytics",
+            "type" : "Id"
+          },
+          {
+            "name" : "resourceFile",
+            "value" : "${solution:../../SuiteCRM Analytics/System/Resources/JS/analytics-legacy.js}",
+            "type" : "ResourceFile"
+          },
+          {
+            "name" : "resourceType",
+            "value" : "Javascript",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "1c16c823-fd81-9494-ad46-928061712505",
+        "type" : "LayoutResourceCode",
+        "typeDesc" : "Resource",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "css",
+            "type" : "Id"
+          },
+          {
+            "name" : "resourceCode",
+            "value" : ".home {\n    display:none;\n}\n\n.second {\n    display:none;\n}\n\n.third {\n    display:none;\n}\n\n.hidden {\n    display:none;\n} ",
+            "type" : "Resource"
+          },
+          {
+            "name" : "resourceType",
+            "value" : "Css",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "c86813fe-998c-450b-e4c4-8688cae96dca",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "PARAMETERS"
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "29583cec-6beb-0fbd-0a2c-7f5ebb05e349",
+        "parent" : "c86813fe-998c-450b-e4c4-8688cae96dca",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      },
+      {
+        "id" : "6d3955dc-f38d-cca1-6f8e-223772b5403c",
+        "parent" : "29583cec-6beb-0fbd-0a2c-7f5ebb05e349",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "html",
+            "type" : "Html",
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-filter\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EFilters\u003C/h3\u003E\n        \u003Cdiv class=\u0022box-tools pull-right\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022btn btn-box-tool\u0022 data-widget=\u0022collapse\u0022\u003E\u003Ci class=\u0022fa fa-minus\u0022\u003E\u003C/i\u003E\u003C/button\u003E\n        \u003C/div\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv class=\u0022row\u0022\u003E\n            \u003Cdiv class=\u0022col-md-12\u0022\u003E\n                \u003Cform role=\u0022form\u0022\u003E\n                    \u003Cdiv class=\u0022form-group\u0022\u003E\n                            \u003Cdiv class=\u0022row\u0022\u003E\n                                \u003Cdiv class=\u0022col-md-1\u0022\u003E\n                                    \u003Clabel\u003E\u0026nbsp;\u003C/label\u003E\n                                     \u003Cdiv id=\u0022backButtonAnchor\u0022\u003E\u003C/div\u003E   \n                                \u003C/div\u003E\n                                \u003Cdiv class=\u0022col-md-1 col-md-offset-10\u0022\u003E\n                                    \u003Clabel\u003E\u0026nbsp;\u003C/label\u003E\n                                     \u003Cdiv id=\u0022forwardButtonAnchor\u0022\u003E\u003C/div\u003E   \n                                \u003C/div\u003E\n                            \u003C/div\u003E\n                    \u003C/div\u003E\n                \u003C/form\u003E\n            \u003C/div\u003E\n        \u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
+          },
+          {
+            "name" : "fontSize",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "color",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html"
+      },
+      {
+        "id" : "5785a640-d958-816a-1c02-371c16f60e26",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "HOME"
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "d27f4ca3-275f-6f60-2589-3a1a20888ba1",
+        "parent" : "5785a640-d958-816a-1c02-371c16f60e26",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      },
+      {
+        "id" : "517555be-94b2-d5f7-94eb-93ab5850f460",
+        "parent" : "d27f4ca3-275f-6f60-2589-3a1a20888ba1",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "html",
+            "type" : "Html",
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EHome\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022secondButtonAnchor\u0022 style=\u0022height:350px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
+          },
+          {
+            "name" : "fontSize",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "color",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html"
+      },
+      {
+        "id" : "1e4e2106-a612-69e0-c85e-46b136285345",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "SECOND"
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : "second"
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "54de3da6-849f-3dc4-907a-7a638670ecfe",
+        "parent" : "1e4e2106-a612-69e0-c85e-46b136285345",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      },
+      {
+        "id" : "830037e0-6920-94fb-da79-e8cb6c0ed42d",
+        "parent" : "54de3da6-849f-3dc4-907a-7a638670ecfe",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "html",
+            "type" : "Html",
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003ESecond\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022thirdButtonAnchor\u0022 style=\u0022height:350px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
+          },
+          {
+            "name" : "fontSize",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "color",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html"
+      },
+      {
+        "id" : "95c0584f-e4b5-3aff-aae8-06abdc6810cf",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "THIRD"
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : "third"
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "fcb3c30f-c8f0-8022-21ee-04d52152d548",
+        "parent" : "95c0584f-e4b5-3aff-aae8-06abdc6810cf",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      },
+      {
+        "id" : "33a8cbaa-3d1c-b14f-d6fc-ed662704d174",
+        "parent" : "fcb3c30f-c8f0-8022-21ee-04d52152d548",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "html",
+            "type" : "Html",
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EThird\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022LeadsByAgentAnchor\u0022 style=\u0022height:350px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
+          },
+          {
+            "name" : "fontSize",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "color",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html"
+      }
+    ],
+    "title" : "CDF - Sample structure"
+  }
+}
