@@ -91,6 +91,12 @@
       <Connection id="pLeadSourceFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pLeadPrimaryAddressCountyFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pLeadPrimaryAddressStateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
    </DataSources>
    <DataAccess access="public" connection="GET_MIN_MAX_LEAD_MONTHLY_PERIODS"
                id="GET_MIN_MAX_LEAD_MONTHLY_PERIODS"
@@ -474,5 +480,27 @@ SELECT DISTINCT(LEAD_STATUS) FROM D_LEADS]]></Query>
       <Query><![CDATA[SELECT 'All Lead Sources' AS LEAD_SOURCE
 UNION
 SELECT DISTINCT(LEAD_SOURCE) FROM D_LEADS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pLeadPrimaryAddressCountyFilterQuery"
+               id="pLeadPrimaryAddressCountyFilterQuery"
+               type="sql">
+      <Name>pLeadPrimaryAddressCountyFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Lead Countries' AS LEAD_PRIMARY_ADDRESS_COUNTRY
+UNION
+SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY) FROM D_LEADS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pLeadPrimaryAddressStateFilterQuery"
+               id="pLeadPrimaryAddressStateFilterQuery"
+               type="sql">
+      <Name>pLeadPrimaryAddressStateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Lead States' AS LEAD_PRIMARY_ADDRESS_STATE
+UNION
+SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE) FROM D_LEADS]]></Query>
    </DataAccess>
 </CDADescriptor>
