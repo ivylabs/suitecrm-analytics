@@ -1315,6 +1315,78 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "bc57e89f-0d60-02a6-00fa-b59f95c6b7d4",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pOpportunityFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Opportunities\u0027 as OPPORTUNITY_NAME\nUNION\nSELECT DISTINCT(OPPORTUNITY_NAME) FROM D_OPPORTUNITIES"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "9cc8c5cc-9561-dbd6-db9e-1fdaab92d12c",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -2035,6 +2107,78 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "ce2965f7-3cf0-a7ba-c1e5-00e79b268cda",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pAccountFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Accounts\u0027 AS ACCOUNT_NAME\nUNION\nSELECT DISTINCT(ACCOUNT_NAME) FROM D_ACCOUNTS"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "68771883-eabc-5518-348e-5e14c9782136",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -2276,6 +2420,438 @@
             "name" : "query",
             "type" : "SqlQuery",
             "value" : "SELECT \u0027All Lead States\u0027 AS LEAD_PRIMARY_ADDRESS_STATE\nUNION\nSELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE) FROM D_LEADS"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "39f9a657-74eb-2ab2-f218-1bcc71096116",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pInvoiceFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Invoices\u0027 AS INVOICE_NAME\nUNION\nSELECT DISTINCT(INVOICE_NAME) FROM D_INVOICES"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "9801176b-b2b8-655e-1f78-017d5141e8ce",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pInvoiceNumberFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Invoice Numbers\u0027 AS INVOICE_NUMBER\nUNION\nSELECT DISTINCT(INVOICE_NUMBER) FROM D_INVOICES"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "41c7c96a-31fe-f5d4-5e13-cd5f138f2b86",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pInvoiceStatusFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Invoice Status\u0027 AS INVOICE_STATUS\nUNION\nSELECT DISTINCT(INVOICE_STATUS) FROM D_INVOICES"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "c83a1cb3-02af-d950-d84c-4a48f99a7f90",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pProductFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Products\u0027 AS PRODUCT_NAME\nUNION\nSELECT DISTINCT(PRODUCT_NAME) FROM D_PRODUCTS"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "4417d88f-8b75-1144-6908-9e1c62062e34",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pProductCategoryFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Product Categories\u0027 AS PRODUCT_CATEGORY_NAME\nUNION\nSELECT DISTINCT(PRODUCT_CATEGORY_NAME) FROM D_PRODUCTS"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "a1a0ec40-4744-f130-d714-9ba27d79637c",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pProductTypeFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Product Types\u0027 AS PRODUCT_TYPE\nUNION\nSELECT DISTINCT(PRODUCT_TYPE) FROM D_PRODUCTS"
           },
           {
             "name" : "parameters",

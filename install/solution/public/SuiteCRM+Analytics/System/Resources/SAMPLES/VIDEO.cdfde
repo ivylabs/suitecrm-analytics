@@ -1,0 +1,363 @@
+{
+  "components" : {
+    "rows" : [
+      {
+        "id" : "IVYIS",
+        "name" : "Ivy IS",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "Ivy IS",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "8d4ad907-497a-ad03-1aad-14498cf381a8",
+        "type" : "ComponentsvideoPlayerComponent",
+        "typeDesc" : "Video Player",
+        "parent" : "IVYIS",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "videoComponent",
+            "type" : "Id"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "videos",
+            "value" : "[[\u0022/suitecrmanalytics/api/repos/SuiteCRMAnalytics/static/custom/video/oceans.mp4\u0022,\u0022video/mp4\u0022]]",
+            "type" : "ValuesArray"
+          },
+          {
+            "name" : "tracks",
+            "value" : "[]",
+            "type" : "ValuesArray"
+          },
+          {
+            "name" : "controls",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "autoPlay",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "CssClasses",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "buttonsControlsColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "controlsLevelColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "controlBarSize",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "videoPosterImg",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "videoLoop",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "popup",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "textLinkPopup",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:C1}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "Video Player"
+      }
+    ]
+  },
+  "datasources" : {
+    "rows" : [ ]
+  },
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/SAMPLES/VIDEO.cdfde",
+  "layout" : {
+    "rows" : [
+      {
+        "id" : "c5ca8162-1f64-a828-222c-3583e8e20343",
+        "type" : "LayoutRow",
+        "typeDesc" : "Row",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "",
+            "type" : "Id"
+          },
+          {
+            "name" : "height",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "74f430b2-b52b-59aa-94f3-3e60a29c29fa",
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column",
+        "parent" : "c5ca8162-1f64-a828-222c-3583e8e20343",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "",
+            "type" : "Id"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "height",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "41d04751-8554-a181-0dbc-64328a39ede2",
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html",
+        "parent" : "74f430b2-b52b-59aa-94f3-3e60a29c29fa",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "",
+            "type" : "Id"
+          },
+          {
+            "name" : "html",
+            "value" : "This video is stored in the SuiteCRM Analytics Spakl plugin directory under/static/custom/video/oceans.mp4 ",
+            "type" : "Html"
+          },
+          {
+            "name" : "fontSize",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "color",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "b6a24121-72f3-3c84-a484-f373fba9fd2e",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "74596f28-1927-cc09-30f3-94558f2643f8",
+        "parent" : "b6a24121-72f3-3c84-a484-f373fba9fd2e",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "C1"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : "400"
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      }
+    ],
+    "title" : "CDF - Sample structure"
+  }
+}

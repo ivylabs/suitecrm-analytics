@@ -55,6 +55,9 @@
       <Connection id="pCaseClosedDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pOpportunityFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pOpportunityCreatedDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -85,6 +88,9 @@
       <Connection id="pAccountIndustryFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pAccountFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pLeadStatusFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -95,6 +101,24 @@
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pLeadPrimaryAddressStateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pInvoiceFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pInvoiceNumberFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pInvoiceStatusFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pProductFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pProductCategoryFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pProductTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
    </DataSources>
@@ -336,6 +360,17 @@ INNER JOIN D_DATE DD
 GROUP BY 1,2
 ORDER BY 1 DESC;]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pOpportunityFilterQuery"
+               id="pOpportunityFilterQuery"
+               type="sql">
+      <Name>pOpportunityFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Opportunities' as OPPORTUNITY_NAME
+UNION
+SELECT DISTINCT(OPPORTUNITY_NAME) FROM D_OPPORTUNITIES]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pOpportunityCreatedDateFilterQuery"
                id="pOpportunityCreatedDateFilterQuery"
                type="sql">
@@ -461,6 +496,16 @@ SELECT DISTINCT(ACCOUNT_TYPE) FROM D_ACCOUNTS]]></Query>
 UNION
 SELECT DISTINCT(ACCOUNT_INDUSTRY) FROM D_ACCOUNTS]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pAccountFilterQuery" id="pAccountFilterQuery"
+               type="sql">
+      <Name>pAccountFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Accounts' AS ACCOUNT_NAME
+UNION
+SELECT DISTINCT(ACCOUNT_NAME) FROM D_ACCOUNTS]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pLeadStatusFilterQuery" id="pLeadStatusFilterQuery"
                type="sql">
       <Name>pLeadStatusFilterQuery</Name>
@@ -502,5 +547,69 @@ SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY) FROM D_LEADS]]></Query>
       <Query><![CDATA[SELECT 'All Lead States' AS LEAD_PRIMARY_ADDRESS_STATE
 UNION
 SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE) FROM D_LEADS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pInvoiceFilterQuery" id="pInvoiceFilterQuery"
+               type="sql">
+      <Name>pInvoiceFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Invoices' AS INVOICE_NAME
+UNION
+SELECT DISTINCT(INVOICE_NAME) FROM D_INVOICES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pInvoiceNumberFilterQuery"
+               id="pInvoiceNumberFilterQuery"
+               type="sql">
+      <Name>pInvoiceNumberFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Invoice Numbers' AS INVOICE_NUMBER
+UNION
+SELECT DISTINCT(INVOICE_NUMBER) FROM D_INVOICES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pInvoiceStatusFilterQuery"
+               id="pInvoiceStatusFilterQuery"
+               type="sql">
+      <Name>pInvoiceStatusFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Invoice Status' AS INVOICE_STATUS
+UNION
+SELECT DISTINCT(INVOICE_STATUS) FROM D_INVOICES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pProductFilterQuery" id="pProductFilterQuery"
+               type="sql">
+      <Name>pProductFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Products' AS PRODUCT_NAME
+UNION
+SELECT DISTINCT(PRODUCT_NAME) FROM D_PRODUCTS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pProductCategoryFilterQuery"
+               id="pProductCategoryFilterQuery"
+               type="sql">
+      <Name>pProductCategoryFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Product Categories' AS PRODUCT_CATEGORY_NAME
+UNION
+SELECT DISTINCT(PRODUCT_CATEGORY_NAME) FROM D_PRODUCTS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pProductTypeFilterQuery"
+               id="pProductTypeFilterQuery"
+               type="sql">
+      <Name>pProductTypeFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Product Types' AS PRODUCT_TYPE
+UNION
+SELECT DISTINCT(PRODUCT_TYPE) FROM D_PRODUCTS]]></Query>
    </DataAccess>
 </CDADescriptor>

@@ -1,0 +1,921 @@
+{
+  "components" : {
+    "rows" : [
+      {
+        "id" : "IVYIS",
+        "name" : "Ivy IS",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "Ivy IS",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "4cf0dba3-8e44-ba5f-f003-060ca6fab87d",
+        "type" : "ComponentsjQVectorMapComponent",
+        "typeDesc" : "jQVectorMapComponent",
+        "parent" : "IVYIS",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "MAP",
+            "type" : "Id"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "mapClickFunction",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "mapOnRegionShowFunction",
+            "value" : "function d(object,regionName,regionCode,mapData){\n    console.log(regionCode);\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "ValuesArray"
+          },
+          {
+            "name" : "dataSource",
+            "value" : "QUERY",
+            "type" : "Datasource"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "mapFile",
+            "value" : "us_aea_en",
+            "type" : "mapFileCustom"
+          },
+          {
+            "name" : "mapBackgroundColor",
+            "value" : "#ffffff",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapColor",
+            "value" : "#fefff2",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHighScaleColor",
+            "value" : "#317000",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHoverOpacity",
+            "value" : 0.7,
+            "type" : "Float"
+          },
+          {
+            "name" : "mapLowScaleColor",
+            "value" : "#03f748",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapNormalizeFunction",
+            "value" : "linear",
+            "type" : "mapNormalizeFunctionCustom"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:mapAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "SVG Vector Map"
+      },
+      {
+        "id" : "5c3cba5f-dc1d-ad7e-31bb-79a5594b8113",
+        "type" : "ComponentsjQVectorMapComponent",
+        "typeDesc" : "jQVectorMapComponent",
+        "parent" : "IVYIS",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "WORLD_MAP",
+            "type" : "Id"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "mapClickFunction",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "mapOnRegionShowFunction",
+            "value" : "function d(object,regionName,regionCode,mapData){\n    console.log(regionCode);\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "ValuesArray"
+          },
+          {
+            "name" : "dataSource",
+            "value" : "QUERY",
+            "type" : "Datasource"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "mapFile",
+            "value" : "world_mill_en",
+            "type" : "mapFileCustom"
+          },
+          {
+            "name" : "mapBackgroundColor",
+            "value" : "#ffffff",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapColor",
+            "value" : "#4fff8d",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHighScaleColor",
+            "value" : "#317000",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHoverOpacity",
+            "value" : 0.7,
+            "type" : "Float"
+          },
+          {
+            "name" : "mapLowScaleColor",
+            "value" : "#03f748",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapNormalizeFunction",
+            "value" : "linear",
+            "type" : "mapNormalizeFunctionCustom"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:worldMapAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "SVG Vector Map"
+      },
+      {
+        "id" : "f14e166c-94ca-f641-cc2f-9cbca651900d",
+        "type" : "ComponentsjQVectorMapComponent",
+        "typeDesc" : "jQVectorMapComponent",
+        "parent" : "IVYIS",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "EURO_MAP",
+            "type" : "Id"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "mapClickFunction",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "mapOnRegionShowFunction",
+            "value" : "function d(object,regionName,regionCode,mapData){\n    console.log(regionCode);\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "ValuesArray"
+          },
+          {
+            "name" : "dataSource",
+            "value" : "QUERY",
+            "type" : "Datasource"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "mapFile",
+            "value" : "europe_mill_en",
+            "type" : "mapFileCustom"
+          },
+          {
+            "name" : "mapBackgroundColor",
+            "value" : "#ffffff",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapColor",
+            "value" : "#4fff8d",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHighScaleColor",
+            "value" : "#317000",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHoverOpacity",
+            "value" : 0.7,
+            "type" : "Float"
+          },
+          {
+            "name" : "mapLowScaleColor",
+            "value" : "#03f748",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapNormalizeFunction",
+            "value" : "linear",
+            "type" : "mapNormalizeFunctionCustom"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:euroMapAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "SVG Vector Map"
+      },
+      {
+        "id" : "cf26f606-d55b-33d4-0015-c7dc2ec8b256",
+        "type" : "ComponentsjQVectorMapComponent",
+        "typeDesc" : "jQVectorMapComponent",
+        "parent" : "IVYIS",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "GB_MAP",
+            "type" : "Id"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "mapClickFunction",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "mapOnRegionShowFunction",
+            "value" : "function d(object,regionName,regionCode,mapData){\n    console.log(regionCode);\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "ValuesArray"
+          },
+          {
+            "name" : "dataSource",
+            "value" : "QUERY",
+            "type" : "Datasource"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "mapFile",
+            "value" : "uk_mill_en",
+            "type" : "mapFileCustom"
+          },
+          {
+            "name" : "mapBackgroundColor",
+            "value" : "#ffffff",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapColor",
+            "value" : "#4fff8d",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHighScaleColor",
+            "value" : "#317000",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapHoverOpacity",
+            "value" : 0.7,
+            "type" : "Float"
+          },
+          {
+            "name" : "mapLowScaleColor",
+            "value" : "#03f748",
+            "type" : "Color"
+          },
+          {
+            "name" : "mapNormalizeFunction",
+            "value" : "linear",
+            "type" : "mapNormalizeFunctionCustom"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:gbMapAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "SVG Vector Map"
+      }
+    ]
+  },
+  "datasources" : {
+    "rows" : [
+      {
+        "id" : "SCRIPTING",
+        "name" : "SCRIPTING Queries",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "SCRIPTING Queries",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "1d1e63ee-88a1-0481-fb05-f712437fd635",
+        "type" : "Componentsscriptable_scripting",
+        "typeDesc" : "scriptable over scripting",
+        "parent" : "SCRIPTING",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "QUERY",
+            "type" : "Id"
+          },
+          {
+            "name" : "initscript",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "language",
+            "value" : "beanshell",
+            "type" : "String"
+          },
+          {
+            "name" : "access",
+            "value" : "public",
+            "type" : "Access"
+          },
+          {
+            "name" : "query",
+            "value" : "import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;\nString [] columnNames = {\u0022Country\u0022, \u0022Amount\u0022};\nClass[] columnTypes = {String.class, Integer.class};\nTypedTableModel model = new TypedTableModel(columnNames, columnTypes);\n\nmodel.addRow(new Object[] {\u0022US-AK\u0022, 495.6740259659});\nmodel.addRow(new Object[] {\u0022US-AZ\u0022, 89.2922449857});\nmodel.addRow(new Object[] {\u0022US-AR\u0022, 148.0241003446});\nmodel.addRow(new Object[] {\u0022US-CA\u0022, 470.5063803121});\nmodel.addRow(new Object[] {\u0022US-CO\u0022, 481.4486440737});\nmodel.addRow(new Object[] {\u0022US-CT\u0022, 227.4484236259});\nmodel.addRow(new Object[] {\u0022US-DE\u0022, 188.4903958999});\nmodel.addRow(new Object[] {\u0022US-FL\u0022, 977.0834886003});\nmodel.addRow(new Object[] {\u0022US-GA\u0022, 884.4245546497});\nmodel.addRow(new Object[] {\u0022US-HI\u0022, 488.0315684713});\nmodel.addRow(new Object[] {\u0022US-ID\u0022, 409.6967526712});\nmodel.addRow(new Object[] {\u0022US-IL\u0022, 966.7558865622});\nmodel.addRow(new Object[] {\u0022US-IN\u0022, 837.2304565273});\nmodel.addRow(new Object[] {\u0022US-IA\u0022, 445.5932476558});\nmodel.addRow(new Object[] {\u0022US-KS\u0022, 944.509336492});\nmodel.addRow(new Object[] {\u0022US-KY\u0022, 353.9451139513});\nmodel.addRow(new Object[] {\u0022US-LA\u0022, 553.8464698475});\nmodel.addRow(new Object[] {\u0022US-ME\u0022, 918.3496490587});\nmodel.addRow(new Object[] {\u0022US-MD\u0022, 311.2406216096});\nmodel.addRow(new Object[] {\u0022US-MA\u0022, 185.1886364166});\nmodel.addRow(new Object[] {\u0022US-MI\u0022, 674.7048089746});\nmodel.addRow(new Object[] {\u0022US-MN\u0022, 312.9098080099});\nmodel.addRow(new Object[] {\u0022US-MS\u0022, 338.8293569442});\nmodel.addRow(new Object[] {\u0022US-MO\u0022, 289.880129043});\nmodel.addRow(new Object[] {\u0022US-MT\u0022, 315.501856152});\nmodel.addRow(new Object[] {\u0022US-NE\u0022, 136.5005702246});\nmodel.addRow(new Object[] {\u0022US-NV\u0022, 230.0185968634});\nmodel.addRow(new Object[] {\u0022US-NH\u0022, 639.6935598459});\nmodel.addRow(new Object[] {\u0022US-NJ\u0022, 377.9563447461});\nmodel.addRow(new Object[] {\u0022US-NM\u0022, 521.3269121014});\nmodel.addRow(new Object[] {\u0022US-NY\u0022, 78.9218319114});\nmodel.addRow(new Object[] {\u0022US-NC\u0022, 739.9442554452});\nmodel.addRow(new Object[] {\u0022US-ND\u0022, 242.6301429514});\nmodel.addRow(new Object[] {\u0022US-OH\u0022, 167.9694561753});\nmodel.addRow(new Object[] {\u0022US-OK\u0022, 11.160913622});\nmodel.addRow(new Object[] {\u0022US-OR\u0022, 289.0830901451});\nmodel.addRow(new Object[] {\u0022US-PA\u0022, 733.8920601178});\nmodel.addRow(new Object[] {\u0022US-RI\u0022, 687.3624094296});\nmodel.addRow(new Object[] {\u0022US-SC\u0022, 866.4213698357});\nmodel.addRow(new Object[] {\u0022US-SD\u0022, 294.0805852413});\nmodel.addRow(new Object[] {\u0022US-TN\u0022, 21.0438028444});\nmodel.addRow(new Object[] {\u0022US-TX\u0022, 767.1685919631});\nmodel.addRow(new Object[] {\u0022US-UT\u0022, 129.5684250072});\nmodel.addRow(new Object[] {\u0022US-VT\u0022, 462.7515219618});\nmodel.addRow(new Object[] {\u0022US-VA\u0022, 220.6925861537});\nmodel.addRow(new Object[] {\u0022US-WA\u0022, 611.2590965349});\nmodel.addRow(new Object[] {\u0022US-WV\u0022, 604.741403833});\nmodel.addRow(new Object[] {\u0022US-WI\u0022, 906.4288255759});\nmodel.addRow(new Object[] {\u0022US-WY\u0022, 490.0024414528});\nmodel.addRow(new Object[] {\u0022US-DC\u0022, 548.9780800417});\nmodel.addRow(new Object[] {\u0022US-AS\u0022, 158.6851337925});\nmodel.addRow(new Object[] {\u0022US-GU\u0022, 903.4065413289});\nmodel.addRow(new Object[] {\u0022US-MP\u0022, 712.611400988});\nmodel.addRow(new Object[] {\u0022US-PR\u0022, 975.1086726319});\nmodel.addRow(new Object[] {\u0022US-UM\u0022, 736.3023834769});\nmodel.addRow(new Object[] {\u0022US-VI\u0022, 556.9676430896});\n\n\nreturn model;",
+            "type" : "ScriptableQuery"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "CdaParameters"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "value" : "[]",
+            "type" : "CdaCalculatedColumnsArray"
+          },
+          {
+            "name" : "cdacolumns",
+            "value" : "[]",
+            "type" : "CdaColumnsArray"
+          },
+          {
+            "name" : "output",
+            "value" : "[]",
+            "type" : "IndexArray"
+          },
+          {
+            "name" : "outputMode",
+            "value" : "include",
+            "type" : "OutputMode"
+          },
+          {
+            "name" : "cacheKeys",
+            "value" : "[]",
+            "type" : "CacheKeysValues"
+          },
+          {
+            "name" : "cacheDuration",
+            "value" : 3600,
+            "type" : "Integer"
+          },
+          {
+            "name" : "cache",
+            "value" : "true",
+            "type" : "Boolean"
+          }
+        ],
+        "meta" : "CDA",
+        "meta_conntype" : "scripting.scripting",
+        "meta_datype" : "scriptable",
+        "rowName" : "scriptable over scripting"
+      }
+    ]
+  },
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/SAMPLES/MAP.cdfde",
+  "layout" : {
+    "rows" : [
+      {
+        "id" : "8a3ad9df-8549-d5b0-8451-771126d251df",
+        "type" : "LayoutRow",
+        "typeDesc" : "Row",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "",
+            "type" : "Id"
+          },
+          {
+            "name" : "height",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "701010d2-1cd2-ea42-e077-36581cd4176e",
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column",
+        "parent" : "8a3ad9df-8549-d5b0-8451-771126d251df",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "mapAnchor",
+            "type" : "Id"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "height",
+            "value" : "400",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "5c2e4e90-0c3a-fab1-db13-d92fb8778919",
+        "type" : "LayoutRow",
+        "typeDesc" : "Row",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "",
+            "type" : "Id"
+          },
+          {
+            "name" : "height",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "8890e063-5738-7242-f6c9-03c2df1fd19e",
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column",
+        "parent" : "5c2e4e90-0c3a-fab1-db13-d92fb8778919",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "euroMapAnchor",
+            "type" : "Id"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "height",
+            "value" : "400",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "0e1c619d-c090-5053-7521-0120ed07891f",
+        "type" : "LayoutRow",
+        "typeDesc" : "Row",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "",
+            "type" : "Id"
+          },
+          {
+            "name" : "height",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "da95e840-84ca-9464-f491-7a54f03f7315",
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column",
+        "parent" : "0e1c619d-c090-5053-7521-0120ed07891f",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "gbMapAnchor",
+            "type" : "Id"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "height",
+            "value" : "400",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "30d62106-c694-2206-4196-73038a8c41ef",
+        "type" : "LayoutRow",
+        "typeDesc" : "Row",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "",
+            "type" : "Id"
+          },
+          {
+            "name" : "height",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      },
+      {
+        "id" : "0b7deb72-fe86-6c2f-eb33-10075643b242",
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column",
+        "parent" : "30d62106-c694-2206-4196-73038a8c41ef",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "worldMapAnchor",
+            "type" : "Id"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "value" : "12",
+            "type" : "String"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "height",
+            "value" : "400",
+            "type" : "Integer"
+          },
+          {
+            "name" : "backgroundColor",
+            "value" : "",
+            "type" : "Color"
+          },
+          {
+            "name" : "roundCorners",
+            "value" : "",
+            "type" : "RoundCorners"
+          },
+          {
+            "name" : "textAlign",
+            "value" : "",
+            "type" : "TextAlign"
+          },
+          {
+            "name" : "cssClass",
+            "value" : "",
+            "type" : "String"
+          }
+        ]
+      }
+    ],
+    "title" : "CDF - Sample structure"
+  }
+}
