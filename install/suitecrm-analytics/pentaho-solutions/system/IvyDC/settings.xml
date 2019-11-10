@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<cache>true</cache>
+	<max-age>36288000</max-age>
+	<cde-styles>
+		<path>system/IvyDC/resources/styles</path>
+	</cde-styles>
+  	<cde-datasources/>
+	<cde-components>
+	  <!-- paths from solution with cde component definitions to be loaded-->
+	  <path>system/IvyDC/resources/components</path>
+	  <path>IvyDC/components</path>
+	</cde-components>
+</settings>

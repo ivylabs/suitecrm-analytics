@@ -597,6 +597,128 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
     </GUI>
   </step>
   <step>
+    <name>Get Parameters</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>pCaseClosedDateFilter</name>
+        <variable>${pCaseClosedDateFilter}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCaseCreatedDateFilter</name>
+        <variable>${pCaseCreatedDateFilter}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCaseFilter</name>
+        <variable>${pCaseFilter}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCasePriorityFilter</name>
+        <variable>${pCasePriorityFilter}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCaseStateFilter</name>
+        <variable>${pCaseStateFilter}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCaseStatusFilter</name>
+        <variable>${pCaseStatusFilter}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCaseTypeFilter</name>
+        <variable>${pCaseTypeFilter}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pStyling</name>
+        <variable>${pStyling}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Get Styling</name>
     <type>GetVariable</type>
     <description/>
@@ -659,7 +781,7 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>/home/hazamonzo/gitprojects/suitecrm-analytics-github/install/suitecrm-analytics/pentaho-solutions/system/SuiteCRMAnalytics/output/excelData</name>
+      <name>${Internal.Entry.Current.Directory}/excelData</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -1847,7 +1969,7 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>/home/hazamonzo/gitprojects/suitecrm-analytics-github/install/suitecrm-analytics/pentaho-solutions/system/SuiteCRMAnalytics/output/excelData</name>
+      <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -1868,7 +1990,7 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
     <template>
       <enabled>Y</enabled>
       <sheet_enabled>Y</sheet_enabled>
-      <filename>/home/hazamonzo/gitprojects/suitecrm-analytics-github/suitecrm-analytics/pentaho-solutions/system/SuiteCRMAnalytics/templates/ExcelTemplateOne.xlsx</filename>
+      <filename>${Internal.Entry.Current.Directory}/../../templates/ExcelTemplateOne.xlsx</filename>
       <sheetname>DATA</sheetname>
       <hidden>N</hidden>
     </template>
@@ -2964,128 +3086,6 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
     <GUI>
       <xloc>704</xloc>
       <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Get Parameters</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>pCaseClosedDateFilter</name>
-        <variable>${pCaseClosedDateFilter}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pCaseCreatedDateFilter</name>
-        <variable>${pCaseCreatedDateFilter}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pCaseFilter</name>
-        <variable>${pCaseFilter}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pCasePriorityFilter</name>
-        <variable>${pCasePriorityFilter}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pCaseStateFilter</name>
-        <variable>${pCaseStateFilter}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pCaseStatusFilter</name>
-        <variable>${pCaseStatusFilter}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pCaseTypeFilter</name>
-        <variable>${pCaseTypeFilter}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pStyling</name>
-        <variable>${pStyling}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>128</xloc>
-      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
