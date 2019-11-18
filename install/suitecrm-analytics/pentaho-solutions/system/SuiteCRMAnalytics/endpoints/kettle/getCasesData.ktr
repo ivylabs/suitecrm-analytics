@@ -781,7 +781,7 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
     <appendLines>N</appendLines>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>${Internal.Entry.Current.Directory}/excelData</name>
+      <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
       <extention>xlsx</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <split>N</split>
@@ -1328,18 +1328,6 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
         <type>String</type>
         <format/>
         <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>TEST</name>
-        <type>String</type>
-        <format/>
-        <title>TEST</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2516,18 +2504,6 @@ AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN 
         <type>String</type>
         <format/>
         <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>TEST</name>
-        <type>String</type>
-        <format/>
-        <title>TEST</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
