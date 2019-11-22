@@ -331,7 +331,7 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "SELECT_CAMPAIGN_TYPES"
+            "value" : "campaignTypeSelect"
           },
           {
             "name" : "parameter",
@@ -356,7 +356,7 @@
           {
             "name" : "dataSource",
             "type" : "Datasource",
-            "value" : "GET_CAMPAIGN_TYPES"
+            "value" : "campaignTypeDS"
           },
           {
             "name" : "valuesArray",
@@ -490,7 +490,7 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "SELECT_CAMPAIGNS"
+            "value" : "campaignSelect"
           },
           {
             "name" : "parameter",
@@ -515,7 +515,7 @@
           {
             "name" : "dataSource",
             "type" : "Datasource",
-            "value" : "GET_CAMPAIGNS"
+            "value" : "campaignDS"
           },
           {
             "name" : "valuesArray",
@@ -649,7 +649,7 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "BUTTON_REFRESH"
+            "value" : "refreshButton"
           },
           {
             "name" : "label",
@@ -8759,12 +8759,12 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "GET_CAMPAIGN_TYPES"
+            "value" : "campaignTypeDS"
           },
           {
             "name" : "dataAccessId",
             "type" : "String",
-            "value" : "GET_CAMPAIGN_TYPES"
+            "value" : "pCampaignTypeFilterQuery"
           },
           {
             "name" : "outputIndexId",
@@ -8788,12 +8788,12 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "GET_CAMPAIGNS"
+            "value" : "campaignDS"
           },
           {
             "name" : "dataAccessId",
             "type" : "String",
-            "value" : "GET_CAMPAIGNS"
+            "value" : "pCampaignFilterQuery"
           },
           {
             "name" : "outputIndexId",

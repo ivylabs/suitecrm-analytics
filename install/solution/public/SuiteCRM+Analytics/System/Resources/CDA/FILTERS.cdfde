@@ -19,798 +19,6 @@
         "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
       },
       {
-        "id" : "19008b75-8be9-c001-938b-5b5f620b17b4",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_MIN_MAX_LEAD_MONTHLY_PERIODS"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT\n    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD\n\t,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_DATE DD\n\tON FLM.LEAD_CREATED_TK = DD.DATE_TK"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "7e3040d1-8629-07af-662a-516b92f1cf68",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_OPPORTUNITY_MANAGEMENT FOM\nINNER JOIN D_DATE DD\n\tON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "c0cf2474-19cd-f1cd-8dee-57f3e913d80b",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "d1175291-299b-fd39-9144-828f7a71406f",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_LEAD_MONTHLY_PERIODS_YYYY_MM"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_DATE DD\n\tON FLM.LEAD_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "5d2d1635-7eed-cce8-71c5-2c1578eb6336",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_LEAD_MONTHLY_PERIODS"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT\n    DD.`YYYYMM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_DATE DD\n\tON FLM.LEAD_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "572a2a10-6a9c-f189-d5df-27c4c2d2c042",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_CASE_MONTHLY_PERIODS"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "63760e5f-9489-ecbe-caa9-eb8001deef7b",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_OPPORUNITY_LEAD_SOURCE"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Lead Sources\u0027 as OPPORTUNITY_LEAD_SOURCE\nUNION\nSELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE) FROM D_OPPORTUNITIES"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "006907a9-6e56-7df2-1fb9-1115fc441dc7",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_OPPORTUNITY_TYPES"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Opportunity Types\u0027 as OPPORTUNITY_TYPE\nUNION\nSELECT DISTINCT(OPPORTUNITY_TYPE) FROM D_OPPORTUNITIES"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "fe56d812-2be0-1e9e-d417-503244bb6698",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_CASE_TYPES"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Case Types\u0027 as CASE_TYPE\nUNION\nSELECT DISTINCT(CASE_TYPE) FROM D_CASES"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "e26415e3-9d0c-3a99-41fd-f215d566fcbe",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_CAMPAIGN_TYPES"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Campaign Types\u0027 AS CAMPAIGN_TYPE\nUNION\nSELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "fa214231-ede7-c91f-a97c-ee45b8064b5b",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "GET_CAMPAIGNS"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Campaigns\u0027 as CAMPAIGN_NAME\nUNION\nSELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
         "id" : "691b3347-5139-0df1-a1f8-41354694cb21",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -1171,6 +379,222 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "b7cb57d5-03c7-554d-078d-6ebcf0071f95",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pCaseCreatedDateMinMaxFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT\n    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD\n    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "1e026c5e-b0a7-4b73-5e5c-2e50e6a4bc8a",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pCaseModifiedDateMinMaxFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT\n    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD\n    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_MODIFIED_TK = DD.DATE_TK"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "a8b67db2-625d-926b-e220-db49b0d72092",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pCaseClosedDateMinMaxFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT\n    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD\n    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CLOSED_TK = DD.DATE_TK"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "2bfe86ba-7488-faeb-191e-d3b8d6d3901f",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -1196,6 +620,78 @@
             "name" : "query",
             "type" : "SqlQuery",
             "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 3 ASC;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "d840d330-c789-8b6b-bbfb-44303d789d29",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pCaseModifiedDateFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_MODIFIED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
           },
           {
             "name" : "parameters",

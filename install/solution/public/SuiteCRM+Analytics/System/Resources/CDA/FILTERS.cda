@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
-      <Connection id="GET_MIN_MAX_LEAD_MONTHLY_PERIODS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_LEAD_MONTHLY_PERIODS_YYYY_MM" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_LEAD_MONTHLY_PERIODS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CASE_MONTHLY_PERIODS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_OPPORUNITY_LEAD_SOURCE" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_OPPORTUNITY_TYPES" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CASE_TYPES" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CAMPAIGN_TYPES" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CAMPAIGNS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
       <Connection id="pCaseFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -49,7 +16,19 @@
       <Connection id="pCaseTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pCaseCreatedDateMinMaxFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pCaseModifiedDateMinMaxFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pCaseClosedDateMinMaxFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pCaseCreatedDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pCaseModifiedDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pCaseClosedDateFilterQuery" type="sql.jndi">
@@ -122,157 +101,6 @@
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
    </DataSources>
-   <DataAccess access="public" connection="GET_MIN_MAX_LEAD_MONTHLY_PERIODS"
-               id="GET_MIN_MAX_LEAD_MONTHLY_PERIODS"
-               type="sql">
-      <Name>GET_MIN_MAX_LEAD_MONTHLY_PERIODS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT
-    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
-	,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
-FROM F_LEAD_MANAGEMENT FLM
-INNER JOIN D_DATE DD
-	ON FLM.LEAD_CREATED_TK = DD.DATE_TK]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               id="GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               type="sql">
-      <Name>GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_OPPORTUNITY_MANAGEMENT FOM
-INNER JOIN D_DATE DD
-	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               id="GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               type="sql">
-      <Name>GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_CASE_MANAGEMENT FCM
-INNER JOIN D_DATE DD
-	ON FCM.CASE_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_LEAD_MONTHLY_PERIODS_YYYY_MM"
-               id="GET_LEAD_MONTHLY_PERIODS_YYYY_MM"
-               type="sql">
-      <Name>GET_LEAD_MONTHLY_PERIODS_YYYY_MM</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_LEAD_MANAGEMENT FLM
-INNER JOIN D_DATE DD
-	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_LEAD_MONTHLY_PERIODS"
-               id="GET_LEAD_MONTHLY_PERIODS"
-               type="sql">
-      <Name>GET_LEAD_MONTHLY_PERIODS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT
-    DD.`YYYYMM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_LEAD_MANAGEMENT FLM
-INNER JOIN D_DATE DD
-	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CASE_MONTHLY_PERIODS"
-               id="GET_CASE_MONTHLY_PERIODS"
-               type="sql">
-      <Name>GET_CASE_MONTHLY_PERIODS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_CASE_MANAGEMENT FCM
-INNER JOIN D_DATE DD
-	ON FCM.CASE_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_OPPORUNITY_LEAD_SOURCE"
-               id="GET_OPPORUNITY_LEAD_SOURCE"
-               type="sql">
-      <Name>GET_OPPORUNITY_LEAD_SOURCE</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Lead Sources' as OPPORTUNITY_LEAD_SOURCE
-UNION
-SELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE) FROM D_OPPORTUNITIES]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_OPPORTUNITY_TYPES" id="GET_OPPORTUNITY_TYPES"
-               type="sql">
-      <Name>GET_OPPORTUNITY_TYPES</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Opportunity Types' as OPPORTUNITY_TYPE
-UNION
-SELECT DISTINCT(OPPORTUNITY_TYPE) FROM D_OPPORTUNITIES]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CASE_TYPES" id="GET_CASE_TYPES" type="sql">
-      <Name>GET_CASE_TYPES</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Case Types' as CASE_TYPE
-UNION
-SELECT DISTINCT(CASE_TYPE) FROM D_CASES]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CAMPAIGN_TYPES" id="GET_CAMPAIGN_TYPES"
-               type="sql">
-      <Name>GET_CAMPAIGN_TYPES</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Campaign Types' AS CAMPAIGN_TYPE
-UNION
-SELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CAMPAIGNS" id="GET_CAMPAIGNS" type="sql">
-      <Name>GET_CAMPAIGNS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Campaigns' as CAMPAIGN_NAME
-UNION
-SELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS]]></Query>
-   </DataAccess>
    <DataAccess access="public" connection="pCaseFilterQuery" id="pCaseFilterQuery" type="sql">
       <Name>pCaseFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
@@ -323,6 +151,48 @@ SELECT DISTINCT(CASE_STATUS) FROM D_CASES]]></Query>
 UNION
 SELECT DISTINCT(CASE_TYPE) FROM D_CASES]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pCaseCreatedDateMinMaxFilterQuery"
+               id="pCaseCreatedDateMinMaxFilterQuery"
+               type="sql">
+      <Name>pCaseCreatedDateMinMaxFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
+    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pCaseModifiedDateMinMaxFilterQuery"
+               id="pCaseModifiedDateMinMaxFilterQuery"
+               type="sql">
+      <Name>pCaseModifiedDateMinMaxFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
+    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_MODIFIED_TK = DD.DATE_TK]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pCaseClosedDateMinMaxFilterQuery"
+               id="pCaseClosedDateMinMaxFilterQuery"
+               type="sql">
+      <Name>pCaseClosedDateMinMaxFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
+    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CLOSED_TK = DD.DATE_TK]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pCaseCreatedDateFilterQuery"
                id="pCaseCreatedDateFilterQuery"
                type="sql">
@@ -341,6 +211,24 @@ INNER JOIN D_DATE DD
 	ON FCM.CASE_CREATED_TK = DD.DATE_TK
 GROUP BY 1,2
 ORDER BY 3 ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pCaseModifiedDateFilterQuery"
+               id="pCaseModifiedDateFilterQuery"
+               type="sql">
+      <Name>pCaseModifiedDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
+UNION
+SELECT
+    DD.`YYYY-MM`
+	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_MODIFIED_TK = DD.DATE_TK
+GROUP BY 1,2
+ORDER BY 1 DESC;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseClosedDateFilterQuery"
                id="pCaseClosedDateFilterQuery"
