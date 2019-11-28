@@ -6,6 +6,25 @@ echo ""
 
 WORKING_DIR=$(pwd);
 
+
+
+file="./version"
+
+if [ -f "$file" ]
+then
+
+    while IFS='=' read -r key value
+    do
+            key=$(echo $key | tr '.' '_')
+            eval ${key}=\${value}
+    done < "$file"
+
+        
+
+else
+	echo "$file not found."
+fi
+
 echo ""
 echo " Installing..."
 echo ""
@@ -59,7 +78,7 @@ echo ""
 read -r -p " Would you like to package the installation? This will create a zip file and remove the ready to use application server. [y/N] " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
-        zip -r suitecrm-analytics-server.zip suitecrm-analytics-server/
+        zip -r suitecrm-analytics-server-${VERSION}.zip suitecrm-analytics-server/
 
 	rm -Rf suitecrm-analytics-server/
 
