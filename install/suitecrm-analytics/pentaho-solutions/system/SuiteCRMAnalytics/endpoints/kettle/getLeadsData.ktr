@@ -2141,7 +2141,7 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <header>N</header>
+    <header>Y</header>
     <footer>N</footer>
     <makeSheetActive>Y</makeSheetActive>
     <rowWritingMethod>overwrite</rowWritingMethod>
