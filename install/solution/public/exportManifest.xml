@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="18-05-2020 05:03:59 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="18-05-2020 05:45:31 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
     <ExportManifestEntity path="SuiteCRM Analytics">
         <ExportManifestProperty>
             <EntityMetaData name="SuiteCRM Analytics" createdDate="2019-11-28T20:07:46.057Z" isFolder="true" path="SuiteCRM Analytics" isHidden="false" isSchedulable="true" locale="en_US" title="SuiteCRM Analytics"/>

@@ -119,7 +119,7 @@
           {
             "name" : "expression",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    \n    //var paramsString = \u0022\u0026parampCaseTypeFilter=\u0022+pCaseTypeFilter+\n    //                    \u0022\u0026parampCaseStatusFilter=\u0022+pCaseStatusFilter;\n                        \n     var paramsString = \u0022\u0022;\n                        \n    $.each(parametersMap, function(i,v){\n        \n        console.log(v[0]);\n        console.log(v[1]);\n        \n        paramsString += \u0022\u0026param\u0022+v[0]+\u0022=\u0022+v[1];\n        \n        console.log(paramsString);\n        \n        \n        \n    });\n                        \n    console.log(\u0022http://localhost:8080/suitecrmanalytics/plugin/SuiteCRMAnalytics/api/getExcelData?parampStyling=\u0022+pStyling+\u0022\u0026parampDataExport=\u0022+pDataExport+paramsString);\n    \n    \n    window.open(\u0022http://localhost:8080/suitecrmanalytics/plugin/SuiteCRMAnalytics/api/getExcelData?parampStyling=\u0022+pStyling+\u0022\u0026parampDataExport=\u0022+pDataExport+paramsString);\n} "
+            "value" : "function d(){\n    \n    \n    //var paramsString = \u0022\u0026parampCaseTypeFilter=\u0022+pCaseTypeFilter+\n    //                    \u0022\u0026parampCaseStatusFilter=\u0022+pCaseStatusFilter;\n                        \n     var paramsString = \u0022\u0022;\n                        \n    $.each(parametersMap, function(i,v){\n        \n        console.log(v[0]);\n        console.log(v[1]);\n        \n        paramsString += \u0022\u0026param\u0022+v[0]+\u0022=\u0022+v[1];\n        \n        console.log(paramsString);\n        \n        \n        \n    });\n                        \n    console.log(\u0022/suitecrmanalytics/plugin/SuiteCRMAnalytics/api/getExcelData?parampStyling=\u0022+pStyling+\u0022\u0026parampDataExport=\u0022+pDataExport+paramsString);\n    \n    \n    window.open(\u0022/suitecrmanalytics/plugin/SuiteCRMAnalytics/api/getExcelData?parampStyling=\u0022+pStyling+\u0022\u0026parampDataExport=\u0022+pDataExport+paramsString);\n} "
           },
           {
             "name" : "priority",
@@ -771,7 +771,7 @@
       }
     ]
   },
-  "filename" : "/public/SuiteCRM+Analytics/Development/Dashboards/ExportSuiteCRMAnalyticsData.cdfde",
+  "filename" : "/public/SuiteCRM+Analytics/Tools/ExportSuiteCRMAnalyticsData.cdfde",
   "layout" : {
     "rows" : [
       {
