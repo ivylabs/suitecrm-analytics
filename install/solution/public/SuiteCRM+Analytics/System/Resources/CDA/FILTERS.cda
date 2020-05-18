@@ -61,6 +61,9 @@
       <Connection id="pCampaignFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pCampaignTKFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pAccountTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -361,6 +364,16 @@ SELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS]]></Query>
       <Query><![CDATA[SELECT 'All Campaigns' AS CAMPAIGN_NAME
 UNION
 SELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pCampaignTKFilterQuery" id="pCampaignTKFilterQuery"
+               type="sql">
+      <Name>pCampaignTKFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT -1 AS CAMPAIGN_TK, 'All Campaigns' AS CAMPAIGN_NAME
+UNION
+SELECT DISTINCT CAMPAIGN_TK, CAMPAIGN_NAME FROM D_CAMPAIGNS;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pAccountTypeFilterQuery"
                id="pAccountTypeFilterQuery"
