@@ -793,8 +793,8 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>SHEET1</sheetname>
-      <autosizecolums>N</autosizecolums>
+      <sheetname>Data Export</sheetname>
+      <autosizecolums>Y</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
       <password>Encrypted </password>
@@ -816,150 +816,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>String</type>
         <format/>
         <title>CASE_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ACCOUNT_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ACCOUNT_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_DURATION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_DURATION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_CREATED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_CREATED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_MODIFIED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_MODIFIED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_CLOSED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_CLOSED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ASSIGNED_USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ASSIGNED_USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_ID_1</name>
-        <type>String</type>
-        <format/>
-        <title>CASE_ID_1</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -1068,54 +924,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>String</type>
         <format/>
         <title>CASE_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ACCOUNT_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ACCOUNT_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_1</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -1332,54 +1140,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>String</type>
         <format/>
         <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_2</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_2</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -1812,18 +1572,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>Integer</type>
         <format>0</format>
         <title>IS_WEEKEND</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>DATE_TK</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -1969,8 +1717,8 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>SHEET1</sheetname>
-      <autosizecolums>N</autosizecolums>
+      <sheetname>Data export</sheetname>
+      <autosizecolums>Y</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
       <password>Encrypted </password>
@@ -1984,7 +1732,7 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
       <sheet_enabled>Y</sheet_enabled>
       <filename>${Internal.Entry.Current.Directory}/../../templates/ExcelTemplateOne.xlsx</filename>
       <sheetname>DATA</sheetname>
-      <hidden>N</hidden>
+      <hidden>Y</hidden>
     </template>
     <fields>
       <field>
@@ -1992,150 +1740,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>String</type>
         <format/>
         <title>CASE_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ACCOUNT_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ACCOUNT_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_DURATION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_DURATION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_CREATED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_CREATED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_MODIFIED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_MODIFIED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_CLOSED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_CLOSED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ASSIGNED_USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ASSIGNED_USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CASE_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CASE_ID_1</name>
-        <type>String</type>
-        <format/>
-        <title>CASE_ID_1</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2244,54 +1848,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>String</type>
         <format/>
         <title>CASE_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ACCOUNT_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ACCOUNT_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_1</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2508,54 +2064,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>String</type>
         <format/>
         <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_2</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_2</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2988,18 +2496,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <type>Integer</type>
         <format>0</format>
         <title>IS_WEEKEND</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>DATE_TK</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>

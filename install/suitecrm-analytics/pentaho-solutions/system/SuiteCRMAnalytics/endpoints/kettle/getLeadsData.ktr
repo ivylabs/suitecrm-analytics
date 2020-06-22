@@ -687,8 +687,8 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>SHEET1</sheetname>
-      <autosizecolums>N</autosizecolums>
+      <sheetname>Data Export</sheetname>
+      <autosizecolums>Y</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
       <password>Encrypted </password>
@@ -710,162 +710,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format/>
         <title>LEAD_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>OPPORTUNITY_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>OPPORTUNITY_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_CREATED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_CREATED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_CONVERTED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_CONVERTED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CAMPAIGN_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CAMPAIGN_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_MODIFIED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_MODIFIED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ASSIGNED_USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ASSIGNED_USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_DURATION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_DURATION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_ID_1</name>
-        <type>String</type>
-        <format/>
-        <title>LEAD_ID_1</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -1102,54 +946,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <hyperlinkField/>
       </field>
       <field>
-        <name>OPPORTUNITY_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>OPPORTUNITY_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
         <name>OPPORTUNITY_ID</name>
         <type>String</type>
         <format/>
@@ -1238,54 +1034,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format/>
         <title>OPPORTUNITY_SALES_STAGE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_2</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_2</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -1490,54 +1238,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format/>
         <title>USER_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CAMPAIGN_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CAMPAIGN_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_3</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_3</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_3</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_3</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_3</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_3</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2006,18 +1706,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>Integer</type>
         <format>0</format>
         <title>IS_WEEKEND</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>DATE_TK</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2163,8 +1851,8 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>SHEET1</sheetname>
-      <autosizecolums>N</autosizecolums>
+      <sheetname>Data Export</sheetname>
+      <autosizecolums>Y</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
       <password>Encrypted </password>
@@ -2178,7 +1866,7 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
       <sheet_enabled>Y</sheet_enabled>
       <filename>${Internal.Entry.Current.Directory}/../../templates/ExcelTemplateOne.xlsx</filename>
       <sheetname>DATA</sheetname>
-      <hidden>N</hidden>
+      <hidden>Y</hidden>
     </template>
     <fields>
       <field>
@@ -2186,162 +1874,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format/>
         <title>LEAD_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>OPPORTUNITY_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>OPPORTUNITY_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_CREATED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_CREATED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_CONVERTED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_CONVERTED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CAMPAIGN_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CAMPAIGN_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_MODIFIED_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_MODIFIED_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>ASSIGNED_USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>ASSIGNED_USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_DURATION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_DURATION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>LEAD_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>LEAD_ID_1</name>
-        <type>String</type>
-        <format/>
-        <title>LEAD_ID_1</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2578,54 +2110,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <hyperlinkField/>
       </field>
       <field>
-        <name>OPPORTUNITY_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>OPPORTUNITY_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_1</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
         <name>OPPORTUNITY_ID</name>
         <type>String</type>
         <format/>
@@ -2714,54 +2198,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format/>
         <title>OPPORTUNITY_SALES_STAGE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>USER_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>USER_TK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_2</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_2</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_2</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -2966,54 +2402,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format/>
         <title>USER_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>CAMPAIGN_TK_1</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>CAMPAIGN_TK_1</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>VERSION_3</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>VERSION_3</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_FROM_3</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_FROM_3</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TO_3</name>
-        <type>Timestamp</type>
-        <format/>
-        <title>DATE_TO_3</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
@@ -3482,18 +2870,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>Integer</type>
         <format>0</format>
         <title>IS_WEEKEND</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
-        <formula>N</formula>
-        <hyperlinkField/>
-      </field>
-      <field>
-        <name>DATE_TK</name>
-        <type>Integer</type>
-        <format>0</format>
-        <title>DATE_TK</title>
         <titleStyleCell/>
         <styleCell/>
         <commentField/>
