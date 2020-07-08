@@ -1,0 +1,487 @@
+{
+  "components" : {
+    "rows" : [
+      {
+        "id" : "STANDARDCOMPONENTS",
+        "name" : "Standard",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "Standard"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "ecd30861-73c2-2a21-6706-1ac4cd9921ec",
+        "parent" : "STANDARDCOMPONENTS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "TableComponent"
+          },
+          {
+            "name" : "expandContainerObject",
+            "type" : "HtmlTarget",
+            "value" : ""
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "oLanguage",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "language",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "colFormats",
+            "type" : "ColFormatsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "colHeaders",
+            "type" : "ColHeadersArray",
+            "value" : "[\u0022Campaign\u0022,\u0022Results\u0022,\u0022Action\u0022]"
+          },
+          {
+            "name" : "colSortable",
+            "type" : "ColSortableArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "colTypes",
+            "type" : "colTypesCustom",
+            "value" : "[\u0022string\u0022,\u0022stackedDataBar\u0022,\u0022formattedText\u0022]"
+          },
+          {
+            "name" : "colWidths",
+            "type" : "ColWidthsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "expandParameters",
+            "type" : "ExpandParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "parameters",
+            "type" : "ValuesArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "displayLength",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "expandOnClick",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "filter",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "info",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "lengthChange",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "paginate",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "sort",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "colSearchable",
+            "type" : "ColSearchableArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "drawCallback",
+            "type" : "JavaScript",
+            "value" : "function f(){  \n    \n    var myself = this,\n        table = $(\u0022#\u0022 + myself.htmlObject + \u0022 table\u0022),\n        rows = table.find(\u0027tbody tr\u0027);\n    \n    _.each(rows, function(row){\n        var cell = $(row).find(\u0027td.column0\u0027);\n        var text = cell.text();\n        //if ( text == param ){\n        //    $(row).addClass(\u0027active\u0027);\n        //}\n        var length = text.length;\n        if ( length \u003E 20 ){\n            $(row).find(\u0027td.column0\u0027).text(text.slice(0,20) + \u0027...\u0027);\n            $(row).find(\u0027td.column0\u0027).attr(\u0027title\u0027, text);\n        }\n    });\n} "
+          },
+          {
+            "name" : "dataSource",
+            "type" : "Datasource",
+            "value" : "Q1"
+          },
+          {
+            "name" : "sDom",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "sortBy",
+            "type" : "SortByArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "silent",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "clearsBeforePreExecution",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "paginationType",
+            "type" : "PaginationType",
+            "value" : "simple_numbers"
+          },
+          {
+            "name" : "tableStyle",
+            "type" : "TableStyle",
+            "value" : ""
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:C1}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "paginateServerside",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "failureCallback",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : "function f() {\n    \n//    var activeView = this.dashboard.getParameterValue(\u0027activeViewParam\u0027);\n    \n//    if(activeView !== \u0027portfolio\u0027) return false;\n    \n    this.setAddInOptions(\u0022colType\u0022,\u0022stackedDataBar\u0022,function(state){\n        \n        return {\n            includeValue:   true,\n            widthRatio:     0.99,\n            height:         24,\n//            stackedColors:  [\u0022#a1414f\u0022,\u0022#e8b831\u0022,\u0022#87a049\u0022,\u0022#597a3f\u0022],\n            stackedColors:  [\u0022#a1414f\u0022,\u0022#e8b831\u0022,\u0022#87a049\u0022],\n            absValue:       true,\n            stacked:        true\n        };\n    });\n    \n    \n    this.setAddInOptions(\u0022colType\u0022,\u0022formattedText\u0022,function(state){\n        return {\n            textFormat: function(v,st) {\n               \n                if( st.colIdx == 2){\n                    var button = \u0027\u003Cbutton class=\u0022table-btn\u0022 href=\u0022\u0027+ v +\u0027\u0022\u003EClick\u003C/button\u003E\u0027;\n                    $(button).click(function(){\n                    //    dashboard.setParam(\u0027candidateViewParam\u0027, \u0027facility\u0027);\n                    });\n                    return button;\n                } else return v;\n                \n            }\n        };\n    });\n    \n} "
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postFetch",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "extraOptions",
+            "type" : "ExtraOptionsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "tooltip",
+            "type" : "Html",
+            "value" : ""
+          },
+          {
+            "name" : "clickAction",
+            "type" : "JavaScript",
+            "value" : "function f(e){\n    \n    var rowIdx = e.rowIdx,\n        colIdx = e.colIdx,\n        action = e.rawData.resultset[e.rowIdx][3];\n        \n    if ( colIdx == 2 ){\n        alert(\u0027You are drilling down\u0027);\n    } else {\n        alert(\u0027You are setting the filter\u0027);\n    }\n    \n} "
+          }
+        ],
+        "rowName" : "Table Component",
+        "type" : "ComponentsTable",
+        "typeDesc" : "Table Component"
+      }
+    ]
+  },
+  "datasources" : {
+    "rows" : [
+      {
+        "id" : "SCRIPTING",
+        "name" : "SCRIPTING Queries",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "SCRIPTING Queries"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "6cfddfc5-b658-e8bd-c8a9-62e9cb58ecd7",
+        "meta" : "CDA",
+        "meta_conntype" : "scripting.scripting",
+        "meta_datype" : "jsonScriptable",
+        "parent" : "SCRIPTING",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "Q1"
+          },
+          {
+            "name" : "initscript",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "language",
+            "type" : "String",
+            "value" : "beanshell"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "query",
+            "type" : "JsonScriptableQuery",
+            "value" : "{\n   \u0022resultset\u0022:[\n      [\u0022Campaign One\u0022, \u002710,2,33\u0027, 1],\n      [\u0022Campaign Two\u0022, \u002712,11,8\u0027, 1],\n      [\u0022Campaign Three\u0022, \u00278,12,20\u0027, 1]\n   ],\n\n   \u0022metadata\u0022:[\n      {\u0022colIndex\u0022:0,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Campaign\u0022},\n      {\u0022colIndex\u0022:1,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Results\u0022},\n      {\u0022colIndex\u0022:2,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Action\u0022}\n   ]\n}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "jsonScriptable over scripting",
+        "type" : "ComponentsjsonScriptable_scripting",
+        "typeDesc" : "jsonScriptable over scripting"
+      }
+    ]
+  },
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/SAMPLES/DATABAR.cdfde",
+  "layout" : {
+    "rows" : [
+      {
+        "id" : "5fff14cd-4ef4-ab57-6608-01e93ff8824d",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "CSS"
+          },
+          {
+            "name" : "resourceCode",
+            "type" : "Resource",
+            "value" : ".dataBarContainer {\n    position: relative;\n    width: 100%;\n}\n\n.dataBarContainer svg {\n    float: left;\n}\n\n.dataBarContainer .value {\n    position: relative;\n    float: right;\n    z-index: 100;\n    font-weight: 400;\n}\n\n.dataBarContainer .value.alignRight {\n    float: left;\n}\n\n.stackedBar {\n    display: inline-block;\n    border: 0;\n    margin: 0;\n}\n\n.stackedBar span{\n    color: #FFF;\n    text-align: center;\n}\n\n "
+          },
+          {
+            "name" : "resourceType",
+            "type" : "Label",
+            "value" : "Css"
+          }
+        ],
+        "type" : "LayoutResourceCode",
+        "typeDesc" : "Resource"
+      },
+      {
+        "id" : "01a0574c-2209-28b6-2d98-1e58535da9a2",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "JS"
+          },
+          {
+            "name" : "resourceCode",
+            "type" : "Resource",
+            "value" : "    var stackedDataBar = {\n        name: \u0022stackedDataBar\u0022,\n        label: \u0022Stacked Data Bar\u0022,\n        defaults: {\n            width: undefined,\n            widthRatio: 1,\n            height: undefined,\n            align: null,\n            startColor: \u0022#55A4D6\u0022,\n            endColor: \u0022#448FC8\u0022,\n            backgroundImage: undefined,\n            stroke: null,\n            max: undefined,\n            min: undefined,\n            includeValue: false,\n            absValue: true,\n            stacked: false,\n            stackedColors: [\u0022#AAA\u0022,\u0022#BBB\u0022,\u0022#CCC\u0022],\n            valueFormat: function(v, format, st, opt) {\n                return \u0022\u0022 + sprintf(format || \u0022%.0f\u0022, v);\n            }\n        },\n        init: function() {\n            $.fn.dataTableExt.oSort[this.name + \u0027-asc\u0027] = $.fn.dataTableExt.oSort[\u0027numeric-asc\u0027];\n            $.fn.dataTableExt.oSort[this.name + \u0027-desc\u0027] = $.fn.dataTableExt.oSort[\u0027numeric-desc\u0027];\n        },\n        implementation: function(tgt, st, opt) {\n            \n            if ( opt.stacked ){\n                \n                //validate if we have values to render\n                if ( st.value.length === 0 ) {\n                    $(tgt).empty();\n                    return\n                };\n                \n                var colors = opt.stackedColors,\n                    lColors = colors.length,\n                    values = st.value.split(\u0027,\u0027),\n                    length = values.length,\n                    total = 0;\n                \n                //the colors available will be repeated to all values\n                if ( lColors \u003C length ){\n                    for ( var i = 0; i \u003C= length; i++ ){\n                        var j = i;\n                        if ( j \u003E lColors ){\n                            j = j - lColors - 1;\n                            colors.push(colors[j]);\n                        }\n                    }\n                }\n                \n                //determine width of bars\n                _.each(values,function(value){\n                    total = total + parseFloat(value);\n                });\n                \n                var ratio = [];\n                _.each(values,function(value){\n                    var perc = value / total;\n                    ratio.push(perc);\n                });\n                \n                //determine cell size\n                var cellSettings = this.cellSettings(tgt,opt);\n                var ph = cellSettings[0];\n                var wtmp = Math.round(cellSettings[1]);\n                var htmp = cellSettings[2];\n                var hasSVG = cellSettings[3];\n                \n                //ph.css(\u0027min-width\u0027, ph.width() + \u0027px\u0027);\n                \n                //build stacked bars\n                for ( var i = 0; i \u003C length; i++ ){\n                    var wbar = ratio[i] * 100;\n                    if ( wbar \u003E 0 ){\n                        var phBar = $(\u0022\u003Cdiv\u003E\u003C/div\u003E\u0022).addClass(\u0027stackedBar\u0027).appendTo(ph);\n                        phBar.width(wbar + \u0022%\u0022);\n                        phBar.height(htmp);\n                        phBar.css({\u0027background\u0027:colors[i], \u0022display\u0022: \u0022block\u0022, \u0022float\u0022: \u0022left\u0022});\n                        var valueStr = opt.valueFormat(values[i], st.colFormat, st, opt);\n                        phBar.attr(\u0027title\u0027, valueStr);\n                        //if we want to show values for each bar\n                        if(opt.includeValue) {\n                            var fontsize = parseFloat(phBar.css(\u0027font-size\u0027));\n                            var digits = valueStr.length;\n                            var totalLength = fontsize * digits;\n                            if ( valueStr !== \u00220\u0022 \u0026\u0026 phBar.width() \u003E totalLength ) {\n                                var valph = $(\u0022\u003Cspan\u003E\u003C/span\u003E\u0022).addClass(\u0027value\u0027);\n                                valph.append(valueStr);\n                                phBar.append(valph);\n                                phBar.find(\u0027span\u0027).width(\u0022100%\u0022);\n                            }\n                        }\n                    }\n                }\n            } else {\n                var tblMax = Math.max.apply(Math,st.tableData.map(function(e) {\n                    return e[st.colIdx];\n                })),\n                tblMin = Math.min.apply(Math,st.tableData.map(function(e) {\n                    return e[st.colIdx];\n                }));\n                \n                var optMax = parseFloat(opt.max);\n                var optMin = parseFloat(opt.min);\n                \n                var isValidNumber = function(nr) {\n                    return _.isNumber(nr) \u0026\u0026 isFinite(nr);\n                };\n                \n                var validMaxValue = isValidNumber(optMax);\n                var validMinValue = isValidNumber(optMin);\n                \n                if(opt.absValue) {\n                    var max = (validMaxValue == true) ? optMax : Math.max(Math.abs(tblMax), Math.abs(tblMin)),\n                        min = (validMinValue == true) ? optMin : 0,\n                        val = Math.abs(parseFloat(st.value));\n                        min = Math.max(min,0);\n                } else {\n                    var max = (validMaxValue == true) ? optMax : Math.max(0, tblMax),\n                        min = (validMinValue == true) ? optMin : Math.min(0, tblMin),\n                        val = parseFloat(st.value);\n                }\n                \n                //determine cell size\n                var cellSettings = this.cellSettings(tgt,opt);\n                var ph = cellSettings[0];\n                var wtmp = cellSettings[1];\n                var htmp = cellSettings[2];\n                var hasSVG = cellSettings[3];\n                \n                var leftVal = Math.min(val, 0),\n                    rightVal = Math.max(val, 0),\n                    options = {\n                        scale: 100,\n                        wtmp: wtmp,\n                        htmp: htmp,\n                        align: opt.align,\n                        barHeight: 100,\n                        r: rightVal,\n                        l: leftVal,\n                        hasSVG: hasSVG,\n                        target: ph.get(0),\n                        processVal: function(val) { return val + \u0027%\u0027; }\n                    },\n                    c;\n                // if we have SVG, and wtmp is a string, so probably a percentage width, will use percentage calculations\n                if(hasSVG \u0026\u0026 typeof wtmp === \u0027string\u0027) {\n                    c = this.drawPaper(min, max, options);\n                } else {\n                    // falling back to the default\n                    options.processVal = function(val) { return val; };\n                    options.scale = wtmp;\n                    options.barHeight = htmp;\n                    options.legacy = true;\n                    c = this.drawPaper(min, max, options);\n                }\n                \n                c.attr({\n                    fill: opt.backgroundImage ? \u0022url(\u0027\u0022 + opt.backgroundImage + \u0022\u0027)\u0022 : \u002290-\u0022 + opt.startColor + \u0022-\u0022 + opt.endColor,\n                    stroke: opt.stroke,\n                    title: \u0022Value: \u0022 + st.value\n                });\n                \n                if(opt.includeValue) {\n                    var valueStr = opt.valueFormat(st.value, st.colFormat, st, opt);\n                    var valph = $(\u0022\u003Cspan\u003E\u003C/span\u003E\u0022).addClass(\u0027value\u0027);\n                    valph.append(valueStr);\n                    if(options.legacy) {\n                      valph.appendTo(ph);\n                    } else if(hasSVG \u0026\u0026 opt.align == \u0022right\u0022) {\n                        valph.addClass(\u0027alignRight\u0027).appendTo(ph);\n                        ph.find(\u0022svg\u0022).css(\u0027float\u0027, \u0027right\u0027);\n                    } else {\n                        valph.prependTo(ph);\n                    }\n                }\n            }\n        },\n        cellSettings: function(tgt,opt){\n            var hasSVG = !!(\n                document.createElementNS \u0026\u0026\n                document.createElementNS(\u0027http://www.w3.org/2000/svg\u0027, \u0027svg\u0027).createSVGRect\n            );\n            \n            var cell = $(tgt).empty();\n            var ph = $(\u0022\u003Cdiv\u003E\u003C/div\u003E\u0022).addClass(\u0027dataBarContainer\u0027).appendTo(cell);\n            var wtmp = opt.width || ph.width();\n            if(typeof wtmp === \u0027string\u0027) {\n                if(!hasSVG) {\n                    wtmp = ph.width() * opt.widthRatio;\n                } else {\n                    var parsedWidth = parseFloat(wtmp);\n                    // if we have a widthRatio != 1, we want to apply it to a 100% width\n                    parsedWidth = ((opt.widthRatio != 1 \u0026\u0026 parsedWidth \u003E= 98) ? 100 : parsedWidth) * opt.widthRatio;\n                    wtmp = parsedWidth + \u0022%\u0022;\n                }\n            } else {\n                wtmp *= opt.widthRatio;\n            }\n            var htmp = opt.height || ph.height();\n            return [ph,wtmp,htmp,hasSVG];\n        },\n        drawPaper: function(min, max, opts) {\n            // xx = x axis\n            var xx = pv.Scale.linear(min,max).range(0, opts.scale);\n            \n            var paper = Raphael(\n                opts.target,\n                opts.legacy ? xx(Math.min(opts.r,max)) - xx(min) : opts.wtmp,\n                opts.htmp);\n            if(!opts.legacy \u0026\u0026 opts.hasSVG \u0026\u0026 opts.align == \u0022right\u0022) {\n                return paper.rect(\n                opts.processVal(xx(max) - xx(opts.r)),\n                opts.processVal(0),\n                opts.processVal(xx(opts.r) - xx(opts.l)),\n                opts.processVal(opts.barHeight));\n            }\n            return paper.rect(\n                opts.processVal(xx(opts.l)),\n                opts.processVal(0),\n                opts.processVal(xx(opts.r) - xx(opts.l)),\n                opts.processVal(opts.barHeight));\n        }\n    };\n    \n    Dashboards.registerGlobalAddIn(\u0022Table\u0022, \u0022colType\u0022,  new AddIn(stackedDataBar)); "
+          },
+          {
+            "name" : "resourceType",
+            "type" : "Label",
+            "value" : "Javascript"
+          }
+        ],
+        "type" : "LayoutResourceCode",
+        "typeDesc" : "Resource"
+      },
+      {
+        "id" : "80cc75ea-d605-ab5b-d484-5282931e3c77",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "fabf414d-5b94-7320-8f11-7509d7d882e0",
+        "parent" : "80cc75ea-d605-ab5b-d484-5282931e3c77",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "C1"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      }
+    ],
+    "title" : "CDF - Sample structure"
+  }
+}

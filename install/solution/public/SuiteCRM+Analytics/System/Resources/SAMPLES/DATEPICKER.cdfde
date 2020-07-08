@@ -1,0 +1,254 @@
+{
+  "components" : {
+    "rows" : [
+      {
+        "id" : "IVYISBOOTSTRAP",
+        "name" : "Ivy IS Bootstrap",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "Ivy IS Bootstrap"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "75b37faa-3eb1-3aaa-c69c-11882a1942ed",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "D1"
+          },
+          {
+            "name" : "parameter",
+            "type" : "Parameter",
+            "value" : ""
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "dateFormat",
+            "type" : "String",
+            "value" : "MM"
+          },
+          {
+            "name" : "endDate",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "startDate",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "datePickerViewMode",
+            "type" : "datePickerViewModeCustom",
+            "value" : "range"
+          },
+          {
+            "name" : "dateRangeSeparator",
+            "type" : "String",
+            "value" : "To"
+          },
+          {
+            "name" : "datePickerLanguage",
+            "type" : "datePickerLanguageCustom",
+            "value" : "en"
+          },
+          {
+            "name" : "dateStartViewMode",
+            "type" : "dateStartViewModeCustom",
+            "value" : 0
+          },
+          {
+            "name" : "dateMinViewMode",
+            "type" : "dateMinViewModeCustom",
+            "value" : "1"
+          },
+          {
+            "name" : "todayHighlight",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "keyboardNavigation",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "weekStart",
+            "type" : "weekStartCustom",
+            "value" : 1
+          },
+          {
+            "name" : "autoclose",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "orientation",
+            "type" : "orientationCustom",
+            "value" : "auto"
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:C1}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postChange",
+            "type" : "JavaScript",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Bootstrap Date Picker",
+        "type" : "ComponentsBSDatePickerComponent",
+        "typeDesc" : "Bootstrap Date Picker"
+      }
+    ]
+  },
+  "datasources" : {
+    "rows" : [ ]
+  },
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/SAMPLES/DATEPICKER.cdfde",
+  "layout" : {
+    "rows" : [
+      {
+        "id" : "0ec4221b-59c5-4aed-9b96-6727ab72434e",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
+      },
+      {
+        "id" : "e0e7eb40-e3b1-1aff-84da-3f63ebd22b69",
+        "parent" : "0ec4221b-59c5-4aed-9b96-6727ab72434e",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "C1"
+          },
+          {
+            "name" : "bootstrapExtraSmall",
+            "type" : "String",
+            "value" : "12"
+          },
+          {
+            "name" : "bootstrapSmall",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapMedium",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapLarge",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "bootstrapCssClass",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "height",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "backgroundColor",
+            "type" : "Color",
+            "value" : ""
+          },
+          {
+            "name" : "roundCorners",
+            "type" : "RoundCorners",
+            "value" : ""
+          },
+          {
+            "name" : "textAlign",
+            "type" : "TextAlign",
+            "value" : ""
+          },
+          {
+            "name" : "cssClass",
+            "type" : "String",
+            "value" : ""
+          }
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
+      }
+    ],
+    "title" : "CDF - Sample structure"
+  }
+}
