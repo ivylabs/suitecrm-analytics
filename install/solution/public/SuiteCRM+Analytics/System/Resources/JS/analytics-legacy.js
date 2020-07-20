@@ -114,7 +114,8 @@ var analytics = {}
                 dotsVisible: true,
                 line_lineWidth:2,
                 dot_lineWidth:2,
-                dot_fillStyle: "#fff"
+                dot_fillStyle: "#fff",
+                line_strokeDasharray: "none"
             },
             
             // Default Pie Chart Properties
@@ -207,10 +208,11 @@ var analytics = {}
                     return renderDot;
                 },
                 
-                dot_lineWidth:20,
+                dot_lineWidth:5,
                 dot_strokeStyle: "#FFF",
                 line_lineWidth:2,
-                dot_shapeRadius:5
+                dot_shapeRadius:5,
+                line_strokeDasharray: "none"
                 //line_strokeStyle: "#6e97aa"
             }
             

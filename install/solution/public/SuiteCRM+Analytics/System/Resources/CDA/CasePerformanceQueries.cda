@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="qTotalCreatedCasesByDayQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCreatedCasesByMonthQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCreatedCasesByQuarterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalClosedCasesByDayQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalClosedCasesByMonthQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalClosedCasesByQuarterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByQuarterByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByMonthByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByDayByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByAccountQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qAverageCaseDurationByAgentQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qCaseDetailsQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="qTotalCreatedCasesByDayQuery"
+               id="qTotalCreatedCasesByDayQuery"
+               type="sql">
+      <Name>qTotalCreatedCasesByDayQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200301" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	CCRD.`YYYY-MM-DD`
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCreatedCasesByMonthQuery"
+               id="qTotalCreatedCasesByMonthQuery"
+               type="sql">
+      <Name>qTotalCreatedCasesByMonthQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	CCRD.`YYYY-MM`
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCreatedCasesByQuarterQuery"
+               id="qTotalCreatedCasesByQuarterQuery"
+               type="sql">
+      <Name>qTotalCreatedCasesByQuarterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	CCRD.`YYYY-QQ`
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalClosedCasesByDayQuery"
+               id="qTotalClosedCasesByDayQuery"
+               type="sql">
+      <Name>qTotalClosedCasesByDayQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	CCLD.`YYYY-MM-DD`
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCLD
+	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND CCLD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalClosedCasesByMonthQuery"
+               id="qTotalClosedCasesByMonthQuery"
+               type="sql">
+      <Name>qTotalClosedCasesByMonthQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	CCLD.`YYYY-MM`
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCLD
+	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND CCLD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalClosedCasesByQuarterQuery"
+               id="qTotalClosedCasesByQuarterQuery"
+               type="sql">
+      <Name>qTotalClosedCasesByQuarterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	CCLD.`YYYY-QQ`
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCLD
+	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND CCLD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByQuarterByTypeQuery"
+               id="qTotalCasesByQuarterByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByQuarterByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    CCRD.`YYYY-QQ`
+	,DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1,2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByMonthByTypeQuery"
+               id="qTotalCasesByMonthByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByMonthByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    CCRD.`YYYY-MM`
+	,DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1,2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByDayByTypeQuery"
+               id="qTotalCasesByDayByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByDayByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    CCRD.`YYYY-MM-DD`
+	,DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1,2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByTypeQuery" id="qTotalCasesByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByAccountQuery"
+               id="qTotalCasesByAccountQuery"
+               type="sql">
+      <Name>qTotalCasesByAccountQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DA.ACCOUNT_NAME
+	,COUNT(FCM.CASE_ID)
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_ACCOUNTS DA
+	ON FCM.ACCOUNT_TK = DA.ACCOUNT_TK
+INNER JOIN D_DATE CCRD
+    ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 ASC
+LIMIT 10]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qAverageCaseDurationByAgentQuery"
+               id="qAverageCaseDurationByAgentQuery"
+               type="sql">
+      <Name>qAverageCaseDurationByAgentQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	COUNT(FCM.CASE_ID) AS TOTAL_CASES
+	,AVG(IF(ISNULL(CCLD.`DD-MM-YYYY`), DATEDIFF(NOW(),CCRD.`DD-MM-YYYY`), DATEDIFF(CCLD.`DD-MM-YYYY`,CCRD.`DD-MM-YYYY`))) AS AVERAGE_CASE_AGE
+    ,DU.USER_NAME
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_USERS DU
+	ON FCM.ASSIGNED_USER_TK = DU.USER_TK
+LEFT JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+LEFT JOIN D_DATE CCLD
+	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
+WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 3]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qCaseDetailsQuery" id="qCaseDetailsQuery"
+               type="sql">
+      <Name>qCaseDetailsQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DU.USER_NAME
+	,DA.ACCOUNT_NAME
+	,DC.CASE_NAME
+	,DC.CASE_TYPE
+	,DC.CASE_STATUS
+	,DC.CASE_STATE
+	,DC.CASE_PRIORITY
+	,CCRD.`DD-MM-YYYY` AS CASE_CREATED_DATE
+	,CCLD.`DD-MM-YYYY` AS CASE_CLOSED_DATE
+	,IF(ISNULL(CCLD.`DD-MM-YYYY`), DATEDIFF(NOW(),CCRD.`DD-MM-YYYY`), DATEDIFF(CCLD.`DD-MM-YYYY`,CCRD.`DD-MM-YYYY`)) AS CASE_AGE
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_USERS DU
+	ON FCM.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_ACCOUNTS DA
+	ON FCM.ACCOUNT_TK = DA.ACCOUNT_TK
+LEFT JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+LEFT JOIN D_DATE CCLD
+	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
+WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+ORDER BY 10 DESC]]></Query>
+   </DataAccess>
+</CDADescriptor>
