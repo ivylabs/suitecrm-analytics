@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdf><title>Lead Performance Dashboard</title><description>Case Management</description><author></author><style>ivyui - (IvyUI)</style><rendererType>bootstrap</rendererType><require>false</require><widget>false</widget><widgetName></widgetName><widgetParameters></widgetParameters></cdf>
+<cdf><title>LeadPerformanceDashboard</title><description>CampaignPerformanceDashboard</description><author></author><style>ivyui - (IvyUI)</style><rendererType>bootstrap</rendererType><require>false</require><widget>false</widget><widgetName></widgetName><widgetParameters></widgetParameters></cdf>

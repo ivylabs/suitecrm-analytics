@@ -40,6 +40,10 @@
       <Connection id="qCaseDetailsQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalCreatedCasesByDayQueryDemo" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
    </DataSources>
    <DataAccess access="public" connection="qTotalCreatedCasesByDayQuery"
                id="qTotalCreatedCasesByDayQuery"
@@ -363,5 +367,88 @@ LEFT JOIN D_DATE CCLD
 	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
 WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
 ORDER BY 10 DESC]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCreatedCasesByDayQueryDemo"
+               id="qTotalCreatedCasesByDayQueryDemo"
+               type="jsonScriptable">
+      <Name>qTotalCreatedCasesByDayQueryDemo</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{
+  "metadata": [
+    {
+      "colName": "YYYY-MM-DD",
+      "colType": "String",
+      "colIndex": 0
+    },
+    {
+      "colName": "TOTAL_CASES",
+      "colType": "Numeric",
+      "colIndex": 1
+    }
+  ],
+  "resultset": [
+    [
+      "2020-06-22",
+      10
+    ],
+    [
+      "2020-06-23",
+      13
+    ],
+    [
+      "2020-06-28",
+      14
+    ],
+    [
+      "2020-06-30",
+      17
+    ],
+    [
+      "2020-07-04",
+      21
+    ],
+    [
+      "2020-07-06",
+      11
+    ],
+    [
+      "2020-07-07",
+      31
+    ],
+    [
+      "2020-07-08",
+      16
+    ],
+    [
+      "2020-07-09",
+      19
+    ],
+    [
+      "2020-07-11",
+      21
+    ],
+    [
+      "2020-07-12",
+      22
+    ],
+    [
+      "2020-07-13",
+      25
+    ],
+    [
+      "2020-07-15",
+      29
+    ],
+    [
+      "2020-07-19",
+      19
+    ]
+  ],
+  "queryInfo": {
+    "totalRows": "14"
+  }
+}]]></Query>
    </DataAccess>
 </CDADescriptor>

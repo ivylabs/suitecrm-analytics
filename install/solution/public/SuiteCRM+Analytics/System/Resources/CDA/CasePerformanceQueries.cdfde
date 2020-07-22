@@ -953,6 +953,97 @@
         "rowName" : "sql over sqlJndi",
         "type" : "Componentssql_sqlJndi",
         "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "SCRIPTING",
+        "name" : "SCRIPTING Queries",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "SCRIPTING Queries",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "45965ab6-7483-a6e1-4f48-9d0c69f8e4e4",
+        "type" : "ComponentsjsonScriptable_scripting",
+        "typeDesc" : "jsonScriptable over scripting",
+        "parent" : "SCRIPTING",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "qTotalCreatedCasesByDayQueryDemo",
+            "type" : "Id"
+          },
+          {
+            "name" : "initscript",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "language",
+            "value" : "beanshell",
+            "type" : "String"
+          },
+          {
+            "name" : "access",
+            "value" : "public",
+            "type" : "Access"
+          },
+          {
+            "name" : "query",
+            "value" : "{\n  \u0022metadata\u0022: [\n    {\n      \u0022colName\u0022: \u0022YYYY-MM-DD\u0022,\n      \u0022colType\u0022: \u0022String\u0022,\n      \u0022colIndex\u0022: 0\n    },\n    {\n      \u0022colName\u0022: \u0022TOTAL_CASES\u0022,\n      \u0022colType\u0022: \u0022Numeric\u0022,\n      \u0022colIndex\u0022: 1\n    }\n  ],\n  \u0022resultset\u0022: [\n    [\n      \u00222020-06-22\u0022,\n      10\n    ],\n    [\n      \u00222020-06-23\u0022,\n      13\n    ],\n    [\n      \u00222020-06-28\u0022,\n      14\n    ],\n    [\n      \u00222020-06-30\u0022,\n      17\n    ],\n    [\n      \u00222020-07-04\u0022,\n      21\n    ],\n    [\n      \u00222020-07-06\u0022,\n      11\n    ],\n    [\n      \u00222020-07-07\u0022,\n      31\n    ],\n    [\n      \u00222020-07-08\u0022,\n      16\n    ],\n    [\n      \u00222020-07-09\u0022,\n      19\n    ],\n    [\n      \u00222020-07-11\u0022,\n      21\n    ],\n    [\n      \u00222020-07-12\u0022,\n      22\n    ],\n    [\n      \u00222020-07-13\u0022,\n      25\n    ],\n    [\n      \u00222020-07-15\u0022,\n      29\n    ],\n    [\n      \u00222020-07-19\u0022,\n      19\n    ]\n  ],\n  \u0022queryInfo\u0022: {\n    \u0022totalRows\u0022: \u002214\u0022\n  }\n}",
+            "type" : "JsonScriptableQuery"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "CdaParameters"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "value" : "[]",
+            "type" : "CdaCalculatedColumnsArray"
+          },
+          {
+            "name" : "cdacolumns",
+            "value" : "[]",
+            "type" : "CdaColumnsArray"
+          },
+          {
+            "name" : "output",
+            "value" : "[]",
+            "type" : "IndexArray"
+          },
+          {
+            "name" : "outputMode",
+            "value" : "include",
+            "type" : "OutputMode"
+          },
+          {
+            "name" : "cacheKeys",
+            "value" : "[]",
+            "type" : "CacheKeysValues"
+          },
+          {
+            "name" : "cacheDuration",
+            "value" : 3600,
+            "type" : "Integer"
+          },
+          {
+            "name" : "cache",
+            "value" : "true",
+            "type" : "Boolean"
+          }
+        ],
+        "meta" : "CDA",
+        "meta_conntype" : "scripting.scripting",
+        "meta_datype" : "jsonScriptable",
+        "rowName" : "jsonScriptable over scripting"
       }
     ]
   },

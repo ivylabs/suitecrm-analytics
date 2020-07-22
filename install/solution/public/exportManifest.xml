@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="20-07-2020 02:10:52 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="22-07-2020 03:56:52 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
     <ExportManifestEntity path="SuiteCRM Analytics">
         <ExportManifestProperty>
             <EntityMetaData name="SuiteCRM Analytics" createdDate="2020-07-03T11:33:33.495Z" isFolder="true" path="SuiteCRM Analytics" isHidden="false" isSchedulable="true" locale="en_US" title="SuiteCRM Analytics"/>
@@ -73,21 +73,9 @@
             </EntityAcl>
         </ExportManifestProperty>
     </ExportManifestEntity>
-    <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cda">
-        <ExportManifestProperty>
-            <EntityMetaData name="LeadPerformanceDashboard.cda" createdDate="2020-07-03T11:33:36.212Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cda" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboard"/>
-        </ExportManifestProperty>
-        <ExportManifestProperty>
-            <EntityAcl>
-                <entriesInheriting>true</entriesInheriting>
-                <owner>admin</owner>
-                <ownerType>USER</ownerType>
-            </EntityAcl>
-        </ExportManifestProperty>
-    </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cdfde">
         <ExportManifestProperty>
-            <EntityMetaData name="LeadPerformanceDashboard.cdfde" createdDate="2020-07-03T11:33:36.181Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cdfde" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboard.cdfde"/>
+            <EntityMetaData name="LeadPerformanceDashboard.cdfde" createdDate="2020-07-20T15:09:26.659Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.cdfde" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboard.cdfde"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -99,7 +87,43 @@
     </ExportManifestEntity>
     <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf">
         <ExportManifestProperty>
-            <EntityMetaData name="LeadPerformanceDashboard.wcdf" createdDate="2020-07-03T11:33:36.197Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboard.wcdf"/>
+            <EntityMetaData name="LeadPerformanceDashboard.wcdf" createdDate="2020-07-20T15:09:26.516Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf" isHidden="false" isSchedulable="true" locale="en_US" description="CampaignPerformanceDashboard" title="LeadPerformanceDashboard"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardBCK.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceDashboardBCK.cda" createdDate="2020-07-03T11:33:36.212Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardBCK.cda" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboardBCK"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardBCK.cdfde.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceDashboardBCK.cdfde.cdfde" createdDate="2020-07-03T11:33:36.181Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardBCK.cdfde.cdfde" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboardBCK.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardBCK.wcdf.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceDashboardBCK.wcdf.wcdf" createdDate="2020-07-03T11:33:36.197Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardBCK.wcdf.wcdf" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboardBCK.wcdf"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
@@ -376,6 +400,42 @@
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.wcdf">
         <ExportManifestProperty>
             <EntityMetaData name="FILTERS.wcdf" createdDate="2020-07-03T11:33:34.822Z" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/FILTERS.wcdf" isHidden="false" isSchedulable="true" locale="en_US" title="FILTERS.wcdf"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/LeadPerformanceQueries.cda">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceQueries.cda" createdDate="2020-07-20T16:03:00.720Z" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/LeadPerformanceQueries.cda" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceQueries.cda"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/LeadPerformanceQueries.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceQueries.cdfde" createdDate="2020-07-20T16:03:00.483Z" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/LeadPerformanceQueries.cdfde" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceQueries.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/CDA/LeadPerformanceQueries.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceQueries.wcdf" createdDate="2020-07-20T16:03:00.392Z" isFolder="false" path="SuiteCRM Analytics/System/Resources/CDA/LeadPerformanceQueries.wcdf" isHidden="false" isSchedulable="true" locale="en_US" description="CasePerformanceQueries" title="LeadPerformanceQueries"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>
