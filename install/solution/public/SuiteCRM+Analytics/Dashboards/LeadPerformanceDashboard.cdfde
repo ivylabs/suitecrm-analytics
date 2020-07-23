@@ -161,7 +161,7 @@
           {
             "name" : "colWidths",
             "type" : "ColWidthsArray",
-            "value" : "[\u002218%\u0022,\u002218%\u0022,\u002210%\u0022,\u002210%\u0022,\u002211%\u0022,\u00226%\u0022,\u00226%\u0022,\u00226%\u0022,\u002215%\u0022]"
+            "value" : "[\u002210%\u0022,\u002220%\u0022,\u002210%\u0022,\u002210%\u0022,\u002212%\u0022,\u002211%\u0022,\u00226%\u0022,\u00226%\u0022,\u002215%\u0022]"
           },
           {
             "name" : "expandParameters",
@@ -915,7 +915,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -2430,7 +2430,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -3945,7 +3945,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -5460,7 +5460,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -6975,7 +6975,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -7720,7 +7720,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -8500,7 +8500,7 @@
           {
             "name" : "readers",
             "type" : "Array",
-            "value" : "[\u0022USER_NAME\u0022]"
+            "value" : "[]"
           },
           {
             "name" : "renderCallback",

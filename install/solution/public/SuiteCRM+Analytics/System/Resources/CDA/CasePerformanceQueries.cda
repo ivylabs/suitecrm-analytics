@@ -206,7 +206,7 @@ GROUP BY 1]]></Query>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT
-    CCRD.`YYYY-QQ`
+    CCRD.`YYYY-QQQ`
 	,DC.CASE_TYPE
     ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
 FROM F_CASE_MANAGEMENT FCM

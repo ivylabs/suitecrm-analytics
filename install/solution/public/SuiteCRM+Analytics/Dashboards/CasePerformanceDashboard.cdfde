@@ -915,7 +915,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -2430,7 +2430,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -3945,7 +3945,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -5460,7 +5460,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -6975,7 +6975,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -8490,7 +8490,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -9235,7 +9235,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",
@@ -10695,7 +10695,7 @@
           {
             "name" : "postExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards;\n    \n    analytics.functions.resizeChart(dash);\n\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this;\n    \n    analytics.functions.resizeSingleChart(cd);\n\n} "
           },
           {
             "name" : "postFetch",

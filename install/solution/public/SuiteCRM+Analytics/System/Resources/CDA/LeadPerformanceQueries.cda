@@ -184,7 +184,7 @@ GROUP BY 1,2;]]></Query>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
       </Parameters>
-      <Query><![CDATA[SELECT ED.`YYYY-QQ`
+      <Query><![CDATA[SELECT ED.`YYYY-QQQ`
     ,DL.LEAD_SOURCE
 	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
 FROM F_LEAD_TRACKING FLT

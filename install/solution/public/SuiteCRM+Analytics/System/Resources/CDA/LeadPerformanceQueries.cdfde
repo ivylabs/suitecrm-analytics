@@ -403,7 +403,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT ED.`YYYY-QQ`\n    ,DL.LEAD_SOURCE\n\t,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_LEADS DL\n\tON FLT.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE ED\n\tON FLT.EVENT_CREATED_TK = ED.DATE_TK\nWHERE FLT.STATUS = ${pLeadStatusFilter}\nAND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLT.EVENT_COUNT = 1\nGROUP BY 1,2;"
+            "value" : "SELECT ED.`YYYY-QQQ`\n    ,DL.LEAD_SOURCE\n\t,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_LEADS DL\n\tON FLT.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE ED\n\tON FLT.EVENT_CREATED_TK = ED.DATE_TK\nWHERE FLT.STATUS = ${pLeadStatusFilter}\nAND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLT.EVENT_COUNT = 1\nGROUP BY 1,2;"
           },
           {
             "name" : "parameters",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="23-07-2020 03:10:13 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="23-07-2020 05:10:06 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
     <ExportManifestEntity path="SuiteCRM Analytics">
         <ExportManifestProperty>
             <EntityMetaData name="SuiteCRM Analytics" createdDate="2020-07-03T11:33:33.495Z" isFolder="true" path="SuiteCRM Analytics" isHidden="false" isSchedulable="true" locale="en_US" title="SuiteCRM Analytics"/>
@@ -64,6 +64,30 @@
     <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf">
         <ExportManifestProperty>
             <EntityMetaData name="LeadPerformanceDashboard.wcdf" createdDate="2020-07-20T15:09:26.516Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboard.wcdf" isHidden="false" isSchedulable="true" locale="en_US" description="CampaignPerformanceDashboard" title="LeadPerformanceDashboard"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardDebug.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceDashboardDebug.cdfde" createdDate="2020-07-23T16:04:03.550Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardDebug.cdfde" isHidden="false" isSchedulable="true" locale="en_US" title="LeadPerformanceDashboardDebug.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardDebug.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="LeadPerformanceDashboardDebug.wcdf" createdDate="2020-07-23T16:04:03.530Z" isFolder="false" path="SuiteCRM Analytics/Dashboards/LeadPerformanceDashboardDebug.wcdf" isHidden="false" isSchedulable="true" locale="en_US" description="CampaignPerformanceDashboard" title="LeadPerformanceDashboardDebug"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>

@@ -19,6 +19,12 @@ var analytics = {}
             }
         },
         
+        resizeSingleChart:function(cd){ 
+            cd.chart.options.width = $("#"+cd.htmlObject).width();
+            cd.chart.render(true,true,false);
+        },
+        
+        
         sayHello:function(name){
             alert("Hello "+name);
         },

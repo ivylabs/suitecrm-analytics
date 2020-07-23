@@ -475,7 +475,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    CCRD.`YYYY-QQ`\n\t,DC.CASE_TYPE\n    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_CASES DC\n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE CCRD\n\tON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nAND (DC.CASE_STATE IN (${pCaseStateFilter}) OR \u0027All Case States\u0027 IN (${pCaseStateFilter}))\nAND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1,2"
+            "value" : "SELECT\n    CCRD.`YYYY-QQQ`\n\t,DC.CASE_TYPE\n    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_CASES DC\n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE CCRD\n\tON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nAND (DC.CASE_STATE IN (${pCaseStateFilter}) OR \u0027All Case States\u0027 IN (${pCaseStateFilter}))\nAND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1,2"
           },
           {
             "name" : "parameters",
