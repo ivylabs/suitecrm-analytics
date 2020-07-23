@@ -179,6 +179,14 @@ var analytics = {}
                 legend:false,
                 dotsVisible:true,
                 titleSize:0,
+                tooltipFormat:function(scene){
+                    var period = scene.atoms.category.value;
+                    var value = scene.vars.value.value;
+                    
+                    var html = "<div>"+value+" Leads -  "+period+"</div>";
+                
+                    return html;
+                },
                 
                 dot_fillStyle:function(scene){
                     

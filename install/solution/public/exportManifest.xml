@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="22-07-2020 04:03:49 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="23-07-2020 03:10:13 UTC" exportBy="admin" rootFolder="/public/" manifestVersion="2"/>
     <ExportManifestEntity path="SuiteCRM Analytics">
         <ExportManifestProperty>
             <EntityMetaData name="SuiteCRM Analytics" createdDate="2020-07-03T11:33:33.495Z" isFolder="true" path="SuiteCRM Analytics" isHidden="false" isSchedulable="true" locale="en_US" title="SuiteCRM Analytics"/>
@@ -1132,6 +1132,30 @@
     <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/dynamicReportColumnsAndGroups.prpt">
         <ExportManifestProperty>
             <EntityMetaData name="dynamicReportColumnsAndGroups.prpt" createdDate="2020-07-03T11:33:33.956Z" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/dynamicReportColumnsAndGroups.prpt" isHidden="false" isSchedulable="true" locale="en_US" title="dynamicReportColumnsAndGroups"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/getGITIssues.ktr">
+        <ExportManifestProperty>
+            <EntityMetaData name="getGITIssues.ktr" createdDate="2020-07-23T14:09:32.106Z" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/getGITIssues.ktr" isHidden="true" isSchedulable="true" locale="en_US" title="getGITIssues"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="SuiteCRM Analytics/System/Resources/SAMPLES/liveETLReporting.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="liveETLReporting.prpt" createdDate="2020-07-23T14:07:22.403Z" isFolder="false" path="SuiteCRM Analytics/System/Resources/SAMPLES/liveETLReporting.prpt" isHidden="false" isSchedulable="true" locale="en_US" title="liveETLReporting"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>

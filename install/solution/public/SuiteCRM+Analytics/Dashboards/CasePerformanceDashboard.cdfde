@@ -2215,7 +2215,7 @@
           {
             "name" : "tooltipFormat",
             "type" : "JavaScript",
-            "value" : ""
+            "value" : "function(scene){\n    var period = scene.atoms.category.value;\n    var value = scene.vars.value.value;\n    \n    var html = \u0022\u003Cdiv\u003E\u0022+value+\u0022 Leads -  \u0022+period+\u0022\u003C/div\u003E\u0022;\n\n    return html;\n} "
           },
           {
             "name" : "tooltipGravity",
@@ -6970,7 +6970,7 @@
           {
             "name" : "preExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this.chartDefinition,\n        datePeriod = this.dashboard.getParameterValue(\u0027datePeriodParam\u0027);\n    \n    $.extend(true,cd,analytics.opts.charts.defaultChartComp);\n    $.extend(true,cd,analytics.opts.charts.defaultLineChartComp);\n    \n    \n    \n    if(datePeriod===\u0022daily\u0022){\n        cd.dataAccessId = \u0022qTotalCasesByDayByTypeQuery\u0022;\n    } else if (datePeriod===\u0022monthly\u0022){\n        cd.dataAccessId = \u0022qTotalCasesByMonthByTypeQuery\u0022;\n    } else if (datePeriod===\u0022quarterly\u0022){\n        cd.dataAccessId = \u0022qTotalCasesByQuerterByTypeQuery\u0022;\n    }\n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this.chartDefinition,\n        datePeriod = this.dashboard.getParameterValue(\u0027datePeriodParam\u0027);\n    \n    $.extend(true,cd,analytics.opts.charts.defaultChartComp);\n    $.extend(true,cd,analytics.opts.charts.defaultLineChartComp);\n    \n    \n    \n    if(datePeriod===\u0022daily\u0022){\n        cd.dataAccessId = \u0022qTotalCasesByDayByTypeQuery\u0022;\n    } else if (datePeriod===\u0022monthly\u0022){\n        cd.dataAccessId = \u0022qTotalCasesByMonthByTypeQuery\u0022;\n    } else if (datePeriod===\u0022quarterly\u0022){\n        cd.dataAccessId = \u0022qTotalCasesByQuarterByTypeQuery\u0022;\n    }\n} "
           },
           {
             "name" : "postExecution",
@@ -11720,7 +11720,7 @@
           {
             "name" : "tooltipFormat",
             "type" : "JavaScript",
-            "value" : ""
+            "value" : "function(scene){\n    console.log(scene);    \n} "
           },
           {
             "name" : "tooltipGravity",
@@ -12300,7 +12300,7 @@
           {
             "name" : "valuesArray",
             "type" : "ValuesArray",
-            "value" : "[[\u0022daily\u0022,\u0022Daily\u0022],[\u0022monthly\u0022,\u0022Monthly\u0022],[\u0022quarterly\u0022,\u0022Quarterly\u0022],[\u0022annually\u0022,\u0022Annually\u0022]]"
+            "value" : "[[\u0022daily\u0022,\u0022Daily\u0022],[\u0022monthly\u0022,\u0022Monthly\u0022],[\u0022quarterly\u0022,\u0022Quarterly\u0022]]"
           },
           {
             "name" : "priority",

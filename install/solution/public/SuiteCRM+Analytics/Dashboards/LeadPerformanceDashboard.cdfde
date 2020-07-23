@@ -8500,7 +8500,7 @@
           {
             "name" : "readers",
             "type" : "Array",
-            "value" : "[]"
+            "value" : "[\u0022USER_NAME\u0022]"
           },
           {
             "name" : "renderCallback",
@@ -8525,7 +8525,7 @@
           {
             "name" : "seriesInRows",
             "type" : "Boolean",
-            "value" : false
+            "value" : "false"
           },
           {
             "name" : "seriesRole",
@@ -9325,7 +9325,7 @@
           {
             "name" : "valuesArray",
             "type" : "ValuesArray",
-            "value" : "[[\u0022daily\u0022,\u0022Daily\u0022],[\u0022monthly\u0022,\u0022Monthly\u0022],[\u0022quarterly\u0022,\u0022Quarterly\u0022],[\u0022annually\u0022,\u0022Annually\u0022]]"
+            "value" : "[[\u0022daily\u0022,\u0022Daily\u0022],[\u0022monthly\u0022,\u0022Monthly\u0022],[\u0022quarterly\u0022,\u0022Quarterly\u0022]]"
           },
           {
             "name" : "priority",

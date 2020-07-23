@@ -188,7 +188,17 @@ GROUP BY 1]]></Query>
                type="sql">
       <Name>qTotalCasesByQuarterByTypeQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
          <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
@@ -214,7 +224,17 @@ GROUP BY 1,2]]></Query>
                type="sql">
       <Name>qTotalCasesByMonthByTypeQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
          <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
@@ -240,7 +260,17 @@ GROUP BY 1,2]]></Query>
                type="sql">
       <Name>qTotalCasesByDayByTypeQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
          <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
@@ -265,7 +295,14 @@ GROUP BY 1,2]]></Query>
                type="sql">
       <Name>qTotalCasesByTypeQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
          <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
@@ -290,7 +327,14 @@ GROUP BY 1]]></Query>
                type="sql">
       <Name>qTotalCasesByAccountQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Account Name</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>

@@ -10,13 +10,13 @@
       <Connection id="qTotalLeadsByStatusByQuarterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
-      <Connection id="qTotalLeadsByQuarterBySourceQuery" type="sql.jndi">
+      <Connection id="qTotalLeadsByDayBySourceQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalLeadsByMonthBySourceQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
-      <Connection id="qTotalLeadsByDayBySourceQuery" type="sql.jndi">
+      <Connection id="qTotalLeadsByQuarterBySourceQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalLeadsBySourceQuery" type="sql.jndi">
@@ -95,60 +95,22 @@ AND FLT.STATUS = ${pLeadStatusFilter}
 AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
 GROUP BY 1;]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="qTotalLeadsByQuarterBySourceQuery"
-               id="qTotalLeadsByQuarterBySourceQuery"
-               type="sql">
-      <Name>qTotalLeadsByQuarterBySourceQuery</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters>
-         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
-         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
-         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
-      </Parameters>
-      <Query><![CDATA[SELECT ED.`YYYY-QQ`
-    ,DL.LEAD_SOURCE
-	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
-FROM F_LEAD_TRACKING FLT
-INNER JOIN D_LEADS DL
-	ON FLT.LEAD_TK = DL.LEAD_TK
-INNER JOIN D_DATE ED
-	ON FLT.EVENT_CREATED_TK = ED.DATE_TK
-WHERE FLT.STATUS = ${pLeadStatusFilter}
-AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
-AND FLT.EVENT_COUNT = 1
-GROUP BY 1,2;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="qTotalLeadsByMonthBySourceQuery"
-               id="qTotalLeadsByMonthBySourceQuery"
-               type="sql">
-      <Name>qTotalLeadsByMonthBySourceQuery</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters>
-         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
-         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
-         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
-      </Parameters>
-      <Query><![CDATA[SELECT ED.`YYYY-MM`
-    ,DL.LEAD_SOURCE
-	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
-FROM F_LEAD_TRACKING FLT
-INNER JOIN D_LEADS DL
-	ON FLT.LEAD_TK = DL.LEAD_TK
-INNER JOIN D_DATE ED
-	ON FLT.EVENT_CREATED_TK = ED.DATE_TK
-WHERE FLT.STATUS = ${pLeadStatusFilter}
-AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
-AND FLT.EVENT_COUNT = 1
-GROUP BY 1,2;]]></Query>
-   </DataAccess>
    <DataAccess access="public" connection="qTotalLeadsByDayBySourceQuery"
                id="qTotalLeadsByDayBySourceQuery"
                type="sql">
       <Name>qTotalLeadsByDayBySourceQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Leads</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="New" name="pLeadStatusFilter" type="String"/>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
@@ -167,12 +129,87 @@ AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
 AND FLT.EVENT_COUNT = 1
 GROUP BY 1,2;]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsByMonthBySourceQuery"
+               id="qTotalLeadsByMonthBySourceQuery"
+               type="sql">
+      <Name>qTotalLeadsByMonthBySourceQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT ED.`YYYY-MM`
+    ,DL.LEAD_SOURCE
+	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
+FROM F_LEAD_TRACKING FLT
+INNER JOIN D_LEADS DL
+	ON FLT.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE ED
+	ON FLT.EVENT_CREATED_TK = ED.DATE_TK
+WHERE FLT.STATUS = ${pLeadStatusFilter}
+AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLT.EVENT_COUNT = 1
+GROUP BY 1,2;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsByQuarterBySourceQuery"
+               id="qTotalLeadsByQuarterBySourceQuery"
+               type="sql">
+      <Name>qTotalLeadsByQuarterBySourceQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Leads</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT ED.`YYYY-QQ`
+    ,DL.LEAD_SOURCE
+	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
+FROM F_LEAD_TRACKING FLT
+INNER JOIN D_LEADS DL
+	ON FLT.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE ED
+	ON FLT.EVENT_CREATED_TK = ED.DATE_TK
+WHERE FLT.STATUS = ${pLeadStatusFilter}
+AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLT.EVENT_COUNT = 1
+GROUP BY 1,2;]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="qTotalLeadsBySourceQuery"
                id="qTotalLeadsBySourceQuery"
                type="sql">
       <Name>qTotalLeadsBySourceQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Leads</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="New" name="pLeadStatusFilter" type="String"/>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
