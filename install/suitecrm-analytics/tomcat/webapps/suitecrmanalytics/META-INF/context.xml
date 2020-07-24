@@ -24,19 +24,19 @@
     		url="jdbc:mysql://@@SUITECRM_ANALYTICS_HOST@@:@@SUITECRM_ANALYTICS_PORT@@/@@SUITECRM_ANALYTICS_DATABASE@@"
 	/> 
 
-	<!--
-	<Resource name="jdbc/SuiteCRMAnalytics" 
+	
+	<Resource name="jdbc/SuiteCRM" 
                 auth="Container" type="javax.sql.DataSource"
                 factory="org.apache.commons.dbcp.BasicDataSourceFactory" 
                 maxActive="20" 
                 maxIdle="5"
                 maxWait="10000" 
-                username="root" 
-                password="" 
+                username="@@SUITECRM_USERNAME@@" 
+                password="@@SUITECRM_PASSWORD@@" 
                 driverClassName="com.mysql.jdbc.Driver"
-                url="jdbc:mysql://127.0.0.1:3306/suitecrm_dwh"
-	/>
-	-->
+                url="jdbc:mysql://@@SUITECRM_HOST@@:@@SUITECRM_PORT@@/@@SUITECRM_DATABASE@@"
+        />
+
 
 
 
