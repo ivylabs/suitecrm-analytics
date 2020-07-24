@@ -19,6 +19,12 @@ var analytics = {}
             }
         },
         
+        resizeSingleChart:function(cd){ 
+            cd.chart.options.width = $("#"+cd.htmlObject).width();
+            cd.chart.render(true,true,false);
+        },
+        
+        
         sayHello:function(name){
             alert("Hello "+name);
         },
@@ -114,7 +120,8 @@ var analytics = {}
                 dotsVisible: true,
                 line_lineWidth:2,
                 dot_lineWidth:2,
-                dot_fillStyle: "#fff"
+                dot_fillStyle: "#fff",
+                line_strokeDasharray: "none"
             },
             
             // Default Pie Chart Properties
@@ -178,6 +185,14 @@ var analytics = {}
                 legend:false,
                 dotsVisible:true,
                 titleSize:0,
+                tooltipFormat:function(scene){
+                    var period = scene.atoms.category.value;
+                    var value = scene.vars.value.value;
+                    
+                    var html = "<div>"+value+" Leads -  "+period+"</div>";
+                
+                    return html;
+                },
                 
                 dot_fillStyle:function(scene){
                     
@@ -207,10 +222,11 @@ var analytics = {}
                     return renderDot;
                 },
                 
-                dot_lineWidth:20,
+                dot_lineWidth:5,
                 dot_strokeStyle: "#FFF",
                 line_lineWidth:2,
-                dot_shapeRadius:5
+                dot_shapeRadius:5,
+                line_strokeDasharray: "none"
                 //line_strokeStyle: "#6e97aa"
             }
             

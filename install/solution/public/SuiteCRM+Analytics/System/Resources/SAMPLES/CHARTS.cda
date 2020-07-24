@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="DUMMY1" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="DUMMY1" id="DUMMY1" type="jsonScriptable">
+      <Name>DUMMY1</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{
+   "resultset":[
+      ["Data1", 10],
+      ["Data2", 7],
+      ["Data3", 4],
+      ["Data4", 6],
+      ["Data5", 15],
+      ["Data6", 5],
+   ],
+
+   "metadata":[
+      {"colIndex":0,"colType":"String","colName":"Name"},
+      {"colIndex":1,"colType":"Integer","colName":"Sales"}
+   ]
+}]]></Query>
+   </DataAccess>
+</CDADescriptor>

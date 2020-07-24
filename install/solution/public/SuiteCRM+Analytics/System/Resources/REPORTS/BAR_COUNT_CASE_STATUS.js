@@ -24,7 +24,7 @@ var render_BAR_COUNT_CASE_STATUS = {
         cd = this.chartDefinition;
     
     $.extend(true,cd,analytics.opts.charts.defaultChartComp);
-    $.extend(true,cd,analytics.opts.charts.defaultPieChartComp);
+    //$.extend(true,cd,analytics.opts.charts.defaultPieChartComp);
     
     
 

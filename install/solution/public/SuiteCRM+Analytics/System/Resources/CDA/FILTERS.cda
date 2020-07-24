@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
-      <Connection id="GET_MIN_MAX_LEAD_MONTHLY_PERIODS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_LEAD_MONTHLY_PERIODS_YYYY_MM" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_LEAD_MONTHLY_PERIODS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CASE_MONTHLY_PERIODS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_OPPORUNITY_LEAD_SOURCE" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_OPPORTUNITY_TYPES" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CASE_TYPES" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CAMPAIGN_TYPES" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
-      <Connection id="GET_CAMPAIGNS" type="sql.jndi">
-         <Jndi>SuiteCRMAnalytics</Jndi>
-      </Connection>
       <Connection id="pCaseFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -49,10 +16,31 @@
       <Connection id="pCaseTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pCaseCreatedDateMinMaxFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pCaseModifiedDateMinMaxFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pCaseClosedDateMinMaxFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pCaseCreatedDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pCaseModifiedDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pCaseClosedDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pOpportunityFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pOpportunityCreatedDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pOpportunityClosedDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pOpportunitySalesStageFilterQuery" type="sql.jndi">
@@ -73,10 +61,16 @@
       <Connection id="pCampaignFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pCampaignTKFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pAccountTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pAccountIndustryFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pAccountFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pLeadStatusFilterQuery" type="sql.jndi">
@@ -85,158 +79,31 @@
       <Connection id="pLeadSourceFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pLeadPrimaryAddressCountyFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pLeadPrimaryAddressStateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pInvoiceFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pInvoiceNumberFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pInvoiceStatusFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pProductFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pProductCategoryFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pProductTypeFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
    </DataSources>
-   <DataAccess access="public" connection="GET_MIN_MAX_LEAD_MONTHLY_PERIODS"
-               id="GET_MIN_MAX_LEAD_MONTHLY_PERIODS"
-               type="sql">
-      <Name>GET_MIN_MAX_LEAD_MONTHLY_PERIODS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT
-    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
-	,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
-FROM F_LEAD_MANAGEMENT FLM
-INNER JOIN D_DATE DD
-	ON FLM.LEAD_CREATED_TK = DD.DATE_TK]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               id="GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               type="sql">
-      <Name>GET_OPPORTUNITY_CREATED_MONTHLY_PERIODS_YYYY_MM</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_OPPORTUNITY_MANAGEMENT FOM
-INNER JOIN D_DATE DD
-	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               id="GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM"
-               type="sql">
-      <Name>GET_CASE_CREATED_MONTHLY_PERIODS_YYYY_MM</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_CASE_MANAGEMENT FCM
-INNER JOIN D_DATE DD
-	ON FCM.CASE_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_LEAD_MONTHLY_PERIODS_YYYY_MM"
-               id="GET_LEAD_MONTHLY_PERIODS_YYYY_MM"
-               type="sql">
-      <Name>GET_LEAD_MONTHLY_PERIODS_YYYY_MM</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_LEAD_MANAGEMENT FLM
-INNER JOIN D_DATE DD
-	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_LEAD_MONTHLY_PERIODS"
-               id="GET_LEAD_MONTHLY_PERIODS"
-               type="sql">
-      <Name>GET_LEAD_MONTHLY_PERIODS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT
-    DD.`YYYYMM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_LEAD_MANAGEMENT FLM
-INNER JOIN D_DATE DD
-	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CASE_MONTHLY_PERIODS"
-               id="GET_CASE_MONTHLY_PERIODS"
-               type="sql">
-      <Name>GET_CASE_MONTHLY_PERIODS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
-UNION
-SELECT
-    DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
-FROM F_CASE_MANAGEMENT FCM
-INNER JOIN D_DATE DD
-	ON FCM.CASE_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_OPPORUNITY_LEAD_SOURCE"
-               id="GET_OPPORUNITY_LEAD_SOURCE"
-               type="sql">
-      <Name>GET_OPPORUNITY_LEAD_SOURCE</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Lead Sources' as OPPORTUNITY_LEAD_SOURCE
-UNION
-SELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE) FROM D_OPPORTUNITIES]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_OPPORTUNITY_TYPES" id="GET_OPPORTUNITY_TYPES"
-               type="sql">
-      <Name>GET_OPPORTUNITY_TYPES</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Opportunity Types' as OPPORTUNITY_TYPE
-UNION
-SELECT DISTINCT(OPPORTUNITY_TYPE) FROM D_OPPORTUNITIES]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CASE_TYPES" id="GET_CASE_TYPES" type="sql">
-      <Name>GET_CASE_TYPES</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Case Types' as CASE_TYPE
-UNION
-SELECT DISTINCT(CASE_TYPE) FROM D_CASES]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CAMPAIGN_TYPES" id="GET_CAMPAIGN_TYPES"
-               type="sql">
-      <Name>GET_CAMPAIGN_TYPES</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Campaign Types' AS CAMPAIGN_TYPE
-UNION
-SELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS]]></Query>
-   </DataAccess>
-   <DataAccess access="public" connection="GET_CAMPAIGNS" id="GET_CAMPAIGNS" type="sql">
-      <Name>GET_CAMPAIGNS</Name>
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
-      <Query><![CDATA[SELECT 'All Campaigns' as CAMPAIGN_NAME
-UNION
-SELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS]]></Query>
-   </DataAccess>
    <DataAccess access="public" connection="pCaseFilterQuery" id="pCaseFilterQuery" type="sql">
       <Name>pCaseFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
@@ -273,7 +140,7 @@ SELECT DISTINCT(CASE_PRIORITY) FROM D_CASES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Case Statuses' as CASE_STATUS
+      <Query><![CDATA[SELECT 'All Case Status' as CASE_STATUS
 UNION
 SELECT DISTINCT(CASE_STATUS) FROM D_CASES]]></Query>
    </DataAccess>
@@ -286,6 +153,48 @@ SELECT DISTINCT(CASE_STATUS) FROM D_CASES]]></Query>
       <Query><![CDATA[SELECT 'All Case Types' as CASE_TYPE
 UNION
 SELECT DISTINCT(CASE_TYPE) FROM D_CASES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pCaseCreatedDateMinMaxFilterQuery"
+               id="pCaseCreatedDateMinMaxFilterQuery"
+               type="sql">
+      <Name>pCaseCreatedDateMinMaxFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
+    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pCaseModifiedDateMinMaxFilterQuery"
+               id="pCaseModifiedDateMinMaxFilterQuery"
+               type="sql">
+      <Name>pCaseModifiedDateMinMaxFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
+    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_MODIFIED_TK = DD.DATE_TK]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pCaseClosedDateMinMaxFilterQuery"
+               id="pCaseClosedDateMinMaxFilterQuery"
+               type="sql">
+      <Name>pCaseClosedDateMinMaxFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT
+    MIN(DD.`YYYYMM`) AS MIN_MONTH_PERIOD
+    ,MAX(DD.`YYYYMM`) AS MAX_MONTH_PERIOD
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CLOSED_TK = DD.DATE_TK]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseCreatedDateFilterQuery"
                id="pCaseCreatedDateFilterQuery"
@@ -306,6 +215,24 @@ INNER JOIN D_DATE DD
 GROUP BY 1,2
 ORDER BY 3 ASC;]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pCaseModifiedDateFilterQuery"
+               id="pCaseModifiedDateFilterQuery"
+               type="sql">
+      <Name>pCaseModifiedDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
+UNION
+SELECT
+    DD.`YYYY-MM`
+	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_MODIFIED_TK = DD.DATE_TK
+GROUP BY 1,2
+ORDER BY 1 DESC;]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pCaseClosedDateFilterQuery"
                id="pCaseClosedDateFilterQuery"
                type="sql">
@@ -323,6 +250,55 @@ INNER JOIN D_DATE DD
 	ON FCM.CASE_CLOSED_TK = DD.DATE_TK
 GROUP BY 1,2
 ORDER BY 1 DESC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pOpportunityFilterQuery"
+               id="pOpportunityFilterQuery"
+               type="sql">
+      <Name>pOpportunityFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Opportunities' as OPPORTUNITY_NAME
+UNION
+SELECT DISTINCT(OPPORTUNITY_NAME) FROM D_OPPORTUNITIES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pOpportunityCreatedDateFilterQuery"
+               id="pOpportunityCreatedDateFilterQuery"
+               type="sql">
+      <Name>pOpportunityCreatedDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL
+UNION
+SELECT
+    DD.`YYYY-MM`
+	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+	,2 AS ORDINAL
+FROM F_OPPORTUNITY_MANAGEMENT FOM
+INNER JOIN D_DATE DD
+	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
+GROUP BY 1,2
+ORDER BY 3 ASC;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pOpportunityClosedDateFilterQuery"
+               id="pOpportunityClosedDateFilterQuery"
+               type="sql">
+      <Name>pOpportunityClosedDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL
+UNION
+SELECT
+    DD.`YYYY-MM`
+	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+	,2 AS ORDINAL
+FROM F_OPPORTUNITY_MANAGEMENT FOM
+INNER JOIN D_DATE DD
+	ON FOM.OPPORTUNITY_CLOSED_TK = DD.DATE_TK
+GROUP BY 1,2
+ORDER BY 3 ASC;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunitySalesStageFilterQuery"
                id="pOpportunitySalesStageFilterQuery"
@@ -389,6 +365,16 @@ SELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS]]></Query>
 UNION
 SELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pCampaignTKFilterQuery" id="pCampaignTKFilterQuery"
+               type="sql">
+      <Name>pCampaignTKFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT -1 AS CAMPAIGN_TK, 'All Campaigns' AS CAMPAIGN_NAME
+UNION
+SELECT DISTINCT CAMPAIGN_TK, CAMPAIGN_NAME FROM D_CAMPAIGNS;]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pAccountTypeFilterQuery"
                id="pAccountTypeFilterQuery"
                type="sql">
@@ -411,6 +397,16 @@ SELECT DISTINCT(ACCOUNT_TYPE) FROM D_ACCOUNTS]]></Query>
 UNION
 SELECT DISTINCT(ACCOUNT_INDUSTRY) FROM D_ACCOUNTS]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pAccountFilterQuery" id="pAccountFilterQuery"
+               type="sql">
+      <Name>pAccountFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Accounts' AS ACCOUNT_NAME
+UNION
+SELECT DISTINCT(ACCOUNT_NAME) FROM D_ACCOUNTS]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pLeadStatusFilterQuery" id="pLeadStatusFilterQuery"
                type="sql">
       <Name>pLeadStatusFilterQuery</Name>
@@ -430,5 +426,91 @@ SELECT DISTINCT(LEAD_STATUS) FROM D_LEADS]]></Query>
       <Query><![CDATA[SELECT 'All Lead Sources' AS LEAD_SOURCE
 UNION
 SELECT DISTINCT(LEAD_SOURCE) FROM D_LEADS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pLeadPrimaryAddressCountyFilterQuery"
+               id="pLeadPrimaryAddressCountyFilterQuery"
+               type="sql">
+      <Name>pLeadPrimaryAddressCountyFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Lead Countries' AS LEAD_PRIMARY_ADDRESS_COUNTRY
+UNION
+SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY) FROM D_LEADS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pLeadPrimaryAddressStateFilterQuery"
+               id="pLeadPrimaryAddressStateFilterQuery"
+               type="sql">
+      <Name>pLeadPrimaryAddressStateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Lead States' AS LEAD_PRIMARY_ADDRESS_STATE
+UNION
+SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE) FROM D_LEADS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pInvoiceFilterQuery" id="pInvoiceFilterQuery"
+               type="sql">
+      <Name>pInvoiceFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Invoices' AS INVOICE_NAME
+UNION
+SELECT DISTINCT(INVOICE_NAME) FROM D_INVOICES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pInvoiceNumberFilterQuery"
+               id="pInvoiceNumberFilterQuery"
+               type="sql">
+      <Name>pInvoiceNumberFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Invoice Numbers' AS INVOICE_NUMBER
+UNION
+SELECT DISTINCT(INVOICE_NUMBER) FROM D_INVOICES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pInvoiceStatusFilterQuery"
+               id="pInvoiceStatusFilterQuery"
+               type="sql">
+      <Name>pInvoiceStatusFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Invoice Status' AS INVOICE_STATUS
+UNION
+SELECT DISTINCT(INVOICE_STATUS) FROM D_INVOICES]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pProductFilterQuery" id="pProductFilterQuery"
+               type="sql">
+      <Name>pProductFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Products' AS PRODUCT_NAME
+UNION
+SELECT DISTINCT(PRODUCT_NAME) FROM D_PRODUCTS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pProductCategoryFilterQuery"
+               id="pProductCategoryFilterQuery"
+               type="sql">
+      <Name>pProductCategoryFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Product Categories' AS PRODUCT_CATEGORY_NAME
+UNION
+SELECT DISTINCT(PRODUCT_CATEGORY_NAME) FROM D_PRODUCTS]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pProductTypeFilterQuery"
+               id="pProductTypeFilterQuery"
+               type="sql">
+      <Name>pProductTypeFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Product Types' AS PRODUCT_TYPE
+UNION
+SELECT DISTINCT(PRODUCT_TYPE) FROM D_PRODUCTS]]></Query>
    </DataAccess>
 </CDADescriptor>

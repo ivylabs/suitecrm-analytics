@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="QUERY" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="QUERY" id="QUERY" type="scriptable">
+      <Name>QUERY</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+String [] columnNames = {"Country", "Amount"};
+Class[] columnTypes = {String.class, Integer.class};
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+
+model.addRow(new Object[] {"US-AK", 495.6740259659});
+model.addRow(new Object[] {"US-AZ", 89.2922449857});
+model.addRow(new Object[] {"US-AR", 148.0241003446});
+model.addRow(new Object[] {"US-CA", 470.5063803121});
+model.addRow(new Object[] {"US-CO", 481.4486440737});
+model.addRow(new Object[] {"US-CT", 227.4484236259});
+model.addRow(new Object[] {"US-DE", 188.4903958999});
+model.addRow(new Object[] {"US-FL", 977.0834886003});
+model.addRow(new Object[] {"US-GA", 884.4245546497});
+model.addRow(new Object[] {"US-HI", 488.0315684713});
+model.addRow(new Object[] {"US-ID", 409.6967526712});
+model.addRow(new Object[] {"US-IL", 966.7558865622});
+model.addRow(new Object[] {"US-IN", 837.2304565273});
+model.addRow(new Object[] {"US-IA", 445.5932476558});
+model.addRow(new Object[] {"US-KS", 944.509336492});
+model.addRow(new Object[] {"US-KY", 353.9451139513});
+model.addRow(new Object[] {"US-LA", 553.8464698475});
+model.addRow(new Object[] {"US-ME", 918.3496490587});
+model.addRow(new Object[] {"US-MD", 311.2406216096});
+model.addRow(new Object[] {"US-MA", 185.1886364166});
+model.addRow(new Object[] {"US-MI", 674.7048089746});
+model.addRow(new Object[] {"US-MN", 312.9098080099});
+model.addRow(new Object[] {"US-MS", 338.8293569442});
+model.addRow(new Object[] {"US-MO", 289.880129043});
+model.addRow(new Object[] {"US-MT", 315.501856152});
+model.addRow(new Object[] {"US-NE", 136.5005702246});
+model.addRow(new Object[] {"US-NV", 230.0185968634});
+model.addRow(new Object[] {"US-NH", 639.6935598459});
+model.addRow(new Object[] {"US-NJ", 377.9563447461});
+model.addRow(new Object[] {"US-NM", 521.3269121014});
+model.addRow(new Object[] {"US-NY", 78.9218319114});
+model.addRow(new Object[] {"US-NC", 739.9442554452});
+model.addRow(new Object[] {"US-ND", 242.6301429514});
+model.addRow(new Object[] {"US-OH", 167.9694561753});
+model.addRow(new Object[] {"US-OK", 11.160913622});
+model.addRow(new Object[] {"US-OR", 289.0830901451});
+model.addRow(new Object[] {"US-PA", 733.8920601178});
+model.addRow(new Object[] {"US-RI", 687.3624094296});
+model.addRow(new Object[] {"US-SC", 866.4213698357});
+model.addRow(new Object[] {"US-SD", 294.0805852413});
+model.addRow(new Object[] {"US-TN", 21.0438028444});
+model.addRow(new Object[] {"US-TX", 767.1685919631});
+model.addRow(new Object[] {"US-UT", 129.5684250072});
+model.addRow(new Object[] {"US-VT", 462.7515219618});
+model.addRow(new Object[] {"US-VA", 220.6925861537});
+model.addRow(new Object[] {"US-WA", 611.2590965349});
+model.addRow(new Object[] {"US-WV", 604.741403833});
+model.addRow(new Object[] {"US-WI", 906.4288255759});
+model.addRow(new Object[] {"US-WY", 490.0024414528});
+model.addRow(new Object[] {"US-DC", 548.9780800417});
+model.addRow(new Object[] {"US-AS", 158.6851337925});
+model.addRow(new Object[] {"US-GU", 903.4065413289});
+model.addRow(new Object[] {"US-MP", 712.611400988});
+model.addRow(new Object[] {"US-PR", 975.1086726319});
+model.addRow(new Object[] {"US-UM", 736.3023834769});
+model.addRow(new Object[] {"US-VI", 556.9676430896});
+
+
+return model;]]></Query>
+   </DataAccess>
+</CDADescriptor>

@@ -16,7 +16,7 @@
       <Connection id="COUNT_LEAD_BY_STATUS" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
-      <Connection id="Q1" type="sql.jndi">
+      <Connection id="performanceMetricDotQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
    </DataSources>
@@ -69,7 +69,14 @@ ORDER BY 1 DESC;]]></Query>
                type="sql">
       <Name>COUNT_CASE_BY_DATE</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="${pCaseTypeFilter}" name="pCaseTypeFilter" type="String"/>
          <Parameter default="${pCasePriorityFilter}" name="pCasePriorityFilter" type="String"/>
@@ -93,7 +100,14 @@ ORDER BY 1 ASC;]]></Query>
                type="sql">
       <Name>COUNT_CASE_BY_STATUS</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Case Status</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="${pCaseTypeFilter}" name="pCaseTypeFilter" type="String"/>
          <Parameter default="${pCasePriorityFilter}" name="pCasePriorityFilter" type="String"/>
@@ -117,11 +131,17 @@ ORDER BY 1 DESC;]]></Query>
                type="sql">
       <Name>COUNT_LEAD_BY_STATUS</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Lead Status</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Leads</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="${pCampaignTypeFilter}" name="pCampaignTypeFilter" type="String"/>
          <Parameter default="${pCampaignFilter}" name="pCampaignFilter" type="String"/>
-         <Parameter default="${pDateFilter}" name="pDateFilter" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT 
     DL.LEAD_STATUS
@@ -133,24 +153,50 @@ INNER JOIN D_CAMPAIGNS DC
     ON FLM.CAMPAIGN_TK = DC.CAMPAIGN_TK
 INNER JOIN D_DATE DD
 	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
-WHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR '9999-99' IN (${pDateFilter}))
-AND (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR 'All Campaign Types' IN (${pCampaignTypeFilter}))
+WHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR 'All Campaign Types' IN (${pCampaignTypeFilter}))
 AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR 'All Campaigns' IN (${pCampaignFilter}))
 GROUP BY DL.LEAD_STATUS
 ORDER BY 1 DESC;]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="Q1" id="Q1" type="sql">
-      <Name>Q1</Name>
+   <DataAccess access="public" connection="performanceMetricDotQuery"
+               id="performanceMetricDotQuery"
+               type="sql">
+      <Name>performanceMetricDotQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters/>
+      <Columns>
+         <Column idx="0">
+            <Name>Agent</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Opportunities</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Opportunity Value</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="" name="pOpportunityCreatedDateFilter" type="String"/>
+         <Parameter default="" name="pOpportunityClosedDateFilter" type="String"/>
+         <Parameter default="" name="pOpportunityLeadSourceFilter" type="String"/>
+         <Parameter default="" name="pOpportunitySalesStageFilter" type="String"/>
+         <Parameter default="" name="pOpportunityTypeFilter" type="String"/>
+      </Parameters>
       <Query><![CDATA[SELECT
     CONCAT(DU.USER_FIRST_NAME , ' ' , DU.USER_LAST_NAME) USER_FULL_NAME
     ,COUNT(FO.OPPORTUNITY_TK) AS OPPORTUNITY_COUNT
     ,SUM(FO.OPPORTUNITY_AMOUNT) AS OPEN_OPPORTUNITY_AMOUNT
 FROM F_OPPORTUNITY_MANAGEMENT AS FO
+INNER JOIN D_OPPORTUNITIES AS DO 
+    ON FO.OPPORTUNITY_TK = DO.OPPORTUNITY_TK
 INNER JOIN D_USERS AS DU 
     ON FO.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE DD
+    ON FO.OPPORTUNITY_CREATED_TK = DD.DATE_TK
+WHERE (DD.`YYYY-MM` IN (${pOpportunityCreatedDateFilter}) OR '9999-99' IN (${pOpportunityCreatedDateFilter}))
+AND (DD.`YYYY-MM` IN (${pOpportunityClosedDateFilter}) OR '9999-99' IN (${pOpportunityClosedDateFilter}))
+AND (DO.OPPORTUNITY_TYPE IN (${pOpportunityTypeFilter}) OR 'All Opportunity Types' IN (${pOpportunityTypeFilter}))
+AND (DO.OPPORTUNITY_SALES_STAGE IN (${pOpportunitySalesStageFilter}) OR 'All Opportunity Sales Stages' IN (${pOpportunitySalesStageFilter}))
+AND (DO.OPPORTUNITY_LEAD_SOURCE IN (${pOpportunityLeadSourceFilter}) OR 'All Opportunity Lead Sources' IN (${pOpportunityLeadSourceFilter}))
 GROUP BY
      FO.ASSIGNED_USER_TK
 ORDER BY

@@ -4,7 +4,7 @@ var render_BAR_COUNT_LEAD_STATUS = {
   type: "cccBarChart",
   name: "render_BAR_COUNT_LEAD_STATUS",
   priority: 5,
-  parameters: [["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignFilter","pCampaignFilter"],["pDateFilter","pDateFilter"]],
+  parameters: [["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignFilter","pCampaignFilter"]],
   executeAtStart: true,
   htmlObject: "${h:C4}",
   preExecution: function d(){
@@ -156,7 +156,6 @@ var render_BAR_COUNT_LEAD_STATUS = {
 cgg.initParameter
 ("pCampaignTypeFilter", "${pCampaignTypeFilter}")
 ("pCampaignFilter", "${pCampaignFilter}")
-("pDateFilter", "${pDateFilter}")
 ;
 
 cgg.render(render_BAR_COUNT_LEAD_STATUS);

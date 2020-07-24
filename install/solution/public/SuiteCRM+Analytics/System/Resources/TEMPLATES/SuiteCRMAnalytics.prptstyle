@@ -30,4 +30,12 @@
       <text-styles bold="true"/>
     </styles>
   </rule>
+  <rule>
+    <selector>.reportGroupOneHeader</selector>
+    <styles>
+      <common-styles vertical-alignment="middle"/>
+      <content-styles color="#666666"/>
+      <text-styles bold="true" font-size="12"/>
+    </styles>
+  </rule>
 </style-definition>

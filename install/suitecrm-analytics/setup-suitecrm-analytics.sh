@@ -41,7 +41,12 @@ then
 		sed -i 's|@@SUITECRM_ANALYTICS_USERNAME@@|'${SUITECRM_ANALYTICS_USERNAME}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml
 		sed -i 's|@@SUITECRM_ANALYTICS_PASSWORD@@|'${SUITECRM_ANALYTICS_PASSWORD}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml
 
-		
+		sed -i 's|@@SUITECRM_HOST@@|'${SUITECRM_HOST}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml
+                sed -i 's|@@SUITECRM_PORT@@|'${SUITECRM_PORT}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml
+                sed -i 's|@@SUITECRM_DATABASE@@|'${SUITECRM_DATABASE}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml
+                sed -i 's|@@SUITECRM_USERNAME@@|'${SUITECRM_USERNAME}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml
+                sed -i 's|@@SUITECRM_PASSWORD@@|'${SUITECRM_PASSWORD}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml
+
 
 		sed -i 's|@@SUITECRM_ANALYTICS_WEBAPP_PORT@@|'${SUITECRM_ANALYTICS_WEBAPP_PORT}'|'  tomcat/conf/server.xml
 		sed -i 's|@@SUITECRM_ANALYTICS_WEBAPP_PORT@@|'${SUITECRM_ANALYTICS_WEBAPP_PORT}'|'  pentaho-solutions/system/server.properties

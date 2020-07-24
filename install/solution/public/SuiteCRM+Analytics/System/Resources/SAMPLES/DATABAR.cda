@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="Q1" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="Q1" id="Q1" type="jsonScriptable">
+      <Name>Q1</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{
+   "resultset":[
+      ["Campaign One", '10,2,33', 1],
+      ["Campaign Two", '12,11,8', 1],
+      ["Campaign Three", '8,12,20', 1]
+   ],
+
+   "metadata":[
+      {"colIndex":0,"colType":"String","colName":"Campaign"},
+      {"colIndex":1,"colType":"String","colName":"Results"},
+      {"colIndex":2,"colType":"String","colName":"Action"}
+   ]
+}]]></Query>
+   </DataAccess>
+</CDADescriptor>
