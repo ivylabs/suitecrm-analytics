@@ -10657,7 +10657,7 @@
           {
             "name" : "html",
             "type" : "Html",
-            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EDetailed Case Listing\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022caseDetailsTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EDetailed Lead Listing\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022caseDetailsTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
           },
           {
             "name" : "fontSize",
