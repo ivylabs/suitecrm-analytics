@@ -2131,7 +2131,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Invoice Numbers\u0027 AS INVOICE_NUMBER, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(INVOICE_NUMBER), 2 AS ORDINAL \nFROM D_INVOICES\nORDER BY 2,1"
+            "value" : "SELECT \u0027All Invoice Numbers\u0027 AS INVOICE_NUMBER, -1 AS ORDINAL\nUNION\nSELECT DISTINCT(INVOICE_NUMBER), INVOICE_NUMBER AS ORDINAL\nFROM D_INVOICES\nORDER BY 2"
           },
           {
             "name" : "parameters",

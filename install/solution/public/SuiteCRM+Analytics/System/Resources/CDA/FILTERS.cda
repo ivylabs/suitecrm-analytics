@@ -512,11 +512,11 @@ ORDER BY 2,1]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Invoice Numbers' AS INVOICE_NUMBER, 1 AS ORDINAL
+      <Query><![CDATA[SELECT 'All Invoice Numbers' AS INVOICE_NUMBER, -1 AS ORDINAL
 UNION
-SELECT DISTINCT(INVOICE_NUMBER), 2 AS ORDINAL 
+SELECT DISTINCT(INVOICE_NUMBER), INVOICE_NUMBER AS ORDINAL
 FROM D_INVOICES
-ORDER BY 2,1]]></Query>
+ORDER BY 2]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pInvoiceStatusFilterQuery"
                id="pInvoiceStatusFilterQuery"
