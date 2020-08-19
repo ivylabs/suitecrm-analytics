@@ -212,17 +212,17 @@ INNER JOIN D_DATE DD
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS DATE_TK
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
     ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
-	,DATE_TK
+	,YYYYMM
 FROM F_CASE_MANAGEMENT FCM
 INNER JOIN D_DATE DD
 	ON FCM.CASE_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2,3
+GROUP BY 1,2,3,4
 ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseModifiedDateFilterQuery"
@@ -232,17 +232,17 @@ ORDER BY 3, 4 DESC]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS DATE_TK
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
     ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
-	,DATE_TK
+	,YYYYMM
 FROM F_CASE_MANAGEMENT FCM
 INNER JOIN D_DATE DD
 	ON FCM.CASE_MODIFIED_TK = DD.DATE_TK
-GROUP BY 1,2,3
+GROUP BY 1,2,3,4
 ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseClosedDateFilterQuery"
@@ -252,17 +252,17 @@ ORDER BY 3, 4 DESC]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS DATE_TK
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
     ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
-	,DATE_TK
+	,YYYYMM
 FROM F_CASE_MANAGEMENT FCM
 INNER JOIN D_DATE DD
 	ON FCM.CASE_CLOSED_TK = DD.DATE_TK
-GROUP BY 1,2,3
+GROUP BY 1,2,3,4
 ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunityFilterQuery"
@@ -285,17 +285,17 @@ ORDER BY 2,1]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS DATE_TK
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
     ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
-	,DATE_TK
+	,YYYYMM
 FROM F_OPPORTUNITY_MANAGEMENT FOM
 INNER JOIN D_DATE DD
 	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2,3
+GROUP BY 1,2,3,4
 ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunityClosedDateFilterQuery"
@@ -305,17 +305,17 @@ ORDER BY 3, 4 DESC]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS DATE_TK
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
     ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
-	,DATE_TK
+	,YYYYMM
 FROM F_OPPORTUNITY_MANAGEMENT FOM
 INNER JOIN D_DATE DD
 	ON FOM.OPPORTUNITY_CLOSED_TK = DD.DATE_TK
-GROUP BY 1,2,3
+GROUP BY 1,2,3,4
 ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunitySalesStageFilterQuery"
