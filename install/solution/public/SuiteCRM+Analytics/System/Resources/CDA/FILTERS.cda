@@ -109,9 +109,11 @@
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Cases' as CASE_NAME
+      <Query><![CDATA[SELECT 'All Cases' AS CASE_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(CASE_NAME) FROM D_CASES]]></Query>
+SELECT DISTINCT(CASE_NAME), 2 AS ORDINAL 
+FROM D_CASES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseStateFilterQuery" id="pCaseStateFilterQuery"
                type="sql">
@@ -119,9 +121,11 @@ SELECT DISTINCT(CASE_NAME) FROM D_CASES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Case States' as CASE_STATE
+      <Query><![CDATA[SELECT 'All Case States' as CASE_STATE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(CASE_STATE) FROM D_CASES]]></Query>
+SELECT DISTINCT(CASE_STATE), 2 AS ORDINAL 
+FROM D_CASES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCasePriorityFilterQuery"
                id="pCasePriorityFilterQuery"
@@ -132,7 +136,9 @@ SELECT DISTINCT(CASE_STATE) FROM D_CASES]]></Query>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Case Priorities' as CASE_PRIORITY
 UNION
-SELECT DISTINCT(CASE_PRIORITY) FROM D_CASES]]></Query>
+SELECT DISTINCT(CASE_PRIORITY)
+FROM D_CASES
+ORDER BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseStatusFilterQuery" id="pCaseStatusFilterQuery"
                type="sql">
@@ -142,7 +148,8 @@ SELECT DISTINCT(CASE_PRIORITY) FROM D_CASES]]></Query>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Case Status' as CASE_STATUS
 UNION
-SELECT DISTINCT(CASE_STATUS) FROM D_CASES]]></Query>
+SELECT DISTINCT(CASE_STATUS) FROM D_CASES
+ORDER BY FIELD(CASE_STATUS, 'All Case Status','Not Set','New', 'Assigned','Pending Input','Closed','Rejected')]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseTypeFilterQuery" id="pCaseTypeFilterQuery"
                type="sql">
@@ -150,9 +157,11 @@ SELECT DISTINCT(CASE_STATUS) FROM D_CASES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Case Types' as CASE_TYPE
+      <Query><![CDATA[SELECT 'All Case Types' as CASE_TYPE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(CASE_TYPE) FROM D_CASES]]></Query>
+SELECT DISTINCT(CASE_TYPE), 2 AS ORDINAL
+FROM D_CASES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseCreatedDateMinMaxFilterQuery"
                id="pCaseCreatedDateMinMaxFilterQuery"
@@ -203,17 +212,18 @@ INNER JOIN D_DATE DD
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
+	,YYYYMM
 FROM F_CASE_MANAGEMENT FCM
 INNER JOIN D_DATE DD
 	ON FCM.CASE_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 3 ASC;]]></Query>
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseModifiedDateFilterQuery"
                id="pCaseModifiedDateFilterQuery"
@@ -222,16 +232,18 @@ ORDER BY 3 ASC;]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+	,2 AS ORDINAL
+	,YYYYMM
 FROM F_CASE_MANAGEMENT FCM
 INNER JOIN D_DATE DD
 	ON FCM.CASE_MODIFIED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCaseClosedDateFilterQuery"
                id="pCaseClosedDateFilterQuery"
@@ -240,16 +252,18 @@ ORDER BY 1 DESC;]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+	,2 AS ORDINAL
+	,YYYYMM
 FROM F_CASE_MANAGEMENT FCM
 INNER JOIN D_DATE DD
 	ON FCM.CASE_CLOSED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 1 DESC;]]></Query>
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunityFilterQuery"
                id="pOpportunityFilterQuery"
@@ -258,9 +272,11 @@ ORDER BY 1 DESC;]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Opportunities' as OPPORTUNITY_NAME
+      <Query><![CDATA[SELECT 'All Opportunities' as OPPORTUNITY_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(OPPORTUNITY_NAME) FROM D_OPPORTUNITIES]]></Query>
+SELECT DISTINCT(OPPORTUNITY_NAME), 2 AS ORDINAL
+FROM D_OPPORTUNITIES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunityCreatedDateFilterQuery"
                id="pOpportunityCreatedDateFilterQuery"
@@ -269,17 +285,18 @@ SELECT DISTINCT(OPPORTUNITY_NAME) FROM D_OPPORTUNITIES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
+	,YYYYMM
 FROM F_OPPORTUNITY_MANAGEMENT FOM
 INNER JOIN D_DATE DD
 	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 3 ASC;]]></Query>
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunityClosedDateFilterQuery"
                id="pOpportunityClosedDateFilterQuery"
@@ -288,17 +305,18 @@ ORDER BY 3 ASC;]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
-	,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
 	,2 AS ORDINAL
+	,YYYYMM
 FROM F_OPPORTUNITY_MANAGEMENT FOM
 INNER JOIN D_DATE DD
 	ON FOM.OPPORTUNITY_CLOSED_TK = DD.DATE_TK
-GROUP BY 1,2
-ORDER BY 3 ASC;]]></Query>
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunitySalesStageFilterQuery"
                id="pOpportunitySalesStageFilterQuery"
@@ -309,7 +327,8 @@ ORDER BY 3 ASC;]]></Query>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Opportunity Sales Stages' as OPPORTUNITY_SALES_STAGE
 UNION
-SELECT DISTINCT(OPPORTUNITY_SALES_STAGE) FROM D_OPPORTUNITIES]]></Query>
+SELECT DISTINCT(OPPORTUNITY_SALES_STAGE) FROM D_OPPORTUNITIES
+ORDER BY FIELD(OPPORTUNITY_SALES_STAGE, 'All Lead Status','Not Set','Prospecting', 'Qualification','Needs Analysis','Value Proposition','Identifying Decision Makers','Perception Analysis','Proposal/Price Quote','Negotiation/Review','Closed Won','Closed Lost')]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunityLeadSourceFilterQuery"
                id="pOpportunityLeadSourceFilterQuery"
@@ -318,9 +337,11 @@ SELECT DISTINCT(OPPORTUNITY_SALES_STAGE) FROM D_OPPORTUNITIES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Opportunity Lead Sources' as OPPORTUNITY_LEAD_SOURCE
+      <Query><![CDATA[SELECT 'All Opportunity Lead Sources' AS OPPORTUNITY_LEAD_SOURCE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE) FROM D_OPPORTUNITIES]]></Query>
+SELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE), 2 AS ORDINAL
+FROM D_OPPORTUNITIES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pOpportunityTypeFilterQuery"
                id="pOpportunityTypeFilterQuery"
@@ -329,9 +350,11 @@ SELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE) FROM D_OPPORTUNITIES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Opportunity Types' as OPPORTUNITY_TYPE
+      <Query><![CDATA[SELECT 'All Opportunity Types' as OPPORTUNITY_TYPE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(OPPORTUNITY_TYPE) FROM D_OPPORTUNITIES]]></Query>
+SELECT DISTINCT(OPPORTUNITY_TYPE), 2 AS ORDINAL 
+FROM D_OPPORTUNITIES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCampaignStatusFilterQuery"
                id="pCampaignStatusFilterQuery"
@@ -340,9 +363,11 @@ SELECT DISTINCT(OPPORTUNITY_TYPE) FROM D_OPPORTUNITIES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Campaign Status' AS CAMPAIGN_STATUS
+      <Query><![CDATA[SELECT 'All Campaign Status' AS CAMPAIGN_STATUS, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(CAMPAIGN_STATUS) FROM D_CAMPAIGNS]]></Query>
+SELECT DISTINCT(CAMPAIGN_STATUS), 2 AS ORDINAL
+FROM D_CAMPAIGNS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCampaignTypeFilterQuery"
                id="pCampaignTypeFilterQuery"
@@ -351,9 +376,11 @@ SELECT DISTINCT(CAMPAIGN_STATUS) FROM D_CAMPAIGNS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Campaign Types' AS CAMPAIGN_TYPE
+      <Query><![CDATA[SELECT 'All Campaign Types' AS CAMPAIGN_TYPE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS]]></Query>
+SELECT DISTINCT(CAMPAIGN_TYPE), 2 AS ORDINAL
+FROM D_CAMPAIGNS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCampaignFilterQuery" id="pCampaignFilterQuery"
                type="sql">
@@ -361,9 +388,11 @@ SELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Campaigns' AS CAMPAIGN_NAME
+      <Query><![CDATA[SELECT 'All Campaigns' AS CAMPAIGN_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS]]></Query>
+SELECT DISTINCT(CAMPAIGN_NAME), 2 AS ORDINAL
+FROM D_CAMPAIGNS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pCampaignTKFilterQuery" id="pCampaignTKFilterQuery"
                type="sql">
@@ -371,9 +400,11 @@ SELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT -1 AS CAMPAIGN_TK, 'All Campaigns' AS CAMPAIGN_NAME
+      <Query><![CDATA[SELECT -1 AS CAMPAIGN_TK, 'All Campaigns' AS CAMPAIGN_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT CAMPAIGN_TK, CAMPAIGN_NAME FROM D_CAMPAIGNS;]]></Query>
+SELECT DISTINCT CAMPAIGN_TK, CAMPAIGN_NAME, 2 AS ORDINAL
+FROM D_CAMPAIGNS
+ORDER BY 3,2]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pAccountTypeFilterQuery"
                id="pAccountTypeFilterQuery"
@@ -382,9 +413,11 @@ SELECT DISTINCT CAMPAIGN_TK, CAMPAIGN_NAME FROM D_CAMPAIGNS;]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Account Types' AS ACCOUNT_TYPE
+      <Query><![CDATA[SELECT 'All Account Types' AS ACCOUNT_TYPE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(ACCOUNT_TYPE) FROM D_ACCOUNTS]]></Query>
+SELECT DISTINCT(ACCOUNT_TYPE), 2 AS ORDINAL
+FROM D_ACCOUNTS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pAccountIndustryFilterQuery"
                id="pAccountIndustryFilterQuery"
@@ -393,9 +426,11 @@ SELECT DISTINCT(ACCOUNT_TYPE) FROM D_ACCOUNTS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Account Industries' AS ACCOUNT_INDUSTRY
+      <Query><![CDATA[SELECT 'All Account Industries' AS ACCOUNT_INDUSTRY, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(ACCOUNT_INDUSTRY) FROM D_ACCOUNTS]]></Query>
+SELECT DISTINCT(ACCOUNT_INDUSTRY), 2 AS ORDINAL 
+FROM D_ACCOUNTS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pAccountFilterQuery" id="pAccountFilterQuery"
                type="sql">
@@ -403,9 +438,11 @@ SELECT DISTINCT(ACCOUNT_INDUSTRY) FROM D_ACCOUNTS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Accounts' AS ACCOUNT_NAME
+      <Query><![CDATA[SELECT 'All Accounts' AS ACCOUNT_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(ACCOUNT_NAME) FROM D_ACCOUNTS]]></Query>
+SELECT DISTINCT(ACCOUNT_NAME), 2 AS ORDINAL
+FROM D_ACCOUNTS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pLeadStatusFilterQuery" id="pLeadStatusFilterQuery"
                type="sql">
@@ -415,7 +452,8 @@ SELECT DISTINCT(ACCOUNT_NAME) FROM D_ACCOUNTS]]></Query>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Lead Status' AS LEAD_STATUS
 UNION
-SELECT DISTINCT(LEAD_STATUS) FROM D_LEADS]]></Query>
+SELECT DISTINCT(LEAD_STATUS) FROM D_LEADS
+ORDER BY FIELD(LEAD_STATUS, 'All Lead Status','Not Set','New', 'Assigned','In Process','Converted','Dead','Recycled')]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pLeadSourceFilterQuery" id="pLeadSourceFilterQuery"
                type="sql">
@@ -423,9 +461,11 @@ SELECT DISTINCT(LEAD_STATUS) FROM D_LEADS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Lead Sources' AS LEAD_SOURCE
+      <Query><![CDATA[SELECT 'All Lead Sources' AS LEAD_SOURCE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(LEAD_SOURCE) FROM D_LEADS]]></Query>
+SELECT DISTINCT(LEAD_SOURCE), 2 AS ORDINAL 
+FROM D_LEADS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pLeadPrimaryAddressCountyFilterQuery"
                id="pLeadPrimaryAddressCountyFilterQuery"
@@ -434,9 +474,11 @@ SELECT DISTINCT(LEAD_SOURCE) FROM D_LEADS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Lead Countries' AS LEAD_PRIMARY_ADDRESS_COUNTRY
+      <Query><![CDATA[SELECT 'All Lead Countries' AS LEAD_PRIMARY_ADDRESS_COUNTRY, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY) FROM D_LEADS]]></Query>
+SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY), 2 AS ORDINAL
+FROM D_LEADS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pLeadPrimaryAddressStateFilterQuery"
                id="pLeadPrimaryAddressStateFilterQuery"
@@ -445,9 +487,11 @@ SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY) FROM D_LEADS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Lead States' AS LEAD_PRIMARY_ADDRESS_STATE
+      <Query><![CDATA[SELECT 'All Lead States' AS LEAD_PRIMARY_ADDRESS_STATE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE) FROM D_LEADS]]></Query>
+SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE), 2 AS ORDINAL 
+FROM D_LEADS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pInvoiceFilterQuery" id="pInvoiceFilterQuery"
                type="sql">
@@ -455,9 +499,11 @@ SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE) FROM D_LEADS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Invoices' AS INVOICE_NAME
+      <Query><![CDATA[SELECT 'All Invoices' AS INVOICE_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(INVOICE_NAME) FROM D_INVOICES]]></Query>
+SELECT DISTINCT(INVOICE_NAME), 2 AS ORDINAL
+FROM D_INVOICES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pInvoiceNumberFilterQuery"
                id="pInvoiceNumberFilterQuery"
@@ -466,9 +512,11 @@ SELECT DISTINCT(INVOICE_NAME) FROM D_INVOICES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Invoice Numbers' AS INVOICE_NUMBER
+      <Query><![CDATA[SELECT 'All Invoice Numbers' AS INVOICE_NUMBER, -1 AS ORDINAL
 UNION
-SELECT DISTINCT(INVOICE_NUMBER) FROM D_INVOICES]]></Query>
+SELECT DISTINCT(INVOICE_NUMBER), INVOICE_NUMBER AS ORDINAL
+FROM D_INVOICES
+ORDER BY 2]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pInvoiceStatusFilterQuery"
                id="pInvoiceStatusFilterQuery"
@@ -477,9 +525,11 @@ SELECT DISTINCT(INVOICE_NUMBER) FROM D_INVOICES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Invoice Status' AS INVOICE_STATUS
+      <Query><![CDATA[SELECT 'All Invoice Status' AS INVOICE_STATUS, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(INVOICE_STATUS) FROM D_INVOICES]]></Query>
+SELECT DISTINCT(INVOICE_STATUS), 2 AS ORDINAL 
+FROM D_INVOICES
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pProductFilterQuery" id="pProductFilterQuery"
                type="sql">
@@ -487,9 +537,11 @@ SELECT DISTINCT(INVOICE_STATUS) FROM D_INVOICES]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Products' AS PRODUCT_NAME
+      <Query><![CDATA[SELECT 'All Products' AS PRODUCT_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(PRODUCT_NAME) FROM D_PRODUCTS]]></Query>
+SELECT DISTINCT(PRODUCT_NAME), 2 AS ORDINAL
+FROM D_PRODUCTS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pProductCategoryFilterQuery"
                id="pProductCategoryFilterQuery"
@@ -498,9 +550,11 @@ SELECT DISTINCT(PRODUCT_NAME) FROM D_PRODUCTS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Product Categories' AS PRODUCT_CATEGORY_NAME
+      <Query><![CDATA[SELECT 'All Product Categories' AS PRODUCT_CATEGORY_NAME, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(PRODUCT_CATEGORY_NAME) FROM D_PRODUCTS]]></Query>
+SELECT DISTINCT(PRODUCT_CATEGORY_NAME), 2 AS ORDINAL 
+FROM D_PRODUCTS
+ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pProductTypeFilterQuery"
                id="pProductTypeFilterQuery"
@@ -509,8 +563,10 @@ SELECT DISTINCT(PRODUCT_CATEGORY_NAME) FROM D_PRODUCTS]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT 'All Product Types' AS PRODUCT_TYPE
+      <Query><![CDATA[SELECT 'All Product Types' AS PRODUCT_TYPE, 1 AS ORDINAL
 UNION
-SELECT DISTINCT(PRODUCT_TYPE) FROM D_PRODUCTS]]></Query>
+SELECT DISTINCT(PRODUCT_TYPE), 2 AS ORDINAL 
+FROM D_PRODUCTS
+ORDER BY 2,1]]></Query>
    </DataAccess>
 </CDADescriptor>

@@ -43,7 +43,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Cases\u0027 as CASE_NAME\nUNION\nSELECT DISTINCT(CASE_NAME) FROM D_CASES"
+            "value" : "SELECT \u0027All Cases\u0027 AS CASE_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(CASE_NAME), 2 AS ORDINAL \nFROM D_CASES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -115,7 +115,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Case States\u0027 as CASE_STATE\nUNION\nSELECT DISTINCT(CASE_STATE) FROM D_CASES"
+            "value" : "SELECT \u0027All Case States\u0027 as CASE_STATE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(CASE_STATE), 2 AS ORDINAL \nFROM D_CASES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -187,7 +187,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Case Priorities\u0027 as CASE_PRIORITY\nUNION\nSELECT DISTINCT(CASE_PRIORITY) FROM D_CASES"
+            "value" : "SELECT \u0027All Case Priorities\u0027 as CASE_PRIORITY\nUNION\nSELECT DISTINCT(CASE_PRIORITY)\nFROM D_CASES\nORDER BY 1"
           },
           {
             "name" : "parameters",
@@ -259,7 +259,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Case Status\u0027 as CASE_STATUS\nUNION\nSELECT DISTINCT(CASE_STATUS) FROM D_CASES"
+            "value" : "SELECT \u0027All Case Status\u0027 as CASE_STATUS\nUNION\nSELECT DISTINCT(CASE_STATUS) FROM D_CASES\nORDER BY FIELD(CASE_STATUS, \u0027All Case Status\u0027,\u0027Not Set\u0027,\u0027New\u0027, \u0027Assigned\u0027,\u0027Pending Input\u0027,\u0027Closed\u0027,\u0027Rejected\u0027)"
           },
           {
             "name" : "parameters",
@@ -331,7 +331,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Case Types\u0027 as CASE_TYPE\nUNION\nSELECT DISTINCT(CASE_TYPE) FROM D_CASES"
+            "value" : "SELECT \u0027All Case Types\u0027 as CASE_TYPE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(CASE_TYPE), 2 AS ORDINAL\nFROM D_CASES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -619,7 +619,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 3 ASC;"
+            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM\nUNION\nSELECT\n    DD.`YYYY-MM`\n    ,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\n\t,YYYYMM\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2,3,4\nORDER BY 3, 4 DESC"
           },
           {
             "name" : "parameters",
@@ -691,7 +691,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_MODIFIED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
+            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM\nUNION\nSELECT\n    DD.`YYYY-MM`\n    ,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\n\t,YYYYMM\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_MODIFIED_TK = DD.DATE_TK\nGROUP BY 1,2,3,4\nORDER BY 3, 4 DESC"
           },
           {
             "name" : "parameters",
@@ -763,7 +763,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CLOSED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 1 DESC;"
+            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM\nUNION\nSELECT\n    DD.`YYYY-MM`\n    ,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\n\t,YYYYMM\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CLOSED_TK = DD.DATE_TK\nGROUP BY 1,2,3,4\nORDER BY 3, 4 DESC"
           },
           {
             "name" : "parameters",
@@ -835,7 +835,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Opportunities\u0027 as OPPORTUNITY_NAME\nUNION\nSELECT DISTINCT(OPPORTUNITY_NAME) FROM D_OPPORTUNITIES"
+            "value" : "SELECT \u0027All Opportunities\u0027 as OPPORTUNITY_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(OPPORTUNITY_NAME), 2 AS ORDINAL\nFROM D_OPPORTUNITIES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -907,7 +907,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\nFROM F_OPPORTUNITY_MANAGEMENT FOM\nINNER JOIN D_DATE DD\n\tON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 3 ASC;"
+            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM\nUNION\nSELECT\n    DD.`YYYY-MM`\n    ,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\n\t,YYYYMM\nFROM F_OPPORTUNITY_MANAGEMENT FOM\nINNER JOIN D_DATE DD\n\tON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2,3,4\nORDER BY 3, 4 DESC"
           },
           {
             "name" : "parameters",
@@ -979,7 +979,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL\nUNION\nSELECT\n    DD.`YYYY-MM`\n\t,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\nFROM F_OPPORTUNITY_MANAGEMENT FOM\nINNER JOIN D_DATE DD\n\tON FOM.OPPORTUNITY_CLOSED_TK = DD.DATE_TK\nGROUP BY 1,2\nORDER BY 3 ASC;"
+            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-DD\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM\nUNION\nSELECT\n    DD.`YYYY-MM`\n    ,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n\t,2 AS ORDINAL\n\t,YYYYMM\nFROM F_OPPORTUNITY_MANAGEMENT FOM\nINNER JOIN D_DATE DD\n\tON FOM.OPPORTUNITY_CLOSED_TK = DD.DATE_TK\nGROUP BY 1,2,3,4\nORDER BY 3, 4 DESC"
           },
           {
             "name" : "parameters",
@@ -1051,7 +1051,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Opportunity Sales Stages\u0027 as OPPORTUNITY_SALES_STAGE\nUNION\nSELECT DISTINCT(OPPORTUNITY_SALES_STAGE) FROM D_OPPORTUNITIES"
+            "value" : "SELECT \u0027All Opportunity Sales Stages\u0027 as OPPORTUNITY_SALES_STAGE\nUNION\nSELECT DISTINCT(OPPORTUNITY_SALES_STAGE) FROM D_OPPORTUNITIES\nORDER BY FIELD(OPPORTUNITY_SALES_STAGE, \u0027All Lead Status\u0027,\u0027Not Set\u0027,\u0027Prospecting\u0027, \u0027Qualification\u0027,\u0027Needs Analysis\u0027,\u0027Value Proposition\u0027,\u0027Identifying Decision Makers\u0027,\u0027Perception Analysis\u0027,\u0027Proposal/Price Quote\u0027,\u0027Negotiation/Review\u0027,\u0027Closed Won\u0027,\u0027Closed Lost\u0027)"
           },
           {
             "name" : "parameters",
@@ -1123,7 +1123,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Opportunity Lead Sources\u0027 as OPPORTUNITY_LEAD_SOURCE\nUNION\nSELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE) FROM D_OPPORTUNITIES"
+            "value" : "SELECT \u0027All Opportunity Lead Sources\u0027 AS OPPORTUNITY_LEAD_SOURCE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(OPPORTUNITY_LEAD_SOURCE), 2 AS ORDINAL\nFROM D_OPPORTUNITIES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1195,7 +1195,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Opportunity Types\u0027 as OPPORTUNITY_TYPE\nUNION\nSELECT DISTINCT(OPPORTUNITY_TYPE) FROM D_OPPORTUNITIES"
+            "value" : "SELECT \u0027All Opportunity Types\u0027 as OPPORTUNITY_TYPE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(OPPORTUNITY_TYPE), 2 AS ORDINAL \nFROM D_OPPORTUNITIES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1267,7 +1267,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Campaign Status\u0027 AS CAMPAIGN_STATUS\nUNION\nSELECT DISTINCT(CAMPAIGN_STATUS) FROM D_CAMPAIGNS"
+            "value" : "SELECT \u0027All Campaign Status\u0027 AS CAMPAIGN_STATUS, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(CAMPAIGN_STATUS), 2 AS ORDINAL\nFROM D_CAMPAIGNS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1339,7 +1339,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Campaign Types\u0027 AS CAMPAIGN_TYPE\nUNION\nSELECT DISTINCT(CAMPAIGN_TYPE) FROM D_CAMPAIGNS"
+            "value" : "SELECT \u0027All Campaign Types\u0027 AS CAMPAIGN_TYPE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(CAMPAIGN_TYPE), 2 AS ORDINAL\nFROM D_CAMPAIGNS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1411,7 +1411,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Campaigns\u0027 AS CAMPAIGN_NAME\nUNION\nSELECT DISTINCT(CAMPAIGN_NAME) FROM D_CAMPAIGNS"
+            "value" : "SELECT \u0027All Campaigns\u0027 AS CAMPAIGN_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(CAMPAIGN_NAME), 2 AS ORDINAL\nFROM D_CAMPAIGNS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1483,7 +1483,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT -1 AS CAMPAIGN_TK, \u0027All Campaigns\u0027 AS CAMPAIGN_NAME\nUNION\nSELECT DISTINCT CAMPAIGN_TK, CAMPAIGN_NAME FROM D_CAMPAIGNS;"
+            "value" : "SELECT -1 AS CAMPAIGN_TK, \u0027All Campaigns\u0027 AS CAMPAIGN_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT CAMPAIGN_TK, CAMPAIGN_NAME, 2 AS ORDINAL\nFROM D_CAMPAIGNS\nORDER BY 3,2"
           },
           {
             "name" : "parameters",
@@ -1555,7 +1555,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Account Types\u0027 AS ACCOUNT_TYPE\nUNION\nSELECT DISTINCT(ACCOUNT_TYPE) FROM D_ACCOUNTS"
+            "value" : "SELECT \u0027All Account Types\u0027 AS ACCOUNT_TYPE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(ACCOUNT_TYPE), 2 AS ORDINAL\nFROM D_ACCOUNTS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1627,7 +1627,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Account Industries\u0027 AS ACCOUNT_INDUSTRY\nUNION\nSELECT DISTINCT(ACCOUNT_INDUSTRY) FROM D_ACCOUNTS"
+            "value" : "SELECT \u0027All Account Industries\u0027 AS ACCOUNT_INDUSTRY, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(ACCOUNT_INDUSTRY), 2 AS ORDINAL \nFROM D_ACCOUNTS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1699,7 +1699,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Accounts\u0027 AS ACCOUNT_NAME\nUNION\nSELECT DISTINCT(ACCOUNT_NAME) FROM D_ACCOUNTS"
+            "value" : "SELECT \u0027All Accounts\u0027 AS ACCOUNT_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(ACCOUNT_NAME), 2 AS ORDINAL\nFROM D_ACCOUNTS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1771,7 +1771,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Lead Status\u0027 AS LEAD_STATUS\nUNION\nSELECT DISTINCT(LEAD_STATUS) FROM D_LEADS"
+            "value" : "SELECT \u0027All Lead Status\u0027 AS LEAD_STATUS\nUNION\nSELECT DISTINCT(LEAD_STATUS) FROM D_LEADS\nORDER BY FIELD(LEAD_STATUS, \u0027All Lead Status\u0027,\u0027Not Set\u0027,\u0027New\u0027, \u0027Assigned\u0027,\u0027In Process\u0027,\u0027Converted\u0027,\u0027Dead\u0027,\u0027Recycled\u0027)"
           },
           {
             "name" : "parameters",
@@ -1843,7 +1843,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Lead Sources\u0027 AS LEAD_SOURCE\nUNION\nSELECT DISTINCT(LEAD_SOURCE) FROM D_LEADS"
+            "value" : "SELECT \u0027All Lead Sources\u0027 AS LEAD_SOURCE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(LEAD_SOURCE), 2 AS ORDINAL \nFROM D_LEADS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1915,7 +1915,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Lead Countries\u0027 AS LEAD_PRIMARY_ADDRESS_COUNTRY\nUNION\nSELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY) FROM D_LEADS"
+            "value" : "SELECT \u0027All Lead Countries\u0027 AS LEAD_PRIMARY_ADDRESS_COUNTRY, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(LEAD_PRIMARY_ADDRESS_COUNTRY), 2 AS ORDINAL\nFROM D_LEADS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -1987,7 +1987,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Lead States\u0027 AS LEAD_PRIMARY_ADDRESS_STATE\nUNION\nSELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE) FROM D_LEADS"
+            "value" : "SELECT \u0027All Lead States\u0027 AS LEAD_PRIMARY_ADDRESS_STATE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE), 2 AS ORDINAL \nFROM D_LEADS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -2059,7 +2059,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Invoices\u0027 AS INVOICE_NAME\nUNION\nSELECT DISTINCT(INVOICE_NAME) FROM D_INVOICES"
+            "value" : "SELECT \u0027All Invoices\u0027 AS INVOICE_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(INVOICE_NAME), 2 AS ORDINAL\nFROM D_INVOICES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -2131,7 +2131,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Invoice Numbers\u0027 AS INVOICE_NUMBER\nUNION\nSELECT DISTINCT(INVOICE_NUMBER) FROM D_INVOICES"
+            "value" : "SELECT \u0027All Invoice Numbers\u0027 AS INVOICE_NUMBER, -1 AS ORDINAL\nUNION\nSELECT DISTINCT(INVOICE_NUMBER), INVOICE_NUMBER AS ORDINAL\nFROM D_INVOICES\nORDER BY 2"
           },
           {
             "name" : "parameters",
@@ -2203,7 +2203,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Invoice Status\u0027 AS INVOICE_STATUS\nUNION\nSELECT DISTINCT(INVOICE_STATUS) FROM D_INVOICES"
+            "value" : "SELECT \u0027All Invoice Status\u0027 AS INVOICE_STATUS, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(INVOICE_STATUS), 2 AS ORDINAL \nFROM D_INVOICES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -2275,7 +2275,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Products\u0027 AS PRODUCT_NAME\nUNION\nSELECT DISTINCT(PRODUCT_NAME) FROM D_PRODUCTS"
+            "value" : "SELECT \u0027All Products\u0027 AS PRODUCT_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(PRODUCT_NAME), 2 AS ORDINAL\nFROM D_PRODUCTS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -2347,7 +2347,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Product Categories\u0027 AS PRODUCT_CATEGORY_NAME\nUNION\nSELECT DISTINCT(PRODUCT_CATEGORY_NAME) FROM D_PRODUCTS"
+            "value" : "SELECT \u0027All Product Categories\u0027 AS PRODUCT_CATEGORY_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(PRODUCT_CATEGORY_NAME), 2 AS ORDINAL \nFROM D_PRODUCTS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
@@ -2419,7 +2419,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Product Types\u0027 AS PRODUCT_TYPE\nUNION\nSELECT DISTINCT(PRODUCT_TYPE) FROM D_PRODUCTS"
+            "value" : "SELECT \u0027All Product Types\u0027 AS PRODUCT_TYPE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(PRODUCT_TYPE), 2 AS ORDINAL \nFROM D_PRODUCTS\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
