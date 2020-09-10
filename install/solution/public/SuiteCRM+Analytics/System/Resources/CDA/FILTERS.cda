@@ -108,6 +108,7 @@
       <Name>pCaseFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Cases' AS CASE_NAME, 1 AS ORDINAL
 UNION
@@ -120,6 +121,7 @@ ORDER BY 2,1]]></Query>
       <Name>pCaseStateFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Case States' as CASE_STATE, 1 AS ORDINAL
 UNION
@@ -156,6 +158,7 @@ ORDER BY FIELD(CASE_STATUS, 'All Case Status','Not Set','New', 'Assigned','Pendi
       <Name>pCaseTypeFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Case Types' as CASE_TYPE, 1 AS ORDINAL
 UNION
@@ -460,6 +463,7 @@ ORDER BY FIELD(LEAD_STATUS, 'All Lead Status','Not Set','New', 'Assigned','In Pr
       <Name>pLeadSourceFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Lead Sources' AS LEAD_SOURCE, 1 AS ORDINAL
 UNION
