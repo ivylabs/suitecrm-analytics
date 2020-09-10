@@ -54,6 +54,14 @@ then
 
 		#sed -i 's|@@ETL_ROOT_DIR@@|'${WORKING_DIR}/suitecrm-data-integration/solution'|'  suitecrm-data-integration/configuration/.kettle/kettle.properties
 
+		if [[ "$COMPONENT_SAMPLES" -eq 0 ]]; 
+		then
+
+			rm -Rf pentaho-solutions/system/default-content/plugin-samples.zip
+			rm -Rf pentaho-solutions/system/default-content/samples.zip
+
+		fi
+
 		echo ""
                 echo "-------------------------------------------------------------"
                 echo ""
