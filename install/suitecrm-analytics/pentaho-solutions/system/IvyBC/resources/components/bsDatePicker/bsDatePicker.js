@@ -73,9 +73,9 @@ var BSDatePickerComponent = BaseComponent.extend({
           $(elem).val( $.datepicker.formatDate( myself.displayDateFormat, dateValues[index] ) );
           
           if(myself.datePickerViewMode == "textinput"){
-            myself.placeholder("#"+myself.htmlObject+'DatePicker').data().datepicker.setUTCDate(dateValues[index]);
+            myself.placeholder("#"+myself.htmlObject+'DatePicker').data().datepicker.setDate(dateValues[index]);
           }else{
-            myself.placeholder("#"+myself.htmlObject+'DatePicker').data().datepicker.pickers[index].setUTCDate(dateValues[index]);
+            myself.placeholder("#"+myself.htmlObject+'DatePicker').data().datepicker.pickers[index].setDate(dateValues[index]);
           }
 
         }

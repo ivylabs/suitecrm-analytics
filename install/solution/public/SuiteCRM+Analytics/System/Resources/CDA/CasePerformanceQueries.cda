@@ -349,7 +349,7 @@ INNER JOIN D_DATE CCRD
     ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
 WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
 GROUP BY 1
-ORDER BY 2 ASC
+ORDER BY 2 DESC
 LIMIT 10]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qAverageCaseDurationByAgentQuery"

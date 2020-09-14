@@ -763,7 +763,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    DA.ACCOUNT_NAME\n\t,COUNT(FCM.CASE_ID)\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_ACCOUNTS DA\n\tON FCM.ACCOUNT_TK = DA.ACCOUNT_TK\nINNER JOIN D_DATE CCRD\n    ON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 ASC\nLIMIT 10"
+            "value" : "SELECT \n    DA.ACCOUNT_NAME\n\t,COUNT(FCM.CASE_ID)\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_ACCOUNTS DA\n\tON FCM.ACCOUNT_TK = DA.ACCOUNT_TK\nINNER JOIN D_DATE CCRD\n    ON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 10"
           },
           {
             "name" : "parameters",

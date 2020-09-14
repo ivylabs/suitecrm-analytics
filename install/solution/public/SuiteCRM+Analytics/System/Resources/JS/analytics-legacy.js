@@ -189,7 +189,7 @@ var analytics = {}
                     var period = scene.atoms.category.value;
                     var value = scene.vars.value.value;
                     
-                    var html = "<div>"+value+" Leads -  "+period+"</div>";
+                    var html = "<div>"+value+" Total -  "+period+"</div>";
                 
                     return html;
                 },
