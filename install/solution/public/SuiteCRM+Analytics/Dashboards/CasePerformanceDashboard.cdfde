@@ -9455,7 +9455,7 @@
           {
             "name" : "categoryRole",
             "type" : "String",
-            "value" : ""
+            "value" : "category desc"
           },
           {
             "name" : "clearSelectionMode",
