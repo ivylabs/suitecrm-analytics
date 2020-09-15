@@ -8898,7 +8898,7 @@
           {
             "name" : "listeners",
             "type" : "Listeners",
-            "value" : "[\u0022${p:homeTrigger}\u0022,\u0022${p:dateRangeParam}\u0022]"
+            "value" : "[\u0022${p:homeTrigger}\u0022]"
           },
           {
             "name" : "dateFormat",
@@ -9022,7 +9022,7 @@
           {
             "name" : "listeners",
             "type" : "Listeners",
-            "value" : "[\u0022${p:homeTrigger}\u0022,\u0022${p:dateRangeParam}\u0022]"
+            "value" : "[\u0022${p:homeTrigger}\u0022]"
           },
           {
             "name" : "dateFormat",
@@ -9281,7 +9281,7 @@
           {
             "name" : "postChange",
             "type" : "JavaScript",
-            "value" : ""
+            "value" : "function d(newParameterValue){\n\n    var dashboard = Dashboards;\n    \n    if(newParameterValue === \u00220\u0022){\n        $(\u0027#selectDateFromAnchorDatePicker\u0027).prop(\u0027disabled\u0027,false);\n        $(\u0027#selectDateToAnchorDatePicker\u0027).prop(\u0027disabled\u0027,false);\n    } else {\n        $(\u0027#selectDateFromAnchorDatePicker\u0027).prop(\u0027disabled\u0027,true);\n        $(\u0027#selectDateToAnchorDatePicker\u0027).prop(\u0027disabled\u0027,true);\n    }\n} "
           }
         ],
         "rowName" : "Bootstrap Select",
