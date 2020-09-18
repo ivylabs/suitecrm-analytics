@@ -121,11 +121,11 @@ $(function(){
 	$('title').html("IvyIS | "+dashboardOpts.dashboardTitle);
 	
 
-	var breadcrumbHTML = "<li><a href='#'><i class='fa fa-dashboard'></i> Home</a></li>";
+	var breadcrumbHTML = "<li><i class='fa fa-dashboard'></i> Home</li>";
 
 	$.each(dashboardOpts.dashboardBreadcrumb, function( index, value ) {
 		//alert( index + ": " + value );
-		breadcrumbHTML = breadcrumbHTML+"<li><a href='#'> "+value+"</a></li>"
+		breadcrumbHTML = breadcrumbHTML+"<li> "+value+"</li>"
 	});
 
 	$('.breadcrumb').html(breadcrumbHTML);
