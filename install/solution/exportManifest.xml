@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="17-09-2020 10:03:08 UTC" exportBy="admin" rootFolder="/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="18-09-2020 06:50:57 UTC" exportBy="admin" rootFolder="/" manifestVersion="2"/>
     <ExportManifestEntity path="public">
         <ExportManifestProperty>
             <EntityMetaData name="public" createdDate="2020-09-15T16:34:56.752Z" isFolder="true" path="public" isHidden="false" isSchedulable="true" locale="en_US" title="Public"/>
