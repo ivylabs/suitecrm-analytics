@@ -1,6 +1,5 @@
 install/installation-files
 suitecrm-analytics-server/*
-install.properties.local
+install.properties
 *.zip
 suitecrm-analytics.code-workspace
-suitecrm-analytics-server-backup/

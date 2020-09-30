@@ -292,13 +292,46 @@
         "rowName" : "Simple Parameter",
         "type" : "ComponentsParameter",
         "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "SCRIPT",
+        "name" : "Scripts",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "Scripts",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "533141ea-9125-2ba4-8293-a20392148398",
+        "type" : "ComponentsFunction",
+        "typeDesc" : "JavaScript function",
+        "parent" : "SCRIPT",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "init",
+            "type" : "Id"
+          },
+          {
+            "name" : "javaScript",
+            "value" : "Dashboards.on(\u0027cdf:preInit\u0027, function() {\n\n    // Pre Init\n    \n    var dashboard = Dashboards;\n    \n    dashboard.log(\u0022Pre Init\u0022);\n    \n}); \n\nDashboards.on(\u0027cdf:postInit\u0027, function() {\n    \n    // Post Init\n    \n    var dashboard = Dashboards;\n    \n    dashboard.log(\u0022Post Init\u0022);\n\n}); ",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "Function"
       }
     ]
   },
   "datasources" : {
     "rows" : [ ]
   },
-  "filename" : "public/SuiteCRM Analytics/System/Resources/TEMPLATES/DashboardTemplate.wcdf",
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/TEMPLATES/DashboardTemplate.cdfde",
   "layout" : {
     "rows" : [
       {
