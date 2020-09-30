@@ -398,290 +398,323 @@
       {
         "id" : "IVYISBOOTSTRAP",
         "name" : "Ivy IS Bootstrap",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "Ivy IS Bootstrap"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "cf34d107-ef0d-8ef1-4122-1b5092f055c4",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "backButtonComponent"
+          },
+          {
+            "name" : "label",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[\u0022${p:homeTrigger}\u0022,\u0022${p:secondTrigger}\u0022,\u0022${p:thirdTrigger}\u0022]"
+          },
+          {
+            "name" : "expression",
+            "type" : "JavaScript",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    if(active === \u0027second\u0027){\n        dashboard.fireChange(\u0027candidateViewParam\u0027,\u0027home\u0027)\n    } else if(active === \u0027third\u0027){\n        dashboard.fireChange(\u0027candidateViewParam\u0027,\u0027second\u0027)\n    }\n} "
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "buttonType",
+            "type" : "buttonTypeCustom",
+            "value" : "btn-default"
+          },
+          {
+            "name" : "buttonBlock",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "buttonSize",
+            "type" : "buttonSizeCustom",
+            "value" : ""
+          },
+          {
+            "name" : "prependIcon",
+            "type" : "Boolean",
+            "value" : "False"
+          },
+          {
+            "name" : "buttonIcon",
+            "type" : "buttonIconCustom",
+            "value" : "glyphicon-arrow-left"
+          },
+          {
+            "name" : "buttonDisabled",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:backButtonAnchor}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    // For some reason setting the htmlObject property is not working here\n    // Instead we add the hidden CSS class\n    \n    if(active === \u0027home\u0027){\n        //this.htmlObject = \u0027hidden\u0027;\n        $(\u0027#backButtonAnchor\u0027).addClass(\u0027hidden\u0027);\n        this.buttonDisabled = true;\n    } else {\n        //this.htmlObject = \u0027backButtonAnchor\u0027;\n        $(\u0027#backButtonAnchor\u0027).removeClass(\u0027hidden\u0027);\n        this.buttonDisabled = false;\n    }\n} "
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Bootstrap Button",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button"
+      },
+      {
+        "id" : "63e4991d-e48a-3c62-a2e4-38e2d637658a",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "secondButtonComponent"
+          },
+          {
+            "name" : "label",
+            "type" : "String",
+            "value" : "Advance to Second"
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "expression",
+            "type" : "JavaScript",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    dashboard.setParam(\u0027secondParam\u0027, $.now());\n    dashboard.fireChange(\u0027candidateViewParam\u0027, \u0027second\u0027);\n} "
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "buttonType",
+            "type" : "buttonTypeCustom",
+            "value" : "btn-default"
+          },
+          {
+            "name" : "buttonBlock",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "buttonSize",
+            "type" : "buttonSizeCustom",
+            "value" : ""
+          },
+          {
+            "name" : "prependIcon",
+            "type" : "Boolean",
+            "value" : "False"
+          },
+          {
+            "name" : "buttonIcon",
+            "type" : "buttonIconCustom",
+            "value" : "none"
+          },
+          {
+            "name" : "buttonDisabled",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:secondButtonAnchor}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Bootstrap Button",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button"
+      },
+      {
+        "id" : "5b2d83a9-4c99-b0f0-0526-08cac409bda6",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "thirdButtonComponent"
+          },
+          {
+            "name" : "label",
+            "type" : "String",
+            "value" : "Advance to Third"
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[]"
+          },
+          {
+            "name" : "expression",
+            "type" : "JavaScript",
+            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    dashboard.setParam(\u0027thirdParam\u0027, $.now());\n    dashboard.fireChange(\u0027candidateViewParam\u0027, \u0027third\u0027);\n} "
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "buttonType",
+            "type" : "buttonTypeCustom",
+            "value" : "btn-default"
+          },
+          {
+            "name" : "buttonBlock",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "buttonSize",
+            "type" : "buttonSizeCustom",
+            "value" : ""
+          },
+          {
+            "name" : "prependIcon",
+            "type" : "Boolean",
+            "value" : "False"
+          },
+          {
+            "name" : "buttonIcon",
+            "type" : "buttonIconCustom",
+            "value" : "none"
+          },
+          {
+            "name" : "buttonDisabled",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:thirdButtonAnchor}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Bootstrap Button",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button"
+      },
+      {
+        "id" : "SCRIPT",
+        "name" : "Scripts",
         "type" : "Label",
         "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "Group",
-            "value" : "Ivy IS Bootstrap",
+            "value" : "Scripts",
             "type" : "Label"
           }
         ]
       },
       {
-        "id" : "cf34d107-ef0d-8ef1-4122-1b5092f055c4",
-        "type" : "ComponentsBSButtonComponent",
-        "typeDesc" : "Bootstrap Button",
-        "parent" : "IVYISBOOTSTRAP",
+        "id" : "f51579b8-69c6-c3bd-b5bc-f6f8a80fdf43",
+        "type" : "ComponentsFunction",
+        "typeDesc" : "JavaScript function",
+        "parent" : "SCRIPT",
         "properties" : [
           {
             "name" : "name",
-            "value" : "backButtonComponent",
+            "value" : "init",
             "type" : "Id"
           },
           {
-            "name" : "label",
-            "value" : "",
-            "type" : "String"
-          },
-          {
-            "name" : "listeners",
-            "value" : "[\u0022${p:homeTrigger}\u0022,\u0022${p:secondTrigger}\u0022,\u0022${p:thirdTrigger}\u0022]",
-            "type" : "Listeners"
-          },
-          {
-            "name" : "expression",
-            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    if(active === \u0027second\u0027){\n        dashboard.fireChange(\u0027candidateViewParam\u0027,\u0027home\u0027)\n    } else if(active === \u0027third\u0027){\n        dashboard.fireChange(\u0027candidateViewParam\u0027,\u0027second\u0027)\n    }\n} ",
-            "type" : "JavaScript"
-          },
-          {
-            "name" : "priority",
-            "value" : 5,
-            "type" : "Integer"
-          },
-          {
-            "name" : "refreshPeriod",
-            "value" : "",
-            "type" : "Integer"
-          },
-          {
-            "name" : "buttonType",
-            "value" : "btn-default",
-            "type" : "buttonTypeCustom"
-          },
-          {
-            "name" : "buttonBlock",
-            "value" : "false",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "buttonSize",
-            "value" : "",
-            "type" : "buttonSizeCustom"
-          },
-          {
-            "name" : "prependIcon",
-            "value" : "False",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "buttonIcon",
-            "value" : "glyphicon-arrow-left",
-            "type" : "buttonIconCustom"
-          },
-          {
-            "name" : "buttonDisabled",
-            "value" : "false",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "htmlObject",
-            "value" : "${h:backButtonAnchor}",
-            "type" : "HtmlObject"
-          },
-          {
-            "name" : "executeAtStart",
-            "value" : "true",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "preExecution",
-            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    // For some reason setting the htmlObject property is not working here\n    // Instead we add the hidden CSS class\n    \n    if(active === \u0027home\u0027){\n        //this.htmlObject = \u0027hidden\u0027;\n        $(\u0027#backButtonAnchor\u0027).addClass(\u0027hidden\u0027);\n        this.buttonDisabled = true;\n    } else {\n        //this.htmlObject = \u0027backButtonAnchor\u0027;\n        $(\u0027#backButtonAnchor\u0027).removeClass(\u0027hidden\u0027);\n        this.buttonDisabled = false;\n    }\n} ",
-            "type" : "JavaScript"
-          },
-          {
-            "name" : "postExecution",
-            "value" : "",
+            "name" : "javaScript",
+            "value" : "Dashboards.on(\u0027cdf:preInit\u0027, function() {\n\n    // Pre Init\n    \n    var dashboard = Dashboards;\n    \n    dashboard.log(\u0022Pre Init\u0022);\n    \n}); \n\nDashboards.on(\u0027cdf:postInit\u0027, function() {\n    \n    // Post Init\n    \n    var dashboard = Dashboards;\n    \n    dashboard.log(\u0022Post Init\u0022);\n\n}); ",
             "type" : "JavaScript"
           }
         ],
-        "rowName" : "Bootstrap Button"
-      },
-      {
-        "id" : "63e4991d-e48a-3c62-a2e4-38e2d637658a",
-        "type" : "ComponentsBSButtonComponent",
-        "typeDesc" : "Bootstrap Button",
-        "parent" : "IVYISBOOTSTRAP",
-        "properties" : [
-          {
-            "name" : "name",
-            "value" : "secondButtonComponent",
-            "type" : "Id"
-          },
-          {
-            "name" : "label",
-            "value" : "Advance to Second",
-            "type" : "String"
-          },
-          {
-            "name" : "listeners",
-            "value" : "[]",
-            "type" : "Listeners"
-          },
-          {
-            "name" : "expression",
-            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    dashboard.setParam(\u0027secondParam\u0027, $.now());\n    dashboard.fireChange(\u0027candidateViewParam\u0027, \u0027second\u0027);\n} ",
-            "type" : "JavaScript"
-          },
-          {
-            "name" : "priority",
-            "value" : 5,
-            "type" : "Integer"
-          },
-          {
-            "name" : "refreshPeriod",
-            "value" : "",
-            "type" : "Integer"
-          },
-          {
-            "name" : "buttonType",
-            "value" : "btn-default",
-            "type" : "buttonTypeCustom"
-          },
-          {
-            "name" : "buttonBlock",
-            "value" : "false",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "buttonSize",
-            "value" : "",
-            "type" : "buttonSizeCustom"
-          },
-          {
-            "name" : "prependIcon",
-            "value" : "False",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "buttonIcon",
-            "value" : "none",
-            "type" : "buttonIconCustom"
-          },
-          {
-            "name" : "buttonDisabled",
-            "value" : "false",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "htmlObject",
-            "value" : "${h:secondButtonAnchor}",
-            "type" : "HtmlObject"
-          },
-          {
-            "name" : "executeAtStart",
-            "value" : "true",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "preExecution",
-            "value" : "",
-            "type" : "JavaScript"
-          },
-          {
-            "name" : "postExecution",
-            "value" : "",
-            "type" : "JavaScript"
-          }
-        ],
-        "rowName" : "Bootstrap Button"
-      },
-      {
-        "id" : "5b2d83a9-4c99-b0f0-0526-08cac409bda6",
-        "type" : "ComponentsBSButtonComponent",
-        "typeDesc" : "Bootstrap Button",
-        "parent" : "IVYISBOOTSTRAP",
-        "properties" : [
-          {
-            "name" : "name",
-            "value" : "thirdButtonComponent",
-            "type" : "Id"
-          },
-          {
-            "name" : "label",
-            "value" : "Advance to Third",
-            "type" : "String"
-          },
-          {
-            "name" : "listeners",
-            "value" : "[]",
-            "type" : "Listeners"
-          },
-          {
-            "name" : "expression",
-            "value" : "function d(){\n    var dashboard = Dashboards,\n        active = dashboard.getParam(\u0027activeViewParam\u0027);\n    \n    dashboard.setParam(\u0027thirdParam\u0027, $.now());\n    dashboard.fireChange(\u0027candidateViewParam\u0027, \u0027third\u0027);\n} ",
-            "type" : "JavaScript"
-          },
-          {
-            "name" : "priority",
-            "value" : 5,
-            "type" : "Integer"
-          },
-          {
-            "name" : "refreshPeriod",
-            "value" : "",
-            "type" : "Integer"
-          },
-          {
-            "name" : "buttonType",
-            "value" : "btn-default",
-            "type" : "buttonTypeCustom"
-          },
-          {
-            "name" : "buttonBlock",
-            "value" : "false",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "buttonSize",
-            "value" : "",
-            "type" : "buttonSizeCustom"
-          },
-          {
-            "name" : "prependIcon",
-            "value" : "False",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "buttonIcon",
-            "value" : "none",
-            "type" : "buttonIconCustom"
-          },
-          {
-            "name" : "buttonDisabled",
-            "value" : "false",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "htmlObject",
-            "value" : "${h:thirdButtonAnchor}",
-            "type" : "HtmlObject"
-          },
-          {
-            "name" : "executeAtStart",
-            "value" : "true",
-            "type" : "Boolean"
-          },
-          {
-            "name" : "preExecution",
-            "value" : "",
-            "type" : "JavaScript"
-          },
-          {
-            "name" : "postExecution",
-            "value" : "",
-            "type" : "JavaScript"
-          }
-        ],
-        "rowName" : "Bootstrap Button"
+        "rowName" : "Function"
       }
     ]
   },
   "datasources" : {
     "rows" : [ ]
   },
-  "filename" : "public/SuiteCRM Analytics/System/Resources/TEMPLATES/MultiPageDashboardTemplate.wcdf",
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/TEMPLATES/MultiPageDashboardTemplate.cdfde",
   "layout" : {
     "rows" : [
       {
@@ -709,49 +742,49 @@
       },
       {
         "id" : "f67e737e-d320-6a2d-14aa-035fe36f8e6c",
-        "type" : "LayoutResourceFile",
-        "typeDesc" : "Resource",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "name",
-            "value" : "analytics",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "analytics"
           },
           {
             "name" : "resourceFile",
-            "value" : "${solution:../../SuiteCRM Analytics/System/Resources/JS/analytics-legacy.js}",
-            "type" : "ResourceFile"
+            "type" : "ResourceFile",
+            "value" : "${solution:../../SuiteCRM Analytics/System/Resources/JS/analytics-legacy.js}"
           },
           {
             "name" : "resourceType",
-            "value" : "Javascript",
-            "type" : "Label"
+            "type" : "Label",
+            "value" : "Javascript"
           }
-        ]
+        ],
+        "type" : "LayoutResourceFile",
+        "typeDesc" : "Resource"
       },
       {
         "id" : "1c16c823-fd81-9494-ad46-928061712505",
-        "type" : "LayoutResourceCode",
-        "typeDesc" : "Resource",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "name",
-            "value" : "css",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "css"
           },
           {
             "name" : "resourceCode",
-            "value" : ".home {\n    display:none;\n}\n\n.second {\n    display:none;\n}\n\n.third {\n    display:none;\n}\n\n.hidden {\n    display:none;\n} ",
-            "type" : "Resource"
+            "type" : "Resource",
+            "value" : ".home {\n    display:none;\n}\n\n.second {\n    display:none;\n}\n\n.third {\n    display:none;\n}\n\n.hidden {\n    display:none;\n} "
           },
           {
             "name" : "resourceType",
-            "value" : "Css",
-            "type" : "Label"
+            "type" : "Label",
+            "value" : "Css"
           }
-        ]
+        ],
+        "type" : "LayoutResourceCode",
+        "typeDesc" : "Resource"
       },
       {
         "id" : "c86813fe-998c-450b-e4c4-8688cae96dca",
