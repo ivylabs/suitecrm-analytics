@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <cstConfig>
 	
-  <!--<rule match="ROLE" pattern="false" value="Administrator">
-    <tab title="System Setup" fullScreen="false" tooltip="System Setup"><![CDATA[api/repos/%3Apublic%3ASuiteCRM%20Analytics%3ASystem%3AApplication%3ASystemSetup.wcdf/generatedContent]]></tab>
+  <rule match="ROLE" pattern="false" value="Support">
+    <tab title="Case Performance Dashboard" fullScreen="false" tooltip="Case Performance Dashboard"><![CDATA[api/repos/%3Apublic%3ASuiteCRM%20Analytics%3ADashboards%3ACasePerformanceDashboard.wcdf/generatedContent]]></tab>
+    <tab title="Agent Case Performance" fullScreen="false" tooltip="Agent Case Performance"><![CDATA[api/repos/%3Apublic%3ASuiteCRM%20Analytics%3AReports%3AAgentCasePerformance.prpt/viewer]]></tab>
   </rule>
--->
+
 </cstConfig>
