@@ -21,7 +21,7 @@
         </elementType>
     </elementTypes> 
     <info>
-        <CPK_version>5</CPK_version>
+        <CPK_version>8.2.0.0-342</CPK_version>
         <description>Opens a set of defined tabs after user login</description>
         <name>Community Startup Tabs</name>
         <author_email>lead@webdetails.pt</author_email>
