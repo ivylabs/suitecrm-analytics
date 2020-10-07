@@ -4431,6 +4431,7 @@
       },
       {
         "id" : "2d0196fc-bb5b-09e7-1553-fc2208875de4",
+        "meta_cdwRender" : "true",
         "meta_cdwSupport" : "true",
         "parent" : "CHARTS",
         "properties" : [
@@ -5942,8 +5943,7 @@
         ],
         "rowName" : "CCC Line Chart",
         "type" : "ComponentscccLineChart",
-        "typeDesc" : "CCC Line Chart",
-        "meta_cdwRender" : "true"
+        "typeDesc" : "CCC Line Chart"
       },
       {
         "id" : "2328e8e0-11ef-1948-b56c-95368bf1a379",
@@ -6114,7 +6114,7 @@
           {
             "name" : "baseAxisGrid",
             "type" : "Boolean",
-            "value" : ""
+            "value" : "false"
           },
           {
             "name" : "baseAxisLabelSpacingMin",
@@ -6124,7 +6124,7 @@
           {
             "name" : "baseAxisMinorTicks",
             "type" : "Boolean",
-            "value" : true
+            "value" : "true"
           },
           {
             "name" : "baseAxisOffset",
@@ -6179,7 +6179,7 @@
           {
             "name" : "baseAxisTickFormatter",
             "type" : "JavaScript",
-            "value" : ""
+            "value" : "function d(value){\n    \n    if(typeof cgg != \u0027undefined\u0027){\n        \n        //var formatter = cdo.numberFormat(\u0022#,###,###\u0022);\n        //return formatter(value);\n        \n        return value;\n        \n    } else {\n        \n        //return Dashboards.numberFormatter(value,\u0027#,###\u0027); \n        return value;\n    }\n}\n\n "
           },
           {
             "name" : "baseAxisTicks",
@@ -6199,7 +6199,7 @@
           {
             "name" : "baseAxisTickUnitMin",
             "type" : "String",
-            "value" : "0"
+            "value" : "1"
           },
           {
             "name" : "baseAxisTitle",
@@ -6644,7 +6644,7 @@
           {
             "name" : "orthoAxisGrid",
             "type" : "Boolean",
-            "value" : ""
+            "value" : "false"
           },
           {
             "name" : "orthoAxisLabelSpacingMin",

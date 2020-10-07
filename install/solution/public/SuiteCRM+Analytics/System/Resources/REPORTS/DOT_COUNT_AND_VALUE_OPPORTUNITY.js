@@ -23,11 +23,29 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     baseAxisDomainAlign: "center",
     baseAxisDomainRoundMode: "tick",
     baseAxisDomainScope: "global",
+    baseAxisGrid: false,
     baseAxisMinorTicks: true,
     baseAxisOffset: 0,
+    baseAxisTickFormatter: function d(value){
+    
+    if(typeof cgg != 'undefined'){
+        
+        //var formatter = cdo.numberFormat("#,###,###");
+        //return formatter(value);
+        
+        return value;
+        
+    } else {
+        
+        //return Dashboards.numberFormatter(value,'#,###'); 
+        return value;
+    }
+}
+
+ ,
     baseAxisTicks: true,
     baseAxisTickUnitMax: "Infinity",
-    baseAxisTickUnitMin: "0",
+    baseAxisTickUnitMin: "1",
     baseAxisTitle: "Total Opportunities",
     baseAxisTitleAlign: "middle",
     baseAxisTitleMargins: "0",
@@ -67,6 +85,7 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     orthoAxisDomainAlign: "center",
     orthoAxisDomainRoundMode: "tick",
     orthoAxisDomainScope: "global",
+    orthoAxisGrid: false,
     orthoAxisOffset: 0,
     orthoAxisTicks: true,
     orthoAxisTickUnitMax: "Infinity",
