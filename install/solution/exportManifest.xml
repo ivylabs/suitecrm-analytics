@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
-    <ExportManifestInformation exportDate="07-10-2020 10:47:47 UTC" exportBy="admin" rootFolder="/" manifestVersion="2"/>
+    <ExportManifestInformation exportDate="07-10-2020 05:03:06 UTC" exportBy="admin" rootFolder="/" manifestVersion="2"/>
     <ExportManifestEntity path="public">
         <ExportManifestProperty>
             <EntityMetaData name="public" createdDate="2020-10-07T06:37:27.806Z" isFolder="true" path="public" isHidden="false" isSchedulable="true" locale="en_US" title="Public"/>
@@ -786,6 +786,18 @@
             </EntityAcl>
         </ExportManifestProperty>
     </ExportManifestEntity>
+    <ExportManifestEntity path="public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_LINE_COUNT_CASE_DATE.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="CHARTS_LINE_COUNT_CASE_DATE.js" createdDate="2020-10-07T12:10:25.945Z" isFolder="false" path="public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_LINE_COUNT_CASE_DATE.js" isHidden="false" isSchedulable="true" locale="en_US" title="CHARTS_LINE_COUNT_CASE_DATE.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
     <ExportManifestEntity path="public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_PIE_COUNT_CASE_STATUS.js">
         <ExportManifestProperty>
             <EntityMetaData name="CHARTS_PIE_COUNT_CASE_STATUS.js" createdDate="2020-10-07T06:37:36.618Z" isFolder="false" path="public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS_PIE_COUNT_CASE_STATUS.js" isHidden="true" isSchedulable="true" locale="en_US" title="CHARTS_PIE_COUNT_CASE_STATUS.js"/>
@@ -825,6 +837,18 @@
     <ExportManifestEntity path="public/SuiteCRM Analytics/System/Resources/REPORTS/DOT_COUNT_AND_VALUE_OPPORTUNITY.js">
         <ExportManifestProperty>
             <EntityMetaData name="DOT_COUNT_AND_VALUE_OPPORTUNITY.js" createdDate="2020-10-07T06:37:36.714Z" isFolder="false" path="public/SuiteCRM Analytics/System/Resources/REPORTS/DOT_COUNT_AND_VALUE_OPPORTUNITY.js" isHidden="true" isSchedulable="true" locale="en_US" title="DOT_COUNT_AND_VALUE_OPPORTUNITY.js"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="public/SuiteCRM Analytics/System/Resources/REPORTS/LINE_COUNT_CASE_DATE.js">
+        <ExportManifestProperty>
+            <EntityMetaData name="LINE_COUNT_CASE_DATE.js" createdDate="2020-10-07T12:10:25.957Z" isFolder="false" path="public/SuiteCRM Analytics/System/Resources/REPORTS/LINE_COUNT_CASE_DATE.js" isHidden="false" isSchedulable="true" locale="en_US" title="LINE_COUNT_CASE_DATE.js"/>
         </ExportManifestProperty>
         <ExportManifestProperty>
             <EntityAcl>

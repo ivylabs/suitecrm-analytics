@@ -6,6 +6,7 @@ var render_PIE_COUNT_LEAD_STATUS = {
   priority: 5,
   parameters: [["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignFilter","pCampaignFilter"]],
   executeAtStart: true,
+  htmlObject: "${h:C4}",
   listeners: [],
   clearsBeforePreExecution: true,
   renderMode: "total",
