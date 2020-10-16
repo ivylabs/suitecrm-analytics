@@ -3,3 +3,4 @@ suitecrm-analytics-server/*
 install.properties
 *.zip
 suitecrm-analytics.code-workspace
+install/solution/public/SuiteCRM+Analytics/Reports/*.local
