@@ -239,7 +239,7 @@ INNER JOIN F_CAMPAIGN_MANAGEMENT FCM
 	ON FCM.CAMPAIGN_TK = DC.CAMPAIGN_TK
 WHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR 'All Campaign Types' IN (${pCampaignTypeFilter}))
 AND (DC.CAMPAIGN_STATUS IN (${pCampaignStatusFilter}) OR 'All Campaign Status' IN (${pCampaignStatusFilter}))
-AND (DC.CAMPAIGN_NAME LIKE CONCAT('%',${pCampaignFilter},'%'))
+AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR 'All Campaigns' IN (${pCampaignFilter}))
 GROUP BY DC.CAMPAIGN_TK]]></Query>
    </DataAccess>
 </CDADescriptor>
