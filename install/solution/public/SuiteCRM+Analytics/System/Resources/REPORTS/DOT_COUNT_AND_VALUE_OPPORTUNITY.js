@@ -6,7 +6,7 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
   priority: 5,
   parameters: [["pOpportunityCreatedDateFilter","pOpportunityCreateDateFilter"],["pOpportunityClosedDateFilter","pOpportunityClosedDateFilter"],["pOpportunityLeadSourceFilter","pOpportunityLeadSourceFilter"],["pOpportunitySalesStageFilter","pOpportunitySalesStageFilter"],["pOpportunityTypeFilter","pOpportunityTypeFilter"]],
   executeAtStart: true,
-  htmlObject: "${h:C1}",
+  htmlObject: "${h:C6}",
   listeners: [],
   clearsBeforePreExecution: true,
   renderMode: "total",
@@ -23,11 +23,31 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     baseAxisDomainAlign: "center",
     baseAxisDomainRoundMode: "tick",
     baseAxisDomainScope: "global",
+    baseAxisGrid: false,
     baseAxisMinorTicks: true,
     baseAxisOffset: 0,
+    baseAxisTickFormatter: function d(value){
+    
+    if(typeof cgg != 'undefined'){
+        
+        //var formatter = cdo.numberFormat("#,###,###");
+        //return formatter(value);
+        
+        return value;
+        
+    } else {
+        
+        //return Dashboards.numberFormatter(value,'#,###'); 
+        return value;
+    }
+}
+
+ ,
     baseAxisTicks: true,
     baseAxisTickUnitMax: "Infinity",
-    baseAxisTickUnitMin: "0",
+    baseAxisTickUnitMin: "1",
+    baseAxisTitle: "Total Opportunities",
+    baseAxisTitleAlign: "middle",
     baseAxisTitleMargins: "0",
     baseAxisVisible: true,
     baseAxisZeroLine: true,
@@ -65,10 +85,13 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     orthoAxisDomainAlign: "center",
     orthoAxisDomainRoundMode: "tick",
     orthoAxisDomainScope: "global",
+    orthoAxisGrid: false,
     orthoAxisOffset: 0,
     orthoAxisTicks: true,
     orthoAxisTickUnitMax: "Infinity",
     orthoAxisTickUnitMin: "0",
+    orthoAxisTitle: "Opportunity Amount",
+    orthoAxisTitleAlign: "middle",
     orthoAxisTitleMargins: "0",
     orthoAxisVisible: true,
     orthoAxisZeroLine: true,

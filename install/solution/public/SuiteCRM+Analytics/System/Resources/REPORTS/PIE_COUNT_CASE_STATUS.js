@@ -6,6 +6,7 @@ var render_PIE_COUNT_CASE_STATUS = {
   priority: 5,
   parameters: [["pCaseTypeFilter","pCaseTypeFilter"],["pCasePriorityFilter","pCasePriorityFilter"],["pDateFilter","pDateFilter"]],
   executeAtStart: true,
+  htmlObject: "${h:C3}",
   listeners: [],
   clearsBeforePreExecution: true,
   renderMode: "total",

@@ -1,18 +1,18 @@
 lib('cdf-env.js');
 
-var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
+var render_DOT_COUNT_AND_AVG_VALUE_CAMPAIGN = {
   type: "cccMetricDotChart",
-  name: "render_DOT_COUNT_AND_VALUE_OPPORTUNITY",
+  name: "render_DOT_COUNT_AND_AVG_VALUE_CAMPAIGN",
   priority: 5,
-  parameters: [["pOpportunityCreatedDateFilter","pOpportunityCreateDateFilter"],["pOpportunityClosedDateFilter","pOpportunityClosedDateFilter"],["pOpportunityLeadSourceFilter","pOpportunityLeadSourceFilter"],["pOpportunitySalesStageFilter","pOpportunitySalesStageFilter"],["pOpportunityTypeFilter","pOpportunityTypeFilter"]],
+  parameters: [["pCampaignFilter","pCampaignFilter"],["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignStatusFilter","pCampaignStatusFilter"]],
   executeAtStart: true,
-  htmlObject: "${h:C6}",
+  htmlObject: "${h:C7}",
   listeners: [],
   clearsBeforePreExecution: true,
   renderMode: "total",
   dataAdditiveMode: false,
   chartDefinition:  {
-    dataAccessId: "performanceMetricDotQuery",
+    dataAccessId: "campaignPerformanceMetricDotQuery",
     path: "/public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cda",
     pushEnabled: false,
     width: 1080,
@@ -46,7 +46,7 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     baseAxisTicks: true,
     baseAxisTickUnitMax: "Infinity",
     baseAxisTickUnitMin: "1",
-    baseAxisTitle: "Total Opportunities",
+    baseAxisTitle: "Total Won Opportunities",
     baseAxisTitleAlign: "middle",
     baseAxisTitleMargins: "0",
     baseAxisVisible: true,
@@ -90,7 +90,7 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     orthoAxisTicks: true,
     orthoAxisTickUnitMax: "Infinity",
     orthoAxisTickUnitMin: "0",
-    orthoAxisTitle: "Opportunity Amount",
+    orthoAxisTitle: "Opportunity Average Spend",
     orthoAxisTitleAlign: "middle",
     orthoAxisTitleMargins: "0",
     orthoAxisVisible: true,
@@ -132,11 +132,9 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
 };
 
 cgg.initParameter
-("pOpportunityCreatedDateFilter", "")
-("pOpportunityClosedDateFilter", "")
-("pOpportunityLeadSourceFilter", "")
-("pOpportunitySalesStageFilter", "")
-("pOpportunityTypeFilter", "")
+("pCampaignFilter", "")
+("pCampaignTypeFilter", "")
+("pCampaignStatusFilter", "")
 ;
 
-cgg.render(render_DOT_COUNT_AND_VALUE_OPPORTUNITY);
+cgg.render(render_DOT_COUNT_AND_AVG_VALUE_CAMPAIGN);

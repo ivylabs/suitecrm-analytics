@@ -11040,7 +11040,7 @@
           {
             "name" : "crosstabMode",
             "type" : "Boolean",
-            "value" : true
+            "value" : "false"
           },
           {
             "name" : "ctrlSelectMode",
@@ -11720,7 +11720,7 @@
           {
             "name" : "tooltipFormat",
             "type" : "JavaScript",
-            "value" : "function(scene){\n    console.log(scene);    \n} "
+            "value" : ""
           },
           {
             "name" : "tooltipGravity",

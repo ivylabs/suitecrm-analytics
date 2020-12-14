@@ -33,6 +33,12 @@ then
 		#sed -i 's|@@SOLUTION_ROOT_DIR@@|'${WORKING_DIR}'|' suitecrm-data-integration/configuration/config
 		#sed -i 's|@@JVM_SIZE@@|'${JVM_SIZE}'|' suitecrm-data-integration/configuration/config
 
+		# Reporting user password generation
+
+		randomPass=$(date +%s | sha256sum | base64 | head -c 32 ; echo);
+
+		sed -i 's|@@REPORTING_USER_PASSWORD@@|'$randomPass'|'  pentaho-solutions/system/applicationContext-spring-security-memory.xml
+
 		# JNDI Configuration
 
 		sed -i 's|@@SUITECRM_ANALYTICS_HOST@@|'${SUITECRM_ANALYTICS_HOST}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml

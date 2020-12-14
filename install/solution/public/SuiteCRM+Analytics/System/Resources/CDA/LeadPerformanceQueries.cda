@@ -233,15 +233,26 @@ GROUP BY 1;]]></Query>
                type="sql">
       <Name>qAverageLeadDurationByAgentQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Agent Name</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Leads</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Average Lead Age</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT
-    COUNT(FLM.LEAD_ID) AS TOTAL_LEADS
+    DU.USER_NAME
+    ,COUNT(FLM.LEAD_ID) AS TOTAL_LEADS
 	,AVG(IF(ISNULL(LCVD.`DD-MM-YYYY`), DATEDIFF(NOW(),LCRD.`DD-MM-YYYY`), DATEDIFF(LCVD.`DD-MM-YYYY`,LCRD.`DD-MM-YYYY`))) AS AVERAGE_LEAD_AGE
-    ,DU.USER_NAME
+    
 FROM F_LEAD_MANAGEMENT FLM
 INNER JOIN D_LEADS DL
 	ON FLM.LEAD_TK = DL.LEAD_TK
@@ -252,7 +263,7 @@ LEFT JOIN D_DATE LCRD
 LEFT JOIN D_DATE LCVD
 	ON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK
 WHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
-GROUP BY 3;]]></Query>
+GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qLeadDetailsQuery" id="qLeadDetailsQuery"
                type="sql">

@@ -547,7 +547,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    COUNT(FLM.LEAD_ID) AS TOTAL_LEADS\n\t,AVG(IF(ISNULL(LCVD.`DD-MM-YYYY`), DATEDIFF(NOW(),LCRD.`DD-MM-YYYY`), DATEDIFF(LCVD.`DD-MM-YYYY`,LCRD.`DD-MM-YYYY`))) AS AVERAGE_LEAD_AGE\n    ,DU.USER_NAME\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_USERS DU\n\tON FLM.ASSIGNED_USER_TK = DU.USER_TK\nLEFT JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nLEFT JOIN D_DATE LCVD\n\tON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK\nWHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 3;"
+            "value" : "SELECT\n    DU.USER_NAME\n    ,COUNT(FLM.LEAD_ID) AS TOTAL_LEADS\n\t,AVG(IF(ISNULL(LCVD.`DD-MM-YYYY`), DATEDIFF(NOW(),LCRD.`DD-MM-YYYY`), DATEDIFF(LCVD.`DD-MM-YYYY`,LCRD.`DD-MM-YYYY`))) AS AVERAGE_LEAD_AGE\n    \nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_USERS DU\n\tON FLM.ASSIGNED_USER_TK = DU.USER_TK\nLEFT JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nLEFT JOIN D_DATE LCVD\n\tON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK\nWHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1"
           },
           {
             "name" : "parameters",
@@ -562,7 +562,7 @@
           {
             "name" : "cdacolumns",
             "type" : "CdaColumnsArray",
-            "value" : "[]"
+            "value" : "[[\u00220\u0022,\u0022Agent Name\u0022],[\u00221\u0022,\u0022Total Leads\u0022],[\u00222\u0022,\u0022Average Lead Age\u0022]]"
           },
           {
             "name" : "output",

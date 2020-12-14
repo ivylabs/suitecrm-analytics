@@ -1,54 +1,59 @@
 lib('cdf-env.js');
 
-var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
-  type: "cccMetricDotChart",
-  name: "render_DOT_COUNT_AND_VALUE_OPPORTUNITY",
+var render_LINE_COUNT_CASE_DATE = {
+  type: "cccLineChart",
+  name: "render_LINE_COUNT_CASE_DATE",
   priority: 5,
-  parameters: [["pOpportunityCreatedDateFilter","pOpportunityCreateDateFilter"],["pOpportunityClosedDateFilter","pOpportunityClosedDateFilter"],["pOpportunityLeadSourceFilter","pOpportunityLeadSourceFilter"],["pOpportunitySalesStageFilter","pOpportunitySalesStageFilter"],["pOpportunityTypeFilter","pOpportunityTypeFilter"]],
+  parameters: [["pCaseTypeFilter","pCaseTypeFilter"],["pCasePriorityFilter","pCasePriorityFilter"],["pDateFilter","pDateFilter"]],
   executeAtStart: true,
-  htmlObject: "${h:C6}",
+  htmlObject: "${h:C5}",
+  preExecution: function d(){
+    
+    // Use this if we are requesting a CGG chart direct
+    if(typeof cgg != 'undefined'){
+        load('../JS/analytics-legacy.js');
+    }
+    
+    /*
+    if(typeof cgg != 'undefined'){
+        load('../System/Resources/JS/analytics-legacy.js');
+    }
+    */
+    
+    var dash = Dashboards,
+        cd = this.chartDefinition;
+    
+    $.extend(true,cd,analytics.opts.charts.defaultChartComp);
+    $.extend(true,cd,analytics.opts.charts.defaultLineChartComp);
+    
+    
+
+} ,
   listeners: [],
   clearsBeforePreExecution: true,
   renderMode: "total",
   dataAdditiveMode: false,
   chartDefinition:  {
-    dataAccessId: "performanceMetricDotQuery",
+    dataAccessId: "COUNT_CASE_BY_DATE",
     path: "/public/SuiteCRM Analytics/System/Resources/REPORTS/CHARTS.cda",
     pushEnabled: false,
-    width: 1080,
-    height: 450,
     extensionPoints: [],
     colors: [],
     animate: true,
+    areasFillOpacity: 0.5,
+    areasVisible: true,
     baseAxisDomainAlign: "center",
     baseAxisDomainRoundMode: "tick",
     baseAxisDomainScope: "global",
-    baseAxisGrid: false,
+    baseAxisLabelDesiredAngles: [],
     baseAxisMinorTicks: true,
     baseAxisOffset: 0,
-    baseAxisTickFormatter: function d(value){
-    
-    if(typeof cgg != 'undefined'){
-        
-        //var formatter = cdo.numberFormat("#,###,###");
-        //return formatter(value);
-        
-        return value;
-        
-    } else {
-        
-        //return Dashboards.numberFormatter(value,'#,###'); 
-        return value;
-    }
-}
-
- ,
     baseAxisTicks: true,
     baseAxisTickUnitMax: "Infinity",
-    baseAxisTickUnitMin: "1",
-    baseAxisTitle: "Total Opportunities",
-    baseAxisTitleAlign: "middle",
+    baseAxisTickUnitMin: "0",
     baseAxisTitleMargins: "0",
+    baseAxisTooltipAutoContent: "value",
+    baseAxisTooltipEnabled: true,
     baseAxisVisible: true,
     baseAxisZeroLine: true,
     clearSelectionMode: "emptySpaceClick",
@@ -57,13 +62,9 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     color2AxisLegendClickMode: "toggleVisible",
     color2AxisLegendVisible: true,
     color2AxisPreserveMap: false,
-    colorDomain: [],
-    colorMissing: "lightgray",
     colorPreserveMap: false,
-    colorScaleType: "linear",
-    colorUseAbs: false,
     compatVersion: 3,
-    crosstabMode: false,
+    crosstabMode: true,
     ctrlSelectMode: true,
     dataIgnoreMetadataLabels: false,
     dataSeparator: "~",
@@ -80,28 +81,47 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     multiChartOverflow: "grow",
     multiChartSingleColFillsHeight: true,
     multiChartSingleRowFillsHeight: true,
-    nullShape: "cross",
+    nullInterpolationMode: "none",
     orientation: "vertical",
+    ortho2AxisDomainAlign: "center",
+    ortho2AxisDomainRoundMode: "tick",
+    ortho2AxisDomainScope: "global",
+    ortho2AxisMinorTicks: true,
+    ortho2AxisOffset: 0,
+    ortho2AxisTicks: true,
+    ortho2AxisTickUnitMax: "Infinity",
+    ortho2AxisTickUnitMin: "0",
+    ortho2AxisTitleMargins: "0",
+    ortho2AxisVisible: true,
+    ortho2AxisZeroLine: true,
     orthoAxisDomainAlign: "center",
     orthoAxisDomainRoundMode: "tick",
     orthoAxisDomainScope: "global",
-    orthoAxisGrid: false,
     orthoAxisOffset: 0,
     orthoAxisTicks: true,
     orthoAxisTickUnitMax: "Infinity",
     orthoAxisTickUnitMin: "0",
-    orthoAxisTitle: "Opportunity Amount",
-    orthoAxisTitleAlign: "middle",
     orthoAxisTitleMargins: "0",
     orthoAxisVisible: true,
     orthoAxisZeroLine: true,
+    plot2: false,
+    plot2AreasFillOpacity: 0.5,
+    plot2AreasVisible: false,
+    plot2ColorAxis: 2,
+    plot2DotsVisible: true,
+    plot2LinesVisible: true,
+    plot2NullInterpolationMode: "none",
+    plot2OrthoAxis: 1,
+    plot2Series: [],
+    plot2SeriesIndexes: -1,
+    plot2Stacked: false,
+    plot2ValuesMask: "{value}",
+    plot2ValuesVisible: false,
     pointingMode: "near",
     preserveLayout: false,
     readers: [],
     selectable: false,
     seriesInRows: false,
-    sizeAxisDomainAlign: "center",
-    sizeAxisUseAbs: false,
     slidingWindow: false,
     smallContentMargins: "0",
     smallContentPaddings: "0",
@@ -119,10 +139,13 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
     tooltipFollowMouse: false,
     tooltipHtml: true,
     tooltipOpacity: 0.9,
+    trendAreasFillOpacity: 0.5,
+    trendAreasVisible: false,
     trendColorAxis: 2,
     trendDotsVisible: false,
     trendLinesVisible: true,
-    trendShape: "circle",
+    trendOrthoAxis: 1,
+    trendStacked: false,
     trendValuesAnchor: "right",
     trendValuesVisible: false
   },
@@ -132,11 +155,9 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
 };
 
 cgg.initParameter
-("pOpportunityCreatedDateFilter", "")
-("pOpportunityClosedDateFilter", "")
-("pOpportunityLeadSourceFilter", "")
-("pOpportunitySalesStageFilter", "")
-("pOpportunityTypeFilter", "")
+("pCaseTypeFilter", "${pCaseTypeFilter}")
+("pCasePriorityFilter", "${pCasePriorityFilter}")
+("pDateFilter", "${pDateFilter}")
 ;
 
-cgg.render(render_DOT_COUNT_AND_VALUE_OPPORTUNITY);
+cgg.render(render_LINE_COUNT_CASE_DATE);
