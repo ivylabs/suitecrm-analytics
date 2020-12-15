@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="qTotalSalesQuantityByDayQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesQuantityByMonthQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesQuantityByQuarterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesRevenueByDayQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesRevenueByMonthQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesRevenueByQuarterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesProfitByDayQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesProfitByMonthQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalSalesProfitByQuarterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qAverageRevenueByProductCategoryQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTopSalesOnlyByAgentQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTopSalesByAgentQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTopSalesOnlyByCategoryQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTopSalesByCategoryQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTopSalesOnlyByAccountQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTopSalesByAccountQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByQuarterByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByMonthByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByDayByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByTypeQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalCasesByAccountQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qCaseDetailsQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="qTotalSalesQuantityByDayQuery"
+               id="qTotalSalesQuantityByDayQuery"
+               type="sql">
+      <Name>qTotalSalesQuantityByDayQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200301" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-MM-DD`
+	,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesQuantityByMonthQuery"
+               id="qTotalSalesQuantityByMonthQuery"
+               type="sql">
+      <Name>qTotalSalesQuantityByMonthQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-MM`
+    ,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesQuantityByQuarterQuery"
+               id="qTotalSalesQuantityByQuarterQuery"
+               type="sql">
+      <Name>qTotalSalesQuantityByQuarterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-QQ`
+    ,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+    ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesRevenueByDayQuery"
+               id="qTotalSalesRevenueByDayQuery"
+               type="sql">
+      <Name>qTotalSalesRevenueByDayQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200301" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-MM-DD`
+	,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesRevenueByMonthQuery"
+               id="qTotalSalesRevenueByMonthQuery"
+               type="sql">
+      <Name>qTotalSalesRevenueByMonthQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-MM`
+	,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesRevenueByQuarterQuery"
+               id="qTotalSalesRevenueByQuarterQuery"
+               type="sql">
+      <Name>qTotalSalesRevenueByQuarterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-QQ`
+	,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesProfitByDayQuery"
+               id="qTotalSalesProfitByDayQuery"
+               type="sql">
+      <Name>qTotalSalesProfitByDayQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200301" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-MM-DD`
+	,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesProfitByMonthQuery"
+               id="qTotalSalesProfitByMonthQuery"
+               type="sql">
+      <Name>qTotalSalesProfitByMonthQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-MM`
+	,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalSalesProfitByQuarterQuery"
+               id="qTotalSalesProfitByQuarterQuery"
+               type="sql">
+      <Name>qTotalSalesProfitByQuarterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    SD.`YYYY-QQ`
+	,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT
+FROM F_SALES FS
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qAverageRevenueByProductCategoryQuery"
+               id="qAverageRevenueByProductCategoryQuery"
+               type="sql">
+      <Name>qAverageRevenueByProductCategoryQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Product Category</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Quantity Sold</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Average Revenue</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DP.PRODUCT_CATEGORY_NAME
+    ,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY
+	,SUM(FS.SALE_TOTAL_AMOUNT/FS.SALE_QUANTITY) AS AVERAGE_REVENUE
+FROM F_SALES FS
+INNER JOIN D_PRODUCTS DP
+	ON FS.PRODUCT_TK = DP.PRODUCT_TK
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTopSalesOnlyByAgentQuery"
+               id="qTopSalesOnlyByAgentQuery"
+               type="sql">
+      <Name>qTopSalesOnlyByAgentQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DU.USER_FULL_NAME
+	,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
+FROM F_SALES FS
+INNER JOIN D_USERS DU
+	ON FS.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTopSalesByAgentQuery" id="qTopSalesByAgentQuery"
+               type="sql">
+      <Name>qTopSalesByAgentQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DU.USER_FULL_NAME
+	,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
+	,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY
+FROM F_SALES FS
+INNER JOIN D_USERS DU
+	ON FS.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTopSalesOnlyByCategoryQuery"
+               id="qTopSalesOnlyByCategoryQuery"
+               type="sql">
+      <Name>qTopSalesOnlyByCategoryQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DP.PRODUCT_CATEGORY_NAME
+	,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
+FROM F_SALES FS
+INNER JOIN D_PRODUCTS DP
+	ON FS.PRODUCT_TK = DP.PRODUCT_TK
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTopSalesByCategoryQuery"
+               id="qTopSalesByCategoryQuery"
+               type="sql">
+      <Name>qTopSalesByCategoryQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DP.PRODUCT_CATEGORY_NAME
+	,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
+	,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY
+FROM F_SALES FS
+INNER JOIN D_PRODUCTS DP
+	ON FS.PRODUCT_TK = DP.PRODUCT_TK
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTopSalesOnlyByAccountQuery"
+               id="qTopSalesOnlyByAccountQuery"
+               type="sql">
+      <Name>qTopSalesOnlyByAccountQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DA.ACCOUNT_NAME
+	,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
+FROM F_SALES FS
+INNER JOIN D_ACCOUNTS DA
+	ON FS.PRODUCT_TK = DA.ACCOUNT_TK
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTopSalesByAccountQuery"
+               id="qTopSalesByAccountQuery"
+               type="sql">
+      <Name>qTopSalesByAccountQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DA.ACCOUNT_NAME
+	,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
+	,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY
+FROM F_SALES FS
+INNER JOIN D_ACCOUNTS DA
+	ON FS.PRODUCT_TK = DA.ACCOUNT_TK
+INNER JOIN D_DATE SD
+	ON FS.SALE_PAID_DATE_TK = SD.DATE_TK
+WHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByQuarterByTypeQuery"
+               id="qTotalCasesByQuarterByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByQuarterByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    CCRD.`YYYY-QQQ`
+	,DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1,2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByMonthByTypeQuery"
+               id="qTotalCasesByMonthByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByMonthByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    CCRD.`YYYY-MM`
+	,DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1,2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByDayByTypeQuery"
+               id="qTotalCasesByDayByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByDayByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    CCRD.`YYYY-MM-DD`
+	,DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1,2]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByTypeQuery" id="qTotalCasesByTypeQuery"
+               type="sql">
+      <Name>qTotalCasesByTypeQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Case Type</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="All Case Priorities" name="pCasePriorityFilter" type="String"/>
+         <Parameter default="All Case States" name="pCaseStateFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+	DC.CASE_TYPE
+    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
+AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalCasesByAccountQuery"
+               id="qTotalCasesByAccountQuery"
+               type="sql">
+      <Name>qTotalCasesByAccountQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Account Name</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Cases</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DA.ACCOUNT_NAME
+	,COUNT(FCM.CASE_ID)
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_ACCOUNTS DA
+	ON FCM.ACCOUNT_TK = DA.ACCOUNT_TK
+INNER JOIN D_DATE CCRD
+    ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 10]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qCaseDetailsQuery" id="qCaseDetailsQuery"
+               type="sql">
+      <Name>qCaseDetailsQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DU.USER_NAME
+	,DA.ACCOUNT_NAME
+	,DC.CASE_NAME
+	,DC.CASE_TYPE
+	,DC.CASE_STATUS
+	,DC.CASE_STATE
+	,DC.CASE_PRIORITY
+	,CCRD.`DD-MM-YYYY` AS CASE_CREATED_DATE
+	,CCLD.`DD-MM-YYYY` AS CASE_CLOSED_DATE
+	,IF(ISNULL(CCLD.`DD-MM-YYYY`), DATEDIFF(NOW(),CCRD.`DD-MM-YYYY`), DATEDIFF(CCLD.`DD-MM-YYYY`,CCRD.`DD-MM-YYYY`)) AS CASE_AGE
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_CASES DC
+	ON FCM.CASE_TK = DC.CASE_TK
+INNER JOIN D_USERS DU
+	ON FCM.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_ACCOUNTS DA
+	ON FCM.ACCOUNT_TK = DA.ACCOUNT_TK
+LEFT JOIN D_DATE CCRD
+	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
+LEFT JOIN D_DATE CCLD
+	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
+WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+ORDER BY 10 DESC]]></Query>
+   </DataAccess>
+</CDADescriptor>
