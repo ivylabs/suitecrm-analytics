@@ -276,7 +276,14 @@ GROUP BY 1]]></Query>
                type="sql">
       <Name>qTopSalesOnlyByAgentQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Agent Name</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Sales Revenue</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
@@ -322,7 +329,14 @@ LIMIT 5]]></Query>
                type="sql">
       <Name>qTopSalesOnlyByCategoryQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Category</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Sales Revenue</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
@@ -369,7 +383,14 @@ LIMIT 5]]></Query>
                type="sql">
       <Name>qTopSalesOnlyByAccountQuery</Name>
       <Cache duration="3600" enabled="true"/>
-      <Columns/>
+      <Columns>
+         <Column idx="0">
+            <Name>Account Name</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Sales Revenue</Name>
+         </Column>
+      </Columns>
       <Parameters>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
