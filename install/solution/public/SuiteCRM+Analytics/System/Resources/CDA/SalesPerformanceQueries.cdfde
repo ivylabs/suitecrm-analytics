@@ -778,7 +778,7 @@
           {
             "name" : "cdacolumns",
             "type" : "CdaColumnsArray",
-            "value" : "[]"
+            "value" : "[[\u00220\u0022,\u0022Agent Name\u0022],[\u00221\u0022,\u0022Total Sales Revenue\u0022]]"
           },
           {
             "name" : "output",
@@ -922,7 +922,7 @@
           {
             "name" : "cdacolumns",
             "type" : "CdaColumnsArray",
-            "value" : "[]"
+            "value" : "[[\u00220\u0022,\u0022Category\u0022],[\u00221\u0022,\u0022Total Sales Revenue\u0022]]"
           },
           {
             "name" : "output",
@@ -1066,7 +1066,7 @@
           {
             "name" : "cdacolumns",
             "type" : "CdaColumnsArray",
-            "value" : "[]"
+            "value" : "[[\u00220\u0022,\u0022Account Name\u0022],[\u00221\u0022,\u0022Total Sales Revenue\u0022]]"
           },
           {
             "name" : "output",
