@@ -19,6 +19,78 @@
         "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
       },
       {
+        "id" : "d278d69a-62d5-4994-e8fa-f9252c4112a4",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsByStatusByDayQuery_FLT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    LCRD.`YYYY-MM-DD`\n\t,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE LCRD\n\tON FLT.EVENT_CREATED_TK = LCRD.DATE_TK\nWHERE EVENT_COUNT = 1 \nAND FLT.STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadStatusFilter\u0022,\u0022New\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200301\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "a87a128a-9437-02cd-5e61-3c909c4551f5",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -43,7 +115,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    LCRD.`YYYY-MM-DD`\n\t,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE LCRD\n\tON FLT.EVENT_CREATED_TK = LCRD.DATE_TK\nWHERE EVENT_COUNT = 1 \nAND FLT.STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT \n    LCRD.`YYYY-MM-DD`\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nWHERE DL.LEAD_STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLM.LEAD_DELETED = 0\nGROUP BY 1;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadStatusFilter\u0022,\u0022New\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200301\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "0c87f22c-af99-f362-7cd2-f5b923ad50d1",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsByStatusByMonthQuery_FLT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    LCRD.`YYYY-MM`\n\t,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE LCRD\n\tON FLT.EVENT_CREATED_TK = LCRD.DATE_TK\nWHERE EVENT_COUNT = 1 \nAND FLT.STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -115,7 +259,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    LCRD.`YYYY-MM`\n\t,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE LCRD\n\tON FLT.EVENT_CREATED_TK = LCRD.DATE_TK\nWHERE EVENT_COUNT = 1 \nAND FLT.STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT \n    LCRD.`YYYY-MM`\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nWHERE DL.LEAD_STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLM.LEAD_DELETED = 0\nGROUP BY 1;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadStatusFilter\u0022,\u0022New\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200301\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "f4539c84-d594-68e8-3796-b597c35f0e6b",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsByStatusByQuarterQuery_FLT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    LCRD.`YYYY-QQ`\n\t,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE LCRD\n\tON FLT.EVENT_CREATED_TK = LCRD.DATE_TK\nWHERE EVENT_COUNT = 1 \nAND FLT.STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -187,7 +403,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    LCRD.`YYYY-QQ`\n\t,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE LCRD\n\tON FLT.EVENT_CREATED_TK = LCRD.DATE_TK\nWHERE EVENT_COUNT = 1 \nAND FLT.STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT \n    LCRD.`YYYY-QQ`\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nWHERE DL.LEAD_STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLM.LEAD_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -235,7 +451,7 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
-        "id" : "fe2641c4-63ba-5513-3c0e-d39805f89b8a",
+        "id" : "d0ac2184-87cc-2363-5789-321ec81211f4",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
         "meta_datype" : "sql",
@@ -244,7 +460,7 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "qTotalLeadsByDayBySourceQuery"
+            "value" : "qTotalLeadsByDayBySourceQuery_FLT"
           },
           {
             "name" : "access",
@@ -307,7 +523,7 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
-        "id" : "0ff3aa69-8523-1c75-5e49-3a091357f207",
+        "id" : "fe2641c4-63ba-5513-3c0e-d39805f89b8a",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
         "meta_datype" : "sql",
@@ -316,7 +532,79 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "qTotalLeadsByMonthBySourceQuery"
+            "value" : "qTotalLeadsByDayBySourceQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    LCRD.`YYYY-MM-DD`\n    ,DL.LEAD_SOURCE\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nWHERE DL.LEAD_STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLM.LEAD_DELETED = 0\nGROUP BY 1,2;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadStatusFilter\u0022,\u0022New\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Lead Type\u0022],[\u00222\u0022,\u0022Total Leads\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "00451d58-a1a3-fc8e-a80e-9e2209d499d2",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsByMonthBySourceQuery_FLT"
           },
           {
             "name" : "access",
@@ -379,7 +667,7 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
-        "id" : "7d5b0c4c-a056-87a8-bd71-f54c3793a8fb",
+        "id" : "0ff3aa69-8523-1c75-5e49-3a091357f207",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
         "meta_datype" : "sql",
@@ -388,7 +676,79 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "qTotalLeadsByQuarterBySourceQuery"
+            "value" : "qTotalLeadsByMonthBySourceQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    LCRD.`YYYY-MM`\n    ,DL.LEAD_SOURCE\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nWHERE DL.LEAD_STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLM.LEAD_DELETED = 0\nGROUP BY 1,2;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadStatusFilter\u0022,\u0022New\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Lead Type\u0022],[\u00222\u0022,\u0022Total\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "9695e9eb-e5cb-ca35-b400-98837559cf76",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsByQuarterBySourceQuery_FLT"
           },
           {
             "name" : "access",
@@ -451,6 +811,150 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "7d5b0c4c-a056-87a8-bd71-f54c3793a8fb",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsByQuarterBySourceQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    LCRD.`YYYY-QQQ`\n    ,DL.LEAD_SOURCE\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nWHERE DL.LEAD_STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLM.LEAD_DELETED = 0\nGROUP BY 1,2;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadStatusFilter\u0022,\u0022New\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Lead Type\u0022],[\u00222\u0022,\u0022Total Leads\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "4211137d-339d-26dc-d16a-3ebb6cb31094",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsBySourceQuery_FLT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT\n    DL.LEAD_SOURCE\n    ,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_LEADS DL\n\tON FLT.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE ED\n\tON FLT.EVENT_CREATED_TK = ED.DATE_TK\nWHERE FLT.STATUS = ${pLeadStatusFilter}\nAND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLT.EVENT_COUNT = 1\nGROUP BY 1;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadStatusFilter\u0022,\u0022New\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Lead Type\u0022],[\u00221\u0022,\u0022Total Leads\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "1cb6248c-d56e-ae96-a30c-d35322acb286",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -475,7 +979,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DL.LEAD_SOURCE\n    ,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_LEADS DL\n\tON FLT.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE ED\n\tON FLT.EVENT_CREATED_TK = ED.DATE_TK\nWHERE FLT.STATUS = ${pLeadStatusFilter}\nAND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLT.EVENT_COUNT = 1\nGROUP BY 1;"
+            "value" : "SELECT \n    DL.LEAD_SOURCE\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nWHERE DL.LEAD_STATUS = ${pLeadStatusFilter}\nAND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FLM.LEAD_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -547,7 +1051,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DU.USER_NAME\n    ,COUNT(FLM.LEAD_ID) AS TOTAL_LEADS\n\t,AVG(IF(ISNULL(LCVD.`DD-MM-YYYY`), DATEDIFF(NOW(),LCRD.`DD-MM-YYYY`), DATEDIFF(LCVD.`DD-MM-YYYY`,LCRD.`DD-MM-YYYY`))) AS AVERAGE_LEAD_AGE\n    \nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_USERS DU\n\tON FLM.ASSIGNED_USER_TK = DU.USER_TK\nLEFT JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nLEFT JOIN D_DATE LCVD\n\tON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK\nWHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1"
+            "value" : "SELECT\n    DU.USER_NAME\n    ,COUNT(FLM.LEAD_ID) AS TOTAL_LEADS\n\t,AVG(IF(ISNULL(LCVD.`DD-MM-YYYY`), DATEDIFF(NOW(),LCRD.`DD-MM-YYYY`), DATEDIFF(LCVD.`DD-MM-YYYY`,LCRD.`DD-MM-YYYY`))) AS AVERAGE_LEAD_AGE\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_USERS DU\n\tON FLM.ASSIGNED_USER_TK = DU.USER_TK\nLEFT JOIN D_DATE LCRD\n\tON FLM.LEAD_CREATED_TK = LCRD.DATE_TK\nLEFT JOIN D_DATE LCVD\n\tON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK\nWHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1"
           },
           {
             "name" : "parameters",

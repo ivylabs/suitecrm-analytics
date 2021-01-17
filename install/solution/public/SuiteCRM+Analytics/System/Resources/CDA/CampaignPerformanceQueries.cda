@@ -1,41 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
+      <Connection id="qTotalRecycledLeadsQuery_FT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalRecycledLeadsQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalProcessLeadsQuery_FT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalProcessLeadsQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalAssignedLeadsQuery_FT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalAssignedLeadsQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalDeadLeadsQuery_FT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalDeadLeadsQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalConvertedLeadsQuery_FT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalConvertedLeadsQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalNewLeadsQuery_FT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalNewLeadsQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalNewLeadsByMonthQuery_FT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalNewLeadsByMonthQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalOpenLeadsQuery_FT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalOpenLeadsQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalOpenLeadsByMonthQuery_FT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalOpenLeadsByMonthQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalLeadsQuery_FT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalLeadsQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
    </DataSources>
-   <DataAccess access="public" connection="qTotalRecycledLeadsQuery"
-               id="qTotalRecycledLeadsQuery"
+   <DataAccess access="public" connection="qTotalRecycledLeadsQuery_FT"
+               id="qTotalRecycledLeadsQuery_FT"
                type="sql">
-      <Name>qTotalRecycledLeadsQuery</Name>
+      <Name>qTotalRecycledLeadsQuery_FT</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
@@ -49,6 +79,38 @@ AND EVENT_STATUS = 1
 AND EVENT_COUNT = 1
 AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="qTotalRecycledLeadsQuery"
+               id="qTotalRecycledLeadsQuery"
+               type="sql">
+      <Name>qTotalRecycledLeadsQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="0" name="pCampaignTK" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+WHERE DL.LEAD_STATUS = 'Recycled'
+AND FLM.LEAD_DELETED = 0
+AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalProcessLeadsQuery_FT"
+               id="qTotalProcessLeadsQuery_FT"
+               type="sql">
+      <Name>qTotalProcessLeadsQuery_FT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(LEAD_ID)) TOTAL
+FROM F_LEAD_TRACKING FLT
+WHERE STATUS = 'In Process'
+AND EVENT_STATUS = 1
+AND EVENT_COUNT = 1]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="qTotalProcessLeadsQuery"
                id="qTotalProcessLeadsQuery"
                type="sql">
@@ -57,9 +119,25 @@ AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
       <Columns/>
       <Parameters/>
       <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+WHERE DL.LEAD_STATUS = 'In Process'
+AND FLM.LEAD_DELETED = 0
+AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalAssignedLeadsQuery_FT"
+               id="qTotalAssignedLeadsQuery_FT"
+               type="sql">
+      <Name>qTotalAssignedLeadsQuery_FT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 
     COUNT(DISTINCT(LEAD_ID)) TOTAL
 FROM F_LEAD_TRACKING FLT
-WHERE STATUS = 'In Process'
+WHERE STATUS = 'Assigned'
 AND EVENT_STATUS = 1
 AND EVENT_COUNT = 1]]></Query>
    </DataAccess>
@@ -71,9 +149,25 @@ AND EVENT_COUNT = 1]]></Query>
       <Columns/>
       <Parameters/>
       <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+WHERE DL.LEAD_STATUS = 'Assigned'
+AND FLM.LEAD_DELETED = 0
+AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalDeadLeadsQuery_FT"
+               id="qTotalDeadLeadsQuery_FT"
+               type="sql">
+      <Name>qTotalDeadLeadsQuery_FT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 
     COUNT(DISTINCT(LEAD_ID)) TOTAL
 FROM F_LEAD_TRACKING FLT
-WHERE STATUS = 'Assigned'
+WHERE STATUS = 'Dead'
 AND EVENT_STATUS = 1
 AND EVENT_COUNT = 1]]></Query>
    </DataAccess>
@@ -84,9 +178,25 @@ AND EVENT_COUNT = 1]]></Query>
       <Columns/>
       <Parameters/>
       <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+WHERE DL.LEAD_STATUS = 'Dead'
+AND FLM.LEAD_DELETED = 0
+AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalConvertedLeadsQuery_FT"
+               id="qTotalConvertedLeadsQuery_FT"
+               type="sql">
+      <Name>qTotalConvertedLeadsQuery_FT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 
     COUNT(DISTINCT(LEAD_ID)) TOTAL
 FROM F_LEAD_TRACKING FLT
-WHERE STATUS = 'Dead'
+WHERE STATUS = 'Converted'
 AND EVENT_STATUS = 1
 AND EVENT_COUNT = 1]]></Query>
    </DataAccess>
@@ -98,9 +208,24 @@ AND EVENT_COUNT = 1]]></Query>
       <Columns/>
       <Parameters/>
       <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+WHERE DL.LEAD_STATUS = 'Converted'
+AND FLM.LEAD_DELETED = 0
+AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalNewLeadsQuery_FT" id="qTotalNewLeadsQuery_FT"
+               type="sql">
+      <Name>qTotalNewLeadsQuery_FT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 
     COUNT(DISTINCT(LEAD_ID)) TOTAL
 FROM F_LEAD_TRACKING FLT
-WHERE STATUS = 'Converted'
+WHERE STATUS = 'New'
 AND EVENT_STATUS = 1
 AND EVENT_COUNT = 1]]></Query>
    </DataAccess>
@@ -111,16 +236,18 @@ AND EVENT_COUNT = 1]]></Query>
       <Columns/>
       <Parameters/>
       <Query><![CDATA[SELECT 
-    COUNT(DISTINCT(LEAD_ID)) TOTAL
-FROM F_LEAD_TRACKING FLT
-WHERE STATUS = 'New'
-AND EVENT_STATUS = 1
-AND EVENT_COUNT = 1]]></Query>
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+WHERE DL.LEAD_STATUS = 'New'
+AND FLM.LEAD_DELETED = 0
+AND CAMPAIGN_TK = ${pCampaignTK}]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="qTotalNewLeadsByMonthQuery"
-               id="qTotalNewLeadsByMonthQuery"
+   <DataAccess access="public" connection="qTotalNewLeadsByMonthQuery_FT"
+               id="qTotalNewLeadsByMonthQuery_FT"
                type="sql">
-      <Name>qTotalNewLeadsByMonthQuery</Name>
+      <Name>qTotalNewLeadsByMonthQuery_FT</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
@@ -133,9 +260,28 @@ WHERE STATUS = 'New'
 AND EVENT_COUNT = 1
 GROUP BY DD.`YYYY-MM`;]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="qTotalOpenLeadsQuery" id="qTotalOpenLeadsQuery"
+   <DataAccess access="public" connection="qTotalNewLeadsByMonthQuery"
+               id="qTotalNewLeadsByMonthQuery"
                type="sql">
-      <Name>qTotalOpenLeadsQuery</Name>
+      <Name>qTotalNewLeadsByMonthQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT DD.`YYYY-MM`
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE DD
+	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
+WHERE DL.LEAD_STATUS = 'New'
+AND FLM.LEAD_DELETED = 0
+GROUP BY DD.`YYYY-MM`;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalOpenLeadsQuery_FT"
+               id="qTotalOpenLeadsQuery_FT"
+               type="sql">
+      <Name>qTotalOpenLeadsQuery_FT</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
@@ -146,10 +292,24 @@ WHERE STATUS NOT IN ('Dead','Converted')
 AND EVENT_STATUS = 1
 AND EVENT_COUNT = 1]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="qTotalOpenLeadsByMonthQuery"
-               id="qTotalOpenLeadsByMonthQuery"
+   <DataAccess access="public" connection="qTotalOpenLeadsQuery" id="qTotalOpenLeadsQuery"
                type="sql">
-      <Name>qTotalOpenLeadsByMonthQuery</Name>
+      <Name>qTotalOpenLeadsQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+WHERE DL.LEAD_STATUS NOT IN ('Dead','Converted')
+AND FLM.LEAD_DELETED = 0]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalOpenLeadsByMonthQuery_FT"
+               id="qTotalOpenLeadsByMonthQuery_FT"
+               type="sql">
+      <Name>qTotalOpenLeadsByMonthQuery_FT</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
@@ -162,8 +322,27 @@ WHERE STATUS NOT IN ('Dead','Converted')
 AND EVENT_COUNT = 1
 GROUP BY DD.`YYYY-MM`;]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="qTotalLeadsQuery" id="qTotalLeadsQuery" type="sql">
-      <Name>qTotalLeadsQuery</Name>
+   <DataAccess access="public" connection="qTotalOpenLeadsByMonthQuery"
+               id="qTotalOpenLeadsByMonthQuery"
+               type="sql">
+      <Name>qTotalOpenLeadsByMonthQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT DD.`YYYY-MM`
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE DD
+	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
+WHERE DL.LEAD_STATUS NOT IN ('Dead','Converted')
+AND FLM.LEAD_DELETED = 0
+GROUP BY DD.`YYYY-MM`;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsQuery_FT" id="qTotalLeadsQuery_FT"
+               type="sql">
+      <Name>qTotalLeadsQuery_FT</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
@@ -174,5 +353,18 @@ GROUP BY DD.`YYYY-MM`;]]></Query>
 FROM F_LEAD_TRACKING FLT
 WHERE EVENT_STATUS = 1
 AND CAMPAIGN_TK = ${pCampaignTK} OR ${pCampaignTK} = -1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsQuery" id="qTotalLeadsQuery" type="sql">
+      <Name>qTotalLeadsQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="-1" name="pCampaignTK" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+WHERE CAMPAIGN_TK = ${pCampaignTK} OR ${pCampaignTK} = -1
+AND FLM.LEAD_DELETED = 0]]></Query>
    </DataAccess>
 </CDADescriptor>

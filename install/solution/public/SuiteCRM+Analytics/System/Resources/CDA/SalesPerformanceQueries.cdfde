@@ -43,7 +43,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-MM-DD`\n\t,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-MM-DD`\n\t,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -115,7 +115,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-MM`\n    ,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-MM`\n    ,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -187,7 +187,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-QQ`\n    ,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n    ON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-QQ`\n    ,SUM(SALE_QUANTITY) AS TOTAL_SALES_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n    ON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -259,7 +259,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-MM-DD`\n\t,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-MM-DD`\n\t,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -331,7 +331,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-MM`\n\t,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-MM`\n\t,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -403,7 +403,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-QQ`\n\t,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-QQ`\n\t,SUM(SALE_TOTAL_AMOUNT) AS TOTAL_SALES_REVENUE\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -475,7 +475,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-MM-DD`\n\t,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-MM-DD`\n\t,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -547,7 +547,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-MM`\n\t,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-MM`\n\t,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -619,7 +619,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    SD.`YYYY-QQ`\n\t,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1;"
+            "value" : "SELECT\n    SD.`YYYY-QQ`\n\t,SUM(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY)) AS TOTAL_SALES_PROFIT\nFROM F_SALES FS\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1;"
           },
           {
             "name" : "parameters",
@@ -691,7 +691,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DP.PRODUCT_CATEGORY_NAME\n    ,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\n\t,SUM(FS.SALE_TOTAL_AMOUNT)/SUM(FS.SALE_QUANTITY) AS AVERAGE_REVENUE\nFROM F_SALES FS\nINNER JOIN D_PRODUCTS DP\n\tON FS.PRODUCT_TK = DP.PRODUCT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1"
+            "value" : "SELECT\n    DP.PRODUCT_CATEGORY_NAME\n    ,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\n\t,SUM(FS.SALE_TOTAL_AMOUNT)/SUM(FS.SALE_QUANTITY) AS AVERAGE_REVENUE\nFROM F_SALES FS\nINNER JOIN D_PRODUCTS DP\n\tON FS.PRODUCT_TK = DP.PRODUCT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1"
           },
           {
             "name" : "parameters",
@@ -763,7 +763,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DU.USER_FULL_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\nFROM F_SALES FS\nINNER JOIN D_USERS DU\n\tON FS.ASSIGNED_USER_TK = DU.USER_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
+            "value" : "SELECT\n    DU.USER_FULL_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\nFROM F_SALES FS\nINNER JOIN D_USERS DU\n\tON FS.ASSIGNED_USER_TK = DU.USER_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
           },
           {
             "name" : "parameters",
@@ -835,7 +835,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DU.USER_FULL_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\n\t,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_USERS DU\n\tON FS.ASSIGNED_USER_TK = DU.USER_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
+            "value" : "SELECT\n    DU.USER_FULL_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\n\t,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_USERS DU\n\tON FS.ASSIGNED_USER_TK = DU.USER_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
           },
           {
             "name" : "parameters",
@@ -907,7 +907,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DP.PRODUCT_CATEGORY_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\nFROM F_SALES FS\nINNER JOIN D_PRODUCTS DP\n\tON FS.PRODUCT_TK = DP.PRODUCT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
+            "value" : "SELECT\n    DP.PRODUCT_CATEGORY_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\nFROM F_SALES FS\nINNER JOIN D_PRODUCTS DP\n\tON FS.PRODUCT_TK = DP.PRODUCT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
           },
           {
             "name" : "parameters",
@@ -979,7 +979,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DP.PRODUCT_CATEGORY_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\n\t,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_PRODUCTS DP\n\tON FS.PRODUCT_TK = DP.PRODUCT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
+            "value" : "SELECT\n    DP.PRODUCT_CATEGORY_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\n\t,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_PRODUCTS DP\n\tON FS.PRODUCT_TK = DP.PRODUCT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
           },
           {
             "name" : "parameters",
@@ -1051,7 +1051,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DA.ACCOUNT_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\nFROM F_SALES FS\nINNER JOIN D_ACCOUNTS DA\n\tON FS.PRODUCT_TK = DA.ACCOUNT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
+            "value" : "SELECT\n    DA.ACCOUNT_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\nFROM F_SALES FS\nINNER JOIN D_ACCOUNTS DA\n\tON FS.BILLING_ACCOUNT_TK = DA.ACCOUNT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
           },
           {
             "name" : "parameters",
@@ -1123,439 +1123,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    DA.ACCOUNT_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\n\t,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_ACCOUNTS DA\n\tON FS.PRODUCT_TK = DA.ACCOUNT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "7d5b0c4c-a056-87a8-bd71-f54c3793a8fb",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "qTotalCasesByQuarterByTypeQuery"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT\n    CCRD.`YYYY-QQQ`\n\t,DC.CASE_TYPE\n    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_CASES DC\n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE CCRD\n\tON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nAND (DC.CASE_STATE IN (${pCaseStateFilter}) OR \u0027All Case States\u0027 IN (${pCaseStateFilter}))\nAND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1,2"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[[\u0022pCasePriorityFilter\u0022,\u0022All Case Priorities\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCaseStateFilter\u0022,\u0022All Case States\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Case Type\u0022],[\u00222\u0022,\u0022Total Cases\u0022]]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "ddb363d7-cf56-f0c4-dd03-2b3042c6c1e7",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "qTotalCasesByMonthByTypeQuery"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT\n    CCRD.`YYYY-MM`\n\t,DC.CASE_TYPE\n    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_CASES DC\n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE CCRD\n\tON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nAND (DC.CASE_STATE IN (${pCaseStateFilter}) OR \u0027All Case States\u0027 IN (${pCaseStateFilter}))\nAND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1,2"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[[\u0022pCasePriorityFilter\u0022,\u0022All Case Priorities\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCaseStateFilter\u0022,\u0022All Case States\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Case Type\u0022],[\u00222\u0022,\u0022Total Cases\u0022]]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "cc8037c6-eca9-edc7-e74c-f9ed92d2a2fd",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "qTotalCasesByDayByTypeQuery"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT\n    CCRD.`YYYY-MM-DD`\n\t,DC.CASE_TYPE\n    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_CASES DC\n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE CCRD\n\tON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nAND (DC.CASE_STATE IN (${pCaseStateFilter}) OR \u0027All Case States\u0027 IN (${pCaseStateFilter}))\nAND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1,2"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[[\u0022pCasePriorityFilter\u0022,\u0022All Case Priorities\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCaseStateFilter\u0022,\u0022All Case States\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Case Type\u0022],[\u00222\u0022,\u0022Total Cases\u0022]]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "1cb6248c-d56e-ae96-a30c-d35322acb286",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "qTotalCasesByTypeQuery"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT\n\tDC.CASE_TYPE\n    ,COUNT(FCM.CASE_TK) AS TOTAL_CASES\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_CASES DC\n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE CCRD\n\tON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nAND (DC.CASE_STATE IN (${pCaseStateFilter}) OR \u0027All Case States\u0027 IN (${pCaseStateFilter}))\nAND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[[\u0022pCasePriorityFilter\u0022,\u0022All Case Priorities\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCaseStateFilter\u0022,\u0022All Case States\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[[\u00220\u0022,\u0022Case Type\u0022],[\u00221\u0022,\u0022Total Cases\u0022]]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "f25d3e4d-4da5-eef4-5f57-522b0b3bba64",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "qTotalCasesByAccountQuery"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT \n    DA.ACCOUNT_NAME\n\t,COUNT(FCM.CASE_ID)\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_ACCOUNTS DA\n\tON FCM.ACCOUNT_TK = DA.ACCOUNT_TK\nINNER JOIN D_DATE CCRD\n    ON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nWHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 10"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[[\u00220\u0022,\u0022Account Name\u0022],[\u00221\u0022,\u0022Total Cases\u0022]]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
-          }
-        ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
-      },
-      {
-        "id" : "bf629e43-d4b8-d970-c605-47ec7912f4de",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
-        "properties" : [
-          {
-            "name" : "name",
-            "type" : "Id",
-            "value" : "qCaseDetailsQuery"
-          },
-          {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
-          },
-          {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT\n    DU.USER_NAME\n\t,DA.ACCOUNT_NAME\n\t,DC.CASE_NAME\n\t,DC.CASE_TYPE\n\t,DC.CASE_STATUS\n\t,DC.CASE_STATE\n\t,DC.CASE_PRIORITY\n\t,CCRD.`DD-MM-YYYY` AS CASE_CREATED_DATE\n\t,CCLD.`DD-MM-YYYY` AS CASE_CLOSED_DATE\n\t,IF(ISNULL(CCLD.`DD-MM-YYYY`), DATEDIFF(NOW(),CCRD.`DD-MM-YYYY`), DATEDIFF(CCLD.`DD-MM-YYYY`,CCRD.`DD-MM-YYYY`)) AS CASE_AGE\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_CASES DC\n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_USERS DU\n\tON FCM.ASSIGNED_USER_TK = DU.USER_TK\nINNER JOIN D_ACCOUNTS DA\n\tON FCM.ACCOUNT_TK = DA.ACCOUNT_TK\nLEFT JOIN D_DATE CCRD\n\tON FCM.CASE_CREATED_TK = CCRD.DATE_TK\nLEFT JOIN D_DATE CCLD\n\tON FCM.CASE_CLOSED_TK = CCLD.DATE_TK\nWHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nORDER BY 10 DESC"
+            "value" : "SELECT\n    DA.ACCOUNT_NAME\n\t,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE\n\t,SUM(FS.SALE_QUANTITY) AS TOTAL_QUANTITY\nFROM F_SALES FS\nINNER JOIN D_ACCOUNTS DA\n\tON FS.BILLING_ACCOUNT_TK = DA.ACCOUNT_TK\nINNER JOIN D_DATE SD\n\tON FS.SALE_PAID_DATE_TK = SD.DATE_TK\nWHERE SD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}\nAND FS.SALE_DELETED = 0\nGROUP BY 1\nORDER BY 2 DESC\nLIMIT 5"
           },
           {
             "name" : "parameters",
