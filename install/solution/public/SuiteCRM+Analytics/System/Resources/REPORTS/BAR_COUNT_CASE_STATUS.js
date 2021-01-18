@@ -4,7 +4,7 @@ var render_BAR_COUNT_CASE_STATUS = {
   type: "cccBarChart",
   name: "render_BAR_COUNT_CASE_STATUS",
   priority: 5,
-  parameters: [["pCaseTypeFilter","pCaseTypeFilter"],["pCasePriorityFilter","pCasePriorityFilter"],["pDateFilter","pDateFilter"]],
+  parameters: [["pCaseTypeFilter","pCaseTypeFilter"],["pCasePriorityFilter","pCasePriorityFilter"],["pDateFilter","pDateFilter"],["pShowDeletedRecords","pShowDeletedRecords"]],
   executeAtStart: true,
   htmlObject: "${h:C2}",
   preExecution: function d(){
@@ -157,6 +157,7 @@ cgg.initParameter
 ("pCaseTypeFilter", "${pCaseTypeFilter}")
 ("pCasePriorityFilter", "${pCasePriorityFilter}")
 ("pDateFilter", "${pDateFilter}")
+("pShowDeletedRecords", "${pShowDeletedRecords}")
 ;
 
 cgg.render(render_BAR_COUNT_CASE_STATUS);

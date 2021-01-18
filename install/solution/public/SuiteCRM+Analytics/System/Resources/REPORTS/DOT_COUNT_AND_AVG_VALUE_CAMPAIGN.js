@@ -4,7 +4,7 @@ var render_DOT_COUNT_AND_AVG_VALUE_CAMPAIGN = {
   type: "cccMetricDotChart",
   name: "render_DOT_COUNT_AND_AVG_VALUE_CAMPAIGN",
   priority: 5,
-  parameters: [["pCampaignFilter","pCampaignFilter"],["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignStatusFilter","pCampaignStatusFilter"]],
+  parameters: [["pCampaignFilter","pCampaignFilter"],["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignStatusFilter","pCampaignStatusFilter"],["pShowDeletedRecords","pShowDeletedRecords"]],
   executeAtStart: true,
   htmlObject: "${h:C7}",
   listeners: [],
@@ -135,6 +135,7 @@ cgg.initParameter
 ("pCampaignFilter", "")
 ("pCampaignTypeFilter", "")
 ("pCampaignStatusFilter", "")
+("pShowDeletedRecords", "")
 ;
 
 cgg.render(render_DOT_COUNT_AND_AVG_VALUE_CAMPAIGN);

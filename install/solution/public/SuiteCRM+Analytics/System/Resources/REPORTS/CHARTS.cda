@@ -115,6 +115,7 @@ ORDER BY 1 ASC;]]></Query>
          <Parameter default="${pCaseTypeFilter}" name="pCaseTypeFilter" type="String"/>
          <Parameter default="${pCasePriorityFilter}" name="pCasePriorityFilter" type="String"/>
          <Parameter default="${pDateFilter}" name="pDateFilter" type="String"/>
+         <Parameter default="${pShowDeletedRecords}" name="pShowDeletedRecords" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT 
     DC.CASE_STATUS
@@ -127,6 +128,7 @@ INNER JOIN D_DATE DD
 WHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR '9999-99' IN (${pDateFilter}))
 AND (DC.CASE_TYPE IN (${pCaseTypeFilter}) OR 'All Case Types' IN (${pCaseTypeFilter}))
 AND (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
+AND (FCM.CASE_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
 GROUP BY DC.CASE_STATUS
 ORDER BY 1 DESC;]]></Query>
    </DataAccess>
@@ -145,6 +147,7 @@ ORDER BY 1 DESC;]]></Query>
       <Parameters>
          <Parameter default="${pCampaignTypeFilter}" name="pCampaignTypeFilter" type="String"/>
          <Parameter default="${pCampaignFilter}" name="pCampaignFilter" type="String"/>
+         <Parameter default="${pShowDeletedRecords}" name="pShowDeletedRecords" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT 
     DL.LEAD_STATUS
@@ -158,6 +161,7 @@ INNER JOIN D_DATE DD
 	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
 WHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR 'All Campaign Types' IN (${pCampaignTypeFilter}))
 AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR 'All Campaigns' IN (${pCampaignFilter}))
+AND (FLM.LEAD_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
 GROUP BY DL.LEAD_STATUS
 ORDER BY 1 DESC;]]></Query>
    </DataAccess>
@@ -183,6 +187,7 @@ ORDER BY 1 DESC;]]></Query>
          <Parameter default="" name="pOpportunityLeadSourceFilter" type="String"/>
          <Parameter default="" name="pOpportunitySalesStageFilter" type="String"/>
          <Parameter default="" name="pOpportunityTypeFilter" type="String"/>
+         <Parameter default="" name="pShowDeletedRecords" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT
     CONCAT(DU.USER_FIRST_NAME , ' ' , DU.USER_LAST_NAME) USER_FULL_NAME
@@ -200,6 +205,7 @@ AND (DD.`YYYY-MM` IN (${pOpportunityClosedDateFilter}) OR '9999-99' IN (${pOppor
 AND (DO.OPPORTUNITY_TYPE IN (${pOpportunityTypeFilter}) OR 'All Opportunity Types' IN (${pOpportunityTypeFilter}))
 AND (DO.OPPORTUNITY_SALES_STAGE IN (${pOpportunitySalesStageFilter}) OR 'All Opportunity Sales Stages' IN (${pOpportunitySalesStageFilter}))
 AND (DO.OPPORTUNITY_LEAD_SOURCE IN (${pOpportunityLeadSourceFilter}) OR 'All Opportunity Lead Sources' IN (${pOpportunityLeadSourceFilter}))
+AND (FO.OPPORTUNITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
 GROUP BY
      FO.ASSIGNED_USER_TK
 ORDER BY
@@ -225,6 +231,7 @@ ORDER BY
          <Parameter default="" name="pCampaignFilter" type="String"/>
          <Parameter default="" name="pCampaignTypeFilter" type="String"/>
          <Parameter default="" name="pCampaignStatusFilter" type="String"/>
+         <Parameter default="" name="pShowDeletedRecords" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT 
     DC.CAMPAIGN_NAME
@@ -240,6 +247,8 @@ INNER JOIN F_CAMPAIGN_MANAGEMENT FCM
 WHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR 'All Campaign Types' IN (${pCampaignTypeFilter}))
 AND (DC.CAMPAIGN_STATUS IN (${pCampaignStatusFilter}) OR 'All Campaign Status' IN (${pCampaignStatusFilter}))
 AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR 'All Campaigns' IN (${pCampaignFilter}))
+AND (FCM.CAMPAIGN_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+AND (FOM.OPPORTUNITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
 GROUP BY DC.CAMPAIGN_TK]]></Query>
    </DataAccess>
 </CDADescriptor>
