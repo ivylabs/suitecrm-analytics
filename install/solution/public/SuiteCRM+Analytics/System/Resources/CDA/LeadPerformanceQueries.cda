@@ -491,6 +491,7 @@ LEFT JOIN D_DATE LCRD
 LEFT JOIN D_DATE LCVD
 	ON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK
 WHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qLeadDetailsQuery" id="qLeadDetailsQuery"
@@ -522,6 +523,7 @@ LEFT JOIN D_DATE LCRD
 LEFT JOIN D_DATE LCVD
 	ON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK
 WHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
 ORDER BY 9 DESC;]]></Query>
    </DataAccess>
 </CDADescriptor>
