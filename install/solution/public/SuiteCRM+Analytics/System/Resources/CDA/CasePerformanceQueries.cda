@@ -66,6 +66,7 @@ INNER JOIN D_DATE CCRD
 	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCreatedCasesByMonthQuery"
@@ -89,6 +90,7 @@ INNER JOIN D_DATE CCRD
 	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCreatedCasesByQuarterQuery"
@@ -112,6 +114,7 @@ INNER JOIN D_DATE CCRD
 	ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalClosedCasesByDayQuery"
@@ -135,6 +138,7 @@ INNER JOIN D_DATE CCLD
 	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND CCLD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalClosedCasesByMonthQuery"
@@ -158,6 +162,7 @@ INNER JOIN D_DATE CCLD
 	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND CCLD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalClosedCasesByQuarterQuery"
@@ -181,6 +186,7 @@ INNER JOIN D_DATE CCLD
 	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND CCLD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCasesByQuarterByTypeQuery"
@@ -217,6 +223,7 @@ INNER JOIN D_DATE CCRD
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
 AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1,2]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCasesByMonthByTypeQuery"
@@ -253,6 +260,7 @@ INNER JOIN D_DATE CCRD
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
 AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1,2]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCasesByDayByTypeQuery"
@@ -289,6 +297,7 @@ INNER JOIN D_DATE CCRD
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
 AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1,2]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCasesByTypeQuery" id="qTotalCasesByTypeQuery"
@@ -320,6 +329,7 @@ INNER JOIN D_DATE CCRD
 WHERE (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR 'All Case Priorities' IN (${pCasePriorityFilter}))
 AND (DC.CASE_STATE IN (${pCaseStateFilter}) OR 'All Case States' IN (${pCaseStateFilter}))
 AND CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCasesByAccountQuery"
@@ -348,6 +358,7 @@ INNER JOIN D_ACCOUNTS DA
 INNER JOIN D_DATE CCRD
     ON FCM.CASE_CREATED_TK = CCRD.DATE_TK
 WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 10]]></Query>
@@ -376,7 +387,6 @@ LIMIT 10]]></Query>
     DU.USER_NAME
 	,COUNT(FCM.CASE_ID) AS TOTAL_CASES
 	,AVG(IF(ISNULL(CCLD.`DD-MM-YYYY`), DATEDIFF(NOW(),CCRD.`DD-MM-YYYY`), DATEDIFF(CCLD.`DD-MM-YYYY`,CCRD.`DD-MM-YYYY`))) AS AVERAGE_CASE_AGE
-    
 FROM F_CASE_MANAGEMENT FCM
 INNER JOIN D_CASES DC
 	ON FCM.CASE_TK = DC.CASE_TK
@@ -387,6 +397,7 @@ LEFT JOIN D_DATE CCRD
 LEFT JOIN D_DATE CCLD
 	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
 WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qCaseDetailsQuery" id="qCaseDetailsQuery"
@@ -421,6 +432,7 @@ LEFT JOIN D_DATE CCRD
 LEFT JOIN D_DATE CCLD
 	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
 WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FCM.CASE_DELETED = 0
 ORDER BY 10 DESC]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalCreatedCasesByDayQueryDemo"

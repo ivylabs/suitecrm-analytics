@@ -19,6 +19,78 @@
         "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
       },
       {
+        "id" : "12cd8c0d-67e2-8b75-5318-34f4c8da3b6f",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalRecycledLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Recycled\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1\nAND CAMPAIGN_TK = ${pCampaignTK}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pCampaignTK\u0022,\u00220\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "a4763e30-008f-ee13-fcfc-922e5916d647",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -43,12 +115,84 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Recycled\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1\nAND CAMPAIGN_TK = ${pCampaignTK}"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nWHERE DL.LEAD_STATUS = \u0027Recycled\u0027\nAND FLM.LEAD_DELETED = 0\nAND CAMPAIGN_TK = ${pCampaignTK}"
           },
           {
             "name" : "parameters",
             "type" : "CdaParameters",
             "value" : "[[\u0022pCampaignTK\u0022,\u00220\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "ea1d4a06-bb38-ab50-7405-1b88104363ef",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalProcessLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027In Process\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
           },
           {
             "name" : "cdacalculatedcolumns",
@@ -115,7 +259,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027In Process\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nWHERE DL.LEAD_STATUS = \u0027In Process\u0027\nAND FLM.LEAD_DELETED = 0\nAND CAMPAIGN_TK = ${pCampaignTK}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "4d891f8c-3564-94ec-9bd7-8f365ccbd91d",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalAssignedLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Assigned\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
           },
           {
             "name" : "parameters",
@@ -187,7 +403,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Assigned\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nWHERE DL.LEAD_STATUS = \u0027Assigned\u0027\nAND FLM.LEAD_DELETED = 0\nAND CAMPAIGN_TK = ${pCampaignTK}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "0ebd0112-cd27-f889-27ea-65a2573b5318",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalDeadLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Dead\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
           },
           {
             "name" : "parameters",
@@ -259,7 +547,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Dead\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nWHERE DL.LEAD_STATUS = \u0027Dead\u0027\nAND FLM.LEAD_DELETED = 0\nAND CAMPAIGN_TK = ${pCampaignTK}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "547cb739-caec-8fa8-f517-1da4c4cc0f32",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalConvertedLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Converted\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
           },
           {
             "name" : "parameters",
@@ -331,7 +691,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027Converted\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nWHERE DL.LEAD_STATUS = \u0027Converted\u0027\nAND FLM.LEAD_DELETED = 0\nAND CAMPAIGN_TK = ${pCampaignTK}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "7d0b2ae7-8ac0-af47-7578-9576c6939acb",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalNewLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027New\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
           },
           {
             "name" : "parameters",
@@ -403,7 +835,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS = \u0027New\u0027\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nWHERE DL.LEAD_STATUS = \u0027New\u0027\nAND FLM.LEAD_DELETED = 0\nAND CAMPAIGN_TK = ${pCampaignTK}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "e661e7f4-a5cb-4950-bf4c-d5d001b2bb4f",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalNewLeadsByMonthQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT DD.`YYYY-MM`\n    ,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE DD\n\tON FLT.EVENT_CREATED_TK = DD.DATE_TK\nWHERE STATUS = \u0027New\u0027\nAND EVENT_COUNT = 1\nGROUP BY DD.`YYYY-MM`;"
           },
           {
             "name" : "parameters",
@@ -475,7 +979,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT DD.`YYYY-MM`\n    ,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE DD\n\tON FLT.EVENT_CREATED_TK = DD.DATE_TK\nWHERE STATUS = \u0027New\u0027\nAND EVENT_COUNT = 1\nGROUP BY DD.`YYYY-MM`;"
+            "value" : "SELECT DD.`YYYY-MM`\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE DD\n\tON FLM.LEAD_CREATED_TK = DD.DATE_TK\nWHERE DL.LEAD_STATUS = \u0027New\u0027\nAND FLM.LEAD_DELETED = 0\nGROUP BY DD.`YYYY-MM`;"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "5725b5bb-ef6c-05ab-493a-72a8ce30a8d0",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalOpenLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS NOT IN (\u0027Dead\u0027,\u0027Converted\u0027)\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
           },
           {
             "name" : "parameters",
@@ -547,7 +1123,79 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE STATUS NOT IN (\u0027Dead\u0027,\u0027Converted\u0027)\nAND EVENT_STATUS = 1\nAND EVENT_COUNT = 1"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nWHERE DL.LEAD_STATUS NOT IN (\u0027Dead\u0027,\u0027Converted\u0027)\nAND FLM.LEAD_DELETED = 0"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "2b3164b6-c1fe-78ee-264b-cbc96abbd8dc",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalOpenLeadsByMonthQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT DD.`YYYY-MM`\n    ,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE DD\n\tON FLT.EVENT_CREATED_TK = DD.DATE_TK\nWHERE STATUS NOT IN (\u0027Dead\u0027,\u0027Converted\u0027)\nAND EVENT_COUNT = 1\nGROUP BY DD.`YYYY-MM`;"
           },
           {
             "name" : "parameters",
@@ -619,12 +1267,84 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT DD.`YYYY-MM`\n    ,COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nINNER JOIN D_DATE DD\n\tON FLT.EVENT_CREATED_TK = DD.DATE_TK\nWHERE STATUS NOT IN (\u0027Dead\u0027,\u0027Converted\u0027)\nAND EVENT_COUNT = 1\nGROUP BY DD.`YYYY-MM`;"
+            "value" : "SELECT DD.`YYYY-MM`\n    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nINNER JOIN D_LEADS DL\n    ON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_DATE DD\n\tON FLM.LEAD_CREATED_TK = DD.DATE_TK\nWHERE DL.LEAD_STATUS NOT IN (\u0027Dead\u0027,\u0027Converted\u0027)\nAND FLM.LEAD_DELETED = 0\nGROUP BY DD.`YYYY-MM`;"
           },
           {
             "name" : "parameters",
             "type" : "CdaParameters",
             "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "a188fc4f-ffd5-e900-5aee-fb7ad274908f",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalLeadsQuery_FT"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE EVENT_STATUS = 1\nAND CAMPAIGN_TK = ${pCampaignTK} OR ${pCampaignTK} = -1"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pCampaignTK\u0022,\u0022-1\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
           },
           {
             "name" : "cdacalculatedcolumns",
@@ -691,7 +1411,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    COUNT(DISTINCT(LEAD_ID)) TOTAL\nFROM F_LEAD_TRACKING FLT\nWHERE EVENT_STATUS = 1\nAND CAMPAIGN_TK = ${pCampaignTK} OR ${pCampaignTK} = -1"
+            "value" : "SELECT \n    COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL\nFROM F_LEAD_MANAGEMENT FLM\nWHERE CAMPAIGN_TK = ${pCampaignTK} OR ${pCampaignTK} = -1\nAND FLM.LEAD_DELETED = 0"
           },
           {
             "name" : "parameters",

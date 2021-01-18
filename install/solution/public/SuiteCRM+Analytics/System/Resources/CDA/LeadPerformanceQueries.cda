@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
+      <Connection id="qTotalLeadsByStatusByDayQuery_FLT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalLeadsByStatusByDayQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalLeadsByStatusByMonthQuery_FLT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalLeadsByStatusByMonthQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalLeadsByStatusByQuarterQuery_FLT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalLeadsByStatusByQuarterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalLeadsByDayBySourceQuery_FLT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalLeadsByDayBySourceQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalLeadsByMonthBySourceQuery_FLT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalLeadsByMonthBySourceQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="qTotalLeadsByQuarterBySourceQuery_FLT" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="qTotalLeadsByQuarterBySourceQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalLeadsBySourceQuery_FLT" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="qTotalLeadsBySourceQuery" type="sql.jndi">
@@ -29,6 +50,28 @@
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
    </DataSources>
+   <DataAccess access="public" connection="qTotalLeadsByStatusByDayQuery_FLT"
+               id="qTotalLeadsByStatusByDayQuery_FLT"
+               type="sql">
+      <Name>qTotalLeadsByStatusByDayQuery_FLT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200301" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    LCRD.`YYYY-MM-DD`
+	,COUNT(DISTINCT(LEAD_ID)) TOTAL
+FROM F_LEAD_TRACKING FLT
+INNER JOIN D_DATE LCRD
+	ON FLT.EVENT_CREATED_TK = LCRD.DATE_TK
+WHERE EVENT_COUNT = 1 
+AND FLT.STATUS = ${pLeadStatusFilter}
+AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+GROUP BY 1;]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="qTotalLeadsByStatusByDayQuery"
                id="qTotalLeadsByStatusByDayQuery"
                type="sql">
@@ -42,6 +85,30 @@
       </Parameters>
       <Query><![CDATA[SELECT 
     LCRD.`YYYY-MM-DD`
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+	ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE LCRD
+	ON FLM.LEAD_CREATED_TK = LCRD.DATE_TK
+WHERE DL.LEAD_STATUS = ${pLeadStatusFilter}
+AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsByStatusByMonthQuery_FLT"
+               id="qTotalLeadsByStatusByMonthQuery_FLT"
+               type="sql">
+      <Name>qTotalLeadsByStatusByMonthQuery_FLT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200301" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    LCRD.`YYYY-MM`
 	,COUNT(DISTINCT(LEAD_ID)) TOTAL
 FROM F_LEAD_TRACKING FLT
 INNER JOIN D_DATE LCRD
@@ -64,6 +131,30 @@ GROUP BY 1;]]></Query>
       </Parameters>
       <Query><![CDATA[SELECT 
     LCRD.`YYYY-MM`
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+	ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE LCRD
+	ON FLM.LEAD_CREATED_TK = LCRD.DATE_TK
+WHERE DL.LEAD_STATUS = ${pLeadStatusFilter}
+AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
+GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsByStatusByQuarterQuery_FLT"
+               id="qTotalLeadsByStatusByQuarterQuery_FLT"
+               type="sql">
+      <Name>qTotalLeadsByStatusByQuarterQuery_FLT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200301" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    LCRD.`YYYY-QQ`
 	,COUNT(DISTINCT(LEAD_ID)) TOTAL
 FROM F_LEAD_TRACKING FLT
 INNER JOIN D_DATE LCRD
@@ -86,14 +177,50 @@ GROUP BY 1;]]></Query>
       </Parameters>
       <Query><![CDATA[SELECT 
     LCRD.`YYYY-QQ`
-	,COUNT(DISTINCT(LEAD_ID)) TOTAL
-FROM F_LEAD_TRACKING FLT
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+	ON FLM.LEAD_TK = DL.LEAD_TK
 INNER JOIN D_DATE LCRD
-	ON FLT.EVENT_CREATED_TK = LCRD.DATE_TK
-WHERE EVENT_COUNT = 1 
-AND FLT.STATUS = ${pLeadStatusFilter}
+	ON FLM.LEAD_CREATED_TK = LCRD.DATE_TK
+WHERE DL.LEAD_STATUS = ${pLeadStatusFilter}
 AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
 GROUP BY 1;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsByDayBySourceQuery_FLT"
+               id="qTotalLeadsByDayBySourceQuery_FLT"
+               type="sql">
+      <Name>qTotalLeadsByDayBySourceQuery_FLT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Leads</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT ED.`YYYY-MM-DD`
+    ,DL.LEAD_SOURCE
+	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
+FROM F_LEAD_TRACKING FLT
+INNER JOIN D_LEADS DL
+	ON FLT.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE ED
+	ON FLT.EVENT_CREATED_TK = ED.DATE_TK
+WHERE FLT.STATUS = ${pLeadStatusFilter}
+AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLT.EVENT_COUNT = 1
+GROUP BY 1,2;]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalLeadsByDayBySourceQuery"
                id="qTotalLeadsByDayBySourceQuery"
@@ -116,7 +243,42 @@ GROUP BY 1;]]></Query>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
       </Parameters>
-      <Query><![CDATA[SELECT ED.`YYYY-MM-DD`
+      <Query><![CDATA[SELECT 
+    LCRD.`YYYY-MM-DD`
+    ,DL.LEAD_SOURCE
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE LCRD
+	ON FLM.LEAD_CREATED_TK = LCRD.DATE_TK
+WHERE DL.LEAD_STATUS = ${pLeadStatusFilter}
+AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
+GROUP BY 1,2;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsByMonthBySourceQuery_FLT"
+               id="qTotalLeadsByMonthBySourceQuery_FLT"
+               type="sql">
+      <Name>qTotalLeadsByMonthBySourceQuery_FLT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT ED.`YYYY-MM`
     ,DL.LEAD_SOURCE
 	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
 FROM F_LEAD_TRACKING FLT
@@ -150,7 +312,42 @@ GROUP BY 1,2;]]></Query>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
       </Parameters>
-      <Query><![CDATA[SELECT ED.`YYYY-MM`
+      <Query><![CDATA[SELECT 
+    LCRD.`YYYY-MM`
+    ,DL.LEAD_SOURCE
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE LCRD
+	ON FLM.LEAD_CREATED_TK = LCRD.DATE_TK
+WHERE DL.LEAD_STATUS = ${pLeadStatusFilter}
+AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
+GROUP BY 1,2;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsByQuarterBySourceQuery_FLT"
+               id="qTotalLeadsByQuarterBySourceQuery_FLT"
+               type="sql">
+      <Name>qTotalLeadsByQuarterBySourceQuery_FLT</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Leads</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT ED.`YYYY-QQQ`
     ,DL.LEAD_SOURCE
 	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
 FROM F_LEAD_TRACKING FLT
@@ -184,23 +381,24 @@ GROUP BY 1,2;]]></Query>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
       </Parameters>
-      <Query><![CDATA[SELECT ED.`YYYY-QQQ`
+      <Query><![CDATA[SELECT 
+    LCRD.`YYYY-QQQ`
     ,DL.LEAD_SOURCE
-	,COUNT(DISTINCT(FLT.LEAD_ID)) TOTAL_LEADS
-FROM F_LEAD_TRACKING FLT
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS
+FROM F_LEAD_MANAGEMENT FLM
 INNER JOIN D_LEADS DL
-	ON FLT.LEAD_TK = DL.LEAD_TK
-INNER JOIN D_DATE ED
-	ON FLT.EVENT_CREATED_TK = ED.DATE_TK
-WHERE FLT.STATUS = ${pLeadStatusFilter}
-AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
-AND FLT.EVENT_COUNT = 1
+    ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE LCRD
+	ON FLM.LEAD_CREATED_TK = LCRD.DATE_TK
+WHERE DL.LEAD_STATUS = ${pLeadStatusFilter}
+AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
 GROUP BY 1,2;]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="qTotalLeadsBySourceQuery"
-               id="qTotalLeadsBySourceQuery"
+   <DataAccess access="public" connection="qTotalLeadsBySourceQuery_FLT"
+               id="qTotalLeadsBySourceQuery_FLT"
                type="sql">
-      <Name>qTotalLeadsBySourceQuery</Name>
+      <Name>qTotalLeadsBySourceQuery_FLT</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns>
          <Column idx="0">
@@ -228,6 +426,37 @@ AND ED.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
 AND FLT.EVENT_COUNT = 1
 GROUP BY 1;]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="qTotalLeadsBySourceQuery"
+               id="qTotalLeadsBySourceQuery"
+               type="sql">
+      <Name>qTotalLeadsBySourceQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Lead Type</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Leads</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="New" name="pLeadStatusFilter" type="String"/>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DL.LEAD_SOURCE
+    ,COUNT(DISTINCT(FLM.LEAD_ID)) TOTAL_LEADS
+FROM F_LEAD_MANAGEMENT FLM
+INNER JOIN D_LEADS DL
+    ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_DATE LCRD
+	ON FLM.LEAD_CREATED_TK = LCRD.DATE_TK
+WHERE DL.LEAD_STATUS = ${pLeadStatusFilter}
+AND LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
+GROUP BY 1;]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="qAverageLeadDurationByAgentQuery"
                id="qAverageLeadDurationByAgentQuery"
                type="sql">
@@ -252,7 +481,6 @@ GROUP BY 1;]]></Query>
     DU.USER_NAME
     ,COUNT(FLM.LEAD_ID) AS TOTAL_LEADS
 	,AVG(IF(ISNULL(LCVD.`DD-MM-YYYY`), DATEDIFF(NOW(),LCRD.`DD-MM-YYYY`), DATEDIFF(LCVD.`DD-MM-YYYY`,LCRD.`DD-MM-YYYY`))) AS AVERAGE_LEAD_AGE
-    
 FROM F_LEAD_MANAGEMENT FLM
 INNER JOIN D_LEADS DL
 	ON FLM.LEAD_TK = DL.LEAD_TK
@@ -263,6 +491,7 @@ LEFT JOIN D_DATE LCRD
 LEFT JOIN D_DATE LCVD
 	ON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK
 WHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
 GROUP BY 1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qLeadDetailsQuery" id="qLeadDetailsQuery"
@@ -294,6 +523,7 @@ LEFT JOIN D_DATE LCRD
 LEFT JOIN D_DATE LCVD
 	ON FLM.LEAD_CONVERTED_TK = LCVD.DATE_TK
 WHERE LCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND FLM.LEAD_DELETED = 0
 ORDER BY 9 DESC;]]></Query>
    </DataAccess>
 </CDADescriptor>
