@@ -39,7 +39,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022pCaseTypeFilter\u0022,\u0022pCaseTypeFilter\u0022],[\u0022pCasePriorityFilter\u0022,\u0022pCasePriorityFilter\u0022],[\u0022pDateFilter\u0022,\u0022pDateFilter\u0022]]"
+            "value" : "[[\u0022pCaseTypeFilter\u0022,\u0022pCaseTypeFilter\u0022],[\u0022pCasePriorityFilter\u0022,\u0022pCasePriorityFilter\u0022],[\u0022pDateFilter\u0022,\u0022pDateFilter\u0022],[\u0022pShowDeletedRecords\u0022,\u0022pShowDeletedRecords\u0022]]"
           },
           {
             "name" : "dataSource",
@@ -1500,7 +1500,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022pCaseTypeFilter\u0022,\u0022pCaseTypeFilter\u0022],[\u0022pCasePriorityFilter\u0022,\u0022pCasePriorityFilter\u0022],[\u0022pDateFilter\u0022,\u0022pDateFilter\u0022]]"
+            "value" : "[[\u0022pCaseTypeFilter\u0022,\u0022pCaseTypeFilter\u0022],[\u0022pCasePriorityFilter\u0022,\u0022pCasePriorityFilter\u0022],[\u0022pDateFilter\u0022,\u0022pDateFilter\u0022],[\u0022pShowDeletedRecords\u0022,\u0022pShowDeletedRecords\u0022]]"
           },
           {
             "name" : "dataSource",
@@ -2246,7 +2246,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022pCampaignTypeFilter\u0022,\u0022pCampaignTypeFilter\u0022],[\u0022pCampaignFilter\u0022,\u0022pCampaignFilter\u0022]]"
+            "value" : "[[\u0022pCampaignTypeFilter\u0022,\u0022pCampaignTypeFilter\u0022],[\u0022pCampaignFilter\u0022,\u0022pCampaignFilter\u0022],[\u0022pShowDeletedRecords\u0022,\u0022pShowDeletedRecords\u0022]]"
           },
           {
             "name" : "dataSource",
@@ -3707,7 +3707,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022pCampaignTypeFilter\u0022,\u0022pCampaignTypeFilter\u0022],[\u0022pCampaignFilter\u0022,\u0022pCampaignFilter\u0022]]"
+            "value" : "[[\u0022pCampaignTypeFilter\u0022,\u0022pCampaignTypeFilter\u0022],[\u0022pCampaignFilter\u0022,\u0022pCampaignFilter\u0022],[\u0022pShowDeletedRecords\u0022,\u0022pShowDeletedRecords\u0022]]"
           },
           {
             "name" : "dataSource",
@@ -5969,7 +5969,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022pOpportunityCreatedDateFilter\u0022,\u0022pOpportunityCreateDateFilter\u0022],[\u0022pOpportunityClosedDateFilter\u0022,\u0022pOpportunityClosedDateFilter\u0022],[\u0022pOpportunityLeadSourceFilter\u0022,\u0022pOpportunityLeadSourceFilter\u0022],[\u0022pOpportunitySalesStageFilter\u0022,\u0022pOpportunitySalesStageFilter\u0022],[\u0022pOpportunityTypeFilter\u0022,\u0022pOpportunityTypeFilter\u0022]]"
+            "value" : "[[\u0022pOpportunityCreatedDateFilter\u0022,\u0022pOpportunityCreateDateFilter\u0022],[\u0022pOpportunityClosedDateFilter\u0022,\u0022pOpportunityClosedDateFilter\u0022],[\u0022pOpportunityLeadSourceFilter\u0022,\u0022pOpportunityLeadSourceFilter\u0022],[\u0022pOpportunitySalesStageFilter\u0022,\u0022pOpportunitySalesStageFilter\u0022],[\u0022pOpportunityTypeFilter\u0022,\u0022pOpportunityTypeFilter\u0022],[\u0022pShowDeletedRecords\u0022,\u0022pShowDeletedRecords\u0022]]"
           },
           {
             "name" : "dataSource",
@@ -7200,7 +7200,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022pCampaignFilter\u0022,\u0022pCampaignFilter\u0022],[\u0022pCampaignTypeFilter\u0022,\u0022pCampaignTypeFilter\u0022],[\u0022pCampaignStatusFilter\u0022,\u0022pCampaignStatusFilter\u0022]]"
+            "value" : "[[\u0022pCampaignFilter\u0022,\u0022pCampaignFilter\u0022],[\u0022pCampaignTypeFilter\u0022,\u0022pCampaignTypeFilter\u0022],[\u0022pCampaignStatusFilter\u0022,\u0022pCampaignStatusFilter\u0022],[\u0022pShowDeletedRecords\u0022,\u0022pShowDeletedRecords\u0022]]"
           },
           {
             "name" : "dataSource",
@@ -8794,6 +8794,40 @@
         "rowName" : "Simple Parameter",
         "type" : "ComponentsParameter",
         "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "dca25c49-91b8-f3e8-614e-a2c3cf5d7bf5",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pShowDeletedRecords"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : "1"
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
       }
     ]
   },
@@ -9054,12 +9088,12 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    DC.CASE_STATUS\n\t,COUNT(FCM.CASE_TK) TOTAL_CASES\nFROM F_CASE_MANAGEMENT AS FCM\nINNER JOIN D_CASES AS DC \n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nWHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR \u00279999-99\u0027 IN (${pDateFilter}))\nAND (DC.CASE_TYPE IN (${pCaseTypeFilter}) OR \u0027All Case Types\u0027 IN (${pCaseTypeFilter}))\nAND (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nGROUP BY DC.CASE_STATUS\nORDER BY 1 DESC;"
+            "value" : "SELECT \n    DC.CASE_STATUS\n\t,COUNT(FCM.CASE_TK) TOTAL_CASES\nFROM F_CASE_MANAGEMENT AS FCM\nINNER JOIN D_CASES AS DC \n\tON FCM.CASE_TK = DC.CASE_TK\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nWHERE (DD.`YYYY-MM` IN (${pDateFilter}) OR \u00279999-99\u0027 IN (${pDateFilter}))\nAND (DC.CASE_TYPE IN (${pCaseTypeFilter}) OR \u0027All Case Types\u0027 IN (${pCaseTypeFilter}))\nAND (DC.CASE_PRIORITY IN (${pCasePriorityFilter}) OR \u0027All Case Priorities\u0027 IN (${pCasePriorityFilter}))\nAND (FCM.CASE_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})\nGROUP BY DC.CASE_STATUS\nORDER BY 1 DESC;"
           },
           {
             "name" : "parameters",
             "type" : "CdaParameters",
-            "value" : "[[\u0022pCaseTypeFilter\u0022,\u0022${pCaseTypeFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCasePriorityFilter\u0022,\u0022${pCasePriorityFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pDateFilter\u0022,\u0022${pDateFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+            "value" : "[[\u0022pCaseTypeFilter\u0022,\u0022${pCaseTypeFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCasePriorityFilter\u0022,\u0022${pCasePriorityFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pDateFilter\u0022,\u0022${pDateFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pShowDeletedRecords\u0022,\u0022${pShowDeletedRecords}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
           },
           {
             "name" : "cdacalculatedcolumns",
@@ -9126,12 +9160,12 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    DL.LEAD_STATUS\n    ,COUNT(FLM.LEAD_TK) AS TOTAL_LEADS\nFROM F_LEAD_MANAGEMENT AS FLM\nINNER JOIN D_LEADS AS DL \n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_CAMPAIGNS DC\n    ON FLM.CAMPAIGN_TK = DC.CAMPAIGN_TK\nINNER JOIN D_DATE DD\n\tON FLM.LEAD_CREATED_TK = DD.DATE_TK\nWHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR \u0027All Campaign Types\u0027 IN (${pCampaignTypeFilter}))\nAND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR \u0027All Campaigns\u0027 IN (${pCampaignFilter}))\nGROUP BY DL.LEAD_STATUS\nORDER BY 1 DESC;"
+            "value" : "SELECT \n    DL.LEAD_STATUS\n    ,COUNT(FLM.LEAD_TK) AS TOTAL_LEADS\nFROM F_LEAD_MANAGEMENT AS FLM\nINNER JOIN D_LEADS AS DL \n\tON FLM.LEAD_TK = DL.LEAD_TK\nINNER JOIN D_CAMPAIGNS DC\n    ON FLM.CAMPAIGN_TK = DC.CAMPAIGN_TK\nINNER JOIN D_DATE DD\n\tON FLM.LEAD_CREATED_TK = DD.DATE_TK\nWHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR \u0027All Campaign Types\u0027 IN (${pCampaignTypeFilter}))\nAND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR \u0027All Campaigns\u0027 IN (${pCampaignFilter}))\nAND (FLM.LEAD_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})\nGROUP BY DL.LEAD_STATUS\nORDER BY 1 DESC;"
           },
           {
             "name" : "parameters",
             "type" : "CdaParameters",
-            "value" : "[[\u0022pCampaignTypeFilter\u0022,\u0022${pCampaignTypeFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCampaignFilter\u0022,\u0022${pCampaignFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+            "value" : "[[\u0022pCampaignTypeFilter\u0022,\u0022${pCampaignTypeFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCampaignFilter\u0022,\u0022${pCampaignFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pShowDeletedRecords\u0022,\u0022${pShowDeletedRecords}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
           },
           {
             "name" : "cdacalculatedcolumns",
@@ -9198,12 +9232,12 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT\n    CONCAT(DU.USER_FIRST_NAME , \u0027 \u0027 , DU.USER_LAST_NAME) USER_FULL_NAME\n    ,COUNT(FO.OPPORTUNITY_TK) AS OPPORTUNITY_COUNT\n    ,SUM(FO.OPPORTUNITY_AMOUNT) AS OPEN_OPPORTUNITY_AMOUNT\nFROM F_OPPORTUNITY_MANAGEMENT AS FO\nINNER JOIN D_OPPORTUNITIES AS DO \n    ON FO.OPPORTUNITY_TK = DO.OPPORTUNITY_TK\nINNER JOIN D_USERS AS DU \n    ON FO.ASSIGNED_USER_TK = DU.USER_TK\nINNER JOIN D_DATE DD\n    ON FO.OPPORTUNITY_CREATED_TK = DD.DATE_TK\nWHERE (DD.`YYYY-MM` IN (${pOpportunityCreatedDateFilter}) OR \u00279999-99\u0027 IN (${pOpportunityCreatedDateFilter}))\nAND (DD.`YYYY-MM` IN (${pOpportunityClosedDateFilter}) OR \u00279999-99\u0027 IN (${pOpportunityClosedDateFilter}))\nAND (DO.OPPORTUNITY_TYPE IN (${pOpportunityTypeFilter}) OR \u0027All Opportunity Types\u0027 IN (${pOpportunityTypeFilter}))\nAND (DO.OPPORTUNITY_SALES_STAGE IN (${pOpportunitySalesStageFilter}) OR \u0027All Opportunity Sales Stages\u0027 IN (${pOpportunitySalesStageFilter}))\nAND (DO.OPPORTUNITY_LEAD_SOURCE IN (${pOpportunityLeadSourceFilter}) OR \u0027All Opportunity Lead Sources\u0027 IN (${pOpportunityLeadSourceFilter}))\nGROUP BY\n     FO.ASSIGNED_USER_TK\nORDER BY\n     2,3"
+            "value" : "SELECT\n    CONCAT(DU.USER_FIRST_NAME , \u0027 \u0027 , DU.USER_LAST_NAME) USER_FULL_NAME\n    ,COUNT(FO.OPPORTUNITY_TK) AS OPPORTUNITY_COUNT\n    ,SUM(FO.OPPORTUNITY_AMOUNT) AS OPEN_OPPORTUNITY_AMOUNT\nFROM F_OPPORTUNITY_MANAGEMENT AS FO\nINNER JOIN D_OPPORTUNITIES AS DO \n    ON FO.OPPORTUNITY_TK = DO.OPPORTUNITY_TK\nINNER JOIN D_USERS AS DU \n    ON FO.ASSIGNED_USER_TK = DU.USER_TK\nINNER JOIN D_DATE DD\n    ON FO.OPPORTUNITY_CREATED_TK = DD.DATE_TK\nWHERE (DD.`YYYY-MM` IN (${pOpportunityCreatedDateFilter}) OR \u00279999-99\u0027 IN (${pOpportunityCreatedDateFilter}))\nAND (DD.`YYYY-MM` IN (${pOpportunityClosedDateFilter}) OR \u00279999-99\u0027 IN (${pOpportunityClosedDateFilter}))\nAND (DO.OPPORTUNITY_TYPE IN (${pOpportunityTypeFilter}) OR \u0027All Opportunity Types\u0027 IN (${pOpportunityTypeFilter}))\nAND (DO.OPPORTUNITY_SALES_STAGE IN (${pOpportunitySalesStageFilter}) OR \u0027All Opportunity Sales Stages\u0027 IN (${pOpportunitySalesStageFilter}))\nAND (DO.OPPORTUNITY_LEAD_SOURCE IN (${pOpportunityLeadSourceFilter}) OR \u0027All Opportunity Lead Sources\u0027 IN (${pOpportunityLeadSourceFilter}))\nAND (FO.OPPORTUNITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})\nGROUP BY\n     FO.ASSIGNED_USER_TK\nORDER BY\n     2,3"
           },
           {
             "name" : "parameters",
             "type" : "CdaParameters",
-            "value" : "[[\u0022pOpportunityCreatedDateFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunityClosedDateFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunityLeadSourceFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunitySalesStageFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunityTypeFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+            "value" : "[[\u0022pOpportunityCreatedDateFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunityClosedDateFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunityLeadSourceFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunitySalesStageFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pOpportunityTypeFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pShowDeletedRecords\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
           },
           {
             "name" : "cdacalculatedcolumns",
@@ -9270,12 +9304,12 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \n    DC.CAMPAIGN_NAME\n\t,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = \u0027Closed Won\u0027, 1, 0)) AS CLOSED_WON_OPPORTUNITY_COUNT\n    ,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = \u0027Closed Won\u0027, FOM.OPPORTUNITY_AMOUNT, 0)) / SUM(IF(DO.OPPORTUNITY_SALES_STAGE = \u0027Closed Won\u0027, 1, 0)) AS CLOSED_WON_OPPORTUNITY_AVERAGE_SPEND\nFROM F_OPPORTUNITY_MANAGEMENT AS FOM\nINNER JOIN D_CAMPAIGNS AS DC \n\tON FOM.CAMPAIGN_TK = DC.CAMPAIGN_TK\nINNER JOIN D_OPPORTUNITIES AS DO \n\tON FOM.OPPORTUNITY_TK = DO.OPPORTUNITY_TK\nINNER JOIN F_CAMPAIGN_MANAGEMENT FCM\n\tON FCM.CAMPAIGN_TK = DC.CAMPAIGN_TK\nWHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR \u0027All Campaign Types\u0027 IN (${pCampaignTypeFilter}))\nAND (DC.CAMPAIGN_STATUS IN (${pCampaignStatusFilter}) OR \u0027All Campaign Status\u0027 IN (${pCampaignStatusFilter}))\nAND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR \u0027All Campaigns\u0027 IN (${pCampaignFilter}))\nGROUP BY DC.CAMPAIGN_TK"
+            "value" : "SELECT \n    DC.CAMPAIGN_NAME\n\t,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = \u0027Closed Won\u0027, 1, 0)) AS CLOSED_WON_OPPORTUNITY_COUNT\n    ,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = \u0027Closed Won\u0027, FOM.OPPORTUNITY_AMOUNT, 0)) / SUM(IF(DO.OPPORTUNITY_SALES_STAGE = \u0027Closed Won\u0027, 1, 0)) AS CLOSED_WON_OPPORTUNITY_AVERAGE_SPEND\nFROM F_OPPORTUNITY_MANAGEMENT AS FOM\nINNER JOIN D_CAMPAIGNS AS DC \n\tON FOM.CAMPAIGN_TK = DC.CAMPAIGN_TK\nINNER JOIN D_OPPORTUNITIES AS DO \n\tON FOM.OPPORTUNITY_TK = DO.OPPORTUNITY_TK\nINNER JOIN F_CAMPAIGN_MANAGEMENT FCM\n\tON FCM.CAMPAIGN_TK = DC.CAMPAIGN_TK\nWHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR \u0027All Campaign Types\u0027 IN (${pCampaignTypeFilter}))\nAND (DC.CAMPAIGN_STATUS IN (${pCampaignStatusFilter}) OR \u0027All Campaign Status\u0027 IN (${pCampaignStatusFilter}))\nAND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR \u0027All Campaigns\u0027 IN (${pCampaignFilter}))\nAND (FCM.CAMPAIGN_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})\nAND (FOM.OPPORTUNITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})\nGROUP BY DC.CAMPAIGN_TK"
           },
           {
             "name" : "parameters",
             "type" : "CdaParameters",
-            "value" : "[[\u0022pCampaignFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCampaignTypeFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCampaignStatusFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+            "value" : "[[\u0022pCampaignFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCampaignTypeFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pCampaignStatusFilter\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022pShowDeletedRecords\u0022,\u0022\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
           },
           {
             "name" : "cdacalculatedcolumns",

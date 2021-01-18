@@ -4,7 +4,7 @@ var render_DOT_COUNT_AND_VALUE_OPPORTUNITY = {
   type: "cccMetricDotChart",
   name: "render_DOT_COUNT_AND_VALUE_OPPORTUNITY",
   priority: 5,
-  parameters: [["pOpportunityCreatedDateFilter","pOpportunityCreateDateFilter"],["pOpportunityClosedDateFilter","pOpportunityClosedDateFilter"],["pOpportunityLeadSourceFilter","pOpportunityLeadSourceFilter"],["pOpportunitySalesStageFilter","pOpportunitySalesStageFilter"],["pOpportunityTypeFilter","pOpportunityTypeFilter"]],
+  parameters: [["pOpportunityCreatedDateFilter","pOpportunityCreateDateFilter"],["pOpportunityClosedDateFilter","pOpportunityClosedDateFilter"],["pOpportunityLeadSourceFilter","pOpportunityLeadSourceFilter"],["pOpportunitySalesStageFilter","pOpportunitySalesStageFilter"],["pOpportunityTypeFilter","pOpportunityTypeFilter"],["pShowDeletedRecords","pShowDeletedRecords"]],
   executeAtStart: true,
   htmlObject: "${h:C6}",
   listeners: [],
@@ -137,6 +137,7 @@ cgg.initParameter
 ("pOpportunityLeadSourceFilter", "")
 ("pOpportunitySalesStageFilter", "")
 ("pOpportunityTypeFilter", "")
+("pShowDeletedRecords", "")
 ;
 
 cgg.render(render_DOT_COUNT_AND_VALUE_OPPORTUNITY);

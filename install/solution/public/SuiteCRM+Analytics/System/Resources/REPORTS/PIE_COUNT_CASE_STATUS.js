@@ -4,7 +4,7 @@ var render_PIE_COUNT_CASE_STATUS = {
   type: "cccPieChart",
   name: "render_PIE_COUNT_CASE_STATUS",
   priority: 5,
-  parameters: [["pCaseTypeFilter","pCaseTypeFilter"],["pCasePriorityFilter","pCasePriorityFilter"],["pDateFilter","pDateFilter"]],
+  parameters: [["pCaseTypeFilter","pCaseTypeFilter"],["pCasePriorityFilter","pCasePriorityFilter"],["pDateFilter","pDateFilter"],["pShowDeletedRecords","pShowDeletedRecords"]],
   executeAtStart: true,
   htmlObject: "${h:C3}",
   listeners: [],
@@ -81,6 +81,7 @@ cgg.initParameter
 ("pCaseTypeFilter", "${pCaseTypeFilter}")
 ("pCasePriorityFilter", "${pCasePriorityFilter}")
 ("pDateFilter", "${pDateFilter}")
+("pShowDeletedRecords", "${pShowDeletedRecords}")
 ;
 
 cgg.render(render_PIE_COUNT_CASE_STATUS);

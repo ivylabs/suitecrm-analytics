@@ -4,7 +4,7 @@ var render_PIE_COUNT_LEAD_STATUS = {
   type: "cccPieChart",
   name: "render_PIE_COUNT_LEAD_STATUS",
   priority: 5,
-  parameters: [["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignFilter","pCampaignFilter"]],
+  parameters: [["pCampaignTypeFilter","pCampaignTypeFilter"],["pCampaignFilter","pCampaignFilter"],["pShowDeletedRecords","pShowDeletedRecords"]],
   executeAtStart: true,
   htmlObject: "${h:C4}",
   listeners: [],
@@ -80,6 +80,7 @@ var render_PIE_COUNT_LEAD_STATUS = {
 cgg.initParameter
 ("pCampaignTypeFilter", "${pCampaignTypeFilter}")
 ("pCampaignFilter", "${pCampaignFilter}")
+("pShowDeletedRecords", "${pShowDeletedRecords}")
 ;
 
 cgg.render(render_PIE_COUNT_LEAD_STATUS);
