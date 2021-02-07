@@ -1,4 +1,23 @@
 <Schema name="SuiteCRM Analytics">
+    
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Products">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Products" primaryKey="PRODUCT_TK">
+      <Table name="D_PRODUCTS">
+      </Table>
+      <Level name="Product Category" visible="true" column="PRODUCT_CATEGORY_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Accounts">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Accounts" primaryKey="ACCOUNT_TK">
+      <Table name="D_ACCOUNTS">
+      </Table>
+      <Level name="Account Country" visible="true" column="ACCOUNT_BILLING_ADDRESS_COUNTRY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
   <Dimension type="StandardDimension" visible="true" name="Lead">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Leads" primaryKey="LEAD_TK">
       <Table name="D_LEADS" alias="">
@@ -13,6 +32,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  
   <Dimension type="StandardDimension" visible="true" name="Lead Status">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Lead Status" primaryKey="LEAD_TK">
       <Table name="D_LEADS" alias="">
@@ -21,6 +41,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  
   <Dimension type="StandardDimension" visible="true" name="Lead Source">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Lead Sources" primaryKey="LEAD_TK">
       <Table name="D_LEADS" alias="">
@@ -29,6 +50,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  
   <Dimension type="StandardDimension" visible="true" name="Agent">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Agents" primaryKey="USER_TK">
       <Table name="D_USERS" alias="">
@@ -37,6 +59,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  
   <Dimension type="StandardDimension" visible="true" name="Campaign">
     <Hierarchy visible="true" hasAll="true" primaryKey="CAMPAIGN_TK">
       <Table name="D_CAMPAIGNS" alias="">
@@ -45,6 +68,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  
   <Cube name="Lead Management" visible="true" cache="true" enabled="true">
     <Table name="F_LEAD_MANAGEMENT" alias="">
     </Table>
@@ -61,6 +85,7 @@
     <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
     </Measure>
   </Cube>
+  
   <Cube name="Lead Tracking" visible="true" cache="true" enabled="true">
     <Table name="F_LEAD_TRACKING" alias="">
     </Table>
@@ -75,4 +100,67 @@
     <Measure name="Lead Age Seconds" column="EVENT_AGE" aggregator="sum" visible="true">
     </Measure>
   </Cube>
+  
+  <Cube name="Sales Analysis" visible="true" cache="true" enabled="true">
+    <Table name="F_SALES">
+    </Table>
+    <DimensionUsage source="Products" name="Products" visible="true" foreignKey="PRODUCT_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Accounts" name="Accounts" visible="true" foreignKey="BILLING_ACCOUNT_TK" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Total Sales Quantity" column="SALE_QUANTITY" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+  
+  <Role name="Administrator">
+    <SchemaGrant access="all">
+    </SchemaGrant>
+  </Role>
+  
+  <!--
+  <Role name="Administrator">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales Analysis" access="all">
+        <HierarchyGrant hierarchy="[Accounts]" access="custom">
+          <MemberGrant member="[Accounts].[England]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  -->
+  
+  <Role name="EnglandAccounts">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales Analysis" access="all">
+        <HierarchyGrant hierarchy="[Accounts]" access="custom">
+          <MemberGrant member="[Accounts].[England]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  
+  <Role name="ScotlandAccounts">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales Analysis" access="all">
+        <HierarchyGrant hierarchy="[Accounts]" access="custom">
+          <MemberGrant member="[Accounts].[Scotland]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  
+  <Role name="WalesAccounts">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales Analysis" access="all">
+        <HierarchyGrant hierarchy="[Accounts]" access="custom">
+          <MemberGrant member="[Accounts].[Wales]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  
 </Schema>
