@@ -1499,4 +1499,13 @@
     <ExportManifestRole>
         <rolename>Support</rolename>
     </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>EnglandAccounts</rolename>
+    </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>ScotlandAccounts</rolename>
+    </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>WalesAccounts</rolename>
+    </ExportManifestRole>
 </ns2:ExportManifest>
