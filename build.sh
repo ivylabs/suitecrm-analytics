@@ -54,7 +54,7 @@ unzip install/installation-files/suitecrm-server.zip -d install/installation-fil
 
 cd ${WORKING_DIR}/install/solution/
 
-zip -r SuiteCRM-Analytics.zip public/ exportManifest.xml
+zip -r SuiteCRM-Analytics.zip public/ exportManifest.xml SuiteCRMAnalytics.mondrian.xml
 
 cd ${WORKING_DIR}
 
