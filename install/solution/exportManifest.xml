@@ -1482,6 +1482,20 @@
             </EntityAcl>
         </ExportManifestProperty>
     </ExportManifestEntity>
+    
+    <ExportManifestMondrian file="SuiteCRMAnalytics.mondrian.xml">
+        <catalogName>SuiteCRMAnalytics</catalogName>
+        <xmlaEnabled>false</xmlaEnabled>
+        <parameters>
+            <entries>
+                <entry key="Provider" value="mondrian"/>
+                <entry key="DataSource" value="SuiteCRMAnalytics"/>
+                <entry key="EnableXmla" value="false"/>
+            </entries>
+        </parameters>
+    </ExportManifestMondrian>
+    
+    
     <ExportManifestUser>
         <username>pat</username>
         <roles>Authenticated</roles>
