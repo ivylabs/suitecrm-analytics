@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
     <ExportManifestInformation exportDate="15-12-2020 12:48:55 UTC" exportBy="admin" rootFolder="/" manifestVersion="2"/>
+    
+    <ExportManifestDatasource>
+        <accessType>JNDI</accessType>
+        <accessTypeValue>JNDI</accessTypeValue>
+        <attributes>
+            <entry>
+                <key>PORT_NUMBER</key>
+                <value>0</value>
+            </entry>
+        </attributes>
+        <changed>false</changed>
+        <connectSql></connectSql>
+        <connectionPoolingProperties/>
+        <dataTablespace></dataTablespace>
+        <databaseName>SuiteCRMAnalytics</databaseName>
+        <databasePort>0</databasePort>
+        <databaseType>
+            <defaultDatabasePort>3306</defaultDatabasePort>
+            <extraOptionsHelpUrl>http://dev.mysql.com/doc/refman/5.0/en/connector-j-reference-configuration-properties.html</extraOptionsHelpUrl>
+            <name>MySQL</name>
+            <shortName>MYSQL</shortName>
+            <supportedAccessTypes>NATIVE</supportedAccessTypes>
+            <supportedAccessTypes>ODBC</supportedAccessTypes>
+            <supportedAccessTypes>JNDI</supportedAccessTypes>
+        </databaseType>
+        <extraOptions/>
+        <extraOptionsOrder/>
+        <forcingIdentifiersToLowerCase>false</forcingIdentifiersToLowerCase>
+        <forcingIdentifiersToUpperCase>false</forcingIdentifiersToUpperCase>
+        <hostname></hostname>
+        <id>f5b54cef-22cf-4451-891d-6ea079ea61c3</id>
+        <indexTablespace></indexTablespace>
+        <informixServername></informixServername>
+        <initialPoolSize>0</initialPoolSize>
+        <maximumPoolSize>0</maximumPoolSize>
+        <name>SuiteCRMAnalytics</name>
+        <partitioned>false</partitioned>
+        <password></password>
+        <quoteAllFields>false</quoteAllFields>
+        <streamingResults>false</streamingResults>
+        <username>root@localhost</username>
+        <usingConnectionPool>true</usingConnectionPool>
+        <usingDoubleDecimalAsSchemaTableSeparator>false</usingDoubleDecimalAsSchemaTableSeparator>
+    </ExportManifestDatasource>
+
+    
     <ExportManifestEntity path="public">
         <ExportManifestProperty>
             <EntityMetaData name="public" createdDate="2020-12-14T10:06:54.668Z" isFolder="true" path="public" isHidden="false" isSchedulable="true" locale="en_GB" title="Public"/>
