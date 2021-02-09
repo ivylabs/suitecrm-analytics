@@ -1,6 +1,7 @@
 install/installation-files
 suitecrm-analytics-server/*
 suitecrm-analytics-server-backup/
+SuiteCRMAnalytics.mondrian.xml
 install.properties
 *.zip
 suitecrm-analytics.code-workspace
