@@ -1,17 +1,27 @@
 <Schema name="SuiteCRM Analytics">
-  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Products">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Products" primaryKey="PRODUCT_TK">
       <Table name="D_PRODUCTS">
       </Table>
+      <Level name="Product Type" visible="true" column="PRODUCT_TYPE" uniqueMembers="false">
+      </Level>
       <Level name="Product Category" visible="true" column="PRODUCT_CATEGORY_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Product Name" visible="true" column="PRODUCT_NAME" uniqueMembers="false">
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Accounts">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Account">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Accounts" primaryKey="ACCOUNT_TK">
       <Table name="D_ACCOUNTS">
       </Table>
       <Level name="Account Country" visible="true" column="ACCOUNT_BILLING_ADDRESS_COUNTRY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Account State" visible="true" column="ACCOUNT_BILLING_ADDRESS_STATE" uniqueMembers="false">
+      </Level>
+      <Level name="Account City" visible="true" column="ACCOUNT_BILLING_ADDRESS_CITY" uniqueMembers="false">
+      </Level>
+      <Level name="Account Name" visible="true" column="ACCOUNT_NAME" uniqueMembers="false">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -23,9 +33,9 @@
       </Level>
       <Level name="Lead State" visible="true" column="LEAD_PRIMARY_ADDRESS_STATE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Lead Full Name" visible="true" column="LEAD_FULL_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
       <Level name="Lead City" visible="true" column="LEAD_PRIMARY_ADDRESS_CITY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Lead Full Name" visible="true" column="LEAD_FULL_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -61,6 +71,20 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  <Dimension type="TimeDimension" visible="true" name="Date">
+    <Hierarchy visible="true" hasAll="true" primaryKey="DATE_TK">
+      <Table name="D_DATE" alias="">
+      </Table>
+      <Level name="Year" visible="true" column="YEAR4" type="Integer" uniqueMembers="false" levelType="TimeYears">
+      </Level>
+      <Level name="Quarter" visible="true" column="QUARTER2" type="Integer" uniqueMembers="false" levelType="TimeQuarters">
+      </Level>
+      <Level name="Month" visible="true" column="MONTH_LONG_DESC" ordinalColumn="MONTH2" type="String" uniqueMembers="false" levelType="TimeMonths">
+      </Level>
+      <Level name="Day" visible="true" column="DAY_OF_MONTH2" type="Integer" uniqueMembers="false" levelType="TimeDays">
+      </Level>
+    </Hierarchy>
+  </Dimension>
   <Cube name="Lead Management" visible="true" cache="true" enabled="true">
     <Table name="F_LEAD_MANAGEMENT">
     </Table>
@@ -73,6 +97,10 @@
     <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Campaign" name="Campaign" visible="true" foreignKey="CAMPAIGN_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Date" name="Lead Converted Date" visible="true" foreignKey="LEAD_CONVERTED_TK">
+    </DimensionUsage>
+    <DimensionUsage source="Date" name="Lead Created Date" visible="true" foreignKey="LEAD_CREATED_TK">
     </DimensionUsage>
     <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
     </Measure>
@@ -94,11 +122,19 @@
   <Cube name="Sales Analysis" visible="true" cache="true" enabled="true">
     <Table name="F_SALES">
     </Table>
-    <DimensionUsage source="Products" name="Products" visible="true" foreignKey="PRODUCT_TK" highCardinality="false">
+    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="PRODUCT_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Accounts" name="Accounts" visible="true" foreignKey="BILLING_ACCOUNT_TK" highCardinality="false">
+    <DimensionUsage source="Account" name="Account" visible="true" foreignKey="BILLING_ACCOUNT_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Agent" name="Sales Agent" visible="true" foreignKey="ASSIGNED_USER_TK">
+    </DimensionUsage>
+    <DimensionUsage source="Date" name="Sale Date" visible="true" foreignKey="SALE_PAID_DATE_TK">
     </DimensionUsage>
     <Measure name="Total Sales Quantity" column="SALE_QUANTITY" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total Sales Revenue" column="SALE_TOTAL_AMOUNT" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total Sales" column="INVOICE_TK" aggregator="count" visible="true">
     </Measure>
   </Cube>
   <Role name="Administrator">
@@ -108,8 +144,8 @@
   <Role name="EnglandAccounts">
     <SchemaGrant access="none">
       <CubeGrant cube="Sales Analysis" access="all">
-        <HierarchyGrant hierarchy="[Accounts]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Accounts].[England]" access="all">
+        <HierarchyGrant hierarchy="[Account]" rollupPolicy="partial" access="custom">
+          <MemberGrant member="[Account].[England]" access="all">
           </MemberGrant>
         </HierarchyGrant>
       </CubeGrant>
@@ -118,8 +154,8 @@
   <Role name="ScotlandAccounts">
     <SchemaGrant access="none">
       <CubeGrant cube="Sales Analysis" access="all">
-        <HierarchyGrant hierarchy="[Accounts]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Accounts].[Scotland]" access="all">
+        <HierarchyGrant hierarchy="[Account]" rollupPolicy="partial" access="custom">
+          <MemberGrant member="[Account].[Scotland]" access="all">
           </MemberGrant>
         </HierarchyGrant>
       </CubeGrant>
@@ -128,8 +164,8 @@
   <Role name="WalesAccounts">
     <SchemaGrant access="none">
       <CubeGrant cube="Sales Analysis" access="all">
-        <HierarchyGrant hierarchy="[Accounts]" access="custom">
-          <MemberGrant member="[Accounts].[Wales]" access="all">
+        <HierarchyGrant hierarchy="[Account]" access="custom">
+          <MemberGrant member="[Account].[Wales]" access="all">
           </MemberGrant>
         </HierarchyGrant>
       </CubeGrant>
