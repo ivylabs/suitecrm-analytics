@@ -1,5 +1,4 @@
 <Schema name="SuiteCRM Analytics">
-    
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Products">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Products" primaryKey="PRODUCT_TK">
       <Table name="D_PRODUCTS">
@@ -8,7 +7,6 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Accounts">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Accounts" primaryKey="ACCOUNT_TK">
       <Table name="D_ACCOUNTS">
@@ -17,90 +15,82 @@
       </Level>
     </Hierarchy>
   </Dimension>
-
-  <Dimension type="StandardDimension" visible="true" name="Lead">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Lead">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Leads" primaryKey="LEAD_TK">
-      <Table name="D_LEADS" alias="">
+      <Table name="D_LEADS">
       </Table>
-      <Level name="Lead Country" visible="true" column="LEAD_PRIMARY_ADDRESS_COUNTRY" uniqueMembers="false">
+      <Level name="Lead Country" visible="true" column="LEAD_PRIMARY_ADDRESS_COUNTRY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Lead State" visible="true" column="LEAD_PRIMARY_ADDRESS_STATE" uniqueMembers="false">
+      <Level name="Lead State" visible="true" column="LEAD_PRIMARY_ADDRESS_STATE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Lead Full Name" visible="true" column="LEAD_FULL_NAME" uniqueMembers="false">
+      <Level name="Lead Full Name" visible="true" column="LEAD_FULL_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Lead City" visible="true" column="LEAD_PRIMARY_ADDRESS_CITY" uniqueMembers="false">
+      <Level name="Lead City" visible="true" column="LEAD_PRIMARY_ADDRESS_CITY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  
-  <Dimension type="StandardDimension" visible="true" name="Lead Status">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Lead Status">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Lead Status" primaryKey="LEAD_TK">
-      <Table name="D_LEADS" alias="">
+      <Table name="D_LEADS">
       </Table>
-      <Level name="Lead Status" visible="true" column="LEAD_STATUS" uniqueMembers="false">
+      <Level name="Lead Status" visible="true" column="LEAD_STATUS" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  
-  <Dimension type="StandardDimension" visible="true" name="Lead Source">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Lead Source">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Lead Sources" primaryKey="LEAD_TK">
-      <Table name="D_LEADS" alias="">
+      <Table name="D_LEADS">
       </Table>
-      <Level name="Lead Source" visible="true" column="LEAD_SOURCE" uniqueMembers="false">
+      <Level name="Lead Source" visible="true" column="LEAD_SOURCE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  
-  <Dimension type="StandardDimension" visible="true" name="Agent">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Agent">
     <Hierarchy visible="true" hasAll="true" allMemberName="All Agents" primaryKey="USER_TK">
-      <Table name="D_USERS" alias="">
+      <Table name="D_USERS">
       </Table>
-      <Level name="Agent Name" visible="true" column="USER_LAST_NAME" uniqueMembers="false">
+      <Level name="Agent Name" visible="true" column="USER_LAST_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  
-  <Dimension type="StandardDimension" visible="true" name="Campaign">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Campaign">
     <Hierarchy visible="true" hasAll="true" primaryKey="CAMPAIGN_TK">
-      <Table name="D_CAMPAIGNS" alias="">
+      <Table name="D_CAMPAIGNS">
       </Table>
-      <Level name="Campaign Name" visible="true" column="CAMPAIGN_NAME" uniqueMembers="false">
+      <Level name="Campaign Name" visible="true" column="CAMPAIGN_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  
   <Cube name="Lead Management" visible="true" cache="true" enabled="true">
-    <Table name="F_LEAD_MANAGEMENT" alias="">
+    <Table name="F_LEAD_MANAGEMENT">
     </Table>
-    <DimensionUsage source="Lead" name="Lead" visible="true" foreignKey="LEAD_TK">
+    <DimensionUsage source="Lead" name="Lead" visible="true" foreignKey="LEAD_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Lead Status" name="Lead Status" visible="true" foreignKey="LEAD_TK">
+    <DimensionUsage source="Lead Status" name="Lead Status" visible="true" foreignKey="LEAD_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Lead Source" name="Lead Source" visible="true" foreignKey="LEAD_TK">
+    <DimensionUsage source="Lead Source" name="Lead Source" visible="true" foreignKey="LEAD_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK">
+    <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Campaign" name="Campaign" visible="true" foreignKey="CAMPAIGN_TK">
+    <DimensionUsage source="Campaign" name="Campaign" visible="true" foreignKey="CAMPAIGN_TK" highCardinality="false">
     </DimensionUsage>
     <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
     </Measure>
   </Cube>
-  
   <Cube name="Lead Tracking" visible="true" cache="true" enabled="true">
-    <Table name="F_LEAD_TRACKING" alias="">
+    <Table name="F_LEAD_TRACKING">
     </Table>
-    <DimensionUsage source="Lead" name="Lead" visible="true" foreignKey="LEAD_TK">
+    <DimensionUsage source="Lead" name="Lead" visible="true" foreignKey="LEAD_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Lead Source" name="Lead Source" visible="true" foreignKey="LEAD_TK">
+    <DimensionUsage source="Lead Source" name="Lead Source" visible="true" foreignKey="LEAD_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK">
+    <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
     </DimensionUsage>
     <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
     </Measure>
     <Measure name="Lead Age Seconds" column="EVENT_AGE" aggregator="sum" visible="true">
     </Measure>
   </Cube>
-  
   <Cube name="Sales Analysis" visible="true" cache="true" enabled="true">
     <Table name="F_SALES">
     </Table>
@@ -111,47 +101,30 @@
     <Measure name="Total Sales Quantity" column="SALE_QUANTITY" aggregator="sum" visible="true">
     </Measure>
   </Cube>
-  
   <Role name="Administrator">
     <SchemaGrant access="all">
     </SchemaGrant>
   </Role>
-  
-  <!--
-  <Role name="Administrator">
-    <SchemaGrant access="none">
-      <CubeGrant cube="Sales Analysis" access="all">
-        <HierarchyGrant hierarchy="[Accounts]" access="custom">
-          <MemberGrant member="[Accounts].[England]" access="all">
-          </MemberGrant>
-        </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  -->
-  
   <Role name="EnglandAccounts">
     <SchemaGrant access="none">
       <CubeGrant cube="Sales Analysis" access="all">
-        <HierarchyGrant hierarchy="[Accounts]" access="custom">
+        <HierarchyGrant hierarchy="[Accounts]" rollupPolicy="partial" access="custom">
           <MemberGrant member="[Accounts].[England]" access="all">
           </MemberGrant>
         </HierarchyGrant>
       </CubeGrant>
     </SchemaGrant>
   </Role>
-  
   <Role name="ScotlandAccounts">
     <SchemaGrant access="none">
       <CubeGrant cube="Sales Analysis" access="all">
-        <HierarchyGrant hierarchy="[Accounts]" access="custom">
+        <HierarchyGrant hierarchy="[Accounts]" rollupPolicy="partial" access="custom">
           <MemberGrant member="[Accounts].[Scotland]" access="all">
           </MemberGrant>
         </HierarchyGrant>
       </CubeGrant>
     </SchemaGrant>
   </Role>
-  
   <Role name="WalesAccounts">
     <SchemaGrant access="none">
       <CubeGrant cube="Sales Analysis" access="all">
@@ -162,5 +135,4 @@
       </CubeGrant>
     </SchemaGrant>
   </Role>
-  
 </Schema>
