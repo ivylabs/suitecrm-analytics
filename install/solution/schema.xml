@@ -3,11 +3,9 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="All Products" primaryKey="PRODUCT_TK">
       <Table name="D_PRODUCTS">
       </Table>
-      <Level name="Product Type" visible="true" column="PRODUCT_TYPE" uniqueMembers="false">
-      </Level>
       <Level name="Product Category" visible="true" column="PRODUCT_CATEGORY_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Product Name" visible="true" column="PRODUCT_NAME" uniqueMembers="false">
+      <Level name="Product Name" visible="true" column="PRODUCT_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -17,11 +15,11 @@
       </Table>
       <Level name="Account Country" visible="true" column="ACCOUNT_BILLING_ADDRESS_COUNTRY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Account State" visible="true" column="ACCOUNT_BILLING_ADDRESS_STATE" uniqueMembers="false">
+      <Level name="Account State" visible="true" column="ACCOUNT_BILLING_ADDRESS_STATE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Account City" visible="true" column="ACCOUNT_BILLING_ADDRESS_CITY" uniqueMembers="false">
+      <Level name="Account City" visible="true" column="ACCOUNT_BILLING_ADDRESS_CITY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Account Name" visible="true" column="ACCOUNT_NAME" uniqueMembers="false">
+      <Level name="Account Name" visible="true" column="ACCOUNT_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -64,24 +62,64 @@
     </Hierarchy>
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Campaign">
-    <Hierarchy visible="true" hasAll="true" primaryKey="CAMPAIGN_TK">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Campaigns" primaryKey="CAMPAIGN_TK">
       <Table name="D_CAMPAIGNS">
       </Table>
       <Level name="Campaign Name" visible="true" column="CAMPAIGN_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="TimeDimension" visible="true" name="Date">
-    <Hierarchy visible="true" hasAll="true" primaryKey="DATE_TK">
-      <Table name="D_DATE" alias="">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Campaign Type">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Campaign Types" primaryKey="CAMPAIGN_TK">
+      <Table name="D_CAMPAIGNS">
       </Table>
-      <Level name="Year" visible="true" column="YEAR4" type="Integer" uniqueMembers="false" levelType="TimeYears">
+      <Level name="Campaign Type" visible="true" column="CAMPAIGN_TYPE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Quarter" visible="true" column="QUARTER2" type="Integer" uniqueMembers="false" levelType="TimeQuarters">
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Campaign Status">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Campaign Status" primaryKey="CAMPAIGN_TK">
+      <Table name="D_CAMPAIGNS">
+      </Table>
+      <Level name="Campaign Status" visible="true" column="CAMPAIGN_STATUS" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Month" visible="true" column="MONTH_LONG_DESC" ordinalColumn="MONTH2" type="String" uniqueMembers="false" levelType="TimeMonths">
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Date">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Dates" primaryKey="DATE_TK">
+      <Table name="D_DATE">
+      </Table>
+      <Level name="Year" visible="true" column="YEAR4" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
       </Level>
-      <Level name="Day" visible="true" column="DAY_OF_MONTH2" type="Integer" uniqueMembers="false" levelType="TimeDays">
+      <Level name="Quarter" visible="true" column="QUARTER2" type="Integer" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      </Level>
+      <Level name="Month" visible="true" column="MONTH_LONG_DESC" ordinalColumn="MONTH2" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      </Level>
+      <Level name="Day" visible="true" column="DAY_OF_MONTH2" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Opportunity">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Opportunities" primaryKey="OPPORTUNITY_TK">
+      <Table name="D_OPPORTUNITIES">
+      </Table>
+      <Level name="Opportunity Name" visible="true" column="OPPORTUNITY_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Opportunity Type">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Opportunity Types" primaryKey="OPPORTUNITY_TK">
+      <Table name="D_OPPORTUNITIES">
+      </Table>
+      <Level name="Opportunity Type" visible="true" column="OPPORTUNITY_TYPE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Opportunity Sales Stage">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Opportunity Sales Stages" primaryKey="OPPORTUNITY_TK">
+      <Table name="D_OPPORTUNITIES">
+      </Table>
+      <Level name="Opportunity Sales Stage" visible="true" column="OPPORTUNITY_SALES_STAGE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -98,11 +136,31 @@
     </DimensionUsage>
     <DimensionUsage source="Campaign" name="Campaign" visible="true" foreignKey="CAMPAIGN_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Date" name="Lead Converted Date" visible="true" foreignKey="LEAD_CONVERTED_TK">
+    <DimensionUsage source="Date" name="Lead Converted Date" visible="true" foreignKey="LEAD_CONVERTED_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Date" name="Lead Created Date" visible="true" foreignKey="LEAD_CREATED_TK">
+    <DimensionUsage source="Date" name="Lead Created Date" visible="true" foreignKey="LEAD_CREATED_TK" highCardinality="false">
     </DimensionUsage>
     <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="Opportunity Management" visible="true" cache="true" enabled="true">
+    <Table name="F_OPPORTUNITY_MANAGEMENT">
+    </Table>
+    <DimensionUsage source="Date" name="Opportunity Created Date" visible="true" foreignKey="OPPORTUNITY_CREATED_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Campaign" name="Campaign" visible="true" foreignKey="CAMPAIGN_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Account" name="Account" visible="true" foreignKey="ACCOUNT_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Opportunity" name="Opportunity" visible="true" foreignKey="OPPORTUNITY_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Opportunity Type" name="Opportunity Type" visible="true" foreignKey="OPPORTUNITY_TK">
+    </DimensionUsage>
+    <DimensionUsage source="Opportunity Sales Stage" name="Opportunity Sales Stage" visible="true" foreignKey="OPPORTUNITY_TK">
+    </DimensionUsage>
+    <Measure name="Total Opportunities" column="OPPORTUNITY_TK" aggregator="distinct-count" visible="true">
     </Measure>
   </Cube>
   <Cube name="Lead Tracking" visible="true" cache="true" enabled="true">
@@ -113,6 +171,8 @@
     <DimensionUsage source="Lead Source" name="Lead Source" visible="true" foreignKey="LEAD_TK" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Lead Status" name="Lead Status" visible="true" foreignKey="LEAD_TK">
     </DimensionUsage>
     <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
     </Measure>
@@ -126,9 +186,9 @@
     </DimensionUsage>
     <DimensionUsage source="Account" name="Account" visible="true" foreignKey="BILLING_ACCOUNT_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Agent" name="Sales Agent" visible="true" foreignKey="ASSIGNED_USER_TK">
+    <DimensionUsage source="Agent" name="Sales Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Date" name="Sale Date" visible="true" foreignKey="SALE_PAID_DATE_TK">
+    <DimensionUsage source="Date" name="Sale Date" visible="true" foreignKey="SALE_PAID_DATE_TK" highCardinality="false">
     </DimensionUsage>
     <Measure name="Total Sales Quantity" column="SALE_QUANTITY" aggregator="sum" visible="true">
     </Measure>
@@ -142,7 +202,7 @@
     </SchemaGrant>
   </Role>
   <Role name="EnglandAccounts">
-    <SchemaGrant access="none">
+    <SchemaGrant access="all">
       <CubeGrant cube="Sales Analysis" access="all">
         <HierarchyGrant hierarchy="[Account]" rollupPolicy="partial" access="custom">
           <MemberGrant member="[Account].[England]" access="all">
@@ -152,8 +212,14 @@
     </SchemaGrant>
   </Role>
   <Role name="ScotlandAccounts">
-    <SchemaGrant access="none">
+    <SchemaGrant access="all">
       <CubeGrant cube="Sales Analysis" access="all">
+        <HierarchyGrant hierarchy="[Account]" rollupPolicy="partial" access="custom">
+          <MemberGrant member="[Account].[Scotland]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Opportunity Management" access="all">
         <HierarchyGrant hierarchy="[Account]" rollupPolicy="partial" access="custom">
           <MemberGrant member="[Account].[Scotland]" access="all">
           </MemberGrant>
@@ -162,12 +228,24 @@
     </SchemaGrant>
   </Role>
   <Role name="WalesAccounts">
-    <SchemaGrant access="none">
+    <SchemaGrant access="all">
       <CubeGrant cube="Sales Analysis" access="all">
         <HierarchyGrant hierarchy="[Account]" access="custom">
           <MemberGrant member="[Account].[Wales]" access="all">
           </MemberGrant>
         </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="SalesCube">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales Analysis" access="all">
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="LeadsManagementCube">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Lead Management" access="all">
       </CubeGrant>
     </SchemaGrant>
   </Role>
