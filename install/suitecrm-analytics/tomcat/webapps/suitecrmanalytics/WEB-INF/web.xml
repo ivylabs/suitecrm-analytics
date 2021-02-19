@@ -129,6 +129,11 @@
     <url-pattern>/i18n</url-pattern>
   </filter-mapping>
 
+  <filter-mapping>
+    <filter-name>Proxy Trusting Filter</filter-name>
+    <url-pattern>/plugin/cgg/api/services/draw</url-pattern>
+  </filter-mapping>
+
   <!--
     Filter mapping for security. Note that all objects are locked down. We
     could change this here as desired.
