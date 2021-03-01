@@ -1,0 +1,110 @@
+{
+  "components" : {
+    "rows" : [ ]
+  },
+  "datasources" : {
+    "rows" : [
+      {
+        "id" : "MDX",
+        "name" : "MDX Queries",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "MDX Queries",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "f7a8a5bf-0949-56dc-fd32-8c9d730d77e0",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "Q1",
+            "type" : "Id"
+          },
+          {
+            "name" : "access",
+            "value" : "public",
+            "type" : "Access"
+          },
+          {
+            "name" : "jndi",
+            "value" : "SuiteCRMAnalytics",
+            "type" : "Jndi"
+          },
+          {
+            "name" : "catalog",
+            "value" : "mondrian:/SuiteCRM+Analytics",
+            "type" : "MondrianCatalog"
+          },
+          {
+            "name" : "query",
+            "value" : "select NON EMPTY {[Measures].[Total Sales Quantity]} ON COLUMNS,\n  NON EMPTY [Account].[All Accounts].Children ON ROWS\nfrom [Sales Analysis]\n",
+            "type" : "CurrentMdxQuery"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "CdaParameters"
+          },
+          {
+            "name" : "bandedMode",
+            "value" : "compact",
+            "type" : "BandedMode"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "value" : "[]",
+            "type" : "CdaCalculatedColumnsArray"
+          },
+          {
+            "name" : "cdacolumns",
+            "value" : "[]",
+            "type" : "CdaColumnsArray"
+          },
+          {
+            "name" : "output",
+            "value" : "[]",
+            "type" : "IndexArray"
+          },
+          {
+            "name" : "outputMode",
+            "value" : "include",
+            "type" : "OutputMode"
+          },
+          {
+            "name" : "cacheKeys",
+            "value" : "[]",
+            "type" : "CacheKeysValues"
+          },
+          {
+            "name" : "cacheDuration",
+            "value" : 3600,
+            "type" : "Integer"
+          },
+          {
+            "name" : "cache",
+            "value" : "true",
+            "type" : "Boolean"
+          }
+        ],
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "rowName" : "mdx over mondrianJndi"
+      }
+    ]
+  },
+  "layout" : {
+    "rows" : [ ],
+    "title" : "CDF - Sample structure"
+  },
+  "filename" : "public/SuiteCRM Analytics/Analysis/Mondrian.wcdf"
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sequence> 
+  <title><![CDATA[SalesQuantityByAccount]]></title>  
+  <version>1</version>  
+  <logging-level>ERROR</logging-level>  
+  <documentation> 
+    <author>admin</author>  
+    <help/>  
+    <result-type>report</result-type>  
+    <description>!BaseTest.DEFAULT_DESCRIPTION!</description>  
+    <icon/>  
+    <!-- need an icon --> 
+  </documentation>  
+  <inputs> 
+    <mode type="string"> 
+      <default-value/>  
+      <sources> 
+        <request>mode</request> 
+      </sources> 
+    </mode> 
+  </inputs>  
+  <outputs> 
+    <model type="string"/>  
+    <connection type="string"/>  
+    <mdx type="string"/>  
+    <options type="list"/>  
+    <title type="string"/>  
+    <url type="string"> 
+      <destinations> 
+        <response>redirect</response> 
+      </destinations> 
+    </url> 
+  <chartlegendfontstyle type="string"/><chartvertaxislabel type="string"/><role type="string"/><chartheight type="string"/><chartlegendfontsize type="string"/><chartbackgroundg type="string"/><chartbackgroundb type="string"/><chartaxislabelfontstyle type="string"/><chartaxisticklabelrotation type="string"/><chartaxistickfontsize type="string"/><chartaxistickfontstyle type="string"/><chartshowslicer type="string"/><chartwidth type="string"/><showgrid type="string"/><chartdrillthroughenabled type="string"/><chartlegendlocation type="string"/><charttype type="string"/><chartlocation type="string"/><chartsliceralignment type="string"/><chartslicerfontfamily type="string"/><charttitlefontsize type="string"/><charttitlefontstyle type="string"/><chartslicerfontstyle type="string"/><actionreference type="string"/><chartaxistickfontfamily type="string"/><chartslicerfontsize type="string"/><query type="string"/><charttitle type="string"/><charthorizaxislabel type="string"/><chartlegendfontfamily type="string"/><chartslicerlocation type="string"/><charttitlefontfamily type="string"/><chartbackgroundr type="string"/><chartaxislabelfontfamily type="string"/><chartshowlegend type="string"/><chartaxislabelfontsize type="string"/></outputs>  
+  <resources/>  
+  <actions> 
+    <action-definition> 
+      <component-name>PivotViewComponent</component-name>  
+      <action-type>Pivot View</action-type>  
+      <action-inputs> 
+        <mode type="string"/> 
+      </action-inputs>  
+      <action-outputs> 
+        <model type="string"/>  
+        <connection type="string"/>  
+        <mdx type="string"/>  
+        <options type="list"/>  
+        <title type="string"/>  
+        <url type="string"/> 
+      <chartlegendfontstyle type="string"/><chartvertaxislabel type="string"/><role type="string"/><chartheight type="string"/><chartlegendfontsize type="string"/><chartbackgroundg type="string"/><chartbackgroundb type="string"/><chartaxislabelfontstyle type="string"/><chartaxisticklabelrotation type="string"/><chartaxistickfontsize type="string"/><chartaxistickfontstyle type="string"/><chartshowslicer type="string"/><chartwidth type="string"/><showgrid type="string"/><chartdrillthroughenabled type="string"/><chartlegendlocation type="string"/><charttype type="string"/><chartlocation type="string"/><chartsliceralignment type="string"/><chartslicerfontfamily type="string"/><charttitlefontsize type="string"/><charttitlefontstyle type="string"/><chartslicerfontstyle type="string"/><actionreference type="string"/><chartaxistickfontfamily type="string"/><chartslicerfontsize type="string"/><query type="string"/><charttitle type="string"/><charthorizaxislabel type="string"/><chartlegendfontfamily type="string"/><chartslicerlocation type="string"/><charttitlefontfamily type="string"/><chartbackgroundr type="string"/><chartaxislabelfontfamily type="string"/><chartshowlegend type="string"/><chartaxislabelfontsize type="string"/></action-outputs>  
+      <component-definition> 
+        <title><![CDATA[SalesQuantityByAccount]]></title>  
+        <viewer>plugin/jpivot/Pivot</viewer>  
+        <model><![CDATA[mondrian:/SuiteCRM+Analytics]]></model>  
+        <options> 
+          <personal/>  
+          <cube-nav/>  
+          <mdx-edit/>  
+          <sort-conf/>  
+          <spacer/>  
+          <level-style/>  
+          <hide-spans/>  
+          <properties/>  
+          <non-empty/>  
+          <swap-axes/>  
+          <spacer/>  
+          <drill-member/>  
+          <drill-position/>  
+          <drill-replace/>  
+          <drill-thru/>  
+          <spacer/>  
+          <chart/>  
+          <chart-conf/>  
+          <spacer/>  
+          <print-conf/>  
+          <print-pdf/>  
+          <spacer/>  
+          <excel/> 
+        </options>  
+        <query><![CDATA[select NON EMPTY {[Measures].[Total Sales Quantity]} ON COLUMNS,
+  NON EMPTY [Account].[All Accounts].Children ON ROWS
+from [Sales Analysis]
+]]></query>  
+        <jndi><![CDATA[SuiteCRMAnalytics]]></jndi> 
+      <chartlegendfontstyle><![CDATA[0]]></chartlegendfontstyle><chartvertaxislabel><![CDATA[]]></chartvertaxislabel><role/><chartheight><![CDATA[300]]></chartheight><chartlegendfontsize><![CDATA[10]]></chartlegendfontsize><chartbackgroundg><![CDATA[255]]></chartbackgroundg><chartbackgroundb><![CDATA[255]]></chartbackgroundb><chartaxislabelfontstyle><![CDATA[0]]></chartaxislabelfontstyle><chartaxisticklabelrotation><![CDATA[30]]></chartaxisticklabelrotation><chartaxistickfontsize><![CDATA[12]]></chartaxistickfontsize><chartaxistickfontstyle><![CDATA[0]]></chartaxistickfontstyle><chartshowslicer><![CDATA[true]]></chartshowslicer><chartwidth><![CDATA[500]]></chartwidth><showgrid><![CDATA[true]]></showgrid><chartdrillthroughenabled><![CDATA[false]]></chartdrillthroughenabled><chartlegendlocation><![CDATA[3]]></chartlegendlocation><charttype><![CDATA[1]]></charttype><chartlocation><![CDATA[none]]></chartlocation><chartsliceralignment><![CDATA[3]]></chartsliceralignment><chartslicerfontfamily><![CDATA[SansSerif]]></chartslicerfontfamily><connection><![CDATA[SuiteCRMAnalytics]]></connection><charttitlefontsize><![CDATA[18]]></charttitlefontsize><charttitlefontstyle><![CDATA[1]]></charttitlefontstyle><chartslicerfontstyle><![CDATA[0]]></chartslicerfontstyle><actionreference><![CDATA[NEW_ACTION]]></actionreference><chartaxistickfontfamily><![CDATA[SansSerif]]></chartaxistickfontfamily><chartslicerfontsize><![CDATA[12]]></chartslicerfontsize><charttitle><![CDATA[]]></charttitle><charthorizaxislabel><![CDATA[]]></charthorizaxislabel><chartlegendfontfamily><![CDATA[SansSerif]]></chartlegendfontfamily><chartslicerlocation><![CDATA[1]]></chartslicerlocation><charttitlefontfamily><![CDATA[SansSerif]]></charttitlefontfamily><chartbackgroundr><![CDATA[255]]></chartbackgroundr><chartaxislabelfontfamily><![CDATA[SansSerif]]></chartaxislabelfontfamily><chartshowlegend><![CDATA[true]]></chartshowlegend><chartaxislabelfontsize><![CDATA[12]]></chartaxislabelfontsize></component-definition>  
+      <action-name>Pivot View</action-name>  
+      <logging-level>DEBUG</logging-level> 
+    </action-definition> 
+  </actions> 
+</action-sequence>
