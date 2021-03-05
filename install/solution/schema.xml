@@ -57,6 +57,12 @@
     <Hierarchy visible="true" hasAll="true" allMemberName="All Agents" primaryKey="USER_TK">
       <Table name="D_USERS">
       </Table>
+      <Level name="Agent Country" visible="true" column="USER_ADDRESS_COUNTRY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Agent State" visible="true" column="USER_ADDRESS_STATE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Agent City" visible="true" column="USER_ADDRESS_CITY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
       <Level name="Agent Name" visible="true" column="USER_LAST_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
@@ -91,7 +97,7 @@
       </Table>
       <Level name="Year" visible="true" column="YEAR4" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
       </Level>
-      <Level name="Quarter" visible="true" column="QUARTER2" type="Integer" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      <Level name="Quarter" visible="true" column="QUARTER_LONG_DESC" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
       </Level>
       <Level name="Month" visible="true" column="MONTH_LONG_DESC" ordinalColumn="MONTH2" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
       </Level>
@@ -123,6 +129,14 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Lead Deleted">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Leads" primaryKey="LEAD_TK">
+      <Table name="D_LEADS">
+      </Table>
+      <Level name="Lead Deleted" visible="true" column="LEAD_DELETED" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
   <Cube name="Lead Management" visible="true" cache="true" enabled="true">
     <Table name="F_LEAD_MANAGEMENT">
     </Table>
@@ -132,9 +146,15 @@
     </DimensionUsage>
     <DimensionUsage source="Lead Source" name="Lead Source" visible="true" foreignKey="LEAD_TK" highCardinality="false">
     </DimensionUsage>
+    <DimensionUsage source="Lead Deleted" name="Lead Deleted" visible="true" foreignKey="LEAD_TK" highCardinality="false">
+    </DimensionUsage>
     <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Campaign" name="Campaign" visible="true" foreignKey="CAMPAIGN_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Campaign Status" name="Campaign Status" visible="true" foreignKey="CAMPAIGN_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Campaign Type" name="Campaign Type" visible="true" foreignKey="CAMPAIGN_TK" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Date" name="Lead Converted Date" visible="true" foreignKey="LEAD_CONVERTED_TK" highCardinality="false">
     </DimensionUsage>
@@ -142,8 +162,10 @@
     </DimensionUsage>
     <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
     </Measure>
+    <CalculatedMember name="Percent" formatString="0.00%" formula="[Measures].[Total Leads]/([Measures].[Total Leads], [Lead Created Date].CurrentMember.Parent)" dimension="Measures" visible="true">
+    </CalculatedMember>
   </Cube>
-  <Cube name="Opportunity Management" visible="true" cache="true" enabled="true">
+  <Cube name="Opportunity Management" visible="false" cache="true" enabled="true">
     <Table name="F_OPPORTUNITY_MANAGEMENT">
     </Table>
     <DimensionUsage source="Date" name="Opportunity Created Date" visible="true" foreignKey="OPPORTUNITY_CREATED_TK" highCardinality="false">
@@ -156,30 +178,14 @@
     </DimensionUsage>
     <DimensionUsage source="Opportunity" name="Opportunity" visible="true" foreignKey="OPPORTUNITY_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Opportunity Type" name="Opportunity Type" visible="true" foreignKey="OPPORTUNITY_TK">
+    <DimensionUsage source="Opportunity Type" name="Opportunity Type" visible="true" foreignKey="OPPORTUNITY_TK" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Opportunity Sales Stage" name="Opportunity Sales Stage" visible="true" foreignKey="OPPORTUNITY_TK">
+    <DimensionUsage source="Opportunity Sales Stage" name="Opportunity Sales Stage" visible="true" foreignKey="OPPORTUNITY_TK" highCardinality="false">
     </DimensionUsage>
     <Measure name="Total Opportunities" column="OPPORTUNITY_TK" aggregator="distinct-count" visible="true">
     </Measure>
   </Cube>
-  <Cube name="Lead Tracking" visible="true" cache="true" enabled="true">
-    <Table name="F_LEAD_TRACKING">
-    </Table>
-    <DimensionUsage source="Lead" name="Lead" visible="true" foreignKey="LEAD_TK" highCardinality="false">
-    </DimensionUsage>
-    <DimensionUsage source="Lead Source" name="Lead Source" visible="true" foreignKey="LEAD_TK" highCardinality="false">
-    </DimensionUsage>
-    <DimensionUsage source="Agent" name="Assigned Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
-    </DimensionUsage>
-    <DimensionUsage source="Lead Status" name="Lead Status" visible="true" foreignKey="LEAD_TK">
-    </DimensionUsage>
-    <Measure name="Total Leads" column="LEAD_TK" aggregator="distinct-count" visible="true">
-    </Measure>
-    <Measure name="Lead Age Seconds" column="EVENT_AGE" aggregator="sum" visible="true">
-    </Measure>
-  </Cube>
-  <Cube name="Sales Analysis" visible="true" cache="true" enabled="true">
+  <Cube name="Sales Analysis" visible="false" cache="true" enabled="true">
     <Table name="F_SALES">
     </Table>
     <DimensionUsage source="Product" name="Product" visible="true" foreignKey="PRODUCT_TK" highCardinality="false">
@@ -190,11 +196,17 @@
     </DimensionUsage>
     <DimensionUsage source="Date" name="Sale Date" visible="true" foreignKey="SALE_PAID_DATE_TK" highCardinality="false">
     </DimensionUsage>
+    <DimensionUsage source="Agent" name="Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
+    </DimensionUsage>
     <Measure name="Total Sales Quantity" column="SALE_QUANTITY" aggregator="sum" visible="true">
     </Measure>
     <Measure name="Total Sales Revenue" column="SALE_TOTAL_AMOUNT" aggregator="sum" visible="true">
     </Measure>
     <Measure name="Total Sales" column="INVOICE_TK" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="Total Sales VAT" column="SALE_TOTAL_VAT_AMOUNT" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total Sales Discount" column="SALE_TOTAL_DISCOUNT_AMOUNT" aggregator="sum" visible="true">
     </Measure>
   </Cube>
   <Role name="Administrator">
@@ -234,18 +246,6 @@
           <MemberGrant member="[Account].[Wales]" access="all">
           </MemberGrant>
         </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  <Role name="SalesCube">
-    <SchemaGrant access="none">
-      <CubeGrant cube="Sales Analysis" access="all">
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  <Role name="LeadsManagementCube">
-    <SchemaGrant access="none">
-      <CubeGrant cube="Lead Management" access="all">
       </CubeGrant>
     </SchemaGrant>
   </Role>

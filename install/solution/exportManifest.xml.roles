@@ -2,9 +2,10 @@
     <username>pat</username>
     <roles>Authenticated</roles>
     <roles>Business Analyst</roles>
-    <roles>Support</roles>
+    <roles>Power User</roles>
     <roles>EnglandAccounts</roles>
     <roles>WalesAccounts</roles>
+    <roles>Support</roles>
     <password>{SHA-256}e6db340521dd0055-1000-23850dcd7f0a9e8dc39819a547ed2d28a1132f83c84a8826724ba4612a07bf3e</password>
 </ExportManifestUser>
 
@@ -12,6 +13,7 @@
     <username>suzy</username>
     <roles>Authenticated</roles>
     <roles>Business Analyst</roles>
+    <roles>Power User</roles>
     <roles>ScotlandAccounts</roles>
     <password>{SHA-256}e6db340521dd0055-1000-23850dcd7f0a9e8dc39819a547ed2d28a1132f83c84a8826724ba4612a07bf3e</password>
 </ExportManifestUser>
@@ -20,6 +22,7 @@
     <username>tiffany</username>
     <roles>Authenticated</roles>
     <roles>Business Analyst</roles>
+    <roles>Power User</roles>
     <password>{SHA-256}e6db340521dd0055-1000-23850dcd7f0a9e8dc39819a547ed2d28a1132f83c84a8826724ba4612a07bf3e</password>
 </ExportManifestUser>
 <!--
