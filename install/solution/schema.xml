@@ -145,6 +145,16 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Activity">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Activities" primaryKey="ACTIVITY_TK">
+      <Table name="D_ACTIVITIES">
+      </Table>
+      <Level name="Activity Type" visible="true" column="ACTIVITY_TYPE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Activity Name" visible="true" column="ACTIVITY_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
   <Cube name="Lead Management" visible="true" cache="true" enabled="true">
     <Table name="F_LEAD_MANAGEMENT">
     </Table>
@@ -217,6 +227,45 @@
     <Measure name="Total Sales VAT" column="SALE_TOTAL_VAT_AMOUNT" aggregator="sum" visible="true">
     </Measure>
     <Measure name="Total Sales Discount" column="SALE_TOTAL_DISCOUNT_AMOUNT" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="Activities Analysis" visible="true" cache="true" enabled="true">
+    <Table name="F_ACTIVITIES">
+    </Table>
+    <DimensionUsage source="Activity" name="Activity" visible="true" foreignKey="ACTIVITY_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Agent" name="Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Date" name="Activity Date" visible="true" foreignKey="ACTIVITY_DATE_TK" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Total Activities" column="ACTIVITY_TK" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="Total Activity Duration" column="ACTIVITY_DURATION" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="Opportunity Activities Analysis" visible="true" cache="true" enabled="true">
+    <View alias="OPPORTUNITY_ACTIVITIES">
+      <SQL dialect="mysql">
+        <![CDATA[SELECT FA.* FROM F_ACTIVITIES FA INNER JOIN D_ACTIVITIES DA ON FA.ACTIVITY_TK = DA.ACTIVITY_TK WHERE DA.ACTIVITY_PARENT_TYPE = 'Opportunities']]>
+      </SQL>
+    </View>
+    <DimensionUsage source="Opportunity" name="Opportunity" visible="true" foreignKey="ACTIVITY_PARENT_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Opportunity Type" name="Opportunity Type" visible="true" foreignKey="ACTIVITY_PARENT_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Opportunity Sales Stage" name="Opportunity Sales Stage" visible="true" foreignKey="ACTIVITY_PARENT_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Agent" name="Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Date" name="Activity Date" visible="true" foreignKey="ACTIVITY_DATE_TK" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Activity" name="Activity" visible="true" foreignKey="ACTIVITY_TK" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Total Opportunities" column="ACTIVITY_PARENT_TK" aggregator="distinct-count" visible="true">
+    </Measure>
+    <Measure name="Total Activities" column="ACTIVITY_TK" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="Total Activity Duration" column="ACTIVITY_DURATION" aggregator="sum" visible="true">
     </Measure>
   </Cube>
   <Role name="Administrator">
