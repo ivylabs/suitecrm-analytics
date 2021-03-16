@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="qTopRevenueQuantityByDimensionLevelQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTopMeasureByDimensionLevelQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qAverageRevenueByProductCategoryQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qTotalMeasureByPeriodQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="qTopRevenueQuantityByDimensionLevelQuery"
+               id="qTopRevenueQuantityByDimensionLevelQuery"
+               type="mdx">
+      <Name>qTopRevenueQuantityByDimensionLevelQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Product Category</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Average Revenue</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Quantity</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20210101" name="dateToKeyParam" type="String"/>
+         <Parameter default="Product" name="dimensionParam" type="String"/>
+         <Parameter default="Product Category" name="levelParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select NON EMPTY {[Measures].[Total Sales Revenue],[Measures].[Total Sales Quantity]} ON COLUMNS,
+  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[Total Sales Revenue], BDESC),5) ON ROWS
+from [Sales Analysis]
+WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTopMeasureByDimensionLevelQuery"
+               id="qTopMeasureByDimensionLevelQuery"
+               type="mdx">
+      <Name>qTopMeasureByDimensionLevelQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Dimension</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Average Revenue</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20210101" name="dateToKeyParam" type="String"/>
+         <Parameter default="Product" name="dimensionParam" type="String"/>
+         <Parameter default="Product Category" name="levelParam" type="String"/>
+         <Parameter default="Total Sales Revenue" name="measureParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,
+  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[${measureParam}], BDESC),5) ON ROWS
+from [Sales Analysis]
+WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qAverageRevenueByProductCategoryQuery"
+               id="qAverageRevenueByProductCategoryQuery"
+               type="mdx">
+      <Name>qAverageRevenueByProductCategoryQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Product Category</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Quantity Sold</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Average Revenue</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20210101" name="dateToKeyParam" type="String"/>
+         <Parameter default="Month" name="datePeriodParam" type="String"/>
+         <Parameter default="Total Sales" name="measureParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[with member [Measures].[Average Revenue] as '([Measures].[Total Sales Revenue] / [Measures].[Total Sales Quantity])'
+select NON EMPTY {[Measures].[Total Sales Quantity], [Measures].[Average Revenue]} ON COLUMNS,
+  NON EMPTY [Product].[All Products].Children ON ROWS
+from [Sales Analysis]
+WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qTotalMeasureByPeriodQuery"
+               id="qTotalMeasureByPeriodQuery"
+               type="mdx">
+      <Name>qTotalMeasureByPeriodQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Measure</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20210101" name="dateToKeyParam" type="String"/>
+         <Parameter default="Month" name="datePeriodParam" type="String"/>
+         <Parameter default="Total Sales" name="measureParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,
+  NON EMPTY [Sale Date.Full Date String].[${datePeriodParam}].Members ON ROWS
+FROM [Sales Analysis]
+WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+   </DataAccess>
+</CDADescriptor>
