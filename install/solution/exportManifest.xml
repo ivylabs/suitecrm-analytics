@@ -173,6 +173,30 @@
             </EntityAcl>
         </ExportManifestProperty>
     </ExportManifestEntity>
+    <ExportManifestEntity path="public/SuiteCRM Analytics/Dashboards/SalesPerformanceSecurityDashboard.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="SalesPerformanceSecurityDashboard.cdfde" createdDate="2021-03-14T13:23:41.353Z" isFolder="false" path="Dashboards/SalesPerformanceSecurityDashboard.cdfde" isHidden="true" isSchedulable="true" locale="en_GB" title="SalesPerformanceSecurityDashboard.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="public/SuiteCRM Analytics/Dashboards/SalesPerformanceSecurityDashboard.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="SalesPerformanceSecurityDashboard.wcdf" createdDate="2021-03-14T13:23:41.158Z" isFolder="false" path="Dashboards/SalesPerformanceSecurityDashboard.wcdf" isHidden="false" isSchedulable="true" locale="en_GB" description="CampaignPerformanceDashboard" title="SalesPerformanceSecurityDashboard"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
     <ExportManifestEntity path="public/SuiteCRM Analytics/Reports">
         <ExportManifestProperty>
             <EntityMetaData name="Reports" createdDate="2020-12-14T10:06:56.695Z" isFolder="true" path="public/SuiteCRM Analytics/Reports" isHidden="false" isSchedulable="true" locale="en_GB" title="Reports"/>
