@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="Q1" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="Q1" id="Q1" type="mdx">
+      <Name>Q1</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select NON EMPTY {[Measures].[Total Sales Quantity]} ON COLUMNS,
+  NON EMPTY [Account].[All Accounts].Children ON ROWS
+from [Sales Analysis]]]></Query>
+   </DataAccess>
+</CDADescriptor>

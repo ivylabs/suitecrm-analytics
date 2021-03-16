@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
     <ExportManifestInformation exportDate="15-12-2020 12:48:55 UTC" exportBy="admin" rootFolder="/" manifestVersion="2"/>
+    
+    <ExportManifestMondrian file="schema.xml">
+        <catalogName>SuiteCRM Analytics</catalogName>
+        <xmlaEnabled>false</xmlaEnabled>
+        <parameters>
+            <entries>
+                <entry key="EnableXmla" value="false"/>
+                <entry key="overwrite" value="false"/>
+                <entry key="Provider" value="mondrian"/>
+                <entry key="DataSource" value="SuiteCRMAnalytics"/>
+            </entries>
+        </parameters>
+    </ExportManifestMondrian>
+    
+    <ExportManifestDatasource>
+        <accessType>JNDI</accessType>
+        <accessTypeValue>JNDI</accessTypeValue>
+        <attributes>
+            <entry>
+                <key>PORT_NUMBER</key>
+                <value>0</value>
+            </entry>
+        </attributes>
+        <changed>false</changed>
+        <connectSql></connectSql>
+        <connectionPoolingProperties/>
+        <dataTablespace></dataTablespace>
+        <databaseName>SuiteCRMAnalytics</databaseName>
+        <databasePort>0</databasePort>
+        <databaseType>
+            <defaultDatabasePort>3306</defaultDatabasePort>
+            <extraOptionsHelpUrl>http://dev.mysql.com/doc/refman/5.0/en/connector-j-reference-configuration-properties.html</extraOptionsHelpUrl>
+            <name>MySQL</name>
+            <shortName>MYSQL</shortName>
+            <supportedAccessTypes>NATIVE</supportedAccessTypes>
+            <supportedAccessTypes>ODBC</supportedAccessTypes>
+            <supportedAccessTypes>JNDI</supportedAccessTypes>
+        </databaseType>
+        <extraOptions/>
+        <extraOptionsOrder/>
+        <forcingIdentifiersToLowerCase>false</forcingIdentifiersToLowerCase>
+        <forcingIdentifiersToUpperCase>false</forcingIdentifiersToUpperCase>
+        <hostname></hostname>
+        <id>f5b54cef-22cf-4451-891d-6ea079ea61c3</id>
+        <indexTablespace></indexTablespace>
+        <informixServername></informixServername>
+        <initialPoolSize>0</initialPoolSize>
+        <maximumPoolSize>0</maximumPoolSize>
+        <name>SuiteCRMAnalytics</name>
+        <partitioned>false</partitioned>
+        <password></password>
+        <quoteAllFields>false</quoteAllFields>
+        <streamingResults>false</streamingResults>
+        <username>root@localhost</username>
+        <usingConnectionPool>true</usingConnectionPool>
+        <usingDoubleDecimalAsSchemaTableSeparator>false</usingDoubleDecimalAsSchemaTableSeparator>
+    </ExportManifestDatasource>
+
+    
     <ExportManifestEntity path="public">
         <ExportManifestProperty>
             <EntityMetaData name="public" createdDate="2020-12-14T10:06:54.668Z" isFolder="true" path="public" isHidden="false" isSchedulable="true" locale="en_GB" title="Public"/>
@@ -1482,21 +1541,65 @@
             </EntityAcl>
         </ExportManifestProperty>
     </ExportManifestEntity>
+
     <ExportManifestUser>
         <username>pat</username>
         <roles>Authenticated</roles>
         <roles>Business Analyst</roles>
+        <roles>Power User</roles>
+        <roles>EnglandAccounts</roles>
+        <roles>WalesAccounts</roles>
+        <roles>EnglandAgents</roles>
+        <roles>WalesAgents</roles>
         <roles>Support</roles>
         <password>{SHA-256}e6db340521dd0055-1000-23850dcd7f0a9e8dc39819a547ed2d28a1132f83c84a8826724ba4612a07bf3e</password>
     </ExportManifestUser>
-<!--
+
+    <ExportManifestUser>
+        <username>suzy</username>
+        <roles>Authenticated</roles>
+        <roles>Business Analyst</roles>
+        <roles>Power User</roles>
+        <roles>ScotlandAccounts</roles>
+        <roles>ScotlandAgents</roles>
+        <password>{SHA-256}e6db340521dd0055-1000-23850dcd7f0a9e8dc39819a547ed2d28a1132f83c84a8826724ba4612a07bf3e</password>
+    </ExportManifestUser>
+
+    <ExportManifestUser>
+        <username>tiffany</username>
+        <roles>Authenticated</roles>
+        <roles>Business Analyst</roles>
+        <roles>Power User</roles>
+        <password>{SHA-256}e6db340521dd0055-1000-23850dcd7f0a9e8dc39819a547ed2d28a1132f83c84a8826724ba4612a07bf3e</password>
+    </ExportManifestUser>
+    <!--
     <ExportManifestUser>
         <username>reporting</username>
         <roles>Authenticated</roles>
         <password>{SHA-256}e6db340521dd0055-1000-23850dcd7f0a9e8dc39819a547ed2d28a1132f83c84a8826724ba4612a07bf3e</password>
     </ExportManifestUser>
--->
+    -->
     <ExportManifestRole>
         <rolename>Support</rolename>
     </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>EnglandAccounts</rolename>
+    </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>ScotlandAccounts</rolename>
+    </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>WalesAccounts</rolename>
+    </ExportManifestRole>
+    
+    <ExportManifestRole>
+        <rolename>EnglandAgents</rolename>
+    </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>ScotlandAgents</rolename>
+    </ExportManifestRole>
+    <ExportManifestRole>
+        <rolename>WalesAgents</rolename>
+    </ExportManifestRole>
+    
 </ns2:ExportManifest>
