@@ -111,660 +111,660 @@
       },
       {
         "id" : "67600587-60ea-3046-ca7a-e0c1ac6f4c1e",
-        "type" : "ComponentsTable",
-        "typeDesc" : "Table Component",
         "parent" : "STANDARDCOMPONENTS",
         "properties" : [
           {
             "name" : "name",
-            "value" : "topAccountTableComponent",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "topAccountTableComponent"
           },
           {
             "name" : "expandContainerObject",
-            "value" : "",
-            "type" : "HtmlTarget"
+            "type" : "HtmlTarget",
+            "value" : ""
           },
           {
             "name" : "listeners",
-            "value" : "[\u0022${p:homeTrigger}\u0022]",
-            "type" : "Listeners"
+            "type" : "Listeners",
+            "value" : "[\u0022${p:homeTrigger}\u0022]"
           },
           {
             "name" : "oLanguage",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "language",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "colFormats",
-            "value" : "[]",
-            "type" : "ColFormatsArray"
+            "type" : "ColFormatsArray",
+            "value" : "[]"
           },
           {
             "name" : "colHeaders",
-            "value" : "[\u0022Account\u0022,\u0022Sales Revenue\u0022,\u0022Sales Quantity\u0022]",
-            "type" : "ColHeadersArray"
+            "type" : "ColHeadersArray",
+            "value" : "[\u0022Account\u0022,\u0022Sales Revenue\u0022,\u0022Sales Quantity\u0022]"
           },
           {
             "name" : "colSortable",
-            "value" : "[]",
-            "type" : "ColSortableArray"
+            "type" : "ColSortableArray",
+            "value" : "[]"
           },
           {
             "name" : "colTypes",
-            "value" : "[\u0022string\u0022,\u0022numeric\u0022,\u0022numeric\u0022]",
-            "type" : "colTypesCustom"
+            "type" : "colTypesCustom",
+            "value" : "[\u0022string\u0022,\u0022numeric\u0022,\u0022numeric\u0022]"
           },
           {
             "name" : "colWidths",
-            "value" : "[]",
-            "type" : "ColWidthsArray"
+            "type" : "ColWidthsArray",
+            "value" : "[]"
           },
           {
             "name" : "expandParameters",
-            "value" : "[]",
-            "type" : "ExpandParameters"
+            "type" : "ExpandParameters",
+            "value" : "[]"
           },
           {
             "name" : "parameters",
-            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022]]",
-            "type" : "ValuesArray"
+            "type" : "ValuesArray",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022]]"
           },
           {
             "name" : "displayLength",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "expandOnClick",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "filter",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "info",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "lengthChange",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "paginate",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "sort",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "colSearchable",
-            "value" : "[]",
-            "type" : "ColSearchableArray"
+            "type" : "ColSearchableArray",
+            "value" : "[]"
           },
           {
             "name" : "drawCallback",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "dataSource",
-            "value" : "qTopSalesByAccountDS",
-            "type" : "Datasource"
+            "type" : "Datasource",
+            "value" : "qTopSalesByAccountDS"
           },
           {
             "name" : "sDom",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "sortBy",
-            "value" : "[]",
-            "type" : "SortByArray"
+            "type" : "SortByArray",
+            "value" : "[]"
           },
           {
             "name" : "priority",
-            "value" : 5,
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : 5
           },
           {
             "name" : "refreshPeriod",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "silent",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "clearsBeforePreExecution",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           },
           {
             "name" : "paginationType",
-            "value" : "simple_numbers",
-            "type" : "PaginationType"
+            "type" : "PaginationType",
+            "value" : "simple_numbers"
           },
           {
             "name" : "tableStyle",
-            "value" : "",
-            "type" : "TableStyle"
+            "type" : "TableStyle",
+            "value" : ""
           },
           {
             "name" : "htmlObject",
-            "value" : "${h:topAccountTableAnchor}",
-            "type" : "HtmlObject"
+            "type" : "HtmlObject",
+            "value" : "${h:topAccountTableAnchor}"
           },
           {
             "name" : "executeAtStart",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           },
           {
             "name" : "paginateServerside",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "failureCallback",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "preExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postFetch",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "preChange",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postChange",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "extraOptions",
-            "value" : "[]",
-            "type" : "ExtraOptionsArray"
+            "type" : "ExtraOptionsArray",
+            "value" : "[]"
           },
           {
             "name" : "tooltip",
-            "value" : "",
-            "type" : "Html"
+            "type" : "Html",
+            "value" : ""
           },
           {
             "name" : "clickAction",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           }
         ],
-        "rowName" : "Table Component"
+        "rowName" : "Table Component",
+        "type" : "ComponentsTable",
+        "typeDesc" : "Table Component"
       },
       {
         "id" : "64d957d8-5d2c-9364-7fcd-8f46485e39bd",
-        "type" : "ComponentsTable",
-        "typeDesc" : "Table Component",
         "parent" : "STANDARDCOMPONENTS",
         "properties" : [
           {
             "name" : "name",
-            "value" : "topAgentTableComponent",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "topAgentTableComponent"
           },
           {
             "name" : "expandContainerObject",
-            "value" : "",
-            "type" : "HtmlTarget"
+            "type" : "HtmlTarget",
+            "value" : ""
           },
           {
             "name" : "listeners",
-            "value" : "[\u0022${p:homeTrigger}\u0022]",
-            "type" : "Listeners"
+            "type" : "Listeners",
+            "value" : "[\u0022${p:homeTrigger}\u0022]"
           },
           {
             "name" : "oLanguage",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "language",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "colFormats",
-            "value" : "[]",
-            "type" : "ColFormatsArray"
+            "type" : "ColFormatsArray",
+            "value" : "[]"
           },
           {
             "name" : "colHeaders",
-            "value" : "[\u0022Agent\u0022,\u0022Sales Revenue\u0022,\u0022Sales Quantity\u0022]",
-            "type" : "ColHeadersArray"
+            "type" : "ColHeadersArray",
+            "value" : "[\u0022Agent\u0022,\u0022Sales Revenue\u0022,\u0022Sales Quantity\u0022]"
           },
           {
             "name" : "colSortable",
-            "value" : "[]",
-            "type" : "ColSortableArray"
+            "type" : "ColSortableArray",
+            "value" : "[]"
           },
           {
             "name" : "colTypes",
-            "value" : "[\u0022string\u0022,\u0022numeric\u0022,\u0022numeric\u0022]",
-            "type" : "colTypesCustom"
+            "type" : "colTypesCustom",
+            "value" : "[\u0022string\u0022,\u0022numeric\u0022,\u0022numeric\u0022]"
           },
           {
             "name" : "colWidths",
-            "value" : "[]",
-            "type" : "ColWidthsArray"
+            "type" : "ColWidthsArray",
+            "value" : "[]"
           },
           {
             "name" : "expandParameters",
-            "value" : "[]",
-            "type" : "ExpandParameters"
+            "type" : "ExpandParameters",
+            "value" : "[]"
           },
           {
             "name" : "parameters",
-            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022]]",
-            "type" : "ValuesArray"
+            "type" : "ValuesArray",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022]]"
           },
           {
             "name" : "displayLength",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "expandOnClick",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "filter",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "info",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "lengthChange",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "paginate",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "sort",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "colSearchable",
-            "value" : "[]",
-            "type" : "ColSearchableArray"
+            "type" : "ColSearchableArray",
+            "value" : "[]"
           },
           {
             "name" : "drawCallback",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "dataSource",
-            "value" : "qTopSalesByAgentDS",
-            "type" : "Datasource"
+            "type" : "Datasource",
+            "value" : "qTopSalesByAgentDS"
           },
           {
             "name" : "sDom",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "sortBy",
-            "value" : "[]",
-            "type" : "SortByArray"
+            "type" : "SortByArray",
+            "value" : "[]"
           },
           {
             "name" : "priority",
-            "value" : 5,
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : 5
           },
           {
             "name" : "refreshPeriod",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "silent",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "clearsBeforePreExecution",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           },
           {
             "name" : "paginationType",
-            "value" : "simple_numbers",
-            "type" : "PaginationType"
+            "type" : "PaginationType",
+            "value" : "simple_numbers"
           },
           {
             "name" : "tableStyle",
-            "value" : "",
-            "type" : "TableStyle"
+            "type" : "TableStyle",
+            "value" : ""
           },
           {
             "name" : "htmlObject",
-            "value" : "${h:topAgentTableAnchor}",
-            "type" : "HtmlObject"
+            "type" : "HtmlObject",
+            "value" : "${h:topAgentTableAnchor}"
           },
           {
             "name" : "executeAtStart",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           },
           {
             "name" : "paginateServerside",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "failureCallback",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "preExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postFetch",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "preChange",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postChange",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "extraOptions",
-            "value" : "[]",
-            "type" : "ExtraOptionsArray"
+            "type" : "ExtraOptionsArray",
+            "value" : "[]"
           },
           {
             "name" : "tooltip",
-            "value" : "",
-            "type" : "Html"
+            "type" : "Html",
+            "value" : ""
           },
           {
             "name" : "clickAction",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           }
         ],
-        "rowName" : "Table Component"
+        "rowName" : "Table Component",
+        "type" : "ComponentsTable",
+        "typeDesc" : "Table Component"
       },
       {
         "id" : "03dd22d2-ed75-d963-e9fb-a6521256edf5",
-        "type" : "ComponentsTable",
-        "typeDesc" : "Table Component",
         "parent" : "STANDARDCOMPONENTS",
         "properties" : [
           {
             "name" : "name",
-            "value" : "topCategoryTableComponent",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "topCategoryTableComponent"
           },
           {
             "name" : "expandContainerObject",
-            "value" : "",
-            "type" : "HtmlTarget"
+            "type" : "HtmlTarget",
+            "value" : ""
           },
           {
             "name" : "listeners",
-            "value" : "[\u0022${p:homeTrigger}\u0022]",
-            "type" : "Listeners"
+            "type" : "Listeners",
+            "value" : "[\u0022${p:homeTrigger}\u0022]"
           },
           {
             "name" : "oLanguage",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "language",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "colFormats",
-            "value" : "[]",
-            "type" : "ColFormatsArray"
+            "type" : "ColFormatsArray",
+            "value" : "[]"
           },
           {
             "name" : "colHeaders",
-            "value" : "[\u0022Product Category\u0022,\u0022Sales Revenue\u0022,\u0022Sales Quantity\u0022]",
-            "type" : "ColHeadersArray"
+            "type" : "ColHeadersArray",
+            "value" : "[\u0022Product Category\u0022,\u0022Sales Revenue\u0022,\u0022Sales Quantity\u0022]"
           },
           {
             "name" : "colSortable",
-            "value" : "[]",
-            "type" : "ColSortableArray"
+            "type" : "ColSortableArray",
+            "value" : "[]"
           },
           {
             "name" : "colTypes",
-            "value" : "[\u0022string\u0022,\u0022numeric\u0022,\u0022numeric\u0022]",
-            "type" : "colTypesCustom"
+            "type" : "colTypesCustom",
+            "value" : "[\u0022string\u0022,\u0022numeric\u0022,\u0022numeric\u0022]"
           },
           {
             "name" : "colWidths",
-            "value" : "[]",
-            "type" : "ColWidthsArray"
+            "type" : "ColWidthsArray",
+            "value" : "[]"
           },
           {
             "name" : "expandParameters",
-            "value" : "[]",
-            "type" : "ExpandParameters"
+            "type" : "ExpandParameters",
+            "value" : "[]"
           },
           {
             "name" : "parameters",
-            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022]]",
-            "type" : "ValuesArray"
+            "type" : "ValuesArray",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022]]"
           },
           {
             "name" : "displayLength",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "expandOnClick",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "filter",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "info",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "lengthChange",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "paginate",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "sort",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "colSearchable",
-            "value" : "[]",
-            "type" : "ColSearchableArray"
+            "type" : "ColSearchableArray",
+            "value" : "[]"
           },
           {
             "name" : "drawCallback",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "dataSource",
-            "value" : "qTopSalesByCategoryDS",
-            "type" : "Datasource"
+            "type" : "Datasource",
+            "value" : "qTopSalesByCategoryDS"
           },
           {
             "name" : "sDom",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "sortBy",
-            "value" : "[]",
-            "type" : "SortByArray"
+            "type" : "SortByArray",
+            "value" : "[]"
           },
           {
             "name" : "priority",
-            "value" : 5,
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : 5
           },
           {
             "name" : "refreshPeriod",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "silent",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "clearsBeforePreExecution",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           },
           {
             "name" : "paginationType",
-            "value" : "simple_numbers",
-            "type" : "PaginationType"
+            "type" : "PaginationType",
+            "value" : "simple_numbers"
           },
           {
             "name" : "tableStyle",
-            "value" : "",
-            "type" : "TableStyle"
+            "type" : "TableStyle",
+            "value" : ""
           },
           {
             "name" : "htmlObject",
-            "value" : "${h:topCategoryTableAnchor}",
-            "type" : "HtmlObject"
+            "type" : "HtmlObject",
+            "value" : "${h:topCategoryTableAnchor}"
           },
           {
             "name" : "executeAtStart",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           },
           {
             "name" : "paginateServerside",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "failureCallback",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "preExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postFetch",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "preChange",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postChange",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "extraOptions",
-            "value" : "[]",
-            "type" : "ExtraOptionsArray"
+            "type" : "ExtraOptionsArray",
+            "value" : "[]"
           },
           {
             "name" : "tooltip",
-            "value" : "",
-            "type" : "Html"
+            "type" : "Html",
+            "value" : ""
           },
           {
             "name" : "clickAction",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           }
         ],
-        "rowName" : "Table Component"
+        "rowName" : "Table Component",
+        "type" : "ComponentsTable",
+        "typeDesc" : "Table Component"
       },
       {
         "id" : "PARAMETERS",
@@ -9694,7 +9694,7 @@
           {
             "name" : "postChange",
             "type" : "JavaScript",
-            "value" : "function d(newParameterValue){\n\n    var dashboard = Dashboards;\n    \n    if(newParameterValue === \u00220\u0022){\n        $(\u0027#selectDateFromAnchorDatePicker\u0027).prop(\u0027disabled\u0027,false);\n        $(\u0027#selectDateToAnchorDatePicker\u0027).prop(\u0027disabled\u0027,false);\n    } else {\n        $(\u0027#selectDateFromAnchorDatePicker\u0027).prop(\u0027disabled\u0027,true);\n        $(\u0027#selectDateToAnchorDatePicker\u0027).prop(\u0027disabled\u0027,true);\n    }\n} "
+            "value" : "function d(newParameterValue){\n\n    var dashboard = Dashboards,\n    today = new Date();\n    \n    if(newParameterValue === \u00220\u0022){\n        $(\u0027#selectDateFromAnchorDatePicker\u0027).prop(\u0027disabled\u0027,false);\n        $(\u0027#selectDateToAnchorDatePicker\u0027).prop(\u0027disabled\u0027,false);\n    } else {\n        $(\u0027#selectDateFromAnchorDatePicker\u0027).prop(\u0027disabled\u0027,true);\n        $(\u0027#selectDateToAnchorDatePicker\u0027).prop(\u0027disabled\u0027,true);\n    }\n    \n    switch (newParameterValue) {\n        case \u00220\u0022:\n            // Custom Date Range\n            \n            break;\n        case \u00221\u0022:\n            // Last 30 Days\n            $(\u0027#selectDateFromAnchorDatePicker\u0027).val(dashboard.dateFormat(getThirtyDaysAgo(),\u0027YYYY-MM-DD\u0027));\n            $(\u0027#selectDateToAnchorDatePicker\u0027).val(dashboard.dateFormat(getTodaysDate(),\u0027YYYY-MM-DD\u0027));\n            break;\n        case \u00223\u0022:\n            // Previous 3 Months\n            $(\u0027#selectDateFromAnchorDatePicker\u0027).val(dashboard.dateFormat(new Date(today.getFullYear(), today.getMonth()-3, 1),\u0027YYYY-MM-DD\u0027));\n            $(\u0027#selectDateToAnchorDatePicker\u0027).val(dashboard.dateFormat(new Date(today.getFullYear(), today.getMonth(), 0),\u0027YYYY-MM-DD\u0027));\n            break;\n        case \u00226\u0022:\n            // Previous 6 Months\n            $(\u0027#selectDateFromAnchorDatePicker\u0027).val(dashboard.dateFormat(new Date(today.getFullYear(), today.getMonth()-6, 1),\u0027YYYY-MM-DD\u0027));\n            $(\u0027#selectDateToAnchorDatePicker\u0027).val(dashboard.dateFormat(new Date(today.getFullYear(), today.getMonth(), 0),\u0027YYYY-MM-DD\u0027));\n            break;\n        case \u002212\u0022:\n            // Previous 12 Months\n            $(\u0027#selectDateFromAnchorDatePicker\u0027).val(dashboard.dateFormat(new Date(today.getFullYear(), today.getMonth()-12, 1),\u0027YYYY-MM-DD\u0027));\n            $(\u0027#selectDateToAnchorDatePicker\u0027).val(dashboard.dateFormat(new Date(today.getFullYear(), today.getMonth(), 0),\u0027YYYY-MM-DD\u0027));\n            break;\n    }\n} "
           }
         ],
         "rowName" : "Bootstrap Select",
@@ -10932,329 +10932,329 @@
       },
       {
         "id" : "05878214-fe57-2ba4-539e-0d5e49bc2403",
-        "type" : "LayoutRow",
-        "typeDesc" : "Row",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "name",
-            "value" : "",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : ""
           },
           {
             "name" : "height",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "backgroundColor",
-            "value" : "",
-            "type" : "Color"
+            "type" : "Color",
+            "value" : ""
           },
           {
             "name" : "roundCorners",
-            "value" : "",
-            "type" : "RoundCorners"
+            "type" : "RoundCorners",
+            "value" : ""
           },
           {
             "name" : "textAlign",
-            "value" : "",
-            "type" : "TextAlign"
+            "type" : "TextAlign",
+            "value" : ""
           },
           {
             "name" : "cssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           }
-        ]
+        ],
+        "type" : "LayoutRow",
+        "typeDesc" : "Row"
       },
       {
         "id" : "2149a904-f54e-9288-e816-e5b7a467bde7",
-        "type" : "LayoutBootstrapColumn",
-        "typeDesc" : "Column",
         "parent" : "05878214-fe57-2ba4-539e-0d5e49bc2403",
         "properties" : [
           {
             "name" : "name",
-            "value" : "",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : ""
           },
           {
             "name" : "bootstrapExtraSmall",
-            "value" : "12",
-            "type" : "String"
+            "type" : "String",
+            "value" : "12"
           },
           {
             "name" : "bootstrapSmall",
-            "value" : "12",
-            "type" : "String"
+            "type" : "String",
+            "value" : "12"
           },
           {
             "name" : "bootstrapMedium",
-            "value" : "4",
-            "type" : "String"
+            "type" : "String",
+            "value" : "4"
           },
           {
             "name" : "bootstrapLarge",
-            "value" : "4",
-            "type" : "String"
+            "type" : "String",
+            "value" : "4"
           },
           {
             "name" : "bootstrapCssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           },
           {
             "name" : "height",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "backgroundColor",
-            "value" : "",
-            "type" : "Color"
+            "type" : "Color",
+            "value" : ""
           },
           {
             "name" : "roundCorners",
-            "value" : "",
-            "type" : "RoundCorners"
+            "type" : "RoundCorners",
+            "value" : ""
           },
           {
             "name" : "textAlign",
-            "value" : "",
-            "type" : "TextAlign"
+            "type" : "TextAlign",
+            "value" : ""
           },
           {
             "name" : "cssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           }
-        ]
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
       },
       {
         "id" : "380be16d-b61e-4604-c8ba-d09cc0305b4c",
-        "type" : "LayoutHtml",
-        "typeDesc" : "Html",
         "parent" : "2149a904-f54e-9288-e816-e5b7a467bde7",
         "properties" : [
           {
             "name" : "name",
-            "value" : "",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : ""
           },
           {
             "name" : "html",
-            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003ETop 5 Accounts\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topSalesByAccountPieAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n        \u003Cdiv id=\u0022topAccountTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E ",
-            "type" : "Html"
+            "type" : "Html",
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003ETop 5 Accounts\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topSalesByAccountPieAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n        \u003Cdiv id=\u0022topAccountTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
           },
           {
             "name" : "fontSize",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "color",
-            "value" : "",
-            "type" : "Color"
+            "type" : "Color",
+            "value" : ""
           },
           {
             "name" : "cssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           }
-        ]
+        ],
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html"
       },
       {
         "id" : "d3b0cc20-c759-dc32-8f54-57ff9c68e12c",
-        "type" : "LayoutBootstrapColumn",
-        "typeDesc" : "Column",
         "parent" : "05878214-fe57-2ba4-539e-0d5e49bc2403",
         "properties" : [
           {
             "name" : "name",
-            "value" : "",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : ""
           },
           {
             "name" : "bootstrapExtraSmall",
-            "value" : "12",
-            "type" : "String"
+            "type" : "String",
+            "value" : "12"
           },
           {
             "name" : "bootstrapSmall",
-            "value" : "12",
-            "type" : "String"
+            "type" : "String",
+            "value" : "12"
           },
           {
             "name" : "bootstrapMedium",
-            "value" : "4",
-            "type" : "String"
+            "type" : "String",
+            "value" : "4"
           },
           {
             "name" : "bootstrapLarge",
-            "value" : "4",
-            "type" : "String"
+            "type" : "String",
+            "value" : "4"
           },
           {
             "name" : "bootstrapCssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           },
           {
             "name" : "height",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "backgroundColor",
-            "value" : "",
-            "type" : "Color"
+            "type" : "Color",
+            "value" : ""
           },
           {
             "name" : "roundCorners",
-            "value" : "",
-            "type" : "RoundCorners"
+            "type" : "RoundCorners",
+            "value" : ""
           },
           {
             "name" : "textAlign",
-            "value" : "",
-            "type" : "TextAlign"
+            "type" : "TextAlign",
+            "value" : ""
           },
           {
             "name" : "cssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           }
-        ]
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
       },
       {
         "id" : "c076cc92-db8a-8b86-8ec7-301ee4092f64",
-        "type" : "LayoutHtml",
-        "typeDesc" : "Html",
         "parent" : "d3b0cc20-c759-dc32-8f54-57ff9c68e12c",
         "properties" : [
           {
             "name" : "name",
-            "value" : "",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : ""
           },
           {
             "name" : "html",
-            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003ETop 5 Agents\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topSalesByAgentPieAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n        \u003Cdiv id=\u0022topAgentTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E ",
-            "type" : "Html"
+            "type" : "Html",
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003ETop 5 Agents\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topSalesByAgentPieAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n        \u003Cdiv id=\u0022topAgentTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
           },
           {
             "name" : "fontSize",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "color",
-            "value" : "",
-            "type" : "Color"
+            "type" : "Color",
+            "value" : ""
           },
           {
             "name" : "cssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           }
-        ]
+        ],
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html"
       },
       {
         "id" : "91d0ee29-f41a-f084-2680-90e1241fd65a",
-        "type" : "LayoutBootstrapColumn",
-        "typeDesc" : "Column",
         "parent" : "05878214-fe57-2ba4-539e-0d5e49bc2403",
         "properties" : [
           {
             "name" : "name",
-            "value" : "",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : ""
           },
           {
             "name" : "bootstrapExtraSmall",
-            "value" : "12",
-            "type" : "String"
+            "type" : "String",
+            "value" : "12"
           },
           {
             "name" : "bootstrapSmall",
-            "value" : "12",
-            "type" : "String"
+            "type" : "String",
+            "value" : "12"
           },
           {
             "name" : "bootstrapMedium",
-            "value" : "4",
-            "type" : "String"
+            "type" : "String",
+            "value" : "4"
           },
           {
             "name" : "bootstrapLarge",
-            "value" : "4",
-            "type" : "String"
+            "type" : "String",
+            "value" : "4"
           },
           {
             "name" : "bootstrapCssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           },
           {
             "name" : "height",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "backgroundColor",
-            "value" : "",
-            "type" : "Color"
+            "type" : "Color",
+            "value" : ""
           },
           {
             "name" : "roundCorners",
-            "value" : "",
-            "type" : "RoundCorners"
+            "type" : "RoundCorners",
+            "value" : ""
           },
           {
             "name" : "textAlign",
-            "value" : "",
-            "type" : "TextAlign"
+            "type" : "TextAlign",
+            "value" : ""
           },
           {
             "name" : "cssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           }
-        ]
+        ],
+        "type" : "LayoutBootstrapColumn",
+        "typeDesc" : "Column"
       },
       {
         "id" : "28cdfe8a-fad9-8b1f-ff44-6a3aec98ffa1",
-        "type" : "LayoutHtml",
-        "typeDesc" : "Html",
         "parent" : "91d0ee29-f41a-f084-2680-90e1241fd65a",
         "properties" : [
           {
             "name" : "name",
-            "value" : "",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : ""
           },
           {
             "name" : "html",
-            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003ETop 5 Categories\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topSalesByCategoryPieAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n        \u003Cdiv id=\u0022topCategoryTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E \n\n ",
-            "type" : "Html"
+            "type" : "Html",
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003ETop 5 Categories\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topSalesByCategoryPieAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n        \u003Cdiv id=\u0022topCategoryTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E \n\n "
           },
           {
             "name" : "fontSize",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "color",
-            "value" : "",
-            "type" : "Color"
+            "type" : "Color",
+            "value" : ""
           },
           {
             "name" : "cssClass",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           }
-        ]
+        ],
+        "type" : "LayoutHtml",
+        "typeDesc" : "Html"
       }
     ],
     "title" : "CDF - Sample structure"
