@@ -1,0 +1,356 @@
+{
+  "components" : {
+    "rows" : [ ]
+  },
+  "datasources" : {
+    "rows" : [
+      {
+        "id" : "MDX",
+        "name" : "MDX Queries",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "MDX Queries"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "c51510fe-256b-a8bb-4620-e97a92092aa7",
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTopRevenueQuantityByDimensionLevelQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "catalog",
+            "type" : "MondrianCatalog",
+            "value" : "mondrian:/SuiteCRM+Analytics"
+          },
+          {
+            "name" : "query",
+            "type" : "CurrentMdxQuery",
+            "value" : "select NON EMPTY {[Measures].[Total Sales Revenue],[Measures].[Total Sales Quantity]} ON COLUMNS,\n  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[Total Sales Revenue], BDESC),5) ON ROWS\nfrom [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220210101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dimensionParam\u0022,\u0022Product\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022levelParam\u0022,\u0022Product Category\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "bandedMode",
+            "type" : "BandedMode",
+            "value" : "compact"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Product Category\u0022],[\u00221\u0022,\u0022Average Revenue\u0022],[\u00222\u0022,\u0022Quantity\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "mdx over mondrianJndi",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi"
+      },
+      {
+        "id" : "b387ad71-65bb-015f-8160-cbb8841b99cf",
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTopMeasureByDimensionLevelQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "catalog",
+            "type" : "MondrianCatalog",
+            "value" : "mondrian:/SuiteCRM+Analytics"
+          },
+          {
+            "name" : "query",
+            "type" : "CurrentMdxQuery",
+            "value" : "select NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,\n  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[${measureParam}], BDESC),5) ON ROWS\nfrom [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220210101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dimensionParam\u0022,\u0022Product\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022levelParam\u0022,\u0022Product Category\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022measureParam\u0022,\u0022Total Sales Revenue\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "bandedMode",
+            "type" : "BandedMode",
+            "value" : "compact"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Dimension\u0022],[\u00221\u0022,\u0022Average Revenue\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "mdx over mondrianJndi",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi"
+      },
+      {
+        "id" : "9ee86f45-5b65-b32f-e72f-9f356aef8610",
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qAverageRevenueByProductCategoryQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "catalog",
+            "type" : "MondrianCatalog",
+            "value" : "mondrian:/SuiteCRM+Analytics"
+          },
+          {
+            "name" : "query",
+            "type" : "CurrentMdxQuery",
+            "value" : "with member [Measures].[Average Revenue] as \u0027([Measures].[Total Sales Revenue] / [Measures].[Total Sales Quantity])\u0027\nselect NON EMPTY {[Measures].[Total Sales Quantity], [Measures].[Average Revenue]} ON COLUMNS,\n  NON EMPTY [Product].[All Products].Children ON ROWS\nfrom [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220210101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022datePeriodParam\u0022,\u0022Month\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022measureParam\u0022,\u0022Total Sales\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "bandedMode",
+            "type" : "BandedMode",
+            "value" : "compact"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Product Category\u0022],[\u00221\u0022,\u0022Quantity Sold\u0022],[\u00222\u0022,\u0022Average Revenue\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "mdx over mondrianJndi",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi"
+      },
+      {
+        "id" : "bf7e15ef-c113-dbc1-4efc-fd5735523706",
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalMeasureByPeriodQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "catalog",
+            "type" : "MondrianCatalog",
+            "value" : "mondrian:/SuiteCRM+Analytics"
+          },
+          {
+            "name" : "query",
+            "type" : "CurrentMdxQuery",
+            "value" : "SELECT NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,\n  NON EMPTY [Sale Date.Full Date String].[${datePeriodParam}].Members ON ROWS\nFROM [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220210101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022datePeriodParam\u0022,\u0022Month\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022measureParam\u0022,\u0022Total Sales\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "bandedMode",
+            "type" : "BandedMode",
+            "value" : "compact"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Measure\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "mdx over mondrianJndi",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi"
+      }
+    ]
+  },
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/CDA/SalesPerformanceMDXQueries.cdfde",
+  "layout" : {
+    "rows" : [ ],
+    "title" : "CDF - Sample structure"
+  }
+}
