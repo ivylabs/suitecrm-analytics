@@ -335,13 +335,13 @@
   <Role name="WalesAccounts">
     <SchemaGrant access="all">
       <CubeGrant cube="Sales Analysis" access="all">
-        <HierarchyGrant hierarchy="[Account]" access="custom">
+        <HierarchyGrant hierarchy="[Account]" rollupPolicy="partial" access="custom">
           <MemberGrant member="[Account].[Wales]" access="all">
           </MemberGrant>
         </HierarchyGrant>
       </CubeGrant>
       <CubeGrant cube="Opportunity Management" access="all">
-        <HierarchyGrant hierarchy="[Account]" access="custom">
+        <HierarchyGrant hierarchy="[Account]" rollupPolicy="partial" access="custom">
           <MemberGrant member="[Account].[Wales]" access="all">
           </MemberGrant>
         </HierarchyGrant>
