@@ -350,38 +350,4 @@
   </Role>
   
   
-  <Role name="EnglandAgents">
-    <SchemaGrant access="all">
-      <CubeGrant cube="Opportunity Activities Analysis" access="all">
-        <HierarchyGrant hierarchy="[Agent]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Agent].[England]" access="all">
-          </MemberGrant>
-        </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  
-  <Role name="ScotlandAgents">
-    <SchemaGrant access="all">
-      <CubeGrant cube="Opportunity Activities Analysis" access="all">
-        <HierarchyGrant hierarchy="[Agent]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Agent].[Scotland]" access="all">
-          </MemberGrant>
-        </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  
-  <Role name="WalesAgents">
-    <SchemaGrant access="all">
-      <CubeGrant cube="Opportunity Activities Analysis" access="all">
-        <HierarchyGrant hierarchy="[Agent]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Agent].[Wales]" access="all">
-          </MemberGrant>
-        </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  
-  
 </Schema>
