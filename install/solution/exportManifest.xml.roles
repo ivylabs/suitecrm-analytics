@@ -47,13 +47,3 @@
 <ExportManifestRole>
     <rolename>WalesAccounts</rolename>
 </ExportManifestRole>
-
-<ExportManifestRole>
-    <rolename>EnglandAgents</rolename>
-</ExportManifestRole>
-<ExportManifestRole>
-    <rolename>ScotlandAgents</rolename>
-</ExportManifestRole>
-<ExportManifestRole>
-    <rolename>WalesAgents</rolename>
-</ExportManifestRole>
