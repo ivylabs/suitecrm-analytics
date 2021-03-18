@@ -141,7 +141,7 @@
           {
             "name" : "colFormats",
             "type" : "ColFormatsArray",
-            "value" : "[]"
+            "value" : "[null,\u0022%.2f\u0022,null]"
           },
           {
             "name" : "colHeaders",
@@ -360,7 +360,7 @@
           {
             "name" : "colFormats",
             "type" : "ColFormatsArray",
-            "value" : "[]"
+            "value" : "[null,\u0022%.2f\u0022,null]"
           },
           {
             "name" : "colHeaders",
@@ -579,7 +579,7 @@
           {
             "name" : "colFormats",
             "type" : "ColFormatsArray",
-            "value" : "[]"
+            "value" : "[null,\u0022%.2f\u0022,null]"
           },
           {
             "name" : "colHeaders",
@@ -4255,7 +4255,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022],[\u0022datePeriodParam\u0022,\u0022datePeriodParam\u0022],[\u0022measureParam\u0022,\u0022Total Sales\u0022]]"
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022],[\u0022datePeriodParam\u0022,\u0022datePeriodParam\u0022],[\u0022measureParam\u0022,\u0022Total Sales Profit\u0022]]"
           },
           {
             "name" : "dataSource",

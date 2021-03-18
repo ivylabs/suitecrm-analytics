@@ -105,27 +105,27 @@
       </Level>
     </Hierarchy>
     <Hierarchy name="Full Date String" visible="true" hasAll="true" allMemberName="All Dates" primaryKey="DATE_TK">
-      <Table name="D_DATE" alias="">
+      <Table name="D_DATE">
       </Table>
-      <Level name="Year" visible="true" column="YEAR4" type="Integer" uniqueMembers="false" levelType="TimeYears">
+      <Level name="Year" visible="true" column="YEAR4" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
       </Level>
-      <Level name="Quarter" visible="true" column="YYYY-QQQ" ordinalColumn="QUARTER2" type="String" uniqueMembers="false" levelType="TimeQuarters">
+      <Level name="Quarter" visible="true" column="YYYY-QQQ" ordinalColumn="QUARTER2" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
       </Level>
-      <Level name="Month" visible="true" column="YYYY-MM" ordinalColumn="MONTH2" type="String" uniqueMembers="false" levelType="TimeMonths">
+      <Level name="Month" visible="true" column="YYYY-MM" ordinalColumn="MONTH2" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
       </Level>
-      <Level name="Day" visible="true" column="YYYY-MM-DD" ordinalColumn="DATE_TK" type="String" uniqueMembers="false" levelType="TimeDays">
+      <Level name="Day" visible="true" column="YYYY-MM-DD" ordinalColumn="DATE_TK" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
       </Level>
     </Hierarchy>
     <Hierarchy name="Full Date Flat" visible="true" hasAll="true" allMemberName="All Dates" primaryKey="DATE_TK">
-      <Table name="D_DATE" alias="">
+      <Table name="D_DATE">
       </Table>
-      <Level name="Date" visible="true" column="YYYY-MM-DD" type="Date" uniqueMembers="false" levelType="TimeDays">
+      <Level name="Date" visible="true" column="YYYY-MM-DD" type="Date" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
       </Level>
     </Hierarchy>
     <Hierarchy name="Date TK" visible="true" hasAll="true" allMemberName="All Date TKs" primaryKey="DATE_TK">
-      <Table name="D_DATE" alias="">
+      <Table name="D_DATE">
       </Table>
-      <Level name="Date TK" visible="true" column="DATE_TK" type="Integer" uniqueMembers="false" levelType="TimeDays">
+      <Level name="Date TK" visible="true" column="DATE_TK" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -252,10 +252,13 @@
     </Measure>
     <Measure name="Total Sales Discount" column="SALE_TOTAL_DISCOUNT_AMOUNT" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="Sale Cost Price" column="SALE_COST_PRICE_AMOUNT" aggregator="sum" visible="false">
+    <Measure name="Total Sales Profit" aggregator="sum" visible="true">
+      <MeasureExpression>
+        <SQL dialect="mysql">
+          <![CDATA[(SALE_TOTAL_AMOUNT-(SALE_COST_PRICE_AMOUNT*SALE_QUANTITY))]]>
+        </SQL>
+      </MeasureExpression>
     </Measure>
-    <CalculatedMember name="Total Sales Profit" formatString="" formula="[Measures].[Total Sales Revenue]-([Measures].[Total Sales Quantity]*[Measures].[Sale Cost Price])" dimension="Measures" visible="true">
-    </CalculatedMember>
   </Cube>
   <Cube name="Activities Analysis" visible="true" cache="true" enabled="true">
     <Table name="F_ACTIVITIES">
@@ -348,40 +351,4 @@
       </CubeGrant>
     </SchemaGrant>
   </Role>
-  
-  
-  <Role name="EnglandAgents">
-    <SchemaGrant access="all">
-      <CubeGrant cube="Opportunity Activities Analysis" access="all">
-        <HierarchyGrant hierarchy="[Agent]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Agent].[England]" access="all">
-          </MemberGrant>
-        </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  
-  <Role name="ScotlandAgents">
-    <SchemaGrant access="all">
-      <CubeGrant cube="Opportunity Activities Analysis" access="all">
-        <HierarchyGrant hierarchy="[Agent]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Agent].[Scotland]" access="all">
-          </MemberGrant>
-        </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  
-  <Role name="WalesAgents">
-    <SchemaGrant access="all">
-      <CubeGrant cube="Opportunity Activities Analysis" access="all">
-        <HierarchyGrant hierarchy="[Agent]" rollupPolicy="partial" access="custom">
-          <MemberGrant member="[Agent].[Wales]" access="all">
-          </MemberGrant>
-        </HierarchyGrant>
-      </CubeGrant>
-    </SchemaGrant>
-  </Role>
-  
-  
 </Schema>
