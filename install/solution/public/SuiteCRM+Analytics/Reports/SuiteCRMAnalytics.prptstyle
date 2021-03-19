@@ -38,4 +38,11 @@
       <text-styles bold="true" font-size="12"/>
     </styles>
   </rule>
+  <rule>
+    <selector>.reportGroupTwoHeader</selector>
+    <styles>
+      <common-styles vertical-alignment="middle"/>
+      <text-styles bold="true" font-size="10"/>
+    </styles>
+  </rule>
 </style-definition>

@@ -67,6 +67,9 @@
       <Connection id="pAccountTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pAccountBillingAddressCountyFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pAccountIndustryFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -101,6 +104,15 @@
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pProductTypeFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pUserNameFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pActivityDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pSaleReportDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
    </DataSources>
@@ -422,6 +434,19 @@ SELECT DISTINCT(ACCOUNT_TYPE), 2 AS ORDINAL
 FROM D_ACCOUNTS
 ORDER BY 2,1]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pAccountBillingAddressCountyFilterQuery"
+               id="pAccountBillingAddressCountyFilterQuery"
+               type="sql">
+      <Name>pAccountBillingAddressCountyFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Countries' AS ACCOUNT_BILLING_ADDRESS_COUNTRY, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(ACCOUNT_BILLING_ADDRESS_COUNTRY), 2 AS ORDINAL
+FROM D_ACCOUNTS
+ORDER BY 2,1]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pAccountIndustryFilterQuery"
                id="pAccountIndustryFilterQuery"
                type="sql">
@@ -572,5 +597,57 @@ UNION
 SELECT DISTINCT(PRODUCT_TYPE), 2 AS ORDINAL 
 FROM D_PRODUCTS
 ORDER BY 2,1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pUserNameFilterQuery" id="pUserNameFilterQuery"
+               type="sql">
+      <Name>pUserNameFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Users' AS USER_NAME, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(USER_NAME), 2 AS ORDINAL
+FROM D_USERS
+ORDER BY 2,1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pActivityDateFilterQuery"
+               id="pActivityDateFilterQuery"
+               type="sql">
+      <Name>pActivityDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+UNION
+SELECT
+    DD.`YYYY-MM`
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,2 AS ORDINAL
+	,YYYYMM
+FROM F_ACTIVITIES FA
+INNER JOIN D_DATE DD
+	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pSaleReportDateFilterQuery"
+               id="pSaleReportDateFilterQuery"
+               type="sql">
+      <Name>pSaleReportDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+UNION
+SELECT
+    DD.`YYYY-MM`
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,2 AS ORDINAL
+	,YYYYMM
+FROM F_SALES FS
+INNER JOIN D_DATE DD
+	ON FS.SALE_PAID_DATE_TK = DD.DATE_TK
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
 </CDADescriptor>
