@@ -48,7 +48,7 @@
           {
             "name" : "query",
             "type" : "CurrentMdxQuery",
-            "value" : "select NON EMPTY {[Measures].[Total Sales Revenue],[Measures].[Total Sales Quantity]} ON COLUMNS,\n  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[Total Sales Revenue], BDESC),5) ON ROWS\nfrom [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+            "value" : "select NON EMPTY {[Measures].[Total Sales Revenue],[Measures].[Total Sales Quantity]} ON COLUMNS,\n  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[Total Sales Revenue], BDESC),5) ON ROWS\nfrom [Sales Analysis]\nWHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])"
           },
           {
             "name" : "parameters",
@@ -130,7 +130,7 @@
           {
             "name" : "query",
             "type" : "CurrentMdxQuery",
-            "value" : "select NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,\n  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[${measureParam}], BDESC),5) ON ROWS\nfrom [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+            "value" : "select NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,\n  NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[${measureParam}], BDESC),5) ON ROWS\nfrom [Sales Analysis]\nWHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])"
           },
           {
             "name" : "parameters",
@@ -212,7 +212,7 @@
           {
             "name" : "query",
             "type" : "CurrentMdxQuery",
-            "value" : "with member [Measures].[Average Revenue] as \u0027([Measures].[Total Sales Revenue] / [Measures].[Total Sales Quantity])\u0027\nselect NON EMPTY {[Measures].[Total Sales Quantity], [Measures].[Average Revenue]} ON COLUMNS,\n  NON EMPTY [Product].[All Products].Children ON ROWS\nfrom [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+            "value" : "with member [Measures].[Average Revenue] as \u0027([Measures].[Total Sales Revenue] / [Measures].[Total Sales Quantity])\u0027\nselect NON EMPTY {[Measures].[Total Sales Quantity], [Measures].[Average Revenue]} ON COLUMNS,\n  NON EMPTY [Product].[All Products].Children ON ROWS\nfrom [Sales Analysis]\nWHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])"
           },
           {
             "name" : "parameters",
@@ -294,7 +294,7 @@
           {
             "name" : "query",
             "type" : "CurrentMdxQuery",
-            "value" : "SELECT NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,\n  NON EMPTY [Sale Date.Full Date String].[${datePeriodParam}].Members ON ROWS\nFROM [Sales Analysis]\nWHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])"
+            "value" : "SELECT NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,\n  NON EMPTY [Sale Date.Full Date String].[${datePeriodParam}].Members ON ROWS\nFROM [Sales Analysis]\nWHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])"
           },
           {
             "name" : "parameters",

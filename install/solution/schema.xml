@@ -63,7 +63,7 @@
       </Level>
       <Level name="Agent City" visible="true" column="USER_ADDRESS_CITY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Agent Name" visible="true" column="USER_LAST_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      <Level name="Agent Name" visible="true" column="USER_FULL_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -242,6 +242,12 @@
     </DimensionUsage>
     <DimensionUsage source="Date" name="Sale Date" visible="true" foreignKey="SALE_PAID_DATE_TK" highCardinality="false">
     </DimensionUsage>
+    <Dimension type="StandardDimension" visible="true" name="Sale Deleted">
+      <Hierarchy visible="true" hasAll="true" allMemberName="All Sales">
+        <Level name="Sale Deleted" visible="true" column="SALE_DELETED" uniqueMembers="false">
+        </Level>
+      </Hierarchy>
+    </Dimension>
     <Measure name="Total Sales Quantity" column="SALE_QUANTITY" aggregator="sum" visible="true">
     </Measure>
     <Measure name="Total Sales Revenue" column="SALE_TOTAL_AMOUNT" aggregator="sum" visible="true">

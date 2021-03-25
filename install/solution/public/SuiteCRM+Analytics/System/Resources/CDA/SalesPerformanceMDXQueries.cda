@@ -44,7 +44,7 @@
       <Query><![CDATA[select NON EMPTY {[Measures].[Total Sales Revenue],[Measures].[Total Sales Quantity]} ON COLUMNS,
   NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[Total Sales Revenue], BDESC),5) ON ROWS
 from [Sales Analysis]
-WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+WHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTopMeasureByDimensionLevelQuery"
                id="qTopMeasureByDimensionLevelQuery"
@@ -70,7 +70,7 @@ WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKe
       <Query><![CDATA[select NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,
   NON EMPTY TopCount(Order([${dimensionParam}].[${levelParam}].Members,[Measures].[${measureParam}], BDESC),5) ON ROWS
 from [Sales Analysis]
-WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+WHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qAverageRevenueByProductCategoryQuery"
                id="qAverageRevenueByProductCategoryQuery"
@@ -99,7 +99,7 @@ WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKe
 select NON EMPTY {[Measures].[Total Sales Quantity], [Measures].[Average Revenue]} ON COLUMNS,
   NON EMPTY [Product].[All Products].Children ON ROWS
 from [Sales Analysis]
-WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+WHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="qTotalMeasureByPeriodQuery"
                id="qTotalMeasureByPeriodQuery"
@@ -124,6 +124,6 @@ WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKe
       <Query><![CDATA[SELECT NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,
   NON EMPTY [Sale Date.Full Date String].[${datePeriodParam}].Members ON ROWS
 FROM [Sales Analysis]
-WHERE ([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}])]]></Query>
+WHERE Crossjoin([Sale Date.Date TK].[${dateFromKeyParam}]:[Sale Date.Date TK].[${dateToKeyParam}],[Sale Deleted].[0])]]></Query>
    </DataAccess>
 </CDADescriptor>
