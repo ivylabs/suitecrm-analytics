@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="qTotalMeasureByPeriodQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qOpportunityActivityCountByAgentQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="qAgentActivitiesQuery" type="mondrian.jndi">
+         <Catalog>mondrian:/SuiteCRM+Analytics</Catalog>
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="qTotalMeasureByPeriodQuery"
+               id="qTotalMeasureByPeriodQuery"
+               type="mdx">
+      <Name>qTotalMeasureByPeriodQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Period</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Measure</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+         <Parameter default="Month" name="datePeriodParam" type="String"/>
+         <Parameter default="Total Activities" name="measureParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,
+  NON EMPTY [Activity Date.Full Date String].[${datePeriodParam}].Members ON ROWS
+FROM [Opportunity Activities Analysis]
+WHERE ([Activity Date.Date TK].[${dateFromKeyParam}]:[Activity Date.Date TK].[${dateToKeyParam}])]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qOpportunityActivityCountByAgentQuery"
+               id="qOpportunityActivityCountByAgentQuery"
+               type="mdx">
+      <Name>qOpportunityActivityCountByAgentQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Agent Name</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Opportunities</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Total Activities</Name>
+         </Column>
+      </Columns>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select NON EMPTY {[Measures].[Total Opportunities], [Measures].[Total Activities]} ON COLUMNS,
+  NON EMPTY [Agent].[Agent Name].Members ON ROWS
+from [Opportunity Activities Analysis]
+WHERE ([Activity Date.Date TK].[${dateFromKeyParam}]:[Activity Date.Date TK].[${dateToKeyParam}])]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="qAgentActivitiesQuery" id="qAgentActivitiesQuery"
+               type="mdx">
+      <Name>qAgentActivitiesQuery</Name>
+      <BandedMode>compact</BandedMode>
+      <Cache duration="3600" enabled="true"/>
+      <Columns>
+         <Column idx="0">
+            <Name>Agent Name</Name>
+         </Column>
+         <Column idx="1">
+            <Name>Total Calls</Name>
+         </Column>
+         <Column idx="2">
+            <Name>Call Duration</Name>
+         </Column>
+         <Column idx="3">
+            <Name>Total Meetings</Name>
+         </Column>
+         <Column idx="4">
+            <Name>Meeting Duration</Name>
+         </Column>
+         <Column idx="5">
+            <Name>Total Emails</Name>
+         </Column>
+         <Column idx="7">
+            <Name>Total Tasks</Name>
+         </Column>
+      </Columns>
+      <Output indexes="0,1,2,3,4,5,7" mode="include"/>
+      <Parameters>
+         <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
+         <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+         <Parameter default="[Agent].[Agent Name].Members" name="agentListMDXStringParam"
+                    type="String"/>
+      </Parameters>
+      <Query><![CDATA[select Crossjoin({[Activity].[Call], [Activity].[Meeting], [Activity].[Email], [Activity].[Task]}, {[Measures].[Total Activities], [Measures].[Total Activity Duration]}) ON COLUMNS,
+  NON EMPTY {${agentListMDXStringParam}} ON ROWS
+from [Opportunity Activities Analysis]
+WHERE ([Activity Date.Date TK].[${dateFromKeyParam}]:[Activity Date.Date TK].[${dateToKeyParam}])]]></Query>
+   </DataAccess>
+</CDADescriptor>

@@ -1,0 +1,274 @@
+{
+  "components" : {
+    "rows" : [ ]
+  },
+  "datasources" : {
+    "rows" : [
+      {
+        "id" : "MDX",
+        "name" : "MDX Queries",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "MDX Queries"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "1e534fff-f4eb-3c2a-6a5e-06af6766d2f1",
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qTotalMeasureByPeriodQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "catalog",
+            "type" : "MondrianCatalog",
+            "value" : "mondrian:/SuiteCRM+Analytics"
+          },
+          {
+            "name" : "query",
+            "type" : "CurrentMdxQuery",
+            "value" : "SELECT NON EMPTY {[Measures].[${measureParam}]} ON COLUMNS,\n  NON EMPTY [Activity Date.Full Date String].[${datePeriodParam}].Members ON ROWS\nFROM [Opportunity Activities Analysis]\nWHERE ([Activity Date.Date TK].[${dateFromKeyParam}]:[Activity Date.Date TK].[${dateToKeyParam}])"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022datePeriodParam\u0022,\u0022Month\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022measureParam\u0022,\u0022Total Activities\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "bandedMode",
+            "type" : "BandedMode",
+            "value" : "compact"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Period\u0022],[\u00221\u0022,\u0022Measure\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "mdx over mondrianJndi",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi"
+      },
+      {
+        "id" : "f33740e7-fbff-5269-d775-70568ec7c385",
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qOpportunityActivityCountByAgentQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "catalog",
+            "type" : "MondrianCatalog",
+            "value" : "mondrian:/SuiteCRM+Analytics"
+          },
+          {
+            "name" : "query",
+            "type" : "CurrentMdxQuery",
+            "value" : "select NON EMPTY {[Measures].[Total Opportunities], [Measures].[Total Activities]} ON COLUMNS,\n  NON EMPTY [Agent].[Agent Name].Members ON ROWS\nfrom [Opportunity Activities Analysis]\nWHERE ([Activity Date.Date TK].[${dateFromKeyParam}]:[Activity Date.Date TK].[${dateToKeyParam}])"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "bandedMode",
+            "type" : "BandedMode",
+            "value" : "compact"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Agent Name\u0022],[\u00221\u0022,\u0022Total Opportunities\u0022],[\u00222\u0022,\u0022Total Activities\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "mdx over mondrianJndi",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi"
+      },
+      {
+        "id" : "16481cc0-9ae0-dfc2-f62e-ad22b32c781c",
+        "meta" : "CDA",
+        "meta_conntype" : "mondrian.jndi",
+        "meta_datype" : "mdx",
+        "parent" : "MDX",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "qAgentActivitiesQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "catalog",
+            "type" : "MondrianCatalog",
+            "value" : "mondrian:/SuiteCRM+Analytics"
+          },
+          {
+            "name" : "query",
+            "type" : "CurrentMdxQuery",
+            "value" : "select Crossjoin({[Activity].[Call], [Activity].[Meeting], [Activity].[Email], [Activity].[Task]}, {[Measures].[Total Activities], [Measures].[Total Activity Duration]}) ON COLUMNS,\n  NON EMPTY {${agentListMDXStringParam}} ON ROWS\nfrom [Opportunity Activities Analysis]\nWHERE ([Activity Date.Date TK].[${dateFromKeyParam}]:[Activity Date.Date TK].[${dateToKeyParam}])"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022dateToKeyParam\u0022,\u002220200101\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022],[\u0022agentListMDXStringParam\u0022,\u0022[Agent].[Agent Name].Members\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "bandedMode",
+            "type" : "BandedMode",
+            "value" : "compact"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[[\u00220\u0022,\u0022Agent Name\u0022],[\u00221\u0022,\u0022Total Calls\u0022],[\u00222\u0022,\u0022Call Duration\u0022],[\u00223\u0022,\u0022Total Meetings\u0022],[\u00224\u0022,\u0022Meeting Duration\u0022],[\u00225\u0022,\u0022Total Emails\u0022],[\u00227\u0022,\u0022Total Tasks\u0022]]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[\u00220\u0022,\u00221\u0022,\u00222\u0022,\u00223\u0022,\u00224\u0022,\u00225\u0022,\u00227\u0022]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "mdx over mondrianJndi",
+        "type" : "Componentsmdx_mondrianJndi",
+        "typeDesc" : "mdx over mondrianJndi"
+      }
+    ]
+  },
+  "filename" : "/public/SuiteCRM+Analytics/System/Resources/CDA/OpportunityActivitiesMDXQueries.cdfde",
+  "layout" : {
+    "rows" : [ ],
+    "title" : "CDF - Sample structure"
+  }
+}
