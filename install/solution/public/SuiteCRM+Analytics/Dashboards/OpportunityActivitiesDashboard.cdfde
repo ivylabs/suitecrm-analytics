@@ -141,12 +141,12 @@
           {
             "name" : "colFormats",
             "type" : "ColFormatsArray",
-            "value" : "[null,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022]"
+            "value" : "[null,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022%.0f\u0022,\u0022 null\u0022]"
           },
           {
             "name" : "colHeaders",
             "type" : "ColHeadersArray",
-            "value" : "[\u0022Agent Name\u0022,\u0022Total Calls\u0022,\u0022Call Duration\u0022,\u0022Total Meetings\u0022,\u0022Meeting Duration\u0022,\u0022Total Emails\u0022,\u0022Total Tasks\u0022]"
+            "value" : "[\u0022Agent Name\u0022,\u0022Total Calls\u0022,\u0022Call Duration\u0022,\u0022Total Meetings\u0022,\u0022Meeting Duration\u0022,\u0022Total Emails\u0022,\u0022Total Tasks\u0022,\u0022\u0026nbsp;\u0022]"
           },
           {
             "name" : "colSortable",
@@ -156,12 +156,12 @@
           {
             "name" : "colTypes",
             "type" : "colTypesCustom",
-            "value" : "[\u0022string\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022]"
+            "value" : "[\u0022string\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022dataBar\u0022,\u0022bsButtons\u0022]"
           },
           {
             "name" : "colWidths",
             "type" : "ColWidthsArray",
-            "value" : "[\u002222%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022]"
+            "value" : "[\u002220%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022,\u002213%\u0022,\u00222%\u0022]"
           },
           {
             "name" : "expandParameters",
@@ -286,7 +286,7 @@
           {
             "name" : "preExecution",
             "type" : "JavaScript",
-            "value" : "function f() {\n\n    \n    this.setAddInOptions(\u0022colType\u0022,\u0022dataBar\u0022,function(state){\n        return {\n            widthRatio:0.6,\n              startColor: \u0022#F08377\u0022,\n              endColor: \u0022#F08377\u0022,\n              stroke: null,\n              max: undefined,\n              min: 0.1,\n              absValue: true,\n              includeValue: true\n        };\n        \n    });  \n    \n    \n} "
+            "value" : "function f() {\n    \n    var dashboard = Dashboards,\n        agentListArray = dashboard.getParam(\u0027agentListArrayParam\u0027);\n\n    \n    this.setAddInOptions(\u0022colType\u0022,\u0022dataBar\u0022,function(state){\n        return {\n            widthRatio:0.6,\n              startColor: \u0022#F08377\u0022,\n              endColor: \u0022#F08377\u0022,\n              stroke: null,\n              max: undefined,\n              min: 0.1,\n              absValue: false,\n              includeValue: true\n        };\n        \n    });  \n    \n    var opts = {\n        cssClass: [\u0022btn-group\u0022],\n        align: \u0022center\u0022,\n        buttons:[\n          {\n            cssClass: [\u0022btn\u0022, \u0022btn-secondary\u0022, \u0022btn-xs\u0022],\n            icon: {\n              cssClass: [\u0022fa\u0022, \u0022fa-check\u0022],\n              prepend: true\n            },\n            title: \u0022\u0022,\n            tooltip:\u0022\u0022,\n            preImplementation: function(tgt, st, opt){\n              if($(tgt).parent().hasClass(\u0022select-product\u0022)){\n                  this.cssClass.push(\u0022btn-success\u0022);\n                  this.icon.cssClass.push(\u0022fa-check\u0022);\n              }\n              return opt;\n            },\n            action: function(val, tgt, opt) {\n                if($(tgt).parent().hasClass(\u0022select-product\u0022)){\n                    agentListArray.splice($.inArray(val,agentListArray),1);\n                    $(tgt).parent().removeClass(\u0022select-product\u0022);\n                    $(tgt).find(\u0022button\u0022).removeClass(\u0022btn-success\u0022);\n                    $(tgt).find(\u0022button\u0022).addClass(\u0022btn-secondary\u0022);\n                }else{\n                    agentListArray.push(val);\n                    $(tgt).parent().addClass(\u0022select-product\u0022);\n                    $(tgt).find(\u0022button\u0022).removeClass(\u0022btn-secondary\u0022);\n                    $(tgt).find(\u0022button\u0022).addClass(\u0022btn-success\u0022);\n                }\n                Dashboards.fireChange(\u0022agentListArrayParam\u0022,agentListArray);\n            }\n          }\n        ]\n      }\n    this.setAddInOptions(\u0022colType\u0022,\u0022bsButtons\u0022,opts);\n    \n} "
           },
           {
             "name" : "postExecution",
@@ -763,6 +763,40 @@
             "name" : "javaScript",
             "type" : "JavaScript",
             "value" : "function d(){\n    return \u0022[Agent].[Agent Name].Members\u0022;\n} "
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Custom Parameter",
+        "type" : "ComponentsJavascriptParameter",
+        "typeDesc" : "Custom parameter"
+      },
+      {
+        "id" : "272c7df9-3630-41b8-6dd1-7e01d63673de",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "agentListArrayParam"
+          },
+          {
+            "name" : "javaScript",
+            "type" : "JavaScript",
+            "value" : "[] "
           },
           {
             "name" : "parameterViewRole",
@@ -5760,6 +5794,95 @@
         "rowName" : "Bootstrap Button",
         "type" : "ComponentsBSButtonComponent",
         "typeDesc" : "Bootstrap Button"
+      },
+      {
+        "id" : "ada83fc3-bc14-38c8-8a52-7eeec67a7a04",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "exportReportButtonComponent",
+            "type" : "Id"
+          },
+          {
+            "name" : "label",
+            "value" : "Export",
+            "type" : "String"
+          },
+          {
+            "name" : "listeners",
+            "value" : "[]",
+            "type" : "Listeners"
+          },
+          {
+            "name" : "expression",
+            "value" : "function d(){\n\n    var dashboard = Dashboards,\n    agentListArray = dashboard.getParam(\u0027agentListArrayParam\u0027),\n    dateFromKey = dashboard.getParam(\u0027dateFromKeyParam\u0027),\n    dateToKey = dashboard.getParam(\u0027dateToKeyParam\u0027),\n    parameterString,\n    url;\n\n    url = \u0022/suitecrmanalytics/api/repos/%3Apublic%3ASuiteCRM%20Analytics%3AReports%3AAgentOpportunityActivityExport.prpt/viewer?showParameters=false\u0026output-target=pageable/pdf\u0026pSelectStyle=SuiteCRMAnalytics\u0026pShowParameters=1\u0026pUserNameFilter=\u0022+agentListArray.join(\u0027,\u0027)+\u0022\u0026pActivityDateFromFilter=\u0022+dateFromKey+\u0022\u0026pActivityDateToFilter=\u0022+dateToKey;\n\n    console.log(url);\n\n    window.open(url);\n} ",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "priority",
+            "value" : 5,
+            "type" : "Integer"
+          },
+          {
+            "name" : "refreshPeriod",
+            "value" : "",
+            "type" : "Integer"
+          },
+          {
+            "name" : "buttonType",
+            "value" : "btn-primary",
+            "type" : "buttonTypeCustom"
+          },
+          {
+            "name" : "buttonBlock",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonSize",
+            "value" : "btn-sm",
+            "type" : "buttonSizeCustom"
+          },
+          {
+            "name" : "prependIcon",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "buttonIcon",
+            "value" : "glyphicon-file",
+            "type" : "buttonIconCustom"
+          },
+          {
+            "name" : "buttonDisabled",
+            "value" : "false",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "htmlObject",
+            "value" : "${h:exportReportButtonAnchor}",
+            "type" : "HtmlObject"
+          },
+          {
+            "name" : "executeAtStart",
+            "value" : "true",
+            "type" : "Boolean"
+          },
+          {
+            "name" : "preExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          },
+          {
+            "name" : "postExecution",
+            "value" : "",
+            "type" : "JavaScript"
+          }
+        ],
+        "rowName" : "Bootstrap Button"
       }
     ]
   },
@@ -5929,7 +6052,7 @@
           {
             "name" : "resourceCode",
             "type" : "Resource",
-            "value" : ".table-bordered {\n    border: 0px;    \n}\n\n.table-bordered\u003Etbody\u003Etr\u003Etd {\n    border: 0px;\n} \n\n.table-bordered\u003Ethead\u003Eth\u003Etd {\n    border: 0px;\n}\n\n.description-block\u003E.description-text {\n    text-transform: uppercase;\n    font-size: 18px;\n    font-weight: bold;\n} "
+            "value" : ".table-bordered {\n    border: 0px;    \n}\n\n.table-bordered\u003Etbody\u003Etr\u003Etd {\n    border: 0px;\n} \n\n.table-bordered\u003Ethead\u003Eth\u003Etd {\n    border: 0px;\n}\n\n.description-block\u003E.description-text {\n    text-transform: uppercase;\n    font-size: 18px;\n    font-weight: bold;\n}\n\ntr.select-product {\n    background-color: #eef3f5;\n} "
           },
           {
             "name" : "resourceType",
@@ -6501,7 +6624,7 @@
           {
             "name" : "html",
             "type" : "Html",
-            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EDetailed Agent Listing\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topCategoryTableAnchor\u0022 style=\u0022\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E \n\n "
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EDetailed Agent Listing\u003C/h3\u003E\n        \u003Cdiv class=\u0022box-tools pull-right\u0022\u003E\n            \u003Cdiv id=\u0022exportReportButtonAnchor\u0022\u003E\u003C/div\u003E\n        \u003C/div\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022topCategoryTableAnchor\u0022 style=\u0022\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E \n\n "
           },
           {
             "name" : "fontSize",

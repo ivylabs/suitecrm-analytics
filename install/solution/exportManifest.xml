@@ -101,6 +101,34 @@
             </EntityAcl>
         </ExportManifestProperty>
     </ExportManifestEntity>
+    
+    <ExportManifestEntity path="public/SuiteCRM Analytics/Dashboards/OpportunityActivitiesDashboard.cdfde">
+        <ExportManifestProperty>
+            <EntityMetaData name="OpportunityActivitiesDashboard.cdfde" createdDate="2021-03-18T14:21:13.496Z" isFolder="false" path="public/SuiteCRM Analytics/Dashboards/OpportunityActivitiesDashboard.cdfde" isHidden="true" isSchedulable="true" locale="en_US" title="OpportunityActivitiesDashboard.cdfde"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    <ExportManifestEntity path="public/SuiteCRM Analytics/Dashboards/OpportunityActivitiesDashboard.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="OpportunityActivitiesDashboard.wcdf" createdDate="2021-03-18T14:21:13.481Z" isFolder="false" path="public/SuiteCRM Analytics/Dashboards/OpportunityActivitiesDashboard.wcdf" isHidden="false" isSchedulable="true" locale="en_US" description="CampaignPerformanceDashboard" title="OpportunityActivitiesDashboard"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    
+    
+    
     <ExportManifestEntity path="public/SuiteCRM Analytics/Dashboards/CasePerformanceDashboard.cdfde">
         <ExportManifestProperty>
             <EntityMetaData name="CasePerformanceDashboard.cdfde" createdDate="2020-12-14T10:07:04.049Z" isFolder="false" path="public/SuiteCRM Analytics/Dashboards/CasePerformanceDashboard.cdfde" isHidden="true" isSchedulable="true" locale="en_GB" title="CasePerformanceDashboard.cdfde"/>
@@ -209,6 +237,21 @@
             </EntityAcl>
         </ExportManifestProperty>
     </ExportManifestEntity>
+    
+    <ExportManifestEntity path="public/SuiteCRM Analytics/Reports/AgentOpportunityActivityExport.prpt">
+        <ExportManifestProperty>
+            <EntityMetaData name="AgentOpportunityActivityExport.prpt" createdDate="2021-03-30T13:51:29.958Z" isFolder="false" path="public/SuiteCRM Analytics/Reports/AgentOpportunityActivityExport.prpt" isHidden="true" isSchedulable="true" locale="en_US" title="Agent Opportunity Activity Export"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+    
+    
     <ExportManifestEntity path="public/SuiteCRM Analytics/Reports/AccountOpportunityValue.prpt">
         <ExportManifestProperty>
             <EntityMetaData name="AccountOpportunityValue.prpt" createdDate="2020-12-14T10:06:58.102Z" isFolder="false" path="public/SuiteCRM Analytics/Reports/AccountOpportunityValue.prpt" isHidden="false" isSchedulable="true" locale="en_GB" title="Account Opportunity Value"/>
