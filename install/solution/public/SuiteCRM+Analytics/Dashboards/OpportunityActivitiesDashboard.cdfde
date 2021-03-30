@@ -4779,7 +4779,7 @@
           {
             "name" : "selectionChangedAction",
             "type" : "JavaScript",
-            "value" : "function d(data){\n\n    var dashboard = Dashboards;\n    var agentListMDXString = \u0022\u0022;\n\n    if(data.length === 0){\n        agentListArray = [\u0022All Agents\u0022];\n        agentListMDXString = \u0022[Agent].[Agent Name].Members\u0022;\n    } else {\n        agentListArray = [];\n\n        $.each(data,function(i,v){\n            agentListArray.push(v.atoms.series.value);\n        });\n        \n        agentListMDXString = \u0022[Agent].[Agent Name].[\u0022+agentListArray.join(\u0022], [Agent].[Agent Name].[\u0022)+\u0022]\u0022;\n    }\n    \n    dashboard.log(\u0022agentListArray \u0022+agentListArray);\n    dashboard.log(\u0022agentListMDXStringParam: \u0022+agentListMDXString);\n\n    dashboard.fireChange(\u0022agentListMDXStringParam\u0022,agentListMDXString);\n    \n    \n} "
+            "value" : "function d(data){\n\n    var dashboard = Dashboards;\n    var agentListMDXString = \u0022\u0022;\n    \n    dashboard.setParameter(\u0022agentListArrayParam\u0022,[]);\n\n    if(data.length === 0){\n        agentListArray = [\u0022All Agents\u0022];\n        agentListMDXString = \u0022[Agent].[Agent Name].Members\u0022;\n    } else {\n        agentListArray = [];\n\n        $.each(data,function(i,v){\n            agentListArray.push(v.atoms.series.value);\n        });\n        \n        agentListMDXString = \u0022[Agent].[Agent Name].[\u0022+agentListArray.join(\u0022], [Agent].[Agent Name].[\u0022)+\u0022]\u0022;\n    }\n    \n    dashboard.log(\u0022agentListArray \u0022+agentListArray);\n    dashboard.log(\u0022agentListMDXStringParam: \u0022+agentListMDXString);\n\n    dashboard.fireChange(\u0022agentListMDXStringParam\u0022,agentListMDXString);\n    \n    \n} "
           },
           {
             "name" : "seriesInRows",
@@ -5797,92 +5797,92 @@
       },
       {
         "id" : "ada83fc3-bc14-38c8-8a52-7eeec67a7a04",
-        "type" : "ComponentsBSButtonComponent",
-        "typeDesc" : "Bootstrap Button",
         "parent" : "IVYISBOOTSTRAP",
         "properties" : [
           {
             "name" : "name",
-            "value" : "exportReportButtonComponent",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "exportReportButtonComponent"
           },
           {
             "name" : "label",
-            "value" : "Export",
-            "type" : "String"
+            "type" : "String",
+            "value" : "Export"
           },
           {
             "name" : "listeners",
-            "value" : "[]",
-            "type" : "Listeners"
+            "type" : "Listeners",
+            "value" : "[]"
           },
           {
             "name" : "expression",
-            "value" : "function d(){\n\n    var dashboard = Dashboards,\n    agentListArray = dashboard.getParam(\u0027agentListArrayParam\u0027),\n    dateFromKey = dashboard.getParam(\u0027dateFromKeyParam\u0027),\n    dateToKey = dashboard.getParam(\u0027dateToKeyParam\u0027),\n    parameterString,\n    url;\n\n    url = \u0022/suitecrmanalytics/api/repos/%3Apublic%3ASuiteCRM%20Analytics%3AReports%3AAgentOpportunityActivityExport.prpt/viewer?showParameters=false\u0026output-target=pageable/pdf\u0026pSelectStyle=SuiteCRMAnalytics\u0026pShowParameters=1\u0026pUserNameFilter=\u0022+agentListArray.join(\u0027,\u0027)+\u0022\u0026pActivityDateFromFilter=\u0022+dateFromKey+\u0022\u0026pActivityDateToFilter=\u0022+dateToKey;\n\n    console.log(url);\n\n    window.open(url);\n} ",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : "function d(){\n\n    var dashboard = Dashboards,\n    agentListArray = dashboard.getParam(\u0027agentListArrayParam\u0027),\n    dateFromKey = dashboard.getParam(\u0027dateFromKeyParam\u0027),\n    dateToKey = dashboard.getParam(\u0027dateToKeyParam\u0027),\n    parameterString,\n    url;\n\n    url = \u0022/suitecrmanalytics/api/repos/%3Apublic%3ASuiteCRM%20Analytics%3AReports%3AAgentOpportunityActivityExport.prpt/viewer?showParameters=false\u0026output-target=pageable/pdf\u0026pSelectStyle=SuiteCRMAnalytics\u0026pShowParameters=1\u0026pUserNameFilter=\u0022+agentListArray.join(\u0027,\u0027)+\u0022\u0026pActivityDateFromFilter=\u0022+dateFromKey+\u0022\u0026pActivityDateToFilter=\u0022+dateToKey;\n\n    console.log(url);\n\n    window.open(url);\n} "
           },
           {
             "name" : "priority",
-            "value" : 5,
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : 5
           },
           {
             "name" : "refreshPeriod",
-            "value" : "",
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : ""
           },
           {
             "name" : "buttonType",
-            "value" : "btn-primary",
-            "type" : "buttonTypeCustom"
+            "type" : "buttonTypeCustom",
+            "value" : "btn-primary"
           },
           {
             "name" : "buttonBlock",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "buttonSize",
-            "value" : "btn-sm",
-            "type" : "buttonSizeCustom"
+            "type" : "buttonSizeCustom",
+            "value" : "btn-sm"
           },
           {
             "name" : "prependIcon",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "buttonIcon",
-            "value" : "glyphicon-file",
-            "type" : "buttonIconCustom"
+            "type" : "buttonIconCustom",
+            "value" : "glyphicon-file"
           },
           {
             "name" : "buttonDisabled",
-            "value" : "false",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "false"
           },
           {
             "name" : "htmlObject",
-            "value" : "${h:exportReportButtonAnchor}",
-            "type" : "HtmlObject"
+            "type" : "HtmlObject",
+            "value" : "${h:exportReportButtonAnchor}"
           },
           {
             "name" : "executeAtStart",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           },
           {
             "name" : "preExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           },
           {
             "name" : "postExecution",
-            "value" : "",
-            "type" : "JavaScript"
+            "type" : "JavaScript",
+            "value" : ""
           }
         ],
-        "rowName" : "Bootstrap Button"
+        "rowName" : "Bootstrap Button",
+        "type" : "ComponentsBSButtonComponent",
+        "typeDesc" : "Bootstrap Button"
       }
     ]
   },
@@ -5996,26 +5996,26 @@
     "rows" : [
       {
         "id" : "7a659f63-63a1-b352-0567-c9fe6a140e41",
-        "type" : "LayoutResourceCode",
-        "typeDesc" : "Resource",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "name",
-            "value" : "bsButtons",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "bsButtons"
           },
           {
             "name" : "resourceCode",
-            "value" : ";(function (){\n\n  /*\n    Sample with all possible properties:\n      {\n        cssClass: [\u0022btn-group\u0022],\n        align: \u0022center\u0022,\n        buttons:[\n          {\n            cssClass: [\u0022btn\u0022, \u0022btn-default\u0022],\n            icon: {\n              cssClass: [\u0022glyphicon\u0022, \u0022glyphicon-plus\u0022],\n              prepend: true\n            },\n            title: \u0022View\u0022,\n            tooltip: \u0022View\u0022,\n              action: function(tgt, st, opt) {\n                Dashboards.log(tgt);\n              }\n          }\n        ]\n      }\n  */\n\n  var actionButtonsOpts = {\n    name: \u0022bsButtons\u0022,\n    label: \u0022Action Buttons\u0022,\n    defaults: {\n      cssClass: [\u0022btn-group\u0022],\n      buttons:[\n        {\n          cssClass: [\u0022btn\u0022, \u0022btn-default\u0022],\n          title: \u0022View\u0022,\n          tooltip: \u0022View\u0022,\n          action: function(tgt, st, opt) {\n            Dashboards.log(tgt);\n          }\n        }\n      ]\n    },\n\n    init: function(){\n        $.fn.dataTableExt.oSort[this.name+\u0027-asc\u0027] = $.fn.dataTableExt.oSort[\u0027string-asc\u0027];\n        $.fn.dataTableExt.oSort[this.name+\u0027-desc\u0027] = $.fn.dataTableExt.oSort[\u0027string-desc\u0027];\n    },\n    \n    implementation: function(tgt, st, opt){\n      if(opt.preImplementation){\n        opt=opt.preImplementation(tgt, st, opt);\n      }\n      var $buttonContainer = $(\u0027\u003Cdiv/\u003E\u0027).addClass(\u0027buttonContainer\u0027).addClass(opt.cssClass?opt.cssClass.join(\u0022 \u0022):\u0022\u0022)\n        .addClass(\u0027numButtons-\u0027 + opt.buttons.length);\n        var val = [st.value||\u0022\u0022];\n        if(st.value){val = st.value.split(\u0022,\u0022);}\n\n      _.each(opt.buttons, function(el,idx){\n        if(opt.buttons[idx].preImplementation){\n          opt=opt.buttons[idx].preImplementation(tgt, st, opt);\n        }\n        var $button = $(\u0022\u003Cbutton/\u003E\u0022).addClass(el.cssClass.join(\u0022 \u0022)||\u0022\u0022).text(el.title||\u0022\u0022).attr(\u0027title\u0027, el.tooltip||\u0022\u0022);\n        if(el.icon != undefined){\n          var $icon = $(\u0022\u003Ci/\u003E\u0022).addClass(el.icon.cssClass.join(\u0022 \u0022));\n          if(el.icon.prepend){\n            $button.prepend($icon);\n          }else{\n            $button.append($icon);\n          }\n        }\n        $button.click(function(){\n          if (el.action) {\n            el.action(val[idx]||\u0022\u0022,tgt, st, opt);\n          }\n        });\n        $buttonContainer.append($button);\n\n        if(opt.buttons[idx].postImplementation){\n          opt=opt.buttons[idx].postImplementation(tgt, st, opt);\n        }\n      });\n\n      if(opt.align === \u0022center\u0022){\n        $buttonContainer = $(\u0027\u003Ccenter/\u003E\u0027).append($buttonContainer);\n      }else{\n        $buttonContainer.addClass(\u0022pull-\u0022+opt.align||\u0022\u0022);\n      }\n\n      $(tgt).empty().append($buttonContainer);\n\n      if(opt.postImplementation){\n        opt=opt.postImplementation(tgt, st, opt);\n      }\n    }\n\n    };\n    Dashboards.registerAddIn(\u0022Table\u0022, \u0022colType\u0022, new AddIn(actionButtonsOpts));\n  \n})(); ",
-            "type" : "Resource"
+            "type" : "Resource",
+            "value" : ";(function (){\n\n  /*\n    Sample with all possible properties:\n      {\n        cssClass: [\u0022btn-group\u0022],\n        align: \u0022center\u0022,\n        buttons:[\n          {\n            cssClass: [\u0022btn\u0022, \u0022btn-default\u0022],\n            icon: {\n              cssClass: [\u0022glyphicon\u0022, \u0022glyphicon-plus\u0022],\n              prepend: true\n            },\n            title: \u0022View\u0022,\n            tooltip: \u0022View\u0022,\n              action: function(tgt, st, opt) {\n                Dashboards.log(tgt);\n              }\n          }\n        ]\n      }\n  */\n\n  var actionButtonsOpts = {\n    name: \u0022bsButtons\u0022,\n    label: \u0022Action Buttons\u0022,\n    defaults: {\n      cssClass: [\u0022btn-group\u0022],\n      buttons:[\n        {\n          cssClass: [\u0022btn\u0022, \u0022btn-default\u0022],\n          title: \u0022View\u0022,\n          tooltip: \u0022View\u0022,\n          action: function(tgt, st, opt) {\n            Dashboards.log(tgt);\n          }\n        }\n      ]\n    },\n\n    init: function(){\n        $.fn.dataTableExt.oSort[this.name+\u0027-asc\u0027] = $.fn.dataTableExt.oSort[\u0027string-asc\u0027];\n        $.fn.dataTableExt.oSort[this.name+\u0027-desc\u0027] = $.fn.dataTableExt.oSort[\u0027string-desc\u0027];\n    },\n    \n    implementation: function(tgt, st, opt){\n      if(opt.preImplementation){\n        opt=opt.preImplementation(tgt, st, opt);\n      }\n      var $buttonContainer = $(\u0027\u003Cdiv/\u003E\u0027).addClass(\u0027buttonContainer\u0027).addClass(opt.cssClass?opt.cssClass.join(\u0022 \u0022):\u0022\u0022)\n        .addClass(\u0027numButtons-\u0027 + opt.buttons.length);\n        var val = [st.value||\u0022\u0022];\n        if(st.value){val = st.value.split(\u0022,\u0022);}\n\n      _.each(opt.buttons, function(el,idx){\n        if(opt.buttons[idx].preImplementation){\n          opt=opt.buttons[idx].preImplementation(tgt, st, opt);\n        }\n        var $button = $(\u0022\u003Cbutton/\u003E\u0022).addClass(el.cssClass.join(\u0022 \u0022)||\u0022\u0022).text(el.title||\u0022\u0022).attr(\u0027title\u0027, el.tooltip||\u0022\u0022);\n        if(el.icon != undefined){\n          var $icon = $(\u0022\u003Ci/\u003E\u0022).addClass(el.icon.cssClass.join(\u0022 \u0022));\n          if(el.icon.prepend){\n            $button.prepend($icon);\n          }else{\n            $button.append($icon);\n          }\n        }\n        $button.click(function(){\n          if (el.action) {\n            el.action(val[idx]||\u0022\u0022,tgt, st, opt);\n          }\n        });\n        $buttonContainer.append($button);\n\n        if(opt.buttons[idx].postImplementation){\n          opt=opt.buttons[idx].postImplementation(tgt, st, opt);\n        }\n      });\n\n      if(opt.align === \u0022center\u0022){\n        $buttonContainer = $(\u0027\u003Ccenter/\u003E\u0027).append($buttonContainer);\n      }else{\n        $buttonContainer.addClass(\u0022pull-\u0022+opt.align||\u0022\u0022);\n      }\n\n      $(tgt).empty().append($buttonContainer);\n\n      if(opt.postImplementation){\n        opt=opt.postImplementation(tgt, st, opt);\n      }\n    }\n\n    };\n    Dashboards.registerAddIn(\u0022Table\u0022, \u0022colType\u0022, new AddIn(actionButtonsOpts));\n  \n})(); "
           },
           {
             "name" : "resourceType",
-            "value" : "Javascript",
-            "type" : "Label"
+            "type" : "Label",
+            "value" : "Javascript"
           }
-        ]
+        ],
+        "type" : "LayoutResourceCode",
+        "typeDesc" : "Resource"
       },
       {
         "id" : "6c2c252a-3e4a-5e22-b9a2-f80ee0e1b6ff",
