@@ -92,8 +92,11 @@ WHERE ([Activity Date.Date TK].[${dateFromKeyParam}]:[Activity Date.Date TK].[${
          <Column idx="7">
             <Name>Total Tasks</Name>
          </Column>
+         <Column idx="8">
+            <Name>Agent Name</Name>
+         </Column>
       </Columns>
-      <Output indexes="0,1,2,3,4,5,7" mode="include"/>
+      <Output indexes="0,1,2,3,4,5,7,0" mode="include"/>
       <Parameters>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
