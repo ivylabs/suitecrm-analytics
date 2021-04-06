@@ -1,3 +1,5 @@
 node{
-
+  stage("Checkout"){
+    sh echo "Hello"
+  }
 }
