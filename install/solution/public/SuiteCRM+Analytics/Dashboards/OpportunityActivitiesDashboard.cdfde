@@ -2459,7 +2459,7 @@
           {
             "name" : "preExecution",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this.chartDefinition;\n    \n    $.extend(true,cd,analytics.opts.charts.defaultChartComp);\n    $.extend(true,cd,analytics.opts.charts.overviewLineWidget);\n    \n} "
+            "value" : "function d(){\n    \n    var dash = Dashboards,\n        cd = this.chartDefinition;\n    \n    $.extend(true,cd,analytics.opts.charts.defaultChartComp);\n    $.extend(true,cd,analytics.opts.charts.overviewLineWidget);\n    \n    // Create a custom tooltip object   \n    var tooltip = {\n        \n        tooltipFormat:function(scene){\n            var period = scene.atoms.category.value;\n            var value = scene.vars.value.value;\n                    \n            var html = \u0022\u003Cdiv\u003E\u0022+value+\u0022 Total Minutes-  \u0022+period+\u0022\u003C/div\u003E\u0022;\n                \n            return html;\n        }\n    }\n    \n    // Override the overviewLineWidget properties object\n    $.extend(true,cd,tooltip);\n\n} "
           },
           {
             "name" : "postExecution",
