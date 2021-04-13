@@ -74,6 +74,9 @@ rm -Rf suitecrm-analytics-server/stop-pentaho.bat
 rm -Rf suitecrm-analytics-server/start-pentaho-debug.sh
 rm -Rf suitecrm-analytics-server/start-pentaho-debug.bat
 
+sed -i 's|@@VERSION@@|'${VERSION}'|' suitecrm-analytics-server/tomcat/webapps/suitecrmanalytics/mantle/home/content/welcome/index.html
+
+
 echo ""
 read -r -p " Would you like to package the installation? This will create a zip file and remove the ready to use application server. [y/N] " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
