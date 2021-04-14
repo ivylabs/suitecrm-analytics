@@ -286,7 +286,7 @@
           {
             "name" : "preExecution",
             "type" : "JavaScript",
-            "value" : "function f() {\n    \n    var dashboard = Dashboards,\n        agentListArray = dashboard.getParam(\u0027agentListArrayParam\u0027);\n\n    \n    this.setAddInOptions(\u0022colType\u0022,\u0022dataBar\u0022,function(state){\n        return {\n            widthRatio:0.6,\n              startColor: \u0022#F08377\u0022,\n              endColor: \u0022#F08377\u0022,\n              stroke: null,\n              max: undefined,\n              min: 0.1,\n              absValue: false,\n              includeValue: true\n        };\n        \n    });  \n    \n    var opts = {\n        cssClass: [\u0022btn-group\u0022],\n        align: \u0022center\u0022,\n        buttons:[\n          {\n            cssClass: [\u0022btn\u0022, \u0022btn-secondary\u0022, \u0022btn-xs\u0022],\n            icon: {\n              cssClass: [\u0022fa\u0022, \u0022fa-check\u0022],\n              prepend: true\n            },\n            title: \u0022\u0022,\n            tooltip:\u0022\u0022,\n            preImplementation: function(tgt, st, opt){\n              if($(tgt).parent().hasClass(\u0022select-product\u0022)){\n                  this.cssClass.push(\u0022btn-success\u0022);\n                  this.icon.cssClass.push(\u0022fa-check\u0022);\n              }\n              return opt;\n            },\n            action: function(val, tgt, opt) {\n                if($(tgt).parent().hasClass(\u0022select-product\u0022)){\n                    agentListArray.splice($.inArray(val,agentListArray),1);\n                    $(tgt).parent().removeClass(\u0022select-product\u0022);\n                    $(tgt).find(\u0022button\u0022).removeClass(\u0022btn-success\u0022);\n                    $(tgt).find(\u0022button\u0022).addClass(\u0022btn-secondary\u0022);\n                }else{\n                    agentListArray.push(val);\n                    $(tgt).parent().addClass(\u0022select-product\u0022);\n                    $(tgt).find(\u0022button\u0022).removeClass(\u0022btn-secondary\u0022);\n                    $(tgt).find(\u0022button\u0022).addClass(\u0022btn-success\u0022);\n                }\n                Dashboards.fireChange(\u0022agentListArrayParam\u0022,agentListArray);\n            }\n          }\n        ]\n      }\n    this.setAddInOptions(\u0022colType\u0022,\u0022bsButtons\u0022,opts);\n    \n} "
+            "value" : "function f() {\n    \n    var dashboard = Dashboards,\n        agentListArray = dashboard.getParam(\u0027agentListArrayParam\u0027);\n\n    \n    this.setAddInOptions(\u0022colType\u0022,\u0022dataBar\u0022,function(state){\n        return {\n            widthRatio:0.6,\n              startColor: \u0022#F08377\u0022,\n              endColor: \u0022#F08377\u0022,\n              stroke: null,\n              max: undefined,\n              min: 0.1,\n              absValue: false,\n              includeValue: true\n        };\n        \n    });  \n    \n    var opts = {\n        cssClass: [\u0022btn-group\u0022],\n        align: \u0022center\u0022,\n        buttons:[\n          {\n            cssClass: [\u0022btn\u0022, \u0022btn-secondary\u0022, \u0022btn-xs\u0022],\n            icon: {\n              cssClass: [\u0022fa\u0022, \u0022fa-check\u0022],\n              prepend: true\n            },\n            title: \u0022\u0022,\n            tooltip:\u0022\u0022,\n            preImplementation: function(tgt, st, opt){\n              if($(tgt).parent().hasClass(\u0022select-product\u0022)){\n                  this.cssClass.push(\u0022btn-success\u0022);\n                  this.icon.cssClass.push(\u0022fa-check\u0022);\n              }\n              return opt;\n            },\n            action: function(val, tgt, opt) {\n                if($(tgt).parent().hasClass(\u0022select-product\u0022)){\n                    agentListArray.splice($.inArray(val,agentListArray),1);\n                    $(tgt).parent().removeClass(\u0022select-product\u0022);\n                    $(tgt).find(\u0022button\u0022).removeClass(\u0022btn-success\u0022);\n                    $(tgt).find(\u0022button\u0022).addClass(\u0022btn-secondary\u0022);\n                }else{\n                    agentListArray.push(val);\n                    $(tgt).parent().addClass(\u0022select-product\u0022);\n                    $(tgt).find(\u0022button\u0022).removeClass(\u0022btn-secondary\u0022);\n                    $(tgt).find(\u0022button\u0022).addClass(\u0022btn-success\u0022);\n                }\n                \n                // Update export button visibility\n                \n                if(agentListArray.length === 0){\n                    $(\u0027#exportReportButtonAnchor button\u0027).prop(\u0027disabled\u0027,true);\n                } else {\n                    $(\u0027#exportReportButtonAnchor button\u0027).prop(\u0027disabled\u0027,false);\n                }\n                \n                exportButton.update();\n                \n                Dashboards.fireChange(\u0022agentListArrayParam\u0022,agentListArray);\n            }\n          }\n        ]\n      }\n    this.setAddInOptions(\u0022colType\u0022,\u0022bsButtons\u0022,opts);\n    \n} "
           },
           {
             "name" : "postExecution",
@@ -5822,7 +5822,7 @@
           {
             "name" : "priority",
             "type" : "Integer",
-            "value" : 5
+            "value" : "5"
           },
           {
             "name" : "refreshPeriod",
@@ -5857,7 +5857,7 @@
           {
             "name" : "buttonDisabled",
             "type" : "Boolean",
-            "value" : "false"
+            "value" : "true"
           },
           {
             "name" : "htmlObject",
@@ -5872,7 +5872,7 @@
           {
             "name" : "preExecution",
             "type" : "JavaScript",
-            "value" : ""
+            "value" : "function d(){\n\n    var dashboard = Dashboards,\n    buttonDefinition = this\n    agentListArray = dashboard.getParam(\u0027agentListArrayParam\u0027);\n    \n} "
           },
           {
             "name" : "postExecution",
