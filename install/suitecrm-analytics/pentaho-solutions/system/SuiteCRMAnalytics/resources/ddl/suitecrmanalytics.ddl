@@ -1,5 +1,0 @@
-CREATE TABLE IF NOT EXISTS SYSTEM 
-(
-	property VARCHAR(128),
-	value VARCHAR(128)
-)
