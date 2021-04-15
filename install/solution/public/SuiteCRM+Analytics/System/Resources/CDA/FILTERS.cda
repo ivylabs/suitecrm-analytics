@@ -227,7 +227,7 @@ INNER JOIN D_DATE DD
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
@@ -247,7 +247,7 @@ ORDER BY 3, 4 DESC]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
@@ -267,7 +267,7 @@ ORDER BY 3, 4 DESC]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' as DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
@@ -300,7 +300,7 @@ ORDER BY 2,1]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
@@ -320,7 +320,7 @@ ORDER BY 3, 4 DESC]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
@@ -617,7 +617,7 @@ ORDER BY 2,1]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
@@ -637,7 +637,7 @@ ORDER BY 3, 4 DESC]]></Query>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
-      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-DD', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
 UNION
 SELECT
     DD.`YYYY-MM`
