@@ -52,6 +52,9 @@ echo ""
 
 unzip install/installation-files/suitecrm-server.zip -d install/installation-files/ | awk 'BEGIN {ORS=" "} {if(NR%100==0)print "."}'
 
+#remove original mysql driver
+rm -Rf install/installation-files/pentaho-server/tomcat/lib/mysql-connector-java-5.1.17.jar
+
 cd ${WORKING_DIR}/install/solution/
 
 zip -r SuiteCRM-Analytics.zip public/ exportManifest.xml schema.xml
