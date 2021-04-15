@@ -78,6 +78,7 @@ rm -Rf suitecrm-analytics-server/start-pentaho-debug.sh
 rm -Rf suitecrm-analytics-server/start-pentaho-debug.bat
 
 sed -i 's|@@VERSION@@|'${VERSION}'|' suitecrm-analytics-server/tomcat/webapps/suitecrmanalytics/mantle/home/content/welcome/index.html
+sed -i 's|@@VERSION@@|'${VERSION}'|' suitecrm-analytics-server/pentaho-solutions/system/IvyUI/resources/styles/ivyui.html
 
 
 echo ""
