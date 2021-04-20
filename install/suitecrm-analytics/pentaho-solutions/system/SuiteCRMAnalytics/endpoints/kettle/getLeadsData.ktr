@@ -9,11 +9,6 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
-      <parameter>
-        <name>pLeadSource</name>
-        <default_value />
-        <description />
-      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -539,15 +534,22 @@
 FROM F_LEAD_MANAGEMENT FLM
 INNER JOIN D_LEADS DL
 	ON FLM.LEAD_TK = DL.LEAD_TK
-INNER JOIN D_OPPORTUNITIES DO
-	ON FLM.OPPORTUNITY_TK = DO.OPPORTUNITY_TK
 INNER JOIN D_USERS DU
 	ON FLM.ASSIGNED_USER_TK = DU.USER_TK
 INNER JOIN D_CAMPAIGNS DC
 	ON FLM.CAMPAIGN_TK = DC.CAMPAIGN_TK
 INNER JOIN D_DATE DD
 	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
-WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${pLeadSourceFilter}'))</sql>
+WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${pLeadSourceFilter}'))
+AND (DL.LEAD_STATUS IN ('${pLeadStatusFilter}') OR 'All Lead Status' IN ('${pLeadStatusFilter}'))
+AND (DL.LEAD_CONVERTED IN ('${pLeadConvertedFilter}') OR 'All Lead Converted States' IN ('${pLeadConvertedFilter}'))
+AND (FLM.LEAD_CREATED_TK IN ('${pLeadCreatedDateFilter}') OR '9999-99' IN ('${pLeadCreatedDateFilter}'))
+AND (DC.CAMPAIGN_NAME IN ('${pCampaignFilter}') OR 'All Campaigns' IN ('${pCampaignFilter}'))
+AND (DC.CAMPAIGN_STATUS IN ('${pCampaignStatusFilter}') OR 'All Campaign Status' IN ('${pCampaignStatusFilter}'))
+AND (DC.CAMPAIGN_TYPE IN ('${pCampaignTypeFilter}') OR 'All Campaign Types' IN ('${pCampaignTypeFilter}'))
+AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN ('${pUserFullNameFilter}'))
+
+</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -581,6 +583,90 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
       <field>
         <name>pLeadSourceFilter</name>
         <variable>${pLeadSourceFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pLeadStatusFilter</name>
+        <variable>${pLeadStatusFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pLeadConvertedFilter</name>
+        <variable>${pLeadConvertedFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pLeadCreatedDateFilter</name>
+        <variable>${pLeadCreatedDateFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCampaignFilter</name>
+        <variable>${pCampaignFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCampaignStatusFilter</name>
+        <variable>${pCampaignStatusFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCampaignTypeFilter</name>
+        <variable>${pCampaignTypeFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pUserFullNameFilter</name>
+        <variable>${pUserFullNameFilter}</variable>
         <type>String</type>
         <format />
         <currency />
@@ -681,7 +767,7 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
     <file>
       <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
       <extention>xlsx</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <split>N</split>
       <add_date>N</add_date>
       <add_time>N</add_time>
@@ -938,102 +1024,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format />
         <title>LEAD_CONVERTED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_ID</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_ID</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_NAME</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_CREATED_BY</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_CREATED_BY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_DESCRIPTION</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_DESCRIPTION</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_TYPE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_TYPE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_LEAD_SOURCE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_LEAD_SOURCE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_NEXT_STEPS</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_NEXT_STEPS</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_SALES_STAGE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_SALES_STAGE</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1749,7 +1739,7 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
     <file>
       <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
       <extention>xlsx</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <split>N</split>
       <add_date>N</add_date>
       <add_time>N</add_time>
@@ -2006,102 +1996,6 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
         <type>String</type>
         <format />
         <title>LEAD_CONVERTED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_ID</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_ID</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_NAME</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_CREATED_BY</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_CREATED_BY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_DESCRIPTION</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_DESCRIPTION</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_TYPE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_TYPE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_LEAD_SOURCE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_LEAD_SOURCE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_NEXT_STEPS</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_NEXT_STEPS</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_SALES_STAGE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_SALES_STAGE</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -2766,6 +2660,27 @@ WHERE (DL.LEAD_SOURCE IN ('${pLeadSourceFilter}') OR 'All Lead Sources' IN ('${p
     <fields>
       <field>
         <name>pLeadSourceFilter</name>
+      </field>
+      <field>
+        <name>pLeadStatusFilter</name>
+      </field>
+      <field>
+        <name>pLeadConvertedFilter</name>
+      </field>
+      <field>
+        <name>pLeadCreatedDateFilter</name>
+      </field>
+      <field>
+        <name>pCampaignFilter</name>
+      </field>
+      <field>
+        <name>pCampaignStatusFilter</name>
+      </field>
+      <field>
+        <name>pCampaignTypeFilter</name>
+      </field>
+      <field>
+        <name>pUserFullNameFilter</name>
       </field>
       <field>
         <name>pStyling</name>

@@ -2,9 +2,9 @@
 <transformation>
   <info>
     <name>Case Data Export</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
     <directory>/</directory>
@@ -12,47 +12,47 @@
       <parameter>
         <name>pCaseClosedDateFilter</name>
         <default_value>9999-99</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>pCaseCreatedDateFilter</name>
         <default_value>9999-99</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>pCaseFilter</name>
         <default_value>All Cases</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>pCasePriorityFilter</name>
         <default_value>All Case Priorities</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>pCaseStateFilter</name>
         <default_value>All Case States</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>pCaseStatusFilter</name>
         <default_value>All Case Status</default_value>
-        <description/>
+        <description />
       </parameter>
       <parameter>
         <name>pCaseTypeFilter</name>
         <default_value>All Case Types</default_value>
-        <description/>
+        <description />
       </parameter>
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -77,37 +77,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -161,11 +161,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -243,10 +243,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -309,10 +309,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -385,10 +385,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -437,9 +437,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -450,7 +450,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -473,16 +473,16 @@
   </notepads>
   <connection>
     <name>SuiteCRMAnalytics</name>
-    <server/>
+    <server />
     <type>MYSQL</type>
     <access>JNDI</access>
     <database>SuiteCRMAnalytics</database>
     <port>1521</port>
-    <username/>
+    <username />
     <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -556,13 +556,13 @@
   <step>
     <name>Get Cases Data</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>N</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>SuiteCRMAnalytics</connection>
     <sql>SELECT *
@@ -583,11 +583,11 @@ AND (DC.CASE_STATE IN ('${pCaseStateFilter}') OR 'All Case States' IN ('${pCaseS
 AND (DC.CASE_STATUS IN ('${pCaseStatusFilter}') OR 'All Case Status' IN ('${pCaseStatusFilter}'))
 AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseTypeFilter}'))</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -603,23 +603,23 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
   <step>
     <name>Get Parameters</name>
     <type>GetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>pCaseClosedDateFilter</name>
         <variable>${pCaseClosedDateFilter}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -628,10 +628,10 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pCaseCreatedDateFilter</name>
         <variable>${pCaseCreatedDateFilter}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -640,10 +640,10 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pCaseFilter</name>
         <variable>${pCaseFilter}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -652,10 +652,10 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pCasePriorityFilter</name>
         <variable>${pCasePriorityFilter}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -664,10 +664,10 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pCaseStateFilter</name>
         <variable>${pCaseStateFilter}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -676,10 +676,10 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pCaseStatusFilter</name>
         <variable>${pCaseStatusFilter}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -688,10 +688,10 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pCaseTypeFilter</name>
         <variable>${pCaseTypeFilter}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -700,16 +700,16 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pStyling</name>
         <variable>${pStyling}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -725,29 +725,29 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
   <step>
     <name>Get Styling</name>
     <type>GetVariable</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <name>pStyling</name>
         <variable>${pStyling}</variable>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -763,13 +763,13 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
   <step>
     <name>No Style Export</name>
     <type>TypeExitExcelWriterStep</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <header>Y</header>
     <footer>N</footer>
@@ -787,18 +787,18 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
     <file>
       <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
       <extention>xlsx</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <split>N</split>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
+      <date_time_format />
       <sheetname>Data Export</sheetname>
       <autosizecolums>Y</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
       <password>Encrypted </password>
-      <protected_by/>
+      <protected_by />
       <splitevery>0</splitevery>
       <if_file_exists>new</if_file_exists>
       <if_sheet_exists>new</if_sheet_exists>
@@ -806,7 +806,7 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
     <template>
       <enabled>N</enabled>
       <sheet_enabled>N</sheet_enabled>
-      <filename/>
+      <filename />
       <sheetname>DATA</sheetname>
       <hidden>N</hidden>
     </template>
@@ -814,821 +814,821 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
       <field>
         <name>CASE_ID</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_DESCRIPTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_DESCRIPTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_DELETED</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_DELETED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_NUMBER</name>
         <type>Integer</type>
         <format>0</format>
         <title>CASE_NUMBER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_TYPE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_TYPE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_STATUS</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_STATUS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_PRIORITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_PRIORITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_RESOLUTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_RESOLUTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_ID</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_DATE_CREATED</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>ACCOUNT_DATE_CREATED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_MODIFIED</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>ACCOUNT_MODIFIED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_CREATED_BY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_CREATED_BY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_DESCRIPTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_DESCRIPTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_TYPE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_TYPE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_INDUSTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_INDUSTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_CITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_COUNTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_COUNTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_POSTCODE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_STREET</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_CITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_STREET</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ID</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_FIRST_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_FIRST_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_LAST_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_LAST_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_DESCRIPTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_DESCRIPTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_TITLE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_TITLE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_DEPARTMENT</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_DEPARTMENT</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_HOME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_HOME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_MOBILE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_MOBILE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_WORK</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_WORK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_OTHER</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_OTHER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_STATUS</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_STATUS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_STREET</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_CITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_COUNTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_COUNTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_POSTCODE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>FULL_DATETIME</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>FULL_DATETIME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YEAR4</name>
         <type>Integer</type>
         <format>0</format>
         <title>YEAR4</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>MONTH2</name>
         <type>Integer</type>
         <format>0</format>
         <title>MONTH2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_MONTH2</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAY_OF_MONTH2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_WEEK</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAY_OF_WEEK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YYYY-MM</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>YYYY-MM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YYYY-MM-DD</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>YYYY-MM-DD</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>WEEK_OF_YEAR</name>
         <type>Integer</type>
         <format>0</format>
         <title>WEEK_OF_YEAR</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YEAR_FOR_WEEK</name>
         <type>Integer</type>
         <format>0</format>
         <title>YEAR_FOR_WEEK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>QUARTER2</name>
         <type>Integer</type>
         <format>0</format>
         <title>QUARTER2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_WEEK_SHORT_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>DAY_OF_WEEK_SHORT_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_WEEK_LONG_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>DAY_OF_WEEK_LONG_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>MONTH_SHORT_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>MONTH_SHORT_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>MONTH_LONG_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>MONTH_LONG_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAYS_IN_MONTH</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAYS_IN_MONTH</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAYS_IN_YEAR</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAYS_IN_YEAR</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAYS_IN_QUARTER</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAYS_IN_QUARTER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>IS_LEAP_YEAR</name>
         <type>Integer</type>
         <format>0</format>
         <title>IS_LEAP_YEAR</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>IS_WEEKEND</name>
         <type>Integer</type>
         <format>0</format>
         <title>IS_WEEKEND</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DD-MM-YYYY</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>DD-MM-YYYY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>QUARTER_SHORT_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>QUARTER_SHORT_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>QUARTER_LONG_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>QUARTER_LONG_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YYYYMM</name>
         <type>Integer</type>
         <format>0</format>
         <title>YYYYMM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1644,13 +1644,13 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
   <step>
     <name>Output with Styling?</name>
     <type>FilterRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <send_true_to>Styled Export</send_true_to>
     <send_false_to>No Style Export</send_false_to>
@@ -1659,7 +1659,7 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <negated>N</negated>
         <leftvalue>pStyling</leftvalue>
         <function>=</function>
-        <rightvalue/>
+        <rightvalue />
         <value>
           <name>constant</name>
           <type>String</type>
@@ -1667,11 +1667,11 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
           <length>-1</length>
           <precision>-1</precision>
           <isnull>N</isnull>
-          <mask/>
+          <mask />
         </value>
       </condition>
     </compare>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1687,13 +1687,13 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
   <step>
     <name>Styled Export</name>
     <type>TypeExitExcelWriterStep</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <header>Y</header>
     <footer>N</footer>
@@ -1711,18 +1711,18 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
     <file>
       <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
       <extention>xlsx</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <split>N</split>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
+      <date_time_format />
       <sheetname>Data export</sheetname>
       <autosizecolums>Y</autosizecolums>
       <stream_data>N</stream_data>
       <protect_sheet>N</protect_sheet>
       <password>Encrypted </password>
-      <protected_by/>
+      <protected_by />
       <splitevery>0</splitevery>
       <if_file_exists>new</if_file_exists>
       <if_sheet_exists>new</if_sheet_exists>
@@ -1738,821 +1738,821 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
       <field>
         <name>CASE_ID</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_DESCRIPTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_DESCRIPTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_DELETED</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_DELETED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_NUMBER</name>
         <type>Integer</type>
         <format>0</format>
         <title>CASE_NUMBER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_TYPE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_TYPE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_STATUS</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_STATUS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_PRIORITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_PRIORITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_RESOLUTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_RESOLUTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>CASE_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>CASE_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_ID</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_DATE_CREATED</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>ACCOUNT_DATE_CREATED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_MODIFIED</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>ACCOUNT_MODIFIED</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_CREATED_BY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_CREATED_BY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_DESCRIPTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_DESCRIPTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_TYPE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_TYPE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_INDUSTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_INDUSTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_CITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_COUNTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_COUNTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_POSTCODE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_BILLING_ADDRESS_STREET</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_BILLING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_CITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>ACCOUNT_SHIPPING_ADDRESS_STREET</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ID</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ID</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_FIRST_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_FIRST_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_LAST_NAME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_LAST_NAME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_DESCRIPTION</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_DESCRIPTION</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_TITLE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_TITLE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_DEPARTMENT</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_DEPARTMENT</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_HOME</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_HOME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_MOBILE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_MOBILE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_WORK</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_WORK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_PHONE_OTHER</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_PHONE_OTHER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_STATUS</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_STATUS</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_STREET</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_STREET</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_CITY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_CITY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_STATE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_STATE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_COUNTRY</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_COUNTRY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>USER_ADDRESS_POSTCODE</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>USER_ADDRESS_POSTCODE</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>FULL_DATETIME</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>FULL_DATETIME</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YEAR4</name>
         <type>Integer</type>
         <format>0</format>
         <title>YEAR4</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>MONTH2</name>
         <type>Integer</type>
         <format>0</format>
         <title>MONTH2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_MONTH2</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAY_OF_MONTH2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_WEEK</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAY_OF_WEEK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YYYY-MM</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>YYYY-MM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YYYY-MM-DD</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>YYYY-MM-DD</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>WEEK_OF_YEAR</name>
         <type>Integer</type>
         <format>0</format>
         <title>WEEK_OF_YEAR</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YEAR_FOR_WEEK</name>
         <type>Integer</type>
         <format>0</format>
         <title>YEAR_FOR_WEEK</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>QUARTER2</name>
         <type>Integer</type>
         <format>0</format>
         <title>QUARTER2</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_WEEK_SHORT_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>DAY_OF_WEEK_SHORT_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAY_OF_WEEK_LONG_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>DAY_OF_WEEK_LONG_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>MONTH_SHORT_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>MONTH_SHORT_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>MONTH_LONG_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>MONTH_LONG_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAYS_IN_MONTH</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAYS_IN_MONTH</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAYS_IN_YEAR</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAYS_IN_YEAR</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DAYS_IN_QUARTER</name>
         <type>Integer</type>
         <format>0</format>
         <title>DAYS_IN_QUARTER</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>IS_LEAP_YEAR</name>
         <type>Integer</type>
         <format>0</format>
         <title>IS_LEAP_YEAR</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>IS_WEEKEND</name>
         <type>Integer</type>
         <format>0</format>
         <title>IS_WEEKEND</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>DD-MM-YYYY</name>
         <type>Timestamp</type>
-        <format/>
+        <format />
         <title>DD-MM-YYYY</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>QUARTER_SHORT_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>QUARTER_SHORT_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>QUARTER_LONG_DESC</name>
         <type>String</type>
-        <format/>
+        <format />
         <title>QUARTER_LONG_DESC</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
       <field>
         <name>YYYYMM</name>
         <type>Integer</type>
         <format>0</format>
         <title>YYYYMM</title>
-        <titleStyleCell/>
-        <styleCell/>
-        <commentField/>
-        <commentAuthorField/>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
         <formula>N</formula>
-        <hyperlinkField/>
+        <hyperlinkField />
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2568,19 +2568,19 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
   <step>
     <name>Write to log</name>
     <type>WriteToLog</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <loglevel>log_level_basic</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>
-    <logmessage/>
+    <logmessage />
     <fields>
       <field>
         <name>pCaseClosedDateFilter</name>
@@ -2607,7 +2607,7 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
         <name>pStyling</name>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>

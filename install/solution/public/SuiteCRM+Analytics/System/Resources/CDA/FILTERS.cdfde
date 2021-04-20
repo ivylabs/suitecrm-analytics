@@ -1287,7 +1287,7 @@
           {
             "name" : "output",
             "type" : "IndexArray",
-            "value" : "[]"
+            "value" : "[\u00220\u0022]"
           },
           {
             "name" : "outputMode",
@@ -1359,7 +1359,7 @@
           {
             "name" : "output",
             "type" : "IndexArray",
-            "value" : "[]"
+            "value" : "[\u00220\u0022]"
           },
           {
             "name" : "outputMode",
@@ -1431,7 +1431,7 @@
           {
             "name" : "output",
             "type" : "IndexArray",
-            "value" : "[]"
+            "value" : "[\u00220\u0022]"
           },
           {
             "name" : "outputMode",
@@ -2107,6 +2107,78 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "e05f868f-4f95-a3df-030c-353cb00ef897",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pLeadCreatedDateFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u00279999-99\u0027 AS \u0027YYYY-MM\u0027, \u0027All Periods\u0027 AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM\nUNION\nSELECT\n    DD.`YYYY-MM`\n    ,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n    ,2 AS ORDINAL\n\t,YYYYMM\nFROM F_CASE_MANAGEMENT FCM\nINNER JOIN D_DATE DD\n\tON FCM.CASE_CREATED_TK = DD.DATE_TK\nGROUP BY 1,2,3,4\nORDER BY 3, 4 DESC"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "39f9a657-74eb-2ab2-f218-1bcc71096116",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -2467,6 +2539,78 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "bb913731-732f-0457-1ff4-1782c8acd7ba",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pLeadConvertedFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Lead Converted States\u0027 AS LEAD_CONVERTED, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(LEAD_CONVERTED), 2 AS ORDINAL \nFROM D_LEADS\nORDER BY 2,1"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[\u00220\u0022]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "a1a0ec40-4744-f130-d714-9ba27d79637c",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -2584,6 +2728,78 @@
             "name" : "output",
             "type" : "IndexArray",
             "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "7bec828d-eb23-8029-661e-33a9a8718366",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pUserFullNameFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Assigned Agents\u0027 AS USER_FULL_NAME, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(USER_FULL_NAME), 2 AS ORDINAL\nFROM D_USERS\nORDER BY 2,1"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[\u00220\u0022]"
           },
           {
             "name" : "outputMode",
