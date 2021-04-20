@@ -88,6 +88,9 @@
       <Connection id="pLeadPrimaryAddressStateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pLeadCreatedDateFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pInvoiceFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -103,10 +106,16 @@
       <Connection id="pProductCategoryFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pLeadConvertedFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pProductTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pUserNameFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pUserFullNameFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
       <Connection id="pActivityDateFilterQuery" type="sql.jndi">
@@ -377,6 +386,7 @@ ORDER BY 2,1]]></Query>
       <Name>pCampaignStatusFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Campaign Status' AS CAMPAIGN_STATUS, 1 AS ORDINAL
 UNION
@@ -390,6 +400,7 @@ ORDER BY 2,1]]></Query>
       <Name>pCampaignTypeFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Campaign Types' AS CAMPAIGN_TYPE, 1 AS ORDINAL
 UNION
@@ -402,6 +413,7 @@ ORDER BY 2,1]]></Query>
       <Name>pCampaignFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Campaigns' AS CAMPAIGN_NAME, 1 AS ORDINAL
 UNION
@@ -522,6 +534,26 @@ SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE), 2 AS ORDINAL
 FROM D_LEADS
 ORDER BY 2,1]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pLeadCreatedDateFilterQuery"
+               id="pLeadCreatedDateFilterQuery"
+               type="sql">
+      <Name>pLeadCreatedDateFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT '9999-99' AS 'YYYY-MM', 'All Periods' AS DATE_FILTER, 1 AS ORDINAL, 999999 AS YYYYMM
+UNION
+SELECT
+    DD.`YYYY-MM`
+    ,CONCAT(DD.YEAR4,' - ', DD.MONTH_LONG_DESC) AS DATE_FILTER
+    ,2 AS ORDINAL
+	,YYYYMM
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK
+GROUP BY 1,2,3,4
+ORDER BY 3, 4 DESC]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pInvoiceFilterQuery" id="pInvoiceFilterQuery"
                type="sql">
       <Name>pInvoiceFilterQuery</Name>
@@ -585,6 +617,20 @@ SELECT DISTINCT(PRODUCT_CATEGORY_NAME), 2 AS ORDINAL
 FROM D_PRODUCTS
 ORDER BY 2,1]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pLeadConvertedFilterQuery"
+               id="pLeadConvertedFilterQuery"
+               type="sql">
+      <Name>pLeadConvertedFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Lead Converted States' AS LEAD_CONVERTED, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(LEAD_CONVERTED), 2 AS ORDINAL 
+FROM D_LEADS
+ORDER BY 2,1]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pProductTypeFilterQuery"
                id="pProductTypeFilterQuery"
                type="sql">
@@ -607,6 +653,20 @@ ORDER BY 2,1]]></Query>
       <Query><![CDATA[SELECT 'All Users' AS USER_NAME, 1 AS ORDINAL
 UNION
 SELECT DISTINCT(USER_NAME), 2 AS ORDINAL
+FROM D_USERS
+ORDER BY 2,1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pUserFullNameFilterQuery"
+               id="pUserFullNameFilterQuery"
+               type="sql">
+      <Name>pUserFullNameFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Assigned Agents' AS USER_FULL_NAME, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(USER_FULL_NAME), 2 AS ORDINAL
 FROM D_USERS
 ORDER BY 2,1]]></Query>
    </DataAccess>

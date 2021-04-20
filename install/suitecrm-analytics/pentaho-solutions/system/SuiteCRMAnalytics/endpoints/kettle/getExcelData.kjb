@@ -2,8 +2,8 @@
 <job>
   <name>getExcelData</name>
   <description>Clean Job</description>
-  <extended_description/>
-  <job_version/>
+  <extended_description />
+  <job_version />
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
@@ -33,7 +33,7 @@
     </parameter>
     <parameter>
       <name>#cpk.plugin.id</name>
-      <default_value/>
+      <default_value />
       <description>The id of the plugin. This value is automatically set at runtime. Remove '#' to use variable.</description>
     </parameter>
     <parameter>
@@ -43,7 +43,7 @@
     </parameter>
     <parameter>
       <name>#cpk.response.mimeType</name>
-      <default_value/>
+      <default_value />
       <description>The mimeType of the http response. If this value is not set, the plugin will try to determine it from the file extension. Remove '#' to use variable.</description>
     </parameter>
     <parameter>
@@ -53,17 +53,17 @@
     </parameter>
     <parameter>
       <name>#cpk.session.[SessionVarName]</name>
-      <default_value/>
+      <default_value />
       <description>The value of session variable named [sessionVarName]. This value is automatically injected here at runtime if '#' is removed from variable name.</description>
     </parameter>
     <parameter>
       <name>#cpk.session.roles</name>
-      <default_value/>
+      <default_value />
       <description>The roles of the username executing this transformation. This value is automatically set at runtime if '#' is removed from variable name.</description>
     </parameter>
     <parameter>
       <name>#cpk.session.username</name>
-      <default_value/>
+      <default_value />
       <description>The username that is executing this transformation. This value is automatically set at runtime if '#' is removed from variable name.</description>
     </parameter>
     <parameter>
@@ -83,114 +83,129 @@
     </parameter>
     <parameter>
       <name>cpk.solution.system.dir</name>
-      <default_value/>
+      <default_value />
       <description>The pentaho-solutions folder. This value is automatically set at runtime if '#' is removed from variable name.</description>
     </parameter>
     <parameter>
       <name>pAccountIndustryFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pAccountTypeFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCampaignFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCampaignStatusFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCampaignTypeFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCaseClosedDateFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCaseCreatedDateFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCaseFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCasePriorityFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCaseStateFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCaseStatusFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pCaseTypeFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pDataExport</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pLeadConvertedFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pLeadCreatedDateFilter</name>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pLeadSourceFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pLeadStatusFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pOpportunityLeadSourceFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pOpportunitySalesStageFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pOpportunityTypeFilter</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
     </parameter>
     <parameter>
       <name>pStyling</name>
-      <default_value/>
-      <description/>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pUserFullNameFilter</name>
+      <default_value />
+      <description />
     </parameter>
   </parameters>
   <slaveservers>
     </slaveservers>
   <job-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <size_limit_lines/>
-    <interval/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <size_limit_lines />
+    <interval />
+    <timeout_days />
     <field>
       <id>ID_JOB</id>
       <enabled>Y</enabled>
@@ -298,10 +313,10 @@
     </field>
   </job-log-table>
   <jobentry-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -389,10 +404,10 @@
     </field>
   </jobentry-log-table>
   <channel-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -455,11 +470,11 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
-  <shared_objects_file/>
+  <shared_objects_file />
   <entries>
     <entry>
       <name>START</name>
-      <description/>
+      <description />
       <type>SPECIAL</type>
       <start>Y</start>
       <dummy>N</dummy>
@@ -479,7 +494,7 @@
     </entry>
     <entry>
       <name>Success</name>
-      <description/>
+      <description />
       <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -489,25 +504,25 @@
     </entry>
     <entry>
       <name>generateExcelData</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>filename</specification_method>
-      <trans_object_id/>
+      <trans_object_id />
       <filename>${Internal.Entry.Current.Directory}/${pDataExport}.ktr</filename>
-      <transname/>
+      <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -525,10 +540,10 @@
     </entry>
     <entry>
       <name>Set Report Properties</name>
-      <description/>
+      <description />
       <type>SET_VARIABLES</type>
       <replacevars>Y</replacevars>
-      <filename/>
+      <filename />
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -555,25 +570,25 @@
     </entry>
     <entry>
       <name>generateParameters</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>filename</specification_method>
-      <trans_object_id/>
+      <trans_object_id />
       <filename>${Internal.Entry.Current.Directory}/generateParameters.ktr</filename>
-      <transname/>
+      <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
@@ -591,11 +606,11 @@
     </entry>
     <entry>
       <name>Write To Log</name>
-      <description/>
+      <description />
       <type>WRITE_TO_LOG</type>
-      <logmessage/>
+      <logmessage />
       <loglevel>Basic</loglevel>
-      <logsubject/>
+      <logsubject />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -604,10 +619,10 @@
     </entry>
     <entry>
       <name>Set Parameters</name>
-      <description/>
+      <description />
       <type>SET_VARIABLES</type>
       <replacevars>Y</replacevars>
-      <filename/>
+      <filename />
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
@@ -678,6 +693,36 @@
         <field>
           <variable_name>pLeadStatusFilter</variable_name>
           <variable_value>${pLeadStatusFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pLeadConvertedFilter</variable_name>
+          <variable_value>${pLeadConvertedFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pLeadCreatedDateFilter</variable_name>
+          <variable_value>${pLeadCreatedDateFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pCampaignFilter</variable_name>
+          <variable_value>${pCampaignFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pCampaignStatusFilter</variable_name>
+          <variable_value>${pCampaignStatusFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pCampaignTypeFilter</variable_name>
+          <variable_value>${pCampaignTypeFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pUserFullNameFilter</variable_name>
+          <variable_value>${pUserFullNameFilter}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
