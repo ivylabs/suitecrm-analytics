@@ -5728,7 +5728,7 @@
           {
             "name" : "expression",
             "type" : "JavaScript",
-            "value" : "function d(){\n    \n    var dashboard = Dashboards;\n    \n    dashboard.fireChange(\u0027refreshParam\u0027,1);\n} "
+            "value" : "function d(){\n    \n    var dashboard = Dashboards;\n    \n    dashboard.setParameter(\u0022agentListMDXStringParam\u0022,\u0022[Agent].[Agent Name].Members\u0022);\n    dashboard.fireChange(\u0027refreshParam\u0027,1);\n} "
           },
           {
             "name" : "priority",
