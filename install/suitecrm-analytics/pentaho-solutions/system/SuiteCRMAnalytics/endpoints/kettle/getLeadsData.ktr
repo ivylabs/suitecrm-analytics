@@ -517,12 +517,47 @@
       <to>Write to log</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Detect empty stream</from>
+      <to>OUTPUT</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get No Data Styling</from>
+      <to>Output No Data with Styling?</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>OUTPUT</from>
+      <to>Set field value to a constant</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Set field value to a constant</from>
+      <to>Get No Data Styling</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get Leads Data</from>
+      <to>Detect empty stream</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Output No Data with Styling?</from>
+      <to>No Data Styled Export</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Output No Data with Styling?</from>
+      <to>No Data No Style Export</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Get Leads Data</name>
     <type>TableInput</type>
     <description />
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution />
     <copies>1</copies>
     <partitioning>
@@ -698,7 +733,7 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     </remotesteps>
     <GUI>
       <xloc>128</xloc>
-      <yloc>288</yloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2695,7 +2730,330 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     </remotesteps>
     <GUI>
       <xloc>320</xloc>
-      <yloc>288</yloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Detect empty stream</name>
+    <type>DetectEmptyStream</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get No Data Styling</name>
+    <type>GetVariable</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>pStyling</name>
+        <variable>${pStyling}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>896</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>OUTPUT</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>LEAD_ID</name>
+        <rename>OUTPUT</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Output No Data with Styling?</name>
+    <type>FilterRows</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <send_true_to>No Data Styled Export</send_true_to>
+    <send_false_to>No Data No Style Export</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>pStyling</leftvalue>
+        <function>=</function>
+        <rightvalue />
+        <value>
+          <name>constant</name>
+          <type>String</type>
+          <text>1</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask />
+        </value>
+      </condition>
+    </compare>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Set field value to a constant</name>
+    <type>SetValueConstant</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <usevar>N</usevar>
+    <fields>
+      <field>
+        <name>OUTPUT</name>
+        <value>No Data Available</value>
+        <mask />
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>No Data No Style Export</name>
+    <type>TypeExitExcelWriterStep</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>N</header>
+    <footer>N</footer>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>Y</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
+      <extention>xlsx</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format />
+      <sheetname>Data Export</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by />
+      <splitevery>0</splitevery>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+    </file>
+    <template>
+      <enabled>N</enabled>
+      <sheet_enabled>N</sheet_enabled>
+      <filename />
+      <sheetname>DATA</sheetname>
+      <hidden>N</hidden>
+    </template>
+    <fields>
+      <field>
+        <name>OUTPUT</name>
+        <type>String</type>
+        <format />
+        <title>OUTPUT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1280</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>No Data Styled Export</name>
+    <type>TypeExitExcelWriterStep</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>N</header>
+    <footer>N</footer>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A6</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>Y</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
+      <extention>xlsx</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format />
+      <sheetname>Data Export</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by />
+      <splitevery>0</splitevery>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+    </file>
+    <template>
+      <enabled>Y</enabled>
+      <sheet_enabled>Y</sheet_enabled>
+      <filename>${Internal.Entry.Current.Directory}/../../templates/ExcelTemplateOne.xlsx</filename>
+      <sheetname>DATA</sheetname>
+      <hidden>Y</hidden>
+    </template>
+    <fields>
+      <field>
+        <name>OUTPUT</name>
+        <type>String</type>
+        <format />
+        <title>OUTPUT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1280</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
