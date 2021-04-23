@@ -21,7 +21,7 @@
     		username="@@SUITECRM_ANALYTICS_USERNAME@@" 
     		password="@@SUITECRM_ANALYTICS_PASSWORD@@" 
     		driverClassName="com.mysql.jdbc.Driver"
-    		url="jdbc:mysql://@@SUITECRM_ANALYTICS_HOST@@:@@SUITECRM_ANALYTICS_PORT@@/@@SUITECRM_ANALYTICS_DATABASE@@"
+    		url="jdbc:mysql://@@SUITECRM_ANALYTICS_HOST@@:@@SUITECRM_ANALYTICS_PORT@@/@@SUITECRM_ANALYTICS_DATABASE@@?useSSL=false"
 	/> 
 
 	
@@ -34,7 +34,7 @@
                 username="@@SUITECRM_USERNAME@@" 
                 password="@@SUITECRM_PASSWORD@@" 
                 driverClassName="com.mysql.jdbc.Driver"
-                url="jdbc:mysql://@@SUITECRM_HOST@@:@@SUITECRM_PORT@@/@@SUITECRM_DATABASE@@"
+                url="jdbc:mysql://@@SUITECRM_HOST@@:@@SUITECRM_PORT@@/@@SUITECRM_DATABASE@@?useSSL=false"
         />
 
 
