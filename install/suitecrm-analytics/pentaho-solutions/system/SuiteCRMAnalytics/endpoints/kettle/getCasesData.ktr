@@ -20,11 +20,6 @@
         <description />
       </parameter>
       <parameter>
-        <name>pCaseFilter</name>
-        <default_value>All Cases</default_value>
-        <description />
-      </parameter>
-      <parameter>
         <name>pCasePriorityFilter</name>
         <default_value>All Case Priorities</default_value>
         <description />
@@ -538,6 +533,11 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Get Parameters</from>
+      <to>Write to log</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Output with Styling?</from>
       <to>Styled Export</to>
       <enabled>Y</enabled>
@@ -545,11 +545,6 @@
     <hop>
       <from>Output with Styling?</from>
       <to>No Style Export</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Get Parameters</from>
-      <to>Write to log</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -577,7 +572,6 @@ INNER JOIN D_DATE DD
 	ON FCM.CASE_CREATED_TK = DD.DATE_TK
 WHERE (DD.`YYYY-MM` IN ('${pCaseCreatedDateFilter}') OR '9999-99' IN ('${pCaseCreatedDateFilter}'))
 AND (DD.`YYYY-MM` IN ('${pCaseClosedDateFilter}') OR '9999-99' IN ('${pCaseClosedDateFilter}'))
-AND (DC.CASE_NAME IN ('${pCaseFilter}') OR 'All Cases' IN ('${pCaseFilter}'))
 AND (DC.CASE_PRIORITY IN ('${pCasePriorityFilter}') OR 'All Case Priorities' IN ('${pCasePriorityFilter}'))
 AND (DC.CASE_STATE IN ('${pCaseStateFilter}') OR 'All Case States' IN ('${pCaseStateFilter}'))
 AND (DC.CASE_STATUS IN ('${pCaseStatusFilter}') OR 'All Case Status' IN ('${pCaseStatusFilter}'))
@@ -627,18 +621,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
       <field>
         <name>pCaseCreatedDateFilter</name>
         <variable>${pCaseCreatedDateFilter}</variable>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>pCaseFilter</name>
-        <variable>${pCaseFilter}</variable>
         <type>String</type>
         <format />
         <currency />
@@ -2587,9 +2569,6 @@ AND (DC.CASE_TYPE IN ('${pCaseTypeFilter}') OR 'All Case Types' IN ('${pCaseType
       </field>
       <field>
         <name>pCaseCreatedDateFilter</name>
-      </field>
-      <field>
-        <name>pCaseFilter</name>
       </field>
       <field>
         <name>pCasePriorityFilter</name>
