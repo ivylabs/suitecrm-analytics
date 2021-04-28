@@ -2,7 +2,7 @@ lib('cdf-env.js');
 
 var chart = {
 // You can change the chart type below
-  type: "cccLineChart",
+  type: "cccBarChart",
   name: "chart",
   preExecution: function d(){
     
@@ -17,12 +17,16 @@ var chart = {
 
   },
   chartDefinition:  {
-    compatVersion: 3,
     dataAccessId: "DUMMY1",
     path: "/public/SuiteCRM Analytics/System/Resources/SAMPLES/CHARTS.cda",
-    width: 1024,
-    height: 400,
-    legendVisible: false
+    width: 2048,
+    height: 800,
+    legendVisible: false,
+    orthoAxisTitle: "Average Call Duration (Hours)",
+    orthoAxisTitleAlign: "center",
+    //baseAxisTitle: "Period",
+    //baseAxisTitleAlign: "middle",
+    compatVersion: 3
   },
   lifecycle:  {
     silent: false
