@@ -1,5 +1,7 @@
 lib('cdf-env.js');
 
+// http://localhost:8080/suitecrmanalytics/plugin/cgg/api/services/draw?script=/public/SuiteCRM+Analytics/System/Resources/SAMPLES/CGGCHART.js&outputType=png
+
 var chart = {
 // You can change the chart type below
   type: "cccBarChart",
