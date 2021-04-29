@@ -179,6 +179,14 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Module">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Modules" primaryKey="ACTIVITY_TK">
+      <Table name="D_ACTIVITIES">
+      </Table>
+      <Level name="Activity Module" visible="true" column="ACTIVITY_PARENT_TYPE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
   <Cube name="Lead Management" visible="true" cache="true" enabled="true">
     <Table name="F_LEAD_MANAGEMENT">
     </Table>
@@ -271,6 +279,8 @@
     </Table>
     <DimensionUsage source="Activity" name="Activity" visible="true" foreignKey="ACTIVITY_TK" highCardinality="false">
     </DimensionUsage>
+    <DimensionUsage source="Module" name="Module" visible="true" foreignKey="ACTIVITY_TK" highCardinality="false">
+    </DimensionUsage>
     <DimensionUsage source="Agent" name="Agent" visible="true" foreignKey="ASSIGNED_USER_TK" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Date" name="Activity Date" visible="true" foreignKey="ACTIVITY_DATE_TK" highCardinality="false">
@@ -278,6 +288,8 @@
     <Measure name="Total Activities" column="ACTIVITY_TK" aggregator="count" visible="true">
     </Measure>
     <Measure name="Total Activity Duration" column="ACTIVITY_DURATION" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Average Activity Duration" column="ACTIVITY_DURATION" aggregator="avg" visible="true">
     </Measure>
   </Cube>
   <Cube name="Opportunity Activities Analysis" visible="true" cache="true" enabled="true">
