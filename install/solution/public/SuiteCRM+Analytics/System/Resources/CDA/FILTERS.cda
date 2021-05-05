@@ -121,7 +121,7 @@
       <Connection id="pActivityDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
-      <Connection id="pSaleReportDateFilterQuery" type="sql.jndi">
+      <Connection id="pSalePaidDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
    </DataSources>
@@ -690,10 +690,10 @@ INNER JOIN D_DATE DD
 GROUP BY 1,2,3,4
 ORDER BY 3, 4 DESC]]></Query>
    </DataAccess>
-   <DataAccess access="public" connection="pSaleReportDateFilterQuery"
-               id="pSaleReportDateFilterQuery"
+   <DataAccess access="public" connection="pSalePaidDateFilterQuery"
+               id="pSalePaidDateFilterQuery"
                type="sql">
-      <Name>pSaleReportDateFilterQuery</Name>
+      <Name>pSalePaidDateFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters/>
