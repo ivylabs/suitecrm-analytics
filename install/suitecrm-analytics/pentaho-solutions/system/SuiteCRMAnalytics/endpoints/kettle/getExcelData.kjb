@@ -152,6 +152,11 @@
       <description />
     </parameter>
     <parameter>
+      <name>pInvoiceStatusFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
       <name>pLeadConvertedFilter</name>
       <default_value />
       <description />
@@ -183,6 +188,21 @@
     </parameter>
     <parameter>
       <name>pOpportunityTypeFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pProductCategoryFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pProductTypeFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pSalePaidDateFilter</name>
       <default_value />
       <description />
     </parameter>
@@ -733,6 +753,26 @@
         <field>
           <variable_name>pOpportunityTypeFilter</variable_name>
           <variable_value>${pOpportunityTypeFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pProductTypeFilter</variable_name>
+          <variable_value>${pProductTypeFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pProductCategoryFilter</variable_name>
+          <variable_value>${pProductCategoryFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pInvoiceStatusFilter</variable_name>
+          <variable_value>${pInvoiceStatusFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pSalePaidDateFilter</variable_name>
+          <variable_value>${pSalePaidDateFilter}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
