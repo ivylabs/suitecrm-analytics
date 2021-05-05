@@ -2908,7 +2908,7 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "pSaleReportDateFilterQuery"
+            "value" : "pSalePaidDateFilterQuery"
           },
           {
             "name" : "access",
