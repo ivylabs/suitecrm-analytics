@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document-meta xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <office:meta>
+    <meta:creation-date>2018-05-13T05:35:11 UTC</meta:creation-date>
+    <meta:generator>Pentaho Reporting Engine Classic 8.2.0.0-342</meta:generator>
+    <dc:date>2021-04-15T03:41:42 UTC</dc:date>
+    <dc:title>Account Opportunity Value</dc:title>
+    <autoGenNs:visible xmlns:autoGenNs="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">true</autoGenNs:visible>
+    <autoGenNs:prpt-spec.version.major xmlns:autoGenNs="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">8</autoGenNs:prpt-spec.version.major>
+    <autoGenNs:prpt-spec.version.minor xmlns:autoGenNs="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">2</autoGenNs:prpt-spec.version.minor>
+    <autoGenNs:prpt-spec.version.patch xmlns:autoGenNs="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">0</autoGenNs:prpt-spec.version.patch>
+  </office:meta>
+</office:document-meta>
