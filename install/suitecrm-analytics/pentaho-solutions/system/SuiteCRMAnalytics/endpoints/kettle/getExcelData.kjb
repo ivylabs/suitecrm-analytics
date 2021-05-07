@@ -97,6 +97,21 @@
       <description />
     </parameter>
     <parameter>
+      <name>pActivityDateFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pActivityParentTypeFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
+      <name>pActivityTypeFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
       <name>pCampaignFilter</name>
       <default_value />
       <description />
@@ -773,6 +788,21 @@
         <field>
           <variable_name>pSalePaidDateFilter</variable_name>
           <variable_value>${pSalePaidDateFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pActivityDateFilter</variable_name>
+          <variable_value>${pActivityDateFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pActivityTypeFilter</variable_name>
+          <variable_value>${pActivityTypeFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pActivityParentTypeFilter</variable_name>
+          <variable_value>${pActivityParentTypeFilter}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
