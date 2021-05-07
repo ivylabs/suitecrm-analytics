@@ -431,7 +431,7 @@
     <created_date>2021/05/07 14:20:41.571</created_date>
     <modified_user>-</modified_user>
     <modified_date>2021/05/07 14:20:41.571</modified_date>
-    <key_for_session_key />
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -578,6 +578,44 @@
     </GUI>
   </step>
   <step>
+    <name>Get No Data Styling</name>
+    <type>GetVariable</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>pStyling</name>
+        <variable>${pStyling}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Get Opportunity Data</name>
     <type>TableInput</type>
     <description />
@@ -625,44 +663,6 @@ AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Indust
     <GUI>
       <xloc>128</xloc>
       <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Get No Data Styling</name>
-    <type>GetVariable</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>pStyling</name>
-        <variable>${pStyling}</variable>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -751,8 +751,8 @@ AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Indust
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>pOpportunitySalesSategFilter</name>
-        <variable>${pOpportunitySalesSategFilter}</variable>
+        <name>pOpportunitySalesStageFilter</name>
+        <variable>${pOpportunitySalesStageFilter}</variable>
         <type>String</type>
         <format />
         <currency />
@@ -1013,6 +1013,887 @@ AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Indust
     <GUI>
       <xloc>1088</xloc>
       <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>No Style Report</name>
+    <type>TypeExitExcelWriterStep</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A6</startingCell>
+    <appendOmitHeader>N</appendOmitHeader>
+    <appendOffset>0</appendOffset>
+    <appendEmpty>0</appendEmpty>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <leaveExistingStylesUnchanged>Y</leaveExistingStylesUnchanged>
+    <appendLines>N</appendLines>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
+      <extention>xlsx</extention>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format />
+      <sheetname>Data export</sheetname>
+      <autosizecolums>Y</autosizecolums>
+      <stream_data>N</stream_data>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <protected_by />
+      <splitevery>0</splitevery>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+    </file>
+    <template>
+      <enabled>N</enabled>
+      <sheet_enabled>N</sheet_enabled>
+      <filename />
+      <sheetname>DATA</sheetname>
+      <hidden>N</hidden>
+    </template>
+    <fields>
+      <field>
+        <name>OPPORTUNITY_AMOUNT</name>
+        <type>Number</type>
+        <format />
+        <title>OPPORTUNITY_AMOUNT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_PROBABILITY</name>
+        <type>Number</type>
+        <format />
+        <title>OPPORTUNITY_PROBABILITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_PROBABILITY_PERCENT</name>
+        <type>Number</type>
+        <format />
+        <title>OPPORTUNITY_PROBABILITY_PERCENT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_ID</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_NAME</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_CREATED_BY</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_CREATED_BY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_DELETED</name>
+        <type>Integer</type>
+        <format />
+        <title>OPPORTUNITY_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_DESCRIPTION</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_DESCRIPTION</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_TYPE</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_TYPE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_LEAD_SOURCE</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_LEAD_SOURCE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_NEXT_STEPS</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_NEXT_STEPS</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_SALES_STAGE</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_SALES_STAGE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_ID</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_NAME</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_DELETED</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_KEY</name>
+        <type>Integer</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_KEY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_COUNT</name>
+        <type>Integer</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_COUNT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_REFER_URL</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_REFER_URL</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_TEXT</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_TEXT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_STATUS</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_STATUS</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TYPE</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_TYPE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_OBJECTIVE</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_OBJECTIVE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_CONTENT</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_CONTENT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_FREQUENCY</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_FREQUENCY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_ID</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_NAME</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DATE_CREATED</name>
+        <type>Timestamp</type>
+        <format />
+        <title>ACCOUNT_DATE_CREATED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_MODIFIED</name>
+        <type>Timestamp</type>
+        <format />
+        <title>ACCOUNT_MODIFIED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_CREATED_BY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_CREATED_BY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DELETED</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DESCRIPTION</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_DESCRIPTION</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_TYPE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_TYPE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_INDUSTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_INDUSTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_CITY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_CITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_COUNTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_COUNTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_POSTCODE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_POSTCODE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_STATE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_STATE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_STREET</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_STREET</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_CITY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_CITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_STATE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_STATE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_STREET</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_ID</name>
+        <type>String</type>
+        <format />
+        <title>USER_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_DELETED</name>
+        <type>String</type>
+        <format />
+        <title>USER_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_NAME</name>
+        <type>String</type>
+        <format />
+        <title>USER_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_FIRST_NAME</name>
+        <type>String</type>
+        <format />
+        <title>USER_FIRST_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_LAST_NAME</name>
+        <type>String</type>
+        <format />
+        <title>USER_LAST_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_FULL_NAME</name>
+        <type>String</type>
+        <format />
+        <title>USER_FULL_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_DESCRIPTION</name>
+        <type>String</type>
+        <format />
+        <title>USER_DESCRIPTION</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_TITLE</name>
+        <type>String</type>
+        <format />
+        <title>USER_TITLE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_DEPARTMENT</name>
+        <type>String</type>
+        <format />
+        <title>USER_DEPARTMENT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_PHONE_HOME</name>
+        <type>String</type>
+        <format />
+        <title>USER_PHONE_HOME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_PHONE_MOBILE</name>
+        <type>String</type>
+        <format />
+        <title>USER_PHONE_MOBILE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_PHONE_WORK</name>
+        <type>String</type>
+        <format />
+        <title>USER_PHONE_WORK</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_PHONE_OTHER</name>
+        <type>String</type>
+        <format />
+        <title>USER_PHONE_OTHER</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_STATUS</name>
+        <type>String</type>
+        <format />
+        <title>USER_STATUS</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_ADDRESS_STREET</name>
+        <type>String</type>
+        <format />
+        <title>USER_ADDRESS_STREET</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_ADDRESS_CITY</name>
+        <type>String</type>
+        <format />
+        <title>USER_ADDRESS_CITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_ADDRESS_STATE</name>
+        <type>String</type>
+        <format />
+        <title>USER_ADDRESS_STATE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_ADDRESS_COUNTRY</name>
+        <type>String</type>
+        <format />
+        <title>USER_ADDRESS_COUNTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>USER_ADDRESS_POSTCODE</name>
+        <type>String</type>
+        <format />
+        <title>USER_ADDRESS_POSTCODE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>FULL_DATETIME</name>
+        <type>Timestamp</type>
+        <format />
+        <title>FULL_DATETIME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>YEAR4</name>
+        <type>Integer</type>
+        <format />
+        <title>YEAR4</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>DAY_OF_MONTH2</name>
+        <type>Integer</type>
+        <format />
+        <title>DAY_OF_MONTH2</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>DAY_OF_WEEK_LONG_DESC</name>
+        <type>String</type>
+        <format />
+        <title>DAY_OF_WEEK_LONG_DESC</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>MONTH_LONG_DESC</name>
+        <type>String</type>
+        <format />
+        <title>MONTH_LONG_DESC</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>QUARTER_LONG_DESC</name>
+        <type>String</type>
+        <format />
+        <title>QUARTER_LONG_DESC</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2083,7 +2964,7 @@ AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Indust
         <name>pOpportunityLeadSourceFilter</name>
       </field>
       <field>
-        <name>pOpportunitySalesSategFilter</name>
+        <name>pOpportunitySalesStageFilter</name>
       </field>
       <field>
         <name>pUserFullNameFilter</name>
@@ -2108,887 +2989,6 @@ AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Indust
     <GUI>
       <xloc>320</xloc>
       <yloc>608</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>No Style Report</name>
-    <type>TypeExitExcelWriterStep</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <makeSheetActive>Y</makeSheetActive>
-    <rowWritingMethod>overwrite</rowWritingMethod>
-    <startingCell>A6</startingCell>
-    <appendOmitHeader>N</appendOmitHeader>
-    <appendOffset>0</appendOffset>
-    <appendEmpty>0</appendEmpty>
-    <rowWritingMethod>overwrite</rowWritingMethod>
-    <forceFormulaRecalculation>N</forceFormulaRecalculation>
-    <leaveExistingStylesUnchanged>Y</leaveExistingStylesUnchanged>
-    <appendLines>N</appendLines>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>${Internal.Entry.Current.Directory}/../../output/excelData</name>
-      <extention>xlsx</extention>
-      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
-      <split>N</split>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
-      <sheetname>Data export</sheetname>
-      <autosizecolums>Y</autosizecolums>
-      <stream_data>N</stream_data>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <protected_by />
-      <splitevery>0</splitevery>
-      <if_file_exists>new</if_file_exists>
-      <if_sheet_exists>new</if_sheet_exists>
-    </file>
-    <template>
-      <enabled>N</enabled>
-      <sheet_enabled>N</sheet_enabled>
-      <filename />
-      <sheetname>DATA</sheetname>
-      <hidden>N</hidden>
-    </template>
-    <fields>
-      <field>
-        <name>OPPORTUNITY_AMOUNT</name>
-        <type>Number</type>
-        <format />
-        <title>OPPORTUNITY_AMOUNT</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_PROBABILITY</name>
-        <type>Number</type>
-        <format />
-        <title>OPPORTUNITY_PROBABILITY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_PROBABILITY_PERCENT</name>
-        <type>Number</type>
-        <format />
-        <title>OPPORTUNITY_PROBABILITY_PERCENT</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_ID</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_ID</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_NAME</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_CREATED_BY</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_CREATED_BY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_DELETED</name>
-        <type>Integer</type>
-        <format />
-        <title>OPPORTUNITY_DELETED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_DESCRIPTION</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_DESCRIPTION</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_TYPE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_TYPE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_LEAD_SOURCE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_LEAD_SOURCE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_NEXT_STEPS</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_NEXT_STEPS</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>OPPORTUNITY_SALES_STAGE</name>
-        <type>String</type>
-        <format />
-        <title>OPPORTUNITY_SALES_STAGE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_ID</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_ID</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_NAME</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_DELETED</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_DELETED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_TRACKER_KEY</name>
-        <type>Integer</type>
-        <format />
-        <title>CAMPAIGN_TRACKER_KEY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_TRACKER_COUNT</name>
-        <type>Integer</type>
-        <format />
-        <title>CAMPAIGN_TRACKER_COUNT</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_REFER_URL</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_REFER_URL</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_TRACKER_TEXT</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_TRACKER_TEXT</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_STATUS</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_STATUS</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_TYPE</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_TYPE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_OBJECTIVE</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_OBJECTIVE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_CONTENT</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_CONTENT</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>CAMPAIGN_FREQUENCY</name>
-        <type>String</type>
-        <format />
-        <title>CAMPAIGN_FREQUENCY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_ID</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_ID</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_NAME</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_DATE_CREATED</name>
-        <type>Timestamp</type>
-        <format />
-        <title>ACCOUNT_DATE_CREATED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_MODIFIED</name>
-        <type>Timestamp</type>
-        <format />
-        <title>ACCOUNT_MODIFIED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_CREATED_BY</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_CREATED_BY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_DELETED</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_DELETED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_DESCRIPTION</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_DESCRIPTION</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_TYPE</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_TYPE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_INDUSTRY</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_INDUSTRY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_BILLING_ADDRESS_CITY</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_BILLING_ADDRESS_CITY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_BILLING_ADDRESS_COUNTRY</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_BILLING_ADDRESS_COUNTRY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_BILLING_ADDRESS_POSTCODE</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_BILLING_ADDRESS_POSTCODE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_BILLING_ADDRESS_STATE</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_BILLING_ADDRESS_STATE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_BILLING_ADDRESS_STREET</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_BILLING_ADDRESS_STREET</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_SHIPPING_ADDRESS_CITY</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_SHIPPING_ADDRESS_CITY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_SHIPPING_ADDRESS_STATE</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_SHIPPING_ADDRESS_STATE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>ACCOUNT_SHIPPING_ADDRESS_STREET</name>
-        <type>String</type>
-        <format />
-        <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_ID</name>
-        <type>String</type>
-        <format />
-        <title>USER_ID</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_DELETED</name>
-        <type>String</type>
-        <format />
-        <title>USER_DELETED</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_NAME</name>
-        <type>String</type>
-        <format />
-        <title>USER_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_FIRST_NAME</name>
-        <type>String</type>
-        <format />
-        <title>USER_FIRST_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_LAST_NAME</name>
-        <type>String</type>
-        <format />
-        <title>USER_LAST_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_FULL_NAME</name>
-        <type>String</type>
-        <format />
-        <title>USER_FULL_NAME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_DESCRIPTION</name>
-        <type>String</type>
-        <format />
-        <title>USER_DESCRIPTION</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_TITLE</name>
-        <type>String</type>
-        <format />
-        <title>USER_TITLE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_DEPARTMENT</name>
-        <type>String</type>
-        <format />
-        <title>USER_DEPARTMENT</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_PHONE_HOME</name>
-        <type>String</type>
-        <format />
-        <title>USER_PHONE_HOME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_PHONE_MOBILE</name>
-        <type>String</type>
-        <format />
-        <title>USER_PHONE_MOBILE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_PHONE_WORK</name>
-        <type>String</type>
-        <format />
-        <title>USER_PHONE_WORK</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_PHONE_OTHER</name>
-        <type>String</type>
-        <format />
-        <title>USER_PHONE_OTHER</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_STATUS</name>
-        <type>String</type>
-        <format />
-        <title>USER_STATUS</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_ADDRESS_STREET</name>
-        <type>String</type>
-        <format />
-        <title>USER_ADDRESS_STREET</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_ADDRESS_CITY</name>
-        <type>String</type>
-        <format />
-        <title>USER_ADDRESS_CITY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_ADDRESS_STATE</name>
-        <type>String</type>
-        <format />
-        <title>USER_ADDRESS_STATE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_ADDRESS_COUNTRY</name>
-        <type>String</type>
-        <format />
-        <title>USER_ADDRESS_COUNTRY</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>USER_ADDRESS_POSTCODE</name>
-        <type>String</type>
-        <format />
-        <title>USER_ADDRESS_POSTCODE</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>FULL_DATETIME</name>
-        <type>Timestamp</type>
-        <format />
-        <title>FULL_DATETIME</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>YEAR4</name>
-        <type>Integer</type>
-        <format />
-        <title>YEAR4</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>DAY_OF_MONTH2</name>
-        <type>Integer</type>
-        <format />
-        <title>DAY_OF_MONTH2</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>DAY_OF_WEEK_LONG_DESC</name>
-        <type>String</type>
-        <format />
-        <title>DAY_OF_WEEK_LONG_DESC</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>MONTH_LONG_DESC</name>
-        <type>String</type>
-        <format />
-        <title>MONTH_LONG_DESC</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-      <field>
-        <name>QUARTER_LONG_DESC</name>
-        <type>String</type>
-        <format />
-        <title>QUARTER_LONG_DESC</title>
-        <titleStyleCell />
-        <styleCell />
-        <commentField />
-        <commentAuthorField />
-        <formula>N</formula>
-        <hyperlinkField />
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
