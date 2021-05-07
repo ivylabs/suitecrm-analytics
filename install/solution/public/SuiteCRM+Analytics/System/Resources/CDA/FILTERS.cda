@@ -439,6 +439,7 @@ ORDER BY 3,2]]></Query>
       <Name>pAccountTypeFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Account Types' AS ACCOUNT_TYPE, 1 AS ORDINAL
 UNION
@@ -465,6 +466,7 @@ ORDER BY 2,1]]></Query>
       <Name>pAccountIndustryFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Account Industries' AS ACCOUNT_INDUSTRY, 1 AS ORDINAL
 UNION
@@ -585,6 +587,7 @@ ORDER BY 2]]></Query>
       <Name>pInvoiceStatusFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Invoice Status' AS INVOICE_STATUS, 1 AS ORDINAL
 UNION
@@ -610,6 +613,7 @@ ORDER BY 2,1]]></Query>
       <Name>pProductCategoryFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Product Categories' AS PRODUCT_CATEGORY_NAME, 1 AS ORDINAL
 UNION
@@ -637,6 +641,7 @@ ORDER BY 2,1]]></Query>
       <Name>pProductTypeFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Product Types' AS PRODUCT_TYPE, 1 AS ORDINAL
 UNION
