@@ -109,6 +109,12 @@
       <Connection id="pLeadConvertedFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pActivityParentFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pActivityTypeFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pProductTypeFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -633,6 +639,34 @@ ORDER BY 2,1]]></Query>
 UNION
 SELECT DISTINCT(LEAD_CONVERTED), 2 AS ORDINAL 
 FROM D_LEADS
+ORDER BY 2,1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pActivityParentFilterQuery"
+               id="pActivityParentFilterQuery"
+               type="sql">
+      <Name>pActivityParentFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Activity Modules' AS ACTIVITY_PARENT, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(ACTIVITY_PARENT_TYPE), 2 AS ORDINAL 
+FROM D_ACTIVITIES
+ORDER BY 2,1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pActivityTypeFilterQuery"
+               id="pActivityTypeFilterQuery"
+               type="sql">
+      <Name>pActivityTypeFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Activity Types' AS ACTIVITY_TYPE, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(ACTIVITY_TYPE), 2 AS ORDINAL 
+FROM D_ACTIVITIES
 ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pProductTypeFilterQuery"
