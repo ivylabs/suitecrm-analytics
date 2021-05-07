@@ -366,6 +366,7 @@ ORDER BY FIELD(OPPORTUNITY_SALES_STAGE, 'All Lead Status','Not Set','Prospecting
       <Name>pOpportunityLeadSourceFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Opportunity Lead Sources' AS OPPORTUNITY_LEAD_SOURCE, 1 AS ORDINAL
 UNION
@@ -379,6 +380,7 @@ ORDER BY 2,1]]></Query>
       <Name>pOpportunityTypeFilterQuery</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0" mode="include"/>
       <Parameters/>
       <Query><![CDATA[SELECT 'All Opportunity Types' as OPPORTUNITY_TYPE, 1 AS ORDINAL
 UNION

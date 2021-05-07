@@ -1143,7 +1143,7 @@
           {
             "name" : "output",
             "type" : "IndexArray",
-            "value" : "[]"
+            "value" : "[\u00220\u0022]"
           },
           {
             "name" : "outputMode",
@@ -1215,7 +1215,7 @@
           {
             "name" : "output",
             "type" : "IndexArray",
-            "value" : "[]"
+            "value" : "[\u00220\u0022]"
           },
           {
             "name" : "outputMode",
