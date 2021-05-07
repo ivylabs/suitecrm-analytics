@@ -642,6 +642,7 @@ INNER JOIN D_DATE AS DD
 WHERE (DD.`YYYY-MM` IN ('${pOpportunityCreatedDateFilter}') OR '9999-99' IN ('${pOpportunityCreatedDateFilter}'))
 AND (DC.CAMPAIGN_NAME IN ('${pCampaignFilter}') OR 'All Campaigns' IN ('${pCampaignFilter}'))
 AND (DC.CAMPAIGN_STATUS IN ('${pCampaignStatusFilter}') OR 'All Campaign Status' IN ('${pCampaignStatusFilter}'))
+AND (DC.CAMPAIGN_TYPE IN ('${pCampaignTypeFilter}') OR 'All Campaign Types' IN ('${pCampaignTypeFilter}'))
 AND (DO.OPPORTUNITY_TYPE IN ('${pOpportunityTypeFilter}') OR 'All Opportunity Types' IN ('${pOpportunityTypeFilter}'))
 AND (DO.OPPORTUNITY_LEAD_SOURCE IN ('${pOpportunityLeadSourceFilter}') OR 'All Opportunity Lead Sources' IN ('${pOpportunityLeadSourceFilter}'))
 AND (DO.OPPORTUNITY_SALES_STAGE IN ('${pOpportunitySaleStageFilter}') OR 'All Opportunity Sale Stages' IN ('${pOpportunitySaleStageFilter}'))
