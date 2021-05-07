@@ -950,7 +950,7 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     <footer>N</footer>
     <makeSheetActive>Y</makeSheetActive>
     <rowWritingMethod>overwrite</rowWritingMethod>
-    <startingCell>A6</startingCell>
+    <startingCell>A1</startingCell>
     <appendOmitHeader>N</appendOmitHeader>
     <appendOffset>0</appendOffset>
     <appendEmpty>0</appendEmpty>

@@ -645,10 +645,21 @@ AND (DC.CAMPAIGN_STATUS IN ('${pCampaignStatusFilter}') OR 'All Campaign Status'
 AND (DC.CAMPAIGN_TYPE IN ('${pCampaignTypeFilter}') OR 'All Campaign Types' IN ('${pCampaignTypeFilter}'))
 AND (DO.OPPORTUNITY_TYPE IN ('${pOpportunityTypeFilter}') OR 'All Opportunity Types' IN ('${pOpportunityTypeFilter}'))
 AND (DO.OPPORTUNITY_LEAD_SOURCE IN ('${pOpportunityLeadSourceFilter}') OR 'All Opportunity Lead Sources' IN ('${pOpportunityLeadSourceFilter}'))
-AND (DO.OPPORTUNITY_SALES_STAGE IN ('${pOpportunitySaleStageFilter}') OR 'All Opportunity Sale Stages' IN ('${pOpportunitySaleStageFilter}'))
+
+AND (DO.OPPORTUNITY_SALES_STAGE IN ('${pOpportunitySalesStageFilter}') OR 'All Opportunity Sales Stages' IN ('${pOpportunitySalesStageFilter}'))
+                                  
+
 AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN ('${pUserFullNameFilter}'))
 AND (DA.ACCOUNT_TYPE IN ('${pAccountTypeFilter}') OR 'All Account Types' IN ('${pAccountTypeFilter}'))
-AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Industries' IN ('${pAccountIndustryFilter}'));</sql>
+AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Industries' IN ('${pAccountIndustryFilter}'))
+
+
+
+
+
+
+;
+</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -1032,7 +1043,7 @@ AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Indust
     <footer>N</footer>
     <makeSheetActive>Y</makeSheetActive>
     <rowWritingMethod>overwrite</rowWritingMethod>
-    <startingCell>A6</startingCell>
+    <startingCell>A1</startingCell>
     <appendOmitHeader>N</appendOmitHeader>
     <appendOffset>0</appendOffset>
     <appendEmpty>0</appendEmpty>
