@@ -102,7 +102,7 @@
       <description />
     </parameter>
     <parameter>
-      <name>pActivityParentFilter</name>
+      <name>pActivityParentTypeFilter</name>
       <default_value />
       <description />
     </parameter>
@@ -801,8 +801,8 @@
           <variable_type>JVM</variable_type>
         </field>
         <field>
-          <variable_name>pActivityParentFilter</variable_name>
-          <variable_value>${pActivityParentFilter}</variable_value>
+          <variable_name>pActivityParentTypeFilter</variable_name>
+          <variable_value>${pActivityParentTypeFilter}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>

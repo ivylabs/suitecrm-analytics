@@ -2620,7 +2620,7 @@
           {
             "name" : "name",
             "type" : "Id",
-            "value" : "pActivityParentFilterQuery"
+            "value" : "pActivityParentTypeFilterQuery"
           },
           {
             "name" : "access",
@@ -2635,7 +2635,7 @@
           {
             "name" : "query",
             "type" : "SqlQuery",
-            "value" : "SELECT \u0027All Activity Modules\u0027 AS ACTIVITY_PARENT, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(ACTIVITY_PARENT_TYPE), 2 AS ORDINAL \nFROM D_ACTIVITIES\nORDER BY 2,1"
+            "value" : "SELECT \u0027All Activity Modules\u0027 AS ACTIVITY_PARENT_TYPE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(ACTIVITY_PARENT_TYPE), 2 AS ORDINAL \nFROM D_ACTIVITIES\nORDER BY 2,1"
           },
           {
             "name" : "parameters",
