@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Activity Data Export</name>
+    <name>Opportunity Data Export</name>
     <description />
     <extended_description />
     <trans_version />
@@ -428,9 +428,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2021/05/07 09:42:39.984</created_date>
+    <created_date>2021/05/07 14:20:41.571</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/05/07 09:42:39.984</modified_date>
+    <modified_date>2021/05/07 14:20:41.571</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -498,6 +498,16 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Get Opportunity Data</from>
+      <to>Detect empty stream</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get Opportunity Data</from>
+      <to>Get Styling</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Get No Data Styling</from>
       <to>Output No Data with Styling?</to>
       <enabled>Y</enabled>
@@ -505,16 +515,6 @@
     <hop>
       <from>Get Parameters</from>
       <to>Write to log</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Get Activity Data</from>
-      <to>Detect empty stream</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Get Activity Data</from>
-      <to>Get Styling</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -578,48 +578,6 @@
     </GUI>
   </step>
   <step>
-    <name>Get Activity Data</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>SuiteCRMAnalytics</connection>
-    <sql>SELECT *
-FROM F_ACTIVITIES AS FA
-INNER JOIN D_ACTIVITIES AS DA
-ON FA.ACTIVITY_TK = DA.ACTIVITY_TK
-INNER JOIN D_USERS AS DU
-ON FA.ASSIGNED_USER_TK = DU.USER_TK
-INNER JOIN D_DATE AS DD
-ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
-WHERE (DD.`YYYY-MM` IN ('${pActivityDateFilter}') OR '9999-99' IN ('${pActivityDateFilter}'))
-AND (DA.ACTIVITY_TYPE IN ('${pActivityTypeFilter}') OR 'All Activity Types' IN ('${pActivityTypeFilter}'))
-AND (DA.ACTIVITY_PARENT_TYPE IN ('${pActivityParentTypeFilter}') OR 'All Activity Modules' IN ('${pActivityParentTypeFilter}'))
-AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN ('${pUserFullNameFilter}'));</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>128</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Get No Data Styling</name>
     <type>GetVariable</type>
     <description />
@@ -658,6 +616,59 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     </GUI>
   </step>
   <step>
+    <name>Get Opportunity Data</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>SuiteCRMAnalytics</connection>
+    <sql>SELECT * 
+FROM F_OPPORTUNITY_MANAGEMENT AS FOM
+INNER JOIN D_CAMPAIGNS AS DC
+	ON FOM.CAMPAIGN_TK = DC.CAMPAIGN_TK
+INNER JOIN D_ACCOUNTS AS DA
+	ON FOM.ACCOUNT_TK = DA.ACCOUNT_TK
+INNER JOIN D_OPPORTUNITIES AS DO
+	ON FOM.OPPORTUNITY_TK = DO.OPPORTUNITY_TK
+INNER JOIN D_USERS AS DU
+	ON FOM.ASSIGNED_USER_TK = DU.USER_TK 
+INNER JOIN D_DATE AS DD
+	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
+WHERE (DD.`YYYY-MM` IN ('${pOpportunityCreatedDateFilter}') OR '9999-99' IN ('${pOpportunityCreatedDateFilter}'))
+AND (DC.CAMPAIGN_NAME IN ('${pCampaignFilter}') OR 'All Campaigns' IN ('${pCampaignFilter}'))
+AND (DC.CAMPAIGN_STATUS IN ('${pCampaignStatusFilter}') OR 'All Campaign Status' IN ('${pCampaignStatusFilter}'))
+AND (DC.CAMPAIGN_TYPE IN ('${pCampaignTypeFilter}') OR 'All Campaign Types' IN ('${pCampaignTypeFilter}'))
+AND (DO.OPPORTUNITY_TYPE IN ('${pOpportunityTypeFilter}') OR 'All Opportunity Types' IN ('${pOpportunityTypeFilter}'))
+AND (DO.OPPORTUNITY_LEAD_SOURCE IN ('${pOpportunityLeadSourceFilter}') OR 'All Opportunity Lead Sources' IN ('${pOpportunityLeadSourceFilter}'))
+AND (DO.OPPORTUNITY_SALES_STAGE IN ('${pOpportunitySalesStageFilter}') OR 'All Opportunity Sales Stages' IN ('${pOpportunitySalesStageFilter}'))                         
+AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN ('${pUserFullNameFilter}'))
+AND (DA.ACCOUNT_TYPE IN ('${pAccountTypeFilter}') OR 'All Account Types' IN ('${pAccountTypeFilter}'))
+AND (DA.ACCOUNT_INDUSTRY IN ('${pAccountIndustryFilter}') OR 'All Account Industries' IN ('${pAccountIndustryFilter}'));
+</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Get Parameters</name>
     <type>GetVariable</type>
     <description />
@@ -670,8 +681,8 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     </partitioning>
     <fields>
       <field>
-        <name>pActivityDateFilter</name>
-        <variable>${pActivityDateFilter}</variable>
+        <name>pOpportunityCreatedDateFilter</name>
+        <variable>${pOpportunityCreatedDateFilter}</variable>
         <type>String</type>
         <format />
         <currency />
@@ -682,8 +693,8 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>pActivityTypeFilter</name>
-        <variable>${pActivityTypeFilter}</variable>
+        <name>pCampaignFilter</name>
+        <variable>${pCampaignFilter}</variable>
         <type>String</type>
         <format />
         <currency />
@@ -694,8 +705,56 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>pActivityParentTypeFilter</name>
-        <variable>${pActivityParentTypeFilter}</variable>
+        <name>pCampaignStatusFilter</name>
+        <variable>${pCampaignStatusFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pCampaignTypeFilter</name>
+        <variable>${pCampaignTypeFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pOpportunityTypeFilter</name>
+        <variable>${pOpportunityTypeFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pOpportunityLeadSourceFilter</name>
+        <variable>${pOpportunityLeadSourceFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pOpportunitySalesStageFilter</name>
+        <variable>${pOpportunitySalesStageFilter}</variable>
         <type>String</type>
         <format />
         <currency />
@@ -708,6 +767,30 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
       <field>
         <name>pUserFullNameFilter</name>
         <variable>${pUserFullNameFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pAccountTypeFilter</name>
+        <variable>${pAccountTypeFilter}</variable>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>pAccountIndustryFilter</name>
+        <variable>${pAccountIndustryFilter}</variable>
         <type>String</type>
         <format />
         <currency />
@@ -983,14 +1066,14 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
       <sheet_enabled>N</sheet_enabled>
       <filename />
       <sheetname>DATA</sheetname>
-      <hidden>Y</hidden>
+      <hidden>N</hidden>
     </template>
     <fields>
       <field>
-        <name>ACTIVITY_ID</name>
-        <type>String</type>
+        <name>OPPORTUNITY_AMOUNT</name>
+        <type>Number</type>
         <format />
-        <title>ACTIVITY_ID</title>
+        <title>OPPORTUNITY_AMOUNT</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -999,10 +1082,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_DELETED</name>
-        <type>String</type>
+        <name>OPPORTUNITY_PROBABILITY</name>
+        <type>Number</type>
         <format />
-        <title>ACTIVITY_DELETED</title>
+        <title>OPPORTUNITY_PROBABILITY</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1011,10 +1094,58 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_DURATION</name>
+        <name>OPPORTUNITY_PROBABILITY_PERCENT</name>
+        <type>Number</type>
+        <format />
+        <title>OPPORTUNITY_PROBABILITY_PERCENT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_ID</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_NAME</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_CREATED_BY</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_CREATED_BY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_DELETED</name>
         <type>Integer</type>
         <format />
-        <title>ACTIVITY_DURATION</title>
+        <title>OPPORTUNITY_DELETED</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1023,10 +1154,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_NAME</name>
+        <name>OPPORTUNITY_DESCRIPTION</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_NAME</title>
+        <title>OPPORTUNITY_DESCRIPTION</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1035,10 +1166,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_DESCRIPTION</name>
+        <name>OPPORTUNITY_TYPE</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_DESCRIPTION</title>
+        <title>OPPORTUNITY_TYPE</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1047,10 +1178,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_PARENT_TYPE</name>
+        <name>OPPORTUNITY_LEAD_SOURCE</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_PARENT_TYPE</title>
+        <title>OPPORTUNITY_LEAD_SOURCE</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1059,10 +1190,394 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_TYPE</name>
+        <name>OPPORTUNITY_NEXT_STEPS</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_TYPE</title>
+        <title>OPPORTUNITY_NEXT_STEPS</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_SALES_STAGE</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_SALES_STAGE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_ID</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_NAME</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_DELETED</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_KEY</name>
+        <type>Integer</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_KEY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_COUNT</name>
+        <type>Integer</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_COUNT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_REFER_URL</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_REFER_URL</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_TEXT</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_TEXT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_STATUS</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_STATUS</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TYPE</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_TYPE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_OBJECTIVE</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_OBJECTIVE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_CONTENT</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_CONTENT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_FREQUENCY</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_FREQUENCY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_ID</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_NAME</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DATE_CREATED</name>
+        <type>Timestamp</type>
+        <format />
+        <title>ACCOUNT_DATE_CREATED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_MODIFIED</name>
+        <type>Timestamp</type>
+        <format />
+        <title>ACCOUNT_MODIFIED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_CREATED_BY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_CREATED_BY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DELETED</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DESCRIPTION</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_DESCRIPTION</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_TYPE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_TYPE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_INDUSTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_INDUSTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_CITY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_CITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_COUNTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_COUNTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_POSTCODE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_POSTCODE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_STATE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_STATE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_STREET</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_STREET</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_CITY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_CITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_STATE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_STATE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_STREET</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1397,7 +1912,7 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     </partitioning>
     <fields>
       <field>
-        <name>ACTIVITY_ID</name>
+        <name>ACCOUNT_ID</name>
         <rename>OUTPUT</rename>
       </field>
       <select_unspecified>N</select_unspecified>
@@ -1586,10 +2101,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     </template>
     <fields>
       <field>
-        <name>ACTIVITY_ID</name>
-        <type>String</type>
+        <name>OPPORTUNITY_AMOUNT</name>
+        <type>Number</type>
         <format />
-        <title>ACTIVITY_ID</title>
+        <title>OPPORTUNITY_AMOUNT</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1598,10 +2113,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_DELETED</name>
-        <type>String</type>
+        <name>OPPORTUNITY_PROBABILITY</name>
+        <type>Number</type>
         <format />
-        <title>ACTIVITY_DELETED</title>
+        <title>OPPORTUNITY_PROBABILITY</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1610,10 +2125,58 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_DURATION</name>
+        <name>OPPORTUNITY_PROBABILITY_PERCENT</name>
+        <type>Number</type>
+        <format />
+        <title>OPPORTUNITY_PROBABILITY_PERCENT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_ID</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_NAME</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_CREATED_BY</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_CREATED_BY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_DELETED</name>
         <type>Integer</type>
         <format />
-        <title>ACTIVITY_DURATION</title>
+        <title>OPPORTUNITY_DELETED</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1622,10 +2185,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_NAME</name>
+        <name>OPPORTUNITY_DESCRIPTION</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_NAME</title>
+        <title>OPPORTUNITY_DESCRIPTION</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1634,10 +2197,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_DESCRIPTION</name>
+        <name>OPPORTUNITY_TYPE</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_DESCRIPTION</title>
+        <title>OPPORTUNITY_TYPE</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1646,10 +2209,10 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_PARENT_TYPE</name>
+        <name>OPPORTUNITY_LEAD_SOURCE</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_PARENT_TYPE</title>
+        <title>OPPORTUNITY_LEAD_SOURCE</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -1658,10 +2221,394 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
         <hyperlinkField />
       </field>
       <field>
-        <name>ACTIVITY_TYPE</name>
+        <name>OPPORTUNITY_NEXT_STEPS</name>
         <type>String</type>
         <format />
-        <title>ACTIVITY_TYPE</title>
+        <title>OPPORTUNITY_NEXT_STEPS</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>OPPORTUNITY_SALES_STAGE</name>
+        <type>String</type>
+        <format />
+        <title>OPPORTUNITY_SALES_STAGE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_ID</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_NAME</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_DELETED</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_KEY</name>
+        <type>Integer</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_KEY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_COUNT</name>
+        <type>Integer</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_COUNT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_REFER_URL</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_REFER_URL</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TRACKER_TEXT</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_TRACKER_TEXT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_STATUS</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_STATUS</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_TYPE</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_TYPE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_OBJECTIVE</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_OBJECTIVE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_CONTENT</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_CONTENT</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>CAMPAIGN_FREQUENCY</name>
+        <type>String</type>
+        <format />
+        <title>CAMPAIGN_FREQUENCY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_ID</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_ID</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_NAME</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_NAME</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DATE_CREATED</name>
+        <type>Timestamp</type>
+        <format />
+        <title>ACCOUNT_DATE_CREATED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_MODIFIED</name>
+        <type>Timestamp</type>
+        <format />
+        <title>ACCOUNT_MODIFIED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_CREATED_BY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_CREATED_BY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DELETED</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_DELETED</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_DESCRIPTION</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_DESCRIPTION</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_TYPE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_TYPE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_INDUSTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_INDUSTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_CITY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_CITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_COUNTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_COUNTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_POSTCODE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_POSTCODE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_STATE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_STATE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_BILLING_ADDRESS_STREET</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_BILLING_ADDRESS_STREET</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_CITY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_CITY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_COUNTRY</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_POSTCODE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_STATE</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_STATE</title>
+        <titleStyleCell />
+        <styleCell />
+        <commentField />
+        <commentAuthorField />
+        <formula>N</formula>
+        <hyperlinkField />
+      </field>
+      <field>
+        <name>ACCOUNT_SHIPPING_ADDRESS_STREET</name>
+        <type>String</type>
+        <format />
+        <title>ACCOUNT_SHIPPING_ADDRESS_STREET</title>
         <titleStyleCell />
         <styleCell />
         <commentField />
@@ -2001,16 +2948,34 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     <logmessage />
     <fields>
       <field>
-        <name>pActivityDateFilter</name>
+        <name>pOpportunityCreatedDateFilter</name>
       </field>
       <field>
-        <name>pActivityTypeFilter</name>
+        <name>pCampaignFilter</name>
       </field>
       <field>
-        <name>pActivityParentTypeFilter</name>
+        <name>pCampaignStatusFilter</name>
+      </field>
+      <field>
+        <name>pCampaignTypeFilter</name>
+      </field>
+      <field>
+        <name>pOpportunityTypeFilter</name>
+      </field>
+      <field>
+        <name>pOpportunityLeadSourceFilter</name>
+      </field>
+      <field>
+        <name>pOpportunitySalesStageFilter</name>
       </field>
       <field>
         <name>pUserFullNameFilter</name>
+      </field>
+      <field>
+        <name>pAccountTypeFilter</name>
+      </field>
+      <field>
+        <name>pAccountIndustryFilter</name>
       </field>
       <field>
         <name>pStyling</name>

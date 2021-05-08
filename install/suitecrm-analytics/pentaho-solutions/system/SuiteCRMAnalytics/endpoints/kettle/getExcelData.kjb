@@ -192,6 +192,11 @@
       <description />
     </parameter>
     <parameter>
+      <name>pOpportunityCreatedDateFilter</name>
+      <default_value />
+      <description />
+    </parameter>
+    <parameter>
       <name>pOpportunityLeadSourceFilter</name>
       <default_value />
       <description />
@@ -803,6 +808,11 @@
         <field>
           <variable_name>pActivityParentTypeFilter</variable_name>
           <variable_value>${pActivityParentTypeFilter}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>pOpportunityCreatedDateFilter</variable_name>
+          <variable_value>${pOpportunityCreatedDateFilter}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
