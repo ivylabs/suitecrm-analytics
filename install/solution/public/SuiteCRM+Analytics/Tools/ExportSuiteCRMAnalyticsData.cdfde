@@ -612,162 +612,72 @@
   "datasources" : {
     "rows" : [
       {
-        "id" : "SQL",
-        "name" : "SQL Queries",
+        "id" : "SUITECRMANALYTICS_CPKENDPOINTS",
+        "name" : "SUITECRMANALYTICS Endpoints",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "Group",
-            "type" : "Label",
-            "value" : "SQL Queries"
+            "value" : "SUITECRMANALYTICS Endpoints",
+            "type" : "Label"
           }
-        ],
-        "type" : "Label",
-        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+        ]
       },
       {
-        "id" : "3873d93c-a547-3f11-6a28-13cb3190685c",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
+        "id" : "b8eee0ef-8576-66e4-a31c-c61c4f907e0d",
+        "type" : "ComponentsSuiteCRMAnalytics_getDataExportParameterMapping_CPKENDPOINT",
+        "typeDesc" : "getDataExportParameterMapping Endpoint",
+        "parent" : "SUITECRMANALYTICS_CPKENDPOINTS",
         "properties" : [
           {
             "name" : "name",
-            "type" : "Id",
-            "value" : "GET_DATA_EXPORTS"
+            "value" : "GET_DATA_EXPORT_PARAMETER_MAPPING",
+            "type" : "Id"
           },
           {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
+            "name" : "stepName",
+            "value" : "OUTPUT",
+            "type" : "String"
           },
           {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT DISTINCT TRANSFORMATION, DATA_EXPORT\nFROM DATA_EXPORT_PARAMETER_MAPPING"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
+            "name" : "kettleOutput",
+            "value" : "Inferred",
+            "type" : "kettleOutputCustom"
           }
         ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
+        "meta" : "CPK",
+        "meta_pluginId" : "SuiteCRMAnalytics",
+        "meta_endpoint" : "getDataExportParameterMapping",
+        "rowName" : "getDataExportParameterMapping Endpoint"
       },
       {
-        "id" : "0ab6293a-24d3-eaef-16db-26137c0a72e1",
-        "meta" : "CDA",
-        "meta_conntype" : "sql.jndi",
-        "meta_datype" : "sql",
-        "parent" : "SQL",
+        "id" : "3ff765ab-92a9-cfab-c15a-fed96212bcbc",
+        "type" : "ComponentsSuiteCRMAnalytics_getDataExports_CPKENDPOINT",
+        "typeDesc" : "getDataExports Endpoint",
+        "parent" : "SUITECRMANALYTICS_CPKENDPOINTS",
         "properties" : [
           {
             "name" : "name",
-            "type" : "Id",
-            "value" : "GET_DATA_EXPORT_PARAMETER_MAPPING"
+            "value" : "GET_DATA_EXPORTS",
+            "type" : "Id"
           },
           {
-            "name" : "access",
-            "type" : "Access",
-            "value" : "public"
+            "name" : "stepName",
+            "value" : "OUTPUT",
+            "type" : "String"
           },
           {
-            "name" : "jndi",
-            "type" : "Jndi",
-            "value" : "SuiteCRMAnalytics"
-          },
-          {
-            "name" : "query",
-            "type" : "SqlQuery",
-            "value" : "SELECT *\nFROM DATA_EXPORT_PARAMETER_MAPPING\nWHERE TRANSFORMATION = ${pDataExport}"
-          },
-          {
-            "name" : "parameters",
-            "type" : "CdaParameters",
-            "value" : "[[\u0022pDataExport\u0022,\u0022pDataExport\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
-          },
-          {
-            "name" : "cdacalculatedcolumns",
-            "type" : "CdaCalculatedColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "cdacolumns",
-            "type" : "CdaColumnsArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "output",
-            "type" : "IndexArray",
-            "value" : "[]"
-          },
-          {
-            "name" : "outputMode",
-            "type" : "OutputMode",
-            "value" : "include"
-          },
-          {
-            "name" : "cacheKeys",
-            "type" : "CacheKeysValues",
-            "value" : "[]"
-          },
-          {
-            "name" : "cacheDuration",
-            "type" : "Integer",
-            "value" : 3600
-          },
-          {
-            "name" : "cache",
-            "type" : "Boolean",
-            "value" : "true"
+            "name" : "kettleOutput",
+            "value" : "Inferred",
+            "type" : "kettleOutputCustom"
           }
         ],
-        "rowName" : "sql over sqlJndi",
-        "type" : "Componentssql_sqlJndi",
-        "typeDesc" : "sql over sqlJndi"
+        "meta" : "CPK",
+        "meta_pluginId" : "SuiteCRMAnalytics",
+        "meta_endpoint" : "getDataExports",
+        "rowName" : "getDataExports Endpoint"
       }
     ]
   },
