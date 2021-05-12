@@ -44,7 +44,7 @@
           {
             "name" : "dataSource",
             "type" : "Datasource",
-            "value" : "DUMMY1"
+            "value" : "DUMMY2"
           },
           {
             "name" : "height",
@@ -79,7 +79,7 @@
           {
             "name" : "colors",
             "type" : "Array",
-            "value" : "[\u0022#eb6657\u0022]"
+            "value" : "[]"
           },
           {
             "name" : "htmlObject",
@@ -419,7 +419,7 @@
           {
             "name" : "crosstabMode",
             "type" : "Boolean",
-            "value" : true
+            "value" : "false"
           },
           {
             "name" : "ctrlSelectMode",
@@ -1144,7 +1144,7 @@
           {
             "name" : "seriesInRows",
             "type" : "Boolean",
-            "value" : false
+            "value" : "true"
           },
           {
             "name" : "seriesRole",
@@ -1249,7 +1249,7 @@
           {
             "name" : "stacked",
             "type" : "Boolean",
-            "value" : false
+            "value" : "true"
           },
           {
             "name" : "timeSeries",
@@ -3832,6 +3832,174 @@
         "rowName" : "jsonScriptable over scripting",
         "type" : "ComponentsjsonScriptable_scripting",
         "typeDesc" : "jsonScriptable over scripting"
+      },
+      {
+        "id" : "73ffb987-1454-943c-f663-a9119143a36c",
+        "meta" : "CDA",
+        "meta_conntype" : "scripting.scripting",
+        "meta_datype" : "jsonScriptable",
+        "parent" : "SCRIPTING",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "DUMMY2"
+          },
+          {
+            "name" : "initscript",
+            "type" : "String",
+            "value" : ""
+          },
+          {
+            "name" : "language",
+            "type" : "String",
+            "value" : "beanshell"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "query",
+            "type" : "JsonScriptableQuery",
+            "value" : "{\n  \u0022metadata\u0022: [\n    {\n      \u0022colName\u0022: \u0022Period\u0022,\n      \u0022colType\u0022: \u0022String\u0022,\n      \u0022colIndex\u0022: 0\n    },\n    {\n      \u0022colName\u0022: \u0022Module\u0022,\n      \u0022colType\u0022: \u0022String\u0022,\n      \u0022colIndex\u0022: 1\n    },\n    {\n      \u0022colName\u0022: \u0022Duration\u0022,\n      \u0022colType\u0022: \u0022Numeric\u0022,\n      \u0022colIndex\u0022: 2\n    }\n  ],\n  \u0022resultset\u0022: [\n    [\n      \u00222021 March\u0022,\n      \u0022Leads\u0022,\n      22\n    ],\n    [\n      \u00222021 March\u0022,\n      \u0022Cases\u0022,\n      23\n    ],\n    [\n      \u00222021 March\u0022,\n      \u0022Opportunities\u0022,\n      23\n    ],\n    [\n      \u00222021 February\u0022,\n      \u0022Leads\u0022,\n      73\n    ],\n    [\n      \u00222021 February\u0022,\n      \u0022Cases\u0022,\n      54\n    ],\n    [\n      \u00222021 February\u0022,\n      \u0022Opportunities\u0022,\n      63\n    ],\n    [\n      \u00222021 January\u0022,\n      \u0022Leads\u0022,\n      44\n    ],\n    [\n      \u00222021 January\u0022,\n      \u0022Cases\u0022,\n      22\n    ],\n    [\n      \u00222021 January\u0022,\n      \u0022Opportunities\u0022,\n      23\n    ],\n    [\n      \u00222020 December\u0022,\n      \u0022Leads\u0022,\n      55\n    ],\n    [\n      \u00222020 December\u0022,\n      \u0022Cases\u0022,\n      21\n    ],\n    [\n      \u00222020 December\u0022,\n      \u0022Opportunities\u0022,\n      55\n    ],\n    [\n      \u00222020 November\u0022,\n      \u0022Leads\u0022,\n      78\n    ],\n    [\n      \u00222020 November\u0022,\n      \u0022Cases\u0022,\n      89\n    ],\n    [\n      \u00222020 November\u0022,\n      \u0022Opportunities\u0022,\n      54\n    ],\n    [\n      \u00222020 October\u0022,\n      \u0022Leads\u0022,\n      44\n    ],\n    [\n      \u00222020 October\u0022,\n      \u0022Cases\u0022,\n      56\n    ],\n    [\n      \u00222020 October\u0022,\n      \u0022Opportunities\u0022,\n      32\n    ]\n  ],\n  \u0022queryInfo\u0022: {\n    \u0022totalRows\u0022: \u002218\u0022\n  }\n}"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "jsonScriptable over scripting",
+        "type" : "ComponentsjsonScriptable_scripting",
+        "typeDesc" : "jsonScriptable over scripting"
+      },
+      {
+        "id" : "KETTLE",
+        "name" : "KETTLE Queries",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "type" : "Label",
+            "value" : "KETTLE Queries"
+          }
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
+      },
+      {
+        "id" : "6e15083c-16d7-71fd-904b-66fbe1b1e620",
+        "meta" : "CDA",
+        "meta_conntype" : "kettle.TransFromFile",
+        "meta_datype" : "kettle",
+        "parent" : "KETTLE",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "KETTLEDUMMY"
+          },
+          {
+            "name" : "ktrFile",
+            "type" : "KtrPath",
+            "value" : "../../../../SuiteCRM Analytics/System/Resources/SAMPLES/dummychartdata.ktr"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "query",
+            "type" : "DefaultQuery",
+            "value" : "OUTPUT"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "variables",
+            "type" : "VariablesValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "kettle over kettleTransFromFile",
+        "type" : "Componentskettle_kettleTransFromFile",
+        "typeDesc" : "kettle over kettleTransFromFile"
       }
     ]
   },

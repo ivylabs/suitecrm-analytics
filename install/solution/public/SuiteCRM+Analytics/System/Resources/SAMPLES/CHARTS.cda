@@ -5,6 +5,13 @@
          <Initscript/>
          <Language>beanshell</Language>
       </Connection>
+      <Connection id="DUMMY2" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+      <Connection id="KETTLEDUMMY" type="kettle.TransFromFile">
+         <KtrFile>../../../../SuiteCRM Analytics/System/Resources/SAMPLES/dummychartdata.ktr</KtrFile>
+      </Connection>
    </DataSources>
    <DataAccess access="public" connection="DUMMY1" id="DUMMY1" type="jsonScriptable">
       <Name>DUMMY1</Name>
@@ -26,5 +33,132 @@
       {"colIndex":1,"colType":"Integer","colName":"Sales"}
    ]
 }]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="DUMMY2" id="DUMMY2" type="jsonScriptable">
+      <Name>DUMMY2</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{
+  "metadata": [
+    {
+      "colName": "Period",
+      "colType": "String",
+      "colIndex": 0
+    },
+    {
+      "colName": "Module",
+      "colType": "String",
+      "colIndex": 1
+    },
+    {
+      "colName": "Duration",
+      "colType": "Numeric",
+      "colIndex": 2
+    }
+  ],
+  "resultset": [
+    [
+      "2021 March",
+      "Leads",
+      22
+    ],
+    [
+      "2021 March",
+      "Cases",
+      23
+    ],
+    [
+      "2021 March",
+      "Opportunities",
+      23
+    ],
+    [
+      "2021 February",
+      "Leads",
+      73
+    ],
+    [
+      "2021 February",
+      "Cases",
+      54
+    ],
+    [
+      "2021 February",
+      "Opportunities",
+      63
+    ],
+    [
+      "2021 January",
+      "Leads",
+      44
+    ],
+    [
+      "2021 January",
+      "Cases",
+      22
+    ],
+    [
+      "2021 January",
+      "Opportunities",
+      23
+    ],
+    [
+      "2020 December",
+      "Leads",
+      55
+    ],
+    [
+      "2020 December",
+      "Cases",
+      21
+    ],
+    [
+      "2020 December",
+      "Opportunities",
+      55
+    ],
+    [
+      "2020 November",
+      "Leads",
+      78
+    ],
+    [
+      "2020 November",
+      "Cases",
+      89
+    ],
+    [
+      "2020 November",
+      "Opportunities",
+      54
+    ],
+    [
+      "2020 October",
+      "Leads",
+      44
+    ],
+    [
+      "2020 October",
+      "Cases",
+      56
+    ],
+    [
+      "2020 October",
+      "Opportunities",
+      32
+    ]
+  ],
+  "queryInfo": {
+    "totalRows": "18"
+  }
+}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="KETTLEDUMMY" id="KETTLEDUMMY" type="kettle">
+      <Name>KETTLEDUMMY</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[OUTPUT]]></Query>
    </DataAccess>
 </CDADescriptor>
