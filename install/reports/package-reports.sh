@@ -1,4 +1,5 @@
-cd source/
+mkdir compiled/
+cd Reports/
 
 for i in */; do 
 	cd $i

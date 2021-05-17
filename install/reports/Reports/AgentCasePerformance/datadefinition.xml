@@ -83,8 +83,9 @@
     </properties>
   </expression>
   <expression name="FUNC_TODAYS_DATE" formula="=TODAY()"/>
+  <expression name="fChartGeneratedURL" formula="=&quot;ReportChartDefinitionGeneratedURL&quot;"/>
   <expression name="fChartParams" formula="=&quot;&amp;parampCaseTypeFilter=&quot;&amp; URLENCODE([pCaseTypeFilter];&quot;UTF8&quot;) &amp;&quot;&amp;parampCasePriorityFilter=&quot;&amp; URLENCODE([pCasePriorityFilter];&quot;UTF8&quot;) &amp;&quot;&amp;parampDateFilter=&quot;&amp; URLENCODE([pCaseCreatedDateFilter];&quot;UTF8&quot;) &amp;&quot;&amp;parampShowDeletedRecords=&quot;&amp; URLENCODE([pShowDeletedRecords];&quot;UTF8&quot;) &amp;&quot;&amp;outputType=svg&amp;_TRUST_USER_=&quot;&amp;[&quot;env::username&quot;]"/>
-  <expression name="fChartURL" formula="=[&quot;env::pentahoBaseURL&quot;]&amp;&quot;plugin/cgg/api/services/draw?script=/public/SuiteCRM+Analytics/System/Resources/REPORTS/&quot;&amp; [pSelectChartType] &amp;&quot;_COUNT_CASE_STATUS.js&quot;&amp;[fChartParams]"/>
+  <expression name="fChartURL" formula="=[&quot;env::pentahoBaseURL&quot;]&amp;&quot;plugin/cgg/api/services/draw?script=/public/SuiteCRM+Analytics/System/Resources/RCD/AgentCasePerformance/&quot;&amp; [fChartGeneratedURL] &amp; &quot;-&quot;&amp; [pSelectChartType] &amp;&quot;_COUNT_CASE_STATUS.js&quot;&amp;[fChartParams]"/>
   <expression name="fReportOutputType" formula="=IF(ISEXPORTTYPE(&quot;table/excel&quot;);&quot;This is Excel!&quot;;&quot;This is NOT Excel&quot;)"/>
   <expression name="FUNC_TOTAL_NEW" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
     <properties>
