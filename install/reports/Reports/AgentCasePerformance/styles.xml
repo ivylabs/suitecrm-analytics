@@ -5,7 +5,7 @@
     <element-style>
     </element-style>
   </layout:watermark>
-  <layout:page-header designtime:visual-height="190.0">
+  <layout:page-header designtime:visual-height="216.0">
     <element-style>
     </element-style>
     <layout:band>
@@ -22,6 +22,11 @@
         <layout:attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[pSelectStyle]&amp;&quot;.png&quot;"/>
       </layout:content>
     </layout:band>
+    <layout:text-field core:field="fChartURL">
+      <element-style>
+        <spatial-styles x="0" y="100" min-width="635" min-height="105"/>
+      </element-style>
+    </layout:text-field>
   </layout:page-header>
   <layout:page-footer designtime:visual-height="72.0">
     <element-style>
