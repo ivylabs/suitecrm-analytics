@@ -47,6 +47,14 @@ then
 
 		cd ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/Reports/
 
+		# Generate CGG Endpoint URL
+
+		CGGURL=$(date +%s | sha256sum | base64 | head -c 32 ; echo);
+
+		mv ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/System/Resources/RCD/CGGChartGenerator.js ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/System/Resources/RCD/${CGGURL}.js
+
+		find . -type f -name "*.xml" -print0 | xargs -0 sed -i -e 's/CGGChartGenerator/'${CGGURL}'/g'
+
 		for i in */; do
                        cd $i
                        zip -r "${i%/}.prpt" .
@@ -54,13 +62,6 @@ then
 		       cd ../
 		       rm -Rf $i
                 done
-
-
-
-
-
-
-
 		
 		cd ${DEFAULT_CONTENT}/solution/
 		
@@ -72,24 +73,6 @@ then
 
 		cd ${WORKING_DIR}
 		
-		
-		
-		
-
-
-
-		#mkdir compiled/
-
-		#cd Reports/
-
-		#for i in */; do
-        	#	cd $i
-        	#	zip -r "${i%/}.prpt" .
-        	#	mv "${i%/}.prpt" ../../compiled/"${i%/}.prpt"
-        	#	cd ../
-		#done
-
-		#cd ../
 
 		# JNDI Configuration
 
