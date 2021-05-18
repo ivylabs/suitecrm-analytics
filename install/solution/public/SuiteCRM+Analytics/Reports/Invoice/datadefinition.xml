@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-definition xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/data/1.0">
+  <parameter-definition>
+    <list-parameter name="pSelectStyle" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pStyles" key-column="Value" value-column="Name" default-value="SuiteCRMAnalytics">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Select Report Style</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pInvoiceFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pInvoiceFilterQuery" key-column="INVOICE_NAME" value-column="INVOICE_NAME">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Invoice</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pInvoiceNumberFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pInvoiceNumberFilterQuery" key-column="INVOICE_NUMBER" value-column="INVOICE_NUMBER">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Invoice Number</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pInvoiceStatusFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pInvoiceStatusFilterQuery" key-column="INVOICE_STATUS" value-column="INVOICE_STATUS">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Invoice Status</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pShowParameters" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pShowParameters" key-column="Value" value-column="property" default-value="1">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Parameters</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="output-target" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pOutputTypes" key-column="ID" value-column="Value" default-value="table/html;page-mode=stream">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Output Type</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+  </parameter-definition>
+  <data-source report-query="Report" limit="-1" timeout="0" ref="datasources/compound-ds.xml"/>
+  <expression name="FUNC_PAGE_NUMBERS" class="org.pentaho.reporting.engine.classic.core.function.PageOfPagesFunction">
+    <properties>
+      <property name="format">page {0} of {1}</property>
+      <property name="pageIncrement">1</property>
+      <property name="startPage">1</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TODAYS_DATE" formula="=TODAY()"/>
+  <expression name="FUNC_LINE_ITEMS" class="org.pentaho.reporting.engine.classic.core.function.ItemCountFunction">
+    <properties>
+      <property name="group">GROUP_INVOICE_NUMBER</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_SUM_TOTAL" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">INVOICE_LINE_TOTAL_BEFORE_DISCOUNT</property>
+      <property name="group">GROUP_INVOICE_NUMBER</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_SUM_DISCOUNT" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">INVOICE_LINE_DISCOUNT_TOTAL</property>
+      <property name="group">GROUP_INVOICE_NUMBER</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_SUM_SUBTOTAL" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">INVOICE_LINE_TOTAL_AMOUNT</property>
+      <property name="group">GROUP_INVOICE_NUMBER</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_SUM_TAX" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">INVOICE_LINE_TOTAL_VAT_AMOUNT</property>
+      <property name="group">GROUP_INVOICE_NUMBER</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_SUM_GRAND_TOTAL" formula="=[FUNC_SUM_SUBTOTAL]+[FUNC_SUM_TAX]"/>
+  <expression name="FUNC_PAGE_NUMBER" class="org.pentaho.reporting.engine.classic.core.function.PageFunction">
+    <properties>
+      <property name="pageIncrement">1</property>
+      <property name="startPage">1</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TOTAL_ROWS" class="org.pentaho.reporting.engine.classic.core.function.TotalItemCountFunction">
+    <properties>
+    </properties>
+  </expression>
+  <expression name="FUNC_INVOICE_DATE" formula="=IF([INVOICE_DATE_TK] = 29991231;&quot;Invoice Date: Not Set&quot;;&quot;Invoice Date: &quot;&amp;LEFT([INVOICE_DATE_TK];4)&amp;&quot;-&quot;&amp;MID([INVOICE_DATE_TK];5;2)&amp;&quot;-&quot;&amp;RIGHT([INVOICE_DATE_TK];2))"/>
+  <expression name="FUNC_INVOICE_DUE_DATE" formula="=IF([INVOICE_DUE_DATE_TK] = 29991231;&quot;Due Date: Not Set&quot;;&quot;Due Date: &quot;&amp;LEFT([INVOICE_DUE_DATE_TK];4)&amp;&quot;-&quot;&amp;MID([INVOICE_DUE_DATE_TK];5;2)&amp;&quot;-&quot;&amp;RIGHT([INVOICE_DUE_DATE_TK];2))"/>
+</data-definition>

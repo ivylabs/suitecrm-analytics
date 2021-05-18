@@ -1,0 +1,40 @@
+<data:sql-datasource xmlns:data="http://jfreereport.sourceforge.net/namespaces/datasources/sql">
+  <data:config/>
+  <data:jndi>
+    <data:path>SuiteCRMAnalytics</data:path>
+  </data:jndi>
+  <data:query-definitions>
+    <data:query name="Report">
+      <data:static-query>SELECT
+	DA.ACCOUNT_NAME
+	,DO.OPPORTUNITY_SALES_STAGE
+	,COUNT(FOM.OPPORTUNITY_TK) TOTAL_OPPORTUNITIES
+	,SUM(FOM.OPPORTUNITY_AMOUNT) AS TOTAL_ACCOUNT_VALUE 
+	,AVG(FOM.OPPORTUNITY_AMOUNT) AS AVERAGE_ACCOUNT_VALUE
+FROM F_OPPORTUNITY_MANAGEMENT FOM
+INNER JOIN D_OPPORTUNITIES AS DO 
+	ON FOM.OPPORTUNITY_TK = DO.OPPORTUNITY_TK
+INNER JOIN D_ACCOUNTS AS DA 
+	ON FOM.ACCOUNT_TK = DA.ACCOUNT_TK
+INNER JOIN D_CAMPAIGNS AS DC 
+	ON FOM.CAMPAIGN_TK = DC.CAMPAIGN_TK
+INNER JOIN D_DATE DD
+	ON FOM.OPPORTUNITY_CREATED_TK = DD.DATE_TK
+WHERE (DD.`YYYY-MM` IN (${pOpportunityCreatedDateFilter}) OR &apos;9999-99&apos; IN (${pOpportunityCreatedDateFilter}))
+AND (DD.`YYYY-MM` IN (${pOpportunityClosedDateFilter}) OR &apos;9999-99&apos; IN (${pOpportunityClosedDateFilter}))
+AND (DO.OPPORTUNITY_TYPE IN (${pOpportunityTypeFilter}) OR &apos;All Opportunity Types&apos; IN (${pOpportunityTypeFilter}))
+AND (DO.OPPORTUNITY_LEAD_SOURCE IN (${pOpportunityLeadSourceFilter}) OR &apos;All Opportunity Lead Sources&apos; IN (${pOpportunityLeadSourceFilter}))
+AND (DO.OPPORTUNITY_SALES_STAGE IN (${pOpportunitySalesStageFilter}) OR &apos;All Opportunity Sales Stages&apos; IN (${pOpportunitySalesStageFilter}))
+
+AND (DA.ACCOUNT_TYPE IN (${pAccountTypeFilter}) OR &apos;All Account Types&apos; IN (${pAccountTypeFilter}))
+AND (DA.ACCOUNT_INDUSTRY IN (${pAccountIndustryFilter}) OR &apos;All Account Industries&apos; IN (${pAccountIndustryFilter}))
+
+AND (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR &apos;All Campaign Types&apos; IN (${pCampaignTypeFilter}))
+AND (DC.CAMPAIGN_STATUS IN (${pCampaignStatusFilter}) OR &apos;All Campaign Status&apos; IN (${pCampaignStatusFilter}))
+AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR &apos;All Campaigns&apos; IN (${pCampaignFilter}))
+AND (FOM.OPPORTUNITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2
+ORDER BY 1,2</data:static-query>
+    </data:query>
+  </data:query-definitions>
+</data:sql-datasource>

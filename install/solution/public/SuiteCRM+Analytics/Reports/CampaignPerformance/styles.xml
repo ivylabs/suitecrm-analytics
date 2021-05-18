@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:layout="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" xmlns:page="http://jfreereport.sourceforge.net/namespaces/reports/legacy/ext">
+  <page-definition horizontal-span="1" vertical-span="1" pageformat="LETTER" orientation="landscape" margin-top="36" margin-left="36" margin-bottom="36" margin-right="36"/>
+  <layout:watermark designtime:hideInLayoutGUI="true">
+    <element-style>
+    </element-style>
+  </layout:watermark>
+  <layout:page-header designtime:visual-height="74.6994337439537">
+    <element-style>
+    </element-style>
+    <layout:band>
+      <element-style>
+        <spatial-styles x="0" y="0" min-width="540" min-height="35"/>
+      </element-style>
+      <layout:style-expression style-key="min-height" formula="=if([FUNC_PAGE_NUMBER]&gt;1;40;35)"/>
+      <layout:content>
+        <element-style>
+          <content-styles scale="true" keep-aspect-ratio="true"/>
+          <spatial-styles x="0" y="0" min-width="720" min-height="35"/>
+        </element-style>
+        <core:value resource-type="local-ref">suitecrm_logo.png</core:value>
+        <layout:attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[pSelectStyle]&amp;&quot;.png&quot;"/>
+      </layout:content>
+    </layout:band>
+  </layout:page-header>
+  <layout:page-footer designtime:visual-height="72.0">
+    <element-style>
+    </element-style>
+    <layout:text-field core:field="FUNC_PAGE_NUMBERS">
+      <element-style>
+        <common-styles alignment="center" vertical-alignment="middle"/>
+        <spatial-styles x="0" y="0" min-width="720" min-height="15"/>
+        <text-styles font-size="8"/>
+      </element-style>
+    </layout:text-field>
+  </layout:page-footer>
+</style>

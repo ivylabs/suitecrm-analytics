@@ -55,20 +55,21 @@ unzip install/installation-files/suitecrm-server.zip -d install/installation-fil
 #remove original mysql driver
 rm -Rf install/installation-files/pentaho-server/tomcat/lib/mysql-connector-java-5.1.17.jar
 
-cd ${WORKING_DIR}/install/solution/
-
-zip -r SuiteCRM-Analytics.zip public/ exportManifest.xml schema.xml
-
-cd ${WORKING_DIR}
-
+# Create the server folder
 mkdir suitecrm-analytics-server
 
+# Move the vanilla pentahpo server files
 mv install/installation-files/pentaho-server/* suitecrm-analytics-server
+# Rename the vanilla pentaho server webapp
 mv suitecrm-analytics-server/tomcat/webapps/pentaho/ suitecrm-analytics-server/tomcat/webapps/suitecrmanalytics/
-#cp -Rf install/mysql-connector-java-5.1.47.jar suitecrm-analytics/tomcat/lib/
 
+# Copy the SuiteCRM Solution files
+cp -Rf install/solution/ suitecrm-analytics-server/
+# Copy the SuiteCRM Server files
 cp -Rf install/suitecrm-analytics/* suitecrm-analytics-server/
-mv install/solution/SuiteCRM-Analytics.zip suitecrm-analytics-server/pentaho-solutions/system/default-content/
+
+
+
 
 rm -Rf suitecrm-analytics-server/start-pentaho.sh
 rm -Rf suitecrm-analytics-server/start-pentaho.bat
