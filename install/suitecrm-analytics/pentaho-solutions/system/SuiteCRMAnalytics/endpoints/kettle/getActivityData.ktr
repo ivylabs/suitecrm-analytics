@@ -804,7 +804,7 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     <forceFormulaRecalculation>N</forceFormulaRecalculation>
     <leaveExistingStylesUnchanged>Y</leaveExistingStylesUnchanged>
     <appendLines>N</appendLines>
-    <add_to_result_filenames>Y</add_to_result_filenames>
+    <add_to_result_filenames>N</add_to_result_filenames>
     <file>
       <name>${Internal.Entry.Current.Directory}/../../output/data</name>
       <extention>xlsx</extention>
@@ -1031,7 +1031,7 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
     <forceFormulaRecalculation>N</forceFormulaRecalculation>
     <leaveExistingStylesUnchanged>Y</leaveExistingStylesUnchanged>
     <appendLines>N</appendLines>
-    <add_to_result_filenames>Y</add_to_result_filenames>
+    <add_to_result_filenames>N</add_to_result_filenames>
     <file>
       <name>${Internal.Entry.Current.Directory}/../../output/data</name>
       <extention>xlsx</extention>
@@ -1540,7 +1540,7 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format />
-      <add_to_result_filenames>Y</add_to_result_filenames>
+      <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
       <splitevery>0</splitevery>
@@ -1981,7 +1981,7 @@ AND (DU.USER_FULL_NAME IN ('${pUserFullNameFilter}') OR 'All Assigned Agents' IN
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format />
-      <add_to_result_filenames>Y</add_to_result_filenames>
+      <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
       <splitevery>0</splitevery>

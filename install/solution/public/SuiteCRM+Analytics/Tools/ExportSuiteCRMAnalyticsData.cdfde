@@ -61,7 +61,7 @@
           {
             "name" : "propertyValue",
             "type" : "String",
-            "value" : "1"
+            "value" : "0"
           },
           {
             "name" : "parameterViewRole",
@@ -223,7 +223,7 @@
           {
             "name" : "valuesArray",
             "type" : "ValuesArray",
-            "value" : "[[\u00221\u0022,\u0022SuiteCRM Styling\u0022],[\u00220\u0022,\u0022No Styling\u0022]]"
+            "value" : "[[\u00220\u0022,\u0022No Styling (Fast)\u0022],[\u00221\u0022,\u0022SuiteCRM Styling (Slow)\u0022]]"
           },
           {
             "name" : "priority",
@@ -614,70 +614,70 @@
       {
         "id" : "SUITECRMANALYTICS_CPKENDPOINTS",
         "name" : "SUITECRMANALYTICS Endpoints",
-        "type" : "Label",
-        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "Group",
-            "value" : "SUITECRMANALYTICS Endpoints",
-            "type" : "Label"
+            "type" : "Label",
+            "value" : "SUITECRMANALYTICS Endpoints"
           }
-        ]
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
       },
       {
         "id" : "b8eee0ef-8576-66e4-a31c-c61c4f907e0d",
-        "type" : "ComponentsSuiteCRMAnalytics_getDataExportParameterMapping_CPKENDPOINT",
-        "typeDesc" : "getDataExportParameterMapping Endpoint",
+        "meta" : "CPK",
+        "meta_endpoint" : "getDataExportParameterMapping",
+        "meta_pluginId" : "SuiteCRMAnalytics",
         "parent" : "SUITECRMANALYTICS_CPKENDPOINTS",
         "properties" : [
           {
             "name" : "name",
-            "value" : "GET_DATA_EXPORT_PARAMETER_MAPPING",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "GET_DATA_EXPORT_PARAMETER_MAPPING"
           },
           {
             "name" : "stepName",
-            "value" : "OUTPUT",
-            "type" : "String"
+            "type" : "String",
+            "value" : "OUTPUT"
           },
           {
             "name" : "kettleOutput",
-            "value" : "Inferred",
-            "type" : "kettleOutputCustom"
+            "type" : "kettleOutputCustom",
+            "value" : "Inferred"
           }
         ],
-        "meta" : "CPK",
-        "meta_pluginId" : "SuiteCRMAnalytics",
-        "meta_endpoint" : "getDataExportParameterMapping",
-        "rowName" : "getDataExportParameterMapping Endpoint"
+        "rowName" : "getDataExportParameterMapping Endpoint",
+        "type" : "ComponentsSuiteCRMAnalytics_getDataExportParameterMapping_CPKENDPOINT",
+        "typeDesc" : "getDataExportParameterMapping Endpoint"
       },
       {
         "id" : "3ff765ab-92a9-cfab-c15a-fed96212bcbc",
-        "type" : "ComponentsSuiteCRMAnalytics_getDataExports_CPKENDPOINT",
-        "typeDesc" : "getDataExports Endpoint",
+        "meta" : "CPK",
+        "meta_endpoint" : "getDataExports",
+        "meta_pluginId" : "SuiteCRMAnalytics",
         "parent" : "SUITECRMANALYTICS_CPKENDPOINTS",
         "properties" : [
           {
             "name" : "name",
-            "value" : "GET_DATA_EXPORTS",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "GET_DATA_EXPORTS"
           },
           {
             "name" : "stepName",
-            "value" : "OUTPUT",
-            "type" : "String"
+            "type" : "String",
+            "value" : "OUTPUT"
           },
           {
             "name" : "kettleOutput",
-            "value" : "Inferred",
-            "type" : "kettleOutputCustom"
+            "type" : "kettleOutputCustom",
+            "value" : "Inferred"
           }
         ],
-        "meta" : "CPK",
-        "meta_pluginId" : "SuiteCRMAnalytics",
-        "meta_endpoint" : "getDataExports",
-        "rowName" : "getDataExports Endpoint"
+        "rowName" : "getDataExports Endpoint",
+        "type" : "ComponentsSuiteCRMAnalytics_getDataExports_CPKENDPOINT",
+        "typeDesc" : "getDataExports Endpoint"
       }
     ]
   },
