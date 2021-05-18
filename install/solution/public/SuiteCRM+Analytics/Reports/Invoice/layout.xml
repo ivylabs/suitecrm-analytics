@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:style="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:wizard="http://reporting.pentaho.org/namespaces/engine/attributes/wizard" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" core:auto-sort="true" core:style-sheet-reference="" core:lock-preferred-output-type="false" core:style-class="masterFont" core:parameter-layout="horizontal" core:preferred-output-type="table/html;page-mode=stream" xmlns:internal="http://reporting.pentaho.org/namespaces/engine/attributes/internal" internal:compatibility-level="8.0.0" designtime:zoom="1.5">
+  <style:element-style>
+    <style:text-styles font-face="SansSerif"/>
+  </style:element-style>
+  <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="style-sheet-reference" formula="=[pSelectStyle]&amp;&quot;.prptstyle&quot;"/>
+  <report-header>
+    <root-level-content designtime:visual-height="401.6666607260704">
+      <style:element-style>
+      </style:element-style>
+      <band>
+        <style:element-style>
+          <style:band-styles pagebreak-after="false"/>
+          <style:spatial-styles x="0" y="30" min-width="720" min-height="65"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([pShowParameters]=1;&quot;true&quot;;&quot;false&quot;)"/>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="20" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Invoice Name: $(pInvoiceFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="40" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Invoice Number: $(pInvoiceNumberFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="60" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Invoice Status: $(pInvoiceStatusFilter)</core:value>
+        </message>
+        <label>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            <style:text-styles bold="true"/>
+          </style:element-style>
+          <core:value>Filters:</core:value>
+        </label>
+      </band>
+      <label core:style-class="reportHeader">
+        <style:element-style>
+          <style:common-styles vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="720" min-height="30"/>
+        </style:element-style>
+        <core:value>Customer Invoices</core:value>
+      </label>
+    </root-level-content>
+  </report-header>
+  <group core:group-fields="INVOICE_NUMBER" core:name="GROUP_INVOICE_NUMBER">
+    <style:element-style>
+    </style:element-style>
+    <fields>
+      <field>INVOICE_NUMBER</field>
+    </fields>
+    <group-header>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="315.33333563804626">
+        <style:element-style>
+          <style:band-styles pagebreak-before="true"/>
+        </style:element-style>
+        <style-expression style-key="computed-sheetname" formula="=[INVOICE_NAME]"/>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <text-field core:field="INVOICE_NAME" core:style-class="reportHeader">
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="720" min-height="30"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="INVOICE_STATUS">
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="30" min-width="720" min-height="30"/>
+            <style:text-styles bold="true" font-size="14"/>
+          </style:element-style>
+          <style-expression style-key="paint" formula="=IF([INVOICE_STATUS]=&quot;Paid&quot;;&quot;#87a049&quot;;IF([INVOICE_STATUS]=&quot;Unpaid&quot;;&quot;#a1414f&quot;;&quot;#cccccc&quot;))"/>
+        </text-field>
+        <text-field core:field="FUNC_INVOICE_DATE">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="60" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="FUNC_INVOICE_DUE_DATE">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="75" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="ACCOUNT_BILLING_ADDRESS_STREET">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="125" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="ACCOUNT_BILLING_ADDRESS_CITY">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="140" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="ACCOUNT_BILLING_ADDRESS_STATE">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="155" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="ACCOUNT_BILLING_ADDRESS_COUNTRY">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="170" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="ACCOUNT_BILLING_ADDRESS_POSTCODE">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="185" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <text-field core:field="ACCOUNT_NAME">
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="110" min-width="720" min-height="15"/>
+          </style:element-style>
+        </text-field>
+        <label>
+          <style:element-style>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="90" min-width="720" min-height="20"/>
+            <style:text-styles bold="true"/>
+          </style:element-style>
+          <core:value>Billing Address</core:value>
+        </label>
+        <rectangle>
+          <style:element-style>
+            <style:content-styles scale="true"/>
+            <style:spatial-styles x="0" y="140" min-width="720" min-height="20"/>
+          </style:element-style>
+        </rectangle>
+      </root-level-content>
+    </group-header>
+    <data-body>
+      <style:element-style>
+      </style:element-style>
+      <details-header designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+          <style:page-band-styles repeat="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Line Item</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="0" min-width="70" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="65" y="0" min-width="60" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Quantity</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="left" vertical-alignment="middle"/>
+            <style:spatial-styles x="125" y="0" min-width="150" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Product</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="275" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>List Price</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="350" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Discount</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="425" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Sale Price</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="500" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Tax</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="575" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Tax Amount</core:value>
+        </label>
+      </details-header>
+      <details>
+        <root-level-content designtime:visual-height="108.0">
+          <style:element-style>
+          </style:element-style>
+          <text-field core:field="FUNC_LINE_ITEMS">
+            <style:element-style>
+              <style:border-styles padding-left="5" border-left-width="1" border-right-width="1" border-left-color="#999999" border-right-color="#999999" border-left-style="solid" border-right-style="solid"/>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:spatial-styles x="0" y="0" min-width="65" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </text-field>
+          <number-field core:field="INVOICE_LINE_QUANTITY" core:null-value="0">
+            <style:element-style>
+              <style:border-styles border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:spatial-styles x="65" y="0" min-width="60" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <text-field core:field="PRODUCT_NAME">
+            <style:element-style>
+              <style:border-styles padding-left="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="left" vertical-alignment="middle"/>
+              <style:spatial-styles x="125" y="0" min-width="150" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </text-field>
+          <number-field core:format-string="#,##0.00;-#,##0.00">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="350" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[INVOICE_LINE_DISCOUNT_AMOUNT]*-1"/>
+          </number-field>
+          <number-field core:field="INVOICE_LINE_UNIT_PRICE_AMOUNT" core:format-string="#,##0.00;(#,##0.00)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="425" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="INVOICE_LINE_TOTAL_VAT_AMOUNT" core:format-string="#,##0.00;(#,##0.00)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="575" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="INVOICE_LINE_LIST_PRICE_AMOUNT" core:format-string="#,##0.00;(#,##0.00)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="275" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="INVOICE_LINE_TOTAL_AMOUNT" core:format-string="#,##0.00;(#,##0.00)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="650" y="0" min-width="70" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="INVOICE_LINE_VAT_VALUE" core:format-string="#.#%">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="500" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+        </root-level-content>
+      </details>
+      <no-data>
+        <root-level-content designtime:visual-height="20.0">
+          <style:element-style>
+          </style:element-style>
+          <label>
+            <style:element-style>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:content-styles color="#cc3300"/>
+              <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            </style:element-style>
+            <core:value>No Data Available for Selected Parameters</core:value>
+          </label>
+        </root-level-content>
+      </no-data>
+      <details-footer designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <rectangle>
+          <style:element-style>
+            <style:border-styles background-color="#999999"/>
+            <style:content-styles draw-shape="false" scale="true"/>
+            <style:spatial-styles x="0" y="0" min-width="720" min-height="1"/>
+          </style:element-style>
+        </rectangle>
+      </details-footer>
+    </data-body>
+    <group-footer>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="234.66666787862778">
+        <style:element-style>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <number-field core:field="FUNC_SUM_TOTAL" core:format-string="#,##0.00;(#,##0.00)">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="0" min-width="70" min-height="20"/>
+            <style:text-styles font-face="SansSerif" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-right="5" border-left-width="1" border-left-color="#999999" border-left-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="650" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total:</core:value>
+        </label>
+        <number-field core:field="FUNC_SUM_DISCOUNT" core:format-string="#,##0.00;(#,##0.00)">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="20" min-width="70" min-height="20"/>
+            <style:text-styles font-face="SansSerif" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_SUM_SUBTOTAL" core:format-string="#,##0.00;(#,##0.00)">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="40" min-width="70" min-height="20"/>
+            <style:text-styles font-face="SansSerif" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_SUM_TAX" core:format-string="#,##0.00;(#,##0.00)">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="60" min-width="70" min-height="20"/>
+            <style:text-styles font-face="SansSerif" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-right="5" border-left-width="1" border-left-color="#999999" border-left-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="60" min-width="650" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Tax:</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-right="5" border-left-width="1" border-left-color="#999999" border-left-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="20" min-width="650" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Discount:</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-right="5" border-left-width="1" border-left-color="#999999" border-left-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="40" min-width="650" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Subtotal:</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-left-width="1" border-bottom-width="1" border-top-color="#999999" border-left-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-left-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="80" min-width="650" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Grand Total:</core:value>
+        </label>
+        <number-field core:field="FUNC_SUM_GRAND_TOTAL" core:format-string="#,##0.00;(#,##0.00)">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="80" min-width="70" min-height="20"/>
+            <style:text-styles font-face="SansSerif" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <rectangle>
+          <style:element-style>
+            <style:content-styles draw-shape="false" fill-shape="true" scale="true"/>
+            <style:spatial-styles x="0" y="110" min-width="720" min-height="2"/>
+          </style:element-style>
+        </rectangle>
+      </root-level-content>
+    </group-footer>
+  </group>
+  <report-footer>
+    <root-level-content designtime:visual-height="108.0">
+      <style:element-style>
+      </style:element-style>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run By: $(env::username)</core:value>
+      </message>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="15" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run Date: $(FUNC_TODAYS_DATE)</core:value>
+      </message>
+    </root-level-content>
+  </report-footer>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-definition xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/data/1.0">
+  <parameter-definition>
+    <list-parameter name="pSelectStyle" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pStyles" key-column="Value" value-column="Name" default-value="SuiteCRMAnalytics">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Select Report Style</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pCountryFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pAccountBillingAddressCountyFilterQuery" key-column="ACCOUNT_BILLING_ADDRESS_COUNTRY" value-column="ACCOUNT_BILLING_ADDRESS_COUNTRY">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Country</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pSalePaidDateFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pSalePaidDateFilterQuery" key-column="YYYY-MM" value-column="DATE_FILTER">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Sales Paid Date</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pShowParameters" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pShowParameters" key-column="Value" value-column="property" default-value="1">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Parameters</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pShowDeletedRecords" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.Number" query="pShowDeletedRecords" key-column="Value" value-column="Name">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Deleted Records</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+  </parameter-definition>
+  <data-source report-query="Report" limit="-1" timeout="0" ref="datasources/compound-ds.xml"/>
+  <expression name="FUNC_PAGE_NUMBERS" class="org.pentaho.reporting.engine.classic.core.function.PageOfPagesFunction">
+    <properties>
+      <property name="format">page {0} of {1}</property>
+      <property name="pageIncrement">1</property>
+      <property name="startPage">1</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TODAYS_DATE" formula="=TODAY()"/>
+  <expression name="FUNC_AGENT_SUM_QUANITY_SOLD" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">QUANTITY_SOLD</property>
+      <property name="group">Agent Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_AGENT_SUM_TOTAL_COST" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">TOTAL_COST</property>
+      <property name="group">Agent Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_AGENT_SUM_TOTAL_DISCOUNT" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">TOTAL_DISCOUNT</property>
+      <property name="group">Agent Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_AGENT_SUM_TOTAL_REVENUE" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">TOTAL_REVENUE</property>
+      <property name="group">Agent Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_COUNTRY_SUM_QUANITY_SOLD" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">QUANTITY_SOLD</property>
+      <property name="group">Country Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_COUNTRY_SUM_TOTAL_COST" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">TOTAL_COST</property>
+      <property name="group">Country Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_COUNTRY_SUM_TOTAL_DISCOUNT" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">TOTAL_DISCOUNT</property>
+      <property name="group">Country Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_COUNTRY_SUM_TOTAL_REVENUE" class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction">
+    <properties>
+      <property name="field">TOTAL_REVENUE</property>
+      <property name="group">Country Group</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_PAGE_NUMBER" class="org.pentaho.reporting.engine.classic.core.function.PageFunction">
+    <properties>
+      <property name="pageIncrement">1</property>
+      <property name="startPage">1</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TOTAL_ROWS" class="org.pentaho.reporting.engine.classic.core.function.TotalItemCountFunction">
+    <properties>
+    </properties>
+  </expression>
+</data-definition>

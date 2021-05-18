@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:style="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:wizard="http://reporting.pentaho.org/namespaces/engine/attributes/wizard" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" core:auto-sort="true" core:style-sheet-reference="" core:lock-preferred-output-type="false" core:style-class="masterFont" core:parameter-layout="horizontal" core:preferred-output-type="table/html;page-mode=stream" xmlns:internal="http://reporting.pentaho.org/namespaces/engine/attributes/internal" internal:compatibility-level="8.0.0" designtime:zoom="1.8299997">
+  <style:element-style>
+    <style:text-styles font-face="SansSerif"/>
+  </style:element-style>
+  <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="style-sheet-reference" formula="=[pSelectStyle]&amp;&quot;.prptstyle&quot;"/>
+  <report-header>
+    <root-level-content designtime:visual-height="410.0">
+      <style:element-style>
+      </style:element-style>
+      <label core:style-class="reportHeader">
+        <style:element-style>
+          <style:common-styles vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="720" min-height="30"/>
+        </style:element-style>
+        <core:value>Campaign Performance Report</core:value>
+      </label>
+      <band>
+        <style:element-style>
+          <style:spatial-styles x="0" y="30" min-width="540" min-height="20"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([pShowParameters]=1;&quot;true&quot;;&quot;false&quot;)"/>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="60" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Campaign Type: $(pCampaignTypeFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="40" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Campaign Status: $(pCampaignStatusFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="20" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Campaign: $(pCampaignFilter)</core:value>
+        </message>
+        <label>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            <style:text-styles bold="true"/>
+          </style:element-style>
+          <core:value>Filters:</core:value>
+        </label>
+      </band>
+      <content>
+        <style:element-style>
+          <style:content-styles scale="true" keep-aspect-ratio="true" anti-aliasing="true"/>
+          <style:spatial-styles x="0" y="110" min-width="720" min-height="300"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;IF([pShowChart]=1;&quot;true&quot;;&quot;false&quot;))"/>
+        <style-expression style-key="y" formula="=IF([pShowParameters]=1;110;30)"/>
+        <core:value resource-type="local-ref">See Formula</core:value>
+        <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[fChartURL]"/>
+      </content>
+    </root-level-content>
+  </report-header>
+  <group core:group-fields="">
+    <style:element-style>
+    </style:element-style>
+    <fields>
+    </fields>
+    <group-header>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+        </style:element-style>
+      </root-level-content>
+    </group-header>
+    <data-body>
+      <style:element-style>
+      </style:element-style>
+      <details-header designtime:hideInLayoutGUI="false" designtime:visual-height="140.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+          <style:page-band-styles repeat="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Campaign</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="660" y="0" min-width="60" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>ROI</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="250" y="0" min-width="50" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Open</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="300" y="0" min-width="50" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Lost</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="350" y="0" min-width="50" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Won</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="400" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Budget</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="530" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Revenue</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="100" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Start Date</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="175" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>End Date</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="595" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Avg Spend</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="center" vertical-alignment="middle"/>
+            <style:spatial-styles x="465" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Cost</core:value>
+        </label>
+      </details-header>
+      <details>
+        <root-level-content designtime:visual-height="32.0">
+          <style:element-style>
+          </style:element-style>
+          <text-field core:field="CAMPAIGN_NAME">
+            <style:element-style>
+              <style:border-styles padding-left="5" border-left-width="1" border-right-width="1" border-left-color="#999999" border-right-color="#999999" border-left-style="solid" border-right-style="solid"/>
+              <style:common-styles vertical-alignment="middle"/>
+              <style:spatial-styles x="0" y="0" min-width="100" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </text-field>
+          <number-field core:field="OPEN_OPPORTUNITY_COUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="250" y="0" min-width="50" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CLOSED_LOST_OPPORTUNITY_COUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="300" y="0" min-width="50" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CLOSED_WON_OPPORTUNITY_COUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="350" y="0" min-width="50" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CAMPAIGN_BUDGET">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="400" y="0" min-width="65" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CLOSED_WON_OPPORTUNITY_AMOUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="530" y="0" min-width="65" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <date-field core:field="CAMPAIGN_START_DATE" core:format-string="dd-MM-yyyy">
+            <style:element-style>
+              <style:border-styles border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:spatial-styles x="100" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </date-field>
+          <date-field core:field="CAMPAIGN_END_DATE" core:format-string="dd-MM-yyyy">
+            <style:element-style>
+              <style:border-styles border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:spatial-styles x="175" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </date-field>
+          <number-field core:field="FUNC_AVG_SPEND" core:format-string="#,##0">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="595" y="0" min-width="65" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CAMPAIGN_ACTUAL_COST">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="465" y="0" min-width="65" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="FUNC_ROI" core:format-string="0.#%;-0.#%" core:null-value="0">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="660" y="0" min-width="60" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+        </root-level-content>
+      </details>
+      <no-data>
+        <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+          <style:element-style>
+          </style:element-style>
+          <label>
+            <style:element-style>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:content-styles color="#cc3300"/>
+              <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            </style:element-style>
+            <core:value>No Data Available for Selected Parameters</core:value>
+          </label>
+        </root-level-content>
+      </no-data>
+      <details-footer designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <rectangle>
+          <style:element-style>
+            <style:border-styles background-color="#999999"/>
+            <style:content-styles draw-shape="false" scale="true"/>
+            <style:spatial-styles x="0" y="0" min-width="720" min-height="1"/>
+          </style:element-style>
+        </rectangle>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="250" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total: </core:value>
+        </label>
+        <number-field core:field="FUNC_TOTAL_AVG_SPEND" core:format-string="#,##0" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="595" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_LOST_COUNT" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="300" y="0" min-width="50" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_ACTUAL_COST">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="465" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_OPEN_COUNT" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="250" y="0" min-width="50" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_BUDGET">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="400" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_REVENUE">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="530" y="0" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_ROI" core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="660" y="0" min-width="60" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:null-value="0" core:field="FUNC_TOTAL_WON_COUNT">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="350" y="0" min-width="50" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+      </details-footer>
+    </data-body>
+    <group-footer>
+      <root-level-content designtime:hideInLayoutGUI="true">
+        <style:element-style>
+        </style:element-style>
+      </root-level-content>
+    </group-footer>
+  </group>
+  <report-footer>
+    <root-level-content designtime:visual-height="108.0">
+      <style:element-style>
+      </style:element-style>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="17" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run By: $(env::username)</core:value>
+      </message>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="32" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run Date: $(FUNC_TODAYS_DATE)</core:value>
+      </message>
+    </root-level-content>
+  </report-footer>
+</layout>

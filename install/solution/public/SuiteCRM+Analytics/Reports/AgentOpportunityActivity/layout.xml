@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:style="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:wizard="http://reporting.pentaho.org/namespaces/engine/attributes/wizard" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" core:auto-sort="true" core:style-sheet-reference="" core:lock-preferred-output-type="false" core:style-class="masterFont" core:parameter-layout="horizontal" core:preferred-output-type="table/html;page-mode=stream" xmlns:internal="http://reporting.pentaho.org/namespaces/engine/attributes/internal" internal:compatibility-level="8.0.0" designtime:zoom="2.62">
+  <style:element-style>
+    <style:text-styles font-face="SansSerif"/>
+  </style:element-style>
+  <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="style-sheet-reference" formula="=[pSelectStyle]&amp;&quot;.prptstyle&quot;"/>
+  <report-header>
+    <root-level-content designtime:visual-height="102.00025576353073">
+      <style:element-style>
+      </style:element-style>
+      <label core:style-class="reportHeader">
+        <style:element-style>
+          <style:common-styles vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="540" min-height="30"/>
+        </style:element-style>
+        <core:value>Agent Opportunity Activity Report</core:value>
+      </label>
+      <band>
+        <style:element-style>
+          <style:spatial-styles x="0" y="30" min-width="540" min-height="54"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([pShowParameters]=1;&quot;true&quot;;&quot;false&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="100" min-height="20"/>
+            <style:text-styles bold="true"/>
+          </style:element-style>
+          <core:value>Filters:</core:value>
+        </label>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="40" min-width="540" min-height="20"/>
+          </style:element-style>
+          <core:value>User Name: $(pUserFullNameFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="20" min-width="540" min-height="20"/>
+          </style:element-style>
+          <core:value>Opportunity Created : See Formula</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=if([pActivityDateFilter]=&quot;9999-99&quot;;&quot;Activity Period: All Periods&quot;;&quot;Activity Period: &quot;&amp; [pActivityDateFilter])"/>
+        </message>
+      </band>
+    </root-level-content>
+  </report-header>
+  <group core:group-fields="USER_FULL_NAME" core:name="GROUP_USER">
+    <style:element-style>
+    </style:element-style>
+    <fields>
+      <field>USER_FULL_NAME</field>
+    </fields>
+    <group-header>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <text-field core:field="USER_FULL_NAME" core:null-value="Not Set" core:style-class="reportHeader">
+          <style:element-style>
+            <style:common-styles vertical-alignment="bottom"/>
+            <style:spatial-styles x="0" y="0" min-width="540" min-height="20"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="null-value" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;&quot;;&quot;Not Set&quot;)"/>
+        </text-field>
+      </root-level-content>
+    </group-header>
+    <group-body>
+      <style:element-style>
+      </style:element-style>
+      <group core:group-fields="ACTIVITY_TYPE" core:name="GROUP_ACTIVITY_TYPE">
+        <style:element-style>
+        </style:element-style>
+        <fields>
+          <field>ACTIVITY_TYPE</field>
+        </fields>
+        <group-header>
+          <root-level-content designtime:visual-height="72.0">
+            <style:element-style>
+            </style:element-style>
+            <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+            <text-field core:field="ACTIVITY_TYPE" core:null-value="Not Set" core:style-class="reportGroupOneHeader">
+              <style:element-style>
+                <style:common-styles vertical-alignment="middle"/>
+                <style:spatial-styles x="0" y="0" min-width="540" min-height="20"/>
+              </style:element-style>
+              <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="null-value" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;&quot;;&quot;Not Set&quot;)"/>
+            </text-field>
+          </root-level-content>
+        </group-header>
+        <data-body>
+          <style:element-style>
+          </style:element-style>
+          <details-header designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+            <style:element-style>
+              <style:common-styles avoid-page-break="true"/>
+              <style:page-band-styles repeat="true"/>
+            </style:element-style>
+            <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+            <label>
+              <style:element-style>
+                <style:border-styles background-color="#eeeeee" padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+                <style:common-styles vertical-alignment="middle"/>
+                <style:spatial-styles x="0" y="0" min-width="198" min-height="20"/>
+                <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+              </style:element-style>
+              <core:value>Opportunity</core:value>
+            </label>
+            <label>
+              <style:element-style>
+                <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+                <style:common-styles alignment="right" vertical-alignment="middle"/>
+                <style:spatial-styles x="464" y="0" min-width="76" min-height="20"/>
+                <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+              </style:element-style>
+              <core:value>Duration Mins</core:value>
+            </label>
+            <label>
+              <style:element-style>
+                <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+                <style:common-styles alignment="left" vertical-alignment="middle"/>
+                <style:spatial-styles x="198" y="0" min-width="186" min-height="20"/>
+                <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+              </style:element-style>
+              <core:value>Activity</core:value>
+            </label>
+            <label>
+              <style:element-style>
+                <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+                <style:common-styles alignment="center" vertical-alignment="middle"/>
+                <style:spatial-styles x="384" y="0" min-width="80" min-height="20"/>
+                <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+              </style:element-style>
+              <core:value>Date</core:value>
+            </label>
+          </details-header>
+          <details>
+            <root-level-content designtime:visual-height="61.9847">
+              <style:element-style>
+              </style:element-style>
+              <text-field core:field="OPPORTUNITY_NAME">
+                <style:element-style>
+                  <style:border-styles padding-left="5" border-left-width="1" border-right-width="1" border-left-color="#999999" border-right-color="#999999" border-left-style="solid" border-right-style="solid"/>
+                  <style:common-styles vertical-alignment="middle"/>
+                  <style:spatial-styles x="0" y="0" min-width="198" min-height="20"/>
+                  <style:text-styles font-face="SansSerif" font-size="8"/>
+                </style:element-style>
+              </text-field>
+              <text-field core:field="ACTIVITY_NAME">
+                <style:element-style>
+                  <style:border-styles padding-left="5" padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+                  <style:common-styles alignment="left" vertical-alignment="middle"/>
+                  <style:spatial-styles x="198" y="0" min-width="186" min-height="20"/>
+                  <style:text-styles font-face="SansSerif" font-size="8"/>
+                </style:element-style>
+              </text-field>
+              <date-field core:field="FULL_DATETIME" core:format-string="dd-MM-yyyy">
+                <style:element-style>
+                  <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+                  <style:common-styles alignment="center" vertical-alignment="middle"/>
+                  <style:spatial-styles x="384" y="0" min-width="80" min-height="20"/>
+                  <style:text-styles font-face="SansSerif" font-size="8"/>
+                </style:element-style>
+              </date-field>
+              <text-field core:field="ACTIVITY_DURATION">
+                <style:element-style>
+                  <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+                  <style:common-styles alignment="right" vertical-alignment="middle"/>
+                  <style:spatial-styles x="464" y="0" min-width="76" min-height="20"/>
+                  <style:text-styles font-face="SansSerif" font-size="8"/>
+                </style:element-style>
+                <style-expression style-key="visible" formula="=IF([ACTIVITY_DURATION] =0;&quot;False&quot;;&quot;True&quot;)"/>
+              </text-field>
+              <label>
+                <style:element-style>
+                  <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+                  <style:common-styles visible="false" alignment="right" vertical-alignment="middle"/>
+                  <style:spatial-styles x="464" y="0" min-width="76" min-height="20"/>
+                  <style:text-styles font-face="SansSerif" font-size="8"/>
+                </style:element-style>
+                <style-expression style-key="visible" formula="=IF([ACTIVITY_DURATION] =0;&quot;True&quot;;&quot;False&quot;)"/>
+                <core:value>N/A</core:value>
+              </label>
+            </root-level-content>
+          </details>
+          <no-data>
+            <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+              <style:element-style>
+              </style:element-style>
+              <label>
+                <style:element-style>
+                  <style:common-styles alignment="center" vertical-alignment="middle"/>
+                  <style:content-styles color="#cc3300"/>
+                  <style:spatial-styles x="0" y="0" min-width="540" min-height="20"/>
+                </style:element-style>
+                <core:value>No Data Available for Selected Parameters</core:value>
+              </label>
+            </root-level-content>
+          </no-data>
+          <details-footer designtime:hideInLayoutGUI="false" designtime:visual-height="49.46564161777496">
+            <style:element-style>
+              <style:common-styles avoid-page-break="true"/>
+            </style:element-style>
+          </details-footer>
+        </data-body>
+        <group-footer>
+          <root-level-content designtime:visual-height="72.0">
+            <style:element-style>
+            </style:element-style>
+            <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+            <label>
+              <style:element-style>
+                <style:border-styles padding-left="5" padding-right="5" border-width="1" border-color="#999999" border-style="solid"/>
+                <style:common-styles alignment="right" vertical-alignment="middle"/>
+                <style:spatial-styles x="0" y="0" min-width="464" min-height="20"/>
+                <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+              </style:element-style>
+              <core:value>See Formula</core:value>
+              <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[ACTIVITY_TYPE]&amp;&quot; Total:&quot;"/>
+            </label>
+            <number-field core:field="FUNC_TOTAL_DURATION_ACTIVITY_TYPE" core:format-string="#,##0;(#,##0)">
+              <style:element-style>
+                <style:border-styles padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+                <style:common-styles alignment="right" vertical-alignment="middle"/>
+                <style:spatial-styles x="464" y="0" min-width="76" min-height="20"/>
+                <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+              </style:element-style>
+              <style-expression style-key="visible" formula="=IF([FUNC_TOTAL_DURATION_ACTIVITY_TYPE] =0;&quot;False&quot;;&quot;True&quot;)"/>
+            </number-field>
+            <label>
+              <style:element-style>
+                <style:border-styles padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+                <style:common-styles alignment="right" vertical-alignment="middle"/>
+                <style:spatial-styles x="464" y="0" min-width="76" min-height="20"/>
+                <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+              </style:element-style>
+              <style-expression style-key="visible" formula="=IF([FUNC_TOTAL_DURATION_ACTIVITY_TYPE] =0;&quot;True&quot;;&quot;False&quot;)"/>
+              <core:value>N/A</core:value>
+            </label>
+          </root-level-content>
+        </group-footer>
+      </group>
+    </group-body>
+    <group-footer>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-left="5" padding-right="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="10" min-width="464" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>See Formula </core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[USER_FULL_NAME]&amp;&quot; Total:&quot;"/>
+        </label>
+        <number-field core:field="FUNC_TOTAL_DURATION_USER" core:format-string="#,##0;(#,##0)">
+          <style:element-style>
+            <style:border-styles padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="464" y="10" min-width="76" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+      </root-level-content>
+    </group-footer>
+  </group>
+  <report-footer>
+    <root-level-content designtime:visual-height="108.0">
+      <style:element-style>
+      </style:element-style>
+      <band>
+        <style:element-style>
+          <style:spatial-styles min-width="0"/>
+        </style:element-style>
+      </band>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="540" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run By: $(env::username)</core:value>
+      </message>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="15" min-width="540" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run Date: $(FUNC_TODAYS_DATE)</core:value>
+      </message>
+    </root-level-content>
+  </report-footer>
+</layout>

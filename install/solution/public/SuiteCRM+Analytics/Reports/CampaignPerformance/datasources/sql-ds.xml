@@ -1,0 +1,131 @@
+<data:sql-datasource xmlns:data="http://jfreereport.sourceforge.net/namespaces/datasources/sql">
+  <data:config/>
+  <data:jndi>
+    <data:path>SuiteCRMAnalytics</data:path>
+  </data:jndi>
+  <data:query-definitions>
+    <data:query name="Report">
+      <data:static-query>SELECT 
+	DC.CAMPAIGN_NAME
+	,CSD.FULL_DATETIME AS CAMPAIGN_START_DATE
+	,CED.FULL_DATETIME AS CAMPAIGN_END_DATE
+	,FCM.CAMPAIGN_BUDGET
+	,FCM.CAMPAIGN_ACTUAL_COST
+	,FCM.CAMPAIGN_EXPECTED_COST
+	,FCM.CAMPAIGN_EXPECTED_REVENUE
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE &lt;&gt; &apos;Closed Lost&apos; AND DO.OPPORTUNITY_SALES_STAGE &lt;&gt; &apos;Closed Won&apos;, 1, 0)) AS OPEN_OPPORTUNITY_COUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE &lt;&gt; &apos;Closed Lost&apos; AND DO.OPPORTUNITY_SALES_STAGE &lt;&gt; &apos;Closed Won&apos;, FOM.OPPORTUNITY_AMOUNT, 0)) AS OPEN_OPPORTUNITY_AMOUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = &apos;Closed Won&apos;, 1, 0)) AS CLOSED_WON_OPPORTUNITY_COUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = &apos;Closed Won&apos;, FOM.OPPORTUNITY_AMOUNT, 0)) AS CLOSED_WON_OPPORTUNITY_AMOUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = &apos;Closed Lost&apos;, 1, 0)) AS CLOSED_LOST_OPPORTUNITY_COUNT
+	,SUM(IF(DO.OPPORTUNITY_SALES_STAGE = &apos;Closed Lost&apos;, FOM.OPPORTUNITY_AMOUNT, 0)) AS CLOSED_LOST_OPPORTUNITY_AMOUNT
+	,SUM(FOM.OPPORTUNITY_AMOUNT) AS TOTAL_OPPORTUNITY_AMOUNT
+	,COUNT(FOM.OPPORTUNITY_TK) TOTAL_OPPORTUNITIES
+FROM F_OPPORTUNITY_MANAGEMENT AS FOM
+INNER JOIN D_CAMPAIGNS AS DC 
+	ON FOM.CAMPAIGN_TK = DC.CAMPAIGN_TK
+INNER JOIN D_OPPORTUNITIES AS DO 
+	ON FOM.OPPORTUNITY_TK = DO.OPPORTUNITY_TK
+INNER JOIN F_CAMPAIGN_MANAGEMENT FCM
+	ON FCM.CAMPAIGN_TK = DC.CAMPAIGN_TK
+INNER JOIN D_DATE AS CSD
+	ON FCM.CAMPAIGN_START_DATE_TK = CSD.DATE_TK
+INNER JOIN D_DATE AS CED
+	ON FCM.CAMPAIGN_END_DATE_TK = CED.DATE_TK
+WHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR &apos;All Campaign Types&apos; IN (${pCampaignTypeFilter}))
+AND (DC.CAMPAIGN_STATUS IN (${pCampaignStatusFilter}) OR &apos;All Campaign Status&apos; IN (${pCampaignStatusFilter}))
+AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR &apos;All Campaigns&apos; IN (${pCampaignFilter}))
+AND (FCM.CAMPAIGN_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+AND (FOM.OPPORTUNITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2,3,4,5,6,7</data:static-query>
+      <data:script language="ECMAScript">// This is a template to demonstrate the existing functions
+// you can use in a global data-source script. All functions and
+// global variables you define here will be available for the
+// all query scripts.
+//
+// Feel free to delete any function you don&apos;t use.
+//
+// you can process scripts via
+//   scriptHelper.eval(&quot;println (&apos;Hello World&apos;);&quot;, &quot;ECMAscript&quot;);
+//
+// or your can load your own ECMA/JavaScript files and execute them via
+//   scriptHelper.evalFile (&quot;/your/file/here.js&quot;, &quot;ECMAscript&quot;);
+//
+// both inline scripts and files will be executed in the global context -
+// any function or variable defined there will be available globally.
+//
+// The following global variables exist by default:
+//    resourceManager : The ResourceManager can be used to load files
+//    contextKey      : ResourceKey the context key points to the prpt-bundle
+//    dataFactory     : The current datafactory instance
+//    configuration   : The current report configuration
+//    resourceBundleFactory : Access to translations and locale information
+//    scriptHelper    : Allows to load and evaluate other scripts
+
+function initQuery()
+{
+  // place all initialization logic here. This is the right space to prepare complex lookup tables or
+  // to fill global variables.
+
+  // this method is called once during initialization. This function will
+  // only be called when the associated query is used.
+}
+
+function shutdownQuery()
+{
+  // place all shutdown logic here. If you use any persistent resources like files or connections
+  // make sure you close them here.
+
+  // this method is called once during the data-source shut-down. It
+  // will only be called if the associated query has been fired.
+}
+
+function computeQuery (query, queryName, dataRow)
+{
+  // computes the query string that is used to query the data-source.
+  // query contains the statically defined query (MQL-text)
+  // queryName is the logical name for this query given at design-time
+  // dataRow contains all parameters that will be used to execute the query
+
+  //var orderBy = dataRow.get(&quot;ReportOrderParameter&quot;);
+  //var order = dataRow.get(&quot;ReportOrderAscDescParameter&quot;);
+
+  //var newQuery = query+&quot; ORDER BY &quot;+orderBy+&quot; &quot;+order;
+
+  //return newQuery;
+  Packages.java.lang.System.out.println(&quot;---------------------------------------&quot;);
+
+	var PARAM_ORDER = dataRow.get(&quot;pOrderColumnFilter&quot;);
+
+	
+
+	query = query.replace(&quot;${PARAM_ORDER}&quot;, PARAM_ORDER);
+
+  return query;
+}
+
+function computeQueryFields (query, queryName)
+{
+  // return any additional fields that may affect caching. If you rewrite
+  // the query dynamically in the &apos;computeQuery&apos; function, include all fields
+  // that may take part of the query or query computation.
+  //
+  // if you do not want any caching, return &lt;null&gt;.
+  return null;
+}
+
+function postProcessResult(query, queryName, dataRow, tableModel)
+{
+  // optionally post-process the query result. Usually you would not
+  // manipulate the given table-model directly, but you can either copy
+  // data into a new model or you can wrap it with a custom table-model
+  // implementation of your own making.
+
+  // if you discard the original tablemodel in the process, make sure
+  // you close it properly or you may leak resources.
+  return tableModel;
+}
+</data:script>
+    </data:query>
+  </data:query-definitions>
+</data:sql-datasource>

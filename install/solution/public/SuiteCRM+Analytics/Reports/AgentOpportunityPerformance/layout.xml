@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:style="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:wizard="http://reporting.pentaho.org/namespaces/engine/attributes/wizard" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" core:auto-sort="true" core:style-sheet-reference="" core:lock-preferred-output-type="false" core:style-class="masterFont" core:parameter-layout="horizontal" core:preferred-output-type="table/html;page-mode=stream" xmlns:internal="http://reporting.pentaho.org/namespaces/engine/attributes/internal" internal:compatibility-level="8.0.0" designtime:zoom="2.0">
+  <style:element-style>
+    <style:text-styles font-face="SansSerif"/>
+  </style:element-style>
+  <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="style-sheet-reference" formula="=[pSelectStyle]&amp;&quot;.prptstyle&quot;"/>
+  <report-header>
+    <root-level-content designtime:visual-height="430.0">
+      <style:element-style>
+      </style:element-style>
+      <label core:style-class="reportHeader">
+        <style:element-style>
+          <style:common-styles vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="720" min-height="30"/>
+        </style:element-style>
+        <core:value>Agent Opportunity Performance Report</core:value>
+      </label>
+      <content>
+        <style:element-style>
+          <style:content-styles scale="true" keep-aspect-ratio="true" anti-aliasing="true"/>
+          <style:spatial-styles x="0" y="130" min-width="720" min-height="300"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;IF([pShowChart]=1;&quot;true&quot;;&quot;false&quot;))"/>
+        <style-expression style-key="y" formula="=IF([pShowParameters]=1;150;30)"/>
+        <core:value resource-type="local-ref">See Formula</core:value>
+        <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[fChartURL]"/>
+      </content>
+      <band>
+        <style:element-style>
+          <style:band-styles pagebreak-after="false"/>
+          <style:common-styles invisible-consumes-space="false"/>
+          <style:spatial-styles x="0" y="30" min-width="720" min-height="0"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([pShowParameters]=1;&quot;true&quot;;&quot;false&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            <style:text-styles bold="true"/>
+          </style:element-style>
+          <core:value>Filters:</core:value>
+        </label>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="20" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Opportunity Created : See Formula</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=if([pOpportunityCreatedDateFilter]=&quot;9999-99&quot;;&quot;Opportunity Created Period: All Periods&quot;;&quot;Opportunity Created Period: &quot;&amp; [pOpportunityCreatedDateFilter])"/>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="80" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Opportunity Type: $(pOpportunityTypeFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="60" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Opportunity Sales Stage: $(pOpportunitySalesStageFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="40" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Opportunity Lead Source: $(pOpportunityLeadSourceFilter)</core:value>
+        </message>
+      </band>
+    </root-level-content>
+  </report-header>
+  <group core:group-fields="">
+    <style:element-style>
+    </style:element-style>
+    <fields>
+    </fields>
+    <group-header>
+      <root-level-content designtime:hideInLayoutGUI="true">
+        <style:element-style>
+        </style:element-style>
+      </root-level-content>
+    </group-header>
+    <data-body>
+      <style:element-style>
+      </style:element-style>
+      <details-header designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+          <style:page-band-styles repeat="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="170" min-height="40"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Agent</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="0" min-width="70" min-height="40"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="470" y="0" min-width="150" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Closed Lost</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="320" y="0" min-width="150" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Closed Won</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="170" y="0" min-width="150" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Open</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="170" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="200" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="245" y="20" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="320" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="350" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="395" y="20" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="470" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="500" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#efefef" padding-left="5" padding-right="5" border-bottom-width="1" border-right-width="1" border-bottom-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="545" y="20" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="620" y="0" min-width="30" min-height="40"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+      </details-header>
+      <details>
+        <root-level-content designtime:visual-height="56.0">
+          <style:element-style>
+          </style:element-style>
+          <text-field core:field="EMPLOYEE_FULL_NAME" core:null-value="Unknown">
+            <style:element-style>
+              <style:border-styles padding-left="2" border-left-width="1" border-right-width="1" border-left-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="none" border-right-style="solid"/>
+              <style:common-styles alignment="left" vertical-alignment="middle"/>
+              <style:spatial-styles x="0" y="0" min-width="170" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </text-field>
+          <number-field core:field="OPEN_OPPORTUNITY_COUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="170" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="OPEN_OPPORTUNITY_AMOUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="245" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CLOSED_WON_OPPORTUNITY_COUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="320" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CLOSED_WON_OPPORTUNITY_AMOUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="395" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CLOSED_LOST_OPPORTUNITY_COUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="470" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="CLOSED_LOST_OPPORTUNITY_AMOUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="545" y="0" min-width="75" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="TOTAL_OPPORTUNITY_AMOUNT">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="650" y="0" min-width="70" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="TOTAL_OPPORTUNITIES">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="620" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="200" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[OPEN_OPPORTUNITY_COUNT]/[TOTAL_OPPORTUNITIES]"/>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="350" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[CLOSED_WON_OPPORTUNITY_COUNT]/[TOTAL_OPPORTUNITIES]"/>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="500" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[CLOSED_LOST_OPPORTUNITY_COUNT]/[TOTAL_OPPORTUNITIES]"/>
+          </number-field>
+        </root-level-content>
+      </details>
+      <no-data>
+        <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+          <style:element-style>
+          </style:element-style>
+          <label>
+            <style:element-style>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:content-styles color="#cc3300"/>
+              <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            </style:element-style>
+            <core:value>No Data Available for Selected Parameters</core:value>
+          </label>
+        </root-level-content>
+      </no-data>
+      <details-footer designtime:hideInLayoutGUI="false" designtime:visual-height="98.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="170" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total: </core:value>
+        </label>
+        <number-field core:field="FUNC_TOTAL_OPEN">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="170" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_OPPORTUNITIES">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="620" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_CLOSED_WON">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="320" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_CLOSED_LOST">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="470" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="200" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_OPEN]/[FUNC_TOTAL_OPPORTUNITIES]"/>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_OPEN_VALUE">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="245" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_CLOSED_WON_VALUE">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="395" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_CLOSED_LOST_VALUE">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="545" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_OPPORTUNITIES_VALUE">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="650" y="0" min-width="70" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="350" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_CLOSED_WON]/[FUNC_TOTAL_OPPORTUNITIES]"/>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="500" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_CLOSED_LOST]/[FUNC_TOTAL_OPPORTUNITIES]"/>
+        </number-field>
+      </details-footer>
+    </data-body>
+    <group-footer>
+      <root-level-content designtime:hideInLayoutGUI="true">
+        <style:element-style>
+        </style:element-style>
+      </root-level-content>
+    </group-footer>
+  </group>
+  <report-footer>
+    <root-level-content designtime:visual-height="108.0">
+      <style:element-style>
+      </style:element-style>
+      <band>
+        <style:element-style>
+        </style:element-style>
+      </band>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run By: $(env::username)</core:value>
+      </message>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="15" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run Date: $(FUNC_TODAYS_DATE)</core:value>
+      </message>
+    </root-level-content>
+  </report-footer>
+</layout>

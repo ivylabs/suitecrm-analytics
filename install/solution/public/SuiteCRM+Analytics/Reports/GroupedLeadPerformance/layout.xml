@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:style="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:wizard="http://reporting.pentaho.org/namespaces/engine/attributes/wizard" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" core:auto-sort="true" core:style-sheet-reference="" core:lock-preferred-output-type="false" core:style-class="masterFont" core:parameter-layout="horizontal" core:preferred-output-type="table/html;page-mode=stream" xmlns:internal="http://reporting.pentaho.org/namespaces/engine/attributes/internal" internal:compatibility-level="8.0.0" designtime:zoom="1.5">
+  <style:element-style>
+    <style:text-styles font-face="SansSerif"/>
+  </style:element-style>
+  <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="style-sheet-reference" formula="=[pSelectStyle]&amp;&quot;.prptstyle&quot;"/>
+  <report-header>
+    <root-level-content designtime:visual-height="245.16666454076767">
+      <style:element-style>
+      </style:element-style>
+      <label core:style-class="reportHeader">
+        <style:element-style>
+          <style:common-styles vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="720" min-height="30"/>
+        </style:element-style>
+        <core:value>Lead Performance Report</core:value>
+      </label>
+      <band>
+        <style:element-style>
+          <style:band-styles pagebreak-after="false"/>
+          <style:common-styles invisible-consumes-space="false"/>
+          <style:spatial-styles x="0" y="30" min-width="720" min-height="65"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([pShowParameters]=1;&quot;true&quot;;&quot;false&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            <style:text-styles bold="true"/>
+          </style:element-style>
+          <core:value>Filters:</core:value>
+        </label>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="60" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Lead State: $(pLeadPrimaryAddressStateFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="40" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Lead Country: $(pLeadPrimaryAddressCountryFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="120" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Campaign Type: $(pCampaignTypeFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="100" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Campaign Status: $(pCampaignStatusFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="80" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Campaign: $(pCampaignFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="20" min-width="720" min-height="20"/>
+          </style:element-style>
+          <core:value>Lead Source: $(pLeadSourceFilter)</core:value>
+        </message>
+      </band>
+    </root-level-content>
+  </report-header>
+  <group core:group-fields="">
+    <style:element-style>
+    </style:element-style>
+    <fields>
+    </fields>
+    <group-header>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+        </style:element-style>
+      </root-level-content>
+    </group-header>
+    <data-body>
+      <style:element-style>
+      </style:element-style>
+      <details-header designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+          <style:page-band-styles repeat="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <band designtime:hideInLayoutGUI="false">
+          <style:element-style>
+            <style:common-styles avoid-page-break="true"/>
+            <style:page-band-styles repeat="true"/>
+          </style:element-style>
+        </band>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="170" min-height="40"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Agent</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=IF([pSelectRowGroup]=&quot;DL.LEAD_PRIMARY_ADDRESS_COUNTRY&quot;;&quot;Country&quot;;IF([pSelectRowGroup]=&quot;DU.USER_NAME&quot;;&quot;Agent&quot;;&quot;Campaign&quot;))"/>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="170" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>New</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="320" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>In Process</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="470" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Recycled</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="620" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="245" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Assigned</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="395" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Converted</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="545" y="0" min-width="75" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Dead</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="170" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="200" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="275" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="245" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <band designtime:hideInLayoutGUI="false">
+          <style:element-style>
+            <style:common-styles avoid-page-break="true"/>
+            <style:page-band-styles repeat="true"/>
+            <style:spatial-styles x="150" y="0"/>
+          </style:element-style>
+          <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        </band>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="320" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="350" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="395" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="425" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <band designtime:hideInLayoutGUI="false">
+          <style:element-style>
+            <style:common-styles avoid-page-break="true"/>
+            <style:page-band-styles repeat="true"/>
+            <style:spatial-styles x="300" y="0"/>
+          </style:element-style>
+          <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        </band>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="470" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="500" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="545" y="20" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="575" y="20" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="685" y="20" min-width="35" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>#</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="0" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="620" y="20" min-width="65" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>%</core:value>
+        </label>
+      </details-header>
+      <details>
+        <root-level-content designtime:visual-height="24.0">
+          <style:element-style>
+          </style:element-style>
+          <text-field core:field="c1" core:null-value="Unknown">
+            <style:element-style>
+              <style:border-styles padding-left="2" border-left-width="1" border-right-width="1" border-left-color="#999999" border-right-color="#999999" border-left-style="solid" border-bottom-style="none" border-right-style="solid"/>
+              <style:common-styles alignment="left" vertical-alignment="middle"/>
+              <style:spatial-styles x="0" y="0" min-width="170" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </text-field>
+          <number-field core:field="c2">
+            <style:element-style>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="170" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="c3">
+            <style:element-style>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="245" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="c4">
+            <style:element-style>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="320" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="c8">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="685" y="0" min-width="35" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="200" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[c2]/[c8]"/>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="275" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[c3]/[c8]"/>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="350" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[c4]/[c8]"/>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="425" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[c5]/[c8]"/>
+          </number-field>
+          <number-field core:field="c5">
+            <style:element-style>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="395" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="500" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[c6]/[c8]"/>
+          </number-field>
+          <number-field core:field="c6">
+            <style:element-style>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="470" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="575" y="0" min-width="45" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[c7]/[c8]"/>
+          </number-field>
+          <number-field core:field="c7">
+            <style:element-style>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="545" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:format-string="0.#%;(0.#%)">
+            <style:element-style>
+              <style:border-styles padding-right="5"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="655" y="0" min-width="30" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+            <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[c8]/[FUNC_TOTAL_LEADS]"/>
+          </number-field>
+          <rectangle>
+            <style:element-style>
+              <style:content-styles draw-shape="false" fill-shape="true" scale="true" fill-color="#dc6254"/>
+              <style:spatial-styles x="625" y="3.667" min-width="30" min-height="10"/>
+            </style:element-style>
+            <style-expression style-key="min-width" formula="= (30/[FUNC_MAX_TOTAL]) * [c8]"/>
+          </rectangle>
+        </root-level-content>
+      </details>
+      <no-data>
+        <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+          <style:element-style>
+          </style:element-style>
+          <label>
+            <style:element-style>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:content-styles color="#cc3300"/>
+              <style:spatial-styles x="0" y="0" min-width="720" min-height="20"/>
+            </style:element-style>
+            <core:value>No Data Available for Selected Parameters</core:value>
+          </label>
+        </root-level-content>
+      </no-data>
+      <details-footer designtime:hideInLayoutGUI="false" designtime:visual-height="76.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <band designtime:hideInLayoutGUI="false">
+          <style:element-style>
+          </style:element-style>
+        </band>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="170" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total: </core:value>
+        </label>
+        <number-field core:field="FUNC_TOTAL_NEW">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="170" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="200" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_NEW]/[FUNC_TOTAL_CASES]"/>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_ASSIGNED">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="245" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_PROCESS">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="320" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_CONVERTED">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="395" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_RECYCLED">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="470" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_DEAD">
+          <style:element-style>
+            <style:border-styles border-top-width="1" border-bottom-width="1" border-top-color="#999999" border-bottom-color="#999999" border-top-style="solid" border-bottom-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="545" y="0" min-width="30" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_CASES">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="620" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="275" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_ASSIGNED]/[FUNC_TOTAL_CASES]"/>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="350" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_PROCESS]/[FUNC_TOTAL_CASES]"/>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="425" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_CONVERTED]/[FUNC_TOTAL_CASES]"/>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="500" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_RECYCLED]/[FUNC_TOTAL_CASES]"/>
+        </number-field>
+        <number-field core:format-string="0.#%;(0.#%)" core:null-value="0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="575" y="0" min-width="45" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[FUNC_TOTAL_DEAD]/[FUNC_TOTAL_CASES]"/>
+        </number-field>
+      </details-footer>
+    </data-body>
+    <group-footer>
+      <root-level-content designtime:hideInLayoutGUI="true">
+        <style:element-style>
+        </style:element-style>
+      </root-level-content>
+    </group-footer>
+  </group>
+  <report-footer>
+    <root-level-content designtime:visual-height="108.0">
+      <style:element-style>
+      </style:element-style>
+      <band>
+        <style:element-style>
+        </style:element-style>
+      </band>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run By: $(env::username)</core:value>
+      </message>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="15" min-width="720" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run Date: $(FUNC_TODAYS_DATE)</core:value>
+      </message>
+    </root-level-content>
+  </report-footer>
+</layout>

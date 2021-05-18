@@ -39,6 +39,58 @@ then
 
 		sed -i 's|@@REPORTING_USER_PASSWORD@@|'$randomPass'|'  pentaho-solutions/system/applicationContext-spring-security-memory.xml
 
+		# Package solution files
+
+		DEFAULT_CONTENT=${WORKING_DIR}/pentaho-solutions/system/default-content/
+
+		cp -Rf solution/ ${DEFAULT_CONTENT}
+
+		cd ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/Reports/
+
+		for i in */; do
+                       cd $i
+                       zip -r "${i%/}.prpt" .
+                       mv "${i%/}.prpt" ../"${i%/}.prpt"
+		       cd ../
+		       rm -Rf $i
+                done
+
+
+
+
+
+
+
+		
+		cd ${DEFAULT_CONTENT}/solution/
+		
+		zip -r ${DEFAULT_CONTENT}/SuiteCRM-Analytics.zip public/ exportManifest.xml schema.xml
+
+		cd ${DEFAULT_CONTENT}
+
+		rm -Rf solution/ 
+
+		cd ${WORKING_DIR}
+		
+		
+		
+		
+
+
+
+		#mkdir compiled/
+
+		#cd Reports/
+
+		#for i in */; do
+        	#	cd $i
+        	#	zip -r "${i%/}.prpt" .
+        	#	mv "${i%/}.prpt" ../../compiled/"${i%/}.prpt"
+        	#	cd ../
+		#done
+
+		#cd ../
+
 		# JNDI Configuration
 
 		sed -i 's|@@SUITECRM_ANALYTICS_HOST@@|'${SUITECRM_ANALYTICS_HOST}'|'  tomcat/webapps/suitecrmanalytics/META-INF/context.xml

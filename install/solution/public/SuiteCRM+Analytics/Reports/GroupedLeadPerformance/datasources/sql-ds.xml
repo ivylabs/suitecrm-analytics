@@ -1,0 +1,105 @@
+<data:sql-datasource xmlns:data="http://jfreereport.sourceforge.net/namespaces/datasources/sql">
+  <data:config/>
+  <data:jndi>
+    <data:path>SuiteCRMAnalytics</data:path>
+  </data:jndi>
+  <data:query-definitions>
+    <data:query name="Report">
+      <data:static-query>SELECT
+     ${SELECT_SQL}
+     ,SUM(IF(DL.LEAD_STATUS = &apos;New&apos;, 1, 0)) AS NEW_LEAD_COUNT
+	,SUM(IF(DL.LEAD_STATUS = &apos;Assigned&apos;, 1, 0)) AS ASSIGNED_LEAD_COUNT
+	,SUM(IF(DL.LEAD_STATUS = &apos;In Process&apos;, 1, 0)) AS IN_PROCESS_LEAD_COUNT
+	,SUM(IF(DL.LEAD_STATUS = &apos;Converted&apos;, 1, 0)) AS CONVERTED_LEAD_COUNT
+	,SUM(IF(DL.LEAD_STATUS = &apos;Recycled&apos;, 1, 0)) AS RECYCLED_LEAD_COUNT
+	,SUM(IF(DL.LEAD_STATUS = &apos;Dead&apos;, 1, 0)) AS DEAD_LEAD_COUNT
+	,COUNT(FLM.LEAD_TK) TOTAL_LEADS
+FROM F_LEAD_MANAGEMENT AS FLM
+INNER JOIN D_USERS AS DU 
+	ON FLM.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_LEADS AS DL 
+	ON FLM.LEAD_TK = DL.LEAD_TK
+INNER JOIN D_CAMPAIGNS AS DC 
+	ON FLM.CAMPAIGN_TK = DC.CAMPAIGN_TK
+INNER JOIN D_DATE DD
+	ON FLM.LEAD_CREATED_TK = DD.DATE_TK
+WHERE (DC.CAMPAIGN_TYPE IN (${pCampaignTypeFilter}) OR &apos;All Campaign Types&apos; IN (${pCampaignTypeFilter}))
+AND (DC.CAMPAIGN_NAME IN (${pCampaignFilter}) OR &apos;All Campaigns&apos; IN (${pCampaignFilter}))
+AND (DC.CAMPAIGN_STATUS IN (${pCampaignStatusFilter}) OR &apos;All Campaign Status&apos; IN (${pCampaignStatusFilter}))
+AND (DL.LEAD_SOURCE IN (${pLeadSourceFilter}) OR &apos;All Lead Sources&apos; IN (${pLeadSourceFilter}))
+AND (DL.LEAD_PRIMARY_ADDRESS_COUNTRY IN (${pLeadPrimaryAddressCountryFilter}) OR &apos;All Lead Countries&apos; IN (${pLeadPrimaryAddressCountryFilter}))
+AND (DL.LEAD_PRIMARY_ADDRESS_STATE IN (${pLeadPrimaryAddressStateFilter}) OR &apos;All Lead States&apos; IN (${pLeadPrimaryAddressStateFilter}))
+AND (FLM.LEAD_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY  ${GROUP_SQL}</data:static-query>
+      <data:script language="ECMAScript">function initQuery()
+{
+
+}
+
+function shutdownQuery()
+{
+
+}
+
+function computeQuery (query, queryName, dataRow)
+{
+
+	Packages.java.lang.System.out.println(&quot;---------------------------------------&quot;);
+
+	var pSelectRowGroup = dataRow.get(&quot;pSelectRowGroup&quot;);
+	var selectSQL = pSelectRowGroup;
+	var groupSQL = pSelectRowGroup;
+
+	query = query.replace(&quot;${SELECT_SQL}&quot;, selectSQL);
+	query = query.replace(&quot;${GROUP_SQL}&quot;, groupSQL);
+
+  return query;
+}
+
+function computeQueryFields (query, queryName)
+{
+  return null;
+}
+
+function postProcessResult(query, queryName, dataRow, tableModel)
+{
+
+  
+// New table model object
+var newTableModel = new Packages.org.pentaho.reporting.engine.classic.core.util.TypedTableModel(tableModel.getRowCount(), tableModel.getColumnCount());
+
+// Process the new column names
+for(i=0;i&lt;tableModel.getColumnCount();i++){
+		newTableModel.addColumn(&quot;c&quot;+(i+1), tableModel.getColumnClass(i));
+}
+
+// Add Rows
+for(i=0;i&lt;tableModel.getRowCount();i++){
+	var row =[];
+	for(x=0;x&lt;tableModel.getColumnCount();x++){
+		row.push(tableModel.getValueAt(i,x));
+	}
+	newTableModel.addRow(row);
+}
+
+// Make sure you close the connection...
+tableModel.close();
+  
+  return newTableModel;
+}
+</data:script>
+    </data:query>
+    <data:query name="DateFilter">
+      <data:static-query>SELECT &apos;9999-99&apos; AS &apos;YYYY-DD&apos;, &apos;All Periods&apos; as DATE_FILTER
+UNION
+SELECT
+	DD.`YYYY-MM`
+	,CONCAT(DD.YEAR4,&apos; - &apos;, DD.MONTH_LONG_DESC) AS DATE_FILTER
+FROM F_CASE_MANAGEMENT FCM
+INNER JOIN D_DATE DD
+	ON FCM.CASE_CREATED_TK = DD.DATE_TK
+GROUP BY 1,2
+ORDER BY 1 DESC;</data:static-query>
+    </data:query>
+  </data:query-definitions>
+</data:sql-datasource>

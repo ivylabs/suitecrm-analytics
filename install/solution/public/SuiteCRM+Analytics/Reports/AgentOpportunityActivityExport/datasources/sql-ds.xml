@@ -1,0 +1,32 @@
+<data:sql-datasource xmlns:data="http://jfreereport.sourceforge.net/namespaces/datasources/sql">
+  <data:config/>
+  <data:jndi>
+    <data:path>SuiteCRMAnalytics</data:path>
+  </data:jndi>
+  <data:query-definitions>
+    <data:query name="Report">
+      <data:static-query>SELECT
+	DU.USER_FULL_NAME
+	,DA.ACTIVITY_TYPE
+	,DO.OPPORTUNITY_NAME
+	,DD.FULL_DATETIME
+	,FA.ACTIVITY_DURATION
+	,DA.ACTIVITY_NAME
+	,FA.ACTIVITY_DATE_TK
+FROM F_ACTIVITIES FA
+INNER JOIN D_USERS AS DU
+	ON FA.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE AS DD
+	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
+INNER JOIN D_OPPORTUNITIES AS DO
+	ON FA.ACTIVITY_PARENT_TK = DO.OPPORTUNITY_TK
+INNER JOIN D_ACTIVITIES AS DA
+	USING(ACTIVITY_TK)
+WHERE DA.ACTIVITY_PARENT_TYPE = &apos;Opportunities&apos;
+AND (FA.ACTIVITY_DATE_TK BETWEEN ${pActivityDateFromFilter} AND ${pActivityDateToFilter})
+AND (DU.USER_FULL_NAME IN(${pUserNameArrayFilter}))
+AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+ORDER BY 1,2,3,4;</data:static-query>
+    </data:query>
+  </data:query-definitions>
+</data:sql-datasource>

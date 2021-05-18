@@ -1,0 +1,62 @@
+<data:inline-datasource xmlns:data="http://reporting.pentaho.org/namespaces/datasources/inline/1.0">
+  <data:inline-table name="pShowChartQuery">
+    <data:definition>
+      <data:column name="property" type="java.lang.String"/>
+      <data:column name="value" type="java.lang.String"/>
+    </data:definition>
+    <data:row>
+      <data:data>Show</data:data>
+      <data:data>1</data:data>
+    </data:row>
+    <data:row>
+      <data:data>Hide</data:data>
+      <data:data>0</data:data>
+    </data:row>
+  </data:inline-table>
+  <data:inline-table name="pChartTypeQuery">
+    <data:definition>
+      <data:column name="ID" type="java.lang.String"/>
+      <data:column name="Value" type="java.lang.String"/>
+    </data:definition>
+    <data:row>
+      <data:data>BAR</data:data>
+      <data:data>Bar Chart</data:data>
+    </data:row>
+    <data:row>
+      <data:data>PIE</data:data>
+      <data:data>Pie Chart</data:data>
+    </data:row>
+  </data:inline-table>
+  <data:inline-table name="pShowParameters">
+    <data:definition>
+      <data:column name="property" type="java.lang.String"/>
+      <data:column name="Value" type="java.lang.String"/>
+    </data:definition>
+    <data:row>
+      <data:data>Show</data:data>
+      <data:data>1</data:data>
+    </data:row>
+    <data:row>
+      <data:data>Hide</data:data>
+      <data:data>0</data:data>
+    </data:row>
+  </data:inline-table>
+  <data:inline-table name="pOutputTypes">
+    <data:definition>
+      <data:column name="ID" type="java.lang.String"/>
+      <data:column name="Value" type="java.lang.String"/>
+    </data:definition>
+    <data:row>
+      <data:data>table/html;page-mode=stream</data:data>
+      <data:data>HTML (Single Page)</data:data>
+    </data:row>
+    <data:row>
+      <data:data>pageable/pdf</data:data>
+      <data:data>PDF</data:data>
+    </data:row>
+    <data:row>
+      <data:data>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow</data:data>
+      <data:data>Excel</data:data>
+    </data:row>
+  </data:inline-table>
+</data:inline-datasource>
