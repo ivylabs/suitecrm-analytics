@@ -1,6 +1,0 @@
-<data:compound-datasource xmlns:data="http://reporting.pentaho.org/namespaces/datasources/compound/1.0">
-  <data:data-factory href="cda-ds.xml"/>
-  <data:data-factory href="cda-ds1.xml"/>
-  <data:data-factory href="sql-ds.xml"/>
-  <data:data-factory href="inline-ds.xml"/>
-</data:compound-datasource>
