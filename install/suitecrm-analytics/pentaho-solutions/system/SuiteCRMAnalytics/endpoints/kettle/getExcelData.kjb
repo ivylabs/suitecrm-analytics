@@ -47,11 +47,6 @@
       <description>The mimeType of the http response. If this value is not set, the plugin will try to determine it from the file extension. Remove '#' to use variable.</description>
     </parameter>
     <parameter>
-      <name>#cpk.result.stepName</name>
-      <default_value>OUTPUT</default_value>
-      <description>The default output job entry where the rows will be fetched for the result. Remove '#' to use variable.</description>
-    </parameter>
-    <parameter>
       <name>#cpk.session.[SessionVarName]</name>
       <default_value />
       <description>The value of session variable named [sessionVarName]. This value is automatically injected here at runtime if '#' is removed from variable name.</description>
@@ -73,13 +68,18 @@
     </parameter>
     <parameter>
       <name>cpk.response.attachmentName</name>
-      <default_value>excelData.xlsx</default_value>
+      <default_value>data.zip</default_value>
       <description>The attachment name used when downloading a file from a result. Remove '#' to use variable.</description>
     </parameter>
     <parameter>
       <name>cpk.response.download</name>
       <default_value>true</default_value>
       <description>Whether to (or not) mark the http reponse body as an attachment. Remove '#' to use variable.</description>
+    </parameter>
+    <parameter>
+      <name>cpk.result.stepName</name>
+      <default_value>ZIP</default_value>
+      <description>The default output job entry where the rows will be fetched for the result. Remove '#' to use variable.</description>
     </parameter>
     <parameter>
       <name>cpk.solution.system.dir</name>
@@ -539,7 +539,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
+      <xloc>1088</xloc>
       <yloc>128</yloc>
     </entry>
     <entry>
@@ -822,6 +822,40 @@
       <xloc>320</xloc>
       <yloc>288</yloc>
     </entry>
+    <entry>
+      <name>getZip</name>
+      <description />
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id />
+      <filename>${Internal.Entry.Current.Directory}/getZip.kjb</filename>
+      <jobname />
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile />
+      <logext />
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name />
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>896</xloc>
+      <yloc>128</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -841,24 +875,6 @@
       <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>generateParameters</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>generateExcelData</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Write To Log</from>
@@ -881,6 +897,24 @@
     <hop>
       <from>Set Parameters</from>
       <to>Write To Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>generateExcelData</from>
+      <to>getZip</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>getZip</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
