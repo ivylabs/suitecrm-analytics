@@ -47,21 +47,29 @@ then
 
 		cd ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/Reports/
 
-		# Generate CGG Endpoint URL
 
-		CGGURL=$(date +%s | sha256sum | base64 | head -c 32 ; echo);
+		if [[ "$DEVELOPMENT_SERVER" -eq 0 ]];
+                then
+			# Generate CGG URL
 
-		mv ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/System/Resources/RCD/CGGChartGenerator.js ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/System/Resources/RCD/${CGGURL}.js
+			CGGURL=$(date +%s | sha256sum | base64 | head -c 32 ; echo);
 
-		find . -type f -name "*.xml" -print0 | xargs -0 sed -i -e 's/CGGChartGenerator/'${CGGURL}'/g'
+                	mv ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/System/Resources/RCD/CGGChartGenerator.js ${DEFAULT_CONTENT}/solution/public/SuiteCRM+Analytics/System/Resources/RCD/${CGGURL}.js
 
-		for i in */; do
-                       cd $i
-                       zip -r "${i%/}.prpt" .
-                       mv "${i%/}.prpt" ../"${i%/}.prpt"
-		       cd ../
-		       rm -Rf $i
+                	find . -type f -name "*.xml" -print0 | xargs -0 sed -i -e 's/CGGChartGenerator/'${CGGURL}'/g'
+
+
+                fi
+
+		 for i in */; do
+                 	cd $i
+                        zip -r "${i%/}.prpt" .
+                        mv "${i%/}.prpt" ../"${i%/}.prpt"
+                        cd ../
+                        rm -Rf $i
                 done
+
+
 		
 		cd ${DEFAULT_CONTENT}/solution/
 		
@@ -102,6 +110,14 @@ then
 			rm -Rf pentaho-solutions/system/default-content/samples.zip
 
 		fi
+
+		if [[ "$DEVELOPMENT_SERVER" -eq 0 ]];
+                then
+
+                        rm -Rf pentaho-solutions/system/default-content/plugin-samples.zip
+                        rm -Rf pentaho-solutions/system/default-content/samples.zip
+
+                fi
 
 		echo ""
                 echo "-------------------------------------------------------------"
