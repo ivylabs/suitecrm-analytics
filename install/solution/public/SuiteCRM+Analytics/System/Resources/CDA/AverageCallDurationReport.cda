@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="CHART" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="CHART" id="CHART" type="sql">
+      <Name>CHART</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="${pActivityFromDateFilter}" name="pActivityFromDateFilter" type="String"/>
+         <Parameter default="${pActivityToDateFilter}" name="pActivityToDateFilter" type="String"/>
+         <Parameter default="${pShowDeletedRecords}" name="pShowDeletedRecords" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 
+    DD.`YYYY-MM`
+    ,DA.ACTIVITY_PARENT_TYPE 
+    ,AVG(ACTIVITY_DURATION) 
+	FROM F_ACTIVITIES FA
+INNER JOIN D_DATE DD 
+	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK 
+INNER JOIN D_ACTIVITIES DA
+	ON FA.ACTIVITY_TK = DA.ACTIVITY_TK
+WHERE DA.ACTIVITY_TYPE = 'Call'
+AND DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
+AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2
+ORDER BY 1 DESC;]]></Query>
+   </DataAccess>
+</CDADescriptor>

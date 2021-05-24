@@ -1,0 +1,27 @@
+<data:sql-datasource xmlns:data="http://jfreereport.sourceforge.net/namespaces/datasources/sql">
+  <data:config/>
+  <data:jndi>
+    <data:path>SuiteCRMAnalytics</data:path>
+  </data:jndi>
+  <data:query-definitions>
+    <data:query name="Report">
+      <data:static-query>SELECT
+	DD.YEAR4 AS GROUPBY
+	,YYYYMM AS ORDINAL
+	,DD.MONTH_LONG_DESC AS PERIOD
+	,AVG(IF(DA.ACTIVITY_PARENT_TYPE = &apos;Cases&apos;, ACTIVITY_DURATION, NULL)) AS CASES
+	,AVG(IF(DA.ACTIVITY_PARENT_TYPE = &apos;Leads&apos;, ACTIVITY_DURATION, NULL)) AS LEADS
+	,AVG(IF(DA.ACTIVITY_PARENT_TYPE = &apos;Opportunities&apos;, ACTIVITY_DURATION, NULL)) AS OPPORTUNITIES
+FROM F_ACTIVITIES FA
+INNER JOIN D_ACTIVITIES DA
+	ON FA.ACTIVITY_TK = DA.ACTIVITY_TK
+INNER JOIN D_DATE DD
+	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
+WHERE DA.ACTIVITY_TYPE = &apos;Call&apos;
+AND DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
+AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2,3
+ORDER BY 2 DESC;</data:static-query>
+    </data:query>
+  </data:query-definitions>
+</data:sql-datasource>
