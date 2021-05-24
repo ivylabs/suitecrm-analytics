@@ -63,7 +63,7 @@ then
 
 		 for i in */; do
                  	cd $i
-                        zip -r "${i%/}.prpt" .
+                        zip -rq "${i%/}.prpt" .
                         mv "${i%/}.prpt" ../"${i%/}.prpt"
                         cd ../
                         rm -Rf $i
@@ -73,7 +73,7 @@ then
 		
 		cd ${DEFAULT_CONTENT}/solution/
 		
-		zip -r ${DEFAULT_CONTENT}/SuiteCRM-Analytics.zip public/ exportManifest.xml schema.xml
+		zip -rq ${DEFAULT_CONTENT}/SuiteCRM-Analytics.zip public/ exportManifest.xml schema.xml
 
 		cd ${DEFAULT_CONTENT}
 
