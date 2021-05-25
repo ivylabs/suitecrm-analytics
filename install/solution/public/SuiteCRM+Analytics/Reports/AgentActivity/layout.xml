@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/layout/1.0" xmlns:style="http://reporting.pentaho.org/namespaces/engine/classic/bundle/style/1.0" xmlns:core="http://reporting.pentaho.org/namespaces/engine/attributes/core" xmlns:html="http://reporting.pentaho.org/namespaces/engine/attributes/html" xmlns:swing="http://reporting.pentaho.org/namespaces/engine/attributes/swing" xmlns:pdf="http://reporting.pentaho.org/namespaces/engine/attributes/pdf" xmlns:wizard="http://reporting.pentaho.org/namespaces/engine/attributes/wizard" xmlns:designtime="http://reporting.pentaho.org/namespaces/report-designer/2.0" xmlns:crosstab="http://reporting.pentaho.org/namespaces/engine/attributes/crosstab" xmlns:pentaho="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho" xmlns:table="http://reporting.pentaho.org/namespaces/engine/attributes/table" core:auto-sort="true" core:style-sheet-reference="" core:lock-preferred-output-type="false" core:style-class="masterFont" core:parameter-layout="horizontal" core:preferred-output-type="table/html;page-mode=stream" xmlns:internal="http://reporting.pentaho.org/namespaces/engine/attributes/internal" internal:compatibility-level="8.0.0" designtime:zoom="2.0">
+  <style:element-style>
+    <style:text-styles font-face="SansSerif"/>
+  </style:element-style>
+  <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="style-sheet-reference" formula="=[pSelectStyle]&amp;&quot;.prptstyle&quot;"/>
+  <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/internal" name="query" formula="=[pReportGrouping]"/>
+  <report-header>
+    <root-level-content designtime:visual-height="820.0">
+      <style:element-style>
+      </style:element-style>
+      <label core:style-class="reportHeader">
+        <style:element-style>
+          <style:common-styles vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="540" min-height="30"/>
+        </style:element-style>
+        <core:value>Agent Activity Report</core:value>
+      </label>
+      <content>
+        <style:element-style>
+          <style:content-styles scale="true" keep-aspect-ratio="true" anti-aliasing="true"/>
+          <style:spatial-styles x="0" y="150" min-width="540" min-height="225"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;IF([pShowChart]=1;&quot;true&quot;;&quot;false&quot;))"/>
+        <style-expression style-key="y" formula="=IF([pShowParameters]=1;150;30)"/>
+        <core:value resource-type="local-ref">See Formula</core:value>
+        <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[fChartURL]"/>
+      </content>
+      <band>
+        <style:element-style>
+          <style:spatial-styles x="0" y="30" min-width="540" min-height="90"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=IF([pShowParameters]=1;&quot;true&quot;;&quot;false&quot;)"/>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="80" min-width="540" min-height="20"/>
+          </style:element-style>
+          <core:value>Activity Module: $(pModuleFilter)</core:value>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="60" min-width="540" min-height="20"/>
+          </style:element-style>
+          <core:value>Agent Country: $(pUserCountryFilter)</core:value>
+        </message>
+        <label>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="100" min-height="20"/>
+            <style:text-styles bold="true"/>
+          </style:element-style>
+          <core:value>Filters:</core:value>
+        </label>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="20" min-width="540" min-height="20"/>
+          </style:element-style>
+          <core:value>Activity Period From : See Formula</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=&quot;Activity Period From: &quot;&amp;[pActivityFromDateFilter]"/>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="40" min-width="540" min-height="20"/>
+          </style:element-style>
+          <core:value>Activity Period To : See Formula</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=&quot;Activity Period To: &quot;&amp;[pActivityToDateFilter]"/>
+        </message>
+        <message>
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="100" min-width="540" min-height="20"/>
+          </style:element-style>
+          <core:value>Deleted Records: See Formula</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=IF([pShowDeletedRecords] = 1;&quot;Deleted Records: Show&quot;;&quot;Deleted Records: Hide&quot;)"/>
+        </message>
+      </band>
+    </root-level-content>
+  </report-header>
+  <group core:group-fields="USER_COUNTRY" core:name="GROUP">
+    <style:element-style>
+    </style:element-style>
+    <fields>
+      <field>USER_COUNTRY</field>
+    </fields>
+    <group-header>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+        </style:element-style>
+        <text-field core:field="USER_COUNTRY" core:style-class="reportGroupOneHeader">
+          <style:element-style>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="540" min-height="20"/>
+          </style:element-style>
+          <style-expression style-key="visible" formula="=IF([USER_COUNTRY]=&quot;All Countries&quot;;&quot;false&quot;;&quot;true&quot;)"/>
+        </text-field>
+      </root-level-content>
+    </group-header>
+    <data-body>
+      <style:element-style>
+      </style:element-style>
+      <details-header designtime:hideInLayoutGUI="false" designtime:visual-height="26.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+          <style:page-band-styles repeat="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="140" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Agent Name</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="440" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="140" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Calls</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="240" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Emails</core:value>
+        </label>
+        <label>
+          <style:element-style>
+            <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="340" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Meetings</core:value>
+        </label>
+      </details-header>
+      <details>
+        <root-level-content designtime:visual-height="20.0">
+          <style:element-style>
+          </style:element-style>
+          <text-field core:field="USER_FULL_NAME">
+            <style:element-style>
+              <style:border-styles padding-left="5" border-left-width="1" border-right-width="1" border-left-color="#999999" border-right-color="#999999" border-left-style="solid" border-right-style="solid"/>
+              <style:common-styles vertical-alignment="middle"/>
+              <style:spatial-styles x="0" y="0" min-width="140" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </text-field>
+          <number-field core:field="CALLS">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="140" y="0" min-width="100" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="EMAILS">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="240" y="0" min-width="100" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="MEETINGS">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="340" y="0" min-width="100" min-height="20"/>
+              <style:text-styles font-face="SansSerif" font-size="8"/>
+            </style:element-style>
+          </number-field>
+          <number-field core:field="TOTAL_ACTIVITIES">
+            <style:element-style>
+              <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
+              <style:common-styles alignment="right" vertical-alignment="middle"/>
+              <style:spatial-styles x="440" y="0" min-width="100" min-height="20"/>
+              <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+            </style:element-style>
+          </number-field>
+        </root-level-content>
+      </details>
+      <no-data>
+        <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="24.0">
+          <style:element-style>
+          </style:element-style>
+          <label>
+            <style:element-style>
+              <style:common-styles alignment="center" vertical-alignment="middle"/>
+              <style:content-styles color="#cc3300"/>
+              <style:spatial-styles x="0" y="0" min-width="540" min-height="20"/>
+            </style:element-style>
+            <core:value>No Data Available for Selected Parameters</core:value>
+          </label>
+        </root-level-content>
+      </no-data>
+      <details-footer designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+          <style:common-styles avoid-page-break="true"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <number-field core:field="FUNC_TOTAL_CALLS" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="140" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-left="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="140" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Total: </core:value>
+        </label>
+        <number-field core:field="FUNC_TOTAL_EMAILS" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="240" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_MEETINGS" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="340" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_TOTAL_ACTIVITIES" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="440" y="0" min-width="100" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+      </details-footer>
+    </data-body>
+    <group-footer>
+      <root-level-content designtime:hideInLayoutGUI="false" designtime:visual-height="72.0">
+        <style:element-style>
+        </style:element-style>
+      </root-level-content>
+    </group-footer>
+  </group>
+  <report-footer>
+    <root-level-content designtime:visual-height="108.0">
+      <style:element-style>
+      </style:element-style>
+      <band>
+        <style:element-style>
+          <style:spatial-styles min-width="0"/>
+        </style:element-style>
+      </band>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="0" min-width="540" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run By: $(env::username)</core:value>
+      </message>
+      <message>
+        <style:element-style>
+          <style:common-styles alignment="left" vertical-alignment="middle"/>
+          <style:spatial-styles x="0" y="15" min-width="540" min-height="15"/>
+          <style:text-styles font-size="8"/>
+        </style:element-style>
+        <core:value>Report Run Date: $(FUNC_TODAYS_DATE)</core:value>
+      </message>
+    </root-level-content>
+  </report-footer>
+</layout>

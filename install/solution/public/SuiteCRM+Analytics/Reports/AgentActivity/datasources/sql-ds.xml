@@ -1,0 +1,54 @@
+<data:sql-datasource xmlns:data="http://jfreereport.sourceforge.net/namespaces/datasources/sql">
+  <data:config/>
+  <data:jndi>
+    <data:path>SuiteCRMAnalytics</data:path>
+  </data:jndi>
+  <data:query-definitions>
+    <data:query name="CountryGroupReport">
+      <data:static-query>SELECT
+	DU.USER_ADDRESS_COUNTRY AS USER_COUNTRY
+	,DU.USER_FULL_NAME
+	,SUM(IF(DA.ACTIVITY_TYPE = &apos;Call&apos;, 1, 0)) AS CALLS
+	,SUM(IF(DA.ACTIVITY_TYPE = &apos;Meeting&apos;, 1, 0)) AS MEETINGS
+	,SUM(IF(DA.ACTIVITY_TYPE = &apos;Email&apos;, 1, 0)) AS EMAILS
+	,COUNT(FA.ACTIVITY_TK) AS TOTAL_ACTIVITIES
+FROM F_ACTIVITIES FA
+INNER JOIN D_ACTIVITIES DA
+	ON FA.ACTIVITY_TK = DA.ACTIVITY_TK
+INNER JOIN D_USERS DU
+	ON FA.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE DD
+	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
+WHERE DA.ACTIVITY_TYPE &lt;&gt; &apos;Task&apos;
+AND DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
+AND (DA.ACTIVITY_PARENT_TYPE IN (${pModuleFilter}) OR &apos;All Modules&apos; IN (${pModuleFilter}))
+AND (DU.USER_ADDRESS_COUNTRY IN (${pUserCountryFilter}) OR &apos;All Agent Countries&apos; IN (${pUserCountryFilter}))
+AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2
+ORDER BY 1,2 ASC;</data:static-query>
+    </data:query>
+    <data:query name="NoGroupReport">
+      <data:static-query>SELECT
+	&apos;All Countries&apos; AS USER_COUNTRY
+	,DU.USER_FULL_NAME
+	,SUM(IF(DA.ACTIVITY_TYPE = &apos;Call&apos;, 1, 0)) AS CALLS
+	,SUM(IF(DA.ACTIVITY_TYPE = &apos;Meeting&apos;, 1, 0)) AS MEETINGS
+	,SUM(IF(DA.ACTIVITY_TYPE = &apos;Email&apos;, 1, 0)) AS EMAILS
+	,COUNT(FA.ACTIVITY_TK) AS TOTAL_ACTIVITIES
+FROM F_ACTIVITIES FA
+INNER JOIN D_ACTIVITIES DA
+	ON FA.ACTIVITY_TK = DA.ACTIVITY_TK
+INNER JOIN D_USERS DU
+	ON FA.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE DD
+	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
+WHERE DA.ACTIVITY_TYPE &lt;&gt; &apos;Task&apos;
+AND DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
+AND (DA.ACTIVITY_PARENT_TYPE IN (${pModuleFilter}) OR &apos;All Modules&apos; IN (${pModuleFilter}))
+AND (DU.USER_ADDRESS_COUNTRY IN (${pUserCountryFilter}) OR &apos;All Agent Countries&apos; IN (${pUserCountryFilter}))
+AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2
+ORDER BY 1,2 ASC;</data:static-query>
+    </data:query>
+  </data:query-definitions>
+</data:sql-datasource>

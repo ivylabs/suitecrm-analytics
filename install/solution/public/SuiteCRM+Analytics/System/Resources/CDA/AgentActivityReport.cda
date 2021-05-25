@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="CHART" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="CHART" id="CHART" type="sql">
+      <Name>CHART</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="${pActivityFromDateFilter}" name="pActivityFromDateFilter" type="String"/>
+         <Parameter default="${pActivityToDateFilter}" name="pActivityToDateFilter" type="String"/>
+         <Parameter default="${pModuleFilter}" name="pModuleFilter" type="String"/>
+         <Parameter default="${pUserCountryFilter}" name="pUserCountryFilter" type="String"/>
+         <Parameter default="${pShowDeletedRecords}" name="pShowDeletedRecords" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT
+    DU.USER_FULL_NAME
+	,DA.ACTIVITY_TYPE 
+	,COUNT(*) AS TOTAL_ACTIVITIES
+FROM F_ACTIVITIES FA
+INNER JOIN D_ACTIVITIES DA
+	ON FA.ACTIVITY_TK = DA.ACTIVITY_TK
+INNER JOIN D_USERS DU
+	ON FA.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE DD
+    ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
+WHERE DA.ACTIVITY_TYPE <> 'Task'
+AND (DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter}))
+AND (DA.ACTIVITY_PARENT_TYPE IN (${pModuleFilter}) OR 'All Modules' IN (${pModuleFilter}))
+AND (DU.USER_ADDRESS_COUNTRY IN (${pUserCountryFilter}) OR 'All Agent Countries' IN (${pUserCountryFilter}))
+AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2
+ORDER BY 1,2 ASC;]]></Query>
+   </DataAccess>
+</CDADescriptor>

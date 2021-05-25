@@ -124,6 +124,9 @@
       <Connection id="pUserFullNameFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pUserCountryFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pActivityDateOnlyFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -132,6 +135,10 @@
       </Connection>
       <Connection id="pSalePaidDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
+      <Connection id="pModuleFilterQuery" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
       </Connection>
    </DataSources>
    <DataAccess access="public" connection="pCaseFilterQuery" id="pCaseFilterQuery" type="sql">
@@ -714,6 +721,20 @@ SELECT DISTINCT(USER_FULL_NAME), 2 AS ORDINAL
 FROM D_USERS
 ORDER BY 2,1]]></Query>
    </DataAccess>
+   <DataAccess access="public" connection="pUserCountryFilterQuery"
+               id="pUserCountryFilterQuery"
+               type="sql">
+      <Name>pUserCountryFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Output indexes="0" mode="include"/>
+      <Parameters/>
+      <Query><![CDATA[SELECT 'All Agent Countries' AS USER_ADDRESS_COUNTRY, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(USER_ADDRESS_COUNTRY), 2 AS ORDINAL
+FROM D_USERS
+ORDER BY 2,1]]></Query>
+   </DataAccess>
    <DataAccess access="public" connection="pActivityDateOnlyFilterQuery"
                id="pActivityDateOnlyFilterQuery"
                type="sql">
@@ -771,5 +792,24 @@ INNER JOIN D_DATE DD
 	ON FS.SALE_PAID_DATE_TK = DD.DATE_TK
 GROUP BY 1,2,3,4
 ORDER BY 3, 4 DESC]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pModuleFilterQuery" id="pModuleFilterQuery"
+               type="jsonScriptable">
+      <Name>pModuleFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[{
+   "resultset":[
+      ["All Modules"],
+      ["Leads"],
+      ["Cases"],
+      ["Opportunities"]
+   ],
+
+   "metadata":[
+      {"colIndex":0,"colType":"String","colName":"Value"}
+   ]
+}]]></Query>
    </DataAccess>
 </CDADescriptor>
