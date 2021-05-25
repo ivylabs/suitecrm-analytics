@@ -2971,6 +2971,78 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "bb6ac00a-4f46-1003-3003-fb7053e2f763",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pUserCountryFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Agent Countries\u0027 AS USER_ADDRESS_COUNTRY, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(USER_ADDRESS_COUNTRY), 2 AS ORDINAL\nFROM D_USERS\nORDER BY 2,1"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[\u00220\u0022]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "f8594b8e-a95b-670f-99cd-105a1318b797",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -3185,6 +3257,97 @@
         "rowName" : "sql over sqlJndi",
         "type" : "Componentssql_sqlJndi",
         "typeDesc" : "sql over sqlJndi"
+      },
+      {
+        "id" : "SCRIPTING",
+        "name" : "SCRIPTING Queries",
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
+        "parent" : "UnIqEiD",
+        "properties" : [
+          {
+            "name" : "Group",
+            "value" : "SCRIPTING Queries",
+            "type" : "Label"
+          }
+        ]
+      },
+      {
+        "id" : "f65b486e-5d60-1a9e-02f8-7a588a9ff2dc",
+        "type" : "ComponentsjsonScriptable_scripting",
+        "typeDesc" : "jsonScriptable over scripting",
+        "parent" : "SCRIPTING",
+        "properties" : [
+          {
+            "name" : "name",
+            "value" : "pModuleFilterQuery",
+            "type" : "Id"
+          },
+          {
+            "name" : "initscript",
+            "value" : "",
+            "type" : "String"
+          },
+          {
+            "name" : "language",
+            "value" : "beanshell",
+            "type" : "String"
+          },
+          {
+            "name" : "access",
+            "value" : "public",
+            "type" : "Access"
+          },
+          {
+            "name" : "query",
+            "value" : "{\n   \u0022resultset\u0022:[\n      [\u0022All Modules\u0022],\n      [\u0022Leads\u0022],\n      [\u0022Cases\u0022],\n      [\u0022Opportunities\u0022]\n   ],\n\n   \u0022metadata\u0022:[\n      {\u0022colIndex\u0022:0,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Value\u0022}\n   ]\n}",
+            "type" : "JsonScriptableQuery"
+          },
+          {
+            "name" : "parameters",
+            "value" : "[]",
+            "type" : "CdaParameters"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "value" : "[]",
+            "type" : "CdaCalculatedColumnsArray"
+          },
+          {
+            "name" : "cdacolumns",
+            "value" : "[]",
+            "type" : "CdaColumnsArray"
+          },
+          {
+            "name" : "output",
+            "value" : "[]",
+            "type" : "IndexArray"
+          },
+          {
+            "name" : "outputMode",
+            "value" : "include",
+            "type" : "OutputMode"
+          },
+          {
+            "name" : "cacheKeys",
+            "value" : "[]",
+            "type" : "CacheKeysValues"
+          },
+          {
+            "name" : "cacheDuration",
+            "value" : 3600,
+            "type" : "Integer"
+          },
+          {
+            "name" : "cache",
+            "value" : "true",
+            "type" : "Boolean"
+          }
+        ],
+        "meta" : "CDA",
+        "meta_conntype" : "scripting.scripting",
+        "meta_datype" : "jsonScriptable",
+        "rowName" : "jsonScriptable over scripting"
       }
     ]
   },

@@ -255,7 +255,7 @@
     <p style="text-align:center">Need help? Visit <a href="http://docs.suitecrm.com" target="_blank">http://docs.suitecrm.com</a> for tutorials and videos</p>
   </div>
   <div id="login-footer-wrapper">
-    <div id="login-footer" class="beforeSlide">Created by SuiteCRM Analytics</div>
+    <div id="login-footer" class="beforeSlide">Created by Ivy Information Systems Scotland</div>
   </div>
 </div>
 
