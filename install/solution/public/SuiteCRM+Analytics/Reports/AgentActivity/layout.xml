@@ -58,16 +58,16 @@
             <style:common-styles vertical-alignment="middle"/>
             <style:spatial-styles x="0" y="20" min-width="540" min-height="20"/>
           </style:element-style>
-          <core:value>Call From Period : See Formula</core:value>
-          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=&quot;Call Period From: &quot;&amp;[pActivityFromDateFilter]"/>
+          <core:value>Activity Period From : See Formula</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=&quot;Activity Period From: &quot;&amp;[pActivityFromDateFilter]"/>
         </message>
         <message>
           <style:element-style>
             <style:common-styles vertical-alignment="middle"/>
             <style:spatial-styles x="0" y="40" min-width="540" min-height="20"/>
           </style:element-style>
-          <core:value>Call To Period : See Formula</core:value>
-          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=&quot;Call Period To: &quot;&amp;[pActivityToDateFilter]"/>
+          <core:value>Activity Period To : See Formula</core:value>
+          <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=&quot;Activity Period To: &quot;&amp;[pActivityToDateFilter]"/>
         </message>
         <message>
           <style:element-style>

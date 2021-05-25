@@ -14,7 +14,7 @@
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
-      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Call From Period</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Activity Period From</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
     </list-parameter>
     <list-parameter name="pActivityToDateFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pActivityDateOnlyFilterQuery" key-column="YYYY-MM" value-column="DATE_FILTER">
@@ -22,7 +22,7 @@
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
-      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Call To Period</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Activity Period To</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
     </list-parameter>
     <list-parameter name="pUserCountryFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pUserCountryFilterQuery" key-column="USER_ADDRESS_COUNTRY" value-column="USER_ADDRESS_COUNTRY">

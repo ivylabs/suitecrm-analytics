@@ -19,7 +19,8 @@ INNER JOIN D_USERS DU
 	ON FA.ASSIGNED_USER_TK = DU.USER_TK
 INNER JOIN D_DATE DD
 	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
-WHERE DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
+WHERE DA.ACTIVITY_TYPE &lt;&gt; &apos;Task&apos;
+AND DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
 AND (DA.ACTIVITY_PARENT_TYPE IN (${pModuleFilter}) OR &apos;All Modules&apos; IN (${pModuleFilter}))
 AND (DU.USER_ADDRESS_COUNTRY IN (${pUserCountryFilter}) OR &apos;All Agent Countries&apos; IN (${pUserCountryFilter}))
 AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
@@ -41,7 +42,8 @@ INNER JOIN D_USERS DU
 	ON FA.ASSIGNED_USER_TK = DU.USER_TK
 INNER JOIN D_DATE DD
 	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK
-WHERE DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
+WHERE DA.ACTIVITY_TYPE &lt;&gt; &apos;Task&apos;
+AND DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
 AND (DA.ACTIVITY_PARENT_TYPE IN (${pModuleFilter}) OR &apos;All Modules&apos; IN (${pModuleFilter}))
 AND (DU.USER_ADDRESS_COUNTRY IN (${pUserCountryFilter}) OR &apos;All Agent Countries&apos; IN (${pUserCountryFilter}))
 AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
