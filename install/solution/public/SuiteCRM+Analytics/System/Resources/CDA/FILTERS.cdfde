@@ -3187,6 +3187,78 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "e832872c-499a-921d-72c8-701e8d5afc07",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pSalePaidDateOnlyFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT\n    DD.`YYYY-MM`\n    ,CONCAT(DD.YEAR4,\u0027 - \u0027, DD.MONTH_LONG_DESC) AS DATE_FILTER\n    ,2 AS ORDINAL\n\t,YYYYMM\nFROM F_SALES FS\nINNER JOIN D_DATE DD\n\tON FS.SALE_PAID_DATE_TK = DD.DATE_TK\nGROUP BY 1,2,3,4\nORDER BY 3, 4 DESC"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "3398a84d-63a5-1587-af50-2a750a7b593a",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
@@ -3261,93 +3333,93 @@
       {
         "id" : "SCRIPTING",
         "name" : "SCRIPTING Queries",
-        "type" : "Label",
-        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E",
         "parent" : "UnIqEiD",
         "properties" : [
           {
             "name" : "Group",
-            "value" : "SCRIPTING Queries",
-            "type" : "Label"
+            "type" : "Label",
+            "value" : "SCRIPTING Queries"
           }
-        ]
+        ],
+        "type" : "Label",
+        "typeDesc" : "\u003Ci\u003EGroup\u003C/i\u003E"
       },
       {
         "id" : "f65b486e-5d60-1a9e-02f8-7a588a9ff2dc",
-        "type" : "ComponentsjsonScriptable_scripting",
-        "typeDesc" : "jsonScriptable over scripting",
+        "meta" : "CDA",
+        "meta_conntype" : "scripting.scripting",
+        "meta_datype" : "jsonScriptable",
         "parent" : "SCRIPTING",
         "properties" : [
           {
             "name" : "name",
-            "value" : "pModuleFilterQuery",
-            "type" : "Id"
+            "type" : "Id",
+            "value" : "pModuleFilterQuery"
           },
           {
             "name" : "initscript",
-            "value" : "",
-            "type" : "String"
+            "type" : "String",
+            "value" : ""
           },
           {
             "name" : "language",
-            "value" : "beanshell",
-            "type" : "String"
+            "type" : "String",
+            "value" : "beanshell"
           },
           {
             "name" : "access",
-            "value" : "public",
-            "type" : "Access"
+            "type" : "Access",
+            "value" : "public"
           },
           {
             "name" : "query",
-            "value" : "{\n   \u0022resultset\u0022:[\n      [\u0022All Modules\u0022],\n      [\u0022Leads\u0022],\n      [\u0022Cases\u0022],\n      [\u0022Opportunities\u0022]\n   ],\n\n   \u0022metadata\u0022:[\n      {\u0022colIndex\u0022:0,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Value\u0022}\n   ]\n}",
-            "type" : "JsonScriptableQuery"
+            "type" : "JsonScriptableQuery",
+            "value" : "{\n   \u0022resultset\u0022:[\n      [\u0022All Modules\u0022],\n      [\u0022Leads\u0022],\n      [\u0022Cases\u0022],\n      [\u0022Opportunities\u0022]\n   ],\n\n   \u0022metadata\u0022:[\n      {\u0022colIndex\u0022:0,\u0022colType\u0022:\u0022String\u0022,\u0022colName\u0022:\u0022Value\u0022}\n   ]\n}"
           },
           {
             "name" : "parameters",
-            "value" : "[]",
-            "type" : "CdaParameters"
+            "type" : "CdaParameters",
+            "value" : "[]"
           },
           {
             "name" : "cdacalculatedcolumns",
-            "value" : "[]",
-            "type" : "CdaCalculatedColumnsArray"
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
           },
           {
             "name" : "cdacolumns",
-            "value" : "[]",
-            "type" : "CdaColumnsArray"
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
           },
           {
             "name" : "output",
-            "value" : "[]",
-            "type" : "IndexArray"
+            "type" : "IndexArray",
+            "value" : "[]"
           },
           {
             "name" : "outputMode",
-            "value" : "include",
-            "type" : "OutputMode"
+            "type" : "OutputMode",
+            "value" : "include"
           },
           {
             "name" : "cacheKeys",
-            "value" : "[]",
-            "type" : "CacheKeysValues"
+            "type" : "CacheKeysValues",
+            "value" : "[]"
           },
           {
             "name" : "cacheDuration",
-            "value" : 3600,
-            "type" : "Integer"
+            "type" : "Integer",
+            "value" : 3600
           },
           {
             "name" : "cache",
-            "value" : "true",
-            "type" : "Boolean"
+            "type" : "Boolean",
+            "value" : "true"
           }
         ],
-        "meta" : "CDA",
-        "meta_conntype" : "scripting.scripting",
-        "meta_datype" : "jsonScriptable",
-        "rowName" : "jsonScriptable over scripting"
+        "rowName" : "jsonScriptable over scripting",
+        "type" : "ComponentsjsonScriptable_scripting",
+        "typeDesc" : "jsonScriptable over scripting"
       }
     ]
   },

@@ -1,0 +1,30 @@
+<data:sql-datasource xmlns:data="http://jfreereport.sourceforge.net/namespaces/datasources/sql">
+  <data:config/>
+  <data:jndi>
+    <data:path>SuiteCRMAnalytics</data:path>
+  </data:jndi>
+  <data:query-definitions>
+    <data:query name="Report">
+      <data:static-query>SELECT 
+	DU.USER_ADDRESS_COUNTRY AS AGENT_COUNTRY
+	,DD.YYYYMM AS ORDINAL
+	,DD.`YYYY-MMMM` AS PERIOD
+	,SUM(FS.SALE_QUANTITY) AS QUANTITY_SOLD
+	,SUM(FS.SALE_COST_PRICE_AMOUNT) * SUM(FS.SALE_QUANTITY) AS TOTAL_COST
+	,SUM(FS.SALE_TOTAL_DISCOUNT_AMOUNT) AS TOTAL_DISCOUNT
+	,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
+FROM F_SALES FS
+INNER JOIN D_PRODUCTS DP
+	USING(PRODUCT_TK)
+INNER JOIN D_USERS DU
+	ON FS.ASSIGNED_USER_TK = DU.USER_TK
+INNER JOIN D_DATE DD
+	ON FS.SALE_PAID_DATE_TK = DD.DATE_TK
+WHERE DD.`YYYY-MM` BETWEEN (${pSalePaidFromDateFilter}) AND (${pSalePaidToDateFilter})
+AND (DU.USER_ADDRESS_COUNTRY IN (${pUserCountryFilter}) OR &apos;All Agent Countries&apos; IN (${pUserCountryFilter}))
+AND (FS.SALE_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+GROUP BY 1,2,3
+ORDER BY 1,2 DESC,3;</data:static-query>
+    </data:query>
+  </data:query-definitions>
+</data:sql-datasource>

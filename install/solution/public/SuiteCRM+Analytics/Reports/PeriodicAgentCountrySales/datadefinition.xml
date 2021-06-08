@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-definition xmlns="http://reporting.pentaho.org/namespaces/engine/classic/bundle/data/1.0">
+  <parameter-definition>
+    <list-parameter name="pSelectStyle" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pStyles" key-column="Value" value-column="Name" default-value="SuiteCRMAnalytics">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Select Report Style</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pSalePaidFromDateFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pSalePaidDateOnlyFilterQuery" key-column="YYYY-MM" value-column="DATE_FILTER">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Sale Period From</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pSalePaidToDateFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pSalePaidDateOnlyFilterQuery" key-column="YYYY-MM" value-column="DATE_FILTER">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Sale Period To</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pUserCountryFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pUserCountryFilterQuery" key-column="USER_ADDRESS_COUNTRY" value-column="USER_ADDRESS_COUNTRY">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Agent Country</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pShowChart" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pShowChartQuery" key-column="value" value-column="property" default-value="1">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Visualizations</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pSelectChartType" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pChartTypeQuery" key-column="ID" value-column="Value">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Chart Type</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pShowParameters" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pShowParameters" key-column="Value" value-column="property" default-value="1">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Parameters</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+    <list-parameter name="pShowDeletedRecords" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.Number" query="pShowDeletedRecords" key-column="Value" value-column="Name">
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="autofill-selection">true</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Deleted Records</attribute>
+      <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
+    </list-parameter>
+  </parameter-definition>
+  <data-source report-query="Report" limit="-1" timeout="0" ref="datasources/compound-ds.xml"/>
+  <expression name="FUNC_PAGE_NUMBERS" class="org.pentaho.reporting.engine.classic.core.function.PageOfPagesFunction">
+    <properties>
+      <property name="format">page {0} of {1}</property>
+      <property name="pageIncrement">1</property>
+      <property name="startPage">1</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TODAYS_DATE" formula="=TODAY()"/>
+  <expression name="FUNC_PAGE_NUMBER" class="org.pentaho.reporting.engine.classic.core.function.PageFunction">
+    <properties>
+      <property name="pageIncrement">1</property>
+      <property name="startPage">1</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TOTAL_ROWS" class="org.pentaho.reporting.engine.classic.core.function.TotalItemCountFunction">
+    <properties>
+    </properties>
+  </expression>
+  <expression name="fChartParams" formula="=&quot;&amp;parampShowDeletedRecords=&quot;&amp; URLENCODE([pShowDeletedRecords];&quot;UTF8&quot;) &amp;&quot;&amp;parampSalePaidFromDateFilter=&quot;&amp; URLENCODE([pSalePaidFromDateFilter];&quot;UTF8&quot;) &amp;&quot;&amp;parampSalePaidToDateFilter=&quot;&amp; URLENCODE([pSalePaidToDateFilter];&quot;UTF8&quot;) &amp;&quot;&amp;parampUserCountryFilter=&quot;&amp; URLENCODE([pUserCountryFilter];&quot;UTF8&quot;) &amp;&quot;&amp;outputType=svg&amp;_TRUST_USER_=&quot;&amp;[&quot;env::username&quot;]"/>
+  <expression name="fChartURL" formula="=[&quot;env::pentahoBaseURL&quot;]&amp;&quot;plugin/cgg/api/services/draw?script=/public/SuiteCRM+Analytics/System/Resources/RCD/&quot; &amp; [fChartGeneratedURL] &amp; &quot;.js&amp;paramchart=PeriodicAgentCountrySales&amp;paramchartType=ccc&quot; &amp; [pSelectChartType] &amp; &quot;Chart&quot; &amp; [fChartParams]"/>
+  <expression name="fChartGeneratedURL" formula="=&quot;CGGChartGenerator&quot;"/>
+  <expression name="fReportOutputType" formula="=IF(ISEXPORTTYPE(&quot;table/excel&quot;);&quot;This is Excel!&quot;;&quot;This is NOT Excel&quot;)"/>
+  <expression name="FUNC_TOTAL_QUANTITY_SOLD" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">QUANTITY_SOLD</property>
+      <property name="group">GROUP</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TOTAL_COST" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">TOTAL_COST</property>
+      <property name="group">GROUP</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TOTAL_DISCOUNT" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">TOTAL_DISCOUNT</property>
+      <property name="group">GROUP</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_TOTAL_REVENUE" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">TOTAL_REVENUE</property>
+      <property name="group">GROUP</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_GRAND_TOTAL_QUANTITY_SOLD" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">QUANTITY_SOLD</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_GRAND_TOTAL_COST" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">TOTAL_COST</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_GRAND_TOTAL_DISCOUNT" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">TOTAL_DISCOUNT</property>
+    </properties>
+  </expression>
+  <expression name="FUNC_GRAND_TOTAL_REVENUE" class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction">
+    <properties>
+      <property name="field">TOTAL_REVENUE</property>
+    </properties>
+  </expression>
+</data-definition>
