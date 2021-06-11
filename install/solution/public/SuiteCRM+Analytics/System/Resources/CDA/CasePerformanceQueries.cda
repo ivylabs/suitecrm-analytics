@@ -408,6 +408,7 @@ GROUP BY 1]]></Query>
       <Parameters>
          <Parameter default="20200101" name="dateFromKeyParam" type="String"/>
          <Parameter default="20200101" name="dateToKeyParam" type="String"/>
+         <Parameter default="All Cases" name="caseStateParam" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT
     DU.USER_NAME
@@ -432,6 +433,7 @@ LEFT JOIN D_DATE CCRD
 LEFT JOIN D_DATE CCLD
 	ON FCM.CASE_CLOSED_TK = CCLD.DATE_TK
 WHERE CCRD.DATE_TK BETWEEN ${dateFromKeyParam} AND ${dateToKeyParam}
+AND (DC.CASE_STATE IN (${caseStateParam}) OR 'All Cases' IN (${caseStateParam}))
 AND FCM.CASE_DELETED = 0
 ORDER BY 10 DESC]]></Query>
    </DataAccess>
