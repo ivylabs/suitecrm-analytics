@@ -33,7 +33,7 @@
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="label">Lead Country</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="hidden">false</attribute>
     </list-parameter>
-    <list-parameter name="pLeadPrimaryAddressStateFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pLeadPrimaryAddressStateFilterQuery" key-column="LEAD_PRIMARY_ADDRESS_STATE" value-column="LEAD_PRIMARY_ADDRESS_STATE">
+    <list-parameter name="pLeadPrimaryAddressStateFilter" allow-multi-selection="false" strict-values="true" mandatory="false" type="java.lang.String" query="pLeadPrimaryAddressStateByCountryFilterQuery" key-column="LEAD_PRIMARY_ADDRESS_STATE" value-column="LEAD_PRIMARY_ADDRESS_STATE">
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="role">user</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="parameter-render-type">dropdown</attribute>
       <attribute namespace="http://reporting.pentaho.org/namespaces/engine/parameter-attributes/core" name="re-evaluate-on-failed-values">false</attribute>

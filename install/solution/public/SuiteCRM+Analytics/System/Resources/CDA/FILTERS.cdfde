@@ -2107,6 +2107,78 @@
         "typeDesc" : "sql over sqlJndi"
       },
       {
+        "id" : "ec916e1d-a742-84a6-d7b3-d60c5ee0d027",
+        "meta" : "CDA",
+        "meta_conntype" : "sql.jndi",
+        "meta_datype" : "sql",
+        "parent" : "SQL",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "pLeadPrimaryAddressStateByCountryFilterQuery"
+          },
+          {
+            "name" : "access",
+            "type" : "Access",
+            "value" : "public"
+          },
+          {
+            "name" : "jndi",
+            "type" : "Jndi",
+            "value" : "SuiteCRMAnalytics"
+          },
+          {
+            "name" : "query",
+            "type" : "SqlQuery",
+            "value" : "SELECT \u0027All Lead States\u0027 AS LEAD_PRIMARY_ADDRESS_STATE, 1 AS ORDINAL\nUNION\nSELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE), 2 AS ORDINAL \nFROM D_LEADS AS DL\nWHERE (DL.LEAD_PRIMARY_ADDRESS_COUNTRY IN (${pLeadPrimaryAddressCountryFilter}) OR \u0027All Lead Countries\u0027 IN (${pLeadPrimaryAddressCountryFilter}))\nORDER BY 2,1"
+          },
+          {
+            "name" : "parameters",
+            "type" : "CdaParameters",
+            "value" : "[[\u0022pLeadPrimaryAddressCountryFilter\u0022,\u0022${pLeadPrimaryAddressCountryFilter}\u0022,\u0022String\u0022,\u0022\u0022,\u0022\u0022]]"
+          },
+          {
+            "name" : "cdacalculatedcolumns",
+            "type" : "CdaCalculatedColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "cdacolumns",
+            "type" : "CdaColumnsArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "output",
+            "type" : "IndexArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "outputMode",
+            "type" : "OutputMode",
+            "value" : "include"
+          },
+          {
+            "name" : "cacheKeys",
+            "type" : "CacheKeysValues",
+            "value" : "[]"
+          },
+          {
+            "name" : "cacheDuration",
+            "type" : "Integer",
+            "value" : 3600
+          },
+          {
+            "name" : "cache",
+            "type" : "Boolean",
+            "value" : "true"
+          }
+        ],
+        "rowName" : "sql over sqlJndi",
+        "type" : "Componentssql_sqlJndi",
+        "typeDesc" : "sql over sqlJndi"
+      },
+      {
         "id" : "e05f868f-4f95-a3df-030c-353cb00ef897",
         "meta" : "CDA",
         "meta_conntype" : "sql.jndi",
