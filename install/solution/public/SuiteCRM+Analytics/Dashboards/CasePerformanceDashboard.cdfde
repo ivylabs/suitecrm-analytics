@@ -27,7 +27,7 @@
           {
             "name" : "listeners",
             "type" : "Listeners",
-            "value" : "[\u0022${p:refreshParam}\u0022]"
+            "value" : "[\u0022${p:refreshParam}\u0022,\u0022${p:caseStateParam}\u0022]"
           },
           {
             "name" : "customfunction",
@@ -171,7 +171,7 @@
           {
             "name" : "parameters",
             "type" : "ValuesArray",
-            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022]]"
+            "value" : "[[\u0022dateFromKeyParam\u0022,\u0022dateFromKeyParam\u0022],[\u0022dateToKeyParam\u0022,\u0022dateToKeyParam\u0022],[\u0022caseStateParam\u0022,\u0022caseStateParam\u0022]]"
           },
           {
             "name" : "displayLength",
@@ -797,6 +797,40 @@
             "name" : "propertyValue",
             "type" : "String",
             "value" : ""
+          },
+          {
+            "name" : "parameterViewRole",
+            "type" : "parameterViewRoleCustom",
+            "value" : "unused"
+          },
+          {
+            "name" : "bookmarkable",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "public",
+            "type" : "Boolean",
+            "value" : "false"
+          }
+        ],
+        "rowName" : "Simple Parameter",
+        "type" : "ComponentsParameter",
+        "typeDesc" : "Simple parameter"
+      },
+      {
+        "id" : "4b7fb255-6e92-7b2a-2bf9-ed0cf7149449",
+        "parent" : "PARAMETERS",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "caseStateParam"
+          },
+          {
+            "name" : "propertyValue",
+            "type" : "String",
+            "value" : "All Cases"
           },
           {
             "name" : "parameterViewRole",
@@ -12423,6 +12457,165 @@
         "typeDesc" : "Bootstrap Select"
       },
       {
+        "id" : "5317a6bd-49c5-0fa0-47c5-0f13ec02dc57",
+        "parent" : "IVYISBOOTSTRAP",
+        "properties" : [
+          {
+            "name" : "name",
+            "type" : "Id",
+            "value" : "caseStateComponent"
+          },
+          {
+            "name" : "parameter",
+            "type" : "Parameter",
+            "value" : "caseStateParam"
+          },
+          {
+            "name" : "listeners",
+            "type" : "Listeners",
+            "value" : "[\u0022${p:homeTrigger}\u0022]"
+          },
+          {
+            "name" : "parameters",
+            "type" : "ValuesArray",
+            "value" : "[]"
+          },
+          {
+            "name" : "valueAsId",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "dataSource",
+            "type" : "Datasource",
+            "value" : ""
+          },
+          {
+            "name" : "valuesArray",
+            "type" : "ValuesArray",
+            "value" : "[[\u0022All Cases\u0022,\u0022All Cases\u0022],[\u0022Open\u0022,\u0022Open\u0022],[\u0022Closed\u0022,\u0022Closed\u0022]]"
+          },
+          {
+            "name" : "priority",
+            "type" : "Integer",
+            "value" : 5
+          },
+          {
+            "name" : "refreshPeriod",
+            "type" : "Integer",
+            "value" : ""
+          },
+          {
+            "name" : "buttonLiveSearch",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "buttonBlock",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "itemsSize",
+            "type" : "String",
+            "value" : "false"
+          },
+          {
+            "name" : "buttonType",
+            "type" : "buttonTypeCustom",
+            "value" : "btn-default"
+          },
+          {
+            "name" : "buttonSize",
+            "type" : "buttonSizeCustom",
+            "value" : ""
+          },
+          {
+            "name" : "prependIcon",
+            "type" : "Boolean",
+            "value" : "False"
+          },
+          {
+            "name" : "buttonIcon",
+            "type" : "buttonIconCustom",
+            "value" : "none"
+          },
+          {
+            "name" : "multipleSelectMode",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "maxMultiSelect",
+            "type" : "Integer",
+            "value" : 0
+          },
+          {
+            "name" : "multipleSelectTextFormat",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "maxMultiSelectTextFormat",
+            "type" : "Integer",
+            "value" : 0
+          },
+          {
+            "name" : "multiSelectTitle",
+            "type" : "String",
+            "value" : "Nothing selected"
+          },
+          {
+            "name" : "showTickIcon",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "showMenuArrow",
+            "type" : "Boolean",
+            "value" : "false"
+          },
+          {
+            "name" : "htmlObject",
+            "type" : "HtmlObject",
+            "value" : "${h:C1}"
+          },
+          {
+            "name" : "executeAtStart",
+            "type" : "Boolean",
+            "value" : "true"
+          },
+          {
+            "name" : "preExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postExecution",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postFetch",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "preChange",
+            "type" : "JavaScript",
+            "value" : ""
+          },
+          {
+            "name" : "postChange",
+            "type" : "JavaScript",
+            "value" : ""
+          }
+        ],
+        "rowName" : "Bootstrap Select",
+        "type" : "ComponentsBSSelectBaseComponent",
+        "typeDesc" : "Bootstrap Select"
+      },
+      {
         "id" : "2e5b050e-1654-d844-989e-73a2f8ae71bb",
         "parent" : "IVYISBOOTSTRAP",
         "properties" : [
@@ -13844,7 +14037,7 @@
           {
             "name" : "html",
             "type" : "Html",
-            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EDetailed Case Listing\u003C/h3\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022caseDetailsTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
+            "value" : "\u003Cdiv class=\u0022box box-default\u0022\u003E\n    \u003Cdiv class=\u0022box-header with-border\u0022\u003E\n        \u003Ci class=\u0022fa fa-bar-chart\u0022\u003E\u003C/i\u003E\n        \u003Ch3 class=\u0022box-title\u0022\u003EDetailed Case Listing\u003C/h3\u003E\n        \u003Cdiv class=\u0022box-tools pull-right\u0022\u003E\n            \u003Cdiv id=\u0022C1\u0022\u003E\u003C/div\u003E\n        \u003C/div\u003E\n    \u003C/div\u003E\n    \u003Cdiv class=\u0022box-body\u0022\u003E\n        \u003Cdiv id=\u0022caseDetailsTableAnchor\u0022 style=\u0022height:250px\u0022\u003E\u003C/div\u003E\n    \u003C/div\u003E\n\u003C/div\u003E "
           },
           {
             "name" : "fontSize",
