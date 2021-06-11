@@ -88,6 +88,9 @@
       <Connection id="pLeadPrimaryAddressStateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
+      <Connection id="pLeadPrimaryAddressStateByCountryFilterQuery" type="sql.jndi">
+         <Jndi>SuiteCRMAnalytics</Jndi>
+      </Connection>
       <Connection id="pLeadCreatedDateFilterQuery" type="sql.jndi">
          <Jndi>SuiteCRMAnalytics</Jndi>
       </Connection>
@@ -555,6 +558,24 @@ ORDER BY 2,1]]></Query>
 UNION
 SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE), 2 AS ORDINAL 
 FROM D_LEADS
+ORDER BY 2,1]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="pLeadPrimaryAddressStateByCountryFilterQuery"
+               id="pLeadPrimaryAddressStateByCountryFilterQuery"
+               type="sql">
+      <Name>pLeadPrimaryAddressStateByCountryFilterQuery</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="${pLeadPrimaryAddressCountryFilter}"
+                    name="pLeadPrimaryAddressCountryFilter"
+                    type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT 'All Lead States' AS LEAD_PRIMARY_ADDRESS_STATE, 1 AS ORDINAL
+UNION
+SELECT DISTINCT(LEAD_PRIMARY_ADDRESS_STATE), 2 AS ORDINAL 
+FROM D_LEADS AS DL
+WHERE (DL.LEAD_PRIMARY_ADDRESS_COUNTRY IN (${pLeadPrimaryAddressCountryFilter}) OR 'All Lead Countries' IN (${pLeadPrimaryAddressCountryFilter}))
 ORDER BY 2,1]]></Query>
    </DataAccess>
    <DataAccess access="public" connection="pLeadCreatedDateFilterQuery"
