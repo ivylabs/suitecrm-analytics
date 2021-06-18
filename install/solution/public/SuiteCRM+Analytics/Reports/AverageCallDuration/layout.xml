@@ -141,7 +141,7 @@
         </label>
       </details-header>
       <details>
-        <root-level-content designtime:visual-height="104.6666699051857">
+        <root-level-content designtime:visual-height="105.0">
           <style:element-style>
           </style:element-style>
           <text-field core:field="PERIOD">
@@ -152,7 +152,7 @@
               <style:text-styles font-face="SansSerif" font-size="8"/>
             </style:element-style>
           </text-field>
-          <text-field core:field="fFormattedLeads">
+          <text-field core:field="fFormattedLeads" core:null-value="0m">
             <style:element-style>
               <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
               <style:common-styles alignment="right" vertical-alignment="middle"/>
@@ -160,7 +160,7 @@
               <style:text-styles font-face="SansSerif" font-size="8"/>
             </style:element-style>
           </text-field>
-          <text-field core:field="fFormattedCases">
+          <text-field core:field="fFormattedCases" core:null-value="0m">
             <style:element-style>
               <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
               <style:common-styles alignment="right" vertical-alignment="middle"/>
@@ -168,7 +168,7 @@
               <style:text-styles font-face="SansSerif" font-size="8"/>
             </style:element-style>
           </text-field>
-          <text-field core:field="fFormattedOpportunities">
+          <text-field core:field="fFormattedOpportunities" core:null-value="0m">
             <style:element-style>
               <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
               <style:common-styles alignment="right" vertical-alignment="middle"/>
@@ -176,7 +176,7 @@
               <style:text-styles font-face="SansSerif" font-size="8"/>
             </style:element-style>
           </text-field>
-          <text-field core:field="fFormattedAverageByRow">
+          <text-field core:field="fFormattedAverageByRow" core:null-value="0m">
             <style:element-style>
               <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
               <style:common-styles alignment="right" vertical-alignment="middle"/>
@@ -215,7 +215,7 @@
           <core:value>See Formula</core:value>
           <attribute-expression namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core" name="value" formula="=[GROUPBY]&amp;&quot; Average Total&quot;"/>
         </label>
-        <text-field core:field="fFormattedAverageLeads">
+        <text-field core:field="fFormattedAverageLeads" core:null-value="0m">
           <style:element-style>
             <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
@@ -223,7 +223,7 @@
             <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
           </style:element-style>
         </text-field>
-        <text-field core:field="fFormattedAverageCases">
+        <text-field core:field="fFormattedAverageCases" core:null-value="0m">
           <style:element-style>
             <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
@@ -231,7 +231,7 @@
             <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
           </style:element-style>
         </text-field>
-        <text-field core:field="fFormattedAverageOpportunities">
+        <text-field core:field="fFormattedAverageOpportunities" core:null-value="0m">
           <style:element-style>
             <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
@@ -239,7 +239,7 @@
             <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
           </style:element-style>
         </text-field>
-        <text-field core:field="fFormattedAverageAverageByRow">
+        <text-field core:field="fFormattedAverageAverageByRow" core:null-value="0m">
           <style:element-style>
             <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
