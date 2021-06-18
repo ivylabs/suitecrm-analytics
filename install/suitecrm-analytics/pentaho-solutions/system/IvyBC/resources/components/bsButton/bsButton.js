@@ -7,7 +7,7 @@ var BSButtonComponent = BaseComponent.extend({
 		var innerButtonHTML = "";
 
 		if(!this.label){
-			this.label = "";
+			this.label = "&nbsp;";
 		}
 
 		if(this.buttonIcon && this.buttonIcon != "none" && this){
