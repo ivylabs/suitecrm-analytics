@@ -81,7 +81,7 @@
   <expression name="fChartURL" formula="=[&quot;env::pentahoBaseURL&quot;]&amp;&quot;plugin/cgg/api/services/draw?script=/public/SuiteCRM+Analytics/System/Resources/RCD/&quot; &amp; [fChartGeneratedURL] &amp; &quot;.js&amp;paramchart=AverageCallDuration&amp;paramchartType=ccc&quot; &amp; [pSelectChartType] &amp; &quot;Chart&quot; &amp; [fChartParams]"/>
   <expression name="fChartGeneratedURL" formula="=&quot;CGGChartGenerator&quot;"/>
   <expression name="fReportOutputType" formula="=IF(ISEXPORTTYPE(&quot;table/excel&quot;);&quot;This is Excel!&quot;;&quot;This is NOT Excel&quot;)"/>
-  <expression name="fAverageByRow" formula="=([LEADS]+[CASES]+[OPPORTUNITIES])/3"/>
+  <expression name="fAverageByRow" formula="=[AVERAGE]"/>
   <expression name="fAverageLeads" class="org.pentaho.reporting.engine.classic.core.function.ItemAvgFunction">
     <properties>
       <property name="field">LEADS</property>
