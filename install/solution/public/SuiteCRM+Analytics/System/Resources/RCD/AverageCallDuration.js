@@ -5,7 +5,7 @@ var chart =  {
     chartDefinition:{
         dataAccessId: "CHART",
         path: "/public/SuiteCRM Analytics/System/Resources/CDA/AverageCallDurationReport.cda",
-        stacked: true,
+        stacked: false,
         seriesInRows: true,
         crosstabMode: false,
         legendVisible: true,
