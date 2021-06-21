@@ -116,7 +116,7 @@
           <style:element-style>
             <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="240" y="0" min-width="75" min-height="20"/>
+            <style:spatial-styles x="315" y="0" min-width="75" min-height="20"/>
             <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
           </style:element-style>
           <core:value>Leads</core:value>
@@ -134,7 +134,7 @@
           <style:element-style>
             <style:border-styles background-color="#eeeeee" padding-left="5" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="315" y="0" min-width="75" min-height="20"/>
+            <style:spatial-styles x="240" y="0" min-width="75" min-height="20"/>
             <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
           </style:element-style>
           <core:value>Cases</core:value>
@@ -156,7 +156,7 @@
             <style:element-style>
               <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
               <style:common-styles alignment="right" vertical-alignment="middle"/>
-              <style:spatial-styles x="240" y="0" min-width="75" min-height="20"/>
+              <style:spatial-styles x="315" y="0" min-width="75" min-height="20"/>
               <style:text-styles font-face="SansSerif" font-size="8"/>
             </style:element-style>
           </text-field>
@@ -164,7 +164,7 @@
             <style:element-style>
               <style:border-styles padding-right="5" border-right-width="1" border-right-color="#999999" border-right-style="solid"/>
               <style:common-styles alignment="right" vertical-alignment="middle"/>
-              <style:spatial-styles x="315" y="0" min-width="75" min-height="20"/>
+              <style:spatial-styles x="240" y="0" min-width="75" min-height="20"/>
               <style:text-styles font-face="SansSerif" font-size="8"/>
             </style:element-style>
           </text-field>
