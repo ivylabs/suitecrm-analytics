@@ -12,5 +12,7 @@ var chart =  {
         legendPaddings: 10,
         orthoAxisTitle: "Total Revenue",
         orthoAxisTitleAlign: "center",
+        categoryRole: "category desc",
+        seriesRole: "series asc"
     }
 }

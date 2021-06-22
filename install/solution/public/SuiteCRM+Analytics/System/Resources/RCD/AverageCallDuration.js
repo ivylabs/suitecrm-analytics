@@ -12,6 +12,7 @@ var chart =  {
         legendPaddings: 10,
         orthoAxisTitle: "Average Call Duration (Minutes)",
         orthoAxisTitleAlign: "center",
-        categoryRole: "category desc"
+        categoryRole: "category desc",
+        seriesRole: "series asc"
     }
 }

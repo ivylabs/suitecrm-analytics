@@ -9,6 +9,7 @@
       <Name>CHART</Name>
       <Cache duration="3600" enabled="true"/>
       <Columns/>
+      <Output indexes="0,1,2" mode="include"/>
       <Parameters>
          <Parameter default="${pActivityFromDateFilter}" name="pActivityFromDateFilter" type="String"/>
          <Parameter default="${pActivityToDateFilter}" name="pActivityToDateFilter" type="String"/>
@@ -18,6 +19,7 @@
     DD.`YYYY-MMM`
     ,DA.ACTIVITY_PARENT_TYPE 
     ,AVG(ACTIVITY_DURATION) 
+    ,DD.YYYYMM
 	FROM F_ACTIVITIES FA
 INNER JOIN D_DATE DD 
 	ON FA.ACTIVITY_DATE_TK = DD.DATE_TK 
@@ -26,7 +28,7 @@ INNER JOIN D_ACTIVITIES DA
 WHERE DA.ACTIVITY_TYPE = 'Call'
 AND DD.`YYYY-MM` BETWEEN (${pActivityFromDateFilter}) AND (${pActivityToDateFilter})
 AND (FA.ACTIVITY_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
-GROUP BY 1,2
-ORDER BY 1 DESC, 2;]]></Query>
+GROUP BY 1,2,4
+ORDER BY 4 DESC, 2;]]></Query>
    </DataAccess>
 </CDADescriptor>
