@@ -15,7 +15,7 @@
          <Parameter default="${pShowDeletedRecords}" name="pShowDeletedRecords" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT 
-    DD.`YYYY-MM`
+    DD.`YYYY-MMM`
     ,DA.ACTIVITY_PARENT_TYPE 
     ,AVG(ACTIVITY_DURATION) 
 	FROM F_ACTIVITIES FA
