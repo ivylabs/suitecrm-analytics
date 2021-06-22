@@ -17,7 +17,7 @@
          <Parameter default="${pShowDeletedRecords}" name="pShowDeletedRecords" type="String"/>
       </Parameters>
       <Query><![CDATA[SELECT
-     DD.`YYYY-MMMM` AS PERIOD
+     DD.`YYYY-MMM` AS PERIOD
     ,DU.USER_ADDRESS_COUNTRY AS AGENT_COUNTRY
     ,SUM(FS.SALE_TOTAL_AMOUNT) AS TOTAL_REVENUE
     ,DD.YYYYMM AS ORDINAL
