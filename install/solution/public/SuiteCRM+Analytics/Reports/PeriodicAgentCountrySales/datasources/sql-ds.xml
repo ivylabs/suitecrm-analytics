@@ -22,7 +22,7 @@ INNER JOIN D_DATE DD
 	ON FS.SALE_PAID_DATE_TK = DD.DATE_TK
 WHERE DD.`YYYY-MM` BETWEEN (${pSalePaidFromDateFilter}) AND (${pSalePaidToDateFilter})
 AND (DU.USER_ADDRESS_COUNTRY IN (${pUserCountryFilter}) OR &apos;All Agent Countries&apos; IN (${pUserCountryFilter}))
-AND (FS.SALE_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
+AND (FS.SALE_LINE_DELETED = ${pShowDeletedRecords} OR 1 = ${pShowDeletedRecords})
 GROUP BY 1,2,3
 ORDER BY 1,2 DESC,3;</data:static-query>
     </data:query>
