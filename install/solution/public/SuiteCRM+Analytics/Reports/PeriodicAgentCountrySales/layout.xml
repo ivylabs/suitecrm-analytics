@@ -272,47 +272,6 @@
           <style:spatial-styles x="0" y="5" min-width="540" min-height="55"/>
         </style:element-style>
         <style-expression style-key="y" formula="=IF(ISEXPORTTYPE(&quot;table/excel&quot;);0;5)"/>
-        <number-field core:field="FUNC_GRAND_TOTAL_REVENUE" core:format-string="#,##0">
-          <style:element-style>
-            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
-            <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="460" y="0" min-width="80" min-height="20"/>
-            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
-          </style:element-style>
-        </number-field>
-        <number-field core:field="FUNC_GRAND_TOTAL_DISCOUNT" core:format-string="#,##0">
-          <style:element-style>
-            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
-            <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="380" y="0" min-width="80" min-height="20"/>
-            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
-          </style:element-style>
-        </number-field>
-        <number-field core:field="FUNC_GRAND_TOTAL_COST" core:format-string="#,##0">
-          <style:element-style>
-            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
-            <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="300" y="0" min-width="80" min-height="20"/>
-            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
-          </style:element-style>
-        </number-field>
-        <number-field core:field="FUNC_GRAND_TOTAL_QUANTITY_SOLD" core:format-string="#,##0">
-          <style:element-style>
-            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
-            <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="220" y="0" min-width="80" min-height="20"/>
-            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
-          </style:element-style>
-        </number-field>
-        <label>
-          <style:element-style>
-            <style:border-styles padding-top="0" padding-left="5" padding-right="5" border-width="1" border-color="#999999" border-style="solid"/>
-            <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="0" y="0" min-width="220" min-height="20"/>
-            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
-          </style:element-style>
-          <core:value>Grand Total</core:value>
-        </label>
         <message>
           <style:element-style>
             <style:common-styles alignment="left" vertical-alignment="middle"/>
@@ -329,6 +288,54 @@
           </style:element-style>
           <core:value>Report Run By: $(env::username)</core:value>
         </message>
+      </band>
+      <band>
+        <style:element-style>
+          <style:common-styles invisible-consumes-space="true"/>
+          <style:spatial-styles x="0" y="5" min-width="540" min-height="20"/>
+        </style:element-style>
+        <style-expression style-key="visible" formula="=if([FUNC_TOTAL_ROWS]=0;&quot;false&quot;;&quot;true&quot;)"/>
+        <label>
+          <style:element-style>
+            <style:border-styles padding-top="0" padding-left="5" padding-right="5" border-width="1" border-color="#999999" border-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="0" y="0" min-width="220" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+          <core:value>Grand Total</core:value>
+        </label>
+        <number-field core:field="FUNC_GRAND_TOTAL_QUANTITY_SOLD" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="220" y="0" min-width="80" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_GRAND_TOTAL_COST" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="300" y="0" min-width="80" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_GRAND_TOTAL_DISCOUNT" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="380" y="0" min-width="80" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
+        <number-field core:field="FUNC_GRAND_TOTAL_REVENUE" core:format-string="#,##0">
+          <style:element-style>
+            <style:border-styles padding-top="0" padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-top-color="#999999" border-bottom-color="#999999" border-right-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
+            <style:common-styles alignment="right" vertical-alignment="middle"/>
+            <style:spatial-styles x="460" y="0" min-width="80" min-height="20"/>
+            <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
+          </style:element-style>
+        </number-field>
       </band>
     </root-level-content>
   </report-footer>
