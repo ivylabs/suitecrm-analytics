@@ -206,7 +206,7 @@
           {
             "name" : "sort",
             "type" : "Boolean",
-            "value" : "true"
+            "value" : "false"
           },
           {
             "name" : "colSearchable",
