@@ -219,7 +219,7 @@
           <style:element-style>
             <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="240" y="0" min-width="75" min-height="20"/>
+            <style:spatial-styles x="315" y="0" min-width="75" min-height="20"/>
             <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
           </style:element-style>
         </text-field>
@@ -227,7 +227,7 @@
           <style:element-style>
             <style:border-styles padding-right="5" border-top-width="1" border-bottom-width="1" border-right-width="1" border-color="#999999" border-top-style="solid" border-bottom-style="solid" border-right-style="solid"/>
             <style:common-styles alignment="right" vertical-alignment="middle"/>
-            <style:spatial-styles x="315" y="0" min-width="75" min-height="20"/>
+            <style:spatial-styles x="240" y="0" min-width="75" min-height="20"/>
             <style:text-styles font-face="SansSerif" bold="true" font-size="8"/>
           </style:element-style>
         </text-field>
